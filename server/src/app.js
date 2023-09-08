@@ -9,6 +9,7 @@ app.use(cors());
 app.use(xssClean());
 app.use(express.json());
 app.use(morgan("dev"));
+require("./config/passport");
 
 //default
 app.get("/", (req, res) => {
@@ -16,6 +17,7 @@ app.get("/", (req, res) => {
 });
 
 //API's
+app.use("/api/user", require("./routes/user.route"));
 
 //client error
 app.use((req, res, next) => {
