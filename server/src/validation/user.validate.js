@@ -2,7 +2,7 @@ const { check } = require("express-validator");
 
 const userValidate = [
   check("name").trim().notEmpty().withMessage("Please Provide name."),
-  check("email").trim().isEmail().withMessage("Please provide a valid email."),
+  // check("email").trim().isEmail().withMessage("Please provide a valid email."),
   check("password")
     .notEmpty()
     .withMessage("Please provide a password.")

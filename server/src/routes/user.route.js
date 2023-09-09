@@ -3,7 +3,9 @@ const {
   registerNewUser,
   loginUser,
   userProfile,
+  logOutUser,
 } = require("../controller/user.controller");
+const isTokenAvailable = require("../middleware/isTokenAvailable");
 const limitRequest = require("../middleware/limitRequest");
 const { runValidation } = require("../validation/runValidation");
 const { userValidate } = require("../validation/user.validate");
@@ -47,8 +49,13 @@ userRoute.post("/login", loginUser);
 //get user profile
 userRoute.get(
   "/profile",
+  isTokenAvailable,
   passport.authenticate("jwt", { session: false }),
   userProfile
 );
+
+//logout user
+
+userRoute.post("/logout", logOutUser);
 
 module.exports = userRoute;

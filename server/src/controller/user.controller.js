@@ -2,6 +2,9 @@ const User = require("../model/user.model");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const config = require("../config/config");
+const { successResponse, errorResponse } = require("./responseHandler");
+const userInfoHandler = require("./userinfoHandler");
+const createErrors = require("http-errors");
 
 //register a new user
 const registerNewUser = async (req, res, next) => {
@@ -21,24 +24,21 @@ const registerNewUser = async (req, res, next) => {
       return res
         .status(401)
         .json({ success: false, message: "User is already registered." });
-    bcrypt.hash(password, 10, async (err, hash) => {
-      const newUser = new User({
-        name,
-        email,
-        password: hash,
-        logo,
-        mobile,
-        address,
-        district,
-        webOrPageLink,
-      });
-      await newUser.save();
-      return res
-        .status(201)
-        .json({ success: true, message: "User created successfully." });
+    const hash = await bcrypt.hash(password, 10);
+    const newUser = new User({
+      name,
+      email,
+      password: hash,
+      logo,
+      mobile,
+      address,
+      district,
+      webOrPageLink,
     });
+    await newUser.save();
+    return successResponse(res, 201, "User created successfully.");
   } catch (error) {
-    next(error);
+    return next(error);
   }
 };
 
@@ -46,14 +46,16 @@ const registerNewUser = async (req, res, next) => {
 const loginUser = async (req, res, next) => {
   try {
     const { email, password } = req.body;
-    console.log(req.body);
     const user = await User.findOne({ email });
-    console.log(user);
     if (!user)
       return res
         .status(400)
         .send({ success: false, message: "User is not registered." });
+
     bcrypt.compare(password, user.password, (err, result) => {
+      if (err) {
+        return errorResponse(res, 500, err.message);
+      }
       if (result) {
         const payLoad = {
           id: user._id,
@@ -62,14 +64,10 @@ const loginUser = async (req, res, next) => {
         const token = jwt.sign(payLoad, config.jwt.token, {
           expiresIn: "2d",
         });
-        return res.status(200).json({
-          success: true,
-          user: {
-            name: user.name,
-            email: user.email,
-            isAdmin: user.isAdmin,
-          },
-          token: `Bearer ${token}`,
+        res.cookie("token", token, { httpOnly: true });
+        const userInfo = userInfoHandler(user);
+        return successResponse(res, 200, "Logged in successfully.", {
+          user: userInfo,
         });
       } else {
         return res
@@ -85,17 +83,21 @@ const loginUser = async (req, res, next) => {
 //get user profile
 const userProfile = (req, res, next) => {
   try {
-    const data = {
-      name: req.user.name,
-      email: req.user.email,
-      isAdmin: req.user.isAdmin,
-    };
-
-    res.status(200).json({ success: true, data });
+    const userInfo = userInfoHandler(req.user);
+    return successResponse(res, 200, "User Info", { user: userInfo });
   } catch (error) {
-    console.log(error.message);
     next(error);
   }
 };
 
-module.exports = { registerNewUser, loginUser, userProfile };
+//logout user
+const logOutUser = (req, res, next) => {
+  try {
+    res.clearCookie("token");
+    return successResponse(res, 200, "Logged out user successfully.");
+  } catch (error) {
+    next(error);
+  }
+};
+
+module.exports = { registerNewUser, loginUser, userProfile, logOutUser };

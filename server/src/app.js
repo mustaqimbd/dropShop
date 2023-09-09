@@ -1,19 +1,26 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
+const cookieParser = require("cookie-parser");
 const createErrors = require("http-errors");
 const morgan = require("morgan");
-const xssClean = require("xss-clean");
+const helmet = require("helmet");
+const {
+  errorResponse,
+  successResponse,
+} = require("./controller/responseHandler");
+
 //middleware
 app.use(cors());
-app.use(xssClean());
+app.use(cookieParser());
+app.use(helmet());
 app.use(express.json());
 app.use(morgan("dev"));
 require("./config/passport");
 
 //default
 app.get("/", (req, res) => {
-  res.status(200).json({ success: true, message: "Server is running." });
+  return successResponse(res, 200, "Server is running");
 });
 
 //API's
@@ -26,9 +33,7 @@ app.use((req, res, next) => {
 
 //handle serve errors
 app.use((err, req, res, next) => {
-  return res
-    .status(err.status || 500)
-    .json({ success: false, message: err.message });
+  return errorResponse(res, err.status, err.message);
 });
 
 module.exports = app;
