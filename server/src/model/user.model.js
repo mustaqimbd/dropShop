@@ -14,6 +14,10 @@ const userSchema = new Schema(
       type: Boolean,
       default: false,
     },
+    emailVerified: {
+      type: Boolean,
+      default: false,
+    },
   },
   { timestamps: true }
 );
