@@ -43,7 +43,6 @@ userRoute.post("/login", limitRequest, loginUser);
   password:"",*
  }
   (*) marked filed's are required.  
-  
  * */
 
 //get user profile
@@ -61,8 +60,14 @@ userRoute.post(
   changePassword
 );
 
-//logout user
+/**
+ @body ={
+  previousPassword:""*,
+  newPassword:""*
+ }
+ * */
 
+//logout user
 userRoute.post("/logout", logOutUser);
 
 module.exports = userRoute;

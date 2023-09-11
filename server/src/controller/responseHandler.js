@@ -8,13 +8,9 @@ const errorResponse = (
 
 const successResponse = (
   res,
-  statusCode = 200,
-  message = "Success",
-  payload = {}
+  { statusCode = 200, message = "Success", payload = {} }
 ) => {
-  return res
-    .status(statusCode)
-    .json({ success: true, message, payload: payload });
+  return res.status(statusCode).json({ success: true, message, payload });
 };
 
 module.exports = { errorResponse, successResponse };

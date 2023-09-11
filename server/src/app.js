@@ -20,7 +20,7 @@ require("./config/passport");
 
 //default
 app.get("/", (req, res) => {
-  return successResponse(res, 200, "Server is running");
+  return successResponse(res, { message: "Server is running successfully." });
 });
 
 //API's
