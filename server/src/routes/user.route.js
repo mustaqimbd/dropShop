@@ -4,6 +4,7 @@ const {
   loginUser,
   userProfile,
   logOutUser,
+  changePassword,
 } = require("../controller/user.controller");
 const isTokenAvailable = require("../middleware/isTokenAvailable");
 const limitRequest = require("../middleware/limitRequest");
@@ -31,11 +32,10 @@ userRoute.post(
     webOrPageLink:"",
   }
   (*) marked filed's are required.
-
  **/
 
 //login a user
-userRoute.post("/login", loginUser);
+userRoute.post("/login", limitRequest, loginUser);
 
 /**
  @body ={
@@ -52,6 +52,13 @@ userRoute.get(
   isTokenAvailable,
   passport.authenticate("jwt", { session: false }),
   userProfile
+);
+
+//change password
+userRoute.post(
+  "/change-password",
+  passport.authenticate("jwt", { session: false }),
+  changePassword
 );
 
 //logout user

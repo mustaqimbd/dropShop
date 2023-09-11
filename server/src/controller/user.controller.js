@@ -53,9 +53,7 @@ const loginUser = async (req, res, next) => {
         .send({ success: false, message: "User is not registered." });
 
     bcrypt.compare(password, user.password, (err, result) => {
-      if (err) {
-        return errorResponse(res, 500, err.message);
-      }
+      if (err) return errorResponse(res, 500, err.message);
       if (result) {
         const payLoad = {
           id: user._id,
@@ -100,4 +98,30 @@ const logOutUser = (req, res, next) => {
   }
 };
 
-module.exports = { registerNewUser, loginUser, userProfile, logOutUser };
+//change password
+const changePassword = async (req, res, next) => {
+  try {
+    const user = req.user;
+    const { previousPassword, newPassword } = req.body;
+    bcrypt.compare(previousPassword, user.password, async (err, result) => {
+      if (err) return errorResponse(res, 500, err.message);
+      if (result) {
+        const hash = await bcrypt.hash(newPassword, 10);
+        await User.updateOne({ _id: user._id }, { $set: { password: hash } });
+        return successResponse(res, 200, "Password changed successfully.");
+      } else {
+        return errorResponse(res, 400, "Password did not match.");
+      }
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+module.exports = {
+  registerNewUser,
+  loginUser,
+  userProfile,
+  logOutUser,
+  changePassword,
+};

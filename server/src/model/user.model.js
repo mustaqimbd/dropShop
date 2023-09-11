@@ -10,9 +10,9 @@ const userSchema = new Schema(
     address: String,
     district: String,
     webOrPageLink: String,
-    isAdmin: {
-      type: Boolean,
-      default: false,
+    role: {
+      type: String,
+      default: "user",
     },
     emailVerified: {
       type: Boolean,
