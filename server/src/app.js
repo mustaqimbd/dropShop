@@ -25,7 +25,7 @@ app.get("/", (req, res) => {
 
 //API's
 app.use("/api/user", require("./routes/user.route"));
-
+app.use("/api/admin", require("./routes/admin.route"));
 //client error
 app.use((req, res, next) => {
   next(createErrors(404, "Route not found."));
