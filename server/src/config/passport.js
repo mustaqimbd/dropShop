@@ -1,22 +1,25 @@
 const config = require("./config");
-const JwtStrategy = require("passport-jwt").Strategy,
-  ExtractJwt = require("passport-jwt").ExtractJwt;
+const JwtStrategy = require("passport-jwt").Strategy;
 const opts = {};
 const passport = require("passport");
 const User = require("../model/user.model");
+const findById = require("../services/findById");
 
-opts.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken();
+const cookieExtractor = req => {
+  let token = null;
+  if (req && req.cookies) {
+    token = req.cookies["token"];
+  }
+  return token;
+};
+
+opts.jwtFromRequest = cookieExtractor;
 opts.secretOrKey = config.jwt.token;
 
 passport.use(
   new JwtStrategy(opts, async (jwt_payload, done) => {
-    const projection = {
-      name: 1,
-      email: 1,
-      isAdmin: 1,
-    };
-    const user = await User.findOne({ _id: jwt_payload.id }, projection);
-    console.log(user);
+    const id = { _id: jwt_payload.id };
+    const user = await findById(User, id);
     if (user) {
       return done(null, user);
     } else {
