@@ -15,7 +15,7 @@ const MainLayout = () => {
         <Navbar></Navbar>
       </ContainerFull>
 
-      <ContainerMax>
+      <ContainerMax >
         <Outlet></Outlet>
       </ContainerMax>
 
