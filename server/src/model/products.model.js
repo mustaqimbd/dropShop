@@ -1,4 +1,5 @@
 const { Schema, model } = require("mongoose");
+
 const imageSchema = new Schema({
   link: String,
 });
@@ -6,7 +7,10 @@ const imageSchema = new Schema({
 const productsSchema = new Schema(
   {
     product_name: String,
-    product_id: String,
+    product_id: {
+      type: String,
+      unique: true,
+    },
     images: [imageSchema],
     ratings: Number,
     reseller_price: Number,
@@ -17,13 +21,16 @@ const productsSchema = new Schema(
       type: Number,
       default: 0,
     },
+    description: String,
+    hot: Number,
+    discount: Number,
     category: String,
     slug: String,
+    totalSold: { type: Number, default: 0 },
     is_active: {
       type: Boolean,
       default: true,
     },
-    description: String,
   },
   {
     timestamps: true,
@@ -31,4 +38,5 @@ const productsSchema = new Schema(
 );
 
 const Products = model("Products", productsSchema);
+
 module.exports = Products;
