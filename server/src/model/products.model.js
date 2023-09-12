@@ -17,11 +17,13 @@ const productsSchema = new Schema(
       type: Number,
       default: 0,
     },
-    description: String,
+    category: String,
+    slug: String,
     is_active: {
       type: Boolean,
       default: true,
     },
+    description: String,
   },
   {
     timestamps: true,
