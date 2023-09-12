@@ -3,7 +3,7 @@
 const MainLayout = () => {
     return (
         <div>
-            
+            Main layyout
         </div>
     );
 };
