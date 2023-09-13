@@ -6,8 +6,8 @@ import Apple_App from '../../../assets/Apple App.png';
 import './Footer.css';
 const Footer = () => {
     return (
-        <div>
-  <div style={{ background: "rgba(25, 28, 31, 1)", position: "fixed", bottom: 0, left: 0, right: 0}}>
+        <div className='w-full'>
+  <div style={{ background: "rgba(25, 28, 31, 1)"}} >
             {/* main div of footer part1 */}
          <div className='grid grid-cols-1 md:grid-cols-5 justify-items-center'style={{gap:"34px",padding:"70px 140px" }}>
 {/* section 1 of footer */}

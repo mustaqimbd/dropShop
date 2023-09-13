@@ -1,3 +1,9 @@
+
+.Highlight_policy_div{
+    background-color: white;
+}
+
+
 .title{
     font-family: sans-serif;
     font-size: 12px;
@@ -24,24 +30,3 @@
     height: 50%; /* Make the line the full height of the container */
     background-color: rgba(224, 225, 225, 1); /* Set the color of the line */
 }
-@media (max-width: 768px) {
-    .grid-cols-4 {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  
-    .grid-cols-4 > div {
-      padding: 17px;
-      border: none; /* Hide borders */
-    }
-  
-    .line-after {
-      display: none; /* Hide the line */
-    }
-  }
-  
-  /* Media query for screens with a maximum width of 480px */
-  @media (max-width: 480px) {
-    .grid-cols-4 {
-      grid-template-columns: 1fr;
-    }
-  }

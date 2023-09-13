@@ -1,0 +1,57 @@
+.TopText_of_Highlight{
+    font-size: 16px;
+    color: rgba(25, 28, 31, 1);
+    line-height: 20px;
+    font-family: sans-serif;
+    padding-bottom:12px;
+
+}
+.slug{
+    font-size: 14px;
+    line-height: 20px;
+    font-family: sans-serif;
+    color: rgba(25, 28, 31, 1);
+
+}
+.taka{
+    font-size: 14px;
+    line-height: 20px;
+    font-family: sans-serif;
+    color:rgba(45, 178, 36, 1);
+}
+.borderwithText2{
+border: 1px solid  rgba(228, 231, 233, 1)   ;
+padding: 6px;
+color:rgba(25, 28, 31, 1);
+font-size: 13px;
+font-family:sans-serif;
+line-height: 20px; 
+}
+.summer{
+    color:rgba(255, 255, 255, 1);
+    border-radius: 2px;
+    font-family: sans-serif;
+    font-size: 14px;
+    padding:6px 12px 6px 12px;
+    font-weight: 600;
+    background-color: #34495e;
+    border: 1px solid #34495e;
+    
+
+}
+.percent_discount{
+color:rgba(255, 255, 255, 1);
+font-family: sans-serif;
+font-size: 28px;
+line-height: 32px;
+font-weight: 600;
+
+}
+.offerProduct{
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 24px;
+    font-family: sans-serif;
+    color:"gba(255, 255, 255, 1)"
+
+}

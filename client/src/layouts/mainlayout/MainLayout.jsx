@@ -15,13 +15,13 @@ const MainLayout = () => {
         <Navbar></Navbar>
       </ContainerFull>
 
-      <ContainerMax >
+      {/* <ContainerMax > */}
         <Outlet></Outlet>
-      </ContainerMax>
+      {/* </ContainerMax> */}
 
-      <ContainerFull>
+      {/* <ContainerFull> */}
         <Footer></Footer>
-      </ContainerFull>
+      {/* </ContainerFull> */}
     </div>
   );
 };

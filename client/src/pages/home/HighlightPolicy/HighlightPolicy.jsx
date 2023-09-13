@@ -4,8 +4,9 @@ import { PiHeadphonesThin } from "react-icons/pi";
 import "./HighlightPolicy.css"
 const HighlightPolicy = () => {
     return (
-        <div style={{ backgroundColor: "white", position: "absolute", zIndex: 1,bottom:"443px"}}>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-0 justify-items-center border border-1" style={{ margin: "0px 220px 0px", borderRadius: "5px" }}>
+        <div >
+  <div className="Highlight_policy_div" >
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-0 justify-items-center border border-1" style={{ margin: "100px 220px 0px", borderRadius: "5px" }}>
                 <div className="flex items-center gap-3   relative group"style={{padding:"17px"}}>
                     <div><BsBoxSeam size={30} style={{color:"rgba(71, 81, 86, 1)"}}/></div>
                     <div><div className="title">FASTEST DELIVERY</div><div className="subtitle">Delivery in 24/H</div></div>
@@ -33,6 +34,8 @@ const HighlightPolicy = () => {
                 </div>
             </div>
         </div>
+        </div>
+      
     );
 };
 
