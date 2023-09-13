@@ -56,10 +56,10 @@ const Footer = () => {
 {/* section 5 of footer */}
 <div>
 <div className='topText'>POPULAR TAG</div>
-<div style={{paddingBottom:"10px"}}><button className=' border '>Game</button> <button className=' border'>Iphone</button> <button className=' border'>Asus Laptops</button></div>
-<div style={{paddingBottom:"10px"}}><button className=' border'>MacBook</button> <button className=' border'>SSD</button> <button className=' border'>Graphics Card</button></div>
-<div style={{paddingBottom:"10px"}}><button className=' border'>Power Bank</button> <button className=' border'>Smart TV</button> <button className=' border'>Speaker </button></div>
-<div style={{paddingBottom:"10px"}}><button className=' border'>Tablet</button> <button className=' border'>Microwave</button> <button className=' border'>Samsung </button></div>
+<div style={{paddingBottom:"10px"}}><button className=' borderwithText '>Game</button> <button className=' borderwithText'>Iphone</button> <button className=' borderwithText'>Asus Laptops</button></div>
+<div style={{paddingBottom:"10px"}}><button className=' borderwithText'>MacBook</button> <button className=' borderwithText'>SSD</button> <button className=' borderwithText'>Graphics Card</button></div>
+<div style={{paddingBottom:"10px"}}><button className=' borderwithText'>Power Bank</button> <button className=' borderwithText'>Smart TV</button> <button className=' borderwithText'>Speaker </button></div>
+<div style={{paddingBottom:"10px"}}><button className=' borderwithText'>Tablet</button> <button className=' borderwithText'>Microwave</button> <button className=' borderwithText'>Samsung </button></div>
 
 
 </div>

@@ -13,7 +13,7 @@
     line-height: 20px;
 margin-bottom: 8px;
 }
-.border{
+.borderwithText{
     border: 1px solid  rgba(146, 159, 165, 1)   ;
 padding: 6px;
 color:rgba(146, 159, 165, 1);
