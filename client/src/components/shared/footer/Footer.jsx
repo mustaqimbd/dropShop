@@ -6,9 +6,10 @@ import Apple_App from '../../../assets/Apple App.png';
 import './Footer.css';
 const Footer = () => {
     return (
-        <div style={{ background: "rgba(25, 28, 31, 1)", position: "fixed", bottom: 0, left: 0, right: 0}}>
+        <div>
+  <div style={{ background: "rgba(25, 28, 31, 1)", position: "fixed", bottom: 0, left: 0, right: 0}}>
             {/* main div of footer part1 */}
-         <div className='grid grid-cols-1 grid-cols-5'style={{gap:"34px",padding:"70px 140px" }}>
+         <div className='grid grid-cols-1 md:grid-cols-5 justify-items-center'style={{gap:"34px",padding:"70px 140px" }}>
 {/* section 1 of footer */}
 <div>
     <div style={{color:"rgba(255, 255, 255, 1)",fontSize:"32px",lineHeight:"40px",fontWeight:"bold",paddingBottom:"34px"}}>DropShop</div>
@@ -86,6 +87,8 @@ const Footer = () => {
 
 
         </div>
+        </div>
+      
     );
 };
 

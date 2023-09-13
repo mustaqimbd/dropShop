@@ -1,13 +1,13 @@
 .title{
     font-family: sans-serif;
-    font-size: 13px;
-    color:rgba(71, 81, 86, 1);
+    font-size: 12px;
+    color:rgba(25, 28, 31, 1);
     line-height: 20px;
 
 }
 .subtitle{
     font-family: sans-serif;
-    font-size: 13px;
+    font-size: 12px;
     color:rgba(71, 81, 86, 1);
     line-height: 20px;
 }
@@ -18,10 +18,30 @@
 .line-after {
     position: absolute;
     top: 50%;
-    left: 100%; /* Adjust the left positioning to center the line */
+    left: 105%; /* Adjust the left positioning to center the line */
     transform: translate(-50%, -50%); /* Center the line both vertically and horizontally */
     width: 1px; /* Adjust the width of the line as needed */
     height: 50%; /* Make the line the full height of the container */
-    background-color: rgba(71, 81, 86, 1); /* Set the color of the line */
+    background-color: rgba(224, 225, 225, 1); /* Set the color of the line */
 }
-
+@media (max-width: 768px) {
+    .grid-cols-4 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    .grid-cols-4 > div {
+      padding: 17px;
+      border: none; /* Hide borders */
+    }
+  
+    .line-after {
+      display: none; /* Hide the line */
+    }
+  }
+  
+  /* Media query for screens with a maximum width of 480px */
+  @media (max-width: 480px) {
+    .grid-cols-4 {
+      grid-template-columns: 1fr;
+    }
+  }
