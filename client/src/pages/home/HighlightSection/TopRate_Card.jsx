@@ -1,12 +1,16 @@
-
-const TopRate_Card = ({prd_image,slug,taka}) => {
+const TopRate_Card = ({ prd_image, slug, taka }) => {
     return (
-        
-        <div className='flex gap-3 items-center justify-center p-2 mb-4'style={{background:"white"}}>
-        <div><img src={prd_image} style={{height:"70px",width:"70px"}} alt="product"/></div>
-        <div> <div className='slug'>{slug.slice(0,45)} {slug.length==42 || <div>.....</div>}</div>   <div className='taka'>{taka} Taka</div>           </div>
+      <div className='grid grid-cols-2  p-1 mb-4 ' style={{ background: "white" }}>
+        <div >
+          <img src={prd_image} alt="product" className="w-3/4 lg:h-[70px] h-[50px]" />
         </div>
+        <div className="w-full flex-col space-between">
+          <div className='slug mb-4'>{slug.slice(0,20)}{slug.length>15 && <span>......</span>}</div>
+          <div className='taka'>{taka} Taka</div>
+        </div>
+      </div>
     );
-};
-
-export default TopRate_Card;
+  };
+  
+  export default TopRate_Card;
+  

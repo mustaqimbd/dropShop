@@ -1,8 +1,20 @@
 
+import { useEffect, useState } from 'react';
 import product from '../../../assets/Image.png'
 import './HighlightSection.css'
 import TopRate_Card from './TopRate_Card';
 const HighlightSection = () => {
+    const[topRate,setTopRate]=useState([])
+    useEffect(()=>{
+        fetch('http://localhost:5000/api/products/highlight-products')
+        .then(res=>res.json())
+        .then(data=>{console.log(data);
+            setTopRate(data.payload.topRatedProducts)
+        
+        
+        })
+    },[])
+
     return (
         <div className="lg:px-72 md:px-72 py-16 bg-[#F2F4F5]">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-3 justify-items-center lg:px-0 md:px-0 px-10">
@@ -10,9 +22,8 @@ const HighlightSection = () => {
 
 <div>
 <div className='TopText_of_Highlight'>Top Rated</div>
-<TopRate_Card slug="Sony DSCHX8 High Zoom Point & Shoot Camera"taka="1860"prd_image={product}/>
-<TopRate_Card slug="Sony DSCHX8 High Zoom Point & Shoot Camera"taka="1860"prd_image={product}/>
-<TopRate_Card slug="Sony DSCHX8 High Zoom Point & Shoot Camera"taka="1860"prd_image={product}/>
+{topRate.map(index=><TopRate_Card key={index._id} slug={index.product_name} taka={index.reseller_price} prd_image={index.images[0].link}/>
+)}
 </div>
    
 
@@ -22,10 +33,9 @@ const HighlightSection = () => {
 
 
 <div>
-<div className='TopText_of_Highlight'>Top Sales</div>
-<TopRate_Card slug="Sony DSCHX8 High Zoom Point & Shoot Camera"taka="1860"prd_image={product}/>
-<TopRate_Card slug="Sony DSCHX8 High Zoom Point & Shoot Camera"taka="1860"prd_image={product}/>
-<TopRate_Card slug="Sony DSCHX8 High Zoom Point & Shoot Camera"taka="1860"prd_image={product}/>
+<div className='TopText_of_Highlight'>Top Rated</div>
+{topRate.map(index=><TopRate_Card key={index._id} slug={index.product_name} taka={index.reseller_price} prd_image={index.images[0].link}/>
+)}
 </div>
    
 <div>
@@ -47,10 +57,11 @@ const HighlightSection = () => {
     <div className='offerProduct my-2'>only for <span style={{ color: "#EBC80C", }} className='mx-1'>SmartPhone</span> product.</div>
   
    <button className='text-white bg-[#83B735] px-6 py-2 text-sm leading-5 flex my-2 mx-auto'><span className='me-2'>Shop Now</span>
-    <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M3.125 10.6322H16.875" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M11.25 5.0072L16.875 10.6322L11.25 16.2572" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+   <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M3.125 10.6322H16.875" stroke="white" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" />
+  <path d="M11.25 5.0072L16.875 10.6322L11.25 16.2572" stroke="white" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" />
 </svg>
+
 </button>
 </div>
 </div>
