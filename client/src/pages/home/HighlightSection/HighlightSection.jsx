@@ -3,20 +3,25 @@ import { useEffect, useState } from 'react';
 import product from '../../../assets/Image.png'
 import './HighlightSection.css'
 import TopRate_Card from './TopRate_Card';
+import ContainerFull from '../../../components/container/ContainerFull';
 const HighlightSection = () => {
     const[topRate,setTopRate]=useState([])
+    const[topSelling,setTopSelling]=useState([])
     useEffect(()=>{
         fetch('http://localhost:5000/api/products/highlight-products')
         .then(res=>res.json())
         .then(data=>{console.log(data);
             setTopRate(data.payload.topRatedProducts)
+            setTopSelling(data.payload.topSellingProducts)
         
         
         })
     },[])
 
     return (
-        <div className="lg:px-72 md:px-72 py-16 bg-[#F2F4F5] w-full">
+       <ContainerFull>
+         <div className="bg-[#F2F4F5] w-full">
+         <div className="lg:px-72 md:px-72 py-16  ">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-3 justify-items-center lg:px-0 md:px-0 px-10">
 
 
@@ -34,7 +39,7 @@ const HighlightSection = () => {
 
 <div>
 <div className='TopText_of_Highlight'>Top Rated</div>
-{topRate.map(index=><TopRate_Card key={index._id} slug={index.product_name} taka={index.reseller_price} prd_image={index.images[0].link}/>
+{topSelling.map(index=><TopRate_Card key={index._id} slug={index.product_name} taka={index.reseller_price} prd_image={index.images[0].link}/>
 )}
 </div>
    
@@ -78,6 +83,8 @@ const HighlightSection = () => {
             
             
         </div>
+        </div>
+       </ContainerFull>
     );
 };
 

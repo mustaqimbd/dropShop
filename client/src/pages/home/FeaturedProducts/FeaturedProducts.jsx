@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import FeaturedCarts from "../../../components/carts/gazi/FeaturedCarts";
+import FeaturedCarts from "../../../components/carts/FeaturedProducts/FeaturedCarts";
 import { FeaturedProdcutTitle } from "../../../components/titles/TitlesGazi";
 import { ViewAllButton } from "../../../components/buttons/Buttons";
+import ContainerMax from "../../../components/container/ContainerMax";
 
 
 const FeaturedProducts = () => {
@@ -16,7 +17,8 @@ const FeaturedProducts = () => {
     },[])
 
     return (
-        <div className="mt-14">
+        <ContainerMax>
+            <div className="mt-14">
             <div className="flex justify-between">
             <FeaturedProdcutTitle title={"Product Categories"}/>
             <ViewAllButton title={"view all"} />
@@ -27,6 +29,7 @@ const FeaturedProducts = () => {
             }
             </div>
         </div>
+        </ContainerMax>
     );
 };
 

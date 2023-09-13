@@ -6,7 +6,7 @@ import HighlightSection from "./HighlightSection/HighlightSection";
 const Home = () => {
     return (
         <div>
-            This is Home 
+           
         <FeaturedProducts />
         <div>
         <HighlightSection/>
