@@ -6,14 +6,17 @@ import Apple_App from '../../../assets/Apple App.png';
 import './Footer.css';
 const Footer = () => {
     return (
-        <div className='w-full'>
+        <div className='w-full '>
   <div style={{ background: "rgba(25, 28, 31, 1)"}} >
             {/* main div of footer part1 */}
-         <div className='grid grid-cols-1 md:grid-cols-5 justify-items-center'style={{gap:"34px",padding:"70px 140px" }}>
+         <div className='grid grid-cols-1 md:grid-cols-5  lg:px-36 lg:py-16  gap-8 justify-items-center'>
 {/* section 1 of footer */}
-<div>
-    <div style={{color:"rgba(255, 255, 255, 1)",fontSize:"32px",lineHeight:"40px",fontWeight:"bold",paddingBottom:"34px"}}>DropShop</div>
-    <div style={{fontSize:"13px",lineHeight:"20px",color:"rgba(119, 135, 143, 1)"}}>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
+<div className='mx-auto justify-self-center lg:text-start text-center lg:pt-0 md:pt-0 pt-5'>
+    
+    <div style={{color:"rgba(255, 255, 255, 1)"}}className='font-bold pb-6 text-3xl'>DropShop</div>
+    <div style={{color:"rgba(119, 135, 143, 1)"}} className='text-sm lg:px-0 md:px-0 px-5'>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
+    
+ 
 </div>
 {/* section 2 of footer */}
 <div>
@@ -55,7 +58,7 @@ const Footer = () => {
 
 
 {/* section 5 of footer */}
-<div>
+<div className='lg:pb-0 pb-6 md:pb-0'>
 <div className='topText'>POPULAR TAG</div>
 <div style={{paddingBottom:"10px"}}><button className=' borderwithText '>Game</button> <button className=' borderwithText'>Iphone</button> <button className=' borderwithText'>Asus Laptops</button></div>
 <div style={{paddingBottom:"10px"}}><button className=' borderwithText'>MacBook</button> <button className=' borderwithText'>SSD</button> <button className=' borderwithText'>Graphics Card</button></div>
@@ -77,8 +80,7 @@ const Footer = () => {
   style={{
     color: "rgba(48, 54, 57, 1)",
     padding: "24px 300px 0px 300px",
-    backdropFilter: "blur(10px)", // Add this line for the blur effect
-  }}
+  }} className='md:backdrop-blur-md'
 />
 <div className='footer_part2'>
     <div style={{padding:"24px 0px"}}>© 2023 DropShop Limited.</div>

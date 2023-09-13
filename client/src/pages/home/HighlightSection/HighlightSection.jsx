@@ -4,8 +4,8 @@ import './HighlightSection.css'
 import TopRate_Card from './TopRate_Card';
 const HighlightSection = () => {
     return (
-        <div style={{padding:"72px 294px 72px",backgroundColor:"rgba(242, 244, 245, 1)"}}>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-6"style={{padding:""}}>
+        <div className="lg:px-72 md:px-72 py-16 bg-[#F2F4F5]">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-3 justify-items-center lg:px-0 md:px-0 px-10">
 
 
 <div>
@@ -39,8 +39,9 @@ const HighlightSection = () => {
 
 
 
-<div style={{background:"rgba(18, 66, 97, 1)"}} className='flex justify-center items-center'>
-    <div className='text-center'>
+<div  className='w-full flex justify-center items-center bg-[#124261]'>
+    
+    <div className='text-center px-1 py-10 lg:py-0 md:py-0'>
     <button className='summer'>SUMMER SALES</button>
     <div className='percent_discount my-2'>37% DISCOUNT</div>
     <div className='offerProduct my-2'>only for <span style={{ color: "#EBC80C", }} className='mx-1'>SmartPhone</span> product.</div>

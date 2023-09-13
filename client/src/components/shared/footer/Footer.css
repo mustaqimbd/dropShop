@@ -2,7 +2,6 @@
     padding-bottom:12px;
     color:rgba(255, 255, 255, 1);
     font-size:16px;
-    line-height: 24px;
     font-family:sans-serif;
 
 }
@@ -11,7 +10,7 @@
     font-size: 13px;
     font-family:sans-serif;
     line-height: 20px;
-margin-bottom: 8px;
+    margin-bottom: 8px;
 }
 .borderwithText{
     border: 1px solid  rgba(146, 159, 165, 1)   ;
@@ -28,32 +27,4 @@ line-height: 20px;
     font-size: 13px;
     line-height: 20px;
     text-align: center;
-}
-@media (max-width: 768px) {
-    .grid-cols-1 {
-        grid-template-columns: 1fr; /* Set a single column layout for smaller screens */
-    }
-
-    .grid-cols-5 {
-        grid-template-columns: repeat(2, 1fr); /* Change to 2 columns on smaller screens */
-    }
-
-    .footer_part2 {
-        padding: 16px 0; /* Adjust the padding for smaller screens */
-    }
-
-    /* Add more responsive styles as needed for your specific design */
-}
-
-/* Media query for screens with a maximum width of 480px (mobile screens) */
-@media (max-width: 480px) {
-    .grid-cols-1 {
-        grid-template-columns: 1fr; /* Set a single column layout for mobile screens */
-    }
-
-    .grid-cols-5 {
-        grid-template-columns: 1fr; /* Set a single column layout for mobile screens */
-    }
-
-    /* Adjust the styles for other elements as needed for mobile screens */
 }
