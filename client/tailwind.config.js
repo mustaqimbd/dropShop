@@ -22,7 +22,12 @@ export default {
         footerLinkText: "#929FA5", // Footer page link text color
         deepGray: "#77878F",     // Full top bar, rating counter color
       },
+      fontFamily:{
+        "sans" : ['Public Sans', 'sans-serif']
+      }
     },
+   
+   
   },
   plugins: [],
 }
