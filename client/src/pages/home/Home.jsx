@@ -1,9 +1,10 @@
+import FeaturedProducts from "./FeaturedProducts/FeaturedProducts";
 
 
 const Home = () => {
     return (
         <div>
-            This is Home 
+            <FeaturedProducts />
         </div>
     );
 };
