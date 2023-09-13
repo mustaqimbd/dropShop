@@ -16,7 +16,7 @@ const HighlightSection = () => {
     },[])
 
     return (
-        <div className="lg:px-72 md:px-72 py-16 bg-[#F2F4F5]">
+        <div className="lg:px-72 md:px-72 py-16 bg-[#F2F4F5] w-full">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-3 justify-items-center lg:px-0 md:px-0 px-10">
 
 

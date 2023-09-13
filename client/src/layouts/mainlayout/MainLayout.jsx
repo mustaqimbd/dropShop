@@ -14,14 +14,12 @@ const MainLayout = () => {
         <Header></Header>
         <Navbar></Navbar>
       </ContainerFull>
-
-      {/* <ContainerMax > */}
+      <ContainerMax>
         <Outlet></Outlet>
-      {/* </ContainerMax> */}
-
-      {/* <ContainerFull> */}
+      </ContainerMax>
+      <ContainerFull>
         <Footer></Footer>
-      {/* </ContainerFull> */}
+      </ContainerFull>
     </div>
   );
 };
