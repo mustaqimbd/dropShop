@@ -8,9 +8,11 @@ const {
 const isAdmin = require("../middleware/isAdmin");
 
 //get all category
+// /api/category/
 categoryRoute.get("/", getAllCategory);
 
 //add new category admin protected
+// /api/category/
 categoryRoute.post(
   "/",
   passport.authenticate("jwt", { session: false }),
