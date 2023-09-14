@@ -5,7 +5,7 @@ return(
 }
 
 const CategoryTitles = ({title}) =>{
-    return <h3 className="font-['sans']">{title}</h3>
+    return <h3 className="font-sans">{title}</h3>
 }
 
 export {

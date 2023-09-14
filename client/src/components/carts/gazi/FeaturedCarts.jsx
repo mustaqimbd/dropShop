@@ -5,7 +5,7 @@ import { CategoryImg } from '../../avaters/Avatars'
 const FeaturedCarts = ({category}) => {
     console.log(category)
   return (
-    <div className='text-center flex flex-col justify-center items-center hover:bg-gray-200 cursor-pointer gap-1 rounded-3xl'>
+    <div className='text-center flex flex-col justify-center items-center cursor-pointer gap-1 rounded-3xl'>
       <CategoryImg src={category.img}/>
       <CategoryTitles title={category.name}/>
     </div>
