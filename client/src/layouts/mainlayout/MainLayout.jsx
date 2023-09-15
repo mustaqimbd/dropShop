@@ -4,7 +4,7 @@ import Topbar from "../../components/shared/topbar/Topbar";
 import Footer from "../../components/shared/footer/Footer";
 import Navbar from "../../components/shared/navbar/Navbar";
 import ContainerFull from "../../components/container/ContainerFull";
-import ContainerMax from "../../components/container/ContainerMax";
+
 
 const MainLayout = () => {
   return (
