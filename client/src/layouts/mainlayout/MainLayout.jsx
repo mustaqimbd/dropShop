@@ -4,7 +4,7 @@ import Topbar from "../../components/shared/topbar/Topbar";
 import Footer from "../../components/shared/footer/Footer";
 import Navbar from "../../components/shared/navbar/Navbar";
 import ContainerFull from "../../components/container/ContainerFull";
-import ContainerMax from "../../components/container/ContainerMax";
+
 
 const MainLayout = () => {
   return (
@@ -14,13 +14,14 @@ const MainLayout = () => {
         <Header></Header>
         <Navbar></Navbar>
       </ContainerFull>
-      <ContainerFull>
+      <ContainerFull>     
         <Outlet></Outlet>
       </ContainerFull>
       <ContainerFull>
         <Footer></Footer>
       </ContainerFull>
     </div>
+ //ok the kayout . Please dontt breakdown IT 
   );
 };
 

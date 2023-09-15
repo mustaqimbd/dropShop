@@ -8,15 +8,11 @@ const Header = () => {
     <ContainerFull>
       <div className="w-full bg-primary p-4">
         <ContainerMax>
-          <div className="flex item-center justify-between">
+          <div className="flex px-10 item-center justify-between">
             <div className="flex-1">
-              <Typography
-                variant="h4"
-                fontWeight={"fontWeightBold"}
-                color={"white"}
-              >
-                DroShop
-              </Typography>
+           <Typography variant="h4" color={"white"} >
+           DropShop
+           </Typography>
             </div>
             <div className="flex flex-1 items-center relative">
               <input className="w-full p-2 rounded-md" type="text" />
