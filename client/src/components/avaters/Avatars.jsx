@@ -5,5 +5,12 @@ const CategoryImg = ({ src }) => {
   </div>
   );
 };
+const HighLightProductImg = ({ src }) => {
+  return (
+    <div className="h-32 w-32 p-4 bg-gray-50 hover:bg-slate-100">
+    <img src={src} alt="" className="object-cover "/>
+  </div>
+  );
+};
 
-export { CategoryImg };
+export { CategoryImg ,HighLightProductImg};

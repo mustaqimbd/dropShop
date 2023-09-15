@@ -1,6 +1,7 @@
 import React from 'react'
-import { CategoryImg } from '../avaters/Avatars'
+
 import { CategoryTitles } from '../../titles/Featuretitle'
+import { CategoryImg } from '../../avaters/Avatars'
 
 const FeatureCards = ({category}) => {
     console.log(category)
@@ -12,4 +13,4 @@ const FeatureCards = ({category}) => {
   )
 }
 
-export default FeatureCards
+export default FeatureCards;
