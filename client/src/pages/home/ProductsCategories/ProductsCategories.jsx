@@ -21,7 +21,7 @@ const ProductsCategories = () => {
 
     return (
         <ContainerMax>
-            <div className="mt-14">
+            <div className="my-14">
             <div className="flex justify-between">
             <FeaturedProdcutTitle title={"Product Categories"}/>
             <h3 className="font-sans">View All <ChevronRightIcon /> </h3>

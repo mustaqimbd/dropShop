@@ -1,7 +1,8 @@
 import React from 'react'
 
-import { CategoryTitles } from '../../titles/Featuretitle'
+
 import { CategoryImg } from '../../avaters/Avatars'
+import { CategoryTitles } from '../../titles/FeatureTitle'
 
 const FeatureCards = ({category}) => {
     console.log(category)
