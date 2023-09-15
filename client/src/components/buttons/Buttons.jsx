@@ -5,9 +5,17 @@ const ViewAllButton = ({ title }) => {
   return (
     <Button size="small">
       {" "}
-      <span className="font-['sans'] text-black">{title} <ChevronRightIcon /> </span>{" "}
+      <span className="font-sans text-black">{title} <ChevronRightIcon /> </span>{" "}
     </Button>
   );
 };
+const PrimaryButton = ({ title }) => {
+  return (
+    <button className="bg-primary w-full px-3 py-2" >
+      {" "}
+      <span className="font-sans text-white">{title} <ChevronRightIcon /> </span>{" "}
+    </button>
+  );
+};
 
-export { ViewAllButton };
+export { ViewAllButton ,PrimaryButton};

@@ -2,9 +2,10 @@ import { BsBoxSeam,BsWallet } from "react-icons/bs";
 import { IoTrophyOutline } from "react-icons/io5";
 import { PiHeadphonesThin } from "react-icons/pi";
 import "./HighlightPolicy.css"
+import ContainerMax from "../../../components/container/ContainerMax";
 const HighlightPolicy = () => {
     return (
-        <div >
+        <ContainerMax>
   <div className="bg-white" >
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 lg:gap-0 md:gap-0 justify-items-center lg:border md:border lg:border-1  md:border-1 md:pb-0 pb-5 pt-5 lg:pt-0 md:pt-0 lg:mx-56 mb-0 lg:mt-24 md:mt-24" style={{  borderRadius: "5px" }}>
                 <div className="flex items-center gap-3 relative group lg:p-4 md:p-4 ">
@@ -34,7 +35,7 @@ const HighlightPolicy = () => {
                 </div>
             </div>
         </div>
-        </div>
+        </ContainerMax>
       
     );
 };
