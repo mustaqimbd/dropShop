@@ -1,6 +1,6 @@
 import React from 'react'
-import { CategoryTitles } from '../../titles/TitlesGazi'
-import { CategoryImg } from '../../avaters/Avatars'
+import { CategoryTitles } from '../titles/TitlesGazi'
+import { CategoryImg } from '../avaters/Avatars'
 
 const FeaturedCarts = ({category}) => {
     console.log(category)
