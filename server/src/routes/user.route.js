@@ -5,6 +5,7 @@ const {
   userProfile,
   logOutUser,
   changePassword,
+  requestRegister,
 } = require("../controller/user.controller");
 const isTokenAvailable = require("../middleware/isTokenAvailable");
 const limitRequest = require("../middleware/limitRequest");
@@ -12,14 +13,18 @@ const { runValidation } = require("../validation/runValidation");
 const { userValidate } = require("../validation/user.validate");
 const passport = require("passport");
 
-//register a new user
+//process register
+// /api/user/process-register
 userRoute.post(
-  "/register",
-  limitRequest,
+  "/request-register",
   userValidate,
   runValidation,
-  registerNewUser
+  requestRegister
 );
+
+//register a new user
+// /api/user/register
+userRoute.post("/register", limitRequest, registerNewUser);
 /**
   @body ={
     name:"",*
@@ -35,6 +40,7 @@ userRoute.post(
  **/
 
 //login a user
+// /api/user/login
 userRoute.post("/login", limitRequest, loginUser);
 
 /**
@@ -46,6 +52,7 @@ userRoute.post("/login", limitRequest, loginUser);
  * */
 
 //get user profile
+// /api/user/profile
 userRoute.get(
   "/profile",
   isTokenAvailable,
@@ -54,6 +61,7 @@ userRoute.get(
 );
 
 //change password
+// /api/user/change-password
 userRoute.post(
   "/change-password",
   passport.authenticate("jwt", { session: false }),
@@ -68,6 +76,7 @@ userRoute.post(
  * */
 
 //logout user
+// /api/user/logout
 userRoute.post("/logout", logOutUser);
 
 module.exports = userRoute;
