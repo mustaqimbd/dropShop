@@ -4,12 +4,14 @@ import { AiOutlineRight } from "react-icons/ai";
 import google_Playstore from '../../../assets/Mobile App.png';
 import Apple_App from '../../../assets/Apple App.png';
 import './Footer.css';
+import ContainerMax from '../../container/ContainerMax';
 const Footer = () => {
     return (
         <div className='w-full '>
   <div style={{ background: "rgba(25, 28, 31, 1)"}} >
+<ContainerMax>
             {/* main div of footer part1 */}
-         <div className='grid grid-cols-1 md:grid-cols-5  lg:px-36 lg:py-16  gap-8 justify-items-center'>
+         <div className='grid grid-cols-1 md:grid-cols-5   lg:py-16  gap-8 justify-items-center'>
 {/* section 1 of footer */}
 <div className='mx-auto justify-self-center lg:text-start text-center lg:pt-0 md:pt-0 pt-5'>
     
@@ -74,16 +76,16 @@ const Footer = () => {
 
          </div>
 
-
+         </ContainerMax>
 {/* footer part 2 */}
 <hr
   style={{
     color: "rgba(48, 54, 57, 1)",
-    padding: "24px 300px 0px 300px",
+    
   }} className='md:backdrop-blur-md'
 />
-<div className='footer_part2'>
-    <div style={{padding:"24px 0px"}}>© 2023 DropShop Limited.</div>
+<div className='text-white font-sans py-6 text-center text-[13px]'>
+    <div >© 2023 DropShop Limited.</div>
 </div>
 
 
@@ -95,3 +97,5 @@ const Footer = () => {
 };
 
 export default Footer;
+
+
