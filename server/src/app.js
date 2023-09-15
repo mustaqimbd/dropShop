@@ -28,6 +28,7 @@ app.use("/api/user", require("./routes/user.route"));
 app.use("/api/admin", require("./routes/admin.route"));
 app.use("/api/category", require("./routes/category.route"));
 app.use("/api/products", require("./routes/products.route"));
+app.use("/api/seed", require("./routes/seed.route"));
 //client error
 app.use((req, res, next) => {
   next(createErrors(404, "Route not found."));

@@ -20,6 +20,7 @@ const userValidate = [
     .notEmpty()
     .withMessage("Please provide a mobile number."),
   check("address").trim().notEmpty().withMessage("Please provide a address."),
+  check("role").isEmpty(),
 ];
 
 module.exports = { userValidate };
