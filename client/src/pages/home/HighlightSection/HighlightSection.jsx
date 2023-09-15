@@ -2,7 +2,11 @@
 import { useEffect, useState } from 'react';
 import product from '../../../assets/Image.png'
 import TopRate_Card from './TopRate_Card';
+<<<<<<< HEAD
 import ContainerFull from '../../../components/container/ContainerFull';
+=======
+import ContainerMax from '../../../components/container/ContainerMax';
+>>>>>>> 3cc0049b69996998752093732074ffc1219e80e8
 const HighlightSection = () => {
     const[topRate,setTopRate]=useState([])
     const[topSelling,setTopSelling]=useState([])
@@ -19,12 +23,17 @@ const HighlightSection = () => {
 
     return (
 <<<<<<< HEAD
+<<<<<<< HEAD
        <ContainerFull>
          <div className="bg-[#F2F4F5] w-full">
          <div className="lg:px-72 md:px-72 py-16  ">
 =======
         <div className="lg:px-56 md:px-56 py-16 bg-[#F2F4F5] w-full">
 >>>>>>> 520964dc6f9426c8232816896c8164a1cbba187d
+=======
+        <div className="px-10  py-16 bg-[#F2F4F5] w-full">
+            <ContainerMax>
+>>>>>>> 3cc0049b69996998752093732074ffc1219e80e8
             <div className="grid grid-cols-1 md:grid-cols-4 gap-3 justify-items-center lg:px-0 md:px-0 px-10">
 
         
@@ -89,7 +98,7 @@ const HighlightSection = () => {
 
             </div>
             
-            
+            </ContainerMax>
         </div>
         </div>
        </ContainerFull>
