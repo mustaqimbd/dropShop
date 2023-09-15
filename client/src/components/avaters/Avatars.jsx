@@ -1,8 +1,8 @@
 const CategoryImg = ({ src }) => {
   return (
-    <div className="bg-['#F2F4F5] h-32 w-32 rounded-full p-4">
-      <img src={src} alt="" className="bg-transparent object-cover rounded-full"/>
-    </div>
+    <div className="h-32 w-32 rounded-full p-4 bg-gray-50 hover:bg-slate-100">
+    <img src={src} alt="" className="object-cover "/>
+  </div>
   );
 };
 

@@ -8,7 +8,7 @@ const Header = () => {
     <ContainerFull>
       <div className="w-full bg-primary p-4">
         <ContainerMax>
-          <div className="flex item-center justify-between">
+          <div className="flex px-10 item-center justify-between">
             <div className="flex-1">
            <Typography variant="h4" color={"white"} >
            DropShop

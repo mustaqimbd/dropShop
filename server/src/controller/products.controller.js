@@ -20,4 +20,37 @@ const highlightProducts = async (req, res, next) => {
   }
 };
 
-module.exports = { highlightProducts };
+const totalProductsCount = async (req, res, next) => {
+  try {
+    const productCount = await Products.countDocuments();
+    return successResponse(res, {
+      message: "All products count",
+      payload: { productCount },
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+const productByPagination = async (req, res, next) => {
+  try {
+    const { page = 0, limit = 20 } = req.query;
+    const products = await Products.find()
+      .skip(parseInt(page * limit))
+      .limit(parseInt(limit));
+    const productsInfo = {
+      skip: parseInt(page * limit),
+      limit: parseInt(limit),
+      length: products.length,
+    };
+    return successResponse(res, {
+      statusCode: 200,
+      message: "Product by pagination.",
+      payload: { productsInfo, products },
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+module.exports = { highlightProducts, productByPagination, totalProductsCount };

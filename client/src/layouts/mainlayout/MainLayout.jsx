@@ -14,7 +14,11 @@ const MainLayout = () => {
         <Header></Header>
         <Navbar></Navbar>
       </ContainerFull>
+<<<<<<< HEAD
       <ContainerFull>     
+=======
+      <ContainerFull>
+>>>>>>> 520964dc6f9426c8232816896c8164a1cbba187d
         <Outlet></Outlet>
       </ContainerFull>
       <ContainerFull>
