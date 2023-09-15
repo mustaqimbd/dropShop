@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import FeaturedCarts from "../../../components/carts/gazi/FeaturedCarts";
+import FeaturedCarts from "../../../components/carts/FeaturedCarts";
 import { FeaturedProdcutTitle } from "../../../components/titles/TitlesGazi";
 import { ViewAllButton } from "../../../components/buttons/Buttons";
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
