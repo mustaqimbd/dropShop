@@ -11,6 +11,8 @@ const {
 } = require("./controller/responseHandler");
 
 //middleware
+//this is middleware
+
 app.use(cors());
 app.use(cookieParser());
 app.use(helmet());
