@@ -1,4 +1,4 @@
-const config = require("./config");
+const { accessTokenSecret } = require("../secret");
 const JwtStrategy = require("passport-jwt").Strategy;
 const opts = {};
 const passport = require("passport");
@@ -14,7 +14,7 @@ const cookieExtractor = req => {
 };
 
 opts.jwtFromRequest = cookieExtractor;
-opts.secretOrKey = config.jwt.token;
+opts.secretOrKey = accessTokenSecret;
 
 passport.use(
   new JwtStrategy(opts, async (jwt_payload, done) => {

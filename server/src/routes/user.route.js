@@ -5,6 +5,7 @@ const {
   userProfile,
   logOutUser,
   changePassword,
+  requestRegister,
 } = require("../controller/user.controller");
 const isTokenAvailable = require("../middleware/isTokenAvailable");
 const limitRequest = require("../middleware/limitRequest");
@@ -12,15 +13,18 @@ const { runValidation } = require("../validation/runValidation");
 const { userValidate } = require("../validation/user.validate");
 const passport = require("passport");
 
-//register a new user
-// /api/user/register
+//process register
+// /api/user/process-register
 userRoute.post(
-  "/register",
-  limitRequest,
+  "/request-register",
   userValidate,
   runValidation,
-  registerNewUser
+  requestRegister
 );
+
+//register a new user
+// /api/user/register
+userRoute.post("/register", limitRequest, registerNewUser);
 /**
   @body ={
     name:"",*

@@ -1,43 +1,81 @@
 const User = require("../model/user.model");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-const config = require("../config/config");
+const { accessTokenSecret, userRegisterSecret } = require("../secret");
 const { successResponse, errorResponse } = require("./responseHandler");
 const userInfoHandler = require("./userinfoHandler");
+const emailData = require("../helper/emailData");
+const emailWithNodeMailer = require("../helper/email");
+const createErrors = require("http-errors");
 
-//register a new user
-const registerNewUser = async (req, res, next) => {
+//process register
+const requestRegister = async (req, res, next) => {
   try {
     const {
       name,
       email,
       password,
-      logo,
       mobile,
       address,
+      logo,
       district,
       webOrPageLink,
     } = req.body;
     const user = await User.findOne({ email });
-    if (user) return errorResponse(res, 400, "This email is already taken.");
-    const hash = await bcrypt.hash(password, 10);
-    const newUser = new User({
+    if (user) return errorResponse(res, 409, "Email is already registered.");
+    const payload = {
       name,
       email,
-      password: hash,
-      logo,
+      password,
       mobile,
       address,
+      logo,
       district,
       webOrPageLink,
-    });
-    await newUser.save();
+    };
+    const token = jwt.sign(payload, userRegisterSecret, { expiresIn: "10m" });
+    const emailInfo = emailData(email, name, token);
+    try {
+      await emailWithNodeMailer(emailInfo);
+    } catch (error) {
+      return next(createErrors(500, "Failed to send email."));
+    }
     return successResponse(res, {
-      statusCode: 201,
-      message: "User created successfully.",
+      statusCode: 200,
+      message: "Email sended successfully.",
+      payload: { email },
     });
   } catch (error) {
-    return next(error);
+    next(error);
+  }
+};
+
+//register a new user
+const registerNewUser = async (req, res, next) => {
+  try {
+    const { token } = req.body;
+    if (!token) throw createErrors(404, "Token not found.");
+    const decoded = jwt.verify(token, userRegisterSecret);
+    const user = await User.findOne({ email: decoded.email });
+    if (user) throw createErrors(400, "Email already registered.");
+    const hash = await bcrypt.hash(decoded.password, 10);
+    await User.create({
+      name: decoded.name,
+      email: decoded.email,
+      password: hash,
+      logo: decoded.logo,
+      mobile: decoded.mobile,
+      address: decoded.address,
+      district: decoded.district,
+      webOrPageLink: decoded.webOrPageLink,
+    });
+
+    return successResponse(res, {
+      statusCode: 201,
+      message: "User was created successfully.",
+    });
+  } catch (error) {
+    next(error);
   }
 };
 
@@ -55,7 +93,7 @@ const loginUser = async (req, res, next) => {
           id: user._id,
           email: user.email,
         };
-        const token = jwt.sign(payLoad, config.jwt.token, {
+        const token = jwt.sign(payLoad, accessTokenSecret, {
           expiresIn: "2d",
         });
         res.cookie("token", token, { httpOnly: true });
@@ -125,6 +163,7 @@ const changePassword = async (req, res, next) => {
 };
 
 module.exports = {
+  requestRegister,
   registerNewUser,
   loginUser,
   userProfile,

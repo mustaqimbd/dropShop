@@ -8,7 +8,7 @@ const config = {
     url: process.env.MONGODB_URL,
   },
   jwt: {
-    token: process.env.TOKEN_SECRET,
+    token: process.env.ACCESS_TOKEN_SECRET,
   },
 };
 
