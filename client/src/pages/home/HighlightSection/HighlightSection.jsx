@@ -2,11 +2,8 @@
 import { useEffect, useState } from 'react';
 import product from '../../../assets/Image.png'
 import TopRate_Card from './TopRate_Card';
-<<<<<<< HEAD
 import ContainerFull from '../../../components/container/ContainerFull';
-=======
 import ContainerMax from '../../../components/container/ContainerMax';
->>>>>>> 3cc0049b69996998752093732074ffc1219e80e8
 const HighlightSection = () => {
     const[topRate,setTopRate]=useState([])
     const[topSelling,setTopSelling]=useState([])
@@ -22,19 +19,12 @@ const HighlightSection = () => {
     },[])
 
     return (
-<<<<<<< HEAD
-<<<<<<< HEAD
-       <ContainerFull>
-         <div className="bg-[#F2F4F5] w-full">
-         <div className="lg:px-72 md:px-72 py-16  ">
-=======
-        <div className="lg:px-56 md:px-56 py-16 bg-[#F2F4F5] w-full">
->>>>>>> 520964dc6f9426c8232816896c8164a1cbba187d
-=======
-        <div className="px-10  py-16 bg-[#F2F4F5] w-full">
-            <ContainerMax>
->>>>>>> 3cc0049b69996998752093732074ffc1219e80e8
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-3 justify-items-center lg:px-0 md:px-0 px-10">
+        <ContainerFull>
+        <div className="bg-[#F2F4F5] w-full">
+            <div className="px-10 py-16 bg-[#F2F4F5] w-full">
+                <ContainerMax>
+                    <div className="grid grid-cols-1 md:grid-cols-4 gap-3 justify-items-center px-10">
+                    <div className="grid grid-cols-1 md:grid-cols-4 gap-3 justify-items-center lg:px-0 md:px-0 px-10">
 
         
 <div>
@@ -49,17 +39,28 @@ const HighlightSection = () => {
 
 
 
-<div>
-<<<<<<< HEAD
 <div className='TopText_of_Highlight'>Top Rated</div>
-{topSelling.map(index=><TopRate_Card key={index._id} slug={index.product_name} taka={index.reseller_price} prd_image={index.images[0].link}/>
-=======
-<div className='text-base text-heading font-sans pb-3'>FlASH SALE TODAY</div>
-{topRate.map(index=><TopRate_Card key={index._id} slug={index.product_name} taka={index.reseller_price} prd_image={index.images[0].link}/>
->>>>>>> 520964dc6f9426c8232816896c8164a1cbba187d
-)}
+<div>
+  {topSelling.map(index => (
+    <div key={index._id}>
+      <TopRate_Card
+        slug={index.product_name}
+        taka={index.reseller_price}
+        prd_image={index.images[0].link}
+      />
+      <div className='text-base text-heading font-sans pb-3'>FLASH SALE TODAY</div>
+      {topRate.map(rateIndex => (
+        <TopRate_Card
+          key={rateIndex._id}
+          slug={rateIndex.product_name}
+          taka={rateIndex.reseller_price}
+          prd_image={rateIndex.images[0].link}
+        />
+      ))}
+    </div>
+  ))}
 </div>
-   
+
 <div>
 <div className='text-base text-heading font-sans pb-3'>POPULAR Category</div>
 <div className='pb-2.5'><button className=' border border-1 text-sm font-sans text-heading p-1.5 border-borderColor'>Game</button> <button  className=' border border-1 text-sm font-sans text-heading p-1.5 border-borderColor'>Iphone</button> <button className=' border border-1 text-sm font-sans text-heading p-1.5 border-borderColor'>TV</button> <button className=' border border-1 text-sm font-sans text-heading p-1.5 border-borderColor'>Asus Laptops</button></div>
@@ -96,12 +97,15 @@ const HighlightSection = () => {
 
 
 
+            </div>                    </div>
+                </ContainerMax>
             </div>
+        </div>
+    </ContainerFull>
+       
             
-            </ContainerMax>
-        </div>
-        </div>
-       </ContainerFull>
+            
+         
     );
 };
 
