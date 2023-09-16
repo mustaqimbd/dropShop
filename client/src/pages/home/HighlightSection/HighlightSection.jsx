@@ -35,7 +35,7 @@ const HighlightSection = () => {
         <ContainerMax>
           <div className="flex justify-between gap-6">
             <div className="flex-1 space-y-4">
-              <h1 className="uppercase font-semibold">top Rated</h1>
+              <h1 className="uppercase font-semibold ">top Rated</h1>
 
               <div className="flex-1 space-y-4">
                 {topRate.map((item, index) => (

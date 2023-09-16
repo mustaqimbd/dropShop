@@ -8,7 +8,7 @@ const CategoryImg = ({ src }) => {
 const HighLightProductImg = ({ src }) => {
   return (
     <div className="h-20  w-32   ">
-    <img src={src} alt="" className="  h-20  w-32  object-cover "/>
+    <img src={src} alt="" className="h-full w-full    object-cover "/>
   </div>
   );
 };
