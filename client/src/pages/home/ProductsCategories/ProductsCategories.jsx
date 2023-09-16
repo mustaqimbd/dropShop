@@ -3,8 +3,9 @@ import ContainerMax from "../../../components/container/ContainerMax";
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
 
-import FeatureCards from "../../../components/cards/FeaturedProducts/FeatureCards";
+
 import { FeaturedProdcutTitle } from "../../../components/titles/FeatureTitle";
+import {ProductCards} from "../../../components/cards/FeaturedProducts/Cards"
 
 
 
@@ -26,9 +27,9 @@ const ProductsCategories = () => {
             <FeaturedProdcutTitle title={"Product Categories"}/>
             <h3 className="font-sans">View All <ChevronRightIcon /> </h3>
             </div >
-            <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7 mt-12'>
+            <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7 mt-12 gap-16'>
             {
-                categories.map((category,index) => <FeatureCards key={index} category={category}/>)
+                categories.map((category,index) => <ProductCards key={index} category={category}/>)
             }
             </div>
         </div>
