@@ -6,9 +6,14 @@ const {
   logOutUser,
   changePassword,
   requestRegister,
+  forgotPassword,
+  resetPassword,
 } = require("../controller/user.controller");
 const isTokenAvailable = require("../middleware/isTokenAvailable");
+const limitReqResettingPass = require("../middleware/limitReqResettingPass");
 const limitRequest = require("../middleware/limitRequest");
+const validateEmail = require("../validation/email.validate");
+const validatePassword = require("../validation/password.validate");
 const { runValidation } = require("../validation/runValidation");
 const { userValidate } = require("../validation/user.validate");
 const passport = require("passport");
@@ -17,6 +22,8 @@ const passport = require("passport");
 // /api/user/process-register
 userRoute.post(
   "/request-register",
+  validateEmail,
+  validatePassword,
   userValidate,
   runValidation,
   requestRegister
@@ -75,6 +82,37 @@ userRoute.post(
  }
  * */
 
+//forgot password
+userRoute.post(
+  "/forgot-password",
+  validateEmail,
+  runValidation,
+  forgotPassword
+);
+
+/**
+@body ={
+  email:""*
+}
+ **/
+
+//reset password
+userRoute.post(
+  "/reset-password",
+  limitReqResettingPass,
+  validatePassword,
+  runValidation,
+  resetPassword
+);
+
+/**
+@body ={
+  password:"",
+  token:""
+}
+
+
+**/
 //logout user
 // /api/user/logout
 userRoute.post("/logout", logOutUser);
