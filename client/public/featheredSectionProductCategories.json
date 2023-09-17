@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "category": "All Product"
+    },
+    {
+        "id": 2,
+        "category": "Wireless Mouse"
+    },
+    {
+        "id": 3,
+        "category": "Watch Strap"
+    },
+    {
+        "id": 4,
+        "category": "Headphone"
+    },
+    {
+        "id": 5,
+        "category": "Smart Bulb"
+    },
+    {
+        "id": 6,
+        "category": "Browse All Product"
+    }
+]
