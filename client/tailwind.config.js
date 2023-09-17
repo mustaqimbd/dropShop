@@ -10,7 +10,7 @@ export default {
         primary: "#83B735",   // Custom primary color for Primary, header, button
         orange: "#FA8232",    // Custom orange color
         ratingIcon: "#FA8232", // Rating icon color
-        ratingCount: "#77878F", // Rating counter color
+        ratingCount: "#77878F", // Rating counter color #929FA5
         offBadge: "#2DB224",   // Product Price, % off badge color
         hotBadge: "#EE5858",   // Hot offer badge color
         priceBadge: "#2DA5F3", // Price badge color 

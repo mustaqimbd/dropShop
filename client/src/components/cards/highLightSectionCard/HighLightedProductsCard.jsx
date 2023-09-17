@@ -12,7 +12,7 @@ const HighLightedProductsCard = ({ content }) => {
   
 
   return (
-    <div className="bg-white flex gap-4 rounded-sm items-center p-4">
+    <div className="bg-white flex gap-4 rounded-sm items-center p-2">
       <div>
         <HighLightProductImg src={images[0]?.link} />
       </div>
