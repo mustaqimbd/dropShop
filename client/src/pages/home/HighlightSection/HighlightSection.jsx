@@ -35,7 +35,7 @@ const HighlightSection = () => {
         <ContainerMax>
           <div className="flex justify-between gap-6">
             <div className="flex-1 space-y-4">
-              <h1 className="uppercase font-semibold ">top Rated</h1>
+              <h1 className="uppercase font-semibold">top Rated</h1>
 
               <div className="flex-1 space-y-4">
                 {topRate.map((item, index) => (
@@ -63,20 +63,31 @@ const HighlightSection = () => {
 
               <div className="flex gap-2 flex-wrap">
                 {categories.map((category, index) => (
-                  <span className=" px-2 py-1 border-[1px] border-borderColor" key={index}>
+                  <span
+                    className=" px-2 py-1 border-[1px] border-borderColor"
+                    key={index}
+                  >
                     {category.name}{" "}
                   </span>
                 ))}
               </div>
             </div>
             <div className="flex-1 space-y-4 bg-[#124261] rounded-md flex justify-center align-middle">
-
-<div className="text-white flex justify-center items-center flex-col gap-3 ">
-  <span className="uppercase bg-[#2f5974]  px-3 py-2">Summer Sale</span>
-  <h1 className=" uppercase text-3xl font-semibold"> 30 % Discount </h1>
-  <h1>only for <span className="text-[#EBC80C] text-xl">Smart Phone </span> Products</h1>
-  <PrimaryButton title={"Shop Now"}/>  
-</div>
+              <div className="text-white flex justify-center items-center flex-col gap-3 ">
+                <span className="uppercase bg-[#2f5974]  px-3 py-2">
+                  Summer Sale
+                </span>
+                <h1 className=" uppercase text-3xl font-semibold">
+                  {" "}
+                  30 % Discount{" "}
+                </h1>
+                <h1>
+                  only for{" "}
+                  <span className="text-[#EBC80C] text-xl">Smart Phone </span>{" "}
+                  Products
+                </h1>
+                <PrimaryButton title={"Shop Now"} />
+              </div>
             </div>
           </div>
         </ContainerMax>

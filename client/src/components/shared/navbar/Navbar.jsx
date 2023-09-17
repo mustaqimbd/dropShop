@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <ContainerFull>
-      <div className="bg-white py-5  ">
+      <div className="bg-white py-5 border-b-2 border-borderColor">
         <ContainerMax>
           <div className="flex justify-between items-center px-12">
           <div className="flex gap-8">
@@ -150,7 +150,7 @@ const Navbar = () => {
             </div>
             </div>
         </ContainerMax>
-        <hr className="my-5" />
+        
       </div>
     </ContainerFull>
   );
