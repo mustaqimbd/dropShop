@@ -3,7 +3,6 @@ import divider from '../../../assets/Devider.png';
 import { AiOutlineRight } from "react-icons/ai";
 import google_Playstore from '../../../assets/Mobile App.png';
 import Apple_App from '../../../assets/Apple App.png';
-import './Footer.css';
 import ContainerMax from '../../container/ContainerMax';
 const Footer = () => {
     return (
