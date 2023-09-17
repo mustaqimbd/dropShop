@@ -1,12 +1,17 @@
 const User = require("../model/user.model");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-const { accessTokenSecret, userRegisterSecret } = require("../secret");
+const {
+  accessTokenSecret,
+  userRegisterSecret,
+  forgotPasswordTokenSecret,
+} = require("../secret");
 const { successResponse, errorResponse } = require("./responseHandler");
 const userInfoHandler = require("./userinfoHandler");
-const emailData = require("../helper/emailData");
+const registerRequestEmailData = require("../helper/registerRequestEmailData");
 const emailWithNodeMailer = require("../helper/email");
 const createErrors = require("http-errors");
+const forgotPasswordEmailData = require("../helper/forgotPasswordEmailData");
 
 //process register
 const requestRegister = async (req, res, next) => {
@@ -34,7 +39,7 @@ const requestRegister = async (req, res, next) => {
       webOrPageLink,
     };
     const token = jwt.sign(payload, userRegisterSecret, { expiresIn: "10m" });
-    const emailInfo = emailData(email, name, token);
+    const emailInfo = registerRequestEmailData(email, name, token);
     try {
       await emailWithNodeMailer(emailInfo);
     } catch (error) {
@@ -126,6 +131,59 @@ const userProfile = (req, res, next) => {
   }
 };
 
+//forgot password
+const forgotPassword = async (req, res, next) => {
+  try {
+    const { email } = req.body;
+    const user = await User.findOne({ email });
+    if (!user) return errorResponse(res, 404, "No user exist with this email.");
+    const payload = { email, _id: user._id };
+    const token = jwt.sign(payload, forgotPasswordTokenSecret, {
+      expiresIn: "10m",
+    });
+    const forgotPasswordEmail = forgotPasswordEmailData(email, token);
+    try {
+      await emailWithNodeMailer(forgotPasswordEmail);
+    } catch (error) {
+      return next(createErrors(500, "Failed to send email."));
+    }
+    return successResponse(res, {
+      statusCode: 200,
+      message: "Email sended successfully.",
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+//reset password
+const resetPassword = async (req, res, next) => {
+  try {
+    const { token, password } = req.body;
+    if (!token) return errorResponse(res, 403, "No token found");
+    const decoded = jwt.verify(token, forgotPasswordTokenSecret);
+    const hash = await bcrypt.hash(password, 10);
+    await User.findOneAndUpdate(
+      { _id: decoded._id },
+      { $set: { password: hash } }
+    );
+    return successResponse(res, {
+      statusCode: 200,
+      message: "Password reset successful.",
+    });
+  } catch (error) {
+    if (error.message === "jwt expired") {
+      return next(
+        createErrors(
+          400,
+          "Your password reset session is expired. Please send a forgot password request again."
+        )
+      );
+    }
+    next(error);
+  }
+};
+
 //logout user
 const logOutUser = (req, res, next) => {
   try {
@@ -169,4 +227,6 @@ module.exports = {
   userProfile,
   logOutUser,
   changePassword,
+  forgotPassword,
+  resetPassword,
 };

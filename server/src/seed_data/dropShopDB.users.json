@@ -1,0 +1,74 @@
+[
+  {
+    "name": "Admin 1",
+    "email": "admin@gmail.com",
+    "password": "$2a$10$GG5qofA2jUNS5FhAFeWd8u8QXeXin3gAhUI6n83jo9QqdAG2zN41u",
+    "logo": "http://example.com/logo",
+    "mobile": 1789101212,
+    "address": "Address here",
+    "district": "Satkhira",
+    "webOrPageLink": "http://example.com",
+    "role": "admin",
+    "__v": 0
+  },
+  {
+    "name": "Admin 2",
+    "email": "admin2@gmail.com",
+    "password": "$2a$10$Nl1KKCVi9ZmfPWmG1Y6oVemXDG5WYa48uT4JhdgInLv5FwjrTZ9U6",
+    "logo": "http://example.com/logo",
+    "mobile": 1789101212,
+    "address": "Address here",
+    "district": "Satkhira",
+    "webOrPageLink": "http://example.com",
+    "role": "admin",
+    "__v": 0
+  },
+  {
+    "name": "Drop seller 2",
+    "email": "dropseller2@gmail.com",
+    "password": "$2a$10$.UUBiX8DYQemKxolxgk/w.c4zg0IIQEI1TkMCDVJZQqoHF8JB1ucO",
+    "logo": "http://example.com/logo",
+    "mobile": 1789101212,
+    "address": "Address here",
+    "district": "Satkhira",
+    "webOrPageLink": "http://example.com",
+    "role": "seller",
+    "__v": 0
+  },
+  {
+    "name": "Drop seller 1",
+    "email": "dropseller1@gmail.com",
+    "password": "$2a$10$9IbNye.h2lopGje23EzuG.BlqUmi2K8AZ/PTiQIUTddt2LI4nHqFu",
+    "logo": "http://example.com/logo",
+    "mobile": 1789101212,
+    "address": "Address here",
+    "district": "Satkhira",
+    "webOrPageLink": "http://example.com",
+    "role": "seller",
+    "__v": 0
+  },
+  {
+    "name": "User 1",
+    "email": "user1@gmail.com",
+    "password": "$2a$10$YwtN.mZGvOLA0hWJpv.H2.58ybuEJAmQLoU.H7xy6F0/fu0OsImYW",
+    "logo": "http://example.com/logo",
+    "mobile": 1789101212,
+    "address": "Address here",
+    "district": "Satkhira",
+    "webOrPageLink": "http://example.com",
+    "role": "user",
+    "__v": 0
+  },
+  {
+    "name": "User 2",
+    "email": "user2@gmail.com",
+    "password": "$2a$10$tIxnje52zOelzktqFF1jw.m1EjtFWMRG88efJ/ITbVcSJjkkWBV36",
+    "logo": "http://example.com/logo",
+    "mobile": 1789101212,
+    "address": "Address here",
+    "district": "Satkhira",
+    "webOrPageLink": "http://example.com",
+    "role": "user",
+    "__v": 0
+  }
+]

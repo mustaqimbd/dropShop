@@ -1,6 +1,6 @@
 const { clientUrl } = require("../secret");
 
-const emailData = (email, name, token) => {
+const registerRequestEmailData = (email, name, token) => {
   const emailInfo = {
     email,
     subject:
@@ -13,7 +13,7 @@ const emailData = (email, name, token) => {
     </div>
     <p>Hi ${name}.Please verify you email address.This link will expires in 10 min.</p>
     <a href="${clientUrl}/accounts/verify/${token}" style="text-decoration: none;"><button
-            style="border: none;padding-inline: 20px;padding-block: 10px;background-color: #83B735;border-radius: 3px;color: #fff;font-weight: bold; cursor: pointer;">
+            style="border: none;padding: 10px;background-color: #83B735;border-radius: 3px;color: #fff;font-weight: bold; cursor: pointer;">
             Verify Email
         </button></a>
 </div>
@@ -21,4 +21,4 @@ const emailData = (email, name, token) => {
   };
   return emailInfo;
 };
-module.exports = emailData;
+module.exports = registerRequestEmailData;
