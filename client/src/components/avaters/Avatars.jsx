@@ -13,4 +13,13 @@ const HighLightProductImg = ({ src }) => {
   );
 };
 
-export { CategoryImg, HighLightProductImg };
+const FeaturedProductImage = ({src, title}) =>{
+  return (
+    <div className="h-44 w-52 p-5">
+      <img src={src} alt={title} className=" object-scale-down"/>
+    </div>
+  )
+}
+
+
+export { CategoryImg, HighLightProductImg , FeaturedProductImage};

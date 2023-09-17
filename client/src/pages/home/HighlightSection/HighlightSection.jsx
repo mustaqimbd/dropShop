@@ -15,7 +15,7 @@ const HighlightSection = () => {
         console.log(data);
         setTopRate(data.payload.topRatedProducts);
         setTopSelling(data.payload.topSellingProducts);
-        console.log(topRate);
+        // console.log(topRate);
       });
   }, []);
 

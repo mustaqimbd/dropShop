@@ -1,3325 +1,3327 @@
-[{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdce6"
-  },
-  "product_name": "ULTRABOOST 22 SHOES",
-  "product_id": "THYMP97X",
-  "images": [
-    {
-      "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/fbaf991a78bc4896a3e9ad7800abcec6_9366/Ultraboost_22_Shoes_Black_GZ0127_01_standard.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdce7"
-      }
-    }
-  ],
-  "ratings": 4,
-  "reseller_price": 93,
-  "suggested_price": 102.3,
-  "warranty": "8 Days warranty",
-  "available_quantity": 18,
-  "total_sold": 0,
-  "description": "This is the short description of this product.Thank you.",
-  "hot": 1,
-  "discount": 11,
-  "category": "Men's Sneaker",
-  "slug": "mens-sneaker",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.347Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.347Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdce8"
-  },
-  "product_name": "LUNAR NEW YEAR ULTRABOOST DNA SHOES",
-  "product_id": "YSH11E1S",
-  "images": [
-    {
-      "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/2cee64414e1f4f31baf1ae270099d950_9366/Lunar_New_Year_Ultraboost_DNA_Shoes_Black_GZ6074_01_standard.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdce9"
-      }
-    }
-  ],
-  "ratings": 5,
-  "reseller_price": 182,
-  "suggested_price": 200.2,
-  "warranty": "11 Days warranty",
-  "available_quantity": 9,
-  "total_sold": 0,
-  "description": "This is the short description of this product.Thank you.",
-  "hot": 1,
-  "discount": 10,
-  "category": "Men's Sneaker",
-  "slug": "mens-sneaker",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.348Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.348Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdcea"
-  },
-  "product_name": "SUPERNOVA SHOES",
-  "product_id": "A7JZ0RZD",
-  "images": [
-    {
-      "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/69cbc73d0cb846889f89acbb011e68cb_9366/Supernova_Shoes_Black_S42722_01_standard.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdceb"
-      }
-    }
-  ],
-  "ratings": 4,
-  "reseller_price": 126,
-  "suggested_price": 138.6,
-  "warranty": "7 Days warranty",
-  "available_quantity": 5,
-  "total_sold": 0,
-  "description": "This is the short description of this product.Thank you.",
-  "hot": 0,
-  "discount": 1,
-  "category": "Men's Sneaker",
-  "slug": "mens-sneaker",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.348Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.348Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdcf0"
-  },
-  "product_name": "4DFWD PULSE SHOES",
-  "product_id": "ZZT4FQA4",
-  "images": [
-    {
-      "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/9a8256bb7ca34da49ff8ad5600bb2812_9366/4DFWD_Pulse_Shoes_White_Q46221_01_standard.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdcf1"
-      }
-    }
-  ],
-  "ratings": 4,
-  "reseller_price": 138,
-  "suggested_price": 151.8,
-  "warranty": "7 Days warranty",
-  "available_quantity": 5,
-  "total_sold": 0,
-  "description": "This is the short description of this product.Thank you.",
-  "hot": 0,
-  "discount": 8,
-  "category": "Men's Sneaker",
-  "slug": "mens-sneaker",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.348Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.348Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdcf2"
-  },
-  "product_name": "ZX 1K BOOST SHOES",
-  "product_id": "4Q3YU4U1",
-  "images": [
-    {
-      "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/0e540bae86d5456aa034ada300ebf46c_9366/ZX_1K_Boost_Shoes_Grey_H00430_01_standard.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdcf3"
-      }
-    }
-  ],
-  "ratings": 4,
-  "reseller_price": 103,
-  "suggested_price": 113.3,
-  "warranty": "12 Days warranty",
-  "available_quantity": 10,
-  "total_sold": 0,
-  "description": "This is the short description of this product.Thank you.",
-  "hot": 0,
-  "discount": 4,
-  "category": "Men's Sneaker",
-  "slug": "mens-sneaker",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.348Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.348Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdcf4"
-  },
-  "product_name": "NMD_R1 V2 SHOES",
-  "product_id": "0Y6D61MH",
-  "images": [
-    {
-      "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/c2a18c4e3f104d52a697ad6a01477bb7_9366/NMD_R1_V2_Shoes_Black_GX6367_01_standard.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdcf5"
-      }
-    }
-  ],
-  "ratings": 5,
-  "reseller_price": 280,
-  "suggested_price": 308,
-  "warranty": "11 Days warranty",
-  "available_quantity": 27,
-  "total_sold": 0,
-  "description": "This is the short description of this product.Thank you.",
-  "hot": 1,
-  "discount": 10,
-  "category": "Men's Sneaker",
-  "slug": "mens-sneaker",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.348Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.348Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdcf6"
-  },
-  "product_name": "NMD_R1 PRIMEBLUE SHOES",
-  "product_id": "NKBK2G2M",
-  "images": [
-    {
-      "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/0e03e7a2a9cb44dfac2bad6a00f95888_9366/NMD_R1_Primeblue_Shoes_White_GZ9261_01_standard.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdcf7"
-      }
-    }
-  ],
-  "ratings": 4,
-  "reseller_price": 207,
-  "suggested_price": 227.7,
-  "warranty": "12 Days warranty",
-  "available_quantity": 15,
-  "total_sold": 0,
-  "description": "This is the short description of this product.Thank you.",
-  "hot": 0,
-  "discount": 8,
-  "category": "Men's Sneaker",
-  "slug": "mens-sneaker",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.348Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.348Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdcf8"
-  },
-  "product_name": "MOVE FEELREADY SPORT TEE",
-  "product_id": "11TLOFLT",
-  "images": [
-    {
-      "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/ec81fbd781fe4aa3a8cead230019c192_9366/AEROREADY_Designed_2_Move_Feelready_Sport_Tee_Burgundy_H30268_21_model.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdcf9"
-      }
-    }
-  ],
-  "ratings": 3,
-  "reseller_price": 107,
-  "suggested_price": 117.7,
-  "warranty": "6 Days warranty",
-  "available_quantity": 21,
-  "total_sold": 0,
-  "description": "This is the short description of this product.Thank you.",
-  "hot": 1,
-  "discount": 3,
-  "category": "Men's Sneaker",
-  "slug": "mens-sneaker",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.349Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.349Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdcfa"
-  },
-  "product_name": "ADIDAS CAMO BOX GRAPHIC TEE",
-  "product_id": "R3S6EUVW",
-  "images": [
-    {
-      "link": "https://media.handball-store.com/catalog/product/cache/image/1800x/9df78eab33525d08d6e5fb8d27136e95/g/s/gs6308_app_photo_front-center_white.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdcfb"
-      }
-    }
-  ],
-  "ratings": 3,
-  "reseller_price": 42,
-  "suggested_price": 46.2,
-  "warranty": "6 Days warranty",
-  "available_quantity": 9,
-  "total_sold": 0,
-  "description": "This is the short description of this product.Thank you.",
-  "hot": 1,
-  "discount": 0,
-  "category": "Men's Sneaker",
-  "slug": "mens-sneaker",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.349Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.349Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdcfc"
-  },
-  "product_name": "ADICOLOR CLASSICS TREFOIL TEE",
-  "product_id": "3PLMSUM6",
-  "images": [
-    {
-      "link": "https://assets.adidas.com/images/w_600,f_auto,q_auto/dcc69d00b43a436e8c0aaeb000285c88_9366/Adicolor_Classics_Trefoil_Tee_White_HK5227_21_model.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdcfd"
-      }
-    }
-  ],
-  "ratings": 4,
-  "reseller_price": 270,
-  "suggested_price": 297,
-  "warranty": "12 Days warranty",
-  "available_quantity": 21,
-  "total_sold": 0,
-  "description": "This is the short description of this product.Thank you.",
-  "hot": 0,
-  "discount": 17,
-  "category": "Men's Sneaker",
-  "slug": "mens-sneaker",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.349Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.349Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdcfe"
-  },
-  "product_name": "LNY TREFOIL FILL TEE",
-  "product_id": "I6AC22YO",
-  "images": [
-    {
-      "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/c53945c38b614702ba6fae1d0164b2f1_9366/LNY_Trefoil_Fill_Tee_Black_HR9040_21_model.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdcff"
-      }
-    }
-  ],
-  "ratings": 4,
-  "reseller_price": 185,
-  "suggested_price": 203.5,
-  "warranty": "12 Days warranty",
-  "available_quantity": 21,
-  "total_sold": 0,
-  "description": "This is the short description of this product.Thank you.",
-  "hot": 1,
-  "discount": 16,
-  "category": "Men's Sneaker",
-  "slug": "mens-sneaker",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.349Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.349Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdd00"
-  },
-  "product_name": "CREATOR 365 TEE",
-  "product_id": "VLU39DKG",
-  "images": [
-    {
-      "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/c53945c38b614702ba6fae1d0164b2f1_9366/LNY_Trefoil_Fill_Tee_Black_HR9040_21_model.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdd01"
-      }
-    }
-  ],
-  "ratings": 3,
-  "reseller_price": 204,
-  "suggested_price": 224.4,
-  "warranty": "8 Days warranty",
-  "available_quantity": 26,
-  "total_sold": 0,
-  "description": "This is the short description of this product.Thank you.",
-  "hot": 0,
-  "discount": 13,
-  "category": "Men's Sneaker",
-  "slug": "mens-sneaker",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.349Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.349Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdd02"
-  },
-  "product_name": "OWN THE RUN LONG SLEEVE TEE",
-  "product_id": "3EOXU3L0",
-  "images": [
-    {
-      "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/4efda5aab9a4440ca20badb1006ee3d8_9366/Own_the_Run_Long_Sleeve_Tee_Black_H58590_21_model.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdd03"
-      }
-    }
-  ],
-  "ratings": 3,
-  "reseller_price": 94,
-  "suggested_price": 103.4,
-  "warranty": "13 Days warranty",
-  "available_quantity": 21,
-  "total_sold": 0,
-  "description": "This is the short description of this product.Thank you.",
-  "hot": 1,
-  "discount": 11,
-  "category": "Men's Sneaker",
-  "slug": "mens-sneaker",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.349Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.349Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdcec"
-  },
-  "product_name": "LITE RACER ADAPT 3.0 SHOES",
-  "product_id": "WVOZWZ39",
-  "images": [
-    {
-      "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/96a5f085fedf4e678095abad01056711_9366/Lite_Racer_Adapt_3.0_Shoes_Black_FX8802_01_standard.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdced"
-      }
-    }
-  ],
-  "ratings": 5,
-  "reseller_price": 305,
-  "suggested_price": 335.5,
-  "warranty": "9 Days warranty",
-  "available_quantity": 7,
-  "total_sold": 0,
-  "description": "This is the short description of this product.Thank you.",
-  "hot": 1,
-  "discount": 11,
-  "category": "Men's Sneaker",
-  "slug": "mens-sneaker",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.348Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.348Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdcee"
-  },
-  "product_name": "KAPTIR 2.0 SHOES",
-  "product_id": "LDT8UN8W",
-  "images": [
-    {
-      "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/0846e90b15144861b33dacf500e3cfd1_9366/Kaptir_2.0_Shoes_White_H00276_01_standard.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdcef"
-      }
-    }
-  ],
-  "ratings": 3,
-  "reseller_price": 328,
-  "suggested_price": 360.8,
-  "warranty": "11 Days warranty",
-  "available_quantity": 28,
-  "total_sold": 0,
-  "description": "This is the short description of this product.Thank you.",
-  "hot": 1,
-  "discount": 4,
-  "category": "Men's Sneaker",
-  "slug": "mens-sneaker",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.348Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.348Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdd08"
-  },
-  "product_name": "V-DAY TEE (GENDER NEUTRAL)",
-  "product_id": "BVNJN46Q",
-  "images": [
-    {
-      "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/c53945c38b614702ba6fae1d0164b2f1_9366/LNY_Trefoil_Fill_Tee_Black_HR9040_21_model.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdd09"
-      }
-    }
-  ],
-  "ratings": 4,
-  "reseller_price": 82,
-  "suggested_price": 90.2,
-  "warranty": "10 Days warranty",
-  "available_quantity": 25,
-  "total_sold": 0,
-  "description": "This is the short description of this product.Thank you.",
-  "hot": 0,
-  "discount": 18,
-  "category": "Men's Sneaker",
-  "slug": "mens-sneaker",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.349Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.349Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdd0a"
-  },
-  "product_name": "ESSENTIALS COLORBLOCK TEE",
-  "product_id": "IH70LIPE",
-  "images": [
-    {
-      "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/9889d39ac10243a2bb0fad1a0097ef07_9366/Essentials_Colorblock_Tee_Black_H14627_21_model.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdd0b"
-      }
-    }
-  ],
-  "ratings": 3,
-  "reseller_price": 232,
-  "suggested_price": 255.2,
-  "warranty": "7 Days warranty",
-  "available_quantity": 16,
-  "total_sold": 0,
-  "description": "This is the short description of this product.Thank you.",
-  "hot": 1,
-  "discount": 11,
-  "category": "Men's Sneaker",
-  "slug": "mens-sneaker",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.349Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.349Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdd0c"
-  },
-  "product_name": "TIRO TRACK PANTS",
-  "product_id": "G9M755CE",
-  "images": [
-    {
-      "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/9c7058d8677742ac8519ac3f009cdcf4_9366/Tiro_21_Track_Pants_Black_GH7305_21_model.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdd0d"
-      }
-    }
-  ],
-  "ratings": 5,
-  "reseller_price": 272,
-  "suggested_price": 299.2,
-  "warranty": "6 Days warranty",
-  "available_quantity": 27,
-  "total_sold": 0,
-  "description": "This is the short description of this product.Thank you.",
-  "hot": 1,
-  "discount": 7,
-  "category": "Men's Pants",
-  "slug": "mens-pants",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.349Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.349Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdd0e"
-  },
-  "product_name": "TIRO 21 TRACK PANTS",
-  "product_id": "FF2EP6J2",
-  "images": [
-    {
-      "link": "https://footballcentral.co.nz/cdn/shop/products/GK9666_APP_photo_front_white_700x700.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdd0f"
-      }
-    }
-  ],
-  "ratings": 5,
-  "reseller_price": 164,
-  "suggested_price": 180.4,
-  "warranty": "8 Days warranty",
-  "available_quantity": 25,
-  "total_sold": 0,
-  "description": "This is the short description of this product.Thank you.",
-  "hot": 0,
-  "discount": 14,
-  "category": "Men's Pants",
-  "slug": "mens-pants",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.350Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.350Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdd10"
-  },
-  "product_name": "PRIMEBLUE SST TRACK PANTS",
-  "product_id": "VFD0ZSQA",
-  "images": [
-    {
-      "link": "https://i.ebayimg.com/images/g/uPIAAOSwgZJga-wr/s-l1200.webp",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdd11"
-      }
-    }
-  ],
-  "ratings": 4,
-  "reseller_price": 224,
-  "suggested_price": 246.4,
-  "warranty": "6 Days warranty",
-  "available_quantity": 18,
-  "total_sold": 0,
-  "description": "This is the short description of this product.Thank you.",
-  "hot": 0,
-  "discount": 14,
-  "category": "Men's Pants",
-  "slug": "mens-pants",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.350Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.350Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdd12"
-  },
-  "product_name": "TIRO 21 TRACK PANTS",
-  "product_id": "L6NW2JC6",
-  "images": [
-    {
-      "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/9c7058d8677742ac8519ac3f009cdcf4_9366/Tiro_21_Track_Pants_Black_GH7305_21_model.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdd13"
-      }
-    }
-  ],
-  "ratings": 3,
-  "reseller_price": 267,
-  "suggested_price": 293.7,
-  "warranty": "7 Days warranty",
-  "available_quantity": 9,
-  "total_sold": 0,
-  "description": "This is the short description of this product.Thank you.",
-  "hot": 1,
-  "discount": 16,
-  "category": "Men's Pants",
-  "slug": "mens-pants",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.350Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.350Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdd14"
-  },
-  "product_name": "TIRO TRACK PANTS RED",
-  "product_id": "LH4MRFEH",
-  "images": [
-    {
-      "link": "https://assets.adidas.com/images/w_600,f_auto,q_auto/dc224d1db3b94823a8d3af3500f6b97e_9366/Tiro_Suit-Up_Advanced_Track_Pants_Red_HY3784_01_laydown.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdd15"
-      }
-    }
-  ],
-  "ratings": 4,
-  "reseller_price": 115,
-  "suggested_price": 126.5,
-  "warranty": "12 Days warranty",
-  "available_quantity": 33,
-  "total_sold": 0,
-  "description": "This is the short description of this product.Thank you.",
-  "hot": 1,
-  "discount": 4,
-  "category": "Men's Pants",
-  "slug": "mens-pants",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.350Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.350Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdd16"
-  },
-  "product_name": "TIRO PANTS BLACK GOLD",
-  "product_id": "80CWE9L3",
-  "images": [
-    {
-      "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/c447324cf06544b78105ade500fd9e2f_9366/Tiro_Pants_Black_HI1073_21_model.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdd17"
-      }
-    }
-  ],
-  "ratings": 5,
-  "reseller_price": 259,
-  "suggested_price": 284.9,
-  "warranty": "14 Days warranty",
-  "available_quantity": 22,
-  "total_sold": 0,
-  "description": "This is the short description of this product.Thank you.",
-  "hot": 0,
-  "discount": 14,
-  "category": "Men's Pants",
-  "slug": "mens-pants",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.350Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.350Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdd18"
-  },
-  "product_name": "TAPERED-CUFF 3-STRIPES PANTS",
-  "product_id": "O592XS4O",
-  "images": [
-    {
-      "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/9c7058d8677742ac8519ac3f009cdcf4_9366/Tiro_21_Track_Pants_Black_GH7305_21_model.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdd19"
-      }
-    }
-  ],
-  "ratings": 3,
-  "reseller_price": 255,
-  "suggested_price": 280.5,
-  "warranty": "10 Days warranty",
-  "available_quantity": 6,
-  "total_sold": 0,
-  "description": "This is the short description of this product.Thank you.",
-  "hot": 1,
-  "discount": 15,
-  "category": "Men's Pants",
-  "slug": "mens-pants",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.350Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.350Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdd1a"
-  },
-  "product_name": "FRENCH TERRY TAPERED CUFF LOGO PANTS",
-  "product_id": "X2OLQT8H",
-  "images": [
-    {
-      "link": "https://assets.adidas.com/images/w_1880,f_auto,q_auto/01d8dbf50b884760845cac80013046f8_9366/GK8979_01_laydown.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdd1b"
-      }
-    }
-  ],
-  "ratings": 3,
-  "reseller_price": 79,
-  "suggested_price": 86.9,
-  "warranty": "8 Days warranty",
-  "available_quantity": 27,
-  "total_sold": 0,
-  "description": "This is the short description of this product.Thank you.",
-  "hot": 1,
-  "discount": 11,
-  "category": "Men's Pants",
-  "slug": "mens-pants",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.350Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.350Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdd1c"
-  },
-  "product_name": "OPEN HEM 3-STRIPES TRACK PANTS",
-  "product_id": "B1RNF5T1",
-  "images": [
-    {
-      "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/1a6852ebd6ec4020a854ad2500fa5075_9366/Primegreen_Essentials_Warm-Up_Open_Hem_3-Stripes_Track_Pants_Blue_H48429_01_laydown.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdd1d"
-      }
-    }
-  ],
-  "ratings": 5,
-  "reseller_price": 95,
-  "suggested_price": 104.5,
-  "warranty": "6 Days warranty",
-  "available_quantity": 6,
-  "total_sold": 0,
-  "description": "This is the short description of this product.Thank you.",
-  "hot": 1,
-  "discount": 17,
-  "category": "Men's Pants",
-  "slug": "mens-pants",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.350Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.350Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdd1e"
-  },
-  "product_name": "ESSENTIALS4GAMEDAY PANTS",
-  "product_id": "4WTX8ANX",
-  "images": [
-    {
-      "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/64f1ba254925439d88eaad920127d77e_9366/Essentials4Gameday_Pants_Black_HE1800_21_model.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdd1f"
-      }
-    }
-  ],
-  "ratings": 5,
-  "reseller_price": 338,
-  "suggested_price": 371.8,
-  "warranty": "10 Days warranty",
-  "available_quantity": 24,
-  "total_sold": 0,
-  "description": "This is the short description of this product.Thank you.",
-  "hot": 0,
-  "discount": 19,
-  "category": "Men's Pants",
-  "slug": "mens-pants",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.350Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.350Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdd20"
-  },
-  "product_name": "TERREX FREE HIKER GORE-TEX HIKING SHOES",
-  "product_id": "S6TC23RV",
-  "images": [
-    {
-      "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/12cf12ac1c8e484ea487ad6400ee3444_9366/Terrex_Free_Hiker_Gore-Tex_Hiking_Shoes_Black_GZ0355_01_standard.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdd21"
-      }
-    }
-  ],
-  "ratings": 3,
-  "reseller_price": 338,
-  "suggested_price": 371.8,
-  "warranty": "6 Days warranty",
-  "available_quantity": 31,
-  "total_sold": 0,
-  "description": "This is the short description of this product.Thank you.",
-  "hot": 0,
-  "discount": 17,
-  "category": "Men's Boot",
-  "slug": "mens-boot",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.350Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.350Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdd22"
-  },
-  "product_name": "TERREX AX4 MID GORE-TEX HIKING SHOES",
-  "product_id": "0PB2P9PN",
-  "images": [
-    {
-      "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/dfa8c9a7d2864065b27fad7400b2e05e_9366/Terrex_AX4_Mid_GORE-TEX_Hiking_shoes_Black_FY9638_01_standard.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdd23"
-      }
-    }
-  ],
-  "ratings": 4,
-  "reseller_price": 268,
-  "suggested_price": 294.8,
-  "warranty": "8 Days warranty",
-  "available_quantity": 28,
-  "total_sold": 0,
-  "description": "This is the short description of this product.Thank you.",
-  "hot": 1,
-  "discount": 16,
-  "category": "Men's Boot",
-  "slug": "mens-boot",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.350Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.350Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdd24"
-  },
-  "product_name": "RESPONSE 3MC ADV BOOTS",
-  "product_id": "1A5ZRUOG",
-  "images": [
-    {
-      "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/b513f2cec8b440978d60ab6d014ad452_9366/Response_3MC_ADV_Boots_Black_EG9391_01_standard.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdd25"
-      }
-    }
-  ],
-  "ratings": 5,
-  "reseller_price": 275,
-  "suggested_price": 302.5,
-  "warranty": "9 Days warranty",
-  "available_quantity": 15,
-  "total_sold": 0,
-  "description": "This is the short description of this product.Thank you.",
-  "hot": 1,
-  "discount": 3,
-  "category": "Men's Boot",
-  "slug": "mens-boot",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.350Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.350Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdd26"
-  },
-  "product_name": "TACTICAL LEXICON ADV BOOTS",
-  "product_id": "IF1NR46G",
-  "images": [
-    {
-      "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/f5350f3d583c46038534ab6d01445e2a_9366/Tactical_Lexicon_ADV_Boots_Grey_EG9386_01_standard.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdd27"
-      }
-    }
-  ],
-  "ratings": 4,
-  "reseller_price": 61,
-  "suggested_price": 67.1,
-  "warranty": "9 Days warranty",
-  "available_quantity": 13,
-  "total_sold": 0,
-  "description": "This is the short description of this product.Thank you.",
-  "hot": 1,
-  "discount": 15,
-  "category": "Men's Boot",
-  "slug": "mens-boot",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.350Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.350Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdd28"
-  },
-  "product_name": "Superstar Boots",
-  "product_id": "8PK1XKKH",
-  "images": [
-    {
-      "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/6853ac5565a9407bae19ac080120d9d7_9366/Superstar_Boots_Red_FZ2642_01_standard.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdd29"
-      }
-    }
-  ],
-  "ratings": 3,
-  "reseller_price": 307,
-  "suggested_price": 337.7,
-  "warranty": "6 Days warranty",
-  "available_quantity": 23,
-  "total_sold": 0,
-  "description": "This is the short description of this product.Thank you.",
-  "hot": 0,
-  "discount": 14,
-  "category": "Men's Boot",
-  "slug": "mens-boot",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.350Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.350Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdd2a"
-  },
-  "product_name": "TACTICAL LEXICON ADV BOOTS",
-  "product_id": "9N1XLQWO",
-  "images": [
-    {
-      "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/3a819de9f29c498fae13ab6d01473c4d_9366/Tactical_Lexicon_ADV_Boots_White_EG9385_01_standard.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdd2b"
-      }
-    }
-  ],
-  "ratings": 4,
-  "reseller_price": 230,
-  "suggested_price": 253,
-  "warranty": "14 Days warranty",
-  "available_quantity": 29,
-  "total_sold": 0,
-  "description": "This is the short description of this product.Thank you.",
-  "hot": 0,
-  "discount": 8,
-  "category": "Men's Boot",
-  "slug": "mens-boot",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.350Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.350Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdd2c"
-  },
-  "product_name": "TERREX TRAILMAKER MID COLD.RDY HIKING SHOES",
-  "product_id": "4T97ZKAX",
-  "images": [
-    {
-      "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/c2ee4c27eba64258bcbaad5100e5d998_9366/Terrex_Trailmaker_Mid_COLD.RDY_Hiking_Shoes_Brown_FZ3370_01_standard.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdd2d"
-      }
-    }
-  ],
-  "ratings": 3,
-  "reseller_price": 167,
-  "suggested_price": 183.7,
-  "warranty": "7 Days warranty",
-  "available_quantity": 26,
-  "total_sold": 0,
-  "description": "This is the short description of this product.Thank you.",
-  "hot": 0,
-  "discount": 1,
-  "category": "Men's Boot",
-  "slug": "mens-boot",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.350Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.350Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdd2e"
-  },
-  "product_name": "TERREX FREE HIKER GORE-TEX HIKING SHOES",
-  "product_id": "21ZYPHD9",
-  "images": [
-    {
-      "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/efbedb26b92e4affa103ad6b008a789a_9366/Terrex_Free_Hiker_Gore-Tex_Hiking_Shoes_Grey_GZ0356_01_standard.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdd2f"
-      }
-    }
-  ],
-  "ratings": 5,
-  "reseller_price": 117,
-  "suggested_price": 128.7,
-  "warranty": "7 Days warranty",
-  "available_quantity": 15,
-  "total_sold": 0,
-  "description": "This is the short description of this product.Thank you.",
-  "hot": 0,
-  "discount": 13,
-  "category": "Men's Boot",
-  "slug": "mens-boot",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.351Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.351Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdd04"
-  },
-  "product_name": "NYC BADGE OF SPORT LOGO GRAPHIC TEE",
-  "product_id": "ZSR9AGYA",
-  "images": [
-    {
-      "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/e0101e13ac1940208478add1000e953a_9366/NYC_Badge_of_Sport_Logo_Graphic_Tee_White_HE2363_21_model.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdd05"
-      }
-    }
-  ],
-  "ratings": 3,
-  "reseller_price": 168,
-  "suggested_price": 184.8,
-  "warranty": "7 Days warranty",
-  "available_quantity": 28,
-  "total_sold": 0,
-  "description": "This is the short description of this product.Thank you.",
-  "hot": 1,
-  "discount": 2,
-  "category": "Men's Sneaker",
-  "slug": "mens-sneaker",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.349Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.349Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdd06"
-  },
-  "product_name": "RUNNER TEE",
-  "product_id": "15GYFYHU",
-  "images": [
-    {
-      "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/8c3f5445517340e8bc02ad8100ffd3f6_9366/Runner_Tee_Burgundy_H25050_21_model.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdd07"
-      }
-    }
-  ],
-  "ratings": 5,
-  "reseller_price": 136,
-  "suggested_price": 149.6,
-  "warranty": "9 Days warranty",
-  "available_quantity": 6,
-  "total_sold": 0,
-  "description": "This is the short description of this product.Thank you.",
-  "hot": 1,
-  "discount": 7,
-  "category": "Men's Sneaker",
-  "slug": "mens-sneaker",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.349Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.349Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdd34"
-  },
-  "product_name": "3-Stripes Backpack 2.0",
-  "product_id": "QKTQZOKB",
-  "images": [
-    {
-      "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/ba79ccb861fd4fd49e3aac9f006a6407_9366/3-Stripes_Backpack_2.0_Grey_EX6735_01_standard.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdd35"
-      }
-    }
-  ],
-  "ratings": 5,
-  "reseller_price": 122,
-  "suggested_price": 134.2,
-  "warranty": "12 Days warranty",
-  "available_quantity": 32,
-  "total_sold": 0,
-  "description": "This is the short description of this product.Thank you.",
-  "hot": 1,
-  "discount": 6,
-  "category": "Bag",
-  "slug": "bag",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.351Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.351Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdd36"
-  },
-  "product_name": "Trefoil Backpack",
-  "product_id": "ZY4CSF4F",
-  "images": [
-    {
-      "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/a520df1b51384c00af9caca100489f04_9366/Trefoil_Backpack_Black_EX6752_01_standard.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdd37"
-      }
-    }
-  ],
-  "ratings": 4,
-  "reseller_price": 254,
-  "suggested_price": 279.4,
-  "warranty": "13 Days warranty",
-  "available_quantity": 15,
-  "total_sold": 0,
-  "description": "This is the short description of this product.Thank you.",
-  "hot": 0,
-  "discount": 4,
-  "category": "Bag",
-  "slug": "bag",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.351Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.351Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdd38"
-  },
-  "product_name": "Santiago Lunch Bag",
-  "product_id": "TN1CBCIN",
-  "images": [
-    {
-      "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/c2aaf5e8a7924f1d9277ac9f005b5f37_9366/Santiago_Lunch_Bag_Black_EX6532_01_standard.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdd39"
-      }
-    }
-  ],
-  "ratings": 3,
-  "reseller_price": 185,
-  "suggested_price": 203.5,
-  "warranty": "14 Days warranty",
-  "available_quantity": 6,
-  "total_sold": 0,
-  "description": "This is the short description of this product.Thank you.",
-  "hot": 1,
-  "discount": 6,
-  "category": "Bag",
-  "slug": "bag",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.351Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.351Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdd3a"
-  },
-  "product_name": "Blue Version Backpack",
-  "product_id": "OAQ9RDH3",
-  "images": [
-    {
-      "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/a9e0c5635057425daab5ad0b0089194b_9366/Blue_Version_Backpack_Black_H22735_01_standard.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdd3b"
-      }
-    }
-  ],
-  "ratings": 5,
-  "reseller_price": 74,
-  "suggested_price": 81.4,
-  "warranty": "10 Days warranty",
-  "available_quantity": 20,
-  "total_sold": 0,
-  "description": "This is the short description of this product.Thank you.",
-  "hot": 1,
-  "discount": 2,
-  "category": "Bag",
-  "slug": "bag",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.351Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.351Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdd3c"
-  },
-  "product_name": "Defender Backpack",
-  "product_id": "RS0FKI1A",
-  "images": [
-    {
-      "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/d6ee0177281f42f0a254acb1016aa051_9366/Defender_Backpack_Red_EX7011_01_standard.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdd3d"
-      }
-    }
-  ],
-  "ratings": 4,
-  "reseller_price": 304,
-  "suggested_price": 334.4,
-  "warranty": "11 Days warranty",
-  "available_quantity": 7,
-  "total_sold": 0,
-  "description": "This is the short description of this product.Thank you.",
-  "hot": 1,
-  "discount": 10,
-  "category": "Bag",
-  "slug": "bag",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.351Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.351Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdd3e"
-  },
-  "product_name": "Excel Backpack",
-  "product_id": "F4YVEC0V",
-  "images": [
-    {
-      "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/ac09bb56249b43158485aca1007cc1ef_9366/Excel_Backpack_Black_EX6933_01_standard.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdd3f"
-      }
-    }
-  ],
-  "ratings": 5,
-  "reseller_price": 67,
-  "suggested_price": 73.7,
-  "warranty": "11 Days warranty",
-  "available_quantity": 20,
-  "total_sold": 0,
-  "description": "This is the short description of this product.Thank you.",
-  "hot": 1,
-  "discount": 3,
-  "category": "Bag",
-  "slug": "bag",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.351Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.351Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdd40"
-  },
-  "product_name": "Alliance Sackpack",
-  "product_id": "CHL9N49I",
-  "images": [
-    {
-      "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/2e8a6f09838d49c3b00fad4f0017f753_9366/Alliance_Sackpack_White_FZ6823_01_standard.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdd41"
-      }
-    }
-  ],
-  "ratings": 3,
-  "reseller_price": 65,
-  "suggested_price": 71.5,
-  "warranty": "7 Days warranty",
-  "available_quantity": 6,
-  "total_sold": 0,
-  "description": "This is the short description of this product.Thank you.",
-  "hot": 1,
-  "discount": 7,
-  "category": "Bag",
-  "slug": "bag",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.351Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.351Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdd42"
-  },
-  "product_name": "R.Y.V. Toploader Backpack",
-  "product_id": "RMOGKSWZ",
-  "images": [
-    {
-      "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/1c87c940836e4628852bad130101e5c6_9366/R.Y.V._Toploader_Backpack_Black_H32458_01_standard.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdd43"
-      }
-    }
-  ],
-  "ratings": 3,
-  "reseller_price": 55,
-  "suggested_price": 60.5,
-  "warranty": "14 Days warranty",
-  "available_quantity": 10,
-  "total_sold": 0,
-  "description": "This is the short description of this product.Thank you.",
-  "hot": 1,
-  "discount": 16,
-  "category": "Bag",
-  "slug": "bag",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.351Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.351Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdd44"
-  },
-  "product_name": "Adicolor Archive Backpack",
-  "product_id": "WX8N0FWY",
-  "images": [
-    {
-      "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/0bb325f9cc174ea4bed7ad9e0101b682_9366/Adicolor_Archive_Backpack_Green_HE9804_01_standard.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdd45"
-      }
-    }
-  ],
-  "ratings": 4,
-  "reseller_price": 319,
-  "suggested_price": 350.9,
-  "warranty": "6 Days warranty",
-  "available_quantity": 30,
-  "total_sold": 0,
-  "description": "This is the short description of this product.Thank you.",
-  "hot": 1,
-  "discount": 18,
-  "category": "Bag",
-  "slug": "bag",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.351Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.351Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdd46"
-  },
-  "product_name": "R.Y.V. Backpack",
-  "product_id": "SYXLR6A2",
-  "images": [
-    {
-      "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/dc7dca21df62473ea518ade101251809_9366/R.Y.V._Backpack_Black_HD9650_01_standard.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdd47"
-      }
-    }
-  ],
-  "ratings": 5,
-  "reseller_price": 303,
-  "suggested_price": 333.3,
-  "warranty": "7 Days warranty",
-  "available_quantity": 27,
-  "total_sold": 0,
-  "description": "This is the short description of this product.Thank you.",
-  "hot": 1,
-  "discount": 4,
-  "category": "Bag",
-  "slug": "bag",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.351Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.351Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdd48"
-  },
-  "product_name": "Relaxed Strap-Back Hat",
-  "product_id": "N3YKVDIR",
-  "images": [
-    {
-      "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/4feb20f4d990407cb4f1a88a0040b212_9366/Relaxed_Strap-Back_Hat_Black_BH7137_01_standard.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdd49"
-      }
-    }
-  ],
-  "ratings": 4,
-  "reseller_price": 172,
-  "suggested_price": 189.2,
-  "warranty": "11 Days warranty",
-  "available_quantity": 24,
-  "total_sold": 0,
-  "description": "This is the short description of this product.Thank you.",
-  "hot": 0,
-  "discount": 9,
-  "category": "Cap",
-  "slug": "cap",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.351Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.351Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdd4a"
-  },
-  "product_name": "Icon Snapback Hat",
-  "product_id": "YCOSBM2U",
-  "images": [
-    {
-      "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/1e27ae8bbfb647489261ac8e015d181f_9366/Icon_Snapback_Hat_Grey_EX6798_01_standard.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdd4b"
-      }
-    }
-  ],
-  "ratings": 4,
-  "reseller_price": 219,
-  "suggested_price": 240.9,
-  "warranty": "7 Days warranty",
-  "available_quantity": 31,
-  "total_sold": 0,
-  "description": "This is the short description of this product.Thank you.",
-  "hot": 0,
-  "discount": 19,
-  "category": "Cap",
-  "slug": "cap",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.351Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.351Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdd4c"
-  },
-  "product_name": "Superlite Hat",
-  "product_id": "V75LCA1M",
-  "images": [
-    {
-      "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/0ae141db6fce44999337ac8e015954ea_9366/Superlite_Hat_Grey_EX7054_01_standard.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdd4d"
-      }
-    }
-  ],
-  "ratings": 3,
-  "reseller_price": 246,
-  "suggested_price": 270.6,
-  "warranty": "11 Days warranty",
-  "available_quantity": 23,
-  "total_sold": 0,
-  "description": "This is the short description of this product.Thank you.",
-  "hot": 0,
-  "discount": 3,
-  "category": "Cap",
-  "slug": "cap",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.351Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.351Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdd4e"
-  },
-  "product_name": "Superlite Hat",
-  "product_id": "W6G7KC7O",
-  "images": [
-    {
-      "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/272d5d9cb7b74415a6c9ac8e015a4ccc_9366/Superlite_Hat_Black_EX7048_01_standard.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdd4f"
-      }
-    }
-  ],
-  "ratings": 5,
-  "reseller_price": 325,
-  "suggested_price": 357.5,
-  "warranty": "8 Days warranty",
-  "available_quantity": 19,
-  "total_sold": 0,
-  "description": "This is the short description of this product.Thank you.",
-  "hot": 1,
-  "discount": 4,
-  "category": "Cap",
-  "slug": "cap",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.351Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.351Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdd50"
-  },
-  "product_name": "Tee Time 5-Panel Hat",
-  "product_id": "QDGP1GLW",
-  "images": [
-    {
-      "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/df67ab60b5574c368b76adf9010f2d2d_9366/Tee_Time_5-Panel_Hat_Black_HA9254_01_standard.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdd51"
-      }
-    }
-  ],
-  "ratings": 4,
-  "reseller_price": 53,
-  "suggested_price": 58.3,
-  "warranty": "6 Days warranty",
-  "available_quantity": 11,
-  "total_sold": 0,
-  "description": "This is the short description of this product.Thank you.",
-  "hot": 1,
-  "discount": 19,
-  "category": "Cap",
-  "slug": "cap",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.351Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.351Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdd30"
-  },
-  "product_name": "TERREX AGRAVIC TECH PRO TRAIL RUNNING SHOES",
-  "product_id": "SHLG843S",
-  "images": [
-    {
-      "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/0a340319370844e99645abc90091df96_9366/Terrex_Agravic_Tech_Pro_Trail_Running_Shoes_Black_FU7634_01_standard.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdd31"
-      }
-    }
-  ],
-  "ratings": 3,
-  "reseller_price": 118,
-  "suggested_price": 129.8,
-  "warranty": "10 Days warranty",
-  "available_quantity": 21,
-  "total_sold": 0,
-  "description": "This is the short description of this product.Thank you.",
-  "hot": 1,
-  "discount": 10,
-  "category": "Men's Boot",
-  "slug": "mens-boot",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.351Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.351Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdd32"
-  },
-  "product_name": "TERREX FREE HIKER COLD.RDY HIKING BOOTS",
-  "product_id": "9XR288EL",
-  "images": [
-    {
-      "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/2ded0bee28b249bbb19cad5000818b77_9366/Terrex_Free_Hiker_COLD.RDY_Hiking_Boots_Black_FZ3364_01_standard.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdd33"
-      }
-    }
-  ],
-  "ratings": 5,
-  "reseller_price": 292,
-  "suggested_price": 321.2,
-  "warranty": "12 Days warranty",
-  "available_quantity": 14,
-  "total_sold": 0,
-  "description": "This is the short description of this product.Thank you.",
-  "hot": 1,
-  "discount": 0,
-  "category": "Men's Boot",
-  "slug": "mens-boot",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.351Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.351Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdd56"
-  },
-  "product_name": "UNISEX ORIGINALS WASHED BUCKET",
-  "product_id": "45M4QXVB",
-  "images": [
-    {
-      "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/e1e758585df14bbbb7d8aaf000c95bd7_9366/UNISEX_ORIGINALS_WASHED_BUCKET_White_CM3933_01_standard.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdd57"
-      }
-    }
-  ],
-  "ratings": 4,
-  "reseller_price": 184,
-  "suggested_price": 202.4,
-  "warranty": "10 Days warranty",
-  "available_quantity": 10,
-  "total_sold": 0,
-  "description": "This is the short description of this product.Thank you.",
-  "hot": 0,
-  "discount": 16,
-  "category": "Cap",
-  "slug": "cap",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.352Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.352Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdd58"
-  },
-  "product_name": "SST Plus Strap-Back Hat",
-  "product_id": "QV9T26ET",
-  "images": [
-    {
-      "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/92e77a8d84d845d19171ad50003f2ea1_9366/SST_Plus_Strap-Back_Hat_White_FZ8569_01_standard.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdd59"
-      }
-    }
-  ],
-  "ratings": 4,
-  "reseller_price": 131,
-  "suggested_price": 144.1,
-  "warranty": "6 Days warranty",
-  "available_quantity": 29,
-  "total_sold": 0,
-  "description": "This is the short description of this product.Thank you.",
-  "hot": 0,
-  "discount": 5,
-  "category": "Cap",
-  "slug": "cap",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.352Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.352Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdd5a"
-  },
-  "product_name": "Dispatch Trucker Hat",
-  "product_id": "SCPQL7CV",
-  "images": [
-    {
-      "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/c3981523051c4a978674ad3c01015664_9366/Dispatch_Trucker_Hat_Black_EY5534_01_standard.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdd5b"
-      }
-    }
-  ],
-  "ratings": 4,
-  "reseller_price": 224,
-  "suggested_price": 246.4,
-  "warranty": "8 Days warranty",
-  "available_quantity": 5,
-  "total_sold": 0,
-  "description": "This is the short description of this product.Thank you.",
-  "hot": 1,
-  "discount": 16,
-  "category": "Cap",
-  "slug": "cap",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.352Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.352Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdd5c"
-  },
-  "product_name": "adidas Z.N.E. 01 True Wireless Earbuds",
-  "product_id": "U7RW7LQD",
-  "images": [
-    {
-      "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/00276c6c380b41bcb29fadcc00f98312_9366/adidas_Z.N.E._01_True_Wireless_Earbuds_Grey_EY5116_42_detail.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdd5d"
-      }
-    }
-  ],
-  "ratings": 5,
-  "reseller_price": 272,
-  "suggested_price": 299.2,
-  "warranty": "6 Days warranty",
-  "available_quantity": 21,
-  "total_sold": 0,
-  "description": "This is the short description of this product.Thank you.",
-  "hot": 1,
-  "discount": 16,
-  "category": "Earphones",
-  "slug": "earphones",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.352Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.352Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdd5e"
-  },
-  "product_name": "adidas Z.N.E. 01 ANC True Wireless Earbuds",
-  "product_id": "SUAB9IDF",
-  "images": [
-    {
-      "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/b322cdef8e654551ace9adcc00f963ed_9366/adidas_Z.N.E._01_ANC_True_Wireless_Earbuds_Grey_EY5114_41_detail.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdd5f"
-      }
-    }
-  ],
-  "ratings": 5,
-  "reseller_price": 46,
-  "suggested_price": 50.6,
-  "warranty": "7 Days warranty",
-  "available_quantity": 15,
-  "total_sold": 0,
-  "description": "This is the short description of this product.Thank you.",
-  "hot": 1,
-  "discount": 10,
-  "category": "Earphones",
-  "slug": "earphones",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.352Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.352Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdd60"
-  },
-  "product_name": "FWD-01 Sport In-Ear Headphones",
-  "product_id": "SH7LCO5H",
-  "images": [
-    {
-      "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/2cdb8652aa2340369ba2aa79010062d1_9366/FWD-01_Sport_In-Ear_Headphones_Black_CM5016_01_standard.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdd61"
-      }
-    }
-  ],
-  "ratings": 4,
-  "reseller_price": 157,
-  "suggested_price": 172.7,
-  "warranty": "10 Days warranty",
-  "available_quantity": 32,
-  "total_sold": 0,
-  "description": "This is the short description of this product.Thank you.",
-  "hot": 0,
-  "discount": 16,
-  "category": "Earphones",
-  "slug": "earphones",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.352Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.352Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdd62"
-  },
-  "product_name": "adidas FWD-02 Sport True Wireless Earbuds",
-  "product_id": "HLZ5LHW0",
-  "images": [
-    {
-      "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/523731a02e914d318cb4adcc00f985ba_9366/adidas_FWD-02_Sport_True_Wireless_Earbuds_Grey_EY5113_03_standard_hover.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdd63"
-      }
-    }
-  ],
-  "ratings": 4,
-  "reseller_price": 198,
-  "suggested_price": 217.8,
-  "warranty": "9 Days warranty",
-  "available_quantity": 20,
-  "total_sold": 0,
-  "description": "This is the short description of this product.Thank you.",
-  "hot": 1,
-  "discount": 18,
-  "category": "Earphones",
-  "slug": "earphones",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.352Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.352Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdd64"
-  },
-  "product_name": "adidas Z.N.E. 01 ANC True Wireless Earbuds",
-  "product_id": "QVOKTIU6",
-  "images": [
-    {
-      "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/9e6e7967b3b24ef298f5adcc00f983ec_9366/adidas_Z.N.E._01_ANC_True_Wireless_Earbuds_Grey_EY5115_41_detail.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdd65"
-      }
-    }
-  ],
-  "ratings": 5,
-  "reseller_price": 175,
-  "suggested_price": 192.5,
-  "warranty": "13 Days warranty",
-  "available_quantity": 30,
-  "total_sold": 0,
-  "description": "This is the short description of this product.Thank you.",
-  "hot": 0,
-  "discount": 18,
-  "category": "Earphones",
-  "slug": "earphones",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.352Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.352Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdd66"
-  },
-  "product_name": "RPT-01 Sport On-Ear Headphones",
-  "product_id": "OY977NOF",
-  "images": [
-    {
-      "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/c697ceddb0c2469aaa2eaa7101121d10_9366/RPT-01_Sport_On-Ear_Headphones_Black_CM5015_01_standard.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdd67"
-      }
-    }
-  ],
-  "ratings": 5,
-  "reseller_price": 144,
-  "suggested_price": 158.4,
-  "warranty": "8 Days warranty",
-  "available_quantity": 31,
-  "total_sold": 0,
-  "description": "This is the short description of this product.Thank you.",
-  "hot": 1,
-  "discount": 11,
-  "category": "Earphones",
-  "slug": "earphones",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.352Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.352Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdd68"
-  },
-  "product_name": "Steel Metal Bottle 1L",
-  "product_id": "RVDZ7UR6",
-  "images": [
-    {
-      "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/a9c04ca9fa51408faf2fac8e0117abb9_9366/Steel_Metal_Bottle_1L_Black_EX7288_01_standard.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdd69"
-      }
-    }
-  ],
-  "ratings": 4,
-  "reseller_price": 252,
-  "suggested_price": 277.2,
-  "warranty": "10 Days warranty",
-  "available_quantity": 23,
-  "total_sold": 0,
-  "description": "This is the short description of this product.Thank you.",
-  "hot": 1,
-  "discount": 5,
-  "category": "Bottle",
-  "slug": "bottle",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.352Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.352Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdd6a"
-  },
-  "product_name": "Steel Metal Bottle 1L",
-  "product_id": "IRUF4PCF",
-  "images": [
-    {
-      "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/c45df020e3ae4e9199a4ac7d0001cfb7_9366/Steel_Metal_Bottle_1L_White_EX7301_01_standard.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdd6b"
-      }
-    }
-  ],
-  "ratings": 5,
-  "reseller_price": 58,
-  "suggested_price": 63.8,
-  "warranty": "6 Days warranty",
-  "available_quantity": 22,
-  "total_sold": 0,
-  "description": "This is the short description of this product.Thank you.",
-  "hot": 0,
-  "discount": 0,
-  "category": "Bottle",
-  "slug": "bottle",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.352Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.352Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdd6c"
-  },
-  "product_name": "Steel Metal Bottle 1 L",
-  "product_id": "LB1QH0II",
-  "images": [
-    {
-      "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/c670a94f6388451a868fad440014460d_9366/Steel_Metal_Bottle_1_L_Purple_EY5529_01_standard.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdd6d"
-      }
-    }
-  ],
-  "ratings": 5,
-  "reseller_price": 178,
-  "suggested_price": 195.8,
-  "warranty": "11 Days warranty",
-  "available_quantity": 5,
-  "total_sold": 0,
-  "description": "This is the short description of this product.Thank you.",
-  "hot": 1,
-  "discount": 13,
-  "category": "Bottle",
-  "slug": "bottle",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.352Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.352Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdd6e"
-  },
-  "product_name": "Steel Metal Bottle 1L",
-  "product_id": "B9FZJD6V",
-  "images": [
-    {
-      "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/29ef510920b54492a721aa1c01782cb2_9366/Steel_Metal_Bottle_1L_White_CL6092_01_standard.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdd6f"
-      }
-    }
-  ],
-  "ratings": 5,
-  "reseller_price": 175,
-  "suggested_price": 192.5,
-  "warranty": "11 Days warranty",
-  "available_quantity": 32,
-  "total_sold": 0,
-  "description": "This is the short description of this product.Thank you.",
-  "hot": 0,
-  "discount": 16,
-  "category": "Bottle",
-  "slug": "bottle",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.352Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.352Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdd70"
-  },
-  "product_name": "Steel Metal Bottle 600 ML",
-  "product_id": "7RC8KFRA",
-  "images": [
-    {
-      "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/1105dc0c9232477eb80dac7d000edc0c_9366/Steel_Metal_Bottle_600_ML_White_EX7306_01_standard.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdd71"
-      }
-    }
-  ],
-  "ratings": 4,
-  "reseller_price": 227,
-  "suggested_price": 249.7,
-  "warranty": "9 Days warranty",
-  "available_quantity": 19,
-  "total_sold": 0,
-  "description": "This is the short description of this product.Thank you.",
-  "hot": 1,
-  "discount": 13,
-  "category": "Bottle",
-  "slug": "bottle",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.352Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.352Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdd72"
-  },
-  "product_name": "Steel Straw Metal Bottle 600 ML",
-  "product_id": "6FDLHZZ8",
-  "images": [
-    {
-      "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/f7fb63986ed34112bc57ac7d002c9f43_9366/Steel_Straw_Metal_Bottle_600_ML_White_EX7316_01_standard.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdd73"
-      }
-    }
-  ],
-  "ratings": 3,
-  "reseller_price": 234,
-  "suggested_price": 257.4,
-  "warranty": "14 Days warranty",
-  "available_quantity": 18,
-  "total_sold": 0,
-  "description": "This is the short description of this product.Thank you.",
-  "hot": 1,
-  "discount": 15,
-  "category": "Bottle",
-  "slug": "bottle",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.352Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.352Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdd74"
-  },
-  "product_name": "Steel Metal Bottle 600 ML",
-  "product_id": "F2BKY7LM",
-  "images": [
-    {
-      "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/e2d870a680644e4d98e9ac7d0008ecc7_9366/Steel_Metal_Bottle_600_ML_Yellow_EX7307_01_standard.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdd75"
-      }
-    }
-  ],
-  "ratings": 5,
-  "reseller_price": 245,
-  "suggested_price": 269.5,
-  "warranty": "12 Days warranty",
-  "available_quantity": 14,
-  "total_sold": 0,
-  "description": "This is the short description of this product.Thank you.",
-  "hot": 0,
-  "discount": 0,
-  "category": "Bottle",
-  "slug": "bottle",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.352Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.352Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdd76"
-  },
-  "product_name": "Squad Glass Bottle 720 ML",
-  "product_id": "06CNYZ8N",
-  "images": [
-    {
-      "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/77ad16764abf4e828560ad44001cd640_9366/Squad_Glass_Bottle_720_ML_Black_FZ7115_01_standard.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdd77"
-      }
-    }
-  ],
-  "ratings": 3,
-  "reseller_price": 118,
-  "suggested_price": 129.8,
-  "warranty": "6 Days warranty",
-  "available_quantity": 33,
-  "total_sold": 0,
-  "description": "This is the short description of this product.Thank you.",
-  "hot": 1,
-  "discount": 2,
-  "category": "Bottle",
-  "slug": "bottle",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.352Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.352Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdd78"
-  },
-  "product_name": "Steel Bottle 600 ML",
-  "product_id": "YPOZEIO9",
-  "images": [
-    {
-      "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/48057b65216644f683a9aa1c0172ae6e_9366/Steel_Bottle_600_ML_Black_CL6093_01_standard.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdd79"
-      }
-    }
-  ],
-  "ratings": 5,
-  "reseller_price": 186,
-  "suggested_price": 204.6,
-  "warranty": "14 Days warranty",
-  "available_quantity": 23,
-  "total_sold": 0,
-  "description": "This is the short description of this product.Thank you.",
-  "hot": 1,
-  "discount": 10,
-  "category": "Bottle",
-  "slug": "bottle",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.352Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.352Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdd7a"
-  },
-  "product_name": "Steel Metal Bottle 2L",
-  "product_id": "QZU6G0OF",
-  "images": [
-    {
-      "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/f8d89293c9cb4bf08d52adb100f95a3a_9366/Steel_Metal_Bottle_2L_Black_EX7302_01_standard.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdd7b"
-      }
-    }
-  ],
-  "ratings": 4,
-  "reseller_price": 290,
-  "suggested_price": 319,
-  "warranty": "12 Days warranty",
-  "available_quantity": 33,
-  "total_sold": 0,
-  "description": "This is the short description of this product.Thank you.",
-  "hot": 0,
-  "discount": 16,
-  "category": "Bottle",
-  "slug": "bottle",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.352Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.352Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdd7c"
-  },
-  "product_name": "Fjallraven - Foldsack No. 1 Backpack",
-  "product_id": "ZDROJTF7",
-  "images": [
-    {
-      "link": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdd7d"
-      }
-    }
-  ],
-  "ratings": 4.3,
-  "reseller_price": 124,
-  "suggested_price": 136.4,
-  "warranty": "12 Days warranty",
-  "available_quantity": 34,
-  "total_sold": 0,
-  "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
-  "hot": 1,
-  "discount": 15,
-  "category": "Bag",
-  "slug": "bag",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.352Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.352Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdd7e"
-  },
-  "product_name": "Mens Casual Premium Slim Fit T-Shirts",
-  "product_id": "QYMJ42OU",
-  "images": [
-    {
-      "link": "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdd7f"
-      }
-    }
-  ],
-  "ratings": 4.1,
-  "reseller_price": 44,
-  "suggested_price": 48.4,
-  "warranty": "14 Days warranty",
-  "available_quantity": 45,
-  "total_sold": 0,
-  "description": "Slim-fitting style, contrast raglan long sleeve, three-button Henley placket, light weight & soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.",
-  "hot": 0,
-  "discount": 5,
-  "category": "T-Shirt",
-  "slug": "t-shirt",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.353Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.353Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdd80"
-  },
-  "product_name": "Men's Cotton Jacket",
-  "product_id": "AWSAUNUT",
-  "images": [
-    {
-      "link": "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdd81"
-      }
-    }
-  ],
-  "ratings": 3.8,
-  "reseller_price": 66.69,
-  "suggested_price": 73.359,
-  "warranty": "10 Days warranty",
-  "available_quantity": 34,
-  "total_sold": 0,
-  "description": "Great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.",
-  "hot": 1,
-  "discount": 7,
-  "category": "Jacket",
-  "slug": "jacket",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.353Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.353Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdd52"
-  },
-  "product_name": "Baseball Cap",
-  "product_id": "Z7CKUSJX",
-  "images": [
-    {
-      "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/0ce5f49aa0914deabf16adc600d09e60_9366/Baseball_Cap_Black_HD7039_01_standard.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdd53"
-      }
-    }
-  ],
-  "ratings": 5,
-  "reseller_price": 184,
-  "suggested_price": 202.4,
-  "warranty": "10 Days warranty",
-  "available_quantity": 23,
-  "total_sold": 0,
-  "description": "This is the short description of this product.Thank you.",
-  "hot": 1,
-  "discount": 15,
-  "category": "Cap",
-  "slug": "cap",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.351Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.351Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdd54"
-  },
-  "product_name": "Relaxed Strap-Back Hat",
-  "product_id": "1P7MT8OS",
-  "images": [
-    {
-      "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/aaa5ae549c624178bc25a740012dd61f_9366/Relaxed_Strap-Back_Hat_White_BH7135_01_standard.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdd55"
-      }
-    }
-  ],
-  "ratings": 5,
-  "reseller_price": 194,
-  "suggested_price": 213.4,
-  "warranty": "6 Days warranty",
-  "available_quantity": 12,
-  "total_sold": 0,
-  "description": "This is the short description of this product.Thank you.",
-  "hot": 0,
-  "discount": 6,
-  "category": "Cap",
-  "slug": "cap",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.352Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.352Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdd86"
-  },
-  "product_name": "Solid Gold Petite Micropave",
-  "product_id": "CRK87R03",
-  "images": [
-    {
-      "link": "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdd87"
-      }
-    }
-  ],
-  "ratings": 4.7,
-  "reseller_price": 145,
-  "suggested_price": 159.5,
-  "warranty": "10 Days warranty",
-  "available_quantity": 8,
-  "total_sold": 0,
-  "description": "Satisfaction Guaranteed. Return or exchange any order within 30 days.Designed and sold by Hafeez Center in the United States. Satisfaction Guaranteed. Return or exchange any order within 30 days.",
-  "hot": 0,
-  "discount": 16,
-  "category": "Jewelery",
-  "slug": "jewelery",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.353Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.353Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdd88"
-  },
-  "product_name": "White Gold Plated Princess",
-  "product_id": "9XRENPK0",
-  "images": [
-    {
-      "link": "https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdd89"
-      }
-    }
-  ],
-  "ratings": 5,
-  "reseller_price": 189,
-  "suggested_price": 207.9,
-  "warranty": "7 Days warranty",
-  "available_quantity": 13,
-  "total_sold": 0,
-  "description": "Classic Created Wedding Engagement Solitaire Diamond Promise Ring for Her. Gifts to spoil your love more for Engagement, Wedding, Anniversary, Valentine's Day...",
-  "hot": 0,
-  "discount": 11,
-  "category": "Jewelery",
-  "slug": "jewelery",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.353Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.353Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdd8a"
-  },
-  "product_name": "Pierced Owl Rose Gold Plated Stainless Steel Double",
-  "product_id": "L73W1RSH",
-  "images": [
-    {
-      "link": "https://fakestoreapi.com/img/51UDEzMJVpL._AC_UL640_QL65_ML3_.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdd8b"
-      }
-    }
-  ],
-  "ratings": 3.4,
-  "reseller_price": 30,
-  "suggested_price": 33,
-  "warranty": "6 Days warranty",
-  "available_quantity": 40,
-  "total_sold": 0,
-  "description": "Rose Gold Plated Double Flared Tunnel Plug Earrings. Made of 316L Stainless Steel",
-  "hot": 0,
-  "discount": 15,
-  "category": "Jewelery",
-  "slug": "jewelery",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.353Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.353Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdd8c"
-  },
-  "product_name": "WD 2TB Elements Portable External Hard Drive - USB 3.0",
-  "product_id": "P2A6UHCZ",
-  "images": [
-    {
-      "link": "https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdd8d"
-      }
-    }
-  ],
-  "ratings": 4.9,
-  "reseller_price": 64,
-  "suggested_price": 70.4,
-  "warranty": "8 Days warranty",
-  "available_quantity": 140,
-  "total_sold": 0,
-  "description": "USB 3.0 and USB 2.0 Compatibility Fast data transfers Improve PC Performance High Capacity; Compatibility Formatted NTFS for Windows 10, Windows 8.1, Windows 7; Reformatting may be required for other operating systems; Compatibility may vary depending on user’s hardware configuration and operating system",
-  "hot": 1,
-  "discount": 17,
-  "category": "Hard drive",
-  "slug": "hard-drive",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.353Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.353Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdd8e"
-  },
-  "product_name": "SanDisk SSD PLUS 1TB Internal SSD - SATA III 6 Gb/s",
-  "product_id": "76SDP10B",
-  "images": [
-    {
-      "link": "https://fakestoreapi.com/img/61U7T1koQqL._AC_SX679_.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdd8f"
-      }
-    }
-  ],
-  "ratings": 4.5,
-  "reseller_price": 109,
-  "suggested_price": 119.9,
-  "warranty": "14 Days warranty",
-  "available_quantity": 10,
-  "total_sold": 0,
-  "description": "Easy upgrade for faster boot up, shutdown, application load and response (As compared to 5400 RPM SATA 2.5” hard drive; Based on published specifications and internal benchmarking tests using PCMark vantage scores) Boosts burst write performance, making it ideal for typical PC workloads The perfect balance of performance and reliability Read/write speeds of up to 535MB/s/450MB/s (Based on internal testing; Performance may vary depending upon drive capacity, host device, OS and application.)",
-  "hot": 0,
-  "discount": 18,
-  "category": "SSD card",
-  "slug": "ssd-card",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.353Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.353Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdd90"
-  },
-  "product_name": "Silicon Power 256GB SSD 3D NAND A55 SLC Cache Performance Boost SATA III 2.5",
-  "product_id": "KLKMYXDJ",
-  "images": [
-    {
-      "link": "https://fakestoreapi.com/img/71kWymZ+c+L._AC_SX679_.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdd91"
-      }
-    }
-  ],
-  "ratings": 4.1,
-  "reseller_price": 109,
-  "suggested_price": 119.9,
-  "warranty": "13 Days warranty",
-  "available_quantity": 20,
-  "total_sold": 0,
-  "description": "3D NAND flash are applied to deliver high transfer speeds Remarkable transfer speeds that enable faster bootup and improved overall system performance. The advanced SLC Cache Technology allows performance boost and longer lifespan 7mm slim design suitable for Ultrabooks and Ultra-slim notebooks. Supports TRIM command, Garbage Collection technology, RAID, and ECC (Error Checking & Correction) to provide the optimized performance and enhanced reliability.",
-  "hot": 0,
-  "discount": 12,
-  "category": "SSD card",
-  "slug": "ssd-card",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.353Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.353Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdd92"
-  },
-  "product_name": "WD 4TB Gaming Drive Works with Playstation 4 Portable External Hard Drive",
-  "product_id": "BWXZI3XB",
-  "images": [
-    {
-      "link": "https://fakestoreapi.com/img/61mtL65D4cL._AC_SX679_.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdd93"
-      }
-    }
-  ],
-  "ratings": 3.9,
-  "reseller_price": 114,
-  "suggested_price": 125.4,
-  "warranty": "9 Days warranty",
-  "available_quantity": 13,
-  "total_sold": 0,
-  "description": "Expand your PS4 gaming experience, Play anywhere Fast and easy, setup Sleek design with high capacity, 3-year manufacturer's limited warranty",
-  "hot": 0,
-  "discount": 7,
-  "category": "Hard drive",
-  "slug": "hard-drive",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.353Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.353Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdd94"
-  },
-  "product_name": "Acer SB220Q bi 21.5 inches Full HD (1920 x 1080) IPS Ultra-Thin",
-  "product_id": "WMI0BMFS",
-  "images": [
-    {
-      "link": "https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdd95"
-      }
-    }
-  ],
-  "ratings": 4.4,
-  "reseller_price": 490,
-  "suggested_price": 539,
-  "warranty": "13 Days warranty",
-  "available_quantity": 34,
-  "total_sold": 0,
-  "description": "21. 5 inches Full HD (1920 x 1080) widescreen IPS display And Radeon free Sync technology. No compatibility for VESA Mount Refresh Rate: 75Hz - Using HDMI port Zero-frame design | ultra-thin | 4ms response time | IPS panel Aspect ratio - 16: 9. Color Supported - 16. 7 million colors. Brightness - 250 nit Tilt angle -5 degree to 15 degree. Horizontal viewing angle-178 degree. Vertical viewing angle-178 degree 75 hertz",
-  "hot": 0,
-  "discount": 16,
-  "category": "Monitor",
-  "slug": "monitor",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.353Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.353Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdd96"
-  },
-  "product_name": "Samsung 49-Inch CHG90 144Hz Curved Gaming Monitor (LC49HG90DMNXZA) – Super Ultrawide Screen QLED",
-  "product_id": "MKRE71OL",
-  "images": [
-    {
-      "link": "https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdd97"
-      }
-    }
-  ],
-  "ratings": 3.5,
-  "reseller_price": 999.99,
-  "suggested_price": 1099.989,
-  "warranty": "14 Days warranty",
-  "available_quantity": 34,
-  "total_sold": 0,
-  "description": "49 INCH SUPER ULTRAWIDE 32:9 CURVED GAMING MONITOR with dual 27 inch screen side by side QUANTUM DOT (QLED) TECHNOLOGY, HDR support and factory calibration provides stunningly realistic and accurate color and contrast 144HZ HIGH REFRESH RATE and 1ms ultra fast response time work to eliminate motion blur, ghosting, and reduce input lag",
-  "hot": 1,
-  "discount": 4,
-  "category": "Monitor",
-  "slug": "monitor",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.353Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.353Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdd98"
-  },
-  "product_name": "BIYLACLESEN Women's 3-in-1 Snowboard Jacket Winter Coats",
-  "product_id": "92JS6QPG",
-  "images": [
-    {
-      "link": "https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdd99"
-      }
-    }
-  ],
-  "ratings": 4.8,
-  "reseller_price": 56.99,
-  "suggested_price": 62.689,
-  "warranty": "13 Days warranty",
-  "available_quantity": 34,
-  "total_sold": 0,
-  "description": "The Jackets is US standard size, Please choose size as your usual wear Material: 100% Polyester; Detachable Liner Fabric: Warm Fleece. Detachable Functional Liner: Skin Friendly, Lightweigt and Warm.Stand Collar Liner jacket, keep you warm in cold weather. Zippered Pockets: 2 Zippered Hand Pockets, 2 Zippered Pockets on Chest (enough to keep cards or keys)and 1 Hidden Pocket Inside.Zippered Hand Pockets and Hidden Pocket keep your things secure. Humanized Design: Adjustable and Detachable Hood and Adjustable cuff to prevent the wind and water,for a comfortable fit. 3 in 1 Detachable Design provide more convenience, you can separate the coat and inner as needed, or wear it together. It is suitable for different season and help you adapt to different climates",
-  "hot": 0,
-  "discount": 9,
-  "category": "Jacket",
-  "slug": "jacket",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.353Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.353Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdd9a"
-  },
-  "product_name": "Lock and Love Women's Removable Hooded Faux Leather Moto Biker Jacket",
-  "product_id": "KDWRRO2Y",
-  "images": [
-    {
-      "link": "https://fakestoreapi.com/img/81XH0e8fefL._AC_UY879_.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdd9b"
-      }
-    }
-  ],
-  "ratings": 5,
-  "reseller_price": 34.99,
-  "suggested_price": 38.489000000000004,
-  "warranty": "14 Days warranty",
-  "available_quantity": 67,
-  "total_sold": 0,
-  "description": "100% POLYURETHANE(shell) 100% POLYESTER(lining) 75% POLYESTER 25% COTTON (SWEATER), Faux leather material for style and comfort / 2 pockets of front, 2-For-One Hooded denim style faux leather jacket, Button detail on waist / Detail stitching at sides, HAND WASH ONLY / DO NOT BLEACH / LINE DRY / DO NOT IRON",
-  "hot": 0,
-  "discount": 5,
-  "category": "Jacket",
-  "slug": "jacket",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.353Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.353Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdd9c"
-  },
-  "product_name": "Rain Jacket Women Windbreaker Striped Climbing Raincoats",
-  "product_id": "P02GXYK7",
-  "images": [
-    {
-      "link": "https://fakestoreapi.com/img/71HblAHs5xL._AC_UY879_-2.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdd9d"
-      }
-    }
-  ],
-  "ratings": 4.6,
-  "reseller_price": 45,
-  "suggested_price": 49.5,
-  "warranty": "7 Days warranty",
-  "available_quantity": 34,
-  "total_sold": 0,
-  "description": "Lightweight perfet for trip or casual wear---Long sleeve with hooded, adjustable drawstring waist design. Button and zipper front closure raincoat, fully stripes Lined and The Raincoat has 2 side pockets are a good size to hold all kinds of things, it covers the hips, and the hood is generous but doesn't overdo it.Attached Cotton Lined Hood with Adjustable Drawstrings give it a real styled look.",
-  "hot": 1,
-  "discount": 12,
-  "category": "Raincoat",
-  "slug": "raincoat",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.353Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.353Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdd9e"
-  },
-  "product_name": "MBJ Women's Solid Short Sleeve Boat Neck V",
-  "product_id": "H2ZE67ZV",
-  "images": [
-    {
-      "link": "https://fakestoreapi.com/img/71z3kpMAYsL._AC_UY879_.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdd9f"
-      }
-    }
-  ],
-  "ratings": 4.7,
-  "reseller_price": 45,
-  "suggested_price": 49.5,
-  "warranty": "9 Days warranty",
-  "available_quantity": 34,
-  "total_sold": 0,
-  "description": "95% RAYON 5% SPANDEX, Made in USA or Imported, Do Not Bleach, Lightweight fabric with great stretch for comfort, Ribbed on sleeves and neckline / Double stitching on bottom hem.",
-  "hot": 0,
-  "discount": 17,
-  "category": "Neck V",
-  "slug": "neck-v",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.353Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.353Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdda0"
-  },
-  "product_name": "Opna Women's Short Sleeve Moisture",
-  "product_id": "K649EG5V",
-  "images": [
-    {
-      "link": "https://fakestoreapi.com/img/51eg55uWmdL._AC_UX679_.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdda1"
-      }
-    }
-  ],
-  "ratings": 4.6,
-  "reseller_price": 7.98,
-  "suggested_price": 8.778,
-  "warranty": "12 Days warranty",
-  "available_quantity": 45,
-  "total_sold": 0,
-  "description": "100% Polyester, Machine wash, 100% cationic polyester interlock, Machine Wash & Pre Shrunk for a Great Fit, Lightweight, roomy and highly breathable with moisture wicking fabric which helps to keep moisture away, Soft Lightweight Fabric with comfortable V-neck collar and a slimmer fit, delivers a sleek, more feminine silhouette and Added Comfort\",\n\"category\": \"women's clothing",
-  "hot": 0,
-  "discount": 4,
-  "category": "leeve Moisture",
-  "slug": "leeve-moisture",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.353Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.353Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdda2"
-  },
-  "product_name": "DANVOUY Womens T Shirt Casual Cotton Short",
-  "product_id": "80XVYZ7G",
-  "images": [
-    {
-      "link": "https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdda3"
-      }
-    }
-  ],
-  "ratings": 5,
-  "reseller_price": 12.99,
-  "suggested_price": 14.289,
-  "warranty": "13 Days warranty",
-  "available_quantity": 34,
-  "total_sold": 0,
-  "description": "95%Cotton,5%Spandex, Features: Casual, Short Sleeve, Letter Print,V-Neck,Fashion Tees, The fabric is soft and has some stretch., Occasion: Casual/Office/Beach/School/Home/Street. Season: Spring,Summer,Autumn,Winter.",
-  "hot": 1,
-  "discount": 19,
-  "category": "T-Shirt",
-  "slug": "t-shirt",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.353Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.353Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdd82"
-  },
-  "product_name": "Men's Casual Slim Fit",
-  "product_id": "NOD16XF8",
-  "images": [
-    {
-      "link": "https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdd83"
-      }
-    }
-  ],
-  "ratings": 4.3,
-  "reseller_price": 15.99,
-  "suggested_price": 17.589,
-  "warranty": "8 Days warranty",
-  "available_quantity": 55,
-  "total_sold": 0,
-  "description": "The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.",
-  "hot": 1,
-  "discount": 5,
-  "category": "Men's casual",
-  "slug": "mens-casual",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.353Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.353Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "65007d2c81c09bb3469bdd84"
-  },
-  "product_name": "John Hardy Women's Legends Naga",
-  "product_id": "7S2LGJO7",
-  "images": [
-    {
-      "link": "https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_.jpg",
-      "_id": {
-        "$oid": "65007d2c81c09bb3469bdd85"
-      }
-    }
-  ],
-  "ratings": 4.9,
-  "reseller_price": 200,
-  "suggested_price": 220,
-  "warranty": "9 Days warranty",
-  "available_quantity": 7,
-  "total_sold": 0,
-  "description": "From our Legends Collection, the Naga was inspired by the mythical water dragon that protects the ocean's pearl. Wear facing inward to be bestowed with love and abundance, or outward for protection.",
-  "hot": 1,
-  "discount": 14,
-  "category": "Jewelery",
-  "slug": "jewelery",
-  "totalSold": 0,
-  "is_active": true,
-  "createdAt": {
-    "$date": "2023-09-12T15:01:00.353Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-12T15:01:00.353Z"
-  },
-  "__v": 0
-}]
+[
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdce6"
+    },
+    "product_name": "ULTRABOOST 22 SHOES",
+    "product_id": "THYMP97X",
+    "images": [
+      {
+        "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/fbaf991a78bc4896a3e9ad7800abcec6_9366/Ultraboost_22_Shoes_Black_GZ0127_01_standard.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdce7"
+        }
+      }
+    ],
+    "ratings": 4,
+    "reseller_price": 93,
+    "suggested_price": 102.3,
+    "warranty": "8 Days warranty",
+    "available_quantity": 18,
+    "total_sold": 0,
+    "description": "This is the short description of this product.Thank you.",
+    "hot": 1,
+    "discount": 11,
+    "category": "Men's Sneaker",
+    "slug": "mens-sneaker",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.347Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.347Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdce8"
+    },
+    "product_name": "LUNAR NEW YEAR ULTRABOOST DNA SHOES",
+    "product_id": "YSH11E1S",
+    "images": [
+      {
+        "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/2cee64414e1f4f31baf1ae270099d950_9366/Lunar_New_Year_Ultraboost_DNA_Shoes_Black_GZ6074_01_standard.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdce9"
+        }
+      }
+    ],
+    "ratings": 5,
+    "reseller_price": 182,
+    "suggested_price": 200.2,
+    "warranty": "11 Days warranty",
+    "available_quantity": 9,
+    "total_sold": 0,
+    "description": "This is the short description of this product.Thank you.",
+    "hot": 1,
+    "discount": 10,
+    "category": "Men's Sneaker",
+    "slug": "mens-sneaker",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.348Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.348Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdcea"
+    },
+    "product_name": "SUPERNOVA SHOES",
+    "product_id": "A7JZ0RZD",
+    "images": [
+      {
+        "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/69cbc73d0cb846889f89acbb011e68cb_9366/Supernova_Shoes_Black_S42722_01_standard.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdceb"
+        }
+      }
+    ],
+    "ratings": 4,
+    "reseller_price": 126,
+    "suggested_price": 138.6,
+    "warranty": "7 Days warranty",
+    "available_quantity": 5,
+    "total_sold": 0,
+    "description": "This is the short description of this product.Thank you.",
+    "hot": 0,
+    "discount": 1,
+    "category": "Men's Sneaker",
+    "slug": "mens-sneaker",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.348Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.348Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdcf0"
+    },
+    "product_name": "4DFWD PULSE SHOES",
+    "product_id": "ZZT4FQA4",
+    "images": [
+      {
+        "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/9a8256bb7ca34da49ff8ad5600bb2812_9366/4DFWD_Pulse_Shoes_White_Q46221_01_standard.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdcf1"
+        }
+      }
+    ],
+    "ratings": 4,
+    "reseller_price": 138,
+    "suggested_price": 151.8,
+    "warranty": "7 Days warranty",
+    "available_quantity": 5,
+    "total_sold": 0,
+    "description": "This is the short description of this product.Thank you.",
+    "hot": 0,
+    "discount": 8,
+    "category": "Men's Sneaker",
+    "slug": "mens-sneaker",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.348Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.348Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdcf2"
+    },
+    "product_name": "ZX 1K BOOST SHOES",
+    "product_id": "4Q3YU4U1",
+    "images": [
+      {
+        "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/0e540bae86d5456aa034ada300ebf46c_9366/ZX_1K_Boost_Shoes_Grey_H00430_01_standard.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdcf3"
+        }
+      }
+    ],
+    "ratings": 4,
+    "reseller_price": 103,
+    "suggested_price": 113.3,
+    "warranty": "12 Days warranty",
+    "available_quantity": 10,
+    "total_sold": 0,
+    "description": "This is the short description of this product.Thank you.",
+    "hot": 0,
+    "discount": 4,
+    "category": "Men's Sneaker",
+    "slug": "mens-sneaker",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.348Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.348Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdcf4"
+    },
+    "product_name": "NMD_R1 V2 SHOES",
+    "product_id": "0Y6D61MH",
+    "images": [
+      {
+        "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/c2a18c4e3f104d52a697ad6a01477bb7_9366/NMD_R1_V2_Shoes_Black_GX6367_01_standard.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdcf5"
+        }
+      }
+    ],
+    "ratings": 5,
+    "reseller_price": 280,
+    "suggested_price": 308,
+    "warranty": "11 Days warranty",
+    "available_quantity": 27,
+    "total_sold": 0,
+    "description": "This is the short description of this product.Thank you.",
+    "hot": 1,
+    "discount": 10,
+    "category": "Men's Sneaker",
+    "slug": "mens-sneaker",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.348Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.348Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdcf6"
+    },
+    "product_name": "NMD_R1 PRIMEBLUE SHOES",
+    "product_id": "NKBK2G2M",
+    "images": [
+      {
+        "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/0e03e7a2a9cb44dfac2bad6a00f95888_9366/NMD_R1_Primeblue_Shoes_White_GZ9261_01_standard.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdcf7"
+        }
+      }
+    ],
+    "ratings": 4,
+    "reseller_price": 207,
+    "suggested_price": 227.7,
+    "warranty": "12 Days warranty",
+    "available_quantity": 15,
+    "total_sold": 0,
+    "description": "This is the short description of this product.Thank you.",
+    "hot": 0,
+    "discount": 8,
+    "category": "Men's Sneaker",
+    "slug": "mens-sneaker",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.348Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.348Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdcf8"
+    },
+    "product_name": "MOVE FEELREADY SPORT TEE",
+    "product_id": "11TLOFLT",
+    "images": [
+      {
+        "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/ec81fbd781fe4aa3a8cead230019c192_9366/AEROREADY_Designed_2_Move_Feelready_Sport_Tee_Burgundy_H30268_21_model.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdcf9"
+        }
+      }
+    ],
+    "ratings": 3,
+    "reseller_price": 107,
+    "suggested_price": 117.7,
+    "warranty": "6 Days warranty",
+    "available_quantity": 21,
+    "total_sold": 0,
+    "description": "This is the short description of this product.Thank you.",
+    "hot": 1,
+    "discount": 3,
+    "category": "Men's Sneaker",
+    "slug": "mens-sneaker",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.349Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.349Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdcfa"
+    },
+    "product_name": "ADIDAS CAMO BOX GRAPHIC TEE",
+    "product_id": "R3S6EUVW",
+    "images": [
+      {
+        "link": "https://media.handball-store.com/catalog/product/cache/image/1800x/9df78eab33525d08d6e5fb8d27136e95/g/s/gs6308_app_photo_front-center_white.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdcfb"
+        }
+      }
+    ],
+    "ratings": 3,
+    "reseller_price": 42,
+    "suggested_price": 46.2,
+    "warranty": "6 Days warranty",
+    "available_quantity": 9,
+    "total_sold": 0,
+    "description": "This is the short description of this product.Thank you.",
+    "hot": 1,
+    "discount": 0,
+    "category": "Men's Sneaker",
+    "slug": "mens-sneaker",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.349Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.349Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdcfc"
+    },
+    "product_name": "ADICOLOR CLASSICS TREFOIL TEE",
+    "product_id": "3PLMSUM6",
+    "images": [
+      {
+        "link": "https://assets.adidas.com/images/w_600,f_auto,q_auto/dcc69d00b43a436e8c0aaeb000285c88_9366/Adicolor_Classics_Trefoil_Tee_White_HK5227_21_model.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdcfd"
+        }
+      }
+    ],
+    "ratings": 4,
+    "reseller_price": 270,
+    "suggested_price": 297,
+    "warranty": "12 Days warranty",
+    "available_quantity": 21,
+    "total_sold": 0,
+    "description": "This is the short description of this product.Thank you.",
+    "hot": 0,
+    "discount": 17,
+    "category": "Men's Sneaker",
+    "slug": "mens-sneaker",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.349Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.349Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdcfe"
+    },
+    "product_name": "LNY TREFOIL FILL TEE",
+    "product_id": "I6AC22YO",
+    "images": [
+      {
+        "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/c53945c38b614702ba6fae1d0164b2f1_9366/LNY_Trefoil_Fill_Tee_Black_HR9040_21_model.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdcff"
+        }
+      }
+    ],
+    "ratings": 4,
+    "reseller_price": 185,
+    "suggested_price": 203.5,
+    "warranty": "12 Days warranty",
+    "available_quantity": 21,
+    "total_sold": 0,
+    "description": "This is the short description of this product.Thank you.",
+    "hot": 1,
+    "discount": 16,
+    "category": "Men's Sneaker",
+    "slug": "mens-sneaker",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.349Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.349Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdd00"
+    },
+    "product_name": "CREATOR 365 TEE",
+    "product_id": "VLU39DKG",
+    "images": [
+      {
+        "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/c53945c38b614702ba6fae1d0164b2f1_9366/LNY_Trefoil_Fill_Tee_Black_HR9040_21_model.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdd01"
+        }
+      }
+    ],
+    "ratings": 3,
+    "reseller_price": 204,
+    "suggested_price": 224.4,
+    "warranty": "8 Days warranty",
+    "available_quantity": 26,
+    "total_sold": 0,
+    "description": "This is the short description of this product.Thank you.",
+    "hot": 0,
+    "discount": 13,
+    "category": "Men's Sneaker",
+    "slug": "mens-sneaker",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.349Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.349Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdd02"
+    },
+    "product_name": "OWN THE RUN LONG SLEEVE TEE",
+    "product_id": "3EOXU3L0",
+    "images": [
+      {
+        "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/4efda5aab9a4440ca20badb1006ee3d8_9366/Own_the_Run_Long_Sleeve_Tee_Black_H58590_21_model.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdd03"
+        }
+      }
+    ],
+    "ratings": 3,
+    "reseller_price": 94,
+    "suggested_price": 103.4,
+    "warranty": "13 Days warranty",
+    "available_quantity": 21,
+    "total_sold": 0,
+    "description": "This is the short description of this product.Thank you.",
+    "hot": 1,
+    "discount": 11,
+    "category": "Men's Sneaker",
+    "slug": "mens-sneaker",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.349Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.349Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdcec"
+    },
+    "product_name": "LITE RACER ADAPT 3.0 SHOES",
+    "product_id": "WVOZWZ39",
+    "images": [
+      {
+        "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/96a5f085fedf4e678095abad01056711_9366/Lite_Racer_Adapt_3.0_Shoes_Black_FX8802_01_standard.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdced"
+        }
+      }
+    ],
+    "ratings": 5,
+    "reseller_price": 305,
+    "suggested_price": 335.5,
+    "warranty": "9 Days warranty",
+    "available_quantity": 7,
+    "total_sold": 0,
+    "description": "This is the short description of this product.Thank you.",
+    "hot": 1,
+    "discount": 11,
+    "category": "Men's Sneaker",
+    "slug": "mens-sneaker",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.348Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.348Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdcee"
+    },
+    "product_name": "KAPTIR 2.0 SHOES",
+    "product_id": "LDT8UN8W",
+    "images": [
+      {
+        "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/0846e90b15144861b33dacf500e3cfd1_9366/Kaptir_2.0_Shoes_White_H00276_01_standard.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdcef"
+        }
+      }
+    ],
+    "ratings": 3,
+    "reseller_price": 328,
+    "suggested_price": 360.8,
+    "warranty": "11 Days warranty",
+    "available_quantity": 28,
+    "total_sold": 0,
+    "description": "This is the short description of this product.Thank you.",
+    "hot": 1,
+    "discount": 4,
+    "category": "Men's Sneaker",
+    "slug": "mens-sneaker",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.348Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.348Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdd08"
+    },
+    "product_name": "V-DAY TEE (GENDER NEUTRAL)",
+    "product_id": "BVNJN46Q",
+    "images": [
+      {
+        "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/c53945c38b614702ba6fae1d0164b2f1_9366/LNY_Trefoil_Fill_Tee_Black_HR9040_21_model.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdd09"
+        }
+      }
+    ],
+    "ratings": 4,
+    "reseller_price": 82,
+    "suggested_price": 90.2,
+    "warranty": "10 Days warranty",
+    "available_quantity": 25,
+    "total_sold": 0,
+    "description": "This is the short description of this product.Thank you.",
+    "hot": 0,
+    "discount": 18,
+    "category": "Men's Sneaker",
+    "slug": "mens-sneaker",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.349Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.349Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdd0a"
+    },
+    "product_name": "ESSENTIALS COLORBLOCK TEE",
+    "product_id": "IH70LIPE",
+    "images": [
+      {
+        "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/9889d39ac10243a2bb0fad1a0097ef07_9366/Essentials_Colorblock_Tee_Black_H14627_21_model.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdd0b"
+        }
+      }
+    ],
+    "ratings": 3,
+    "reseller_price": 232,
+    "suggested_price": 255.2,
+    "warranty": "7 Days warranty",
+    "available_quantity": 16,
+    "total_sold": 0,
+    "description": "This is the short description of this product.Thank you.",
+    "hot": 1,
+    "discount": 11,
+    "category": "Men's Sneaker",
+    "slug": "mens-sneaker",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.349Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.349Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdd0c"
+    },
+    "product_name": "TIRO TRACK PANTS",
+    "product_id": "G9M755CE",
+    "images": [
+      {
+        "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/9c7058d8677742ac8519ac3f009cdcf4_9366/Tiro_21_Track_Pants_Black_GH7305_21_model.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdd0d"
+        }
+      }
+    ],
+    "ratings": 5,
+    "reseller_price": 272,
+    "suggested_price": 299.2,
+    "warranty": "6 Days warranty",
+    "available_quantity": 27,
+    "total_sold": 0,
+    "description": "This is the short description of this product.Thank you.",
+    "hot": 1,
+    "discount": 7,
+    "category": "Men's Pants",
+    "slug": "mens-pants",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.349Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.349Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdd0e"
+    },
+    "product_name": "TIRO 21 TRACK PANTS",
+    "product_id": "FF2EP6J2",
+    "images": [
+      {
+        "link": "https://footballcentral.co.nz/cdn/shop/products/GK9666_APP_photo_front_white_700x700.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdd0f"
+        }
+      }
+    ],
+    "ratings": 5,
+    "reseller_price": 164,
+    "suggested_price": 180.4,
+    "warranty": "8 Days warranty",
+    "available_quantity": 25,
+    "total_sold": 0,
+    "description": "This is the short description of this product.Thank you.",
+    "hot": 0,
+    "discount": 14,
+    "category": "Men's Pants",
+    "slug": "mens-pants",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.350Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.350Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdd10"
+    },
+    "product_name": "PRIMEBLUE SST TRACK PANTS",
+    "product_id": "VFD0ZSQA",
+    "images": [
+      {
+        "link": "https://i.ebayimg.com/images/g/uPIAAOSwgZJga-wr/s-l1200.webp",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdd11"
+        }
+      }
+    ],
+    "ratings": 4,
+    "reseller_price": 224,
+    "suggested_price": 246.4,
+    "warranty": "6 Days warranty",
+    "available_quantity": 18,
+    "total_sold": 0,
+    "description": "This is the short description of this product.Thank you.",
+    "hot": 0,
+    "discount": 14,
+    "category": "Men's Pants",
+    "slug": "mens-pants",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.350Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.350Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdd12"
+    },
+    "product_name": "TIRO 21 TRACK PANTS",
+    "product_id": "L6NW2JC6",
+    "images": [
+      {
+        "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/9c7058d8677742ac8519ac3f009cdcf4_9366/Tiro_21_Track_Pants_Black_GH7305_21_model.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdd13"
+        }
+      }
+    ],
+    "ratings": 3,
+    "reseller_price": 267,
+    "suggested_price": 293.7,
+    "warranty": "7 Days warranty",
+    "available_quantity": 9,
+    "total_sold": 0,
+    "description": "This is the short description of this product.Thank you.",
+    "hot": 1,
+    "discount": 16,
+    "category": "Men's Pants",
+    "slug": "mens-pants",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.350Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.350Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdd14"
+    },
+    "product_name": "TIRO TRACK PANTS RED",
+    "product_id": "LH4MRFEH",
+    "images": [
+      {
+        "link": "https://assets.adidas.com/images/w_600,f_auto,q_auto/dc224d1db3b94823a8d3af3500f6b97e_9366/Tiro_Suit-Up_Advanced_Track_Pants_Red_HY3784_01_laydown.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdd15"
+        }
+      }
+    ],
+    "ratings": 4,
+    "reseller_price": 115,
+    "suggested_price": 126.5,
+    "warranty": "12 Days warranty",
+    "available_quantity": 33,
+    "total_sold": 0,
+    "description": "This is the short description of this product.Thank you.",
+    "hot": 1,
+    "discount": 4,
+    "category": "Men's Pants",
+    "slug": "mens-pants",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.350Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.350Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdd16"
+    },
+    "product_name": "TIRO PANTS BLACK GOLD",
+    "product_id": "80CWE9L3",
+    "images": [
+      {
+        "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/c447324cf06544b78105ade500fd9e2f_9366/Tiro_Pants_Black_HI1073_21_model.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdd17"
+        }
+      }
+    ],
+    "ratings": 5,
+    "reseller_price": 259,
+    "suggested_price": 284.9,
+    "warranty": "14 Days warranty",
+    "available_quantity": 22,
+    "total_sold": 0,
+    "description": "This is the short description of this product.Thank you.",
+    "hot": 0,
+    "discount": 14,
+    "category": "Men's Pants",
+    "slug": "mens-pants",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.350Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.350Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdd18"
+    },
+    "product_name": "TAPERED-CUFF 3-STRIPES PANTS",
+    "product_id": "O592XS4O",
+    "images": [
+      {
+        "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/9c7058d8677742ac8519ac3f009cdcf4_9366/Tiro_21_Track_Pants_Black_GH7305_21_model.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdd19"
+        }
+      }
+    ],
+    "ratings": 3,
+    "reseller_price": 255,
+    "suggested_price": 280.5,
+    "warranty": "10 Days warranty",
+    "available_quantity": 6,
+    "total_sold": 0,
+    "description": "This is the short description of this product.Thank you.",
+    "hot": 1,
+    "discount": 15,
+    "category": "Men's Pants",
+    "slug": "mens-pants",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.350Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.350Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdd1a"
+    },
+    "product_name": "FRENCH TERRY TAPERED CUFF LOGO PANTS",
+    "product_id": "X2OLQT8H",
+    "images": [
+      {
+        "link": "https://assets.adidas.com/images/w_1880,f_auto,q_auto/01d8dbf50b884760845cac80013046f8_9366/GK8979_01_laydown.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdd1b"
+        }
+      }
+    ],
+    "ratings": 3,
+    "reseller_price": 79,
+    "suggested_price": 86.9,
+    "warranty": "8 Days warranty",
+    "available_quantity": 27,
+    "total_sold": 0,
+    "description": "This is the short description of this product.Thank you.",
+    "hot": 1,
+    "discount": 11,
+    "category": "Men's Pants",
+    "slug": "mens-pants",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.350Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.350Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdd1c"
+    },
+    "product_name": "OPEN HEM 3-STRIPES TRACK PANTS",
+    "product_id": "B1RNF5T1",
+    "images": [
+      {
+        "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/1a6852ebd6ec4020a854ad2500fa5075_9366/Primegreen_Essentials_Warm-Up_Open_Hem_3-Stripes_Track_Pants_Blue_H48429_01_laydown.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdd1d"
+        }
+      }
+    ],
+    "ratings": 5,
+    "reseller_price": 95,
+    "suggested_price": 104.5,
+    "warranty": "6 Days warranty",
+    "available_quantity": 6,
+    "total_sold": 0,
+    "description": "This is the short description of this product.Thank you.",
+    "hot": 1,
+    "discount": 17,
+    "category": "Men's Pants",
+    "slug": "mens-pants",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.350Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.350Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdd1e"
+    },
+    "product_name": "ESSENTIALS4GAMEDAY PANTS",
+    "product_id": "4WTX8ANX",
+    "images": [
+      {
+        "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/64f1ba254925439d88eaad920127d77e_9366/Essentials4Gameday_Pants_Black_HE1800_21_model.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdd1f"
+        }
+      }
+    ],
+    "ratings": 5,
+    "reseller_price": 338,
+    "suggested_price": 371.8,
+    "warranty": "10 Days warranty",
+    "available_quantity": 24,
+    "total_sold": 0,
+    "description": "This is the short description of this product.Thank you.",
+    "hot": 0,
+    "discount": 19,
+    "category": "Men's Pants",
+    "slug": "mens-pants",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.350Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.350Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdd20"
+    },
+    "product_name": "TERREX FREE HIKER GORE-TEX HIKING SHOES",
+    "product_id": "S6TC23RV",
+    "images": [
+      {
+        "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/12cf12ac1c8e484ea487ad6400ee3444_9366/Terrex_Free_Hiker_Gore-Tex_Hiking_Shoes_Black_GZ0355_01_standard.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdd21"
+        }
+      }
+    ],
+    "ratings": 3,
+    "reseller_price": 338,
+    "suggested_price": 371.8,
+    "warranty": "6 Days warranty",
+    "available_quantity": 31,
+    "total_sold": 0,
+    "description": "This is the short description of this product.Thank you.",
+    "hot": 0,
+    "discount": 17,
+    "category": "Men's Boot",
+    "slug": "mens-boot",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.350Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.350Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdd22"
+    },
+    "product_name": "TERREX AX4 MID GORE-TEX HIKING SHOES",
+    "product_id": "0PB2P9PN",
+    "images": [
+      {
+        "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/dfa8c9a7d2864065b27fad7400b2e05e_9366/Terrex_AX4_Mid_GORE-TEX_Hiking_shoes_Black_FY9638_01_standard.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdd23"
+        }
+      }
+    ],
+    "ratings": 4,
+    "reseller_price": 268,
+    "suggested_price": 294.8,
+    "warranty": "8 Days warranty",
+    "available_quantity": 28,
+    "total_sold": 0,
+    "description": "This is the short description of this product.Thank you.",
+    "hot": 1,
+    "discount": 16,
+    "category": "Men's Boot",
+    "slug": "mens-boot",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.350Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.350Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdd24"
+    },
+    "product_name": "RESPONSE 3MC ADV BOOTS",
+    "product_id": "1A5ZRUOG",
+    "images": [
+      {
+        "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/b513f2cec8b440978d60ab6d014ad452_9366/Response_3MC_ADV_Boots_Black_EG9391_01_standard.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdd25"
+        }
+      }
+    ],
+    "ratings": 5,
+    "reseller_price": 275,
+    "suggested_price": 302.5,
+    "warranty": "9 Days warranty",
+    "available_quantity": 15,
+    "total_sold": 0,
+    "description": "This is the short description of this product.Thank you.",
+    "hot": 1,
+    "discount": 3,
+    "category": "Men's Boot",
+    "slug": "mens-boot",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.350Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.350Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdd26"
+    },
+    "product_name": "TACTICAL LEXICON ADV BOOTS",
+    "product_id": "IF1NR46G",
+    "images": [
+      {
+        "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/f5350f3d583c46038534ab6d01445e2a_9366/Tactical_Lexicon_ADV_Boots_Grey_EG9386_01_standard.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdd27"
+        }
+      }
+    ],
+    "ratings": 4,
+    "reseller_price": 61,
+    "suggested_price": 67.1,
+    "warranty": "9 Days warranty",
+    "available_quantity": 13,
+    "total_sold": 0,
+    "description": "This is the short description of this product.Thank you.",
+    "hot": 1,
+    "discount": 15,
+    "category": "Men's Boot",
+    "slug": "mens-boot",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.350Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.350Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdd28"
+    },
+    "product_name": "Superstar Boots",
+    "product_id": "8PK1XKKH",
+    "images": [
+      {
+        "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/6853ac5565a9407bae19ac080120d9d7_9366/Superstar_Boots_Red_FZ2642_01_standard.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdd29"
+        }
+      }
+    ],
+    "ratings": 3,
+    "reseller_price": 307,
+    "suggested_price": 337.7,
+    "warranty": "6 Days warranty",
+    "available_quantity": 23,
+    "total_sold": 0,
+    "description": "This is the short description of this product.Thank you.",
+    "hot": 0,
+    "discount": 14,
+    "category": "Men's Boot",
+    "slug": "mens-boot",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.350Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.350Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdd2a"
+    },
+    "product_name": "TACTICAL LEXICON ADV BOOTS",
+    "product_id": "9N1XLQWO",
+    "images": [
+      {
+        "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/3a819de9f29c498fae13ab6d01473c4d_9366/Tactical_Lexicon_ADV_Boots_White_EG9385_01_standard.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdd2b"
+        }
+      }
+    ],
+    "ratings": 4,
+    "reseller_price": 230,
+    "suggested_price": 253,
+    "warranty": "14 Days warranty",
+    "available_quantity": 29,
+    "total_sold": 0,
+    "description": "This is the short description of this product.Thank you.",
+    "hot": 0,
+    "discount": 8,
+    "category": "Men's Boot",
+    "slug": "mens-boot",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.350Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.350Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdd2c"
+    },
+    "product_name": "TERREX TRAILMAKER MID COLD.RDY HIKING SHOES",
+    "product_id": "4T97ZKAX",
+    "images": [
+      {
+        "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/c2ee4c27eba64258bcbaad5100e5d998_9366/Terrex_Trailmaker_Mid_COLD.RDY_Hiking_Shoes_Brown_FZ3370_01_standard.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdd2d"
+        }
+      }
+    ],
+    "ratings": 3,
+    "reseller_price": 167,
+    "suggested_price": 183.7,
+    "warranty": "7 Days warranty",
+    "available_quantity": 26,
+    "total_sold": 0,
+    "description": "This is the short description of this product.Thank you.",
+    "hot": 0,
+    "discount": 1,
+    "category": "Men's Boot",
+    "slug": "mens-boot",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.350Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.350Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdd2e"
+    },
+    "product_name": "TERREX FREE HIKER GORE-TEX HIKING SHOES",
+    "product_id": "21ZYPHD9",
+    "images": [
+      {
+        "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/efbedb26b92e4affa103ad6b008a789a_9366/Terrex_Free_Hiker_Gore-Tex_Hiking_Shoes_Grey_GZ0356_01_standard.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdd2f"
+        }
+      }
+    ],
+    "ratings": 5,
+    "reseller_price": 117,
+    "suggested_price": 128.7,
+    "warranty": "7 Days warranty",
+    "available_quantity": 15,
+    "total_sold": 0,
+    "description": "This is the short description of this product.Thank you.",
+    "hot": 0,
+    "discount": 13,
+    "category": "Men's Boot",
+    "slug": "mens-boot",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.351Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.351Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdd04"
+    },
+    "product_name": "NYC BADGE OF SPORT LOGO GRAPHIC TEE",
+    "product_id": "ZSR9AGYA",
+    "images": [
+      {
+        "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/e0101e13ac1940208478add1000e953a_9366/NYC_Badge_of_Sport_Logo_Graphic_Tee_White_HE2363_21_model.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdd05"
+        }
+      }
+    ],
+    "ratings": 3,
+    "reseller_price": 168,
+    "suggested_price": 184.8,
+    "warranty": "7 Days warranty",
+    "available_quantity": 28,
+    "total_sold": 0,
+    "description": "This is the short description of this product.Thank you.",
+    "hot": 1,
+    "discount": 2,
+    "category": "Men's Sneaker",
+    "slug": "mens-sneaker",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.349Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.349Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdd06"
+    },
+    "product_name": "RUNNER TEE",
+    "product_id": "15GYFYHU",
+    "images": [
+      {
+        "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/8c3f5445517340e8bc02ad8100ffd3f6_9366/Runner_Tee_Burgundy_H25050_21_model.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdd07"
+        }
+      }
+    ],
+    "ratings": 5,
+    "reseller_price": 136,
+    "suggested_price": 149.6,
+    "warranty": "9 Days warranty",
+    "available_quantity": 6,
+    "total_sold": 0,
+    "description": "This is the short description of this product.Thank you.",
+    "hot": 1,
+    "discount": 7,
+    "category": "Men's Sneaker",
+    "slug": "mens-sneaker",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.349Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.349Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdd34"
+    },
+    "product_name": "3-Stripes Backpack 2.0",
+    "product_id": "QKTQZOKB",
+    "images": [
+      {
+        "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/ba79ccb861fd4fd49e3aac9f006a6407_9366/3-Stripes_Backpack_2.0_Grey_EX6735_01_standard.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdd35"
+        }
+      }
+    ],
+    "ratings": 5,
+    "reseller_price": 122,
+    "suggested_price": 134.2,
+    "warranty": "12 Days warranty",
+    "available_quantity": 32,
+    "total_sold": 0,
+    "description": "This is the short description of this product.Thank you.",
+    "hot": 1,
+    "discount": 6,
+    "category": "Bag",
+    "slug": "bag",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.351Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.351Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdd36"
+    },
+    "product_name": "Trefoil Backpack",
+    "product_id": "ZY4CSF4F",
+    "images": [
+      {
+        "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/a520df1b51384c00af9caca100489f04_9366/Trefoil_Backpack_Black_EX6752_01_standard.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdd37"
+        }
+      }
+    ],
+    "ratings": 4,
+    "reseller_price": 254,
+    "suggested_price": 279.4,
+    "warranty": "13 Days warranty",
+    "available_quantity": 15,
+    "total_sold": 0,
+    "description": "This is the short description of this product.Thank you.",
+    "hot": 0,
+    "discount": 4,
+    "category": "Bag",
+    "slug": "bag",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.351Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.351Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdd38"
+    },
+    "product_name": "Santiago Lunch Bag",
+    "product_id": "TN1CBCIN",
+    "images": [
+      {
+        "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/c2aaf5e8a7924f1d9277ac9f005b5f37_9366/Santiago_Lunch_Bag_Black_EX6532_01_standard.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdd39"
+        }
+      }
+    ],
+    "ratings": 3,
+    "reseller_price": 185,
+    "suggested_price": 203.5,
+    "warranty": "14 Days warranty",
+    "available_quantity": 6,
+    "total_sold": 0,
+    "description": "This is the short description of this product.Thank you.",
+    "hot": 1,
+    "discount": 6,
+    "category": "Bag",
+    "slug": "bag",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.351Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.351Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdd3a"
+    },
+    "product_name": "Blue Version Backpack",
+    "product_id": "OAQ9RDH3",
+    "images": [
+      {
+        "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/a9e0c5635057425daab5ad0b0089194b_9366/Blue_Version_Backpack_Black_H22735_01_standard.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdd3b"
+        }
+      }
+    ],
+    "ratings": 5,
+    "reseller_price": 74,
+    "suggested_price": 81.4,
+    "warranty": "10 Days warranty",
+    "available_quantity": 20,
+    "total_sold": 0,
+    "description": "This is the short description of this product.Thank you.",
+    "hot": 1,
+    "discount": 2,
+    "category": "Bag",
+    "slug": "bag",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.351Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.351Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdd3c"
+    },
+    "product_name": "Defender Backpack",
+    "product_id": "RS0FKI1A",
+    "images": [
+      {
+        "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/d6ee0177281f42f0a254acb1016aa051_9366/Defender_Backpack_Red_EX7011_01_standard.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdd3d"
+        }
+      }
+    ],
+    "ratings": 4,
+    "reseller_price": 304,
+    "suggested_price": 334.4,
+    "warranty": "11 Days warranty",
+    "available_quantity": 7,
+    "total_sold": 0,
+    "description": "This is the short description of this product.Thank you.",
+    "hot": 1,
+    "discount": 10,
+    "category": "Bag",
+    "slug": "bag",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.351Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.351Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdd3e"
+    },
+    "product_name": "Excel Backpack",
+    "product_id": "F4YVEC0V",
+    "images": [
+      {
+        "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/ac09bb56249b43158485aca1007cc1ef_9366/Excel_Backpack_Black_EX6933_01_standard.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdd3f"
+        }
+      }
+    ],
+    "ratings": 5,
+    "reseller_price": 67,
+    "suggested_price": 73.7,
+    "warranty": "11 Days warranty",
+    "available_quantity": 20,
+    "total_sold": 0,
+    "description": "This is the short description of this product.Thank you.",
+    "hot": 1,
+    "discount": 3,
+    "category": "Bag",
+    "slug": "bag",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.351Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.351Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdd40"
+    },
+    "product_name": "Alliance Sackpack",
+    "product_id": "CHL9N49I",
+    "images": [
+      {
+        "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/2e8a6f09838d49c3b00fad4f0017f753_9366/Alliance_Sackpack_White_FZ6823_01_standard.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdd41"
+        }
+      }
+    ],
+    "ratings": 3,
+    "reseller_price": 65,
+    "suggested_price": 71.5,
+    "warranty": "7 Days warranty",
+    "available_quantity": 6,
+    "total_sold": 0,
+    "description": "This is the short description of this product.Thank you.",
+    "hot": 1,
+    "discount": 7,
+    "category": "Bag",
+    "slug": "bag",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.351Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.351Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdd42"
+    },
+    "product_name": "R.Y.V. Toploader Backpack",
+    "product_id": "RMOGKSWZ",
+    "images": [
+      {
+        "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/1c87c940836e4628852bad130101e5c6_9366/R.Y.V._Toploader_Backpack_Black_H32458_01_standard.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdd43"
+        }
+      }
+    ],
+    "ratings": 3,
+    "reseller_price": 55,
+    "suggested_price": 60.5,
+    "warranty": "14 Days warranty",
+    "available_quantity": 10,
+    "total_sold": 0,
+    "description": "This is the short description of this product.Thank you.",
+    "hot": 1,
+    "discount": 16,
+    "category": "Bag",
+    "slug": "bag",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.351Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.351Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdd44"
+    },
+    "product_name": "Adicolor Archive Backpack",
+    "product_id": "WX8N0FWY",
+    "images": [
+      {
+        "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/0bb325f9cc174ea4bed7ad9e0101b682_9366/Adicolor_Archive_Backpack_Green_HE9804_01_standard.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdd45"
+        }
+      }
+    ],
+    "ratings": 4,
+    "reseller_price": 319,
+    "suggested_price": 350.9,
+    "warranty": "6 Days warranty",
+    "available_quantity": 30,
+    "total_sold": 0,
+    "description": "This is the short description of this product.Thank you.",
+    "hot": 1,
+    "discount": 18,
+    "category": "Bag",
+    "slug": "bag",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.351Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.351Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdd46"
+    },
+    "product_name": "R.Y.V. Backpack",
+    "product_id": "SYXLR6A2",
+    "images": [
+      {
+        "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/dc7dca21df62473ea518ade101251809_9366/R.Y.V._Backpack_Black_HD9650_01_standard.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdd47"
+        }
+      }
+    ],
+    "ratings": 5,
+    "reseller_price": 303,
+    "suggested_price": 333.3,
+    "warranty": "7 Days warranty",
+    "available_quantity": 27,
+    "total_sold": 0,
+    "description": "This is the short description of this product.Thank you.",
+    "hot": 1,
+    "discount": 4,
+    "category": "Bag",
+    "slug": "bag",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.351Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.351Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdd48"
+    },
+    "product_name": "Relaxed Strap-Back Hat",
+    "product_id": "N3YKVDIR",
+    "images": [
+      {
+        "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/4feb20f4d990407cb4f1a88a0040b212_9366/Relaxed_Strap-Back_Hat_Black_BH7137_01_standard.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdd49"
+        }
+      }
+    ],
+    "ratings": 4,
+    "reseller_price": 172,
+    "suggested_price": 189.2,
+    "warranty": "11 Days warranty",
+    "available_quantity": 24,
+    "total_sold": 0,
+    "description": "This is the short description of this product.Thank you.",
+    "hot": 0,
+    "discount": 9,
+    "category": "Cap",
+    "slug": "cap",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.351Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.351Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdd4a"
+    },
+    "product_name": "Icon Snapback Hat",
+    "product_id": "YCOSBM2U",
+    "images": [
+      {
+        "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/1e27ae8bbfb647489261ac8e015d181f_9366/Icon_Snapback_Hat_Grey_EX6798_01_standard.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdd4b"
+        }
+      }
+    ],
+    "ratings": 4,
+    "reseller_price": 219,
+    "suggested_price": 240.9,
+    "warranty": "7 Days warranty",
+    "available_quantity": 31,
+    "total_sold": 0,
+    "description": "This is the short description of this product.Thank you.",
+    "hot": 0,
+    "discount": 19,
+    "category": "Cap",
+    "slug": "cap",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.351Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.351Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdd4c"
+    },
+    "product_name": "Superlite Hat",
+    "product_id": "V75LCA1M",
+    "images": [
+      {
+        "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/0ae141db6fce44999337ac8e015954ea_9366/Superlite_Hat_Grey_EX7054_01_standard.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdd4d"
+        }
+      }
+    ],
+    "ratings": 3,
+    "reseller_price": 246,
+    "suggested_price": 270.6,
+    "warranty": "11 Days warranty",
+    "available_quantity": 23,
+    "total_sold": 0,
+    "description": "This is the short description of this product.Thank you.",
+    "hot": 0,
+    "discount": 3,
+    "category": "Cap",
+    "slug": "cap",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.351Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.351Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdd4e"
+    },
+    "product_name": "Superlite Hat",
+    "product_id": "W6G7KC7O",
+    "images": [
+      {
+        "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/272d5d9cb7b74415a6c9ac8e015a4ccc_9366/Superlite_Hat_Black_EX7048_01_standard.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdd4f"
+        }
+      }
+    ],
+    "ratings": 5,
+    "reseller_price": 325,
+    "suggested_price": 357.5,
+    "warranty": "8 Days warranty",
+    "available_quantity": 19,
+    "total_sold": 0,
+    "description": "This is the short description of this product.Thank you.",
+    "hot": 1,
+    "discount": 4,
+    "category": "Cap",
+    "slug": "cap",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.351Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.351Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdd50"
+    },
+    "product_name": "Tee Time 5-Panel Hat",
+    "product_id": "QDGP1GLW",
+    "images": [
+      {
+        "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/df67ab60b5574c368b76adf9010f2d2d_9366/Tee_Time_5-Panel_Hat_Black_HA9254_01_standard.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdd51"
+        }
+      }
+    ],
+    "ratings": 4,
+    "reseller_price": 53,
+    "suggested_price": 58.3,
+    "warranty": "6 Days warranty",
+    "available_quantity": 11,
+    "total_sold": 0,
+    "description": "This is the short description of this product.Thank you.",
+    "hot": 1,
+    "discount": 19,
+    "category": "Cap",
+    "slug": "cap",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.351Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.351Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdd30"
+    },
+    "product_name": "TERREX AGRAVIC TECH PRO TRAIL RUNNING SHOES",
+    "product_id": "SHLG843S",
+    "images": [
+      {
+        "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/0a340319370844e99645abc90091df96_9366/Terrex_Agravic_Tech_Pro_Trail_Running_Shoes_Black_FU7634_01_standard.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdd31"
+        }
+      }
+    ],
+    "ratings": 3,
+    "reseller_price": 118,
+    "suggested_price": 129.8,
+    "warranty": "10 Days warranty",
+    "available_quantity": 21,
+    "total_sold": 0,
+    "description": "This is the short description of this product.Thank you.",
+    "hot": 1,
+    "discount": 10,
+    "category": "Men's Boot",
+    "slug": "mens-boot",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.351Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.351Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdd32"
+    },
+    "product_name": "TERREX FREE HIKER COLD.RDY HIKING BOOTS",
+    "product_id": "9XR288EL",
+    "images": [
+      {
+        "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/2ded0bee28b249bbb19cad5000818b77_9366/Terrex_Free_Hiker_COLD.RDY_Hiking_Boots_Black_FZ3364_01_standard.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdd33"
+        }
+      }
+    ],
+    "ratings": 5,
+    "reseller_price": 292,
+    "suggested_price": 321.2,
+    "warranty": "12 Days warranty",
+    "available_quantity": 14,
+    "total_sold": 0,
+    "description": "This is the short description of this product.Thank you.",
+    "hot": 1,
+    "discount": 0,
+    "category": "Men's Boot",
+    "slug": "mens-boot",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.351Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.351Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdd56"
+    },
+    "product_name": "UNISEX ORIGINALS WASHED BUCKET",
+    "product_id": "45M4QXVB",
+    "images": [
+      {
+        "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/e1e758585df14bbbb7d8aaf000c95bd7_9366/UNISEX_ORIGINALS_WASHED_BUCKET_White_CM3933_01_standard.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdd57"
+        }
+      }
+    ],
+    "ratings": 4,
+    "reseller_price": 184,
+    "suggested_price": 202.4,
+    "warranty": "10 Days warranty",
+    "available_quantity": 10,
+    "total_sold": 0,
+    "description": "This is the short description of this product.Thank you.",
+    "hot": 0,
+    "discount": 16,
+    "category": "Cap",
+    "slug": "cap",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.352Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.352Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdd58"
+    },
+    "product_name": "SST Plus Strap-Back Hat",
+    "product_id": "QV9T26ET",
+    "images": [
+      {
+        "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/92e77a8d84d845d19171ad50003f2ea1_9366/SST_Plus_Strap-Back_Hat_White_FZ8569_01_standard.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdd59"
+        }
+      }
+    ],
+    "ratings": 4,
+    "reseller_price": 131,
+    "suggested_price": 144.1,
+    "warranty": "6 Days warranty",
+    "available_quantity": 29,
+    "total_sold": 0,
+    "description": "This is the short description of this product.Thank you.",
+    "hot": 0,
+    "discount": 5,
+    "category": "Cap",
+    "slug": "cap",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.352Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.352Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdd5a"
+    },
+    "product_name": "Dispatch Trucker Hat",
+    "product_id": "SCPQL7CV",
+    "images": [
+      {
+        "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/c3981523051c4a978674ad3c01015664_9366/Dispatch_Trucker_Hat_Black_EY5534_01_standard.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdd5b"
+        }
+      }
+    ],
+    "ratings": 4,
+    "reseller_price": 224,
+    "suggested_price": 246.4,
+    "warranty": "8 Days warranty",
+    "available_quantity": 5,
+    "total_sold": 0,
+    "description": "This is the short description of this product.Thank you.",
+    "hot": 1,
+    "discount": 16,
+    "category": "Cap",
+    "slug": "cap",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.352Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.352Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdd5c"
+    },
+    "product_name": "adidas Z.N.E. 01 True Wireless Earbuds",
+    "product_id": "U7RW7LQD",
+    "images": [
+      {
+        "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/00276c6c380b41bcb29fadcc00f98312_9366/adidas_Z.N.E._01_True_Wireless_Earbuds_Grey_EY5116_42_detail.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdd5d"
+        }
+      }
+    ],
+    "ratings": 5,
+    "reseller_price": 272,
+    "suggested_price": 299.2,
+    "warranty": "6 Days warranty",
+    "available_quantity": 21,
+    "total_sold": 0,
+    "description": "This is the short description of this product.Thank you.",
+    "hot": 1,
+    "discount": 16,
+    "category": "Earphones",
+    "slug": "earphones",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.352Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.352Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdd5e"
+    },
+    "product_name": "adidas Z.N.E. 01 ANC True Wireless Earbuds",
+    "product_id": "SUAB9IDF",
+    "images": [
+      {
+        "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/b322cdef8e654551ace9adcc00f963ed_9366/adidas_Z.N.E._01_ANC_True_Wireless_Earbuds_Grey_EY5114_41_detail.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdd5f"
+        }
+      }
+    ],
+    "ratings": 5,
+    "reseller_price": 46,
+    "suggested_price": 50.6,
+    "warranty": "7 Days warranty",
+    "available_quantity": 15,
+    "total_sold": 0,
+    "description": "This is the short description of this product.Thank you.",
+    "hot": 1,
+    "discount": 10,
+    "category": "Earphones",
+    "slug": "earphones",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.352Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.352Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdd60"
+    },
+    "product_name": "FWD-01 Sport In-Ear Headphones",
+    "product_id": "SH7LCO5H",
+    "images": [
+      {
+        "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/2cdb8652aa2340369ba2aa79010062d1_9366/FWD-01_Sport_In-Ear_Headphones_Black_CM5016_01_standard.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdd61"
+        }
+      }
+    ],
+    "ratings": 4,
+    "reseller_price": 157,
+    "suggested_price": 172.7,
+    "warranty": "10 Days warranty",
+    "available_quantity": 32,
+    "total_sold": 0,
+    "description": "This is the short description of this product.Thank you.",
+    "hot": 0,
+    "discount": 16,
+    "category": "Earphones",
+    "slug": "earphones",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.352Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.352Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdd62"
+    },
+    "product_name": "adidas FWD-02 Sport True Wireless Earbuds",
+    "product_id": "HLZ5LHW0",
+    "images": [
+      {
+        "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/523731a02e914d318cb4adcc00f985ba_9366/adidas_FWD-02_Sport_True_Wireless_Earbuds_Grey_EY5113_03_standard_hover.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdd63"
+        }
+      }
+    ],
+    "ratings": 4,
+    "reseller_price": 198,
+    "suggested_price": 217.8,
+    "warranty": "9 Days warranty",
+    "available_quantity": 20,
+    "total_sold": 0,
+    "description": "This is the short description of this product.Thank you.",
+    "hot": 1,
+    "discount": 18,
+    "category": "Earphones",
+    "slug": "earphones",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.352Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.352Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdd64"
+    },
+    "product_name": "adidas Z.N.E. 01 ANC True Wireless Earbuds",
+    "product_id": "QVOKTIU6",
+    "images": [
+      {
+        "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/9e6e7967b3b24ef298f5adcc00f983ec_9366/adidas_Z.N.E._01_ANC_True_Wireless_Earbuds_Grey_EY5115_41_detail.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdd65"
+        }
+      }
+    ],
+    "ratings": 5,
+    "reseller_price": 175,
+    "suggested_price": 192.5,
+    "warranty": "13 Days warranty",
+    "available_quantity": 30,
+    "total_sold": 0,
+    "description": "This is the short description of this product.Thank you.",
+    "hot": 0,
+    "discount": 18,
+    "category": "Earphones",
+    "slug": "earphones",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.352Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.352Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdd66"
+    },
+    "product_name": "RPT-01 Sport On-Ear Headphones",
+    "product_id": "OY977NOF",
+    "images": [
+      {
+        "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/c697ceddb0c2469aaa2eaa7101121d10_9366/RPT-01_Sport_On-Ear_Headphones_Black_CM5015_01_standard.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdd67"
+        }
+      }
+    ],
+    "ratings": 5,
+    "reseller_price": 144,
+    "suggested_price": 158.4,
+    "warranty": "8 Days warranty",
+    "available_quantity": 31,
+    "total_sold": 0,
+    "description": "This is the short description of this product.Thank you.",
+    "hot": 1,
+    "discount": 11,
+    "category": "Earphones",
+    "slug": "earphones",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.352Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.352Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdd68"
+    },
+    "product_name": "Steel Metal Bottle 1L",
+    "product_id": "RVDZ7UR6",
+    "images": [
+      {
+        "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/a9c04ca9fa51408faf2fac8e0117abb9_9366/Steel_Metal_Bottle_1L_Black_EX7288_01_standard.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdd69"
+        }
+      }
+    ],
+    "ratings": 4,
+    "reseller_price": 252,
+    "suggested_price": 277.2,
+    "warranty": "10 Days warranty",
+    "available_quantity": 23,
+    "total_sold": 0,
+    "description": "This is the short description of this product.Thank you.",
+    "hot": 1,
+    "discount": 5,
+    "category": "Bottle",
+    "slug": "bottle",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.352Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.352Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdd6a"
+    },
+    "product_name": "Steel Metal Bottle 1L",
+    "product_id": "IRUF4PCF",
+    "images": [
+      {
+        "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/c45df020e3ae4e9199a4ac7d0001cfb7_9366/Steel_Metal_Bottle_1L_White_EX7301_01_standard.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdd6b"
+        }
+      }
+    ],
+    "ratings": 5,
+    "reseller_price": 58,
+    "suggested_price": 63.8,
+    "warranty": "6 Days warranty",
+    "available_quantity": 22,
+    "total_sold": 0,
+    "description": "This is the short description of this product.Thank you.",
+    "hot": 0,
+    "discount": 0,
+    "category": "Bottle",
+    "slug": "bottle",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.352Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.352Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdd6c"
+    },
+    "product_name": "Steel Metal Bottle 1 L",
+    "product_id": "LB1QH0II",
+    "images": [
+      {
+        "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/c670a94f6388451a868fad440014460d_9366/Steel_Metal_Bottle_1_L_Purple_EY5529_01_standard.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdd6d"
+        }
+      }
+    ],
+    "ratings": 5,
+    "reseller_price": 178,
+    "suggested_price": 195.8,
+    "warranty": "11 Days warranty",
+    "available_quantity": 5,
+    "total_sold": 0,
+    "description": "This is the short description of this product.Thank you.",
+    "hot": 1,
+    "discount": 13,
+    "category": "Bottle",
+    "slug": "bottle",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.352Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.352Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdd6e"
+    },
+    "product_name": "Steel Metal Bottle 1L",
+    "product_id": "B9FZJD6V",
+    "images": [
+      {
+        "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/29ef510920b54492a721aa1c01782cb2_9366/Steel_Metal_Bottle_1L_White_CL6092_01_standard.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdd6f"
+        }
+      }
+    ],
+    "ratings": 5,
+    "reseller_price": 175,
+    "suggested_price": 192.5,
+    "warranty": "11 Days warranty",
+    "available_quantity": 32,
+    "total_sold": 0,
+    "description": "This is the short description of this product.Thank you.",
+    "hot": 0,
+    "discount": 16,
+    "category": "Bottle",
+    "slug": "bottle",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.352Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.352Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdd70"
+    },
+    "product_name": "Steel Metal Bottle 600 ML",
+    "product_id": "7RC8KFRA",
+    "images": [
+      {
+        "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/1105dc0c9232477eb80dac7d000edc0c_9366/Steel_Metal_Bottle_600_ML_White_EX7306_01_standard.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdd71"
+        }
+      }
+    ],
+    "ratings": 4,
+    "reseller_price": 227,
+    "suggested_price": 249.7,
+    "warranty": "9 Days warranty",
+    "available_quantity": 19,
+    "total_sold": 0,
+    "description": "This is the short description of this product.Thank you.",
+    "hot": 1,
+    "discount": 13,
+    "category": "Bottle",
+    "slug": "bottle",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.352Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.352Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdd72"
+    },
+    "product_name": "Steel Straw Metal Bottle 600 ML",
+    "product_id": "6FDLHZZ8",
+    "images": [
+      {
+        "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/f7fb63986ed34112bc57ac7d002c9f43_9366/Steel_Straw_Metal_Bottle_600_ML_White_EX7316_01_standard.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdd73"
+        }
+      }
+    ],
+    "ratings": 3,
+    "reseller_price": 234,
+    "suggested_price": 257.4,
+    "warranty": "14 Days warranty",
+    "available_quantity": 18,
+    "total_sold": 0,
+    "description": "This is the short description of this product.Thank you.",
+    "hot": 1,
+    "discount": 15,
+    "category": "Bottle",
+    "slug": "bottle",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.352Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.352Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdd74"
+    },
+    "product_name": "Steel Metal Bottle 600 ML",
+    "product_id": "F2BKY7LM",
+    "images": [
+      {
+        "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/e2d870a680644e4d98e9ac7d0008ecc7_9366/Steel_Metal_Bottle_600_ML_Yellow_EX7307_01_standard.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdd75"
+        }
+      }
+    ],
+    "ratings": 5,
+    "reseller_price": 245,
+    "suggested_price": 269.5,
+    "warranty": "12 Days warranty",
+    "available_quantity": 14,
+    "total_sold": 0,
+    "description": "This is the short description of this product.Thank you.",
+    "hot": 0,
+    "discount": 0,
+    "category": "Bottle",
+    "slug": "bottle",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.352Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.352Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdd76"
+    },
+    "product_name": "Squad Glass Bottle 720 ML",
+    "product_id": "06CNYZ8N",
+    "images": [
+      {
+        "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/77ad16764abf4e828560ad44001cd640_9366/Squad_Glass_Bottle_720_ML_Black_FZ7115_01_standard.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdd77"
+        }
+      }
+    ],
+    "ratings": 3,
+    "reseller_price": 118,
+    "suggested_price": 129.8,
+    "warranty": "6 Days warranty",
+    "available_quantity": 33,
+    "total_sold": 0,
+    "description": "This is the short description of this product.Thank you.",
+    "hot": 1,
+    "discount": 2,
+    "category": "Bottle",
+    "slug": "bottle",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.352Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.352Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdd78"
+    },
+    "product_name": "Steel Bottle 600 ML",
+    "product_id": "YPOZEIO9",
+    "images": [
+      {
+        "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/48057b65216644f683a9aa1c0172ae6e_9366/Steel_Bottle_600_ML_Black_CL6093_01_standard.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdd79"
+        }
+      }
+    ],
+    "ratings": 5,
+    "reseller_price": 186,
+    "suggested_price": 204.6,
+    "warranty": "14 Days warranty",
+    "available_quantity": 23,
+    "total_sold": 0,
+    "description": "This is the short description of this product.Thank you.",
+    "hot": 1,
+    "discount": 10,
+    "category": "Bottle",
+    "slug": "bottle",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.352Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.352Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdd7a"
+    },
+    "product_name": "Steel Metal Bottle 2L",
+    "product_id": "QZU6G0OF",
+    "images": [
+      {
+        "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/f8d89293c9cb4bf08d52adb100f95a3a_9366/Steel_Metal_Bottle_2L_Black_EX7302_01_standard.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdd7b"
+        }
+      }
+    ],
+    "ratings": 4,
+    "reseller_price": 290,
+    "suggested_price": 319,
+    "warranty": "12 Days warranty",
+    "available_quantity": 33,
+    "total_sold": 0,
+    "description": "This is the short description of this product.Thank you.",
+    "hot": 0,
+    "discount": 16,
+    "category": "Bottle",
+    "slug": "bottle",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.352Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.352Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdd7c"
+    },
+    "product_name": "Fjallraven - Foldsack No. 1 Backpack",
+    "product_id": "ZDROJTF7",
+    "images": [
+      {
+        "link": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdd7d"
+        }
+      }
+    ],
+    "ratings": 4.3,
+    "reseller_price": 124,
+    "suggested_price": 136.4,
+    "warranty": "12 Days warranty",
+    "available_quantity": 34,
+    "total_sold": 0,
+    "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+    "hot": 1,
+    "discount": 15,
+    "category": "Bag",
+    "slug": "bag",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.352Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.352Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdd7e"
+    },
+    "product_name": "Mens Casual Premium Slim Fit T-Shirts",
+    "product_id": "QYMJ42OU",
+    "images": [
+      {
+        "link": "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdd7f"
+        }
+      }
+    ],
+    "ratings": 4.1,
+    "reseller_price": 44,
+    "suggested_price": 48.4,
+    "warranty": "14 Days warranty",
+    "available_quantity": 45,
+    "total_sold": 0,
+    "description": "Slim-fitting style, contrast raglan long sleeve, three-button Henley placket, light weight & soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.",
+    "hot": 0,
+    "discount": 5,
+    "category": "T-Shirt",
+    "slug": "t-shirt",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.353Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.353Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdd80"
+    },
+    "product_name": "Men's Cotton Jacket",
+    "product_id": "AWSAUNUT",
+    "images": [
+      {
+        "link": "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdd81"
+        }
+      }
+    ],
+    "ratings": 3.8,
+    "reseller_price": 66.69,
+    "suggested_price": 73.359,
+    "warranty": "10 Days warranty",
+    "available_quantity": 34,
+    "total_sold": 0,
+    "description": "Great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.",
+    "hot": 1,
+    "discount": 7,
+    "category": "Jacket",
+    "slug": "jacket",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.353Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.353Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdd52"
+    },
+    "product_name": "Baseball Cap",
+    "product_id": "Z7CKUSJX",
+    "images": [
+      {
+        "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/0ce5f49aa0914deabf16adc600d09e60_9366/Baseball_Cap_Black_HD7039_01_standard.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdd53"
+        }
+      }
+    ],
+    "ratings": 5,
+    "reseller_price": 184,
+    "suggested_price": 202.4,
+    "warranty": "10 Days warranty",
+    "available_quantity": 23,
+    "total_sold": 0,
+    "description": "This is the short description of this product.Thank you.",
+    "hot": 1,
+    "discount": 15,
+    "category": "Cap",
+    "slug": "cap",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.351Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.351Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdd54"
+    },
+    "product_name": "Relaxed Strap-Back Hat",
+    "product_id": "1P7MT8OS",
+    "images": [
+      {
+        "link": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/aaa5ae549c624178bc25a740012dd61f_9366/Relaxed_Strap-Back_Hat_White_BH7135_01_standard.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdd55"
+        }
+      }
+    ],
+    "ratings": 5,
+    "reseller_price": 194,
+    "suggested_price": 213.4,
+    "warranty": "6 Days warranty",
+    "available_quantity": 12,
+    "total_sold": 0,
+    "description": "This is the short description of this product.Thank you.",
+    "hot": 0,
+    "discount": 6,
+    "category": "Cap",
+    "slug": "cap",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.352Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.352Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdd86"
+    },
+    "product_name": "Solid Gold Petite Micropave",
+    "product_id": "CRK87R03",
+    "images": [
+      {
+        "link": "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdd87"
+        }
+      }
+    ],
+    "ratings": 4.7,
+    "reseller_price": 145,
+    "suggested_price": 159.5,
+    "warranty": "10 Days warranty",
+    "available_quantity": 8,
+    "total_sold": 0,
+    "description": "Satisfaction Guaranteed. Return or exchange any order within 30 days.Designed and sold by Hafeez Center in the United States. Satisfaction Guaranteed. Return or exchange any order within 30 days.",
+    "hot": 0,
+    "discount": 16,
+    "category": "Jewelery",
+    "slug": "jewelery",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.353Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.353Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdd88"
+    },
+    "product_name": "White Gold Plated Princess",
+    "product_id": "9XRENPK0",
+    "images": [
+      {
+        "link": "https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdd89"
+        }
+      }
+    ],
+    "ratings": 5,
+    "reseller_price": 189,
+    "suggested_price": 207.9,
+    "warranty": "7 Days warranty",
+    "available_quantity": 13,
+    "total_sold": 0,
+    "description": "Classic Created Wedding Engagement Solitaire Diamond Promise Ring for Her. Gifts to spoil your love more for Engagement, Wedding, Anniversary, Valentine's Day...",
+    "hot": 0,
+    "discount": 11,
+    "category": "Jewelery",
+    "slug": "jewelery",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.353Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.353Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdd8a"
+    },
+    "product_name": "Pierced Owl Rose Gold Plated Stainless Steel Double",
+    "product_id": "L73W1RSH",
+    "images": [
+      {
+        "link": "https://fakestoreapi.com/img/51UDEzMJVpL._AC_UL640_QL65_ML3_.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdd8b"
+        }
+      }
+    ],
+    "ratings": 3.4,
+    "reseller_price": 30,
+    "suggested_price": 33,
+    "warranty": "6 Days warranty",
+    "available_quantity": 40,
+    "total_sold": 0,
+    "description": "Rose Gold Plated Double Flared Tunnel Plug Earrings. Made of 316L Stainless Steel",
+    "hot": 0,
+    "discount": 15,
+    "category": "Jewelery",
+    "slug": "jewelery",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.353Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.353Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdd8c"
+    },
+    "product_name": "WD 2TB Elements Portable External Hard Drive - USB 3.0",
+    "product_id": "P2A6UHCZ",
+    "images": [
+      {
+        "link": "https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdd8d"
+        }
+      }
+    ],
+    "ratings": 4.9,
+    "reseller_price": 64,
+    "suggested_price": 70.4,
+    "warranty": "8 Days warranty",
+    "available_quantity": 140,
+    "total_sold": 0,
+    "description": "USB 3.0 and USB 2.0 Compatibility Fast data transfers Improve PC Performance High Capacity; Compatibility Formatted NTFS for Windows 10, Windows 8.1, Windows 7; Reformatting may be required for other operating systems; Compatibility may vary depending on user’s hardware configuration and operating system",
+    "hot": 1,
+    "discount": 17,
+    "category": "Hard drive",
+    "slug": "hard-drive",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.353Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.353Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdd8e"
+    },
+    "product_name": "SanDisk SSD PLUS 1TB Internal SSD - SATA III 6 Gb/s",
+    "product_id": "76SDP10B",
+    "images": [
+      {
+        "link": "https://fakestoreapi.com/img/61U7T1koQqL._AC_SX679_.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdd8f"
+        }
+      }
+    ],
+    "ratings": 4.5,
+    "reseller_price": 109,
+    "suggested_price": 119.9,
+    "warranty": "14 Days warranty",
+    "available_quantity": 10,
+    "total_sold": 0,
+    "description": "Easy upgrade for faster boot up, shutdown, application load and response (As compared to 5400 RPM SATA 2.5” hard drive; Based on published specifications and internal benchmarking tests using PCMark vantage scores) Boosts burst write performance, making it ideal for typical PC workloads The perfect balance of performance and reliability Read/write speeds of up to 535MB/s/450MB/s (Based on internal testing; Performance may vary depending upon drive capacity, host device, OS and application.)",
+    "hot": 0,
+    "discount": 18,
+    "category": "SSD card",
+    "slug": "ssd-card",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.353Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.353Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdd90"
+    },
+    "product_name": "Silicon Power 256GB SSD 3D NAND A55 SLC Cache Performance Boost SATA III 2.5",
+    "product_id": "KLKMYXDJ",
+    "images": [
+      {
+        "link": "https://fakestoreapi.com/img/71kWymZ+c+L._AC_SX679_.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdd91"
+        }
+      }
+    ],
+    "ratings": 4.1,
+    "reseller_price": 109,
+    "suggested_price": 119.9,
+    "warranty": "13 Days warranty",
+    "available_quantity": 20,
+    "total_sold": 0,
+    "description": "3D NAND flash are applied to deliver high transfer speeds Remarkable transfer speeds that enable faster bootup and improved overall system performance. The advanced SLC Cache Technology allows performance boost and longer lifespan 7mm slim design suitable for Ultrabooks and Ultra-slim notebooks. Supports TRIM command, Garbage Collection technology, RAID, and ECC (Error Checking & Correction) to provide the optimized performance and enhanced reliability.",
+    "hot": 0,
+    "discount": 12,
+    "category": "SSD card",
+    "slug": "ssd-card",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.353Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.353Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdd92"
+    },
+    "product_name": "WD 4TB Gaming Drive Works with Playstation 4 Portable External Hard Drive",
+    "product_id": "BWXZI3XB",
+    "images": [
+      {
+        "link": "https://fakestoreapi.com/img/61mtL65D4cL._AC_SX679_.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdd93"
+        }
+      }
+    ],
+    "ratings": 3.9,
+    "reseller_price": 114,
+    "suggested_price": 125.4,
+    "warranty": "9 Days warranty",
+    "available_quantity": 13,
+    "total_sold": 0,
+    "description": "Expand your PS4 gaming experience, Play anywhere Fast and easy, setup Sleek design with high capacity, 3-year manufacturer's limited warranty",
+    "hot": 0,
+    "discount": 7,
+    "category": "Hard drive",
+    "slug": "hard-drive",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.353Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.353Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdd94"
+    },
+    "product_name": "Acer SB220Q bi 21.5 inches Full HD (1920 x 1080) IPS Ultra-Thin",
+    "product_id": "WMI0BMFS",
+    "images": [
+      {
+        "link": "https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdd95"
+        }
+      }
+    ],
+    "ratings": 4.4,
+    "reseller_price": 490,
+    "suggested_price": 539,
+    "warranty": "13 Days warranty",
+    "available_quantity": 34,
+    "total_sold": 0,
+    "description": "21. 5 inches Full HD (1920 x 1080) widescreen IPS display And Radeon free Sync technology. No compatibility for VESA Mount Refresh Rate: 75Hz - Using HDMI port Zero-frame design | ultra-thin | 4ms response time | IPS panel Aspect ratio - 16: 9. Color Supported - 16. 7 million colors. Brightness - 250 nit Tilt angle -5 degree to 15 degree. Horizontal viewing angle-178 degree. Vertical viewing angle-178 degree 75 hertz",
+    "hot": 0,
+    "discount": 16,
+    "category": "Monitor",
+    "slug": "monitor",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.353Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.353Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdd96"
+    },
+    "product_name": "Samsung 49-Inch CHG90 144Hz Curved Gaming Monitor (LC49HG90DMNXZA) – Super Ultrawide Screen QLED",
+    "product_id": "MKRE71OL",
+    "images": [
+      {
+        "link": "https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdd97"
+        }
+      }
+    ],
+    "ratings": 3.5,
+    "reseller_price": 999.99,
+    "suggested_price": 1099.989,
+    "warranty": "14 Days warranty",
+    "available_quantity": 34,
+    "total_sold": 0,
+    "description": "49 INCH SUPER ULTRAWIDE 32:9 CURVED GAMING MONITOR with dual 27 inch screen side by side QUANTUM DOT (QLED) TECHNOLOGY, HDR support and factory calibration provides stunningly realistic and accurate color and contrast 144HZ HIGH REFRESH RATE and 1ms ultra fast response time work to eliminate motion blur, ghosting, and reduce input lag",
+    "hot": 1,
+    "discount": 4,
+    "category": "Monitor",
+    "slug": "monitor",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.353Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.353Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdd98"
+    },
+    "product_name": "BIYLACLESEN Women's 3-in-1 Snowboard Jacket Winter Coats",
+    "product_id": "92JS6QPG",
+    "images": [
+      {
+        "link": "https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdd99"
+        }
+      }
+    ],
+    "ratings": 4.8,
+    "reseller_price": 56.99,
+    "suggested_price": 62.689,
+    "warranty": "13 Days warranty",
+    "available_quantity": 34,
+    "total_sold": 0,
+    "description": "The Jackets is US standard size, Please choose size as your usual wear Material: 100% Polyester; Detachable Liner Fabric: Warm Fleece. Detachable Functional Liner: Skin Friendly, Lightweigt and Warm.Stand Collar Liner jacket, keep you warm in cold weather. Zippered Pockets: 2 Zippered Hand Pockets, 2 Zippered Pockets on Chest (enough to keep cards or keys)and 1 Hidden Pocket Inside.Zippered Hand Pockets and Hidden Pocket keep your things secure. Humanized Design: Adjustable and Detachable Hood and Adjustable cuff to prevent the wind and water,for a comfortable fit. 3 in 1 Detachable Design provide more convenience, you can separate the coat and inner as needed, or wear it together. It is suitable for different season and help you adapt to different climates",
+    "hot": 0,
+    "discount": 9,
+    "category": "Jacket",
+    "slug": "jacket",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.353Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.353Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdd9a"
+    },
+    "product_name": "Lock and Love Women's Removable Hooded Faux Leather Moto Biker Jacket",
+    "product_id": "KDWRRO2Y",
+    "images": [
+      {
+        "link": "https://fakestoreapi.com/img/81XH0e8fefL._AC_UY879_.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdd9b"
+        }
+      }
+    ],
+    "ratings": 5,
+    "reseller_price": 34.99,
+    "suggested_price": 38.489000000000004,
+    "warranty": "14 Days warranty",
+    "available_quantity": 67,
+    "total_sold": 0,
+    "description": "100% POLYURETHANE(shell) 100% POLYESTER(lining) 75% POLYESTER 25% COTTON (SWEATER), Faux leather material for style and comfort / 2 pockets of front, 2-For-One Hooded denim style faux leather jacket, Button detail on waist / Detail stitching at sides, HAND WASH ONLY / DO NOT BLEACH / LINE DRY / DO NOT IRON",
+    "hot": 0,
+    "discount": 5,
+    "category": "Jacket",
+    "slug": "jacket",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.353Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.353Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdd9c"
+    },
+    "product_name": "Rain Jacket Women Windbreaker Striped Climbing Raincoats",
+    "product_id": "P02GXYK7",
+    "images": [
+      {
+        "link": "https://fakestoreapi.com/img/71HblAHs5xL._AC_UY879_-2.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdd9d"
+        }
+      }
+    ],
+    "ratings": 4.6,
+    "reseller_price": 45,
+    "suggested_price": 49.5,
+    "warranty": "7 Days warranty",
+    "available_quantity": 34,
+    "total_sold": 0,
+    "description": "Lightweight perfet for trip or casual wear---Long sleeve with hooded, adjustable drawstring waist design. Button and zipper front closure raincoat, fully stripes Lined and The Raincoat has 2 side pockets are a good size to hold all kinds of things, it covers the hips, and the hood is generous but doesn't overdo it.Attached Cotton Lined Hood with Adjustable Drawstrings give it a real styled look.",
+    "hot": 1,
+    "discount": 12,
+    "category": "Raincoat",
+    "slug": "raincoat",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.353Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.353Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdd9e"
+    },
+    "product_name": "MBJ Women's Solid Short Sleeve Boat Neck V",
+    "product_id": "H2ZE67ZV",
+    "images": [
+      {
+        "link": "https://fakestoreapi.com/img/71z3kpMAYsL._AC_UY879_.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdd9f"
+        }
+      }
+    ],
+    "ratings": 4.7,
+    "reseller_price": 45,
+    "suggested_price": 49.5,
+    "warranty": "9 Days warranty",
+    "available_quantity": 34,
+    "total_sold": 0,
+    "description": "95% RAYON 5% SPANDEX, Made in USA or Imported, Do Not Bleach, Lightweight fabric with great stretch for comfort, Ribbed on sleeves and neckline / Double stitching on bottom hem.",
+    "hot": 0,
+    "discount": 17,
+    "category": "Neck V",
+    "slug": "neck-v",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.353Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.353Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdda0"
+    },
+    "product_name": "Opna Women's Short Sleeve Moisture",
+    "product_id": "K649EG5V",
+    "images": [
+      {
+        "link": "https://fakestoreapi.com/img/51eg55uWmdL._AC_UX679_.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdda1"
+        }
+      }
+    ],
+    "ratings": 4.6,
+    "reseller_price": 7.98,
+    "suggested_price": 8.778,
+    "warranty": "12 Days warranty",
+    "available_quantity": 45,
+    "total_sold": 0,
+    "description": "100% Polyester, Machine wash, 100% cationic polyester interlock, Machine Wash & Pre Shrunk for a Great Fit, Lightweight, roomy and highly breathable with moisture wicking fabric which helps to keep moisture away, Soft Lightweight Fabric with comfortable V-neck collar and a slimmer fit, delivers a sleek, more feminine silhouette and Added Comfort\",\n\"category\": \"women's clothing",
+    "hot": 0,
+    "discount": 4,
+    "category": "leeve Moisture",
+    "slug": "leeve-moisture",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.353Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.353Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdda2"
+    },
+    "product_name": "DANVOUY Womens T Shirt Casual Cotton Short",
+    "product_id": "80XVYZ7G",
+    "images": [
+      {
+        "link": "https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdda3"
+        }
+      }
+    ],
+    "ratings": 5,
+    "reseller_price": 12.99,
+    "suggested_price": 14.289,
+    "warranty": "13 Days warranty",
+    "available_quantity": 34,
+    "total_sold": 0,
+    "description": "95%Cotton,5%Spandex, Features: Casual, Short Sleeve, Letter Print,V-Neck,Fashion Tees, The fabric is soft and has some stretch., Occasion: Casual/Office/Beach/School/Home/Street. Season: Spring,Summer,Autumn,Winter.",
+    "hot": 1,
+    "discount": 19,
+    "category": "T-Shirt",
+    "slug": "t-shirt",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.353Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.353Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdd82"
+    },
+    "product_name": "Men's Casual Slim Fit",
+    "product_id": "NOD16XF8",
+    "images": [
+      {
+        "link": "https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdd83"
+        }
+      }
+    ],
+    "ratings": 4.3,
+    "reseller_price": 15.99,
+    "suggested_price": 17.589,
+    "warranty": "8 Days warranty",
+    "available_quantity": 55,
+    "total_sold": 0,
+    "description": "The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.",
+    "hot": 1,
+    "discount": 5,
+    "category": "Men's casual",
+    "slug": "mens-casual",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.353Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.353Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65007d2c81c09bb3469bdd84"
+    },
+    "product_name": "John Hardy Women's Legends Naga",
+    "product_id": "7S2LGJO7",
+    "images": [
+      {
+        "link": "https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_.jpg",
+        "_id": {
+          "$oid": "65007d2c81c09bb3469bdd85"
+        }
+      }
+    ],
+    "ratings": 4.9,
+    "reseller_price": 200,
+    "suggested_price": 220,
+    "warranty": "9 Days warranty",
+    "available_quantity": 7,
+    "total_sold": 0,
+    "description": "From our Legends Collection, the Naga was inspired by the mythical water dragon that protects the ocean's pearl. Wear facing inward to be bestowed with love and abundance, or outward for protection.",
+    "hot": 1,
+    "discount": 14,
+    "category": "Jewelery",
+    "slug": "jewelery",
+    "totalSold": 0,
+    "is_active": true,
+    "createdAt": {
+      "$date": "2023-09-12T15:01:00.353Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-12T15:01:00.353Z"
+    },
+    "__v": 0
+  }
+]
