@@ -3,6 +3,7 @@ import MainLayout from "../layouts/mainlayout/MainLayout";
 import Home from "../pages/home/Home";
 import About from "../pages/About/About";
 import Contact from "../pages/Conatct/Contact";
+import AddToCardPage from "../pages/AddToCardPage/AddToCardPage";
 
 export const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ export const router = createBrowserRouter([
         path: "/contact",
         element: <Contact></Contact>,
       },
+      {
+        path: "/addToCardPage",
+        element: <AddToCardPage />
+      }
     ],
   },
 ]);
