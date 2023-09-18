@@ -2,6 +2,7 @@ const {
   highlightProducts,
   productByPagination,
   totalProductsCount,
+  productBySlug,
 } = require("../controller/products.controller");
 
 const productRoute = require("express").Router();
@@ -26,4 +27,6 @@ productRoute.get("/products-by-pagination", productByPagination);
   }
  **/
 
+//get single product by slug
+productRoute.get("/product-by-slug/:slug", productBySlug);
 module.exports = productRoute;

@@ -10,10 +10,15 @@ const {
   successResponse,
 } = require("./controller/responseHandler");
 
-//middleware
-//this is middleware
+//cors config
+const corsOptions = {
+  origin: "http://localhost:5173",
+  credentials: true, // This is important for cookies to work
+};
 
-app.use(cors());
+//middleware
+
+app.use(cors(corsOptions));
 app.use(cookieParser());
 app.use(helmet());
 app.use(express.json());

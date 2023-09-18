@@ -53,4 +53,22 @@ const productByPagination = async (req, res, next) => {
   }
 };
 
-module.exports = { highlightProducts, productByPagination, totalProductsCount };
+const productBySlug = async (req, res, next) => {
+  try {
+    const { slug } = req.params;
+    const product = await Products.findOne({ product_slug: slug });
+    return successResponse(res, {
+      message: "Single product by category.",
+      payload: { product },
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+module.exports = {
+  highlightProducts,
+  productByPagination,
+  totalProductsCount,
+  productBySlug,
+};

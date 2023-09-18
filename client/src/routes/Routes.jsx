@@ -5,6 +5,8 @@ import About from "../pages/About/About";
 import Contact from "../pages/Conatct/Contact";
 import Register from "../pages/register/Register";
 import Login from "../pages/login/Login";
+import ConfirmAccountMessage from "../pages/register/ConfirmAccountMessage";
+import VerifyAccounts from "../pages/register/VerifyAccounts";
 
 export const router = createBrowserRouter([
   {
@@ -28,8 +30,16 @@ export const router = createBrowserRouter([
         element: <Register></Register>,
       },
       {
+        path: "/confirm-account-message",
+        element: <ConfirmAccountMessage></ConfirmAccountMessage>,
+      },
+      {
         path: "/login",
         element: <Login></Login>,
+      },
+      {
+        path: "/accounts/verify",
+        element: <VerifyAccounts />,
       },
     ],
   },
