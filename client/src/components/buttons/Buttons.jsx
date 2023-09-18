@@ -18,4 +18,12 @@ const PrimaryButton = ({ title }) => {
   );
 };
 
+export const AddindButton = ({logo}) =>{
+  return <Button>{logo}</Button>
+}
+
+
+
+
+
 export { ViewAllButton ,PrimaryButton};
