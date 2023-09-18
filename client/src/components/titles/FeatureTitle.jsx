@@ -82,7 +82,12 @@ const MaximamProfitPrice = ({ price }) => {
 const ColorTitle = ({ title }) => {
   return <p className="text-base  text-deepGray  font-[400]">{title}</p>;
 };
+const TracOrdertitle = ({ title }) => {
+  return (
+<p className="text-base font-sans text-heading  py-5 border-b-2 border-borderColor">{title}</p>
 
+  );
+};
 export {
   FeaturedProdcutTitle,
   CategoryTitles,
@@ -97,4 +102,5 @@ export {
   MaximumProfitMarginText,
   MaximamProfitPrice,
   ColorTitle,
+  TracOrdertitle
 };
