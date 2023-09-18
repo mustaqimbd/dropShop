@@ -29,18 +29,28 @@ const AddToCardDetails = () => {
             </div>
             <div className='mt-3 flex gap-6'>
                 <div className='w-1/2'>
-                <MaximumProfitMarginText text={"Custom Profit Margin"} />
-                <div className=' border-gray-300 border py-3 px-4'>
-                    <MaximamProfitPrice price={"50"} />
-                </div>
+                    <MaximumProfitMarginText text={"Custom Profit Margin"} />
+                    <div className=' border-gray-300 border py-3 px-4'>
+                        <MaximamProfitPrice price={"50"} />
+                    </div>
                 </div>
                 <div className='w-1/2'>
-                <MaximumProfitMarginText text={"Size"} />
-                <div className=' border-gray-300 border py-3 px-4'>
-                    <MaximamProfitPrice price={"Selected Size"} />
-                </div>
+                    <MaximumProfitMarginText text={"Size"} />
+                    <div className=' border-gray-300 border py-3 px-4'>
+                        <MaximamProfitPrice price={"Selected Size"} />
+                    </div>
                 </div>
             </div>
+            <div className='mt-3 flex gap-6'>
+                <div className='w-1/2'>
+                    <MaximumProfitMarginText text={"Total Amount"} />
+                    <div className=' border-gray-300 border py-3 px-4'>
+                        <MaximamProfitPrice price={"890 Taka"} />
+                    </div>
+                </div>
+                <div className='w-1/2'></div>
+            </div>
+
 
         </div>
     )
