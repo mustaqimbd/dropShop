@@ -5,7 +5,8 @@ import { Button, Typography } from '@mui/material'
 import AddToCardProductDetailsConfig, { DividerProduct } from './AddToCardDetailsSections/AddToCardProductDetailsConfig'
 import { LockIcon } from '../icons/Icons'
 import { BsPlusLg } from 'react-icons/bs'
-import { AiOutlineMinus, AiOutlineShoppingCart } from 'react-icons/ai'
+import { AiOutlineHeart, AiOutlineMinus, AiOutlineShoppingCart } from 'react-icons/ai'
+import { BiRefresh } from 'react-icons/bi'
 
 const AddToCardDetails = () => {
     return (
@@ -69,8 +70,20 @@ const AddToCardDetails = () => {
                     </div>
                 </div>
             </div>
-
-
+            <div className='mt-3 flex gap-4'>
+               <button className='flex justify-between items-center py-3 px-6 gap-3  hover:border-black'>
+                    <AiOutlineHeart size={30}/>
+                    Add To Wishlist
+               </button>
+               <button className='flex justify-between items-center py-3 px-6 gap-3 hover:border-black '> 
+               <BiRefresh size={35} /> Add To Compare
+               </button>
+            </div>
+            <div className='mt-5'>
+                <div className='border border-gray-300 p-3'>
+                    <p className='text-base'>100% guarantee safe checkout</p>
+                </div>
+            </div>
         </div>
     )
 }
