@@ -1,3 +1,4 @@
+import { AiOutlineLock } from "react-icons/ai"
 import {BsStar} from "react-icons/bs"
 
 
@@ -6,3 +7,6 @@ export const EmptyStarIcons = () =>{
     return <BsStar />
 }
 
+export const LockIcon = () =>{
+    return <AiOutlineLock size={35}/>
+}
