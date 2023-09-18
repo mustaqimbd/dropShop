@@ -8,6 +8,7 @@ const userInfoHandler = user => {
     mobile,
     address,
     district,
+    role,
     webOrPageLink,
   } = user;
   const userInfo = {
@@ -18,6 +19,7 @@ const userInfoHandler = user => {
     mobile,
     address,
     district,
+    role,
     webOrPageLink,
     isAdmin,
   };
