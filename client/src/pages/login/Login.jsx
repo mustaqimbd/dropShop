@@ -29,6 +29,7 @@ const Login = () => {
       );
       setUser(res.data.payload.userInfo);
       localStorage.setItem("token", res.data.payload.token);
+      navigate("/");
     } catch (error) {
       setLoginError(error.response.data.message);
     }

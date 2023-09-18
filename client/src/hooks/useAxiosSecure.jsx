@@ -22,7 +22,7 @@ const useAxiosSecure = () => {
       async error => {
         if (
           error.response &&
-          (error.response.status === 401 || error.response.status === 400)
+          (error.response.status === 401 || error.response.status === 403)
         ) {
           //TODO: Logout user
           <Navigate to="/login"></Navigate>;
