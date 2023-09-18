@@ -1,5 +1,6 @@
 
-import FeatureProductSection from "./FeaturedProducts/FeatureProductSection";
+
+import FeatureProducts from "./FeaturedProducts/FeatureProducts";
 import HighlightPolicy from "./HighlightPolicy/HighlightPolicy";
 import HighlightSection from "./HighlightSection/HighlightSection";
 import ProductsCategories from "./ProductsCategories/ProductsCategories";
@@ -10,7 +11,7 @@ const Home = () => {
         <div>
            
         <ProductsCategories />
-        <FeatureProductSection />
+        <FeatureProducts />
         <div>
         <HighlightSection/>
 
