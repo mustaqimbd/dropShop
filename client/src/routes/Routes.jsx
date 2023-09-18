@@ -8,6 +8,8 @@ import Login from "../pages/login/Login";
 import ConfirmAccountMessage from "../pages/register/ConfirmAccountMessage";
 import VerifyAccounts from "../pages/register/VerifyAccounts";
 
+import AddToCardPage from "../pages/AddToCardPage/AddToCardPage";
+
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -40,6 +42,10 @@ export const router = createBrowserRouter([
       {
         path: "/accounts/verify",
         element: <VerifyAccounts />,
+      },
+      {
+        path: "/addToCardPage",
+        element: <AddToCardPage />,
       },
     ],
   },

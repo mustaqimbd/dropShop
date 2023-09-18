@@ -114,7 +114,7 @@ const Login = () => {
 
                   <div className="flex gap-3">
                     <p>Haven't any account ? </p>{" "}
-                    <NavLink className="text-priceText" to={"/register"}>
+                    <NavLink className="text-priceText " to={"/register"}>
                       Register Now
                     </NavLink>
                   </div>
