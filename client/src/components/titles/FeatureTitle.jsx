@@ -71,6 +71,18 @@ const ResellerPriceTitle = ({ title }) => {
   );
 };
 
+const MaximumProfitMarginText = ({ text }) => {
+  return <p className="text-lg font-medium ">{text}</p>;
+};
+
+const MaximamProfitPrice = ({ price }) => {
+  return <p className="text-base  text-deepGray pt-2 font-[400]">{price}</p>;
+};
+
+const ColorTitle = ({ title }) => {
+  return <p className="text-base  text-deepGray  font-[400]">{title}</p>;
+};
+
 export {
   FeaturedProdcutTitle,
   CategoryTitles,
@@ -82,4 +94,7 @@ export {
   AvailabilityTitle,
   CategoryTitle,
   ResellerPriceTitle,
+  MaximumProfitMarginText,
+  MaximamProfitPrice,
+  ColorTitle,
 };

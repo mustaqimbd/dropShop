@@ -9,7 +9,7 @@ const AddToCardCarosoul = () => {
 
     return (
         
-        <Carousel showArrows={true} onChange={onChange} onClickItem={onClickItem} onClickThumb={onClickThumb}>
+        <Carousel showArrows={true} onChange={onChange} onClickItem={onClickItem} onClickThumb={onClickThumb} autoPlay={true} infiniteLoop={true}>
             
             <div><img src="files/tv-1.jpg" /></div>
             <div><img src="files/tv-2.jpg" /></div>
