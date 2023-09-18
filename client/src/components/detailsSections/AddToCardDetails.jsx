@@ -1,9 +1,11 @@
 import React from 'react'
 import RatingSection from './AddToCardDetailsSections/RatingSection'
-import { AddToCardDetailsProductTitle, AvailabilityTitle, BrandTitle, CategoryTitle, ColorTitle, MaximamProfitPrice, MaximumProfitMarginText, ResellerPriceTitle, SkuTitle } from '../titles/FeatureTitle'
-import { Typography } from '@mui/material'
+import { AddToCardDetailsProductTitle, AvailabilityTitle, BrandTitle, CategoryTitle, CategoryTitles, ColorTitle, MaximamProfitPrice, MaximumProfitMarginText, ResellerPriceTitle, SkuTitle } from '../titles/FeatureTitle'
+import { Button, Typography } from '@mui/material'
 import AddToCardProductDetailsConfig, { DividerProduct } from './AddToCardDetailsSections/AddToCardProductDetailsConfig'
 import { LockIcon } from '../icons/Icons'
+import { BsPlusLg } from 'react-icons/bs'
+import { AiOutlineMinus, AiOutlineShoppingCart } from 'react-icons/ai'
 
 const AddToCardDetails = () => {
     return (
@@ -49,6 +51,23 @@ const AddToCardDetails = () => {
                     </div>
                 </div>
                 <div className='w-1/2'></div>
+            </div>
+            <div className='mt-3'>
+                <div className='flex justify-between gap-1'>
+                    <div className='border border-gray-400 flex py-4 px-2 gap-5'>
+                        <Button variant=''> <BsPlusLg /> </Button>
+                        <CategoryTitle title={"1"} />
+                        <Button variant=''> <AiOutlineMinus /> </Button>
+                    </div>
+                    <div>
+                        <div className=''>
+                            <button className='bg-ratingIcon hover:bg-[#FA8250] py-4 px-14 flex justify-between gap-3 items-center font-bold text-white'> <span className='text-lg'>Add To Cart </span> <span><AiOutlineShoppingCart size={30} /></span>  </button>
+                        </div>
+                    </div>
+                    <div className='border border-ratingIcon hover:border-black '>
+                    <button className='text-ratingIcon px-5 py-4 hover:text-black'>BUY NOW</button>
+                    </div>
+                </div>
             </div>
 
 
