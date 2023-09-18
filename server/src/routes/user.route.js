@@ -31,7 +31,11 @@ userRoute.post(
 
 //register a new user
 // /api/user/register
-userRoute.post("/register", limitRequest, registerNewUser);
+userRoute.post(
+  "/register",
+  //  limitRequest,
+  registerNewUser
+);
 /**
   @body ={
     name:"",*
@@ -62,7 +66,7 @@ userRoute.post("/login", limitRequest, loginUser);
 // /api/user/profile
 userRoute.get(
   "/profile",
-  isTokenAvailable,
+  // isTokenAvailable,
   passport.authenticate("jwt", { session: false }),
   userProfile
 );

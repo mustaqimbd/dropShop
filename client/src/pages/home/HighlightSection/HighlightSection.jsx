@@ -10,22 +10,19 @@ const HighlightSection = () => {
 
   useEffect(() => {
     fetch("http://localhost:5000/api/products/highlight-products")
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
+      .then(res => res.json())
+      .then(data => {
         setTopRate(data.payload.topRatedProducts);
         setTopSelling(data.payload.topSellingProducts);
-        // console.log(topRate);
       });
   }, []);
 
   const [categories, setCategories] = useState([]);
   useEffect(() => {
     fetch("category.json")
-      .then((res) => res.json())
-      .then((data) => {
+      .then(res => res.json())
+      .then(data => {
         setCategories(data);
-        console.log(data);
       });
   }, []);
 
