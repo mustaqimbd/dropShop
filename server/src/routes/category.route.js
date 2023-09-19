@@ -4,6 +4,7 @@ const categoryRoute = require("express").Router();
 const {
   getAllCategory,
   addNewCategory,
+  filterByCategory,
 } = require("../controller/category.controller");
 const isAdmin = require("../middleware/isAdmin");
 
@@ -18,6 +19,14 @@ categoryRoute.post(
   passport.authenticate("jwt", { session: false }),
   isAdmin,
   addNewCategory
+);
+
+// get products by category
+// /api/category/
+categoryRoute.get(
+  "/:slug",
+  passport.authenticate("jwt", { session: false }),
+  filterByCategory
 );
 
 module.exports = categoryRoute;
