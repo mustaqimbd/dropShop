@@ -1,7 +1,7 @@
 import { FeaturedProdcutTitle, PriceTitles } from "../../titles/FeatureTitle";
 import { HighLightProductImg } from "../../avaters/Avatars";
 
-const HighLightedProductsCard = ({ content }) => {
+const TrackCard = ({ content }) => {
   const { product_name, images, suggested_price } = content;
 
   //get category data from api
@@ -9,7 +9,7 @@ const HighLightedProductsCard = ({ content }) => {
   return (
     <div className="bg-white flex gap-4 rounded-sm items-center p-2">
       <div>
-        <HighLightProductImg src={images[0]?.link} />
+      <HighLightProductImg src={images[0]?.link} />
       </div>
       <div className="space-y-3">
         <FeaturedProdcutTitle title={product_name} />
@@ -20,4 +20,4 @@ const HighLightedProductsCard = ({ content }) => {
   );
 };
 
-export default HighLightedProductsCard;
+export default TrackCard;

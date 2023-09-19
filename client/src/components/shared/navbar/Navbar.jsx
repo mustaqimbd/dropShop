@@ -35,6 +35,7 @@ const Navbar = () => {
               </div>
             </div>
             <div>
+              <Link to="/track_order">
               <div className="flex gap-3 items-center ">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -65,6 +66,7 @@ const Navbar = () => {
                     strokeLinejoin="round"
                   />
                 </svg>
+
                 <Typography
                  
                   fontWeight={"fontWeightMedium"}
@@ -73,7 +75,7 @@ const Navbar = () => {
                   {" "}
                   Track Order
                 </Typography>
-              </div>
+              </div></Link>
             </div>
             <div>
               <div className="flex gap-3 items-center ">

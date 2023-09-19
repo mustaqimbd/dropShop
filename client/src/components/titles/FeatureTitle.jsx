@@ -84,7 +84,7 @@ const ColorTitle = ({ title }) => {
 };
 const TracOrdertitle = ({ title }) => {
   return (
-<p className="text-base font-sans text-heading  py-5 border-b-2 border-borderColor">{title}</p>
+<div className="text-base font-sans text-heading  py-5 border-b-2 border-borderColor">{title}</div>
 
   );
 };
