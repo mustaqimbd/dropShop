@@ -22,8 +22,16 @@ export const AddindButton = ({logo}) =>{
   return <Button>{logo}</Button>
 }
 
+ const BackToOrderBtn = ({ title }) => {
+  return (
+    <button className="bg-primary  px-3 py-2 my-10" >
+      {" "}
+      <span className="font-sans text-white"><ChevronRightIcon />{" "}{title}  </span>{" "}
+    </button>
+  );
+};
 
 
 
 
-export { ViewAllButton ,PrimaryButton};
+export { ViewAllButton ,PrimaryButton,BackToOrderBtn};
