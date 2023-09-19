@@ -9,6 +9,7 @@ import ConfirmAccountMessage from "../pages/register/ConfirmAccountMessage";
 import VerifyAccounts from "../pages/register/VerifyAccounts";
 
 import AddToCardPage from "../pages/AddToCardPage/AddToCardPage";
+import TrackOrder from "../pages/TrackOrder/TrackOrder";
 
 export const router = createBrowserRouter([
   {
@@ -46,7 +47,11 @@ export const router = createBrowserRouter([
       {
         path: "/addToCardPage",
         element: <AddToCardPage />,
-      },
+      },{
+        path:"/track_order",
+        element:<TrackOrder/>
+
+      }
     ],
   },
 ]);
