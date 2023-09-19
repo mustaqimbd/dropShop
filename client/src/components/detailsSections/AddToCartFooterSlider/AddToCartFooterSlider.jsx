@@ -1,4 +1,5 @@
 import React from 'react'
+import AddToCartSwiper from './AddToCartSwiper'
 
 const AddToCartFooterSlider = () => {
   return (
@@ -7,7 +8,7 @@ const AddToCartFooterSlider = () => {
             Top footer
       </div>
       <div>
-            slider
+            <AddToCartSwiper />
       </div>
     </div>
   )
