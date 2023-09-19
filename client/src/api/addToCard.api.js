@@ -3,3 +3,10 @@
 export const addToCardDetails =async () =>{
     
 }
+
+
+export const paymentMethods =async () =>{
+    const res = await fetch("json/addToCartJson.json")
+    const data = await res.json()
+    return data
+}
