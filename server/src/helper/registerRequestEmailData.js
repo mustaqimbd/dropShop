@@ -12,7 +12,7 @@ const registerRequestEmailData = (email, name, token) => {
         <img src="https://i.ibb.co/5khGGt2/agreement.png" style="width:60px" />
     </div>
     <p>Hi ${name}.Please verify you email address.This link will expires in 10 min.</p>
-    <a href="${clientUrl}/accounts/verify/${token}" style="text-decoration: none;"><button
+    <a href="${clientUrl}/accounts/verify?token=${token}" style="text-decoration: none;"><button
             style="border: none;padding: 10px;background-color: #83B735;border-radius: 3px;color: #fff;font-weight: bold; cursor: pointer;">
             Verify Email
         </button></a>

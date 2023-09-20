@@ -22,10 +22,11 @@ const productsSchema = new Schema(
       default: 0,
     },
     description: String,
-    hot: Number,
+    hot: Boolean,
     discount: Number,
     category: String,
-    slug: String,
+    product_slug: String,
+    category_slug: String,
     totalSold: { type: Number, default: 0 },
     is_active: {
       type: Boolean,

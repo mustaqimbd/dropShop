@@ -1,15 +1,10 @@
-import React from "react";
 import { FeaturedProdcutTitle, PriceTitles } from "../../titles/FeatureTitle";
 import { HighLightProductImg } from "../../avaters/Avatars";
 
 const HighLightedProductsCard = ({ content }) => {
-  console.log(content);
   const { product_name, images, suggested_price } = content;
 
-
-
-  //get category data from api 
-  
+  //get category data from api
 
   return (
     <div className="bg-white flex gap-4 rounded-sm items-center p-2">

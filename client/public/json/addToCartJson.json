@@ -1,0 +1,52 @@
+[
+    {
+        "id": 1,
+        "img": "https://i.ibb.co/RHCS84N/visa.png",
+        "name": "visa"
+    },
+    {
+        "id": 2,
+        "img": "https://i.ibb.co/TK5vvFj/master.png",
+        "name": "master-card"
+    },
+    {
+        "id": 3,
+        "img": "https://i.ibb.co/jLwtGYR/amex.png",
+        "name": "american-express"
+    },
+    {
+        "id": 4,
+        "img": "https://i.ibb.co/Y3kZwbV/payoneer.png",
+        "name": "payoneer"
+    },
+    {
+        "id": 5,
+        "img": "https://i.ibb.co/z2Ggs5z/diners-club.png",
+        "name": "diners-club"
+    },
+    {
+        "id": 6,
+        "img": "https://i.ibb.co/n7W3KkL/paypal.png",
+        "name": "pay-pal"
+    },
+    {
+        "id": 7,
+        "img": "https://i.ibb.co/pnZkR7M/Bkash.png",
+        "name": "bkash"
+    },
+    {
+        "id": 8,
+        "img": "https://i.ibb.co/pZM4b73/nagad.png",
+        "name": "nagad"
+    },
+    {
+        "id": 9,
+        "img": "https://i.ibb.co/SBDVbTR/rocket.png",
+        "name": "rocket"
+    },
+    {
+        "id": 10,
+        "img": "https://i.ibb.co/7v6vkZB/sure-cash.png",
+        "name": "sure-cash"
+    }
+]

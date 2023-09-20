@@ -5,6 +5,7 @@ const {
   accessTokenSecret,
   userRegisterSecret,
   forgotPasswordTokenSecret,
+  clientUrl,
 } = require("../secret");
 const { successResponse, errorResponse } = require("./responseHandler");
 const userInfoHandler = require("./userinfoHandler");
@@ -16,16 +17,8 @@ const forgotPasswordEmailData = require("../helper/forgotPasswordEmailData");
 //process register
 const requestRegister = async (req, res, next) => {
   try {
-    const {
-      name,
-      email,
-      password,
-      mobile,
-      address,
-      logo,
-      district,
-      webOrPageLink,
-    } = req.body;
+    const { name, email, password, mobile, address, district, webOrPageLink } =
+      req.body;
     const user = await User.findOne({ email });
     if (user) return errorResponse(res, 409, "Email is already registered.");
     const payload = {
@@ -34,7 +27,6 @@ const requestRegister = async (req, res, next) => {
       password,
       mobile,
       address,
-      logo,
       district,
       webOrPageLink,
     };
@@ -80,6 +72,14 @@ const registerNewUser = async (req, res, next) => {
       message: "User was created successfully.",
     });
   } catch (error) {
+    if ((error.message = "jwt expired")) {
+      return next(
+        createErrors(
+          400,
+          "Your email verification session is expired. Please try agin to register."
+        )
+      );
+    }
     next(error);
   }
 };
@@ -101,12 +101,19 @@ const loginUser = async (req, res, next) => {
         const token = jwt.sign(payLoad, accessTokenSecret, {
           expiresIn: "2d",
         });
-        res.cookie("token", token, { httpOnly: true });
+        res.cookie("token", token, {
+          domain: clientUrl,
+          path: "/",
+          httpOnly: true,
+          sameSite: "None",
+          secure: true,
+          expiresIn: new Date(Date.now() + 2 * 60 * 24),
+        });
         const userInfo = userInfoHandler(user);
         return successResponse(res, {
           statusCode: 200,
           message: "Logged in successfully.",
-          payload: { userInfo },
+          payload: { userInfo, token: `Bearer ${token}` },
         });
       } else {
         return errorResponse(res, 401, "Password did not match.");
