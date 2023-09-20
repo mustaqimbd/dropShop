@@ -9,6 +9,13 @@ import ConfirmAccountMessage from "../pages/register/ConfirmAccountMessage";
 import VerifyAccounts from "../pages/register/VerifyAccounts";
 
 import AddToCardPage from "../pages/AddToCardPage/AddToCardPage";
+import Dashboard from "../layouts/dashboard/Dashboard";
+import AdminDashboard from "../layouts/dashboard/AdminDashboard/AdminDashboard";
+import DropShipper from "../layouts/dashboard/DropShipper/DropShipper";
+import PrivateRoute from "./PrivateRoute/PrivateRoute";
+import AdminRoute from "./AdminRoute/AdminRoute";
+import Sellers from "../pages/Dashboard/Admin/Sellers/Sellers";
+import ShopInfo from "../pages/Dashboard/Admin/ShopInfo/ShopInfo";
 
 export const router = createBrowserRouter([
   {
@@ -33,7 +40,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/confirm-account-message",
-        element: <ConfirmAccountMessage></ConfirmAccountMessage>,
+        element: <ConfirmAccountMessage />,
       },
       {
         path: "/login",
@@ -46,6 +53,38 @@ export const router = createBrowserRouter([
       {
         path: "/addToCardPage",
         element: <AddToCardPage />,
+      },
+    ],
+  },
+  {
+    path: "/dashboard",
+    element: (
+      <PrivateRoute>
+        <Dashboard />
+      </PrivateRoute>
+    ),
+    children: [
+      {
+        path: "admin",
+        element: (
+          <AdminRoute>
+            <AdminDashboard />
+          </AdminRoute>
+        ),
+        children: [
+          {
+            path: "shop-info",
+            element: <ShopInfo />,
+          },
+          {
+            path: "sellers",
+            element: <Sellers />,
+          },
+        ],
+      },
+      {
+        path: "dropshipper",
+        element: <DropShipper />,
       },
     ],
   },

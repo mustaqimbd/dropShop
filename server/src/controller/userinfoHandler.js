@@ -4,12 +4,12 @@ const userInfoHandler = user => {
     name,
     email,
     logo,
-    isAdmin,
     mobile,
     address,
     district,
     role,
     webOrPageLink,
+    profile_pic,
   } = user;
   const userInfo = {
     _id,
@@ -21,7 +21,7 @@ const userInfoHandler = user => {
     district,
     role,
     webOrPageLink,
-    isAdmin,
+    profile_pic,
   };
   return userInfo;
 };

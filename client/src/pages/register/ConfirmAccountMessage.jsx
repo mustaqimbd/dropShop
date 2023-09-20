@@ -1,14 +1,15 @@
-import React from "react";
 import Typography from "@mui/material/Typography";
 import { Link, useNavigate } from "react-router-dom";
 import useAuthProvider from "../../hooks/useAuthProvider";
-
+import { useEffect } from "react";
 const ConfirmAccountMessage = () => {
   const { user } = useAuthProvider();
   const navigate = useNavigate();
-  if (user) {
-    navigate("/");
-  }
+  useEffect(() => {
+    if (user) {
+      return navigate("/");
+    }
+  }, [user, navigate]);
   return (
     <>
       <div className="text-center my-10 max-w-lg w-full ring-1 ring-gray-400 mx-auto p-5 rounded-lg bg-primary/30 ">
