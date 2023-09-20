@@ -39,7 +39,7 @@ const TrackOrder = () => {
       
       <input type="text"className="border border-1 py-2 px-4" id="title"placeholder="Enter Order Id" {...register("title")} />
 
-        <button type="submit"className="btn bg-priceText text-white py-2 px-4 -ml-2">Enter ID</button>
+        <button type="submit"className="btn bg-[#83B735] text-white py-2 px-4 -ml-2">Enter ID</button>
       </form>
    <div className="flex justify-between gap-4 font-sans border border-borderColor p-4 rounded-lg">
 <TrackItem information_name={"Estimated Delivery time:"} information={"24 Nov 2022"}/>
