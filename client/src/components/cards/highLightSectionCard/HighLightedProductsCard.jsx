@@ -7,7 +7,7 @@ const HighLightedProductsCard = ({ content }) => {
   //get category data from api
 
   return (
-    <div className="bg-white flex gap-4 rounded-sm items-center p-2">
+    <div className="bg-white flex flex-1 gap-4 rounded-sm items-center p-2">
       <div>
         <HighLightProductImg src={images[0]?.link} />
       </div>
