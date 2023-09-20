@@ -8,20 +8,23 @@ import AddToCartFooterSlider from '../../components/detailsSections/AddToCartFoo
 const AddToCardPage = () => {
   return (
     <>
-    <ContainerMax>
+      <ContainerMax>
         <div className='px-12 my-8'>
-            <div className='grid grid-cols-1 md:grid-cols-2 justify-between gap-14 mr-7'>
-                <AddToCardCarosoul/>
-                <AddToCardDetails/>
-            </div>
-            <div className='my-20'>
-              <AddToCartProductDescription />
-            </div>
-            <div>
-              <AddToCartFooterSlider />
-            </div>
+          <div className='grid grid-cols-1 md:grid-cols-2 justify-between gap-14 mr-7'>
+            <AddToCardCarosoul />
+            <AddToCardDetails />
+          </div>
+          <div className='my-20'>
+            <AddToCartProductDescription />
+          </div>
+          <div>
+            Top footer
+          </div>
         </div>
-    </ContainerMax>
+      </ContainerMax>
+      <div>
+        {/* <AddToCartFooterSlider /> */}
+      </div>
     </>
   )
 }

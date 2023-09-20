@@ -1,12 +1,21 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import 'swiper/css';
 import 'swiper/css/pagination';
 
 import { Pagination } from 'swiper/modules';
+import { getFeaturedProducts } from '../../../api/products';
+import ProductSliderDetailsCard from '../../cards/allCards/ProductSliderDetailsCard';
 
 const AddToCartSwiper = () => {
+    const [products, setProducts] = useState([])
+    useEffect(()=>{
+        getFeaturedProducts()
+        .then(data =>{
+            setProducts(data)
+        })
+    },[])
   return (
     <div>
       <Swiper
@@ -22,15 +31,13 @@ const AddToCartSwiper = () => {
         autoplay={true}
         loop={true}
       >
-        <SwiperSlide>Slide 1</SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
-        <SwiperSlide>Slide 5</SwiperSlide>
-        <SwiperSlide>Slide 6</SwiperSlide>
-        <SwiperSlide>Slide 7</SwiperSlide>
-        <SwiperSlide>Slide 8</SwiperSlide>
-        <SwiperSlide>Slide 9</SwiperSlide>
+        {
+            products.map(product => <SwiperSlide key={product._id}>
+                <ProductSliderDetailsCard product={product}/>
+            </SwiperSlide>)
+        }
+        
+        
       </Swiper>
     </div>
   )

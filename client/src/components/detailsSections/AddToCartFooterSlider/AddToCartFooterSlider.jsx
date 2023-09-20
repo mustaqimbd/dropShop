@@ -5,9 +5,6 @@ const AddToCartFooterSlider = () => {
   return (
     <div>
       <div>
-            Top footer
-      </div>
-      <div>
             <AddToCartSwiper />
       </div>
     </div>

@@ -10,3 +10,9 @@ export const paymentMethods =async () =>{
     const data = await res.json()
     return data
 }
+
+export const featuresProductFooter = async () =>{
+    const res = await fetch("json/features.json")
+    const data = await res.json()
+    return data
+}
