@@ -1,5 +1,3 @@
-import React from "react";
-
 import { CategoryImg } from "../../avaters/Avatars";
 import { CategoryTitles } from "../../titles/FeatureTitle";
 

@@ -1,7 +1,7 @@
 // feature product cards
 
 import Rating from "@mui/material/Rating";
-import { PriceTitles } from "../../titles/FeatureTitle";
+
 // @ api = "./feature product.json"
 const FeatureProductCard = ({ product }) => {
   // console.log(product);

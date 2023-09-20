@@ -47,11 +47,12 @@ export const router = createBrowserRouter([
       {
         path: "/addToCardPage",
         element: <AddToCardPage />,
-      },{
-        path:"/track_order",
-        element:<TrackOrder/>
+      },
 
-      }
+      {
+        path: "/track_order",
+        element: <TrackOrder />,
+      },
     ],
   },
 ]);

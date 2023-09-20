@@ -5,7 +5,7 @@ import { FeatureProductCard } from "../../../components/cards/allCards/allCards"
 import useAllProducts from "../../../hooks/useAllProducts";
 
 const FeatureProducts = () => {
-  const itemsPerPage = 20; // Number of items per page
+  const itemsPerPage = 24; // Number of items per page
   const [currentPage, setCurrentPage] = useState(0);
   // Default state is an empty array
   const { allProducts, isLoading } = useAllProducts(currentPage, itemsPerPage);
@@ -13,6 +13,9 @@ const FeatureProducts = () => {
   const allProductsLength = 95;
   // Calculate total pages and indices for pagination
   const totalPages = Math.ceil(allProductsLength / itemsPerPage);
+
+  console.log("total page:", totalPages);
+  console.log("current page page:", currentPage);
 
   return (
     <ContainerMax>
@@ -23,7 +26,7 @@ const FeatureProducts = () => {
           <p>Loading....</p>
         ) : (
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 justify-center gap-8">
-            {allProductsData?.map(product => (
+            {allProductsData?.map((product) => (
               <FeatureProductCard key={product._id} product={product} />
             ))}
           </div>
@@ -35,7 +38,7 @@ const FeatureProducts = () => {
               onClick={() => setCurrentPage(currentPage - 1)}
               disabled={currentPage === 0}
               className={`px-4 py-2 rounded-md ${
-                currentPage === 1
+                currentPage === 0
                   ? "bg-gray-300 text-gray-600 cursor-not-allowed"
                   : "bg-primary text-white hover:bg-blue-600"
               }`}
@@ -45,7 +48,7 @@ const FeatureProducts = () => {
 
             {/* Page numbers */}
             <div className="flex space-x-2">
-              {[...Array(totalPages).keys()].map(page => (
+              {[...Array(totalPages).keys()].map((page) => (
                 <button
                   key={page}
                   onClick={() => setCurrentPage(page)}
@@ -62,9 +65,9 @@ const FeatureProducts = () => {
 
             <button
               onClick={() => setCurrentPage(currentPage + 1)}
-              disabled={currentPage === totalPages}
+              disabled={currentPage + 1 === totalPages}
               className={`px-4 py-2 rounded-md ${
-                currentPage === totalPages
+                currentPage + 1 === totalPages
                   ? "bg-gray-300 text-gray-600 cursor-not-allowed"
                   : "bg-primary text-white hover:bg-blue-600"
               }`}
