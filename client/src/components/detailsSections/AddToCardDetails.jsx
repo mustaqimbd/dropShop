@@ -71,7 +71,7 @@ const AddToCardDetails = () => {
                     </div>
                     <div>
                         <div className=''>
-                            <button className='bg-ratingIcon hover:bg-[#FA8250] py-4 md:px-8 flex md:py-6 justify-between gap-3 items-center font-bold text-white '> <span className='text-lg'>Add To Cart </span> <span><AiOutlineShoppingCart size={30} /></span>  </button>
+                            <button className='bg-ratingIcon hover:bg-[#FA8250] py-4 md:px-8  flex md:py-9 justify-between gap-3 items-center font-bold text-white '> <span className='text-lg'>Add To Cart </span> <span><AiOutlineShoppingCart size={30} /></span>  </button>
                         </div>
                     </div>
                     <div className='border border-ratingIcon hover:border-black px-3 py-9 '>
