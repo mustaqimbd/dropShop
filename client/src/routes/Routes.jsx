@@ -23,9 +23,10 @@ export const router = createBrowserRouter([
         element: <Contact></Contact>,
       },
       {
-        path: "/addToCardPage",
-        element: <AddToCardPage />
-      }
+        path: "/addToCardPage/:product_sLug",
+        element: <AddToCardPage />,
+        loader: async ({ params }) => await fetch(``),
+      },
     ],
   },
 ]);
