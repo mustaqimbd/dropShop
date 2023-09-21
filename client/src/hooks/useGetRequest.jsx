@@ -4,7 +4,6 @@ import useAxiosSecure from "./useAxiosSecure";
 const useGetRequest = (queryKey, endPoint) => {
   const [axiosSecure] = useAxiosSecure();
   const api = `/api/${endPoint}`;
-  console.log("This the full api", api);
   const { data = {}, isLoading } = useQuery({
     queryKey: [queryKey],
     queryFn: async () => {

@@ -1,3 +1,4 @@
+import RecentOrders from "./RecentOrders/RecentOrders";
 import SalesReport from "./SalesReport/SalesReport";
 import ShopStats from "./ShopStats/ShopStats";
 
@@ -6,7 +7,7 @@ const ShopStatus = () => {
     <>
       <ShopStats />
       <SalesReport />
-      <h2>from shop status</h2>
+      <RecentOrders />
     </>
   );
 };

@@ -2,38 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
-
+/* Utility classes */
 
 .dashboard-title {
-  @apply text-lg text-linkText
+  @apply text-lg text-caption font-semibold mb-2
 }
 
 /* ====================================================================== */
 /* Swiper JS From '/addToCartPage' styles starts here */
 
 .swiper {
-  width: 100%;
-  height: 50%;
+  @apply w-full h-2/4
 }
 
 .swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  background: #fff;
-
-  /* Center slide text vertically */
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @apply text-center text-lg bg-white flex justify-center items-center
 }
 
 .swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 50%;
-  object-fit: cover;
+  @apply block w-full h-2/4 object-cover
 }
-
 
 /* Swiper JS From '/addToCartPage' styles ends here */
 /* ===================================================================================== */
+
+
+/* scrollbar  */
