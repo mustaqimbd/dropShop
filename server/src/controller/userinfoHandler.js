@@ -1,4 +1,4 @@
-const userInfoHandler = user => {
+const userInfoHandler = (user) => {
   const {
     _id,
     name,

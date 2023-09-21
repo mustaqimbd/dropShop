@@ -1,4 +1,5 @@
 const Category = require("../model/category.model");
+const Products = require("../model/products.model");
 const { successResponse } = require("./responseHandler");
 
 const getAllCategory = async (req, res, next) => {
@@ -32,4 +33,18 @@ const addNewCategory = async (req, res, next) => {
   }
 };
 
-module.exports = { getAllCategory, addNewCategory };
+const filterByCategory = async (req, res, next) => {
+  try {
+    const categorySlug = req.params.slug;
+    const products = await Products.find({ category_slug: categorySlug });
+    return successResponse(res, {
+      statusCode: 200,
+      message: "Get product filtering by category.",
+      payload: { products },
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+module.exports = { getAllCategory, addNewCategory, filterByCategory };

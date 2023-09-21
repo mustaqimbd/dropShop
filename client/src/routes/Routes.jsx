@@ -21,6 +21,8 @@ import Products from "../pages/Dashboard/Admin/Products/Products";
 import Category from "../pages/Dashboard/Admin/Category/Category";
 import Orders from "../pages/Dashboard/Admin/Orders/Orders";
 import ShopStatus from "../pages/Dashboard/Admin/ShopStatus/ShopStatus";
+import TrackOrder from "../pages/TrackOrder/TrackOrder";
+import ProductsByCategory from "../pages/products/ArchiveProducts/ProductsByCategory";
 
 export const router = createBrowserRouter([
   {
@@ -58,6 +60,15 @@ export const router = createBrowserRouter([
       {
         path: "/addToCardPage",
         element: <AddToCardPage />,
+      },
+      {
+        path: "/archive-products",
+        element: <ProductsByCategory />,
+      },
+
+      {
+        path: "/track_order",
+        element: <TrackOrder />,
       },
     ],
   },
