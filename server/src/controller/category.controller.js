@@ -5,7 +5,6 @@ const { successResponse } = require("./responseHandler");
 const getAllCategory = async (req, res, next) => {
   try {
     const category = await Category.find();
-    console.log(category);
     return successResponse(res, {
       statusCode: 200,
       message: "All categories.",

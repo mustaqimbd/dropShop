@@ -1,6 +1,7 @@
 const userData = require("../seed_data/dropShopDB.users.json");
+const orderedData = require("../seed_data/dropShopDB.orders.json");
 const User = require("../model/user.model");
-const { successResponse } = require("./responseHandler");
+const Orders = require("../model/orders.model");
 
 const userSeed = async (req, res, next) => {
   try {
@@ -12,4 +13,14 @@ const userSeed = async (req, res, next) => {
   }
 };
 
-module.exports = { userSeed };
+const orderSeed = async (req, res, next) => {
+  try {
+    await Orders.deleteMany();
+    await Orders.insertMany(orderedData);
+    res.send(["Success"]);
+  } catch (error) {
+    next(error);
+  }
+};
+
+module.exports = { userSeed, orderSeed };

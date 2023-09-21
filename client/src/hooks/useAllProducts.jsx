@@ -12,7 +12,6 @@ const useAllProducts = (pageNumber, limit) => {
       const res = await axios(
         `http://localhost:5000/api/products/products-by-pagination?page=${pageNumber}&limit=${limit}`
       );
-      console.log("res from axios", res);
       return res.data.payload;
     },
   });

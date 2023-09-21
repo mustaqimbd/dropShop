@@ -5,7 +5,7 @@ const isAdmin = (req, res, next) => {
     return errorResponse(
       res,
       403,
-      "Access denied only admins can add product."
+      "Access denied. This data can only access the admins."
     );
   }
   next();
