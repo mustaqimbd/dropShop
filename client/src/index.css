@@ -3,31 +3,36 @@
 @tailwind utilities;
 
 
+
+.dashboard-title {
+  @apply text-lg text-linkText
+}
+
 /* ====================================================================== */
 /* Swiper JS From '/addToCartPage' styles starts here */
 
 .swiper {
-    width: 100%;
-    height: 50%;
-  }
-  
-  .swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    background: #fff;
-  
-    /* Center slide text vertically */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .swiper-slide img {
-    display: block;
-    width: 100%;
-    height: 50%;
-    object-fit: cover;
-  }
+  width: 100%;
+  height: 50%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 50%;
+  object-fit: cover;
+}
 
 
 /* Swiper JS From '/addToCartPage' styles ends here */

@@ -5,21 +5,24 @@ import { useForm } from "react-hook-form";
 import loginBg from "../../assets/images/login-bg.svg";
 import Typography from "@mui/material/Typography";
 
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import useAuthProvider from "../../hooks/useAuthProvider";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Login = () => {
   const { user, setUser } = useAuthProvider();
   const [loginError, setLoginError] = useState("");
   const [axiosSecure] = useAxiosSecure();
   const navigate = useNavigate();
-  const {
-    handleSubmit,
-    register,
-    formState: { errors },
-  } = useForm();
+  const { handleSubmit, register } = useForm();
+  const location = useLocation();
+  console.log(location);
+  useEffect(() => {
+    if (user) {
+      return navigate("/");
+    }
+  }, [user, navigate]);
   const onSubmit = async data => {
     setLoginError("");
     try {
@@ -34,9 +37,7 @@ const Login = () => {
       setLoginError(error.response.data.message);
     }
   };
-  if (user) {
-    return navigate("/");
-  }
+
   return (
     <ContainerFull>
       <div className="bg-iconBg py-16">

@@ -7,30 +7,39 @@ const AuthProvider = ({ children }) => {
   const [axiosSecure] = useAxiosSecure();
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
-  const data = {
-    user,
-    setUser,
-    loading,
-    baseUrl,
+
+  //logout user
+  const logOut = () => {
+    localStorage.removeItem("token");
+    setUser(null);
   };
 
+  //retrieve user
   useEffect(() => {
     const getUser = async () => {
       try {
         const user = await axiosSecure.get("/api/user/profile");
         setUser(user?.data?.payload?.userInfo);
+        setLoading(false);
       } catch (error) {
         localStorage.removeItem("token");
         console.log(error);
+        setLoading(false);
       }
     };
     if (localStorage.getItem("token")) {
       getUser();
+    } else {
+      setLoading(false);
     }
-    setLoading(false);
   }, [axiosSecure]);
-  console.log(user);
-  // console.log(loading);
+  const data = {
+    user,
+    setUser,
+    loading,
+    baseUrl,
+    logOut,
+  };
   return <AuthContext.Provider value={data}>{children}</AuthContext.Provider>;
 };
 

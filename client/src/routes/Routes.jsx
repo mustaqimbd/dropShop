@@ -9,6 +9,18 @@ import ConfirmAccountMessage from "../pages/register/ConfirmAccountMessage";
 import VerifyAccounts from "../pages/register/VerifyAccounts";
 
 import AddToCardPage from "../pages/AddToCardPage/AddToCardPage";
+import Dashboard from "../layouts/dashboard/Dashboard";
+import AdminDashboard from "../layouts/dashboard/AdminDashboard/AdminDashboard";
+import DropShipper from "../layouts/dashboard/DropShipper/DropShipper";
+import PrivateRoute from "./PrivateRoute/PrivateRoute";
+import AdminRoute from "./AdminRoute/AdminRoute";
+import Sellers from "../pages/Dashboard/Admin/Sellers/Sellers";
+import AddProduct from "../pages/Dashboard/Admin/AddProduct/AddProduct";
+import UpdateProduct from "../pages/Dashboard/Admin/UpdateProduct/UpdateProduct";
+import Products from "../pages/Dashboard/Admin/Products/Products";
+import Category from "../pages/Dashboard/Admin/Category/Category";
+import Orders from "../pages/Dashboard/Admin/Orders/Orders";
+import ShopStatus from "../pages/Dashboard/Admin/ShopStatus/ShopStatus";
 import TrackOrder from "../pages/TrackOrder/TrackOrder";
 import ProductsByCategory from "../pages/products/ArchiveProducts/ProductsByCategory";
 
@@ -35,7 +47,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/confirm-account-message",
-        element: <ConfirmAccountMessage></ConfirmAccountMessage>,
+        element: <ConfirmAccountMessage />,
       },
       {
         path: "/login",
@@ -57,6 +69,58 @@ export const router = createBrowserRouter([
       {
         path: "/track_order",
         element: <TrackOrder />,
+      },
+    ],
+  },
+  {
+    path: "/dashboard",
+    element: (
+      <PrivateRoute>
+        <Dashboard />
+      </PrivateRoute>
+    ),
+    children: [
+      {
+        path: "admin",
+        element: (
+          <AdminRoute>
+            <AdminDashboard />
+          </AdminRoute>
+        ),
+        children: [
+          {
+            path: "status",
+            element: <ShopStatus />,
+          },
+          {
+            path: "sellers",
+            element: <Sellers />,
+          },
+          {
+            path: "products",
+            element: <Products />,
+          },
+          {
+            path: "add-product",
+            element: <AddProduct />,
+          },
+          {
+            path: "update-product",
+            element: <UpdateProduct />,
+          },
+          {
+            path: "category",
+            element: <Category />,
+          },
+          {
+            path: "orders",
+            element: <Orders />,
+          },
+        ],
+      },
+      {
+        path: "dropshipper",
+        element: <DropShipper />,
       },
     ],
   },

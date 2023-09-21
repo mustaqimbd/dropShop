@@ -24,6 +24,18 @@
     "__v": 0
   },
   {
+    "name": "Admin 3",
+    "email": "admin3@gmail.com",
+    "password": "$2a$10$Nl1KKCVi9ZmfPWmG1Y6oVemXDG5WYa48uT4JhdgInLv5FwjrTZ9U6",
+    "logo": "http://example.com/logo",
+    "mobile": 1789101212,
+    "address": "Address here",
+    "district": "Satkhira",
+    "webOrPageLink": "http://example.com",
+    "role": "admin",
+    "__v": 0
+  },
+  {
     "name": "Drop seller 2",
     "email": "dropseller2@gmail.com",
     "password": "$2a$10$.UUBiX8DYQemKxolxgk/w.c4zg0IIQEI1TkMCDVJZQqoHF8JB1ucO",

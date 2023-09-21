@@ -110,6 +110,7 @@ const loginUser = async (req, res, next) => {
           expiresIn: new Date(Date.now() + 2 * 60 * 24),
         });
         const userInfo = userInfoHandler(user);
+
         return successResponse(res, {
           statusCode: 200,
           message: "Logged in successfully.",

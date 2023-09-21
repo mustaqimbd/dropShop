@@ -3,13 +3,13 @@ import ContainerMax from "../../components/container/ContainerMax";
 import { useForm } from "react-hook-form";
 import toast, { Toaster } from "react-hot-toast";
 import registeImg from "../../assets/images/registerPage.png";
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import useAuthProvider from "../../hooks/useAuthProvider";
 import { useRef, useState } from "react";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 
 const Register = () => {
-  const { user, baseUrl } = useAuthProvider();
+  const { user } = useAuthProvider();
   const confirmPasswordFieldRef = useRef();
   const [serverValidationErr, setServerValidationErr] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -49,7 +49,9 @@ const Register = () => {
       confirmPasswordField.setCustomValidity("");
     }
   };
-
+  if (user) {
+    return navigate("/");
+  }
   return (
     <ContainerFull>
       <div className="bg-iconBg py-10">

@@ -2,15 +2,19 @@ import useAxiosSecure from "../../hooks/useAxiosSecure";
 import toast, { Toaster } from "react-hot-toast";
 import { Typography } from "@mui/material";
 import Swal from "sweetalert2";
+import useAuthProvider from "../../hooks/useAuthProvider";
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 const VerifyAccounts = () => {
   const [axiosSecure] = useAxiosSecure();
-
+  const navigate = useNavigate();
+  const { user } = useAuthProvider();
   const handleConfirmRegistration = async () => {
     const queryParams = new URLSearchParams(window.location.search);
     const token = queryParams.get("token");
     try {
-      const res = await axiosSecure.post(`/api/user/register`, { token });
+      await axiosSecure.post(`/api/user/register`, { token });
       Swal.fire({
         icon: "success",
         title: "Verification success.",
@@ -21,6 +25,11 @@ const VerifyAccounts = () => {
       toast.error(error?.response?.data?.message);
     }
   };
+  useEffect(() => {
+    if (user) {
+      return navigate("/");
+    }
+  }, [user, navigate]);
   return (
     <>
       <Toaster position="top-center" reverseOrder={false} />
