@@ -6,19 +6,23 @@ import CssBaseline from "@mui/material/CssBaseline";
 import Divider from "@mui/material/Divider";
 import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import MailIcon from "@mui/icons-material/Mail";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Person from "@mui/icons-material/Person";
 import SettingsIcon from "@mui/icons-material/Settings";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import LogoutIcon from "@mui/icons-material/Logout";
+import PeopleIcon from "@mui/icons-material/People";
+import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
+import UpdateIcon from "@mui/icons-material/Update";
+import CategoryIcon from "@mui/icons-material/Category";
+import FluorescentIcon from "@mui/icons-material/Fluorescent";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { Link, Outlet } from "react-router-dom";
 import {
   Avatar,
@@ -65,39 +69,83 @@ const Dashboard = props => {
       </Toolbar>
       <Divider />
       <List>
-        <ListItem style={{ padding: 0 }}>
-          <ActiveLink to="/dashboard/admin/shop-info">
-            <ListItemButton>
-              <ListItemIcon>
-                <DashboardIcon />
-              </ListItemIcon>
-              <ListItemText primary="Dashboard" />
-            </ListItemButton>
-          </ActiveLink>
-        </ListItem>
-        <ListItem style={{ padding: 0 }}>
-          <ActiveLink to="/dashboard/admin/sellers">
-            <ListItemButton>
-              <ListItemIcon>
-                <DashboardIcon />
-              </ListItemIcon>
-              <ListItemText primary="Sellers" />
-            </ListItemButton>
-          </ActiveLink>
-        </ListItem>
-      </List>
-      <Divider />
-      <List>
-        {["All mail", "Trash", "Spam"].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
+        {user?.role === "admin" ? (
+          <>
+            <ListItem style={{ padding: 0 }}>
+              <ActiveLink to="/dashboard/admin/status">
+                <ListItemButton>
+                  <ListItemIcon>
+                    <DashboardIcon />
+                  </ListItemIcon>
+                  <ListItemText primary="Dashboard" />
+                </ListItemButton>
+              </ActiveLink>
+            </ListItem>
+            <ListItem style={{ padding: 0 }}>
+              <ActiveLink to="/dashboard/admin/sellers">
+                <ListItemButton>
+                  <ListItemIcon>
+                    <PeopleIcon />
+                  </ListItemIcon>
+                  <ListItemText primary="Sellers" />
+                </ListItemButton>
+              </ActiveLink>
+            </ListItem>
+            <Divider style={{ marginBlock: "5px" }} />
+            <ListItem style={{ padding: 0 }}>
+              <ActiveLink to="/dashboard/admin/category">
+                <ListItemButton>
+                  <ListItemIcon>
+                    <CategoryIcon />
+                  </ListItemIcon>
+                  <ListItemText primary="Category" />
+                </ListItemButton>
+              </ActiveLink>
+            </ListItem>
+            <ListItem style={{ padding: 0 }}>
+              <ActiveLink to="/dashboard/admin/products">
+                <ListItemButton>
+                  <ListItemIcon>
+                    <FluorescentIcon />
+                  </ListItemIcon>
+                  <ListItemText primary="Products" />
+                </ListItemButton>
+              </ActiveLink>
+            </ListItem>
+            <ListItem style={{ padding: 0 }}>
+              <ActiveLink to="/dashboard/admin/add-product">
+                <ListItemButton>
+                  <ListItemIcon>
+                    <AddCircleOutlineIcon />
+                  </ListItemIcon>
+                  <ListItemText primary="Add product" />
+                </ListItemButton>
+              </ActiveLink>
+            </ListItem>
+            <ListItem style={{ padding: 0 }}>
+              <ActiveLink to="/dashboard/admin/update-product">
+                <ListItemButton>
+                  <ListItemIcon>
+                    <UpdateIcon />
+                  </ListItemIcon>
+                  <ListItemText primary="Update product" />
+                </ListItemButton>
+              </ActiveLink>
+            </ListItem>
+            <ListItem style={{ padding: 0 }}>
+              <ActiveLink to="/dashboard/admin/orders">
+                <ListItemButton>
+                  <ListItemIcon>
+                    <ShoppingCartIcon />
+                  </ListItemIcon>
+                  <ListItemText primary="Orders" />
+                </ListItemButton>
+              </ActiveLink>
+            </ListItem>
+          </>
+        ) : (
+          ""
+        )}
       </List>
     </div>
   );
@@ -239,6 +287,7 @@ const Dashboard = props => {
       </Box>
       <Box
         component="main"
+        bgcolor={"customColors.lightGray"}
         sx={{
           flexGrow: 1,
           p: 3,

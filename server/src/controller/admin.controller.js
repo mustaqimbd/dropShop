@@ -61,6 +61,7 @@ const adminStats = async (req, res, next) => {
       },
     }).countDocuments();
     const dailySells = await Orders.find({
+      status: "Completed",
       completed_date: {
         $gte: today,
         $lt: lesThanValue,
@@ -90,7 +91,7 @@ const dailySales = async (req, res, next) => {
       {
         $match: {
           status: "Completed",
-          createdAt: {
+          completed_date: {
             $gte: startOfDay,
             $lt: endOfDay,
           },
@@ -100,7 +101,7 @@ const dailySales = async (req, res, next) => {
         $project: {
           hour: {
             $hour: {
-              date: "$createdAt",
+              date: "$completed_date",
               timezone: "UTC",
             },
           },

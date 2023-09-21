@@ -15,7 +15,12 @@ import DropShipper from "../layouts/dashboard/DropShipper/DropShipper";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
 import AdminRoute from "./AdminRoute/AdminRoute";
 import Sellers from "../pages/Dashboard/Admin/Sellers/Sellers";
-import ShopInfo from "../pages/Dashboard/Admin/ShopInfo/ShopInfo";
+import AddProduct from "../pages/Dashboard/Admin/AddProduct/AddProduct";
+import UpdateProduct from "../pages/Dashboard/Admin/UpdateProduct/UpdateProduct";
+import Products from "../pages/Dashboard/Admin/Products/Products";
+import Category from "../pages/Dashboard/Admin/Category/Category";
+import Orders from "../pages/Dashboard/Admin/Orders/Orders";
+import ShopStatus from "../pages/Dashboard/Admin/ShopStatus/ShopStatus";
 
 export const router = createBrowserRouter([
   {
@@ -73,12 +78,32 @@ export const router = createBrowserRouter([
         ),
         children: [
           {
-            path: "shop-info",
-            element: <ShopInfo />,
+            path: "status",
+            element: <ShopStatus />,
           },
           {
             path: "sellers",
             element: <Sellers />,
+          },
+          {
+            path: "products",
+            element: <Products />,
+          },
+          {
+            path: "add-product",
+            element: <AddProduct />,
+          },
+          {
+            path: "update-product",
+            element: <UpdateProduct />,
+          },
+          {
+            path: "category",
+            element: <Category />,
+          },
+          {
+            path: "orders",
+            element: <Orders />,
           },
         ],
       },
