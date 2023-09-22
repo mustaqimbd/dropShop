@@ -4,7 +4,7 @@ import useAxiosSecure from "./useAxiosSecure";
 const useGetRequest = (queryKey, endPoint) => {
   const [axiosSecure] = useAxiosSecure();
   const api = `/api/${endPoint}`;
-  const { data = {}, isLoading } = useQuery({
+  const { data = {}, isLoading,refetch } = useQuery({
     queryKey: [queryKey],
     queryFn: async () => {
       try {
@@ -15,7 +15,7 @@ const useGetRequest = (queryKey, endPoint) => {
       }
     },
   });
-  return { data, isLoading };
+  return { data, isLoading, refetch };
 };
 
 export default useGetRequest;

@@ -1,5 +1,5 @@
-import useGetRequest from "../../../../../../hooks/useGetRequest";
-import AreaCharts from "../../../../../../components/AreaCharts/AreaCharts";
+import AreaCharts from "../../../../../../../components/AreaCharts/AreaCharts";
+import useGetRequest from "../../../../../../../hooks/useGetRequest";
 
 const Monthly = () => {
   const currentMonthSales = useGetRequest(

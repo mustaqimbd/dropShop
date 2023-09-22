@@ -9,19 +9,39 @@ import {
   TableHead,
   TableRow,
 } from "@mui/material";
+import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
+import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
+import { useState } from "react";
+import useRecentOrder from "../../../../../hooks/useRecentOrder";
 import useGetRequest from "../../../../../hooks/useGetRequest";
 
 const RecentOrders = () => {
-  const recentOrders = useGetRequest(
-    "Recent-orders",
-    "admin/dashboard/recent-orders?limit=6&skip=0"
+  const [currentPage, setCurrentPage] = useState(0);
+  const { recentOrders } = useRecentOrder(currentPage);
+  const totalOrders = useGetRequest(
+    "totalOrders",
+    "admin/dashboard/total-orders"
   );
-  const rows = recentOrders?.data?.payload?.orders;
-  console.log(recentOrders?.data?.payload?.orders);
+  const totalPage = Math.ceil(totalOrders?.data?.payload?.totalOrderCount / 5);
+  const rows = recentOrders?.payload?.orders;
+
+  const handleCurrentPage = increase => {
+    if (increase) {
+      if (currentPage == totalPage - 1) {
+        return;
+      }
+      return setCurrentPage(currentPage + 1);
+    } else {
+      if (currentPage < 1) {
+        return;
+      }
+      return setCurrentPage(currentPage - 1);
+    }
+  };
   return (
     <>
-      <div className="shadow-md rounded-md p-2 md:p-5 mx-2 mt-5">
-        <h2 className="dashboard-title">Recent orders</h2>
+      <div className="shadow-md rounded-md p-2 md:p-5 mx-2 mt-5 bg-white">
+        <h2 className="dashboard-title">Recent orders </h2>
         <Divider />
         <TableContainer component={Paper}>
           <Table sx={{ minWidth: 650 }} aria-label="simple table">
@@ -73,10 +93,48 @@ const RecentOrders = () => {
               ))}
             </TableBody>
           </Table>
-          <Divider />p Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-          Repellendus id fugiat voluptatum? Laboriosam natus sint quia provident
-          cumque qui quam, odio dolores quis iste ipsa omnis officiis suscipit
-          accusamus neque!
+          <Divider />
+          <div className="py-3 flex justify-end mr-10 gap-3 items-center">
+            <div>
+              {recentOrders?.payload?.skip ? (
+                <span>{recentOrders?.payload?.skip + 1}</span>
+              ) : (
+                "0"
+              )}{" "}
+              {" - "}
+              {recentOrders?.payload?.skip + recentOrders?.payload?.limit ? (
+                <span>
+                  {recentOrders?.payload?.skip + recentOrders?.payload?.limit}
+                </span>
+              ) : (
+                ""
+              )}
+            </div>
+            <div className="flex gap-4">
+              <button
+                onClick={() => handleCurrentPage(false)}
+                disabled={currentPage < 1}
+                className={`w-7 h-7  rounded-full  ${
+                  currentPage < 1
+                    ? " text-gray-500 bg-gray-200"
+                    : "text-gray-700 bg-gray-300"
+                }`}
+              >
+                <KeyboardArrowLeftIcon />
+              </button>
+              <button
+                onClick={() => handleCurrentPage(true)}
+                disabled={currentPage == totalPage - 1}
+                className={`w-7 h-7 bg-gray-300 rounded-full  ${
+                  currentPage == totalPage - 1
+                    ? " text-gray-500 bg-gray-200"
+                    : "text-gray-700 bg-gray-300"
+                }`}
+              >
+                <KeyboardArrowRightIcon />
+              </button>
+            </div>
+          </div>
         </TableContainer>
       </div>
     </>

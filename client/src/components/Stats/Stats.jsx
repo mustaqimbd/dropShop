@@ -12,7 +12,7 @@ const Stats = ({ title, counts, icon, isLoading }) => {
     );
   }
   return (
-    <div className="shadow-md p-5 rounded-xl flex justify-between items-center w-72 cursor-pointer select-none group">
+    <div className="shadow-md p-5 rounded-xl flex justify-between items-center w-72 cursor-pointer select-none group bg-white">
       <div>
         <h2 className="text-2xl font-bold text-caption group-hover:scale-110 transition-all">
           {counts}

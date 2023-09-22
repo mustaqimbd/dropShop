@@ -1,6 +1,6 @@
 import { Divider } from "@mui/material";
-import useGetRequest from "../../../../../hooks/useGetRequest";
 import { Pie, PieChart, Tooltip } from "recharts";
+import useGetRequest from "../../../../../../hooks/useGetRequest";
 
 const OrdersOverview = () => {
   const ordersOverviewData = useGetRequest(
@@ -16,7 +16,7 @@ const OrdersOverview = () => {
 
   return (
     <>
-      <h2 className="dashboard-title text-center">Sales report</h2>
+      <h2 className="dashboard-title text-center">Order overview</h2>
       <Divider />
       <div className="flex justify-center">
         <PieChart width={250} height={250}>
@@ -27,7 +27,7 @@ const OrdersOverview = () => {
             cx="50%"
             cy="50%"
             outerRadius={80}
-            fill="#8884d8"
+            fill="#8884d890"
             label
           />
           <Tooltip />
