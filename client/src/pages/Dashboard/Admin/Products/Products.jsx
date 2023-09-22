@@ -1,8 +1,16 @@
+import AdminProductPageBody from "./AdminProductPageBody";
+import AdminProductPageHeader from "./AdminProductPageHeader";
+
 const Products = () => {
   return (
-    <>
-      <h2>from products</h2>
-    </>
+    <div>
+      <div>
+        <AdminProductPageHeader />
+      </div>
+      <div>
+        <AdminProductPageBody />
+      </div>
+    </div>
   );
 };
 

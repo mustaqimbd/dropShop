@@ -80,7 +80,7 @@ const MaximamProfitPrice = ({ price }) => {
 };
 
 const ColorTitle = ({ title }) => {
-  return <p className="text-base  text-deepGray  font-[400]">{title}</p>;
+  return <p className="text-base  text-black  font-[400]">{title}</p>;
 };
 const TracOrdertitle = ({ title }) => {
   return (

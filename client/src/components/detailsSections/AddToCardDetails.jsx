@@ -1,23 +1,59 @@
 import React, { useEffect, useState } from 'react'
 import RatingSection from './AddToCardDetailsSections/RatingSection'
 import { AddToCardDetailsProductTitle, AvailabilityTitle, BrandTitle, CategoryTitle, CategoryTitles, ColorTitle, MaximamProfitPrice, MaximumProfitMarginText, ResellerPriceTitle, SkuTitle } from '../titles/FeatureTitle'
-import { Button, Typography } from '@mui/material'
+import { Button, TextField, Typography } from '@mui/material'
 import AddToCardProductDetailsConfig, { DividerProduct } from './AddToCardDetailsSections/AddToCardProductDetailsConfig'
 import { LockIcon } from '../icons/Icons'
 import { BsPlusLg } from 'react-icons/bs'
-import { AiOutlineHeart, AiOutlineMinus, AiOutlineShoppingCart } from 'react-icons/ai'
+import { AiOutlineHeart, AiOutlineMinus, AiOutlineShoppingCart, AiFillHeart } from 'react-icons/ai'
 import { BiRefresh } from 'react-icons/bi'
 import { paymentMethods } from '../../api/addToCard.api'
+import { OutlinedInput } from "@mui/material"
+import InputLabel from "@mui/material/InputLabel"
+import MenuItem from '@mui/material/MenuItem';
+import FormHelperText from '@mui/material/FormHelperText';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
+import CounterInput from '../buttons/CounterInput'
+
+const color = [
+    { "color": '##858585', "select": true },
+    { "color": '#E0E1E1', "select": false },
+    { "color": '#BA9F88', "select": false }
+]
+
+
+
+const size = ['sm', 'lg', 'xl', 'xxl', 'xxxl']
 
 const AddToCardDetails = () => {
     const [methods, setMethods] = useState([])
-    useEffect(()=>{
-        paymentMethods()
-        .then(data =>{
-            setMethods(data)
-        })
-    },[])
+    const [age, setAge] = React.useState('');
+    const [favourite, setFaourite] = useState(false)
+    const [quantity,setQuantity] = useState(0)
+    const [productAvailable, setProductAvailable] = useState(5)
 
+    const handleIncrement = () =>{
+        setQuantity(quantity + 1)
+    }
+    const handleDecrement = () =>{
+        setQuantity(quantity - 1)
+    }
+
+
+    const handleChange = (event) => {
+        setAge(event.target.value);
+    };
+    useEffect(() => {
+        paymentMethods()
+            .then(data => {
+                setMethods(data)
+            })
+    }, [])
+    const handleFavourite = () =>{
+        console.log("favourite called")
+        setFaourite(!favourite)
+    }
     return (
         <div className='flex flex-col gap-3'>
             <RatingSection />
@@ -25,7 +61,7 @@ const AddToCardDetails = () => {
             <AddToCardProductDetailsConfig />
             <ResellerPriceTitle title={"625"} />
             <DividerProduct />
-            <div className='mt-3'>
+            {/* <div className='mt-3'>
                 <MaximumProfitMarginText text={"Maximum Profit Margin"} />
                 <div className='flex justify-between w-full'>
                     <div className='flex justify-between w-1/2 border-gray-300 border py-3 px-4'>
@@ -78,23 +114,79 @@ const AddToCardDetails = () => {
                     <button className='text-ratingIcon  w-full  h-full hover:text-black flex justify-center items-center '>BUY NOW</button>
                     </div>
                 </div>
+            </div> */}
+            <div className='mid-div' id='mid-div'>
+                <div className='descripts grid grid-cols-1 md:grid-cols-2 gap-8'>
+                    <div>
+                        <MaximumProfitMarginText text={"Maximam Profit Margin"} />
+                        <div className='relative'>
+                            <OutlinedInput color='secondary' fullWidth disabled value={"125 Taka"} />
+                            <div className='absolute right-2 top-2'><LockIcon /></div>
+                        </div>
+                    </div>
+                    <div>
+                        <ColorTitle title={"Color"} />
+                        <div className='grid grid-cols-3 justify-start'>
+                            <div className='h-8 w-8 bg-[#858585] rounded-full'></div>
+                            <div className='h-8 w-8 bg-[#E0E1E1] rounded-full'></div>
+                            <div className='h-8 w-8 bg-[#BA9F88] rounded-full'></div>
+                        </div>
+                    </div>
+                    <div>
+                        <MaximumProfitMarginText text={"Customer Profit Margin text"} />
+                        <OutlinedInput color='primary' fullWidth disabled value={"50 Taka"} />
+                    </div>
+                    <div>
+                        <MaximumProfitMarginText text={"Size"} />
+                        <FormControl sx={{ minWidth: 150 }} style={{width: '100%'}}>
+                            <Select
+                                value={age}
+                                onChange={handleChange}
+                                displayEmpty
+                                inputProps={{ 'aria-label': 'Without label' }}
+                                
+                            >
+                                {/* <MenuItem value="">
+                                    <em>None</em>
+                                </MenuItem>
+                                <MenuItem value={10}>Ten</MenuItem>
+                                <MenuItem value={20}>Twenty</MenuItem>
+                                <MenuItem value={30}>Thirty</MenuItem> */}
+                                {/* <MenuItem value={'null'}><em> choose  a Size </em></MenuItem> */}
+                                {
+                                    size.map(s => <MenuItem placeholder='sm' value={s}>{s}</MenuItem>)
+                                }
+                            </Select>
+                        </FormControl>
+                    </div>
+                    <div>
+                        <MaximumProfitMarginText text={"Total"}/>
+                        <OutlinedInput color='primary' fullWidth disabled value={"890 Taka"} />
+                    </div>
+                </div>
+                <div className='mt-9'>
+                    <CounterInput productAvailable={productAvailable} handleIncrement={handleIncrement} handleDecrement={handleDecrement} quantity={quantity}/>
+                </div>
+                <div className='buttons grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
+
+                </div>
             </div>
             <div className='grid grid-cols-1 md:grid-cols-2 gap-4 mt-2'>
-               <button className='flex justify-center items-center  gap-3 mt-2 hover:outline-1 outline-slate-500'>
-                    <AiOutlineHeart size={30}/>
+                <button className='flex justify-center items-center  gap-3 mt-2 hover:outline-1 outline-slate-500' onClick={handleFavourite}>
+                    <AiFillHeart size={30} className={`${favourite && "text-red-700"}`}/>
                     Add To Wishlist
-               </button>
-               <button className='flex justify-center items-center  gap-3 border-black  mt-2'> 
-               <BiRefresh size={35} /> Add To Compare
-               </button>
+                </button>
+                <button className='flex justify-center items-center  gap-3 border-black  mt-2'>
+                    <BiRefresh size={35} /> Add To Compare
+                </button>
             </div>
             <div className='mt-5'>
                 <div className='border border-gray-300 p-3'>
                     <p className='text-base mb-2'>100% guarantee safe checkout</p>
                     <span className='grid grid-cols-5 md:grid-cols-10  gap-2'>
-                    {
-                        methods.map(method => <img key={method.id} src={method.img} alt={method.name} /> )
-                    }
+                        {
+                            methods.map(method => <img key={method.id} src={method.img} alt={method.name} />)
+                        }
                     </span>
                 </div>
             </div>
