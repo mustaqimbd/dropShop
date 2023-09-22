@@ -1,12 +1,15 @@
-import SalesReport from "./SalesReport/SalesReport";
+import NewCustomersAndTopProducts from "./NewCustomersAndTopProducts/NewCustomersAndTopProducts";
+import RecentOrders from "./RecentOrders/RecentOrders";
+import SalesReportAndOrderOverview from "./SalesReportAndOrderOverview/SalesReportAndOrderOverview";
 import ShopStats from "./ShopStats/ShopStats";
 
 const ShopStatus = () => {
   return (
     <>
       <ShopStats />
-      <SalesReport />
-      <h2>from shop status</h2>
+      <SalesReportAndOrderOverview />
+      <RecentOrders />
+      <NewCustomersAndTopProducts />
     </>
   );
 };

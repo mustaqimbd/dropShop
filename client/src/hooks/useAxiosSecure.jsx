@@ -24,7 +24,7 @@ const useAxiosSecure = () => {
           error.response &&
           (error.response.status === 401 || error.response.status === 403)
         ) {
-          //TODO: Logout user
+          localStorage.removeItem("token");
           <Navigate to="/login"></Navigate>;
         }
         return Promise.reject(error);

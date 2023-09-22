@@ -252,10 +252,13 @@ const recentOrders = async (req, res, next) => {
     const orders = await Orders.find({})
       .sort({ createdAt: -1 })
       .limit(limit)
-      .skip(skip);
+      .skip(skip * limit);
     return successResponse(res, {
       message: "10 recent orders",
       payload: {
+        skip: skip * limit,
+        limit: parseInt(limit),
+        length: orders.length,
         orders,
       },
     });

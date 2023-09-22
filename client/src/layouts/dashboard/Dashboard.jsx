@@ -288,6 +288,7 @@ const Dashboard = props => {
       <Box
         component="main"
         bgcolor={"customColors.lightGray"}
+        overflow={"hidden"}
         sx={{
           flexGrow: 1,
           p: 3,
