@@ -88,6 +88,14 @@ const TracOrdertitle = ({ title }) => {
 
   );
 };
+const HelpTitle = ({ title }) => {
+  return (
+    <div className="text-xl font-bold font-sans py-5">
+      {title}
+    </div>
+  );
+};
+
 export {
   FeaturedProdcutTitle,
   CategoryTitles,
@@ -102,5 +110,6 @@ export {
   MaximumProfitMarginText,
   MaximamProfitPrice,
   ColorTitle,
-  TracOrdertitle
+  TracOrdertitle,
+  HelpTitle
 };
