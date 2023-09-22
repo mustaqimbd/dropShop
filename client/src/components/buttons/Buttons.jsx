@@ -31,7 +31,15 @@ export const AddindButton = ({logo}) =>{
   );
 };
 
+const TryFreeButton = ({ title }) => {
+  return (
+    <button className="bg-primary w-full px-3 py-2" >
+      {" "}
+      <span className="font-sans text-white">{title}  </span>{" "}
+    </button>
+  );
+};
 
 
 
-export { ViewAllButton ,PrimaryButton,BackToOrderBtn};
+export { ViewAllButton ,PrimaryButton,BackToOrderBtn,TryFreeButton};
