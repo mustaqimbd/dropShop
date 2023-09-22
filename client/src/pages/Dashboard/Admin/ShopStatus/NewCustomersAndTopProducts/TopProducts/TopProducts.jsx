@@ -7,7 +7,6 @@ const TopProducts = () => {
     "products/highlight-products"
   );
   const products = data?.payload?.topSellingProducts;
-  console.log(products);
   return (
     <>
       <div className="flex justify-between">
@@ -21,16 +20,16 @@ const TopProducts = () => {
         {products?.map(product => (
           <div
             key={product._id}
-            className="flex gap-5 items-center justify-start"
+            className="grid grid-cols-1 md:grid-cols-5 gap-5 items-center justify-start"
           >
-            <div className="w-[144px] h-[144px] rounded-md overflow-hidden">
+            <div className="col-span-1 md:col-span-1 flex justify-center">
               <img
                 src={product.images[0].link}
                 alt={product.product_name}
-                className="object-cover"
+                className="object-cover w-[144px] h-[144px] rounded-md"
               />
             </div>
-            <div className="flex-1 space-y-1">
+            <div className="col-span-1 md:col-span-4 space-y-1">
               <div className="flex justify-between">
                 <h2 className="font-bold text-discountbtn">
                   {product.product_name}
