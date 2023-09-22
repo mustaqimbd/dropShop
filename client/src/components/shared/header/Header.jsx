@@ -2,6 +2,7 @@ import { Typography } from "@mui/material";
 import ContainerFull from "../../container/ContainerFull";
 import ContainerMax from "../../container/ContainerMax";
 import cartIon from "../../../assets/icons/cart.svg";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -10,9 +11,11 @@ const Header = () => {
         <ContainerMax>
           <div className="flex px-10 item-center justify-between">
             <div className="flex-1">
-           <Typography variant="h4" color={"white"} >
-           DropShop
-           </Typography>
+              <Link to="/">
+                <Typography variant="h4" color={"white"}>
+                  DropShop
+                </Typography>
+              </Link>
             </div>
             <div className="flex flex-1 items-center relative">
               <input className="w-full p-2 rounded-md" type="text" />
@@ -44,7 +47,9 @@ const Header = () => {
             <div className="flex-1 flex gap-4 justify-end items-center">
               <div className="relative ">
                 <img src={cartIon} alt="" />
-                <span className="absolute top-0 right-2 text-ratingCount">3</span>
+                <span className="absolute top-0 right-2 text-ratingCount">
+                  3
+                </span>
               </div>
               <div>
                 <svg

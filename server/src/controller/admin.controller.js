@@ -269,7 +269,46 @@ const recentOrders = async (req, res, next) => {
 
 const newCustomers = async (req, res, next) => {
   try {
-    const customers = await User.find().sort({ createdAt: -1 }).limit(5);
+    const pipeline = [
+      {
+        $group: {
+          _id: "$drop_seller_email",
+          orderCount: { $sum: 1 },
+          totalSales: { $sum: "$total_price" },
+        },
+      },
+      {
+        $lookup: {
+          from: "users", // Name of the users collection
+          localField: "_id", // Field from the orders collection
+          foreignField: "email", // Field from the users collection
+          as: "userDetails", // Alias for the joined data
+        },
+      },
+      {
+        $unwind: "$userDetails", // Unwind the array created by $lookup
+      },
+      {
+        $project: {
+          _id: 0, // Exclude the default _id field
+          email: "$_id",
+          orderCount: 1,
+          userName: "$userDetails.name",
+          totalSales: 1,
+          logo: "$userDetails.logo",
+          profile_pic: "$userDetails.profile_pic",
+        },
+      },
+      {
+        $sort: {
+          totalSales: -1,
+        },
+      },
+      {
+        $limit: 5,
+      },
+    ];
+    const customers = await Orders.aggregate(pipeline);
     return successResponse(res, {
       message: "New customers",
       payload: { customers },
