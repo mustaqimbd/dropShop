@@ -105,6 +105,7 @@ const Navbar = () => {
               </div>
             </div>
             <div>
+            <Link to="/Need_Help">
               <div className="flex gap-3 items-center ">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -143,6 +144,7 @@ const Navbar = () => {
                   Need Help
                 </Typography>
               </div>
+              </Link>
             </div>
          
           </div>

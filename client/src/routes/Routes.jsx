@@ -23,6 +23,7 @@ import Orders from "../pages/Dashboard/Admin/Orders/Orders";
 import ShopStatus from "../pages/Dashboard/Admin/ShopStatus/ShopStatus";
 import TrackOrder from "../pages/TrackOrder/TrackOrder";
 import ProductsByCategory from "../pages/products/ArchiveProducts/ProductsByCategory";
+import Need_Help from "../pages/Need_Help/Need_Help";
 
 export const router = createBrowserRouter([
   {
@@ -70,6 +71,10 @@ export const router = createBrowserRouter([
         path: "/track_order",
         element: <TrackOrder />,
       },
+      {
+        path:"/Need_Help",
+        element:<Need_Help/>
+      }
     ],
   },
   {
