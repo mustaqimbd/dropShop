@@ -8,13 +8,15 @@ const {
   recentOrders,
   newCustomers,
   totalOrders,
+  productStatistics,
 } = require("../controller/admin.controller");
 const isAdmin = require("../middleware/isAdmin");
 const passport = require("passport");
 
 const adminRoute = require("express").Router();
 
-adminRoute.use(passport.authenticate("jwt", { session: false }), isAdmin);
+//TODO: Secure admin routes.
+// adminRoute.use(passport.authenticate("jwt", { session: false }), isAdmin);
 
 //add product
 // /api/admin/add-product
@@ -55,5 +57,9 @@ adminRoute.get("/dashboard/recent-orders", recentOrders);
 // new customers
 // /api/admin/dashboard/new-customers
 adminRoute.get("/dashboard/new-customers", newCustomers);
+
+// Product statistics
+// /api/admin/dashboard/product-statistics
+adminRoute.get("/dashboard/product-statistics", productStatistics);
 
 module.exports = adminRoute;
