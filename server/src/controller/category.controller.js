@@ -38,17 +38,7 @@ const addNewCategory = async (req, res, next) => {
 const deleteCategory = async (req, res, next) => {
   try {
     const categoryID = req.params.id;
-
-    // const result = await Category.findById(categoryID);
-    console.log(categoryID);
-
-    if (!result) {
-      return res.status(404).json({ message: "Something Went Wrong " });
-    }
-
-    // Delete the product from the database
-    await result.remove();
-    console.log(result);
+    const result = await Category.findByIdAndDelete(categoryID);
     return successResponse(res, {
       statusCode: 200,
       message: "Category Deleted successfully.",
