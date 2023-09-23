@@ -409,6 +409,23 @@ const topCategories = async (req, res, next) => {
   }
 };
 
+const sellersInfo = async (req, res, next) => {
+  try {
+    const sellers = await User.find({ role: "seller" }).select({
+      _id: 0,
+      password: 0,
+      __v: 0,
+      role: 0,
+    });
+    return successResponse(res, {
+      message: "Sellers info",
+      payload: { sellers },
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
 module.exports = {
   addProduct,
   adminStats,
@@ -421,4 +438,5 @@ module.exports = {
   totalOrders,
   productStatistics,
   topCategories,
+  sellersInfo,
 };

@@ -10,6 +10,10 @@ const userSchema = new Schema(
     mobile: Number,
     address: String,
     district: String,
+    payouts: {
+      type: Number,
+      default: 0,
+    },
     webOrPageLink: String,
     role: {
       type: String,
