@@ -31,7 +31,7 @@ const TopProducts = () => {
             </div>
             <div className="col-span-1 md:col-span-4 space-y-1">
               <div className="flex justify-between">
-                <h2 className="font-bold text-discountbtn">
+                <h2 className="font-bold text-caption">
                   {product.product_name}
                 </h2>
                 <p className="text-footerLinkText text-sm font-bold">
@@ -40,7 +40,7 @@ const TopProducts = () => {
               </div>
               <p className="text-sm text-caption">{product?.description}</p>
               <div className="flex gap-5">
-                <p className="font-bold text-discountbtn">
+                <p className="font-bold text-caption">
                   ${" "}
                   {(
                     product?.suggested_price -

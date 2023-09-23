@@ -62,6 +62,11 @@ const orderSchema = new Schema(
         message: "Value must be a Date or null.",
       },
     },
+
+    category_slug: {
+      type: String,
+      required: true,
+    },
   },
   { timestamps: true }
 );
