@@ -33,6 +33,64 @@ const addNewCategory = async (req, res, next) => {
   }
 };
 
+//Delete a products by ID
+
+const deleteCategory = async (req, res, next) => {
+  try {
+    const categoryID = req.params.id;
+
+    // const result = await Category.findById(categoryID);
+    console.log(categoryID);
+
+    if (!result) {
+      return res.status(404).json({ message: "Something Went Wrong " });
+    }
+
+    // Delete the product from the database
+    await result.remove();
+    console.log(result);
+    return successResponse(res, {
+      statusCode: 200,
+      message: "Category Deleted successfully.",
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+//update category for insert new properties
+const updateCategory = async (req, res, next) => {
+  try {
+    const categoryId = req.params.id;
+    const newProperty = req.body;
+
+    // Retrieve the category document by ID
+    const category = await Category.findById(categoryId);
+
+    if (!category) {
+      return res.status(404).json({ message: "Category not found" });
+    }
+
+    // Define the new properties
+
+    // Add the new properties to the category
+
+    category.properties.push(newProperty);
+
+    // Save the updated category document
+    const updatedCategory = await category.save();
+    return successResponse(res, {
+      statusCode: 200,
+      message: "Property Added successfully.",
+      payload: { updatedCategory },
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: "Internal server error" });
+  }
+};
+
+//
 const filterByCategory = async (req, res, next) => {
   try {
     const categorySlug = req.params.slug;
@@ -47,4 +105,10 @@ const filterByCategory = async (req, res, next) => {
   }
 };
 
-module.exports = { getAllCategory, addNewCategory, filterByCategory };
+module.exports = {
+  getAllCategory,
+  addNewCategory,
+  filterByCategory,
+  updateCategory,
+  deleteCategory,
+};
