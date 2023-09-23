@@ -9,6 +9,7 @@ const {
   newCustomers,
   totalOrders,
   productStatistics,
+  topCategories,
 } = require("../controller/admin.controller");
 const isAdmin = require("../middleware/isAdmin");
 const passport = require("passport");
@@ -61,5 +62,9 @@ adminRoute.get("/dashboard/new-customers", newCustomers);
 // Product statistics
 // /api/admin/dashboard/product-statistics
 adminRoute.get("/dashboard/product-statistics", productStatistics);
+
+// Top categories
+// /api/admin/dashboard/top-categories
+adminRoute.get("/dashboard/top-categories", topCategories);
 
 module.exports = adminRoute;
