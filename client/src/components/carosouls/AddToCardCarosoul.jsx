@@ -7,30 +7,33 @@ const AddToCardCarosoul = () => {
   const onClickThumb = () => {};
 
   return (
-    <div className="">
-      <Carousel
-        showArrows={true}
-        onChange={onChange}
-        onClickItem={onClickItem}
-        onClickThumb={onClickThumb}
-        autoPlay={true}
-        infiniteLoop={true}
-        className="w-full h-64 "
-      >
-        <div className="w-full">
-          <img className="" src="files/tv-1.jpg" />
-        </div>
-        <div className="w-full">
-          <img className="" src="files/tv-2.jpg" />
-        </div>
-        <div className="w-full">
-          <img className="" src="files/head-1.jfif" />
-        </div>
-        <div className="w-full">
-          <img className="" src="files/head-2.webp" />
-        </div>
-      </Carousel>
-    </div>
+    <Carousel
+      showArrows={true}
+      onChange={onChange}
+      onClickItem={onClickItem}
+      onClickThumb={onClickThumb}
+      autoPlay={true}
+      infiniteLoop={true}
+    >
+      <div className="h-[464px] w-full">
+        <img
+          src="files/carHeadphone1.png"
+          className="object-fill object-center"
+        />
+      </div>
+      <div className="h-[464px] w-full">
+        <img
+          src="files/carHeadphone2.png"
+          className="object-fill object-center"
+        />
+      </div>
+      <div className="h-[464px] w-full">
+        <img
+          src="files/carHeadphone3.png"
+          className="object-fill object-center"
+        />
+      </div>
+    </Carousel>
   );
 };
 

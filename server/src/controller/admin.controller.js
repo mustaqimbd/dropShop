@@ -3,6 +3,7 @@ const generateUniqueId = require("generate-unique-id");
 const { successResponse } = require("./responseHandler");
 const Orders = require("../model/orders.model");
 const User = require("../model/user.model");
+const Category = require("../model/category.model");
 
 const addProduct = async (req, res, next) => {
   try {
@@ -269,10 +270,156 @@ const recentOrders = async (req, res, next) => {
 
 const newCustomers = async (req, res, next) => {
   try {
-    const customers = await User.find().sort({ createdAt: -1 }).limit(5);
+    const pipeline = [
+      {
+        $group: {
+          _id: "$drop_seller_email",
+          orderCount: { $sum: 1 },
+          totalSales: { $sum: "$total_price" },
+        },
+      },
+      {
+        $lookup: {
+          from: "users", // Name of the users collection
+          localField: "_id", // Field from the orders collection
+          foreignField: "email", // Field from the users collection
+          as: "userDetails", // Alias for the joined data
+        },
+      },
+      {
+        $unwind: "$userDetails", // Unwind the array created by $lookup
+      },
+      {
+        $project: {
+          _id: 0, // Exclude the default _id field
+          email: "$_id",
+          orderCount: 1,
+          userName: "$userDetails.name",
+          totalSales: 1,
+          logo: "$userDetails.logo",
+          profile_pic: "$userDetails.profile_pic",
+        },
+      },
+      {
+        $sort: {
+          totalSales: -1,
+        },
+      },
+      {
+        $limit: 5,
+      },
+    ];
+    const customers = await Orders.aggregate(pipeline);
     return successResponse(res, {
       message: "New customers",
       payload: { customers },
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+const productStatistics = async (req, res, next) => {
+  try {
+    const totalCategory = await Category.find().countDocuments();
+    const pipeline = [
+      {
+        $group: {
+          _id: null,
+          totalAvailableQuantity: { $sum: "$available_quantity" },
+        },
+      },
+    ];
+    const inStock = await Products.aggregate(pipeline);
+    const outOfStocks = await Products.count({ available_quantity: 0 });
+    return successResponse(res, {
+      message: "Products statistics.",
+      payload: {
+        totalCategory,
+        inStock: inStock[0].totalAvailableQuantity,
+        outOfStocks,
+      },
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+const topCategories = async (req, res, next) => {
+  try {
+    const pipeline = [
+      {
+        $group: {
+          _id: "$ category_slug",
+          totalOrders: { $sum: 1 },
+        },
+      },
+      {
+        $lookup: {
+          from: "categories",
+          localField: "_id",
+          foreignField: "slug",
+          as: "categoryInfo",
+        },
+      },
+      {
+        $unwind: "$categoryInfo",
+      },
+      {
+        $group: {
+          _id: null, // Group all documents into one group
+          totalAllOrders: { $sum: "$totalOrders" }, // Calculate the total sum of orders
+          categories: { $push: "$$ROOT" }, // Preserve the category information
+        },
+      },
+      {
+        $unwind: "$categories",
+      },
+      {
+        $project: {
+          _id: "$categories._id",
+          totalOrders: "$categories.totalOrders",
+          categoryName: "$categories.categoryInfo.name",
+          categoryImage: "$categories.categoryInfo.img",
+          percentage: {
+            $multiply: [
+              { $divide: ["$categories.totalOrders", "$totalAllOrders"] }, // Calculate percentage
+              100, // Multiply by 100 to get the percentage
+            ],
+          },
+        },
+      },
+
+      {
+        $sort: {
+          totalOrders: -1,
+        },
+      },
+      {
+        $limit: 3,
+      },
+    ];
+    const topCategories = await Orders.aggregate(pipeline);
+    return successResponse(res, {
+      message: "Top categories",
+      payload: { topCategories },
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+const sellersInfo = async (req, res, next) => {
+  try {
+    const sellers = await User.find({ role: "seller" }).select({
+      _id: 0,
+      password: 0,
+      __v: 0,
+      role: 0,
+    });
+    return successResponse(res, {
+      message: "Sellers info",
+      payload: { sellers },
     });
   } catch (error) {
     next(error);
@@ -289,4 +436,7 @@ module.exports = {
   recentOrders,
   newCustomers,
   totalOrders,
+  productStatistics,
+  topCategories,
+  sellersInfo,
 };

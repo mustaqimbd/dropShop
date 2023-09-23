@@ -11,10 +11,6 @@ const PaginationGenaral = ({
 
   // Calculate total pages and indices for pagination
   const totalPages = Math.ceil(allProductsLength / itemsPerPage);
-
-  console.log("total page:", totalPages);
-  console.log("current page page:", currentPage);
-
   return (
     <div className="mt-8 flex justify-center items-center space-x-4">
       <button
@@ -31,7 +27,7 @@ const PaginationGenaral = ({
 
       {/* Page numbers */}
       <div className="flex space-x-2">
-        {[...Array(totalPages).keys()].map((page) => (
+        {[...Array(totalPages).keys()].map(page => (
           <button
             key={page}
             onClick={() => setCurrentPage(page)}
