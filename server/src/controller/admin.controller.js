@@ -321,6 +321,7 @@ const newCustomers = async (req, res, next) => {
 
 const productStatistics = async (req, res, next) => {
   try {
+    const totalCategory = await Category.find().countDocuments();
     const pipeline = [
       {
         $group: {
@@ -334,9 +335,91 @@ const productStatistics = async (req, res, next) => {
     return successResponse(res, {
       message: "Products statistics.",
       payload: {
+        totalCategory,
         inStock: inStock[0].totalAvailableQuantity,
         outOfStocks,
       },
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+const topCategories = async (req, res, next) => {
+  try {
+    const pipeline = [
+      {
+        $group: {
+          _id: "$ category_slug",
+          totalOrders: { $sum: 1 },
+        },
+      },
+      {
+        $lookup: {
+          from: "categories",
+          localField: "_id",
+          foreignField: "slug",
+          as: "categoryInfo",
+        },
+      },
+      {
+        $unwind: "$categoryInfo",
+      },
+      {
+        $group: {
+          _id: null, // Group all documents into one group
+          totalAllOrders: { $sum: "$totalOrders" }, // Calculate the total sum of orders
+          categories: { $push: "$$ROOT" }, // Preserve the category information
+        },
+      },
+      {
+        $unwind: "$categories",
+      },
+      {
+        $project: {
+          _id: "$categories._id",
+          totalOrders: "$categories.totalOrders",
+          categoryName: "$categories.categoryInfo.name",
+          categoryImage: "$categories.categoryInfo.img",
+          percentage: {
+            $multiply: [
+              { $divide: ["$categories.totalOrders", "$totalAllOrders"] }, // Calculate percentage
+              100, // Multiply by 100 to get the percentage
+            ],
+          },
+        },
+      },
+
+      {
+        $sort: {
+          totalOrders: -1,
+        },
+      },
+      {
+        $limit: 3,
+      },
+    ];
+    const topCategories = await Orders.aggregate(pipeline);
+    return successResponse(res, {
+      message: "Top categories",
+      payload: { topCategories },
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+const sellersInfo = async (req, res, next) => {
+  try {
+    const sellers = await User.find({ role: "seller" }).select({
+      _id: 0,
+      password: 0,
+      __v: 0,
+      role: 0,
+    });
+    return successResponse(res, {
+      message: "Sellers info",
+      payload: { sellers },
     });
   } catch (error) {
     next(error);
@@ -354,4 +437,6 @@ module.exports = {
   newCustomers,
   totalOrders,
   productStatistics,
+  topCategories,
+  sellersInfo,
 };
