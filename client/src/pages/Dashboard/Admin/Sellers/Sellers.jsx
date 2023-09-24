@@ -16,7 +16,6 @@ const Sellers = () => {
   const [currentPage, setCurrentPage] = useState(0);
   const { data } = useAllSellers(currentPage);
   const users = data?.payload?.sellers;
-  console.log(data?.payload?.sellers);
   return (
     <>
       <div className="bg-white rounded-md shadow-md p-2 md:p-5">
@@ -32,6 +31,9 @@ const Sellers = () => {
                   </TableCell>
                   <TableCell align="left">
                     <span className="font-bold text-heading">Seller name</span>
+                  </TableCell>
+                  <TableCell align="left">
+                    <span className="font-bold text-heading">Seller email</span>
                   </TableCell>
                   <TableCell align="left">
                     <span className="font-bold text-heading">Profile</span>

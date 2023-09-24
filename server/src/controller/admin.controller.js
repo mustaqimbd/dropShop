@@ -310,6 +310,7 @@ const newCustomers = async (req, res, next) => {
       },
     ];
     const customers = await Orders.aggregate(pipeline);
+    console.log(customers);
     return successResponse(res, {
       message: "New customers",
       payload: { customers },
@@ -350,7 +351,7 @@ const topCategories = async (req, res, next) => {
     const pipeline = [
       {
         $group: {
-          _id: "$ category_slug",
+          _id: "$category_slug",
           totalOrders: { $sum: 1 },
         },
       },
@@ -396,7 +397,7 @@ const topCategories = async (req, res, next) => {
         },
       },
       {
-        $limit: 3,
+        $limit: 4,
       },
     ];
     const topCategories = await Orders.aggregate(pipeline);
@@ -413,9 +414,11 @@ const sellersInfo = async (req, res, next) => {
   try {
     const sellers = await User.find({ role: "seller" }).select({
       _id: 0,
-      password: 0,
-      __v: 0,
-      role: 0,
+      name: 1,
+      profile_pic: 1,
+      "payments.withdraw.payouts": 1,
+      createdAt: 1,
+      email: 1,
     });
     return successResponse(res, {
       message: "Sellers info",
