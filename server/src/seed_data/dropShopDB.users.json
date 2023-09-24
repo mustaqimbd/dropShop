@@ -28,8 +28,8 @@
   },
   {
     "name": "Demo user 1",
-    "user_id": "demouser1",
-    "email": "demouser1@gmail.com",
+    "user_id": "demoseller1",
+    "email": "demosellerer1@gmail.com",
     "phone": 1789699367,
     "profile_pic": "https://maraviyainfotech.com/projects/ekka/ekka-v35/ekka-admin/assets/img/vendor/u1.jpg",
     "password": "$2a$10$GG5qofA2jUNS5FhAFeWd8u8QXeXin3gAhUI6n83jo9QqdAG2zN41u",
@@ -58,8 +58,8 @@
   },
   {
     "name": "Demo user 2",
-    "user_id": "demouser2",
-    "email": "demouser2@gmail.com",
+    "user_id": "demoseller2",
+    "email": "demosellerer2@gmail.com",
     "phone": 1789699367,
     "profile_pic": "https://maraviyainfotech.com/projects/ekka/ekka-v35/ekka-admin/assets/img/vendor/u4.jpg",
     "password": "$2a$10$GG5qofA2jUNS5FhAFeWd8u8QXeXin3gAhUI6n83jo9QqdAG2zN41u",
@@ -88,8 +88,8 @@
   },
   {
     "name": "Demo user 3",
-    "user_id": "demouser3",
-    "email": "demouser3@gmail.com",
+    "user_id": "demoseller3",
+    "email": "demoseller3@gmail.com",
     "phone": 1789699367,
     "profile_pic": "https://maraviyainfotech.com/projects/ekka/ekka-v35/ekka-admin/assets/img/vendor/u6.jpg",
     "password": "$2a$10$GG5qofA2jUNS5FhAFeWd8u8QXeXin3gAhUI6n83jo9QqdAG2zN41u",

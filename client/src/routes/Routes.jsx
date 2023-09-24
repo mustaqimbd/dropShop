@@ -24,6 +24,7 @@ import ShopStatus from "../pages/Dashboard/Admin/ShopStatus/ShopStatus";
 import TrackOrder from "../pages/TrackOrder/TrackOrder";
 import ProductsByCategory from "../pages/products/ArchiveProducts/ProductsByCategory";
 import Need_Help from "../pages/Need_Help/Need_Help";
+import DashboardSkeleton from "../pages/Dashboard/DashboardSkeleton/DashboardSkeleton";
 
 export const router = createBrowserRouter([
   {
@@ -72,9 +73,9 @@ export const router = createBrowserRouter([
         element: <TrackOrder />,
       },
       {
-        path:"/Need_Help",
-        element:<Need_Help/>
-      }
+        path: "/Need_Help",
+        element: <Need_Help />,
+      },
     ],
   },
   {
@@ -128,5 +129,9 @@ export const router = createBrowserRouter([
         element: <DropShipper />,
       },
     ],
+  },
+  {
+    path: "/test",
+    element: <DashboardSkeleton />,
   },
 ]);

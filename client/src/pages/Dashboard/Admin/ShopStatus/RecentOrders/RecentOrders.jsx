@@ -42,7 +42,7 @@ const RecentOrders = () => {
     <>
       <div className="shadow-md rounded-md p-2 md:p-5 mx-2 mt-5 bg-white">
         <h2 className="dashboard-title">Recent orders </h2>
-        <Divider />
+        <Divider style={{ marginBottom: "20px" }} />
         <TableContainer component={Paper}>
           <Table sx={{ minWidth: 650 }} aria-label="simple table">
             <TableHead>
