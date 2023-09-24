@@ -6,11 +6,11 @@ const {
   yearlySales,
   orderOverview,
   recentOrders,
-  newCustomers,
   totalOrders,
   productStatistics,
   topCategories,
   sellersInfo,
+  topSellers,
 } = require("../controller/admin.controller");
 const isAdmin = require("../middleware/isAdmin");
 const passport = require("passport");
@@ -58,7 +58,7 @@ adminRoute.get("/dashboard/recent-orders", recentOrders);
 
 // new customers
 // /api/admin/dashboard/new-customers
-adminRoute.get("/dashboard/new-customers", newCustomers);
+adminRoute.get("/dashboard/top-sellers", topSellers);
 
 // Product statistics
 // /api/admin/dashboard/product-statistics

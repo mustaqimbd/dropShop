@@ -1,86 +1,127 @@
 [
   {
-    "name": "Admin 1",
-    "email": "admin@gmail.com",
+    "name": "Demo admin 1",
+    "user_id": "demouser1",
+    "email": "demoadmin1@gmail.com",
+    "phone": 1789699367,
+    "profile_pic": "https://maraviyainfotech.com/projects/ekka/ekka-v35/ekka-admin/assets/img/vendor/u6.jpg",
     "password": "$2a$10$GG5qofA2jUNS5FhAFeWd8u8QXeXin3gAhUI6n83jo9QqdAG2zN41u",
-    "logo": "http://example.com/logo",
-    "mobile": 1789101212,
-    "address": "Address here",
-    "district": "Satkhira",
-    "webOrPageLink": "http://example.com",
-    "role": "admin",
-    "__v": 0
+    "role": "admin"
   },
   {
-    "name": "Admin 2",
-    "email": "admin2@gmail.com",
-    "password": "$2a$10$Nl1KKCVi9ZmfPWmG1Y6oVemXDG5WYa48uT4JhdgInLv5FwjrTZ9U6",
-    "logo": "http://example.com/logo",
-    "mobile": 1789101212,
-    "address": "Address here",
-    "district": "Satkhira",
-    "webOrPageLink": "http://example.com",
-    "role": "admin",
-    "__v": 0
+    "name": "Demo admin 2",
+    "user_id": "demouser2",
+    "email": "demoadmin2@gmail.com",
+    "phone": 1789699367,
+    "profile_pic": "https://maraviyainfotech.com/projects/ekka/ekka-v35/ekka-admin/assets/img/vendor/u9.jpg",
+    "password": "$2a$10$GG5qofA2jUNS5FhAFeWd8u8QXeXin3gAhUI6n83jo9QqdAG2zN41u",
+    "role": "admin"
   },
   {
-    "name": "Admin 3",
-    "email": "admin3@gmail.com",
-    "password": "$2a$10$Nl1KKCVi9ZmfPWmG1Y6oVemXDG5WYa48uT4JhdgInLv5FwjrTZ9U6",
-    "logo": "http://example.com/logo",
-    "mobile": 1789101212,
-    "address": "Address here",
-    "district": "Satkhira",
-    "webOrPageLink": "http://example.com",
-    "role": "admin",
-    "__v": 0
+    "name": "Demo admin 3",
+    "user_id": "demouser3",
+    "email": "demoadmin3@gmail.com",
+    "phone": 1789699367,
+    "profile_pic": "https://maraviyainfotech.com/projects/ekka/ekka-v35/ekka-admin/assets/img/vendor/u8.jpg",
+    "password": "$2a$10$GG5qofA2jUNS5FhAFeWd8u8QXeXin3gAhUI6n83jo9QqdAG2zN41u",
+    "role": "admin"
   },
   {
-    "name": "Drop seller 2",
-    "email": "dropseller2@gmail.com",
-    "password": "$2a$10$.UUBiX8DYQemKxolxgk/w.c4zg0IIQEI1TkMCDVJZQqoHF8JB1ucO",
-    "logo": "http://example.com/logo",
-    "mobile": 1789101212,
-    "address": "Address here",
-    "district": "Satkhira",
-    "webOrPageLink": "http://example.com",
+    "name": "Demo user 1",
+    "user_id": "demouser1",
+    "email": "demouser1@gmail.com",
+    "phone": 1789699367,
+    "profile_pic": "https://maraviyainfotech.com/projects/ekka/ekka-v35/ekka-admin/assets/img/vendor/u1.jpg",
+    "password": "$2a$10$GG5qofA2jUNS5FhAFeWd8u8QXeXin3gAhUI6n83jo9QqdAG2zN41u",
     "role": "seller",
-    "__v": 0
+    "shop_info": {
+      "shop_name": "Demo shop 1",
+      "logo": "https://e7.pngegg.com/pngimages/115/523/png-clipart-product-design-brand-logo-font-demo-text-orange.png",
+      "address": {
+        "division": "khulna",
+        "district": "satkhira"
+      },
+      "description": "This is a short description for this shop.",
+      "pageOrWebLink": "http://www.example.com"
+    },
+    "payments": {
+      "withdraw": {
+        "method": "bkash",
+        "payouts": 500
+      },
+      "subscription": {
+        "method": "stripe",
+        "discount": null,
+        "fee": 3000
+      }
+    }
   },
   {
-    "name": "Drop seller 1",
-    "email": "dropseller1@gmail.com",
-    "password": "$2a$10$9IbNye.h2lopGje23EzuG.BlqUmi2K8AZ/PTiQIUTddt2LI4nHqFu",
-    "logo": "http://example.com/logo",
-    "mobile": 1789101212,
-    "address": "Address here",
-    "district": "Satkhira",
-    "webOrPageLink": "http://example.com",
+    "name": "Demo user 2",
+    "user_id": "demouser2",
+    "email": "demouser2@gmail.com",
+    "phone": 1789699367,
+    "profile_pic": "https://maraviyainfotech.com/projects/ekka/ekka-v35/ekka-admin/assets/img/vendor/u4.jpg",
+    "password": "$2a$10$GG5qofA2jUNS5FhAFeWd8u8QXeXin3gAhUI6n83jo9QqdAG2zN41u",
     "role": "seller",
-    "__v": 0
+    "shop_info": {
+      "shop_name": "Demo shop 2",
+      "logo": "https://png.pngtree.com/png-vector/20230408/ourmid/pngtree-free-demo-banner-design-vector-png-image_6695393.png",
+      "address": {
+        "division": "khulna",
+        "district": "satkhira"
+      },
+      "description": "This is a short description for this shop.",
+      "pageOrWebLink": "http://www.example.com"
+    },
+    "payments": {
+      "withdraw": {
+        "method": "bkash",
+        "payouts": 500
+      },
+      "subscription": {
+        "method": "bkash",
+        "discount": null,
+        "fee": 3000
+      }
+    }
   },
   {
-    "name": "User 1",
-    "email": "user1@gmail.com",
-    "password": "$2a$10$YwtN.mZGvOLA0hWJpv.H2.58ybuEJAmQLoU.H7xy6F0/fu0OsImYW",
-    "logo": "http://example.com/logo",
-    "mobile": 1789101212,
-    "address": "Address here",
-    "district": "Satkhira",
-    "webOrPageLink": "http://example.com",
-    "role": "user",
-    "__v": 0
+    "name": "Demo user 3",
+    "user_id": "demouser3",
+    "email": "demouser3@gmail.com",
+    "phone": 1789699367,
+    "profile_pic": "https://maraviyainfotech.com/projects/ekka/ekka-v35/ekka-admin/assets/img/vendor/u6.jpg",
+    "password": "$2a$10$GG5qofA2jUNS5FhAFeWd8u8QXeXin3gAhUI6n83jo9QqdAG2zN41u",
+    "role": "seller",
+    "shop_info": {
+      "shop_name": "Demo shop 3",
+      "logo": "https://cdn-icons-png.flaticon.com/512/5332/5332306.png",
+      "address": {
+        "division": "khulna",
+        "district": "satkhira"
+      },
+      "description": "This is a short description for this shop.",
+      "pageOrWebLink": "http://www.example.com"
+    },
+    "payments": {
+      "withdraw": {
+        "method": "bkash",
+        "payouts": 500
+      },
+      "subscription": {
+        "method": "stripe",
+        "discount": null,
+        "fee": 3000
+      }
+    }
   },
+
   {
-    "name": "User 2",
-    "email": "user2@gmail.com",
-    "password": "$2a$10$tIxnje52zOelzktqFF1jw.m1EjtFWMRG88efJ/ITbVcSJjkkWBV36",
-    "logo": "http://example.com/logo",
-    "mobile": 1789101212,
-    "address": "Address here",
-    "district": "Satkhira",
-    "webOrPageLink": "http://example.com",
-    "role": "user",
-    "__v": 0
+    "name": "Demo users 3",
+    "user_id": "demouser3",
+    "email": "demoadmin3@gmail.com",
+    "password": "$2a$10$GG5qofA2jUNS5FhAFeWd8u8QXeXin3gAhUI6n83jo9QqdAG2zN41u",
+    "role": "user"
   }
 ]

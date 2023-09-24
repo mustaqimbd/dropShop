@@ -75,13 +75,13 @@ const RecentOrders = () => {
                       label={row.status}
                       style={{
                         background: `${
-                          row.status === "Completed"
+                          row.status === "completed"
                             ? "#29cc97"
-                            : row.status === "Pending"
+                            : row.status === "pending"
                             ? "#fec400"
-                            : row.status === "On the way"
+                            : row.status === "on the way"
                             ? "#4c84ff"
-                            : row.status === "Canceled"
+                            : row.status === "canceled"
                             ? "#fe5461"
                             : ""
                         }`,

@@ -2,8 +2,7 @@ import { Avatar, Button, TableCell, TableRow } from "@mui/material";
 import { Link } from "react-router-dom";
 
 const TableRowCompo = ({ user, index }) => {
-  console.log(user);
-  const dateObj = new Date(user.createdAt);
+  const dateObj = new Date(user?.createdAt);
   const year = dateObj.getFullYear();
   const month = dateObj.getMonth();
   const day = dateObj.getDate();
@@ -17,13 +16,18 @@ const TableRowCompo = ({ user, index }) => {
         <span className="font-semibold text-linkText">{index + 1}</span>
       </TableCell>
       <TableCell component="th" scope="row">
-        <span className="font-semibold text-linkText">{user.name}</span>
+        <span className="font-semibold text-linkText">{user?.name}</span>
+      </TableCell>
+      <TableCell component="th" scope="row">
+        <span className="font-semibold text-linkText">{user?.email}</span>
       </TableCell>
       <TableCell align="left">
         <Avatar src={user.profile_pic} alt={user.name} />
       </TableCell>
       <TableCell align="left">
-        <span className="font-semibold text-linkText">${user.payouts}</span>
+        <span className="font-semibold text-linkText">
+          ${user?.payments?.withdraw?.payouts}
+        </span>
       </TableCell>
       <TableCell align="left">
         <span className="font-semibold text-linkText">{`${day}/${month}/${year}`}</span>

@@ -59,7 +59,7 @@ export const router = createBrowserRouter([
         element: <VerifyAccounts />,
       },
       {
-        path: "/addToCardPage",
+        path: "/add-to-cart",
         element: <AddToCardPage />,
       },
       {

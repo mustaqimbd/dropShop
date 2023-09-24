@@ -68,7 +68,7 @@ const AllCategoryList = () => {
             <TableBody>
               {visibleData.map(category => (
                 <TableRow key={category._id}>
-                  <TableCell>category.name</TableCell>
+                  <TableCell>{category.name}</TableCell>
                   <TableCell>
                     <img
                       src={category.img}
