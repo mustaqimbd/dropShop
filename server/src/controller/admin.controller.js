@@ -1,7 +1,7 @@
 const Products = require("../model/products.model");
 const generateUniqueId = require("generate-unique-id");
 const { successResponse } = require("./responseHandler");
-const Orders = require("../model/orders.model");
+const Orders = require("../model/order.model");
 const User = require("../model/user.model");
 const Category = require("../model/category.model");
 
@@ -409,14 +409,31 @@ const topCategories = async (req, res, next) => {
 
 const sellersInfo = async (req, res, next) => {
   try {
-    const sellers = await User.find({ role: "seller" }).select({
+    const projection = {
       _id: 0,
       name: 1,
       profile_pic: 1,
       "payments.withdraw.payouts": 1,
       createdAt: 1,
       email: 1,
-    });
+    };
+    if (req.query.email) {
+      const seller = await User.findOne({ email: req.query.email }).select(
+        projection
+      );
+      if (seller) {
+        return successResponse(res, {
+          message: "Sellers info",
+          payload: { sellers: [seller] },
+        });
+      } else {
+        return successResponse(res, {
+          message: "No seller found with this email.",
+          payload: { sellers: [] },
+        });
+      }
+    }
+    const sellers = await User.find({ role: "seller" }).select(projection);
     return successResponse(res, {
       message: "Sellers info",
       payload: { sellers },
