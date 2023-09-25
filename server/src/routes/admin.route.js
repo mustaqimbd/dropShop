@@ -11,6 +11,7 @@ const {
   topCategories,
   sellersInfo,
   topSellers,
+  products,
 } = require("../controller/admin.controller");
 const isAdmin = require("../middleware/isAdmin");
 const passport = require("passport");
@@ -71,5 +72,9 @@ adminRoute.get("/dashboard/top-categories", topCategories);
 // Sellers info
 // /api/admin/dashboard/sellers-info
 adminRoute.get("/dashboard/sellers-info", sellersInfo);
+
+// All products
+// /api/admin/dashboard/products
+adminRoute.get("/dashboard/products", products);
 
 module.exports = adminRoute;
