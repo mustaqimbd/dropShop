@@ -6,15 +6,20 @@ const {
   yearlySales,
   orderOverview,
   recentOrders,
-  newCustomers,
   totalOrders,
+  productStatistics,
+  topCategories,
+  sellersInfo,
+  topSellers,
+  products,
 } = require("../controller/admin.controller");
 const isAdmin = require("../middleware/isAdmin");
 const passport = require("passport");
 
 const adminRoute = require("express").Router();
 
-adminRoute.use(passport.authenticate("jwt", { session: false }), isAdmin);
+//TODO: Secure admin routes.
+// adminRoute.use(passport.authenticate("jwt", { session: false }), isAdmin);
 
 //add product
 // /api/admin/add-product
@@ -54,6 +59,22 @@ adminRoute.get("/dashboard/recent-orders", recentOrders);
 
 // new customers
 // /api/admin/dashboard/new-customers
-adminRoute.get("/dashboard/new-customers", newCustomers);
+adminRoute.get("/dashboard/top-sellers", topSellers);
+
+// Product statistics
+// /api/admin/dashboard/product-statistics
+adminRoute.get("/dashboard/product-statistics", productStatistics);
+
+// Top categories
+// /api/admin/dashboard/top-categories
+adminRoute.get("/dashboard/top-categories", topCategories);
+
+// Sellers info
+// /api/admin/dashboard/sellers-info
+adminRoute.get("/dashboard/sellers-info", sellersInfo);
+
+// All products
+// /api/admin/dashboard/products
+adminRoute.get("/dashboard/products", products);
 
 module.exports = adminRoute;

@@ -3,7 +3,7 @@ import ContainerMax from "../../../components/container/ContainerMax";
 import { FeatureProduct } from "../../../components/titles/FeatureTitle";
 import { FeatureProductCard } from "../../../components/cards/allCards/allCards";
 import useAllProducts from "../../../hooks/useAllProducts";
-import Pagination from "../../../components/pagination/Pagination";
+import { PaginationGenaral } from "../../../components/pagination/Pagination";
 
 const FeatureProducts = () => {
   const itemsPerPage = 24; // Number of items per page
@@ -30,7 +30,7 @@ const FeatureProducts = () => {
         )}
 
         {allProductsData?.length ? (
-          <Pagination
+          <PaginationGenaral
             allProductsLength={allProductsLength}
             currentPage={currentPage}
             setCurrentPage={setCurrentPage}

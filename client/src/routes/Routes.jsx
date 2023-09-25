@@ -7,7 +7,6 @@ import Register from "../pages/register/Register";
 import Login from "../pages/login/Login";
 import ConfirmAccountMessage from "../pages/register/ConfirmAccountMessage";
 import VerifyAccounts from "../pages/register/VerifyAccounts";
-
 import AddToCardPage from "../pages/AddToCardPage/AddToCardPage";
 import Dashboard from "../layouts/dashboard/Dashboard";
 import AdminDashboard from "../layouts/dashboard/AdminDashboard/AdminDashboard";
@@ -30,6 +29,8 @@ import Profit from "../pages/Dashboard/DropShipper/Profit/Profit";
 import PaymentWithdraw from "../pages/Dashboard/DropShipper/PaymentWthdraw/PaymentWithdraw";
 import Profile from "../pages/Dashboard/DropShipper/Profile/Profile";
 import ResellerRoute from "./ResellerRoute/ResellerRoute";
+import NeedHelp from "../pages/NeedHelp/NeedHelp";
+import ForgotPassword from "../pages/ForgotPassword/ForgotPassword";
 
 export const router = createBrowserRouter([
   {
@@ -61,11 +62,15 @@ export const router = createBrowserRouter([
         element: <Login></Login>,
       },
       {
+        path: "/forgot-password",
+        element: <ForgotPassword />,
+      },
+      {
         path: "/accounts/verify",
         element: <VerifyAccounts />,
       },
       {
-        path: "/addToCardPage",
+        path: "/add-to-cart",
         element: <AddToCardPage />,
       },
       {
@@ -74,8 +79,12 @@ export const router = createBrowserRouter([
       },
 
       {
-        path: "/track_order",
+        path: "/track-order",
         element: <TrackOrder />,
+      },
+      {
+        path: "/need-help",
+        element: <NeedHelp />,
       },
     ],
   },

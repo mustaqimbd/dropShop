@@ -1,7 +1,7 @@
 const userData = require("../seed_data/dropShopDB.users.json");
 const orderedData = require("../seed_data/dropShopDB.orders.json");
 const User = require("../model/user.model");
-const Orders = require("../model/orders.model");
+const Orders = require("../model/order.model");
 
 const userSeed = async (req, res, next) => {
   try {

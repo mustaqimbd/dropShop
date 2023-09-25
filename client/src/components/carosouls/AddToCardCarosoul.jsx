@@ -1,22 +1,40 @@
-import React from 'react'
-import { Carousel } from "react-responsive-carousel"
+import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 const AddToCardCarosoul = () => {
-    const onChange = () => { }
-    const onClickItem = () => { }
-    const onClickThumb = () => { }
+  const onChange = () => {};
+  const onClickItem = () => {};
+  const onClickThumb = () => {};
 
-    return (
-        
-        <Carousel showArrows={true} onChange={onChange} onClickItem={onClickItem} onClickThumb={onClickThumb} autoPlay={true} infiniteLoop={true}>
-            
-            <div><img src="files/tv-1.jpg" /></div>
-            <div><img src="files/tv-2.jpg" /></div>
-            <div><img src="files/head-1.jfif" /></div>
-            <div><img src="files/head-2.webp" /></div>
-        </Carousel>
-    )
-}
+  return (
+    <Carousel
+      showArrows={true}
+      onChange={onChange}
+      onClickItem={onClickItem}
+      onClickThumb={onClickThumb}
+      autoPlay={true}
+      infiniteLoop={true}
+    >
+      <div className="h-[464px] w-full">
+        <img
+          src="files/carHeadphone1.png"
+          className="object-fill object-center"
+        />
+      </div>
+      <div className="h-[464px] w-full">
+        <img
+          src="files/carHeadphone2.png"
+          className="object-fill object-center"
+        />
+      </div>
+      <div className="h-[464px] w-full">
+        <img
+          src="files/carHeadphone3.png"
+          className="object-fill object-center"
+        />
+      </div>
+    </Carousel>
+  );
+};
 
-export default AddToCardCarosoul
+export default AddToCardCarosoul;

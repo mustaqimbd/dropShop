@@ -80,14 +80,19 @@ const MaximamProfitPrice = ({ price }) => {
 };
 
 const ColorTitle = ({ title }) => {
-  return <p className="text-base  text-deepGray  font-[400]">{title}</p>;
+  return <p className="text-base  text-black  font-[400]">{title}</p>;
 };
 const TracOrdertitle = ({ title }) => {
   return (
-<div className="text-base font-sans text-heading  py-5 border-b-2 border-borderColor">{title}</div>
-
+    <div className="text-base font-sans text-heading  py-5 border-b-2 border-borderColor">
+      {title}
+    </div>
   );
 };
+const HelpTitle = ({ title }) => {
+  return <div className="text-xl font-bold font-sans py-5">{title}</div>;
+};
+
 export {
   FeaturedProdcutTitle,
   CategoryTitles,
@@ -102,5 +107,6 @@ export {
   MaximumProfitMarginText,
   MaximamProfitPrice,
   ColorTitle,
-  TracOrdertitle
+  TracOrdertitle,
+  HelpTitle,
 };

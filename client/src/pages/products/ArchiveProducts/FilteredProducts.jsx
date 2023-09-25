@@ -2,7 +2,7 @@ import { useState } from "react";
 import { CategoriesProductCard } from "../../../components/cards/allCards/allCards";
 import ContainerFull from "../../../components/container/ContainerFull";
 
-import Pagination from "../../../components/pagination/Pagination";
+import { PaginationGenaral } from "../../../components/pagination/Pagination";
 
 import useAllProducts from "../../../hooks/useAllProducts";
 
@@ -30,7 +30,7 @@ const FilteredProducts = () => {
 
         <div className="flex justify-end">
           {allProductsData?.length ? (
-            <Pagination
+            <PaginationGenaral
               allProductsLength={allProductsLength}
               currentPage={currentPage}
               setCurrentPage={setCurrentPage}

@@ -10,9 +10,9 @@ const Header = () => {
         <ContainerMax>
           <div className="flex px-10 item-center justify-between">
             <div className="flex-1">
-           <Typography variant="h4" color={"white"} >
-           DropShop
-           </Typography>
+              <Typography variant="h4" color={"white"}>
+                DropShop
+              </Typography>
             </div>
             <div className="flex flex-1 items-center relative">
               <input className="w-full p-2 rounded-md" type="text" />
@@ -44,7 +44,9 @@ const Header = () => {
             <div className="flex-1 flex gap-4 justify-end items-center">
               <div className="relative ">
                 <img src={cartIon} alt="" />
-                <span className="absolute top-0 right-2 text-ratingCount">3</span>
+                <span className="absolute bg-iconBg w-6 h-6 p-1 text-center rounded-full -top-3 -right-2 text-ratingCount">
+                  3
+                </span>
               </div>
               <div>
                 <svg
