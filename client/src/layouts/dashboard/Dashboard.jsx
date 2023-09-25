@@ -23,6 +23,12 @@ import UpdateIcon from "@mui/icons-material/Update";
 import CategoryIcon from "@mui/icons-material/Category";
 import FluorescentIcon from "@mui/icons-material/Fluorescent";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import {
+  Redeem,
+  MonetizationOnOutlined,
+  LoginOutlined,
+  PeopleAltOutlined,
+} from "@mui/icons-material";
 import { Link, Outlet } from "react-router-dom";
 import {
   Avatar,
@@ -37,7 +43,7 @@ import ActiveLink from "../../components/ActiveLink/ActiveLink";
 
 const drawerWidth = 240;
 
-const Dashboard = props => {
+const Dashboard = (props) => {
   const { user, logOut } = useAuthProvider();
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -47,7 +53,7 @@ const Dashboard = props => {
   };
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
-  const handleClick = event => {
+  const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
   const handleClose = () => {
@@ -139,6 +145,73 @@ const Dashboard = props => {
                     <ShoppingCartIcon />
                   </ListItemIcon>
                   <ListItemText primary="Orders" />
+                </ListItemButton>
+              </ActiveLink>
+            </ListItem>
+          </>
+        ) : (
+          ""
+        )}
+        {user?.role === "reseller" ? (
+          <>
+            <ListItem style={{ padding: 0 }}>
+              <ActiveLink to="/dashboard/dropshipper/reseller">
+                <ListItemButton>
+                  <ListItemIcon>
+                    <DashboardIcon />
+                  </ListItemIcon>
+                  <ListItemText primary="Reseller Panel" />
+                </ListItemButton>
+              </ActiveLink>
+            </ListItem>
+            <ListItem style={{ padding: 0 }}>
+              <ActiveLink to="/dashboard/dropshipper/my-customers">
+                <ListItemButton>
+                  <ListItemIcon>
+                    <PeopleIcon />
+                  </ListItemIcon>
+                  <ListItemText primary="My customers" />
+                </ListItemButton>
+              </ActiveLink>
+            </ListItem>
+            <Divider style={{ marginBlock: "5px" }} />
+            <ListItem style={{ padding: 0 }}>
+              <ActiveLink to="/dashboard/dropshipper/my-orders">
+                <ListItemButton>
+                  <ListItemIcon>
+                    <Redeem />
+                  </ListItemIcon>
+                  <ListItemText primary="My orders" />
+                </ListItemButton>
+              </ActiveLink>
+            </ListItem>
+            <ListItem style={{ padding: 0 }}>
+              <ActiveLink to="/dashboard/dropshipper/profit">
+                <ListItemButton>
+                  <ListItemIcon>
+                    <MonetizationOnOutlined />
+                  </ListItemIcon>
+                  <ListItemText primary="Profit" />
+                </ListItemButton>
+              </ActiveLink>
+            </ListItem>
+            <ListItem style={{ padding: 0 }}>
+              <ActiveLink to="/dashboard/dropshipper/payment-withdraw">
+                <ListItemButton>
+                  <ListItemIcon>
+                    <LoginOutlined />
+                  </ListItemIcon>
+                  <ListItemText primary="Payment withdraw" />
+                </ListItemButton>
+              </ActiveLink>
+            </ListItem>
+            <ListItem style={{ padding: 0 }}>
+              <ActiveLink to="/dashboard/dropshipper/profile">
+                <ListItemButton>
+                  <ListItemIcon>
+                    <PeopleAltOutlined />
+                  </ListItemIcon>
+                  <ListItemText primary="Profile" />
                 </ListItemButton>
               </ActiveLink>
             </ListItem>
@@ -290,7 +363,6 @@ const Dashboard = props => {
         bgcolor={"customColors.lightGray"}
         sx={{
           flexGrow: 1,
-          p: 3,
           width: { sm: `calc(100% - ${drawerWidth}px)` },
         }}
       >
