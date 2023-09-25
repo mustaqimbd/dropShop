@@ -1,7 +1,7 @@
 const Products = require("../model/products.model");
 const generateUniqueId = require("generate-unique-id");
 const { successResponse } = require("./responseHandler");
-const Orders = require("../model/orders.model");
+const Orders = require("../model/order.model");
 const User = require("../model/user.model");
 const Category = require("../model/category.model");
 
