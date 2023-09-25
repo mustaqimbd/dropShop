@@ -7,7 +7,6 @@ import Register from "../pages/register/Register";
 import Login from "../pages/login/Login";
 import ConfirmAccountMessage from "../pages/register/ConfirmAccountMessage";
 import VerifyAccounts from "../pages/register/VerifyAccounts";
-
 import AddToCardPage from "../pages/AddToCardPage/AddToCardPage";
 import Dashboard from "../layouts/dashboard/Dashboard";
 import AdminDashboard from "../layouts/dashboard/AdminDashboard/AdminDashboard";
@@ -23,8 +22,8 @@ import Orders from "../pages/Dashboard/Admin/Orders/Orders";
 import ShopStatus from "../pages/Dashboard/Admin/ShopStatus/ShopStatus";
 import TrackOrder from "../pages/TrackOrder/TrackOrder";
 import ProductsByCategory from "../pages/products/ArchiveProducts/ProductsByCategory";
-import Need_Help from "../pages/Need_Help/Need_Help";
-import DashboardSkeleton from "../pages/Dashboard/DashboardSkeleton/DashboardSkeleton";
+import NeedHelp from "../pages/NeedHelp/NeedHelp";
+import ForgotPassword from "../pages/ForgotPassword/ForgotPassword";
 
 export const router = createBrowserRouter([
   {
@@ -56,6 +55,10 @@ export const router = createBrowserRouter([
         element: <Login></Login>,
       },
       {
+        path: "/forgot-password",
+        element: <ForgotPassword />,
+      },
+      {
         path: "/accounts/verify",
         element: <VerifyAccounts />,
       },
@@ -69,12 +72,12 @@ export const router = createBrowserRouter([
       },
 
       {
-        path: "/track_order",
+        path: "/track-order",
         element: <TrackOrder />,
       },
       {
-        path: "/Need_Help",
-        element: <Need_Help />,
+        path: "/need-help",
+        element: <NeedHelp />,
       },
     ],
   },
@@ -129,9 +132,5 @@ export const router = createBrowserRouter([
         element: <DropShipper />,
       },
     ],
-  },
-  {
-    path: "/test",
-    element: <DashboardSkeleton />,
   },
 ]);

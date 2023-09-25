@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import loginBg from "../../assets/images/login-bg.svg";
 import Typography from "@mui/material/Typography";
 
-import { NavLink, useLocation, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import useAuthProvider from "../../hooks/useAuthProvider";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import { useEffect, useState } from "react";
@@ -16,8 +16,6 @@ const Login = () => {
   const [axiosSecure] = useAxiosSecure();
   const navigate = useNavigate();
   const { handleSubmit, register } = useForm();
-  const location = useLocation();
-  console.log(location);
   useEffect(() => {
     if (user) {
       return navigate("/");
@@ -105,6 +103,7 @@ const Login = () => {
                   ) : (
                     ""
                   )}
+
                   <div className=" py-4">
                     <button
                       className="bg-primary px-6 text-white w-full rounded-md py-3 text-xl"
@@ -113,9 +112,11 @@ const Login = () => {
                       Login Now
                     </button>
                   </div>
-
+                  <div className="flex justify-center my-4">
+                    <Link to="/forgot-password">Forgot password ?</Link>
+                  </div>
                   <div className="flex gap-3">
-                    <p>Haven't any account ? </p>{" "}
+                    <p>Haven't any account ? </p>
                     <NavLink className="text-priceText " to={"/register"}>
                       Register Now
                     </NavLink>

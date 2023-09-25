@@ -443,6 +443,25 @@ const sellersInfo = async (req, res, next) => {
   }
 };
 
+const products = async (req, res, next) => {
+  try {
+    const products = await Products.find()
+      .select({
+        product_name: 1,
+        reseller_price: 1,
+        available_quantity: 1,
+        total_sold: 1,
+      })
+      .sort({ total_sold: -1 });
+    return successResponse(res, {
+      message: "Products info.",
+      payload: { products },
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
 module.exports = {
   addProduct,
   adminStats,
@@ -456,4 +475,5 @@ module.exports = {
   productStatistics,
   topCategories,
   sellersInfo,
+  products,
 };
