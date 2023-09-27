@@ -22,6 +22,7 @@ const AllCategoryList = () => {
 
   const { data, refetch } = useGetRequest("", "category");
   const categories = data?.payload?.category || [];
+  console.log(categories);
   const handleDeleteClick = async categoryId => {
     try {
       const response = await axiosSecure.delete(`/api/category/${categoryId}`);

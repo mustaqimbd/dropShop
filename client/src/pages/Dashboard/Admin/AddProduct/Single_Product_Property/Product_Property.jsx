@@ -21,6 +21,7 @@ const Product_Property = () => {
 
   const { data } = useGetRequest("", "category");
   const categories = data?.payload?.category || [];
+  
   console.log(categories);
   
 
@@ -45,28 +46,47 @@ const Product_Property = () => {
         </FormControl>
       </div>
       <div className="flex gap-4 mt-4 items-center">
-      <div className="flex-1">
-      <FormControl fullWidth>
-      <InputLabel id="demo-simple-select-label">Property Name</InputLabel>
-
-          <Select
-          fullWidth
-            labelId="demo-simple-select-label"
-            id="demo-simple-select"
-            value={productCategory}
-            label="Property Name"
-            onChange={handleChange}
-          >
-            {categories.map((item, index) => (
-              <MenuItem key={index} value={item._id}>
-                {item.name}
-              </MenuItem>
-            ))}
-          </Select>
-          </FormControl>
-        </div>
+     
         
         <div className="flex-1">
+    
+
+      {
+        categories.map((item)=>{
+item?.properties.map((item,index)=>{(
+  <FormControl fullWidth>
+<InputLabel id="demo-simple-select-label" key={index}>
+    {item?.propertyName}   </InputLabel>
+    <Select key={index} 
+    labelId="demo-simple-select-label"
+    id="demo-simple-select"
+    value={productCategory}
+    label="Property Name"
+  >  
+  {
+    item?.values.map((item,index)=><MenuItem key={index}>
+      {item}
+    </MenuItem>)
+  }
+
+  </Select>
+  </FormControl>
+
+)}
+
+)
+        }
+     ) }
+
+        
+        </div>
+      
+      
+      
+      
+      
+      
+        {/* <div className="flex-1">
         <FormControl fullWidth>
         <InputLabel id="demo-simple-select-label">Property Value</InputLabel>
         <Select
@@ -84,9 +104,9 @@ const Product_Property = () => {
             ))}
           </Select>
           </FormControl>
-        </div>
+        </div> */}
 
-        <div className="flex-1">
+        {/* <div className="flex-1">
           <Button
             variant="contained"
             color="primary"
@@ -95,7 +115,7 @@ const Product_Property = () => {
           >
             Add Property
           </Button>
-        </div>
+        </div> */}
       </div>
     
     </div>
