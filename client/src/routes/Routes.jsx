@@ -7,7 +7,6 @@ import Register from "../pages/register/Register";
 import Login from "../pages/login/Login";
 import ConfirmAccountMessage from "../pages/register/ConfirmAccountMessage";
 import VerifyAccounts from "../pages/register/VerifyAccounts";
-
 import AddToCardPage from "../pages/AddToCardPage/AddToCardPage";
 import Dashboard from "../layouts/dashboard/Dashboard";
 import AdminDashboard from "../layouts/dashboard/AdminDashboard/AdminDashboard";
@@ -23,7 +22,15 @@ import Orders from "../pages/Dashboard/Admin/Orders/Orders";
 import ShopStatus from "../pages/Dashboard/Admin/ShopStatus/ShopStatus";
 import TrackOrder from "../pages/TrackOrder/TrackOrder";
 import ProductsByCategory from "../pages/products/ArchiveProducts/ProductsByCategory";
-import Need_Help from "../pages/Need_Help/Need_Help";
+import Reseller from "../pages/Dashboard/DropShipper/ResellerPanel/Reseller";
+import MyCustomers from "../pages/Dashboard/DropShipper/MyCustomers/MyCustomers";
+import MyOrders from "../pages/Dashboard/DropShipper/MyOrders/MyOrders";
+import Profit from "../pages/Dashboard/DropShipper/Profit/Profit";
+import PaymentWithdraw from "../pages/Dashboard/DropShipper/PaymentWthdraw/PaymentWithdraw";
+import Profile from "../pages/Dashboard/DropShipper/Profile/Profile";
+import ResellerRoute from "./ResellerRoute/ResellerRoute";
+import NeedHelp from "../pages/NeedHelp/NeedHelp";
+import ForgotPassword from "../pages/ForgotPassword/ForgotPassword";
 
 export const router = createBrowserRouter([
   {
@@ -55,11 +62,15 @@ export const router = createBrowserRouter([
         element: <Login></Login>,
       },
       {
+        path: "/forgot-password",
+        element: <ForgotPassword />,
+      },
+      {
         path: "/accounts/verify",
         element: <VerifyAccounts />,
       },
       {
-        path: "/addToCardPage",
+        path: "/add-to-cart",
         element: <AddToCardPage />,
       },
       {
@@ -72,9 +83,15 @@ export const router = createBrowserRouter([
         element: <TrackOrder />,
       },
       {
+<<<<<<< HEAD
         path:"/need-help",
         element:<Need_Help/>
       }
+=======
+        path: "/need-help",
+        element: <NeedHelp />,
+      },
+>>>>>>> d5eda9880f35e808c7e25d794120d2687932f25f
     ],
   },
   {
@@ -125,7 +142,37 @@ export const router = createBrowserRouter([
       },
       {
         path: "dropshipper",
-        element: <DropShipper />,
+        element: (
+          <ResellerRoute>
+            <DropShipper />
+          </ResellerRoute>
+        ),
+        children: [
+          {
+            path: "reseller",
+            element: <Reseller />,
+          },
+          {
+            path: "my-customers",
+            element: <MyCustomers />,
+          },
+          {
+            path: "my-orders",
+            element: <MyOrders />,
+          },
+          {
+            path: "profit",
+            element: <Profit />,
+          },
+          {
+            path: "payment-withdraw",
+            element: <PaymentWithdraw />,
+          },
+          {
+            path: "profile",
+            element: <Profile />,
+          },
+        ],
       },
     ],
   },

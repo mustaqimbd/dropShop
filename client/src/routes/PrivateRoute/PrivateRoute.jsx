@@ -1,11 +1,12 @@
 import { Navigate, useLocation } from "react-router-dom";
 import useAuthProvider from "../../hooks/useAuthProvider";
+import DashboardSkeleton from "../../pages/Dashboard/DashboardSkeleton/DashboardSkeleton";
 
 const PrivateRoute = ({ children }) => {
   const { user, loading } = useAuthProvider();
   const location = useLocation();
   if (loading) {
-    return <h2>Loading from private route...</h2>;
+    return <DashboardSkeleton />;
   }
   if (user) {
     return children;

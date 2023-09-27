@@ -42,7 +42,7 @@ const RecentOrders = () => {
     <>
       <div className="shadow-md rounded-md p-2 md:p-5 mx-2 mt-5 bg-white">
         <h2 className="dashboard-title">Recent orders </h2>
-        <Divider />
+        <Divider style={{ marginBottom: "20px" }} />
         <TableContainer component={Paper}>
           <Table sx={{ minWidth: 650 }} aria-label="simple table">
             <TableHead>
@@ -75,13 +75,13 @@ const RecentOrders = () => {
                       label={row.status}
                       style={{
                         background: `${
-                          row.status === "Completed"
+                          row.status === "completed"
                             ? "#29cc97"
-                            : row.status === "Pending"
+                            : row.status === "pending"
                             ? "#fec400"
-                            : row.status === "On the way"
+                            : row.status === "on the way"
                             ? "#4c84ff"
-                            : row.status === "Canceled"
+                            : row.status === "canceled"
                             ? "#fe5461"
                             : ""
                         }`,

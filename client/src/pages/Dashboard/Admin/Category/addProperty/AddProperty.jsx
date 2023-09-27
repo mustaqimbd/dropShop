@@ -105,7 +105,7 @@ const AddProperty = () => {
           </Select>
         </FormControl>
 
-        <Grid s marginY={1} container spacing={2} alignItems="start">
+        <Grid marginY={1} container spacing={2} alignItems="start">
           <Grid item xs={12} md={6}>
             <TextField
               label="Property Name"

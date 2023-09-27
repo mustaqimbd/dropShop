@@ -1,562 +1,585 @@
-[{
-  "_id": {
-    "$oid": "650a4fbf7037928ebeef8ec5"
+[
+  {
+    "order_id": "ooosru4j42s0ldp",
+    "product_name": "ULTRABOOST 22 SHOES",
+    "product_slug": "ultraboost-22-shoes",
+    "unit_price": 19.99,
+    "total_price": 59.97,
+    "quantity": 3,
+    "advanced_from_customer": 200,
+    "status": "pending",
+    "seller_id": "demoseller1",
+    "customer_id": "customer1",
+    "deliveryCharge": 50,
+    "completed_date": null,
+    "__v": 0,
+    "createdAt": {
+      "$date": "2022-09-10T01:49:51.632Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-20T01:49:51.632Z"
+    },
+    "customer": {
+      "name": "Abir mahmud",
+      "address": "Satkhira,Khulna,Bangladesh",
+      "mobile": 1789699367
+    },
+    "category_slug": "mens-sneaker"
   },
-  "product_name": "ULTRABOOST 22 SHOES",
-  "product_slug": "ultraboost-22-shoes",
-  "single_price": 19.99,
-  "total_price": 59.97,
-  "quantity": 3,
-  "status": "Pending",
-  "drop_seller_email": "admin@gmail.com",
-  "deliveryCharge": 50,
-  "completed_date": null,
-  "__v": 0,
-  "createdAt": {
-    "$date": "2022-09-10T01:49:51.632Z"
+  {
+    "order_id": "klikemad08ea70k",
+    "product_name": "LUNAR NEW YEAR ULTRABOOST DNA SHOES",
+    "product_slug": "lunar-new-year-ultraboost-dna-shoes",
+    "unit_price": 29.99,
+    "total_price": 59.98,
+    "quantity": 2,
+    "advanced_from_customer": 200,
+    "status": "on the way",
+    "seller_id": "demoseller1",
+    "customer_id": "customer1",
+    "deliveryCharge": 50,
+    "completed_date": null,
+    "__v": 0,
+    "createdAt": {
+      "$date": "2022-09-20T01:49:51.634Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-20T01:49:51.634Z"
+    },
+    "customer": {
+      "name": "Abir mahmud",
+      "address": "Satkhira,Khulna,Bangladesh",
+      "mobile": 1789699367
+    },
+    "category_slug": "mens-sneaker"
   },
-  "updatedAt": {
-    "$date": "2023-09-20T01:49:51.632Z"
+  {
+    "order_id": "41dkm8mhxplz1x6",
+    "product_name": "TIRO 21 TRACK PANTS",
+    "product_slug": "tiro-21-track-pants",
+    "unit_price": 9.99,
+    "total_price": 9.99,
+    "quantity": 1,
+    "advanced_from_customer": 200,
+    "status": "completed",
+    "seller_id": "demoseller1",
+    "customer_id": "customer1",
+    "deliveryCharge": 50,
+    "completed_date": {
+      "$date": "2023-09-12T08:49:51.632Z"
+    },
+    "__v": 0,
+    "createdAt": {
+      "$date": "2022-09-12T01:49:51.634Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-20T01:49:51.634Z"
+    },
+    "customer": {
+      "name": "Abir mahmud",
+      "address": "Satkhira,Khulna,Bangladesh",
+      "mobile": 1789699367
+    },
+    "category_slug": "mens-pants"
   },
-  "customer": {
-    "name": "Abir mahmud",
-    "address": "Satkhira,Khulna,Bangladesh",
-    "mobile": 1789699367
+  {
+    "order_id": "j32mgzpjxzz86of",
+    "product_name": "TIRO TRACK PANTS RED",
+    "product_slug": "tiro-track-pants-red",
+    "unit_price": 15.49,
+    "total_price": 77.45,
+    "quantity": 5,
+    "advanced_from_customer": 200,
+    "status": "pending",
+    "seller_id": "demoseller2",
+    "customer_id": "customer1",
+    "deliveryCharge": 50,
+    "completed_date": null,
+    "__v": 0,
+    "createdAt": {
+      "$date": "2021-09-20T03:49:51.634Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-20T01:49:51.634Z"
+    },
+    "customer": {
+      "name": "Abir mahmud",
+      "address": "Satkhira,Khulna,Bangladesh",
+      "mobile": 1789699367
+    },
+    "category_slug": "mens-pants"
+  },
+  {
+    "order_id": "z1qjzkd7jqno1k6",
+    "product_name": "TIRO PANTS BLACK GOLD",
+    "product_slug": "tiro-pants-black-gold",
+    "unit_price": 39.99,
+    "total_price": 79.98,
+    "quantity": 2,
+    "advanced_from_customer": 200,
+    "status": "Canceled",
+    "seller_id": "demoseller2",
+    "customer_id": "customer1",
+    "deliveryCharge": 50,
+    "completed_date": null,
+    "__v": 0,
+    "createdAt": {
+      "$date": "2021-09-20T01:49:51.634Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-20T01:49:51.634Z"
+    },
+    "customer": {
+      "name": "Abir mahmud",
+      "address": "Satkhira,Khulna,Bangladesh",
+      "mobile": 1789699367
+    },
+    "category_slug": "mens-pants"
+  },
+  {
+    "order_id": "7tlslyatmyxg4al",
+    "product_name": "Blue Version Backpack",
+    "product_slug": "blue-version-backpack",
+    "unit_price": 12.99,
+    "total_price": 77.94,
+    "quantity": 6,
+    "advanced_from_customer": 200,
+    "status": "completed",
+    "seller_id": "demoseller1",
+    "customer_id": "customer1",
+    "deliveryCharge": 50,
+    "completed_date": {
+      "$date": "2023-09-21T17:49:51.632Z"
+    },
+    "__v": 0,
+    "createdAt": {
+      "$date": "2023-09-10T01:49:51.634Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-20T01:49:51.634Z"
+    },
+    "customer": {
+      "name": "Abir mahmud",
+      "address": "Satkhira,Khulna,Bangladesh",
+      "mobile": 1789699367
+    },
+    "category_slug": "bag"
+  },
+  {
+    "order_id": "f5fsh3g1l8vjaf0",
+    "product_name": "Defender Backpack",
+    "product_slug": "defender-backpack",
+    "unit_price": 49.99,
+    "total_price": 99.98,
+    "quantity": 2,
+    "advanced_from_customer": 200,
+    "status": "completed",
+    "seller_id": "demoseller3",
+    "customer_id": "customer1",
+    "deliveryCharge": 50,
+    "completed_date": {
+      "$date": "2023-09-21T05:49:51.632Z"
+    },
+    "__v": 0,
+    "createdAt": {
+      "$date": "2023-09-20T08:49:51.635Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-20T01:49:51.635Z"
+    },
+    "customer": {
+      "name": "Abir mahmud",
+      "address": "Satkhira,Khulna,Bangladesh",
+      "mobile": 1789699367
+    },
+    "category_slug": "bag"
+  },
+  {
+    "order_id": "0a6eimqzzerfm6o",
+    "product_name": "Excel Backpack",
+    "product_slug": "excel-backpack",
+    "unit_price": 29.99,
+    "total_price": 149.95,
+    "quantity": 5,
+    "advanced_from_customer": 200,
+    "status": "pending",
+    "seller_id": "demoseller1",
+    "customer_id": "customer1",
+    "deliveryCharge": 50,
+    "completed_date": null,
+    "__v": 0,
+    "createdAt": {
+      "$date": "2023-09-20T01:49:51.635Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-20T01:49:51.635Z"
+    },
+    "customer": {
+      "name": "Abir mahmud",
+      "address": "Satkhira,Khulna,Bangladesh",
+      "mobile": 1789699367
+    },
+    "category_slug": "bag"
+  },
+  {
+    "order_id": "571403e2m7mewi9",
+    "product_name": "R.Y.V. Toploader Backpack",
+    "product_slug": "r.y.v.-toploader-backpack",
+    "unit_price": 5.99,
+    "total_price": 47.92,
+    "quantity": 8,
+    "advanced_from_customer": 200,
+    "status": "Canceled",
+    "seller_id": "demoseller1",
+    "customer_id": "customer1",
+    "deliveryCharge": 50,
+    "completed_date": null,
+    "__v": 0,
+    "createdAt": {
+      "$date": "2023-09-20T01:49:51.635Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-20T01:49:51.635Z"
+    },
+    "customer": {
+      "name": "Abir mahmud",
+      "address": "Satkhira,Khulna,Bangladesh",
+      "mobile": 1789699367
+    },
+    "category_slug": "bag"
+  },
+  {
+    "order_id": "cf3pdep9bw9gk52",
+    "product_name": "adidas FWD-02 Sport True Wireless Earbuds",
+    "product_slug": "adidas-fwd-02-sport-true-wireless-earbuds",
+    "unit_price": 17.99,
+    "total_price": 35.98,
+    "quantity": 2,
+    "advanced_from_customer": 200,
+    "status": "completed",
+    "seller_id": "demoseller1",
+    "customer_id": "customer1",
+    "deliveryCharge": 50,
+    "completed_date": {
+      "$date": "2023-09-21T20:49:51.632Z"
+    },
+    "__v": 0,
+    "createdAt": {
+      "$date": "2023-09-20T01:49:51.635Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-20T01:49:51.635Z"
+    },
+    "customer": {
+      "name": "Abir mahmud",
+      "address": "Satkhira,Khulna,Bangladesh",
+      "mobile": 1789699367
+    },
+    "category_slug": "earphones"
+  },
+  {
+    "order_id": "24ql468zylz92aj",
+    "product_name": "adidas Z.N.E. 01 ANC True Wireless Earbuds",
+    "product_slug": "adidas-z.n.e.-01-anc-true-wireless-earbuds",
+    "unit_price": 24.99,
+    "total_price": 74.97,
+    "quantity": 3,
+    "advanced_from_customer": 200,
+    "status": "on the way",
+    "seller_id": "demoseller3",
+    "customer_id": "customer1",
+    "deliveryCharge": 50,
+    "completed_date": null,
+    "__v": 0,
+    "createdAt": {
+      "$date": "2023-09-20T18:49:51.636Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-20T01:49:51.636Z"
+    },
+    "customer": {
+      "name": "Abir mahmud",
+      "address": "Satkhira,Khulna,Bangladesh",
+      "mobile": 1789699367
+    },
+    "category_slug": "earphones"
+  },
+  {
+    "order_id": "s4xorhli4r8qtpl",
+    "product_name": "Steel Metal Bottle 1L",
+    "product_slug": "steel-metal-bottle-1l",
+    "unit_price": 14.99,
+    "total_price": 29.98,
+    "quantity": 2,
+    "advanced_from_customer": 200,
+    "status": "completed",
+    "seller_id": "demoseller3",
+    "customer_id": "customer1",
+    "deliveryCharge": 50,
+    "completed_date": {
+      "$date": "2023-09-21T01:49:51.632Z"
+    },
+    "__v": 0,
+    "createdAt": {
+      "$date": "2023-09-20T01:49:51.636Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-20T01:49:51.636Z"
+    },
+    "customer": {
+      "name": "Abir mahmud",
+      "address": "Satkhira,Khulna,Bangladesh",
+      "mobile": 1789699367
+    },
+    "category_slug": "bottle"
+  },
+  {
+    "order_id": "kkv47fhge2wywtk",
+    "product_name": "Silicon Power 256GB SSD 3D NAND A55 SLC Cache Performance Boost SATA III 2.5",
+    "product_slug": "silicon-power-256gb-ssd-3d-nand-a55-slc-cache-performance-boost-sata-iii-2.5",
+    "unit_price": 39.99,
+    "total_price": 119.97,
+    "quantity": 3,
+    "advanced_from_customer": 200,
+    "status": "pending",
+    "seller_id": "demoseller2",
+    "customer_id": "customer1",
+    "deliveryCharge": 50,
+    "completed_date": null,
+    "__v": 0,
+    "createdAt": {
+      "$date": "2023-09-20T18:49:51.637Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-20T01:49:51.637Z"
+    },
+    "customer": {
+      "name": "Abir mahmud",
+      "address": "Satkhira,Khulna,Bangladesh",
+      "mobile": 1789699367
+    },
+    "category_slug": "ssd-card"
+  },
+  {
+    "order_id": "g9uvxnclta24hsw",
+    "product_name": "WD 4TB Gaming Drive Works with Playstation 4 Portable External Hard Drive",
+    "product_slug": "wd-4tb-gaming-drive-works-with-playstation-4-portable-external-hard-drive",
+    "unit_price": 7.49,
+    "total_price": 14.98,
+    "quantity": 2,
+    "advanced_from_customer": 200,
+    "status": "on the way",
+    "seller_id": "dropseller2@gmail.com",
+    "customer_id": "customer1",
+    "deliveryCharge": 50,
+    "completed_date": null,
+    "__v": 0,
+    "createdAt": {
+      "$date": "2023-09-20T01:49:51.637Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-20T01:49:51.637Z"
+    },
+    "customer": {
+      "name": "Abir mahmud",
+      "address": "Satkhira,Khulna,Bangladesh",
+      "mobile": 1789699367
+    },
+    "category_slug": "hard-disk"
+  },
+  {
+    "order_id": "vdpl4jxbo68sr9x",
+    "product_name": "Acer SB220Q bi 21.5 inches Full HD (1920 x 1080) IPS Ultra-Thin",
+    "product_slug": "acer-sb220q-bi-21.5-inches-full-hd-(1920-x-1080)-ips-ultra-thin",
+    "unit_price": 24.99,
+    "total_price": 74.97,
+    "quantity": 3,
+    "advanced_from_customer": 200,
+    "status": "pending",
+    "seller_id": "demoseller2",
+    "customer_id": "customer1",
+    "deliveryCharge": 50,
+    "completed_date": null,
+    "__v": 0,
+    "createdAt": {
+      "$date": "2023-09-20T01:49:51.638Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-20T01:49:51.638Z"
+    },
+    "customer": {
+      "name": "Abir mahmud",
+      "address": "Satkhira,Khulna,Bangladesh",
+      "mobile": 1789699367
+    },
+    "category_slug": "hard-disk"
+  },
+  {
+    "order_id": "2akif0jgeloiz65",
+    "product_name": "Samsung 49-Inch CHG90 144Hz Curved Gaming Monitor (LC49HG90DMNXZA) – Super Ultrawide Screen QLED",
+    "product_slug": "samsung-49-inch-chg90-144hz-curved-gaming-monitor-(lc49hg90dmnxza)-–-super-ultrawide-screen-qled",
+    "unit_price": 49.99,
+    "total_price": 99.98,
+    "quantity": 2,
+    "advanced_from_customer": 200,
+    "status": "completed",
+    "seller_id": "demoseller2",
+    "customer_id": "customer1",
+    "deliveryCharge": 50,
+    "completed_date": {
+      "$date": "2023-09-21T19:49:51.632Z"
+    },
+    "__v": 0,
+    "createdAt": {
+      "$date": "2023-09-20T18:49:51.638Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-20T01:49:51.638Z"
+    },
+    "customer": {
+      "name": "Abir mahmud",
+      "address": "Satkhira,Khulna,Bangladesh",
+      "mobile": 1789699367
+    },
+    "category_slug": "monitor"
+  },
+  {
+    "order_id": "6xoj49qo71kswmq",
+    "product_name": "Lock and Love Women's Removable Hooded Faux Leather Moto Biker Jacket",
+    "product_slug": "lock-and-love-women's-removable-hooded-faux-leather-moto-biker-jacket",
+    "unit_price": 9.99,
+    "total_price": 19.98,
+    "quantity": 2,
+    "advanced_from_customer": 200,
+    "status": "completed",
+    "seller_id": "demoseller1",
+    "customer_id": "customer1",
+    "deliveryCharge": 50,
+    "completed_date": {
+      "$date": "2023-09-21T01:49:51.632Z"
+    },
+    "__v": 0,
+    "createdAt": {
+      "$date": "2023-09-20T01:49:51.638Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-20T01:49:51.638Z"
+    },
+    "customer": {
+      "name": "Abir mahmud",
+      "address": "Satkhira,Khulna,Bangladesh",
+      "mobile": 1789699367
+    },
+    "category_slug": "jacket"
+  },
+  {
+    "order_id": "ekyab9wrvbdt8pw",
+    "product_name": "Rain Jacket Women Windbreaker Striped Climbing Raincoats",
+    "product_slug": "rain-jacket-women-windbreaker-striped-climbing-raincoats",
+    "unit_price": 29.99,
+    "total_price": 59.98,
+    "quantity": 2,
+    "advanced_from_customer": 200,
+    "status": "pending",
+    "seller_id": "dropseller2@gmail.com",
+    "customer_id": "customer1",
+    "deliveryCharge": 50,
+    "completed_date": null,
+    "__v": 0,
+    "createdAt": {
+      "$date": "2023-09-20T01:49:51.638Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-20T01:49:51.638Z"
+    },
+    "customer": {
+      "name": "Abir mahmud",
+      "address": "Satkhira,Khulna,Bangladesh",
+      "mobile": 1789699367
+    },
+    "category_slug": "raincoats"
+  },
+  {
+    "order_id": "8jmmh0bp4gpniim",
+    "product_name": "MBJ Women's Solid Short Sleeve Boat Neck V",
+    "product_slug": "mbj-women's-solid-short-sleeve-boat-neck-v",
+    "unit_price": 19.99,
+    "total_price": 19.99,
+    "quantity": 1,
+    "advanced_from_customer": 200,
+    "status": "Canceled",
+    "seller_id": "dropseller2@gmail.com",
+    "customer_id": "customer1",
+    "deliveryCharge": 50,
+    "completed_date": null,
+    "__v": 0,
+    "createdAt": {
+      "$date": "2023-09-16T01:49:51.638Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-20T01:49:51.638Z"
+    },
+    "customer": {
+      "name": "Abir mahmud",
+      "address": "Satkhira,Khulna,Bangladesh",
+      "mobile": 1789699367
+    },
+    "category_slug": "neck-v"
+  },
+  {
+    "order_id": "",
+    "product_name": "Opna Women's Short Sleeve Moisture",
+    "product_slug": "opna-women's-short-sleeve-moisture",
+    "unit_price": 34.99,
+    "total_price": 69.98,
+    "quantity": 2,
+    "advanced_from_customer": 200,
+    "status": "completed",
+    "seller_id": "dropseller2@gmail.com",
+    "customer_id": "customer1",
+    "deliveryCharge": 50,
+    "completed_date": {
+      "$date": "2023-09-21T01:49:51.632Z"
+    },
+    "__v": 0,
+    "createdAt": {
+      "$date": "2023-09-20T01:49:51.639Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-20T01:49:51.639Z"
+    },
+    "customer": {
+      "name": "Abir mahmud",
+      "address": "Satkhira,Khulna,Bangladesh",
+      "mobile": 1789699367
+    },
+    "category_slug": "sleeve-moisture"
+  },
+  {
+    "order_id": "5il1woky21cigx6",
+    "product_name": "Steel Metal Bottle 2L",
+    "product_slug": "steel-metal-bottle-2l",
+    "unit_price": 11.99,
+    "total_price": 35.97,
+    "quantity": 3,
+    "advanced_from_customer": 200,
+    "status": "on the way",
+    "seller_id": "demoseller3",
+    "customer_id": "customer1",
+    "deliveryCharge": 50,
+    "completed_date": null,
+    "__v": 0,
+    "createdAt": {
+      "$date": "2023-09-20T01:49:51.639Z"
+    },
+    "updatedAt": {
+      "$date": "2023-09-20T01:49:51.639Z"
+    },
+    "customer": {
+      "name": "Abir mahmud",
+      "address": "Satkhira,Khulna,Bangladesh",
+      "mobile": 1789699367
+    },
+    "category_slug": "bottle"
   }
-},
-{
-  "_id": {
-    "$oid": "650a4fbf7037928ebeef8ec6"
-  },
-  "product_name": "LUNAR NEW YEAR ULTRABOOST DNA SHOES",
-  "product_slug": "lunar-new-year-ultraboost-dna-shoes",
-  "single_price": 29.99,
-  "total_price": 59.98,
-  "quantity": 2,
-  "status": "On the way",
-  "drop_seller_email": "admin@gmail.com",
-  "deliveryCharge": 50,
-  "completed_date": null,
-  "__v": 0,
-  "createdAt": {
-    "$date": "2022-09-20T01:49:51.634Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-20T01:49:51.634Z"
-  },
-  "customer": {
-    "name": "Abir mahmud",
-    "address": "Satkhira,Khulna,Bangladesh",
-    "mobile": 1789699367
-  }
-},
-{
-  "_id": {
-    "$oid": "650a4fbf7037928ebeef8ec7"
-  },
-  "product_name": "TIRO 21 TRACK PANTS",
-  "product_slug": "tiro-21-track-pants",
-  "single_price": 9.99,
-  "total_price": 9.99,
-  "quantity": 1,
-  "status": "Completed",
-  "drop_seller_email": "admin@gmail.com",
-  "deliveryCharge": 50,
-  "completed_date": {
-    "$date": "2023-09-20T01:49:51.632Z"
-  },
-  "__v": 0,
-  "createdAt": {
-    "$date": "2022-09-20T01:49:51.634Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-20T01:49:51.634Z"
-  },
-  "customer": {
-    "name": "Abir mahmud",
-    "address": "Satkhira,Khulna,Bangladesh",
-    "mobile": 1789699367
-  }
-},
-{
-  "_id": {
-    "$oid": "650a4fbf7037928ebeef8ec8"
-  },
-  "product_name": "TIRO TRACK PANTS RED",
-  "product_slug": "tiro-track-pants-red",
-  "single_price": 15.49,
-  "total_price": 77.45,
-  "quantity": 5,
-  "status": "Pending",
-  "drop_seller_email": "admin@gmail.com",
-  "deliveryCharge": 50,
-  "completed_date": null,
-  "__v": 0,
-  "createdAt": {
-    "$date": "2021-09-20T03:49:51.634Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-20T01:49:51.634Z"
-  },
-  "customer": {
-    "name": "Abir mahmud",
-    "address": "Satkhira,Khulna,Bangladesh",
-    "mobile": 1789699367
-  }
-},
-{
-  "_id": {
-    "$oid": "650a4fbf7037928ebeef8ec9"
-  },
-  "product_name": "TIRO PANTS BLACK GOLD",
-  "product_slug": "tiro-pants-black-gold",
-  "single_price": 39.99,
-  "total_price": 79.98,
-  "quantity": 2,
-  "status": "Canceled",
-  "drop_seller_email": "admin@gmail.com",
-  "deliveryCharge": 50,
-  "completed_date": null,
-  "__v": 0,
-  "createdAt": {
-    "$date": "2021-09-20T01:49:51.634Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-20T01:49:51.634Z"
-  },
-  "customer": {
-    "name": "Abir mahmud",
-    "address": "Satkhira,Khulna,Bangladesh",
-    "mobile": 1789699367
-  }
-},
-{
-  "_id": {
-    "$oid": "650a4fbf7037928ebeef8eca"
-  },
-  "product_name": "Blue Version Backpack",
-  "product_slug": "blue-version-backpack",
-  "single_price": 12.99,
-  "total_price": 77.94,
-  "quantity": 6,
-  "status": "Completed",
-  "drop_seller_email": "admin3@gmail.com",
-  "deliveryCharge": 50,
-  "completed_date": {
-    "$date": "2023-09-20T01:49:51.634Z"
-  },
-  "__v": 0,
-  "createdAt": {
-    "$date": "2023-09-10T01:49:51.634Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-20T01:49:51.634Z"
-  },
-  "customer": {
-    "name": "Abir mahmud",
-    "address": "Satkhira,Khulna,Bangladesh",
-    "mobile": 1789699367
-  }
-},
-{
-  "_id": {
-    "$oid": "650a4fbf7037928ebeef8ecb"
-  },
-  "product_name": "Defender Backpack",
-  "product_slug": "defender-backpack",
-  "single_price": 49.99,
-  "total_price": 99.98,
-  "quantity": 2,
-  "status": "Completed",
-  "drop_seller_email": "admin3@gmail.com",
-  "deliveryCharge": 50,
-  "completed_date": {
-    "$date": "2023-09-20T01:49:51.632Z"
-  },
-  "__v": 0,
-  "createdAt": {
-    "$date": "2023-09-20T08:49:51.635Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-20T01:49:51.635Z"
-  },
-  "customer": {
-    "name": "Abir mahmud",
-    "address": "Satkhira,Khulna,Bangladesh",
-    "mobile": 1789699367
-  }
-},
-{
-  "_id": {
-    "$oid": "650a4fbf7037928ebeef8ecc"
-  },
-  "product_name": "Excel Backpack",
-  "product_slug": "excel-backpack",
-  "single_price": 29.99,
-  "total_price": 149.95,
-  "quantity": 5,
-  "status": "Pending",
-  "drop_seller_email": "admin3@gmail.com",
-  "deliveryCharge": 50,
-  "completed_date": null,
-  "__v": 0,
-  "createdAt": {
-    "$date": "2023-09-20T01:49:51.635Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-20T01:49:51.635Z"
-  },
-  "customer": {
-    "name": "Abir mahmud",
-    "address": "Satkhira,Khulna,Bangladesh",
-    "mobile": 1789699367
-  }
-},
-{
-  "_id": {
-    "$oid": "650a4fbf7037928ebeef8ecd"
-  },
-  "product_name": "R.Y.V. Toploader Backpack",
-  "product_slug": "r.y.v.-toploader-backpack",
-  "single_price": 5.99,
-  "total_price": 47.92,
-  "quantity": 8,
-  "status": "Canceled",
-  "drop_seller_email": "admin3@gmail.com",
-  "deliveryCharge": 50,
-  "completed_date": null,
-  "__v": 0,
-  "createdAt": {
-    "$date": "2023-09-20T01:49:51.635Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-20T01:49:51.635Z"
-  },
-  "customer": {
-    "name": "Abir mahmud",
-    "address": "Satkhira,Khulna,Bangladesh",
-    "mobile": 1789699367
-  }
-},
-{
-  "_id": {
-    "$oid": "650a4fbf7037928ebeef8ece"
-  },
-  "product_name": "adidas FWD-02 Sport True Wireless Earbuds",
-  "product_slug": "adidas-fwd-02-sport-true-wireless-earbuds",
-  "single_price": 17.99,
-  "total_price": 35.98,
-  "quantity": 2,
-  "status": "Completed",
-  "drop_seller_email": "admin3@gmail.com",
-  "deliveryCharge": 50,
-  "completed_date": {
-    "$date": "2023-09-20T01:49:51.632Z"
-  },
-  "__v": 0,
-  "createdAt": {
-    "$date": "2023-09-20T01:49:51.635Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-20T01:49:51.635Z"
-  },
-  "customer": {
-    "name": "Abir mahmud",
-    "address": "Satkhira,Khulna,Bangladesh",
-    "mobile": 1789699367
-  }
-},
-{
-  "_id": {
-    "$oid": "650a4fbf7037928ebeef8ecf"
-  },
-  "product_name": "adidas Z.N.E. 01 ANC True Wireless Earbuds",
-  "product_slug": "adidas-z.n.e.-01-anc-true-wireless-earbuds",
-  "single_price": 24.99,
-  "total_price": 74.97,
-  "quantity": 3,
-  "status": "On the way",
-  "drop_seller_email": "admin3@gmail.com",
-  "deliveryCharge": 50,
-  "completed_date": null,
-  "__v": 0,
-  "createdAt": {
-    "$date": "2023-09-20T18:49:51.636Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-20T01:49:51.636Z"
-  },
-  "customer": {
-    "name": "Abir mahmud",
-    "address": "Satkhira,Khulna,Bangladesh",
-    "mobile": 1789699367
-  }
-},
-{
-  "_id": {
-    "$oid": "650a4fbf7037928ebeef8ed0"
-  },
-  "product_name": "Steel Metal Bottle 1L",
-  "product_slug": "steel-metal-bottle-1l",
-  "single_price": 14.99,
-  "total_price": 29.98,
-  "quantity": 2,
-  "status": "Completed",
-  "drop_seller_email": "admin3@gmail.com",
-  "deliveryCharge": 50,
-  "completed_date": {
-    "$date": "2023-09-20T01:49:51.634Z"
-  },
-  "__v": 0,
-  "createdAt": {
-    "$date": "2023-09-20T01:49:51.636Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-20T01:49:51.636Z"
-  },
-  "customer": {
-    "name": "Abir mahmud",
-    "address": "Satkhira,Khulna,Bangladesh",
-    "mobile": 1789699367
-  }
-},
-{
-  "_id": {
-    "$oid": "650a4fbf7037928ebeef8ed1"
-  },
-  "product_name": "Silicon Power 256GB SSD 3D NAND A55 SLC Cache Performance Boost SATA III 2.5",
-  "product_slug": "silicon-power-256gb-ssd-3d-nand-a55-slc-cache-performance-boost-sata-iii-2.5",
-  "single_price": 39.99,
-  "total_price": 119.97,
-  "quantity": 3,
-  "status": "Pending",
-  "drop_seller_email": "admin3@gmail.com",
-  "deliveryCharge": 50,
-  "completed_date": null,
-  "__v": 0,
-  "createdAt": {
-    "$date": "2023-09-20T18:49:51.637Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-20T01:49:51.637Z"
-  },
-  "customer": {
-    "name": "Abir mahmud",
-    "address": "Satkhira,Khulna,Bangladesh",
-    "mobile": 1789699367
-  }
-},
-{
-  "_id": {
-    "$oid": "650a4fbf7037928ebeef8ed2"
-  },
-  "product_name": "WD 4TB Gaming Drive Works with Playstation 4 Portable External Hard Drive",
-  "product_slug": "wd-4tb-gaming-drive-works-with-playstation-4-portable-external-hard-drive",
-  "single_price": 7.49,
-  "total_price": 14.98,
-  "quantity": 2,
-  "status": "On the way",
-  "drop_seller_email": "admin3@gmail.com",
-  "deliveryCharge": 50,
-  "completed_date": null,
-  "__v": 0,
-  "createdAt": {
-    "$date": "2023-09-20T01:49:51.637Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-20T01:49:51.637Z"
-  },
-  "customer": {
-    "name": "Abir mahmud",
-    "address": "Satkhira,Khulna,Bangladesh",
-    "mobile": 1789699367
-  }
-},
-{
-  "_id": {
-    "$oid": "650a4fbf7037928ebeef8ed3"
-  },
-  "product_name": "Acer SB220Q bi 21.5 inches Full HD (1920 x 1080) IPS Ultra-Thin",
-  "product_slug": "acer-sb220q-bi-21.5-inches-full-hd-(1920-x-1080)-ips-ultra-thin",
-  "single_price": 24.99,
-  "total_price": 74.97,
-  "quantity": 3,
-  "status": "Pending",
-  "drop_seller_email": "admin3@gmail.com",
-  "deliveryCharge": 50,
-  "completed_date": null,
-  "__v": 0,
-  "createdAt": {
-    "$date": "2023-09-20T01:49:51.638Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-20T01:49:51.638Z"
-  },
-  "customer": {
-    "name": "Abir mahmud",
-    "address": "Satkhira,Khulna,Bangladesh",
-    "mobile": 1789699367
-  }
-},
-{
-  "_id": {
-    "$oid": "650a4fbf7037928ebeef8ed4"
-  },
-  "product_name": "Samsung 49-Inch CHG90 144Hz Curved Gaming Monitor (LC49HG90DMNXZA) – Super Ultrawide Screen QLED",
-  "product_slug": "samsung-49-inch-chg90-144hz-curved-gaming-monitor-(lc49hg90dmnxza)-–-super-ultrawide-screen-qled",
-  "single_price": 49.99,
-  "total_price": 99.98,
-  "quantity": 2,
-  "status": "Completed",
-  "drop_seller_email": "admin3@gmail.com",
-  "deliveryCharge": 50,
-  "completed_date": {
-    "$date": "2023-09-20T01:49:51.632Z"
-  },
-  "__v": 0,
-  "createdAt": {
-    "$date": "2023-09-20T01:49:51.638Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-20T01:49:51.638Z"
-  },
-  "customer": {
-    "name": "Abir mahmud",
-    "address": "Satkhira,Khulna,Bangladesh",
-    "mobile": 1789699367
-  }
-},
-{
-  "_id": {
-    "$oid": "650a4fbf7037928ebeef8ed5"
-  },
-  "product_name": "Lock and Love Women's Removable Hooded Faux Leather Moto Biker Jacket",
-  "product_slug": "lock-and-love-women's-removable-hooded-faux-leather-moto-biker-jacket",
-  "single_price": 9.99,
-  "total_price": 19.98,
-  "quantity": 2,
-  "status": "Completed",
-  "drop_seller_email": "admin3@gmail.com",
-  "deliveryCharge": 50,
-  "completed_date": {
-    "$date": "2023-09-20T01:49:51.632Z"
-  },
-  "__v": 0,
-  "createdAt": {
-    "$date": "2023-09-20T01:49:51.638Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-20T01:49:51.638Z"
-  },
-  "customer": {
-    "name": "Abir mahmud",
-    "address": "Satkhira,Khulna,Bangladesh",
-    "mobile": 1789699367
-  }
-},
-{
-  "_id": {
-    "$oid": "650a4fbf7037928ebeef8ed6"
-  },
-  "product_name": "Rain Jacket Women Windbreaker Striped Climbing Raincoats",
-  "product_slug": "rain-jacket-women-windbreaker-striped-climbing-raincoats",
-  "single_price": 29.99,
-  "total_price": 59.98,
-  "quantity": 2,
-  "status": "Pending",
-  "drop_seller_email": "admin2@gmail.com",
-  "deliveryCharge": 50,
-  "completed_date": null,
-  "__v": 0,
-  "createdAt": {
-    "$date": "2023-09-20T01:49:51.638Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-20T01:49:51.638Z"
-  },
-  "customer": {
-    "name": "Abir mahmud",
-    "address": "Satkhira,Khulna,Bangladesh",
-    "mobile": 1789699367
-  }
-},
-{
-  "_id": {
-    "$oid": "650a4fbf7037928ebeef8ed7"
-  },
-  "product_name": "MBJ Women's Solid Short Sleeve Boat Neck V",
-  "product_slug": "mbj-women's-solid-short-sleeve-boat-neck-v",
-  "single_price": 19.99,
-  "total_price": 19.99,
-  "quantity": 1,
-  "status": "Canceled",
-  "drop_seller_email": "admin2@gmail.com",
-  "deliveryCharge": 50,
-  "completed_date": null,
-  "__v": 0,
-  "createdAt": {
-    "$date": "2023-09-16T01:49:51.638Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-20T01:49:51.638Z"
-  },
-  "customer": {
-    "name": "Abir mahmud",
-    "address": "Satkhira,Khulna,Bangladesh",
-    "mobile": 1789699367
-  }
-},
-{
-  "_id": {
-    "$oid": "650a4fbf7037928ebeef8ed8"
-  },
-  "product_name": "Opna Women's Short Sleeve Moisture",
-  "product_slug": "opna-women's-short-sleeve-moisture",
-  "single_price": 34.99,
-  "total_price": 69.98,
-  "quantity": 2,
-  "status": "Completed",
-  "drop_seller_email": "admin2@gmail.com",
-  "deliveryCharge": 50,
-  "completed_date": {
-    "$date": "2023-09-20T01:49:51.632Z"
-  },
-  "__v": 0,
-  "createdAt": {
-    "$date": "2023-09-20T01:49:51.639Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-20T01:49:51.639Z"
-  },
-  "customer": {
-    "name": "Abir mahmud",
-    "address": "Satkhira,Khulna,Bangladesh",
-    "mobile": 1789699367
-  }
-},
-{
-  "_id": {
-    "$oid": "650a4fbf7037928ebeef8ed9"
-  },
-  "product_name": "Steel Metal Bottle 2L",
-  "product_slug": "steel-metal-bottle-2l",
-  "single_price": 11.99,
-  "total_price": 35.97,
-  "quantity": 3,
-  "status": "On the way",
-  "drop_seller_email": "admin2@gmail.com",
-  "deliveryCharge": 50,
-  "completed_date": null,
-  "__v": 0,
-  "createdAt": {
-    "$date": "2023-09-20T01:49:51.639Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-20T01:49:51.639Z"
-  },
-  "customer": {
-    "name": "Abir mahmud",
-    "address": "Satkhira,Khulna,Bangladesh",
-    "mobile": 1789699367
-  }
-}]
+]
