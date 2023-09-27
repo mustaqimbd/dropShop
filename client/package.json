@@ -25,7 +25,13 @@
     "lottie-react": "^2.4.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+<<<<<<< HEAD
+    "react-editor": "^2.0.1",
+    "react-editor-js": "^2.1.0",
+    "react-hook-form": "^7.46.1",
+=======
     "react-hook-form": "^7.46.2",
+>>>>>>> d5eda9880f35e808c7e25d794120d2687932f25f
     "react-hot-toast": "^2.4.1",
     "react-icons": "^4.11.0",
     "react-responsive-carousel": "^3.2.23",
