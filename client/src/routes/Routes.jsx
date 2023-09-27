@@ -68,11 +68,11 @@ export const router = createBrowserRouter([
       },
 
       {
-        path: "/track_order",
+        path: "/track-order",
         element: <TrackOrder />,
       },
       {
-        path:"/Need_Help",
+        path:"/need-help",
         element:<Need_Help/>
       }
     ],

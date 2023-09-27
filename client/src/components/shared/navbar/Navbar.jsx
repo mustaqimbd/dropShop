@@ -35,7 +35,7 @@ const Navbar = () => {
               </div>
             </div>
             <div>
-              <Link to="/track_order">
+              <Link to="/track-order">
               <div className="flex gap-3 items-center ">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -105,7 +105,7 @@ const Navbar = () => {
               </div>
             </div>
             <div>
-            <Link to="/Need_Help">
+            <Link to="/need-help">
               <div className="flex gap-3 items-center ">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
