@@ -35,6 +35,7 @@ const OrdersAggregationPipeline = (projection = []) => [
   {
     $project: {
       _id: 0,
+      order_id: 1,
       status: 1,
       productName: "$productInfo.product_name",
       productImage: "$productInfo.images.link",
@@ -45,6 +46,7 @@ const OrdersAggregationPipeline = (projection = []) => [
       sellerShopName: "$sellerInfo.shop_info.shop_name",
       sellerShopLogo: "$sellerInfo.shop_info.logo",
       quantity: 1,
+      total_price: 1,
       createdAt: 1,
       ...projection,
     },

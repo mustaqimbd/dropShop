@@ -29,28 +29,49 @@ const trackOrder = async (req, res, next) => {
 
 const getOrderInfo = async (req, res, next) => {
   try {
+    const { skip: currentPage } = req.query;
+    const limit = 20;
     const pipeline = [
+      ...OrdersAggregationPipeline(),
       {
-        $lookup: {
-          from: "products",
-          localField: "product_slug",
-          foreignField: "product_slug",
-          as: "productInfo",
-        },
+        $sort: { createdAt: -1 },
       },
       {
-        $unwind: "$productInfo",
+        $skip: currentPage * limit,
+      },
+      {
+        $limit: limit,
       },
     ];
     const orders = await Order.aggregate(pipeline);
-    console.log(orders.length);
     return successResponse(res, {
       message: "Total orders.",
-      payload: { orders },
+      payload: {
+        skip: currentPage * limit,
+        limit: limit,
+        length: orders.length,
+        orders,
+      },
     });
   } catch (error) {
     next(error);
   }
 };
 
-module.exports = { trackOrder, getOrderInfo };
+const updateOrderStatus = async (req, res, next) => {
+  try {
+    const { orderId, status } = req.query;
+    await Order.findOneAndUpdate(
+      { order_id: orderId },
+      { $set: { status } },
+      { runValidators: true }
+    );
+    return successResponse(res, {
+      message: "Updated successfully.",
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+module.exports = { trackOrder, getOrderInfo, updateOrderStatus };
