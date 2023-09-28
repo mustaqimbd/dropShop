@@ -31,6 +31,7 @@ import Profile from "../pages/Dashboard/DropShipper/Profile/Profile";
 import ResellerRoute from "./ResellerRoute/ResellerRoute";
 import NeedHelp from "../pages/NeedHelp/NeedHelp";
 import ForgotPassword from "../pages/ForgotPassword/ForgotPassword";
+import ResetPassword from "../pages/ResetPassword/ResetPassword";
 
 export const router = createBrowserRouter([
   {
@@ -64,6 +65,10 @@ export const router = createBrowserRouter([
       {
         path: "/forgot-password",
         element: <ForgotPassword />,
+      },
+      {
+        path: "/reset-password",
+        element: <ResetPassword />,
       },
       {
         path: "/accounts/verify",

@@ -53,9 +53,8 @@ const registerNewUser = async (req, res, next) => {
     if (user) throw createErrors(400, "Email already registered.");
     const hash = await bcrypt.hash(decoded.password, 10);
     const user_id = generateUniqueId({ length: 15 });
-    console.log(user_id);
     await User.create({
-      full_name: decoded.name,
+      name: decoded.name,
       email: decoded.email,
       password: hash,
       user_id,

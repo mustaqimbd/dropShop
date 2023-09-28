@@ -418,9 +418,10 @@ const sellersInfo = async (req, res, next) => {
       email: 1,
     };
     if (req.query.email) {
-      const seller = await User.findOne({ email: req.query.email }).select(
-        projection
-      );
+      const seller = await User.findOne({
+        email: req.query.email,
+        role: "reseller",
+      }).select(projection);
       if (seller) {
         return successResponse(res, {
           message: "Sellers info",
@@ -433,9 +434,9 @@ const sellersInfo = async (req, res, next) => {
         });
       }
     }
-    const sellers = await User.find({ role: "seller" }).select(projection);
+    const sellers = await User.find({ role: "reseller" }).select(projection);
     return successResponse(res, {
-      message: "Sellers info",
+      message: sellers.length ? "Sellers info" : "You have no resellers.",
       payload: { sellers },
     });
   } catch (error) {

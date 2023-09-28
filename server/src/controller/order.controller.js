@@ -1,3 +1,4 @@
+const OrdersAggregationPipeline = require("../helper/OrdersAggregationPipeline");
 const Order = require("../model/order.model");
 const { successResponse } = require("./responseHandler");
 
@@ -10,57 +11,13 @@ const trackOrder = async (req, res, next) => {
           order_id: orderId,
         },
       },
-      {
-        $lookup: {
-          from: "products",
-          localField: "product_slug",
-          foreignField: "product_slug",
-          as: "productInfo",
-        },
-      },
-      {
-        $unwind: "$productInfo",
-      },
-      {
-        $lookup: {
-          from: "customers",
-          localField: "customer_id",
-          foreignField: "customer_id",
-          as: "customer",
-        },
-      },
-      {
-        $unwind: "$customer",
-      },
-      {
-        $lookup: {
-          from: "users",
-          localField: "seller_id",
-          foreignField: "user_id",
-          as: "sellerInfo",
-        },
-      },
-      {
-        $unwind: "$sellerInfo",
-      },
-      {
-        $project: {
-          _id: 0,
-          status: 1,
-          productName: "$productInfo.product_name",
-          productImage: "$productInfo.images.link",
-          customerName: "$customer.customerName",
-          shipping: "$customer.address",
-          sellerName: "$sellerInfo.name",
-          sellerShopName: "$sellerInfo.shop_info.shop_name",
-          sellerShopLogo: "$sellerInfo.shop_info.logo",
-        },
-      },
+      ...OrdersAggregationPipeline(),
       {
         $limit: 1,
       },
     ];
     const orderDetails = await Order.aggregate(pipeline);
+
     return successResponse(res, {
       message: "Order information.",
       payload: { orderDetails },
@@ -70,4 +27,51 @@ const trackOrder = async (req, res, next) => {
   }
 };
 
-module.exports = { trackOrder };
+const getOrderInfo = async (req, res, next) => {
+  try {
+    const { skip: currentPage } = req.query;
+    const limit = 20;
+    const pipeline = [
+      ...OrdersAggregationPipeline(),
+      {
+        $sort: { createdAt: -1 },
+      },
+      {
+        $skip: currentPage * limit,
+      },
+      {
+        $limit: limit,
+      },
+    ];
+    const orders = await Order.aggregate(pipeline);
+    return successResponse(res, {
+      message: "Total orders.",
+      payload: {
+        skip: currentPage * limit,
+        limit: limit,
+        length: orders.length,
+        orders,
+      },
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+const updateOrderStatus = async (req, res, next) => {
+  try {
+    const { orderId, status } = req.query;
+    await Order.findOneAndUpdate(
+      { order_id: orderId },
+      { $set: { status } },
+      { runValidators: true }
+    );
+    return successResponse(res, {
+      message: "Updated successfully.",
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+module.exports = { trackOrder, getOrderInfo, updateOrderStatus };
