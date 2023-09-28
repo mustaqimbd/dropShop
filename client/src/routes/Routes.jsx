@@ -24,6 +24,8 @@ import ShopStatus from "../pages/Dashboard/Admin/ShopStatus/ShopStatus";
 import TrackOrder from "../pages/TrackOrder/TrackOrder";
 import ProductsByCategory from "../pages/products/ArchiveProducts/ProductsByCategory";
 import Need_Help from "../pages/Need_Help/Need_Help";
+import JoinAsDropshipper from "../pages/joinAsDropshiper/JoinAsDropshipper";
+import JoiningPayDropshipper from "../pages/joinAsDropshiper/JoiningPayDropshipper";
 
 export const router = createBrowserRouter([
   {
@@ -72,9 +74,25 @@ export const router = createBrowserRouter([
         element: <TrackOrder />,
       },
       {
-        path:"/Need_Help",
-        element:<Need_Help/>
-      }
+        path: "/join-as-dropshipper",
+        element: (
+          <PrivateRoute>
+            <JoinAsDropshipper />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/join-pay-dropshipper",
+        element: (
+          <PrivateRoute>
+            <JoiningPayDropshipper />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/Need_Help",
+        element: <Need_Help />,
+      },
     ],
   },
   {

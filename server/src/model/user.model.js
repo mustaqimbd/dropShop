@@ -10,6 +10,7 @@ const userSchema = new Schema(
     mobile: Number,
     address: String,
     district: String,
+    signUpFee: String,
     payouts: {
       type: Number,
       default: 0,

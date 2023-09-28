@@ -8,6 +8,7 @@ const {
   requestRegister,
   forgotPassword,
   resetPassword,
+  updateUserProfile,
 } = require("../controller/user.controller");
 const isTokenAvailable = require("../middleware/isTokenAvailable");
 const limitReqResettingPass = require("../middleware/limitReqResettingPass");
@@ -77,6 +78,14 @@ userRoute.post(
   "/change-password",
   passport.authenticate("jwt", { session: false }),
   changePassword
+);
+
+//put Data (Update shop info )
+// /api/user/update-dropshipper-info
+userRoute.put(
+  "/update-dropshipper-info",
+  passport.authenticate("jwt", { session: false }),
+  updateUserProfile
 );
 
 /**

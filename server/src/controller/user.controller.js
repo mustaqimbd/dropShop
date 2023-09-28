@@ -84,6 +84,51 @@ const registerNewUser = async (req, res, next) => {
   }
 };
 
+//update user
+const updateUserProfile = async (req, res, next) => {
+  try {
+    const userId = req.user._id; // Get user ID from request parameters
+    const updatedUserData = req.body; // Get updated user data from request body
+
+    console.log("user id", updatedUserData);
+
+    // Find the user by ID
+    const user = await User.findById(userId);
+    console.log(user);
+
+    // If the user doesn't exist, return an error
+    if (!user) {
+      throw createErrors(404, "User not found.");
+    }
+    const result = await User.updateOne(
+      { _id: userId },
+      {
+        $set: {
+          name: updatedUserData.name || user.name,
+          email: updatedUserData.email || user.email,
+          logo: updatedUserData.logo || user.logo || "",
+          signUpFee: updatedUserData.signUpFee || user.signUpFee || "unpaid",
+          mobile: updatedUserData.mobile || user.mobile,
+          address: updatedUserData.address || user.address,
+          district: updatedUserData.district || user.district,
+          shopName: updatedUserData.shopName || user.shopName,
+          webOrPageLink: updatedUserData.webOrPageLink || user.webOrPageLink,
+          // Update other fields as needed
+        },
+      },
+      { upsert: true } // Create a new user if it doesn't exist
+    );
+
+    return successResponse(res, {
+      statusCode: 200,
+      message: "User information updated successfully.",
+      data: result, // Optionally, you can send back the result of the update operation
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
 //login user
 const loginUser = async (req, res, next) => {
   try {
@@ -233,6 +278,7 @@ module.exports = {
   registerNewUser,
   loginUser,
   userProfile,
+  updateUserProfile,
   logOutUser,
   changePassword,
   forgotPassword,

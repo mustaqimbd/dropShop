@@ -9,6 +9,10 @@ const SMTPUserName = process.env.SMTP_USERNAME;
 const SMTPPassword = process.env.SMTP_PASSWORD;
 const clientUrl = process.env.CLIENT_URL;
 
+//ssl sercret
+// const store_id = process.env.STORE_ID;
+// const store_passwd = process.env.STORE_PASSWD;
+
 module.exports = {
   userRegisterSecret,
   accessTokenSecret,
@@ -18,4 +22,6 @@ module.exports = {
   SMTPUserName,
   SMTPPassword,
   clientUrl,
+  // store_id,
+  // store_passwd,
 };
