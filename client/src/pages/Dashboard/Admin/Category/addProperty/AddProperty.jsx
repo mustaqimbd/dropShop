@@ -30,22 +30,11 @@ const AddProperty = () => {
   const [propertyName, setPropertyName] = useState("");
   const [propertyValues, setPropertyValues] = useState([""]); //array of property values
 
-  console.log(
-    "categoryName:",
-    categoryId,
-    "propertyName:",
-    propertyName,
-    "Property values ",
-    propertyValues
-  );
-
-  console.log(properties);
-
-  const handleCategoryChange = (event) => {
+  const handleCategoryChange = event => {
     setCategoryID(event.target.value);
   };
 
-  const handleRemoveProperty = (index) => {
+  const handleRemoveProperty = index => {
     const updatedProperties = [...properties];
     updatedProperties.splice(index, 1);
     setProperties(updatedProperties);
@@ -55,7 +44,7 @@ const AddProperty = () => {
     setPropertyValues([...propertyValues, ""]);
   };
 
-  const handleRemoveValue = (index) => {
+  const handleRemoveValue = index => {
     const updatedValues = [...propertyValues];
     updatedValues.splice(index, 1);
     setPropertyValues(updatedValues);
@@ -72,7 +61,6 @@ const AddProperty = () => {
       propertyName,
       values: propertyValues,
     };
-    // Do something with the organizedData, e.g., send it to an API or perform other actions
     axiosSecure
       .put(`/api/category/${categoryId}`, categoryData, {
         headers: {
@@ -80,7 +68,7 @@ const AddProperty = () => {
           // Add any additional headers if needed
         },
       })
-      .then((response) => {
+      .then(response => {
         console.log("Category updated:", response.data);
 
         setProperties([]);
@@ -94,7 +82,7 @@ const AddProperty = () => {
           position: "top-center",
         });
       })
-      .catch((error) => {
+      .catch(error => {
         console.error("Error updating category:", error);
       });
 
@@ -117,14 +105,14 @@ const AddProperty = () => {
           </Select>
         </FormControl>
 
-        <Grid s marginY={1} container spacing={2} alignItems="start">
+        <Grid marginY={1} container spacing={2} alignItems="start">
           <Grid item xs={12} md={6}>
             <TextField
               label="Property Name"
               variant="outlined"
               fullWidth
               value={propertyName}
-              onChange={(e) => setPropertyName(e.target.value)}
+              onChange={e => setPropertyName(e.target.value)}
             />
             <div className="mt-4">
               <Button
@@ -145,7 +133,7 @@ const AddProperty = () => {
                   variant="outlined"
                   fullWidth
                   value={value}
-                  onChange={(e) => handleValueChange(index, e.target.value)}
+                  onChange={e => handleValueChange(index, e.target.value)}
                 />
                 {index === propertyValues?.length - 1 && (
                   <IconButton color="primary" onClick={handleAddValue}>
@@ -165,7 +153,7 @@ const AddProperty = () => {
           </Grid>
         </Grid>
 
-        <div className="mt-4">
+        {/* <div className="mt-4">
           {properties.map((property, index) => (
             <div key={index} className="flex items-center space-x-2 mt-2">
               <div>{`${property.name}: ${property.values.join(", ")}`}</div>
@@ -178,7 +166,7 @@ const AddProperty = () => {
               </Button>
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
     </Paper>
   );

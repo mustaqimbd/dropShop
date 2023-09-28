@@ -18,17 +18,16 @@ import toast from "react-hot-toast";
 
 const AllCategoryList = () => {
   // Get the category data (you can replace this with your data fetching logic)
-  const { axiosSecure } = useAxiosSecure();
+  const [axiosSecure] = useAxiosSecure();
 
   const { data, refetch } = useGetRequest("", "category");
   const categories = data?.payload?.category || [];
+  console.log(categories);
   const handleDeleteClick = async (categoryId) => {
     try {
       const response = await axiosSecure.delete(`/api/category/${categoryId}`);
-      console.log(response); // Log the response object
 
       if (response.status === 200) {
-        console.log("Category deleted successfully.");
         toast.success(`${response?.data?.message}`, {
           style: {
             border: "1px solid green",
@@ -37,11 +36,9 @@ const AllCategoryList = () => {
         });
         refetch();
       } else {
-        console.log("Category deletion failed.");
         toast.error(`${response?.data?.message}`);
       }
     } catch (error) {
-      console.error("Error:", error);
       toast.error(error?.response?.data?.message);
     }
   };
@@ -72,7 +69,7 @@ const AllCategoryList = () => {
             <TableBody>
               {visibleData.map((category) => (
                 <TableRow key={category._id}>
-                  <TableCell> </TableCell>
+                  <TableCell>{category.name}</TableCell>
                   <TableCell>
                     <img
                       src={category.img}

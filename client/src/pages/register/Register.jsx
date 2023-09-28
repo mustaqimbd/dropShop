@@ -1,8 +1,7 @@
 import ContainerFull from "../../components/container/ContainerFull";
 import ContainerMax from "../../components/container/ContainerMax";
 import { useForm } from "react-hook-form";
-import toast, { Toaster } from "react-hot-toast";
-import registeImg from "../../assets/images/registerPage.png";
+import registerImg from "../../assets/images/registerPage.png";
 import { NavLink, useNavigate } from "react-router-dom";
 import useAuthProvider from "../../hooks/useAuthProvider";
 import { useRef, useState } from "react";
@@ -13,6 +12,7 @@ const Register = () => {
   const confirmPasswordFieldRef = useRef();
   const [serverValidationErr, setServerValidationErr] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [registerError, setRegisterError] = useState("");
   const navigate = useNavigate();
   const [axiosSecure] = useAxiosSecure();
   const {
@@ -35,7 +35,7 @@ const Register = () => {
       if (error.response.data.message === "Validation error.") {
         setServerValidationErr(error.response.data.errors);
       } else {
-        toast.error(error.response.data.message);
+        setRegisterError(error.response.data.message);
       }
       setLoading(false);
     }
@@ -63,7 +63,7 @@ const Register = () => {
                   Register to Create Account
                 </h1>
 
-                <img className="3/4 " src={registeImg} alt="" />
+                <img className="3/4 " src={registerImg} alt="" />
               </div>
             </div>
             <div className="flex-1  rounded-md  ">
@@ -157,80 +157,19 @@ const Register = () => {
                       placeholder=" Enter Confirm Password"
                     />
                   </div>
-                  <div>
-                    <label
-                      className="block text-gray-700 text-sm font-bold mb-2"
-                      htmlFor="phone"
-                    >
-                      Phone
-                    </label>
-                    <input
-                      required
-                      name="phone"
-                      {...register("mobile", { required: true })}
-                      id="phone"
-                      className="shadow appeara6ce-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                      placeholder="Your phone"
-                      type="number"
-                    />
-                  </div>
-                  <div>
-                    <label
-                      className="block text-gray-700 text-sm font-bold mb-2"
-                      htmlFor="address"
-                    >
-                      Address
-                    </label>
-                    <input
-                      required
-                      name="address"
-                      {...register("address", { required: true })}
-                      id="address"
-                      className="shadow appeara6ce-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                      placeholder="Your address"
-                      type="text"
-                    />
-                  </div>
-                  <div>
-                    <label
-                      className="block text-gray-700 text-sm font-bold mb-2"
-                      htmlFor="district"
-                    >
-                      District
-                    </label>
-                    <input
-                      name="district"
-                      {...register("district", { required: true })}
-                      id="district"
-                      className="shadow appeara6ce-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                      placeholder="Your district"
-                      type="text"
-                    />
-                  </div>
-                  <div>
-                    <label
-                      className="block text-gray-700 text-sm font-bold mb-2"
-                      htmlFor="webUrl"
-                    >
-                      Website or page url
-                    </label>
-                    <input
-                      name="webUrl"
-                      {...register("webOrPageLink", { required: true })}
-                      id="webUrl"
-                      className="shadow appeara6ce-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                      placeholder="Your facebook or website url"
-                      type="text"
-                    />
-                  </div>
                   {serverValidationErr.length
                     ? serverValidationErr.map((item, index) => (
-                        <p key={index} className="text-hotBadge">
+                        <p key={index} className="text-hotBadge font-bold">
                           <span>{index + 1}. </span>
                           {item}
                         </p>
                       ))
                     : ""}
+                  {registerError ? (
+                    <h2 className="text-hotBadge font-bold">{registerError}</h2>
+                  ) : (
+                    ""
+                  )}
                   <div className=" py-4">
                     <button
                       className="bg-primary px-6 text-white w-full rounded-md py-3 text-xl"
@@ -253,7 +192,6 @@ const Register = () => {
           </div>
         </ContainerMax>
       </div>
-      <Toaster position="top-center" reverseOrder={false} />
     </ContainerFull>
   );
 };

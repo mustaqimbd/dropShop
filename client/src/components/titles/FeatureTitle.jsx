@@ -84,16 +84,13 @@ const ColorTitle = ({ title }) => {
 };
 const TracOrdertitle = ({ title }) => {
   return (
-<div className="text-base font-sans text-heading  py-5 border-b-2 border-borderColor">{title}</div>
-
-  );
-};
-const HelpTitle = ({ title }) => {
-  return (
-    <div className="text-xl font-bold font-sans py-5">
+    <div className="text-base font-sans text-heading  py-5 border-b-2 border-borderColor">
       {title}
     </div>
   );
+};
+const HelpTitle = ({ title }) => {
+  return <div className="text-xl font-bold font-sans py-5">{title}</div>;
 };
 
 export {
@@ -111,5 +108,5 @@ export {
   MaximamProfitPrice,
   ColorTitle,
   TracOrdertitle,
-  HelpTitle
+  HelpTitle,
 };

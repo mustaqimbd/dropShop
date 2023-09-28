@@ -1,7 +1,7 @@
 const Products = require("../model/products.model");
 const generateUniqueId = require("generate-unique-id");
 const { successResponse } = require("./responseHandler");
-const Orders = require("../model/orders.model");
+const Orders = require("../model/order.model");
 const User = require("../model/user.model");
 const Category = require("../model/category.model");
 
@@ -62,7 +62,7 @@ const adminStats = async (req, res, next) => {
       },
     }).countDocuments();
     const dailySells = await Orders.find({
-      status: "Completed",
+      status: "completed",
       completed_date: {
         $gte: today,
         $lt: lesThanValue,
@@ -91,7 +91,7 @@ const dailySales = async (req, res, next) => {
     const pipeline = [
       {
         $match: {
-          status: "Completed",
+          status: "completed",
           completed_date: {
             $gte: startOfDay,
             $lt: endOfDay,
@@ -141,7 +141,7 @@ const currentMonthEveryDaySales = async (req, res, next) => {
     const pipeline = [
       {
         $match: {
-          status: "Completed",
+          status: "completed",
           createdAt: {
             $gte: firstDayOfMonth,
             $lt: firstDayOfNextMonth,
@@ -180,7 +180,7 @@ const yearlySales = async (req, res, next) => {
     const pipeline = [
       {
         $match: {
-          status: "Completed",
+          status: "completed",
         },
       },
       {
@@ -268,47 +268,45 @@ const recentOrders = async (req, res, next) => {
   }
 };
 
-const newCustomers = async (req, res, next) => {
+const topSellers = async (req, res, next) => {
   try {
     const pipeline = [
       {
         $group: {
-          _id: "$drop_seller_email",
-          orderCount: { $sum: 1 },
-          totalSales: { $sum: "$total_price" },
+          _id: "$seller_id",
+          total_orders: { $sum: 1 },
+          total_amount: { $sum: "$total_price" },
         },
       },
       {
         $lookup: {
-          from: "users", // Name of the users collection
-          localField: "_id", // Field from the orders collection
-          foreignField: "email", // Field from the users collection
-          as: "userDetails", // Alias for the joined data
+          from: "users",
+          localField: "_id",
+          foreignField: "user_id",
+          as: "user_info",
         },
       },
       {
-        $unwind: "$userDetails", // Unwind the array created by $lookup
+        $unwind: "$user_info",
       },
       {
         $project: {
-          _id: 0, // Exclude the default _id field
-          email: "$_id",
-          orderCount: 1,
-          userName: "$userDetails.name",
-          totalSales: 1,
-          logo: "$userDetails.logo",
-          profile_pic: "$userDetails.profile_pic",
+          _id: 1,
+          total_orders: 1,
+          total_amount: 1,
+          seller_name: "$user_info.name",
+          seller_email: "$user_info.email",
+          profile_pic: "$user_info.profile_pic",
         },
       },
       {
-        $sort: {
-          totalSales: -1,
-        },
+        $sort: { total_orders: -1 },
       },
       {
         $limit: 5,
       },
     ];
+
     const customers = await Orders.aggregate(pipeline);
     return successResponse(res, {
       message: "New customers",
@@ -350,7 +348,7 @@ const topCategories = async (req, res, next) => {
     const pipeline = [
       {
         $group: {
-          _id: "$ category_slug",
+          _id: "$category_slug",
           totalOrders: { $sum: 1 },
         },
       },
@@ -396,7 +394,7 @@ const topCategories = async (req, res, next) => {
         },
       },
       {
-        $limit: 3,
+        $limit: 4,
       },
     ];
     const topCategories = await Orders.aggregate(pipeline);
@@ -411,15 +409,54 @@ const topCategories = async (req, res, next) => {
 
 const sellersInfo = async (req, res, next) => {
   try {
-    const sellers = await User.find({ role: "seller" }).select({
+    const projection = {
       _id: 0,
-      password: 0,
-      __v: 0,
-      role: 0,
-    });
+      name: 1,
+      profile_pic: 1,
+      "payments.withdraw.payouts": 1,
+      createdAt: 1,
+      email: 1,
+    };
+    if (req.query.email) {
+      const seller = await User.findOne({
+        email: req.query.email,
+        role: "reseller",
+      }).select(projection);
+      if (seller) {
+        return successResponse(res, {
+          message: "Sellers info",
+          payload: { sellers: [seller] },
+        });
+      } else {
+        return successResponse(res, {
+          message: "No seller found with this email.",
+          payload: { sellers: [] },
+        });
+      }
+    }
+    const sellers = await User.find({ role: "reseller" }).select(projection);
     return successResponse(res, {
-      message: "Sellers info",
+      message: sellers.length ? "Sellers info" : "You have no resellers.",
       payload: { sellers },
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+const products = async (req, res, next) => {
+  try {
+    const products = await Products.find()
+      .select({
+        product_name: 1,
+        reseller_price: 1,
+        available_quantity: 1,
+        total_sold: 1,
+      })
+      .sort({ total_sold: -1 });
+    return successResponse(res, {
+      message: "Products info.",
+      payload: { products },
     });
   } catch (error) {
     next(error);
@@ -434,9 +471,10 @@ module.exports = {
   yearlySales,
   orderOverview,
   recentOrders,
-  newCustomers,
+  topSellers,
   totalOrders,
   productStatistics,
   topCategories,
   sellersInfo,
+  products,
 };

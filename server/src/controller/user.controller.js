@@ -1,6 +1,7 @@
 const User = require("../model/user.model");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const generateUniqueId = require("generate-unique-id");
 const {
   accessTokenSecret,
   userRegisterSecret,
@@ -17,18 +18,13 @@ const forgotPasswordEmailData = require("../helper/forgotPasswordEmailData");
 //process register
 const requestRegister = async (req, res, next) => {
   try {
-    const { name, email, password, mobile, address, district, webOrPageLink } =
-      req.body;
+    const { name, email, password } = req.body;
     const user = await User.findOne({ email });
     if (user) return errorResponse(res, 409, "Email is already registered.");
     const payload = {
       name,
       email,
       password,
-      mobile,
-      address,
-      district,
-      webOrPageLink,
     };
     const token = jwt.sign(payload, userRegisterSecret, { expiresIn: "10m" });
     const emailInfo = registerRequestEmailData(email, name, token);
@@ -56,17 +52,13 @@ const registerNewUser = async (req, res, next) => {
     const user = await User.findOne({ email: decoded.email });
     if (user) throw createErrors(400, "Email already registered.");
     const hash = await bcrypt.hash(decoded.password, 10);
+    const user_id = generateUniqueId({ length: 15 });
     await User.create({
       name: decoded.name,
       email: decoded.email,
       password: hash,
-      logo: decoded.logo,
-      mobile: decoded.mobile,
-      address: decoded.address,
-      district: decoded.district,
-      webOrPageLink: decoded.webOrPageLink,
+      user_id,
     });
-
     return successResponse(res, {
       statusCode: 201,
       message: "User was created successfully.",

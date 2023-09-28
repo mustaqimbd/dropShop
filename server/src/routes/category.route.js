@@ -23,7 +23,7 @@ categoryRoute.post(
   addNewCategory
 );
 
-//put for upadte category (Insert Property) |  admin protected
+//put for update category (Insert Property) |  admin protected
 // /api/category/
 categoryRoute.put(
   "/:id",

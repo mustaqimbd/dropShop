@@ -1,5 +1,5 @@
 import useAxiosSecure from "../../hooks/useAxiosSecure";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 import { Typography } from "@mui/material";
 import Swal from "sweetalert2";
 import useAuthProvider from "../../hooks/useAuthProvider";
@@ -32,7 +32,6 @@ const VerifyAccounts = () => {
   }, [user, navigate]);
   return (
     <>
-      <Toaster position="top-center" reverseOrder={false} />
       <div className="text-center my-10 max-w-lg w-full ring-1 ring-gray-400 mx-auto p-5 rounded-lg bg-primary/30 ">
         <div className="space-y-5">
           <div className="flex justify-center mt-10">
