@@ -22,6 +22,8 @@ import Orders from "../pages/Dashboard/Admin/Orders/Orders";
 import ShopStatus from "../pages/Dashboard/Admin/ShopStatus/ShopStatus";
 import TrackOrder from "../pages/TrackOrder/TrackOrder";
 import ProductsByCategory from "../pages/products/ArchiveProducts/ProductsByCategory";
+import JoinAsDropshipper from "../pages/joinAsDropshiper/JoinAsDropshipper";
+import JoiningPayDropshipper from "../pages/joinAsDropshiper/JoiningPayDropshipper";
 import Reseller from "../pages/Dashboard/DropShipper/ResellerPanel/Reseller";
 import MyCustomers from "../pages/Dashboard/DropShipper/MyCustomers/MyCustomers";
 import MyOrders from "../pages/Dashboard/DropShipper/MyOrders/MyOrders";
@@ -86,6 +88,22 @@ export const router = createBrowserRouter([
       {
         path: "/track-order",
         element: <TrackOrder />,
+      },
+      {
+        path: "/join-as-dropshipper",
+        element: (
+          <PrivateRoute>
+            <JoinAsDropshipper />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/join-pay-dropshipper",
+        element: (
+          <PrivateRoute>
+            <JoiningPayDropshipper />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/need-help",

@@ -23,7 +23,7 @@ const AllCategoryList = () => {
   const { data, refetch } = useGetRequest("", "category");
   const categories = data?.payload?.category || [];
   console.log(categories);
-  const handleDeleteClick = async categoryId => {
+  const handleDeleteClick = async (categoryId) => {
     try {
       const response = await axiosSecure.delete(`/api/category/${categoryId}`);
 
@@ -67,7 +67,7 @@ const AllCategoryList = () => {
               </TableRow>
             </TableHead>
             <TableBody>
-              {visibleData.map(category => (
+              {visibleData.map((category) => (
                 <TableRow key={category._id}>
                   <TableCell>{category.name}</TableCell>
                   <TableCell>

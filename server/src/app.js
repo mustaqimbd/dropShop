@@ -39,6 +39,7 @@ app.use("/api/order", require("./routes/order.route"));
 
 //seed api's
 app.use("/api/seed", require("./routes/seed.route"));
+app.use("api/payments", require("./routes/payments.route"));
 //client error
 app.use((req, res, next) => {
   next(createErrors(404, "Route not found."));
