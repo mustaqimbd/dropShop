@@ -30,7 +30,9 @@ const ProductsStatistics = () => {
             <FluorescentIcon />
           </ListItemIcon>
           <div className="flex justify-between w-full">
-            <ListItemText>Total products</ListItemText>
+            <ListItemText>
+              <span className="text-caption font-bold">Total products</span>
+            </ListItemText>
             <ListItemText>
               {totalProducts?.data?.payload?.productCount}
             </ListItemText>
@@ -43,7 +45,9 @@ const ProductsStatistics = () => {
             <CategoryIcon />
           </ListItemIcon>
           <div className="flex justify-between w-full">
-            <ListItemText>Total category</ListItemText>
+            <ListItemText>
+              <span className="text-caption font-bold">Total category</span>
+            </ListItemText>
             <ListItemText>
               {productsStatistics?.payload?.totalCategory}
             </ListItemText>
@@ -56,7 +60,9 @@ const ProductsStatistics = () => {
             <FaThumbsUp />
           </ListItemIcon>
           <div className="flex justify-between w-full">
-            <ListItemText>In stoke products</ListItemText>
+            <ListItemText>
+              <span className="text-caption font-bold">In stoke products</span>
+            </ListItemText>
             <ListItemText>{productsStatistics?.payload?.inStock}</ListItemText>
           </div>
         </ListItem>
@@ -67,7 +73,11 @@ const ProductsStatistics = () => {
             <FaBan />
           </ListItemIcon>
           <div className="flex justify-between w-full">
-            <ListItemText>Total out of stoke products</ListItemText>
+            <ListItemText>
+              <span className="text-caption font-bold">
+                Total out of stoke products
+              </span>
+            </ListItemText>
             <ListItemText>
               {productsStatistics?.payload?.outOfStocks}
             </ListItemText>

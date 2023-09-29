@@ -46,15 +46,25 @@ const RecentOrders = () => {
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
                   <TableCell component="th" scope="row">
-                    {row?._id?.slice(row?._id?.length - 10)}
+                    <span className="font-semibold text-caption">
+                      {row?._id?.slice(row?._id?.length - 10)}
+                    </span>
                   </TableCell>
                   <TableCell align="left">
-                    {row?.product_name?.length > 30
-                      ? row?.product_name?.slice(0, 30) + "..."
-                      : row?.product_name}
+                    <span className="text-caption font-bold">
+                      {row?.product_name?.length > 30
+                        ? row?.product_name?.slice(0, 30) + "..."
+                        : row?.product_name}
+                    </span>
                   </TableCell>
-                  <TableCell align="left">{row?.quantity}</TableCell>
-                  <TableCell align="left">$ {row?.total_price}</TableCell>
+                  <TableCell align="left">
+                    <span className="font-semibold">{row?.quantity}</span>
+                  </TableCell>
+                  <TableCell align="left">
+                    <span className="font-semibold text-caption">
+                      $ {row?.total_price}
+                    </span>
+                  </TableCell>
                   <TableCell align="left">
                     <Chip
                       label={row.status}
