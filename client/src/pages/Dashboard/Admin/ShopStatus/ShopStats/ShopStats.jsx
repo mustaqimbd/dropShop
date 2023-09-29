@@ -12,7 +12,7 @@ const ShopStats = () => {
   const dollar = <FaDollarSign size={20} />;
   return (
     <>
-      <div className="flex justify-evenly gap-5 flex-wrap">
+      <div className="flex justify-evenly gap-5 flex-wrap mt-10">
         <Stats
           title="Daily signUps"
           counts={stats?.payload?.dailyUsers}

@@ -1,10 +1,9 @@
-import Single_Product from "./Single_Product/Single_Product";
+import SingleProduct from "./SingleProduct/SingleProduct";
 
 const AddProduct = () => {
   return (
     <div className="flex justify-between ">
-      <Single_Product/>
-
+      <SingleProduct />
     </div>
   );
 };

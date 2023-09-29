@@ -1,20 +1,21 @@
 import { Button, TextField, Typography } from "@mui/material";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 import { useState } from "react";
-import Product_Property from "../Single_Product_Property/Product_Property";
-const Single_Product = () => {
-const [productName, setProductName] = useState("");
-const [images, setImages] = useState([]);
-const [uploadImages, setUploadImages] = useState([]);
-const [isLoading, setIsLoading] = useState(false);
-const[sku,setSku]=useState();
-const[stockQt,setStockQt]=useState();
-const[mxProfit,setMxProfit]=useState();
-const[exProfit,setExProfit]=useState();
-const[rgPrice,setRgprice]=useState();
-const[discount,setDiscount]=useState();
+import SingleProductProperty from "../SingleProductProperty/SingleProductProperty";
 
-const handleImageChange = (e) => {
+const SingleProduct = () => {
+  const [productName, setProductName] = useState("");
+  const [images, setImages] = useState([]);
+  const [uploadImages, setUploadImages] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [sku, setSku] = useState();
+  const [stockQt, setStockQt] = useState();
+  const [mxProfit, setMxProfit] = useState();
+  const [exProfit, setExProfit] = useState();
+  const [rgPrice, setRgprice] = useState();
+  const [discount, setDiscount] = useState();
+
+  const handleImageChange = e => {
     const selectedFiles = e.target.files;
     setImages([...images, ...selectedFiles]); // Append newly selected files to the existing images array
   };
@@ -23,7 +24,7 @@ const handleImageChange = (e) => {
     setIsLoading(true);
 
     const formData = new FormData();
-    
+
     // Append all selected images to the FormData object
     for (let i = 0; i < images.length; i++) {
       formData.append(`images${[i]}`, images[i]);
@@ -65,7 +66,7 @@ const handleImageChange = (e) => {
             variant="outlined"
             fullWidth // Ensure the input takes up full width
             value={productName}
-            onChange={(e) => setProductName(e.target.value)}
+            onChange={e => setProductName(e.target.value)}
           />
         </div>
 
@@ -76,7 +77,7 @@ const handleImageChange = (e) => {
             variant="outlined"
             fullWidth // Ensure the input takes up full width
             value={sku}
-            onChange={(e) => setSku(e.target.value)}
+            onChange={e => setSku(e.target.value)}
           />
         </div>
 
@@ -87,11 +88,11 @@ const handleImageChange = (e) => {
             variant="outlined"
             fullWidth // Ensure the input takes up full width
             value={stockQt}
-            onChange={(e) => setStockQt(e.target.value)}
+            onChange={e => setStockQt(e.target.value)}
           />
         </div>
       </div>
-      <Product_Property/>
+      <SingleProductProperty />
 
       <div className="flex w-full mt-4 space-x-4">
         <div className="flex-1">
@@ -101,7 +102,7 @@ const handleImageChange = (e) => {
             variant="outlined"
             fullWidth // Ensure the input takes up full width
             value={mxProfit}
-            onChange={(e) => setMxProfit(e.target.value)}
+            onChange={e => setMxProfit(e.target.value)}
           />
         </div>
 
@@ -112,12 +113,12 @@ const handleImageChange = (e) => {
             variant="outlined"
             fullWidth // Ensure the input takes up full width
             value={exProfit}
-            onChange={(e) => setExProfit(e.target.value)}
+            onChange={e => setExProfit(e.target.value)}
           />
         </div>
-</div>
-     
-<div className="flex w-full mt-4 space-x-4">
+      </div>
+
+      <div className="flex w-full mt-4 space-x-4">
         <div className="flex-1">
           <TextField
             id="outlined-basic"
@@ -125,7 +126,7 @@ const handleImageChange = (e) => {
             variant="outlined"
             fullWidth // Ensure the input takes up full width
             value={rgPrice}
-            onChange={(e) => setRgprice(e.target.value)}
+            onChange={e => setRgprice(e.target.value)}
           />
         </div>
 
@@ -136,37 +137,33 @@ const handleImageChange = (e) => {
             variant="outlined"
             fullWidth // Ensure the input takes up full width
             value={discount}
-            onChange={(e) => setDiscount(e.target.value)}
+            onChange={e => setDiscount(e.target.value)}
           />
         </div>
-</div>
-     
-     <div className="mt-4">
-     <TextField
-            id="outlined-basic"
-            label="Short Description"
-            variant="outlined"
-            fullWidth // Ensure the input takes up full width
-            multiline
+      </div>
+
+      <div className="mt-4">
+        <TextField
+          id="outlined-basic"
+          label="Short Description"
+          variant="outlined"
+          fullWidth // Ensure the input takes up full width
+          multiline
           rows={4}
-          />
-     </div>
-     
-     <div className="my-4">
-     <TextField
-            id="outlined-basic"
-            label="Additional Information"
-            variant="outlined"
-            fullWidth // Ensure the input takes up full width
-            multiline
+        />
+      </div>
+
+      <div className="my-4">
+        <TextField
+          id="outlined-basic"
+          label="Additional Information"
+          variant="outlined"
+          fullWidth // Ensure the input takes up full width
+          multiline
           rows={4}
-          />
-     </div>
-     
-     
-     
-     
-     
+        />
+      </div>
+
       <div className="space-y-4">
         <input
           type="file"
@@ -202,4 +199,4 @@ const handleImageChange = (e) => {
   );
 };
 
-export default Single_Product;
+export default SingleProduct;

@@ -1,5 +1,6 @@
 import Divider from "@mui/material/Divider";
 import {
+  Button,
   Paper,
   Table,
   TableBody,
@@ -7,6 +8,7 @@ import {
   TableContainer,
   TableHead,
   TableRow,
+  TextField,
 } from "@mui/material";
 import OrderTableCel from "./OrderTableCel";
 import useAxiosSecure from "../../../../hooks/useAxiosSecure";
@@ -19,7 +21,8 @@ import OrderModal from "./OrderModal";
 
 const Orders = () => {
   const [currentPage, setCurrentPage] = useState(0);
-  const { data: orders } = useOrders("/api/order/orders", currentPage);
+  const [searchId, setSearchId] = useState("");
+  const { data: orders, refetch } = useOrders("/api/order/orders", currentPage);
   const totalOrders = useTotalOrders();
   const rows = orders?.payload?.orders;
   const totalPage = Math.ceil(totalOrders?.data?.payload?.totalOrderCount / 20);
@@ -33,6 +36,7 @@ const Orders = () => {
       );
       if (res.data.success) {
         toast.success(res.data.message);
+        refetch();
       }
     } catch (error) {
       toast.error(error.response.data.message);
@@ -41,29 +45,53 @@ const Orders = () => {
 
   // modal config
   const [singleProduct, setSingleProduct] = useState("");
+  const [singleProductLoading, setSingleProductLoading] = useState(false);
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
   // modal content
   const singleOrderInfo = async orderId => {
+    if (!orderId) {
+      return;
+    }
     handleOpen();
+    setSingleProductLoading(true);
     try {
       const result = await axiosSecure.get(
         `/api/order/track-order?orderId=${orderId}`
       );
       setSingleProduct(result?.data?.payload?.orderDetails[0]);
+      setSingleProductLoading(false);
     } catch (error) {
       toast.error(error?.response?.data?.message);
+      setSingleProductLoading(false);
     }
   };
-  console.log(singleProduct);
+  // search control
+
   return (
     <>
       <div className="p-2 bg-white">
         <div className="shadow-md rounded-md p-2 md:p-5">
           <h2 className="dashboard-title">Orders</h2>
           <Divider />
+          <div className="mt-5 flex justify-end">
+            <div className="flex gap-5 items-center">
+              <TextField
+                id="standard-basic"
+                label="Search by id"
+                variant="standard"
+                onChange={event => setSearchId(event.target.value)}
+              />
+              <Button
+                variant="contained"
+                onClick={() => singleOrderInfo(searchId)}
+              >
+                Search
+              </Button>
+            </div>
+          </div>
           <div className="mt-5 space-y-5">
             <TableContainer component={Paper}>
               <Table sx={{ minWidth: 650 }} aria-label="simple table">
@@ -103,9 +131,12 @@ const Orders = () => {
       <OrderModal
         open={open}
         setOpen={setOpen}
+        refetch={refetch}
         handleOpen={handleOpen}
         handleClose={handleClose}
         singleProduct={singleProduct}
+        handleStatusChange={handleStatusChange}
+        singleProductLoading={singleProductLoading}
       />
     </>
   );
