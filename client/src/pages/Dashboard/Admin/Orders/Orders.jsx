@@ -99,9 +99,11 @@ const Orders = () => {
                   <TableRow>
                     <TableCell>SL. NO.</TableCell>
                     <TableCell align="left">Order ID</TableCell>
+                    <TableCell align="left">Img</TableCell>
                     <TableCell align="left">Product name</TableCell>
                     <TableCell align="left">Quantity</TableCell>
                     <TableCell align="left">Price</TableCell>
+                    <TableCell align="left">Date</TableCell>
                     <TableCell align="left">Status</TableCell>
                     <TableCell align="left">Details</TableCell>
                   </TableRow>

@@ -14,17 +14,19 @@ const registerRequestEmailData = require("../helper/registerRequestEmailData");
 const emailWithNodeMailer = require("../helper/email");
 const createErrors = require("http-errors");
 const forgotPasswordEmailData = require("../helper/forgotPasswordEmailData");
+const uniqueID = require("../helper/uniqueID");
 
 //process register
 const requestRegister = async (req, res, next) => {
   try {
-    const { name, email, password } = req.body;
+    const { name, email, password, phone } = req.body;
     const user = await User.findOne({ email });
     if (user) return errorResponse(res, 409, "Email is already registered.");
     const payload = {
       name,
       email,
       password,
+      phone,
     };
     const token = jwt.sign(payload, userRegisterSecret, { expiresIn: "10m" });
     const emailInfo = registerRequestEmailData(email, name, token);
@@ -52,10 +54,11 @@ const registerNewUser = async (req, res, next) => {
     const user = await User.findOne({ email: decoded.email });
     if (user) throw createErrors(400, "Email already registered.");
     const hash = await bcrypt.hash(decoded.password, 10);
-    const user_id = generateUniqueId({ length: 15 });
+    const user_id = uniqueID("UID");
     await User.create({
       name: decoded.name,
       email: decoded.email,
+      phone: decoded.phone,
       password: hash,
       user_id,
     });
@@ -82,12 +85,8 @@ const updateUserProfile = async (req, res, next) => {
     const userId = req.user._id; // Get user ID from request parameters
     const updatedUserData = req.body; // Get updated user data from request body
 
-    console.log("user id", updatedUserData);
-
     // Find the user by ID
-    const user = await User.findById(userId);
-    console.log(user);
-
+    const user = req.user;
     // If the user doesn't exist, return an error
     if (!user) {
       throw createErrors(404, "User not found.");
@@ -114,7 +113,7 @@ const updateUserProfile = async (req, res, next) => {
     return successResponse(res, {
       statusCode: 200,
       message: "User information updated successfully.",
-      data: result, // Optionally, you can send back the result of the update operation
+      payload: { updatedUserInfo: result }, // Optionally, you can send back the result of the update operation
     });
   } catch (error) {
     next(error);

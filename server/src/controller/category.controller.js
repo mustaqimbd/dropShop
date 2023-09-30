@@ -6,7 +6,6 @@ const getAllCategory = async (req, res, next) => {
   try {
     const category = await Category.find();
     return successResponse(res, {
-      statusCode: 200,
       message: "All categories.",
       payload: { category },
     });
@@ -25,7 +24,6 @@ const addNewCategory = async (req, res, next) => {
     });
     await newCategory.save();
     return successResponse(res, {
-      statusCode: 200,
       message: "New category added successfully.",
     });
   } catch (error) {
@@ -33,8 +31,7 @@ const addNewCategory = async (req, res, next) => {
   }
 };
 
-//Delete a products by ID
-
+//Delete a category by ID
 const deleteCategory = async (req, res, next) => {
   try {
     const categoryID = req.params.id;
@@ -75,18 +72,15 @@ const updateCategory = async (req, res, next) => {
       payload: { updatedCategory },
     });
   } catch (err) {
-    console.error(err);
-    res.status(500).json({ message: "Internal server error" });
+    next(err);
   }
 };
 
-//
 const filterByCategory = async (req, res, next) => {
   try {
     const categorySlug = req.params.slug;
     const products = await Products.find({ category_slug: categorySlug });
     return successResponse(res, {
-      statusCode: 200,
       message: "Get product filtering by category.",
       payload: { products },
     });

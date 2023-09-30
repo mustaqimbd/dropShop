@@ -12,14 +12,14 @@ const MainLayout = () => {
         <Topbar></Topbar>
         <Header></Header>
         <Navbar></Navbar>
-        </ContainerFull>
-
-      <Outlet></Outlet>
+      </ContainerFull>
+      <div className="w-full" style={{ minHeight: "calc(100vh - 623px)" }}>
+        <Outlet></Outlet>
+      </div>
       <ContainerFull>
         <Footer></Footer>
       </ContainerFull>
     </>
-   
   );
 };
 

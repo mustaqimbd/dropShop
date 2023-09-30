@@ -1,6 +1,9 @@
-import { Button, Chip, TableCell, TableRow } from "@mui/material";
+import { Avatar, Button, Chip, TableCell, TableRow } from "@mui/material";
 
 const OrderTableCel = ({ row, index, singleOrderInfo }) => {
+  const createdAt = row.createdAt;
+  const isoDate = new Date(createdAt);
+
   return (
     <>
       <TableRow
@@ -14,6 +17,9 @@ const OrderTableCel = ({ row, index, singleOrderInfo }) => {
           <span className="text-caption font-bold"> {row?.order_id}</span>
         </TableCell>
         <TableCell component="th" scope="row">
+          <Avatar src={row?.productImage[0]} />
+        </TableCell>
+        <TableCell component="th" scope="row">
           <span className="text-caption font-bold">
             {row?.productName?.length > 30
               ? row?.productName.slice(0, 30) + "..."
@@ -22,11 +28,17 @@ const OrderTableCel = ({ row, index, singleOrderInfo }) => {
         </TableCell>
         <TableCell align="left">
           <span className="text-caption font-bold">
-            <span className="text-caption font-bold"> {row?.order_id}</span>
+            <span className="text-caption font-bold"> {row?.quantity}</span>
           </span>
         </TableCell>
         <TableCell align="left">
           <span className="text-caption font-bold"> $ {row?.total_price}</span>
+        </TableCell>
+        <TableCell align="left">
+          <span className="text-caption font-bold">
+            {" "}
+            {`${isoDate.getFullYear()}-${isoDate.getMonth()}-${isoDate.getDay()}`}
+          </span>
         </TableCell>
         <TableCell align="left">
           <Chip
