@@ -26,6 +26,8 @@ const trackOrder = async (req, res, next) => {
 
 const getOrderInfo = async (req, res, next) => {
   try {
+    const { skip = 0 } = req.query;
+    const limit = 20;
     const pipeline = [
       {
         $lookup: {
@@ -55,22 +57,34 @@ const getOrderInfo = async (req, res, next) => {
           order_id: 1,
           seller_info: {
             name: "$user_info.name",
-            profile_pic: "$user_info.profile_pic",
+            email: "$user_info.email",
           },
           customer_info: {
             name: "$customer_info.customer_name",
+            mobile: "$customer_info.mobile",
           },
           total_ordered_product: { $size: "$ordered_products" },
           status: 1,
           createdAt: 1,
         },
       },
+      {
+        $skip: parseInt(skip),
+      },
+      {
+        $limit: limit,
+      },
     ];
 
     const orders = await Order.aggregate(pipeline);
     return successResponse(res, {
       message: "Total orders.",
-      payload: { orders },
+      payload: {
+        skip: skip * limit,
+        limit: parseInt(limit),
+        length: orders.length,
+        orders,
+      },
     });
   } catch (error) {
     next(error);

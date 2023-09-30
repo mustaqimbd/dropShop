@@ -1,6 +1,6 @@
-import { Avatar, Button, Chip, TableCell, TableRow } from "@mui/material";
+import { Button, Chip, TableCell, TableRow } from "@mui/material";
 
-const OrderTableCel = ({ row, index, singleOrderInfo }) => {
+const OrderTableCel = ({ row, singleOrderInfo }) => {
   const createdAt = row.createdAt;
   const isoDate = new Date(createdAt);
 
@@ -11,28 +11,29 @@ const OrderTableCel = ({ row, index, singleOrderInfo }) => {
         sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
       >
         <TableCell component="th" scope="row">
-          <span className="text-caption font-bold"> {index + 1}</span>
-        </TableCell>
-        <TableCell component="th" scope="row">
           <span className="text-caption font-bold"> {row?.order_id}</span>
         </TableCell>
         <TableCell component="th" scope="row">
-          <Avatar src={row?.productImage[0]} />
+          <h2 className="text-caption font-bold text-lg">
+            {row?.seller_info?.name}
+          </h2>
+          <p className="text-caption font-bold">{row?.seller_info?.email}</p>
         </TableCell>
         <TableCell component="th" scope="row">
-          <span className="text-caption font-bold">
-            {row?.productName?.length > 30
-              ? row?.productName.slice(0, 30) + "..."
-              : row?.productName}
-          </span>
+          <h2 className="text-caption font-bold text-lg">
+            {row?.customer_info?.name}
+          </h2>
+          <p className="text-caption font-bold">
+            0{row?.customer_info?.mobile}
+          </p>
         </TableCell>
         <TableCell align="left">
           <span className="text-caption font-bold">
-            <span className="text-caption font-bold"> {row?.quantity}</span>
+            <span className="text-caption font-bold">
+              {" "}
+              {row?.total_ordered_product}
+            </span>
           </span>
-        </TableCell>
-        <TableCell align="left">
-          <span className="text-caption font-bold"> $ {row?.total_price}</span>
         </TableCell>
         <TableCell align="left">
           <span className="text-caption font-bold">

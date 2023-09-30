@@ -18,7 +18,7 @@ const Pagination2 = ({ orders, currentPage, setCurrentPage, totalPage }) => {
   return (
     <div className="py-3 flex justify-end mr-10 gap-3 items-center">
       <div>
-        {orders?.payload?.skip ? <span>{orders?.payload?.skip + 1}</span> : "0"}{" "}
+        {orders?.payload?.skip ? <span>{orders?.payload?.skip + 1}</span> : "0"}
         {" - "}
         {orders?.payload?.skip + orders?.payload?.limit ? (
           <span>{orders?.payload?.skip + orders?.payload?.limit}</span>
@@ -32,7 +32,7 @@ const Pagination2 = ({ orders, currentPage, setCurrentPage, totalPage }) => {
           disabled={currentPage < 1}
           className={`w-7 h-7  rounded-full  ${
             currentPage < 1
-              ? " text-gray-500 bg-gray-200"
+              ? " text-gray-500 bg-gray-200 cursor-not-allowed"
               : "text-gray-700 bg-gray-300"
           }`}
         >
@@ -43,7 +43,7 @@ const Pagination2 = ({ orders, currentPage, setCurrentPage, totalPage }) => {
           disabled={currentPage == totalPage - 1}
           className={`w-7 h-7 bg-gray-300 rounded-full  ${
             currentPage == totalPage - 1
-              ? " text-gray-500 bg-gray-200"
+              ? " text-gray-500 bg-gray-200 cursor-not-allowed"
               : "text-gray-700 bg-gray-300"
           }`}
         >

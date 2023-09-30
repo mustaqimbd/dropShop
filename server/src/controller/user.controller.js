@@ -1,7 +1,6 @@
 const User = require("../model/user.model");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-const generateUniqueId = require("generate-unique-id");
 const {
   accessTokenSecret,
   userRegisterSecret,
@@ -138,7 +137,7 @@ const loginUser = async (req, res, next) => {
           expiresIn: "2d",
         });
         res.cookie("token", token, {
-          domain: clientUrl,
+          domain: "localhost",
           path: "/",
           httpOnly: true,
           sameSite: "None",
