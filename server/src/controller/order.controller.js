@@ -1,4 +1,4 @@
-const OrdersAggregationPipeline = require("../helper/OrdersAggregationPipeline");
+const orderCalculationAggregation = require("../helper/orderCalculationAggregation");
 const Order = require("../model/order.model");
 const { successResponse } = require("./responseHandler");
 
@@ -11,10 +11,7 @@ const trackOrder = async (req, res, next) => {
           order_id: orderId,
         },
       },
-      ...OrdersAggregationPipeline(),
-      {
-        $limit: 1,
-      },
+      ...orderCalculationAggregation(),
     ];
     const orderDetails = await Order.aggregate(pipeline);
 
@@ -29,29 +26,51 @@ const trackOrder = async (req, res, next) => {
 
 const getOrderInfo = async (req, res, next) => {
   try {
-    const { skip: currentPage } = req.query;
-    const limit = 20;
     const pipeline = [
-      ...OrdersAggregationPipeline(),
       {
-        $sort: { createdAt: -1 },
+        $lookup: {
+          from: "users",
+          localField: "seller_id",
+          foreignField: "user_id",
+          as: "user_info",
+        },
       },
       {
-        $skip: currentPage * limit,
+        $unwind: "$user_info",
       },
       {
-        $limit: limit,
+        $lookup: {
+          from: "customers",
+          localField: "customer_id",
+          foreignField: "customer_id",
+          as: "customer_info",
+        },
+      },
+      {
+        $unwind: "$customer_info",
+      },
+      {
+        $project: {
+          _id: 0,
+          order_id: 1,
+          seller_info: {
+            name: "$user_info.name",
+            profile_pic: "$user_info.profile_pic",
+          },
+          customer_info: {
+            name: "$customer_info.customer_name",
+          },
+          total_ordered_product: { $size: "$ordered_products" },
+          status: 1,
+          createdAt: 1,
+        },
       },
     ];
+
     const orders = await Order.aggregate(pipeline);
     return successResponse(res, {
       message: "Total orders.",
-      payload: {
-        skip: currentPage * limit,
-        limit: limit,
-        length: orders.length,
-        orders,
-      },
+      payload: { orders },
     });
   } catch (error) {
     next(error);

@@ -6,43 +6,25 @@ const orderSchema = new mongoose.Schema(
       type: String,
       unique: true,
       required: true,
+      default: `OID-${Date.now()}`,
     },
-    product_name: {
-      type: String,
-      required: true,
-    },
-    product_slug: {
-      type: String,
-      required: true,
-    },
-    quantity: {
-      type: Number,
-      required: true,
-    },
-    unit_price: {
-      type: Number,
-      required: true,
-    },
-    total_price: {
-      type: Number,
-      required: true,
-    },
-    advanced_from_customer: {
-      type: Number,
-      required: true,
-    },
-    product_slug: {
-      type: String,
-      required: true,
-    },
-    seller_id: {
-      type: String,
-      required: true,
-    },
-    customer_id: {
-      type: String,
-      required: true,
-    },
+    ordered_products: [
+      {
+        product_slug: String,
+        quantity: Number,
+        advanced: Number,
+      },
+      {
+        product_slug: String,
+        quantity: Number,
+        advanced: Number,
+      },
+      {
+        product_slug: String,
+        quantity: Number,
+        advanced: Number,
+      },
+    ],
     status: {
       type: String,
       default: "pending",
@@ -54,11 +36,34 @@ const orderSchema = new mongoose.Schema(
         "completed",
         "canceled",
       ],
+      required: true,
+    },
+
+    delivery_charge: {
+      type: Number,
+      required: true,
+    },
+    completed_date: {
+      type: Date,
+      validate: {
+        validator: function (value) {
+          return value === null || value instanceof Date;
+        },
+        message: "Only Date or null values are allowed for completed_date",
+      },
+    },
+    seller_id: {
+      type: String,
+      required: true,
+    },
+    customer_id: {
+      type: String,
+      required: true,
     },
   },
   { timestamps: true }
 );
 
-const Order = mongoose.model("Order", orderSchema);
+const OrderModel = mongoose.model("Order", orderSchema);
 
-module.exports = Order;
+module.exports = OrderModel;

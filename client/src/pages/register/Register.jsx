@@ -25,6 +25,7 @@ const Register = () => {
   const password = watch("password", "");
 
   const onSubmit = async data => {
+    setRegisterError("");
     setServerValidationErr("");
     setLoading(true);
     try {
@@ -56,7 +57,7 @@ const Register = () => {
     <ContainerFull>
       <div className="bg-iconBg py-10">
         <ContainerMax>
-          <div className="flex w-5/6 justify-between items-center  p-20  mx-auto">
+          <div className="flex w-5/6 justify-between items-center p-20  mx-auto">
             <div className="flex-1 h-full ">
               <div className=" w-5/6 ">
                 <h1 className="text-2xl text-center font-semibold font-sans">
@@ -107,6 +108,25 @@ const Register = () => {
                       className="shadow appeara6ce-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                       placeholder="Your Email"
                       type="email"
+                    />
+                  </div>
+
+                  <div>
+                    <label
+                      className="block text-gray-700 text-sm font-bold mb-2"
+                      htmlFor="email"
+                    >
+                      Phone No.
+                    </label>
+                    <input
+                      autoComplete="phone"
+                      required
+                      name="phone"
+                      {...register("phone", { required: true })}
+                      id="email"
+                      className="shadow appeara6ce-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      placeholder="Your Email"
+                      type="number"
                     />
                   </div>
 
