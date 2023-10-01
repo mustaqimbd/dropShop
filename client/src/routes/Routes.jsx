@@ -34,6 +34,7 @@ import ResellerRoute from "./ResellerRoute/ResellerRoute";
 import NeedHelp from "../pages/NeedHelp/NeedHelp";
 import ForgotPassword from "../pages/ForgotPassword/ForgotPassword";
 import ResetPassword from "../pages/ResetPassword/ResetPassword";
+import SingleOrderDetails from "../pages/Dashboard/Admin/Orders/SingleOrderDetails";
 import Info from "../pages/Dashboard/DropShipper/Profile/Info";
 import Settings from "../pages/Dashboard/DropShipper/Profile/settings";
 
@@ -156,6 +157,10 @@ export const router = createBrowserRouter([
           {
             path: "orders",
             element: <Orders />,
+          },
+          {
+            path: "order/:id",
+            element: <SingleOrderDetails />,
           },
         ],
       },

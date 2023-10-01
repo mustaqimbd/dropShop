@@ -13,16 +13,7 @@ const orderSchema = new mongoose.Schema(
         product_slug: String,
         quantity: Number,
         advanced: Number,
-      },
-      {
-        product_slug: String,
-        quantity: Number,
-        advanced: Number,
-      },
-      {
-        product_slug: String,
-        quantity: Number,
-        advanced: Number,
+        unit_price: Number,
       },
     ],
     status: {

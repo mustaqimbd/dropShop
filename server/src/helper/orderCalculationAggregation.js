@@ -54,6 +54,7 @@ const orderCalculationAggregation = () => [
       },
       seller_info: { $first: "$seller_info" },
       customer_info: { $first: "$customer_info" },
+      createdDate: { $first: "$createdAt" },
     },
   },
   {
@@ -71,12 +72,15 @@ const orderCalculationAggregation = () => [
       delivery_charge: "$order_info.delivery_charge",
       subtotal: "$order_info.subtotal",
       products: 1,
+      createdAt: "$createdDate",
       seller_info: {
         name: { $arrayElemAt: ["$seller_info.name", 0] },
+        email: { $arrayElemAt: ["$seller_info.email", 0] },
         profile_pic: { $arrayElemAt: ["$seller_info.profile_pic", 0] },
       },
       customer_info: {
         name: { $arrayElemAt: ["$customer_info.customer_name", 0] },
+        mobile: { $arrayElemAt: ["$customer_info.mobile", 0] },
         address: { $arrayElemAt: ["$customer_info.address", 0] },
       },
     },
