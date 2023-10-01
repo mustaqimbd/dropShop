@@ -25,7 +25,7 @@ const RecentOrders = () => {
   const rows = recentOrders?.payload?.orders;
   return (
     <>
-      <div className="shadow-md rounded-md p-2 md:p-5 mx-2 mt-5 bg-white">
+      <div className="shadow-md rounded-md p-2 md:p-5 mt-5 bg-white">
         <h2 className="dashboard-title">Recent orders </h2>
         <Divider style={{ marginBottom: "20px" }} />
         <TableContainer component={Paper}>

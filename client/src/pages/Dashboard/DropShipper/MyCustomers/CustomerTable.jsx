@@ -10,6 +10,7 @@ import {
   ShoppingCartCheckoutOutlined,
   ModeEditOutline,
 } from "@mui/icons-material";
+import { Divider } from "@mui/material";
 
 function createData(customer, company, spend, orders, email, phone) {
   return { customer, company, spend, orders, email, phone };
@@ -36,17 +37,17 @@ const rows = [
 
 const CustomerTable = () => {
   return (
-    <TableContainer component={Paper}>
+    <TableContainer elevation={0} component={Paper}>
       <Table sx={{ minWidth: 1100 }} aria-label="caption table">
         <TableHead>
           <TableRow>
-            <TableCell align="center">Customer</TableCell>
-            <TableCell align="center">Company</TableCell>
-            <TableCell align="center">Total Spend</TableCell>
-            <TableCell align="center">Number of orders</TableCell>
-            <TableCell align="center">Email</TableCell>
-            <TableCell align="center">Phone</TableCell>
-            <TableCell align="center">Action</TableCell>
+            <TableCell align="center" style={{ fontWeight: "bold" }}>Customer</TableCell>
+            <TableCell align="center" style={{ fontWeight: "bold" }}>Company</TableCell>
+            <TableCell align="center" style={{ fontWeight: "bold" }}>Total Spend</TableCell>
+            <TableCell align="center" style={{ fontWeight: "bold" }}>Number of orders</TableCell>
+            <TableCell align="center" style={{ fontWeight: "bold" }}>Email</TableCell>
+            <TableCell align="center" style={{ fontWeight: "bold" }}>Phone</TableCell>
+            <TableCell align="center" style={{ fontWeight: "bold" }}>Action</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -56,7 +57,7 @@ const CustomerTable = () => {
               sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
             >
               <TableCell>
-              <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2">
                   <span className="text-[#2DA5F3] bg-[#deebf3] p-3 rounded-full">
                     {row.customer.split(" ")[0].charAt(0) &&
                     row.customer.split(" ")[1]?.charAt(0) &&
@@ -74,22 +75,22 @@ const CustomerTable = () => {
                 </div>
               </TableCell>
               <TableCell>{row.company}</TableCell>
-              <TableCell>{row.spend} ৳</TableCell>
+              <TableCell align="center">{row.spend} ৳</TableCell>
               <TableCell align="center">{row.orders}</TableCell>
               <TableCell>{row.email}</TableCell>
               <TableCell>{row.phone}</TableCell>
               <TableCell>
-                <div className="flex gap-3 items-center text-white ">
+                <div className="flex justify-center gap-3 items-center text-white ">
                   <Link className="bg-[#83B735] px-2 py-1 text-sm rounded flex items-center gap-1">
                     <span>
-                      <ShoppingCartCheckoutOutlined fontSize="small"/>
+                      <ShoppingCartCheckoutOutlined fontSize="small" />
                     </span>
                     <span>Shop as Customer</span>
                   </Link>
 
                   <button className="text-[#2DA5F3] px-2 py-1 rounded text-sm flex items-center gap-1 font-bold">
                     <span>
-                      <ModeEditOutline fontSize="small"/>
+                      <ModeEditOutline fontSize="small" />
                     </span>
                     <span>Edit</span>
                   </button>
@@ -99,6 +100,7 @@ const CustomerTable = () => {
           ))}
         </TableBody>
       </Table>
+      <Divider />
     </TableContainer>
   );
 };

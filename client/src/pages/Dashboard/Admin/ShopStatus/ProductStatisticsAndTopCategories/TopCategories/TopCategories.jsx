@@ -28,7 +28,7 @@ const TopCategories = () => {
       </div>
       <Divider />
       <div className="mt-5 space-y-5">
-        {topCategories?.map(category => (
+        {topCategories?.map((category) => (
           <div key={category._id} className="grid grid-cols-6">
             <div className="w-14 h-14 bg-borderColor flex justify-center items-center rounded-full cursor-pointer">
               <img

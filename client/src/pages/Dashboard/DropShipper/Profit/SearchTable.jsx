@@ -5,18 +5,27 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
+import { Divider } from "@mui/material";
 
-function createData(_id,orders, date, status, customer, purchased, total) {
-  return { _id,orders, date, status, customer, purchased, total };
+function createData(_id, orders, date, status, customer, purchased, total) {
+  return { _id, orders, date, status, customer, purchased, total };
 }
 
 const rows = [
-  createData('387363838',"#67uUY", "24/9/2023", "Pending", "Mustaqim khan Mustaqim", 400, 500),
+  createData(
+    "387363838",
+    "#67uUY",
+    "24/9/2023",
+    "Pending",
+    "Mustaqim khan Mustaqim",
+    400,
+    500
+  ),
 ];
 
 const SearchTable = () => {
   return (
-    <TableContainer component={Paper}>
+    <TableContainer elevation={0} component={Paper}>
       <Table sx={{ minWidth: 950 }} aria-label="caption table">
         <TableHead>
           <TableRow>
@@ -97,6 +106,7 @@ const SearchTable = () => {
           ))}
         </TableBody>
       </Table>
+      <Divider />
     </TableContainer>
   );
 };
