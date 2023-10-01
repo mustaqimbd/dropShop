@@ -5,6 +5,7 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
+import { Divider } from "@mui/material";
 
 function createData(_id, orders, date, status, customer, purchased, total) {
   return { _id, orders, date, status, customer, purchased, total };
@@ -33,16 +34,16 @@ const rows = [
 
 const ProfitTable = () => {
   return (
-    <TableContainer component={Paper}>
+    <TableContainer elevation={0} component={Paper}>
       <Table sx={{ minWidth: 700 }} aria-label="caption table">
         <TableHead>
           <TableRow>
-            <TableCell>Order</TableCell>
-            <TableCell>Date</TableCell>
-            <TableCell>Profit&apos;s Status</TableCell>
-            <TableCell>Customer</TableCell>
-            <TableCell>Purchased</TableCell>
-            <TableCell>Total Order</TableCell>
+            <TableCell style={{ fontWeight: "bold" }}>Order</TableCell>
+            <TableCell style={{ fontWeight: "bold" }}>Date</TableCell>
+            <TableCell style={{ fontWeight: "bold" }}>Profit&apos;s Status</TableCell>
+            <TableCell style={{ fontWeight: "bold" }}>Customer</TableCell>
+            <TableCell style={{ fontWeight: "bold" }}>Purchased</TableCell>
+            <TableCell style={{ fontWeight: "bold" }}>Total Order</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -78,6 +79,7 @@ const ProfitTable = () => {
           ))}
         </TableBody>
       </Table>
+      <Divider />
     </TableContainer>
   );
 };

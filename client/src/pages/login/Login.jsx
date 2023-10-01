@@ -21,7 +21,7 @@ const Login = () => {
       return navigate("/");
     }
   }, [user, navigate]);
-  const onSubmit = async data => {
+  const onSubmit = async (data) => {
     setLoginError("");
     try {
       const res = await axiosSecure.post(
@@ -40,16 +40,16 @@ const Login = () => {
     <ContainerFull>
       <div className="bg-iconBg py-16">
         <ContainerMax>
-          <div className="flex flex-row-reverse w-5/6 justify-between items-center gap-20  p-20  mx-auto">
+          <div className="flex flex-row-reverse items-center gap-20  mt-10 mb-20  mx-auto">
             <div className="flex-1 h-full ">
-              <div className=" w-5/6 ">
+              <div className="  ">
                 <img className="3/4 h-fit " src={loginBg} alt="" />
               </div>
             </div>
             <div className="flex-1 rounded-md  ">
-              <div className="flex  justify-center">
+              <div className="flex  justify-end">
                 <form
-                  className="space-y-2 w-5/6 shadow-md bg-white p-16 rounded-md"
+                  className="space-y-2  shadow-md bg-white p-16 rounded-md"
                   onSubmit={handleSubmit(onSubmit)}
                 >
                   <div>
@@ -115,8 +115,8 @@ const Login = () => {
                   <div className="flex justify-center my-4">
                     <Link to="/forgot-password">Forgot password ?</Link>
                   </div>
-                  <div className="flex gap-3">
-                    <p>Haven't any account ? </p>
+                  <div className="flex gap-3 justify-center">
+                    <p>Don't have an account ? </p>
                     <NavLink className="text-priceText " to={"/register"}>
                       Register Now
                     </NavLink>

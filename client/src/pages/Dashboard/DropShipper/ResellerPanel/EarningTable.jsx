@@ -5,6 +5,7 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
+import { Divider } from "@mui/material";
 
 function createData(orderId, customer, date, amount, protein) {
   return { orderId, customer, date, amount, protein };
@@ -17,20 +18,18 @@ const rows = [
 
 const EarningTable = () => {
   return (
-    <TableContainer component={Paper}>
+    <TableContainer elevation={0} component={Paper}>
+      <h3 className="text-center font-bold text-xl py-2 border-b border-gray-200">
+        Resent Earning
+      </h3>
       <Table sx={{ minWidth: 750 }} aria-label="customized table">
         <TableHead>
           <TableRow>
-            <TableCell>
-              <h3 className="font-bold">Resent Earning</h3>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell>Order Id</TableCell>
-            <TableCell>Customer</TableCell>
-            <TableCell>Date</TableCell>
-            <TableCell>Amount</TableCell>
-            <TableCell>Protein</TableCell>
+            <TableCell style={{ fontWeight: "bold" }}>Order Id</TableCell>
+            <TableCell style={{ fontWeight: "bold" }}>Customer</TableCell>
+            <TableCell style={{ fontWeight: "bold" }}>Date</TableCell>
+            <TableCell style={{ fontWeight: "bold" }}>Amount</TableCell>
+            <TableCell style={{ fontWeight: "bold" }}>Protein</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -41,7 +40,7 @@ const EarningTable = () => {
             >
               <TableCell>{row.orderId}</TableCell>
               <TableCell>
-              <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2">
                   <span className="text-[#2DA5F3] bg-[#deebf3] p-3 rounded-full">
                     {row.customer.split(" ")[0].charAt(0) &&
                     row.customer.split(" ")[1]?.charAt(0) &&
@@ -65,6 +64,7 @@ const EarningTable = () => {
           ))}
         </TableBody>
       </Table>
+      <Divider />
     </TableContainer>
   );
 };

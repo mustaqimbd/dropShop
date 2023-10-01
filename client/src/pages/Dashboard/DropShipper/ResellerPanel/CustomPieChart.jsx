@@ -12,7 +12,8 @@ const CustomPieChart = () => {
       colors={["green", "yellow", "red"]}
       series={[{ data }]}
       width={300}
-      height={150}
+      height={180}
+      legend={{ align: "none" }}
     />
   );
 };

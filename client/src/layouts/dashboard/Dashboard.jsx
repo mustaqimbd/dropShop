@@ -29,7 +29,7 @@ import {
   LoginOutlined,
   PeopleAltOutlined,
 } from "@mui/icons-material";
-import { Link, Outlet } from "react-router-dom";
+import { Link, Navigate, Outlet, useLocation } from "react-router-dom";
 import {
   Avatar,
   Button,
@@ -48,6 +48,8 @@ const Dashboard = (props) => {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
+  const path = useLocation().pathname;
+  
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
@@ -77,6 +79,7 @@ const Dashboard = (props) => {
       <List>
         {user?.role === "admin" ? (
           <>
+            {path === "/dashboard" && <Navigate to="/dashboard/admin/status" />}
             <ListItem style={{ padding: 0 }}>
               <ActiveLink to="/dashboard/admin/status">
                 <ListItemButton>
@@ -154,6 +157,9 @@ const Dashboard = (props) => {
         )}
         {user?.role === "reseller" ? (
           <>
+            {path === "/dashboard" && (
+              <Navigate to="/dashboard/dropshipper/reseller" />
+            )}
             <ListItem style={{ padding: 0 }}>
               <ActiveLink to="/dashboard/dropshipper/reseller">
                 <ListItemButton>
@@ -232,12 +238,15 @@ const Dashboard = (props) => {
       <AppBar
         bgcolor="customColors.iconBg"
         position="fixed"
+        elevation={0}
         sx={{
           width: { sm: `calc(100% - ${drawerWidth}px)` },
           ml: { sm: `${drawerWidth}px` },
         }}
       >
-        <Toolbar style={{ background: "#fff" }}>
+        <Toolbar
+          style={{ background: "#fff", borderBottom: "1px solid #E0E0E0" }}
+        >
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -368,7 +377,9 @@ const Dashboard = (props) => {
         }}
       >
         <Toolbar />
-        <Outlet />
+        <div className="bg-[#F3F3F9] p-5 min-h-[calc(100vh-65px)]">
+          <Outlet />
+        </div>
       </Box>
     </Box>
   );

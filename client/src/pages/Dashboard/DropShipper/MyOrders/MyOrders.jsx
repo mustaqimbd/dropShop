@@ -2,6 +2,7 @@ import { FileDownload } from "@mui/icons-material";
 import TablePagination from "../MyCustomers/TablePagination";
 import { Link } from "react-router-dom";
 import OrderTable from "./OrderTable";
+import SearchTable from "../Profit/SearchTable";
 
 const MyOrders = () => {
   return (
@@ -14,7 +15,7 @@ const MyOrders = () => {
             minus.
           </p>
           <div className="mt-3">
-            <Link className="bg-[#83B735] px-2 py-1 rounded">
+            <Link className="text-white bg-[#83B735] px-2 py-1 rounded">
               Track Your customer orders
             </Link>
           </div>
@@ -22,8 +23,9 @@ const MyOrders = () => {
 
         <div className="flex items-center relative w-[30%]">
           <input
-            className="w-full p-2 rounded-md outline-none border border-gray-300"
-            type="text" placeholder="Search Order..."
+            className="w-full p-2 rounded-md outline-[#83B735] border border-gray-300"
+            type="text"
+            placeholder="Search Order..."
           />
           <span className="absolute right-4">
             <svg
@@ -66,6 +68,7 @@ const MyOrders = () => {
         </button>
       </div>
       <OrderTable />
+      <SearchTable />
       <div className="mt-5">
         <TablePagination />
       </div>
