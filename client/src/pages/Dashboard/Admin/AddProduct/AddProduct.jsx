@@ -1,8 +1,10 @@
+import SingleProduct from "./SingleProduct/SingleProduct";
+
 const AddProduct = () => {
   return (
-    <>
-      <h2>from add product</h2>
-    </>
+    <div className="flex justify-between ">
+      <SingleProduct />
+    </div>
   );
 };
 

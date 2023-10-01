@@ -14,17 +14,19 @@ const registerRequestEmailData = require("../helper/registerRequestEmailData");
 const emailWithNodeMailer = require("../helper/email");
 const createErrors = require("http-errors");
 const forgotPasswordEmailData = require("../helper/forgotPasswordEmailData");
+const uniqueID = require("../helper/uniqueID");
 
 //process register
 const requestRegister = async (req, res, next) => {
   try {
-    const { name, email, password } = req.body;
+    const { name, email, password, phone } = req.body;
     const user = await User.findOne({ email });
     if (user) return errorResponse(res, 409, "Email is already registered.");
     const payload = {
       name,
       email,
       password,
+      phone,
     };
     const token = jwt.sign(payload, userRegisterSecret, { expiresIn: "10m" });
     const emailInfo = registerRequestEmailData(email, name, token);
@@ -52,11 +54,11 @@ const registerNewUser = async (req, res, next) => {
     const user = await User.findOne({ email: decoded.email });
     if (user) throw createErrors(400, "Email already registered.");
     const hash = await bcrypt.hash(decoded.password, 10);
-    const user_id = generateUniqueId({ length: 15 });
-    console.log(user_id);
+    const user_id = uniqueID("UID");
     await User.create({
-      full_name: decoded.name,
+      name: decoded.name,
       email: decoded.email,
+      phone: decoded.phone,
       password: hash,
       user_id,
     });
@@ -73,6 +75,47 @@ const registerNewUser = async (req, res, next) => {
         )
       );
     }
+    next(error);
+  }
+};
+
+//update user
+const updateUserProfile = async (req, res, next) => {
+  try {
+    const userId = req.user._id; // Get user ID from request parameters
+    const updatedUserData = req.body; // Get updated user data from request body
+
+    // Find the user by ID
+    const user = req.user;
+    // If the user doesn't exist, return an error
+    if (!user) {
+      throw createErrors(404, "User not found.");
+    }
+    const result = await User.updateOne(
+      { _id: userId },
+      {
+        $set: {
+          name: updatedUserData.name || user.name,
+          email: updatedUserData.email || user.email,
+          logo: updatedUserData.logo || user.logo || "",
+          signUpFee: updatedUserData.signUpFee || user.signUpFee || "unpaid",
+          mobile: updatedUserData.mobile || user.mobile,
+          address: updatedUserData.address || user.address,
+          district: updatedUserData.district || user.district,
+          shopName: updatedUserData.shopName || user.shopName,
+          webOrPageLink: updatedUserData.webOrPageLink || user.webOrPageLink,
+          // Update other fields as needed
+        },
+      },
+      { upsert: true } // Create a new user if it doesn't exist
+    );
+
+    return successResponse(res, {
+      statusCode: 200,
+      message: "User information updated successfully.",
+      payload: { updatedUserInfo: result }, // Optionally, you can send back the result of the update operation
+    });
+  } catch (error) {
     next(error);
   }
 };
@@ -226,6 +269,7 @@ module.exports = {
   registerNewUser,
   loginUser,
   userProfile,
+  updateUserProfile,
   logOutUser,
   changePassword,
   forgotPassword,

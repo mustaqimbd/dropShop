@@ -153,7 +153,7 @@ const AddProperty = () => {
           </Grid>
         </Grid>
 
-        <div className="mt-4">
+        {/* <div className="mt-4">
           {properties.map((property, index) => (
             <div key={index} className="flex items-center space-x-2 mt-2">
               <div>{`${property.name}: ${property.values.join(", ")}`}</div>
@@ -166,7 +166,7 @@ const AddProperty = () => {
               </Button>
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
     </Paper>
   );

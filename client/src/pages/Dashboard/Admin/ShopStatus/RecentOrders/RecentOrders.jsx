@@ -9,35 +9,20 @@ import {
   TableHead,
   TableRow,
 } from "@mui/material";
-import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
-import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import { useState } from "react";
-import useRecentOrder from "../../../../../hooks/useRecentOrder";
-import useGetRequest from "../../../../../hooks/useGetRequest";
+import useOrders from "../../../../../hooks/useOrders";
+import Pagination2 from "../../../../../components/Pagination2/Pagination2";
+import useTotalOrders from "../../../../../hooks/useTotalOrders";
 
 const RecentOrders = () => {
   const [currentPage, setCurrentPage] = useState(0);
-  const { recentOrders } = useRecentOrder(currentPage);
-  const totalOrders = useGetRequest(
-    "totalOrders",
-    "admin/dashboard/total-orders"
+  const { data: recentOrders } = useOrders(
+    "api/admin/dashboard/recent-orders",
+    currentPage
   );
+  const totalOrders = useTotalOrders();
   const totalPage = Math.ceil(totalOrders?.data?.payload?.totalOrderCount / 5);
   const rows = recentOrders?.payload?.orders;
-
-  const handleCurrentPage = increase => {
-    if (increase) {
-      if (currentPage == totalPage - 1) {
-        return;
-      }
-      return setCurrentPage(currentPage + 1);
-    } else {
-      if (currentPage < 1) {
-        return;
-      }
-      return setCurrentPage(currentPage - 1);
-    }
-  };
   return (
     <>
       <div className="shadow-md rounded-md p-2 md:p-5 mt-5 bg-white">
@@ -57,32 +42,46 @@ const RecentOrders = () => {
             <TableBody>
               {rows?.map(row => (
                 <TableRow
-                  key={row._id}
+                  key={row?.order_id}
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
                   <TableCell component="th" scope="row">
-                    {row._id.slice(row._id.length - 10)}
+                    <span className="font-semibold text-caption">
+                      {row?._id?.slice(row?._id?.length - 10)}
+                    </span>
                   </TableCell>
                   <TableCell align="left">
-                    {row.product_name.length > 30
-                      ? row.product_name.slice(0, 30) + "..."
-                      : row.product_name}
+                    <span className="text-caption font-bold">
+                      {row?.product_name?.length > 30
+                        ? row?.product_name?.slice(0, 30) + "..."
+                        : row?.product_name}
+                    </span>
                   </TableCell>
-                  <TableCell align="left">{row.quantity}</TableCell>
-                  <TableCell align="left">$ {row.total_price}</TableCell>
+                  <TableCell align="left">
+                    <span className="font-semibold">{row?.quantity}</span>
+                  </TableCell>
+                  <TableCell align="left">
+                    <span className="font-semibold text-caption">
+                      $ {row?.total_price}
+                    </span>
+                  </TableCell>
                   <TableCell align="left">
                     <Chip
                       label={row.status}
                       style={{
                         background: `${
-                          row.status === "completed"
+                          row?.status === "shifted"
                             ? "#29cc97"
                             : row.status === "pending"
                             ? "#fec400"
-                            : row.status === "on the way"
+                            : row.status === "picked by currier"
                             ? "#4c84ff"
                             : row.status === "canceled"
                             ? "#fe5461"
+                            : row.status === "completed"
+                            ? "#2DB224"
+                            : row.status === "processing"
+                            ? "#FA8232"
                             : ""
                         }`,
                         color: "#fff",
@@ -94,47 +93,12 @@ const RecentOrders = () => {
             </TableBody>
           </Table>
           <Divider />
-          <div className="py-3 flex justify-end mr-10 gap-3 items-center">
-            <div>
-              {recentOrders?.payload?.skip ? (
-                <span>{recentOrders?.payload?.skip + 1}</span>
-              ) : (
-                "0"
-              )}{" "}
-              {" - "}
-              {recentOrders?.payload?.skip + recentOrders?.payload?.limit ? (
-                <span>
-                  {recentOrders?.payload?.skip + recentOrders?.payload?.limit}
-                </span>
-              ) : (
-                ""
-              )}
-            </div>
-            <div className="flex gap-4">
-              <button
-                onClick={() => handleCurrentPage(false)}
-                disabled={currentPage < 1}
-                className={`w-7 h-7  rounded-full  ${
-                  currentPage < 1
-                    ? " text-gray-500 bg-gray-200"
-                    : "text-gray-700 bg-gray-300"
-                }`}
-              >
-                <KeyboardArrowLeftIcon />
-              </button>
-              <button
-                onClick={() => handleCurrentPage(true)}
-                disabled={currentPage == totalPage - 1}
-                className={`w-7 h-7 bg-gray-300 rounded-full  ${
-                  currentPage == totalPage - 1
-                    ? " text-gray-500 bg-gray-200"
-                    : "text-gray-700 bg-gray-300"
-                }`}
-              >
-                <KeyboardArrowRightIcon />
-              </button>
-            </div>
-          </div>
+          <Pagination2
+            orders={recentOrders}
+            setCurrentPage={setCurrentPage}
+            currentPage={currentPage}
+            totalPage={totalPage}
+          />
         </TableContainer>
       </div>
     </>

@@ -1,8 +1,7 @@
 import ContainerFull from "../../components/container/ContainerFull";
 import ContainerMax from "../../components/container/ContainerMax";
 import { useForm } from "react-hook-form";
-import toast, { Toaster } from "react-hot-toast";
-import registeImg from "../../assets/images/registerPage.png";
+import registerImg from "../../assets/images/registerPage.png";
 import { NavLink, useNavigate } from "react-router-dom";
 import useAuthProvider from "../../hooks/useAuthProvider";
 import { useRef, useState } from "react";
@@ -13,6 +12,7 @@ const Register = () => {
   const confirmPasswordFieldRef = useRef();
   const [serverValidationErr, setServerValidationErr] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [registerError, setRegisterError] = useState("");
   const navigate = useNavigate();
   const [axiosSecure] = useAxiosSecure();
   const {
@@ -24,7 +24,12 @@ const Register = () => {
 
   const password = watch("password", "");
 
+<<<<<<< HEAD
   const onSubmit = async (data) => {
+=======
+  const onSubmit = async data => {
+    setRegisterError("");
+>>>>>>> 57abe15c5458a2858c67def4ab6fb705650e4614
     setServerValidationErr("");
     setLoading(true);
     try {
@@ -35,7 +40,7 @@ const Register = () => {
       if (error.response.data.message === "Validation error.") {
         setServerValidationErr(error.response.data.errors);
       } else {
-        toast.error(error.response.data.message);
+        setRegisterError(error.response.data.message);
       }
       setLoading(false);
     }
@@ -56,6 +61,7 @@ const Register = () => {
     <ContainerFull>
       <div className="bg-iconBg py-10">
         <ContainerMax>
+<<<<<<< HEAD
           <div className="flex gap-10 justify-center items-center mt-10 mb-20 mx-auto">
             <div className="flex-1 flex justify-end">
               <div>
@@ -63,6 +69,16 @@ const Register = () => {
                   Register to Create Account
                 </h1>
                 <img className="3/4 " src={registeImg} alt="" />
+=======
+          <div className="flex w-5/6 justify-between items-center p-20  mx-auto">
+            <div className="flex-1 h-full ">
+              <div className=" w-5/6 ">
+                <h1 className="text-2xl text-center font-semibold font-sans">
+                  Register to Create Account
+                </h1>
+
+                <img className="3/4 " src={registerImg} alt="" />
+>>>>>>> 57abe15c5458a2858c67def4ab6fb705650e4614
               </div>
             </div>
             <div className="flex-1">
@@ -108,6 +124,7 @@ const Register = () => {
                   />
                 </div>
 
+<<<<<<< HEAD
                 <div>
                   <label
                     className="block text-gray-700 text-sm font-bold mb-2"
@@ -171,6 +188,96 @@ const Register = () => {
                     {loading ? "Registering..." : "Register Now"}
                   </button>
                 </div>
+=======
+                  <div>
+                    <label
+                      className="block text-gray-700 text-sm font-bold mb-2"
+                      htmlFor="email"
+                    >
+                      Phone No.
+                    </label>
+                    <input
+                      autoComplete="phone"
+                      required
+                      name="phone"
+                      {...register("phone", { required: true })}
+                      id="email"
+                      className="shadow appeara6ce-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      placeholder="Your Email"
+                      type="number"
+                    />
+                  </div>
+
+                  <div>
+                    <label
+                      className="block text-gray-700 text-sm font-bold mb-2"
+                      htmlFor="password"
+                    >
+                      Password
+                    </label>
+                    <input
+                      autoComplete="new-password"
+                      placeholder="Enter Password"
+                      name="password"
+                      onBlur={handleConfirmPasswordBlur}
+                      {...register("password", {
+                        required: "Password is required",
+                        minLength: {
+                          value: 8,
+                          message:
+                            "Password must be at least 8 characters long",
+                        },
+                      })}
+                      id="password"
+                      className="shadow appeara6ce-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      type="password"
+                    />
+                    {errors.password && (
+                      <p className="text-gray-500">{errors.password.message}</p>
+                    )}
+                  </div>
+
+                  <div className="mb-10">
+                    <label
+                      className="block text-gray-700 text-sm font-bold mb-2"
+                      htmlFor="confirmPassword"
+                    >
+                      Confirm Password
+                    </label>
+                    <input
+                      ref={confirmPasswordFieldRef}
+                      autoComplete="new-password"
+                      name="confirmPassword"
+                      onBlur={handleConfirmPasswordBlur}
+                      id="confirmPassword"
+                      className="shadow appeara6ce-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      type="password"
+                      placeholder=" Enter Confirm Password"
+                    />
+                  </div>
+                  {serverValidationErr.length
+                    ? serverValidationErr.map((item, index) => (
+                        <p key={index} className="text-hotBadge font-bold">
+                          <span>{index + 1}. </span>
+                          {item}
+                        </p>
+                      ))
+                    : ""}
+                  {registerError ? (
+                    <h2 className="text-hotBadge font-bold">{registerError}</h2>
+                  ) : (
+                    ""
+                  )}
+                  <div className=" py-4">
+                    <button
+                      className="bg-primary px-6 text-white w-full rounded-md py-3 text-xl"
+                      type="submit"
+                      disabled={loading}
+                    >
+                      {loading ? "Registering..." : "Register Now"}
+                    </button>
+                  </div>
+>>>>>>> 57abe15c5458a2858c67def4ab6fb705650e4614
 
                 <div className="flex gap-3 justify-center">
                   <p>Already have an account ? </p>{" "}
@@ -183,7 +290,6 @@ const Register = () => {
           </div>
         </ContainerMax>
       </div>
-      <Toaster position="top-center" reverseOrder={false} />
     </ContainerFull>
   );
 };

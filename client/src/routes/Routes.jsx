@@ -22,6 +22,8 @@ import Orders from "../pages/Dashboard/Admin/Orders/Orders";
 import ShopStatus from "../pages/Dashboard/Admin/ShopStatus/ShopStatus";
 import TrackOrder from "../pages/TrackOrder/TrackOrder";
 import ProductsByCategory from "../pages/products/ArchiveProducts/ProductsByCategory";
+import JoinAsDropshipper from "../pages/joinAsDropshiper/JoinAsDropshipper";
+import JoiningPayDropshipper from "../pages/joinAsDropshiper/JoiningPayDropshipper";
 import Reseller from "../pages/Dashboard/DropShipper/ResellerPanel/Reseller";
 import MyCustomers from "../pages/Dashboard/DropShipper/MyCustomers/MyCustomers";
 import MyOrders from "../pages/Dashboard/DropShipper/MyOrders/MyOrders";
@@ -31,6 +33,7 @@ import Profile from "../pages/Dashboard/DropShipper/Profile/Profile";
 import ResellerRoute from "./ResellerRoute/ResellerRoute";
 import NeedHelp from "../pages/NeedHelp/NeedHelp";
 import ForgotPassword from "../pages/ForgotPassword/ForgotPassword";
+import ResetPassword from "../pages/ResetPassword/ResetPassword";
 import Info from "../pages/Dashboard/DropShipper/Profile/Info";
 import Settings from "../pages/Dashboard/DropShipper/Profile/settings";
 
@@ -68,6 +71,10 @@ export const router = createBrowserRouter([
         element: <ForgotPassword />,
       },
       {
+        path: "/reset-password",
+        element: <ResetPassword />,
+      },
+      {
         path: "/accounts/verify",
         element: <VerifyAccounts />,
       },
@@ -83,6 +90,22 @@ export const router = createBrowserRouter([
       {
         path: "/track-order",
         element: <TrackOrder />,
+      },
+      {
+        path: "/join-as-dropshipper",
+        element: (
+          <PrivateRoute>
+            <JoinAsDropshipper />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/join-pay-dropshipper",
+        element: (
+          <PrivateRoute>
+            <JoiningPayDropshipper />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/need-help",
