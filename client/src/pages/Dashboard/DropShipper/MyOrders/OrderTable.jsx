@@ -44,18 +44,18 @@ const rows = [
 
 const OrderTable = () => {
   return (
-    <TableContainer component={Paper}>
+    <TableContainer component={Paper} style={{marginBottom:'25px'}}>
       <Table sx={{ minWidth: 1000 }} aria-label="caption table">
         <TableHead>
           <TableRow>
-            <TableCell>Order</TableCell>
-            <TableCell>Date</TableCell>
-            <TableCell>Status</TableCell>
-            <TableCell>Customer</TableCell>
-            <TableCell>Email</TableCell>
-            <TableCell>Phone</TableCell>
-            <TableCell>Purchased</TableCell>
-            <TableCell>Order Total</TableCell>
+            <TableCell style={{ fontWeight: "bold" }}>Order</TableCell>
+            <TableCell style={{ fontWeight: "bold" }}>Date</TableCell>
+            <TableCell style={{ fontWeight: "bold" }}>Status</TableCell>
+            <TableCell style={{ fontWeight: "bold" }}>Customer</TableCell>
+            <TableCell style={{ fontWeight: "bold" }}>Email</TableCell>
+            <TableCell style={{ fontWeight: "bold" }}>Phone</TableCell>
+            <TableCell style={{ fontWeight: "bold" }}>Purchased</TableCell>
+            <TableCell style={{ fontWeight: "bold" }}>Order Total</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>

@@ -10,8 +10,8 @@ const Reseller = () => {
         <h1 className="text-2xl font-bold">Reseller Panel</h1>
         <p>Welcome to your panel Md. Mustaqim Khan! At a glance everything</p>
       </div>
-      <div className="grid grid-cols-3 gap-5 my-5">
-        <div className="text-white px-5 py-3 bg-[#2DA5F3] space-y-4">
+      <div className="grid grid-cols-3 gap-5 mt-5 mb-6">
+        <div className="text-white px-5 py-3 bg-[#2DA5F3] space-y-4 rounded">
           <div className="space-y-3">
             <div className="flex justify-between">
               <h1 className="text-lg font-bold">Available Balance</h1>
@@ -25,11 +25,29 @@ const Reseller = () => {
             <h1 className="text-2xl font-bold">350 ৳</h1>
           </div>
         </div>
-        <div className="px-5 py-3 bg-white">
+        <div className="px-5 py-3 bg-white rounded">
           <h1 className="font-bold">Order statistics (last 30 days)</h1>
-          <CustomPieChart />
+          <div>
+            <div className="mt-1 mb-3 lg:ml-[7%] xl:ml-[17%]">
+              <CustomPieChart />
+            </div>
+            <div className="flex justify-center gap-5 text-xs xl:text-sm">
+              <div className="flex items-center gap-2">
+                <span className="h-4 w-4 bg-[#147F1A] flex"></span>
+                <span>Completed</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="h-4 w-4 bg-[#FEFE3F] flex"></span>
+                <span>Pending</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="h-4 w-4 bg-[#FB100A] flex"></span>
+                <span>Canceled</span>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="p-5 py-3 space-y-5 bg-white">
+        <div className="p-5 py-3 space-y-5 bg-white rounded">
           <h1 className="font-bold">Store statistics (last 30 days)</h1>
           <div className="flex justify-between items-center">
             <div>
