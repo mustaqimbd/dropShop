@@ -43,19 +43,19 @@ import ActiveLink from "../../components/ActiveLink/ActiveLink";
 
 const drawerWidth = 240;
 
-const Dashboard = (props) => {
+const Dashboard = props => {
   const { user, logOut } = useAuthProvider();
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
   const path = useLocation().pathname;
-  
+
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
-  const handleClick = (event) => {
+  const handleClick = event => {
     setAnchorEl(event.currentTarget);
   };
   const handleClose = () => {
@@ -377,7 +377,7 @@ const Dashboard = (props) => {
         }}
       >
         <Toolbar />
-        <div className="bg-[#F3F3F9] p-5 min-h-[calc(100vh-65px)]">
+        <div className="bg-[#F3F3F9] md:p-2 min-h-[calc(100vh-65px)]">
           <Outlet />
         </div>
       </Box>

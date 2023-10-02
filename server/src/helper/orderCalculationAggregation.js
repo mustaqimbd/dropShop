@@ -45,8 +45,9 @@ const orderCalculationAggregation = () => [
       order_info: { $first: "$$ROOT" },
       products: {
         $push: {
+          product_slug: "$product_info.product_slug",
           product_name: "$product_info.product_name",
-          product_image_url: "$product_info.product_image_url",
+          product_image: "$product_info.images.link",
           quantity: "$ordered_products.quantity",
           unit_price: "$ordered_products.unit_price",
           subtotal: "$ordered_products.subtotal",

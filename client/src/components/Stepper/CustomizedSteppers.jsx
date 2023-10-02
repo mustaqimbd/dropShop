@@ -4,13 +4,13 @@ import Stack from "@mui/material/Stack";
 import Stepper from "@mui/material/Stepper";
 import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
-import GroupAddIcon from "@mui/icons-material/GroupAdd";
 import StepConnector, {
   stepConnectorClasses,
 } from "@mui/material/StepConnector";
-import CheckIcon from "@mui/icons-material/Check";
+import { FaCheck, FaHourglassHalf, FaSpinner } from "react-icons/fa";
 import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 import CreditScoreIcon from "@mui/icons-material/CreditScore";
+
 const ColorlibConnector = styled(StepConnector)(({ theme }) => ({
   [`&.${stepConnectorClasses.alternativeLabel}`]: {
     top: 22,
@@ -58,10 +58,11 @@ function ColorlibStepIcon(props) {
   const { active, completed, className } = props;
 
   const icons = {
-    1: <CheckIcon />,
-    2: <GroupAddIcon />,
+    1: <FaSpinner />,
+    2: <FaHourglassHalf />,
     3: <LocalShippingIcon />,
     4: <CreditScoreIcon />,
+    5: <FaCheck />,
   };
 
   return (
@@ -93,20 +94,20 @@ ColorlibStepIcon.propTypes = {
 };
 
 const steps = [
-  "Order confrimed",
-  "Pick by currier",
-  "On the way",
-  "Ready for pickup",
+  "pending",
+  "processing",
+  "picked by currier",
+  "shifted",
+  "completed",
 ];
-
-export default function CustomizedSteppers({ orderid }) {
-  // const[activestep,setActivestep]=useState(0)
+const CustomizedSteppers = ({ orderDetails }) => {
+  const activeStep = steps.indexOf(orderDetails.order_status);
 
   return (
     <Stack sx={{ width: "100%" }} spacing={4}>
       <Stepper
         alternativeLabel
-        activeStep={orderid ? 1 : 0}
+        activeStep={activeStep}
         connector={<ColorlibConnector />}
       >
         {steps.map(label => (
@@ -117,4 +118,5 @@ export default function CustomizedSteppers({ orderid }) {
       </Stepper>
     </Stack>
   );
-}
+};
+export default CustomizedSteppers;
