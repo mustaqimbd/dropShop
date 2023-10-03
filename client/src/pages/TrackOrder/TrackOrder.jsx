@@ -1,73 +1,69 @@
-import { useEffect, useState } from "react";
-import CustomizedSteppers from "../../components/Stepper/Stepper";
-import TrackItem from "../../components/cards/TrackItem/TrackItem";
 import ContainerFull from "../../components/container/ContainerFull";
 import ContainerMax from "../../components/container/ContainerMax";
-import { TracOrdertitle } from "../../components/titles/FeatureTitle";
-import PhoneEnabledIcon from '@mui/icons-material/PhoneEnabled';
-import { BackToOrderBtn } from "../../components/buttons/Buttons";
-import { Link } from "react-router-dom";
-import HighLightedProductsCard from "../../components/cards/highLightSectionCard/HighLightedProductsCard";
-import {  useForm } from "react-hook-form";
+import { useState } from "react";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
+import toast from "react-hot-toast";
+import { Button } from "@mui/material";
+import TrackSingleOrder from "../../components/TrackSingleOrder/TrackSingleOrder";
 const TrackOrder = () => {
-  const[orderId,setOrderId]=useState(null)
-    const[Track,setTrack]=useState([])
-           useEffect(() => {
-           fetch("http://localhost:5000/api/products/highlight-products")
-          .then(res => res.json())
-          .then(data => {
-           setTrack(data.payload.topSellingProducts);
-          });
-      }, []);
+  const [searchOrder, setSearchOrder] = useState([]);
+  const [isNoOrderFound, setIsNoOrderFound] = useState(false);
+  const [axiosSecure] = useAxiosSecure();
+  const handleSearch = async event => {
+    event.preventDefault();
+    setIsNoOrderFound("");
+    const trackId = event.target.searchId.value;
+    if (!trackId) {
+      return toast.error("Please enter a valid order id.");
+    }
+    try {
+      const res = await axiosSecure.get(
+        `/api/order/track-order?orderId=${trackId}`
+      );
+      setSearchOrder(res.data.payload.orderDetails);
+      if (!res.data.payload.orderDetails.length) {
+        setIsNoOrderFound(true);
+      }
+    } catch (error) {
+      setSearchOrder([]);
+    }
+  };
+  return (
+    <ContainerFull>
+      <div className="py-5 ">
+        <ContainerMax>
+          <form className="py-5 flex gap-2" onSubmit={handleSearch}>
+            <input
+              type="text"
+              className="py-2 px-2 ring-1 outline-none"
+              id="title"
+              placeholder="Enter order id"
+              name="searchId"
+            />
 
-    const { register, handleSubmit,  reset } = useForm();
-      const handleSearch = (data) => {
-      console.log( data.title);
-      setOrderId(data.title);
-      reset();
-    };
-    return (
-<ContainerFull>
-<div className="bg-gray py-5 border-b-2 border-borderColor px-14">
-<ContainerMax>
+            <Button type="submit" variant="contained">
+              Search
+            </Button>
+          </form>
+          {isNoOrderFound ? (
+            <h2 className="font-bold text-sm text-hotBadge">
+              No order found with this order id.
+            </h2>
+          ) : (
+            ""
+          )}
 
-<TracOrdertitle title={"My Orders/Tracking"}/>
-{/* <div className="text-base font-sans text-heading  py-5 ">Order ID : {orderId}</div> */}
-{/* submit order id */}
-<form onSubmit={handleSubmit(handleSearch)} className="py-5">
-      
-      
-      <input type="text"className="border border-1 py-2 px-4" id="title"placeholder="Enter Order Id" {...register("title")} />
-
-        <button type="submit"className="btn bg-[#83B735] text-white py-2 px-4 -ml-2">Enter ID</button>
-      </form>
-   <div className="flex justify-between gap-4 font-sans border border-borderColor p-4 rounded-lg">
-<TrackItem information_name={"Estimated Delivery time:"} information={"24 Nov 2022"}/>
-<TrackItem information_name={"Shipping By:"} information={ 
-    <p className="text-heading font-sans text-base"> BLUEDART,| <PhoneEnabledIcon /> +1598759364
-    </p>
-
-  }/>
-<TrackItem information_name={"Status:"} information={"Picked by the currier"}/>
-<TrackItem information_name={"Tracking#:"} information={"BD04535352345"}/>
-</div>
-<div className="w-full py-12">
-<CustomizedSteppers orderid={orderId}/>
-</div>
-
-<div className="flex justify-between gap-4 font-sans border border-borderColor p-4">
-  {
-    Track.map(item => (
-      <HighLightedProductsCard key={item._id} content={item} />
-    ))
-  }
-</div>
-<Link to="/"><BackToOrderBtn title={"Back To Order"}/>
-</Link>
-</ContainerMax>
-</div>
-</ContainerFull>
-    );
+          {searchOrder.length ? (
+            <TrackSingleOrder orderDetails={searchOrder[0]} />
+          ) : (
+            <h2 className="font-bold text-xl text-center text-caption py-10">
+              Enter your order id to track your order.
+            </h2>
+          )}
+        </ContainerMax>
+      </div>
+    </ContainerFull>
+  );
 };
 
 export default TrackOrder;
