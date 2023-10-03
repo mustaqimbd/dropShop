@@ -42,9 +42,6 @@ const Orders = () => {
       toast.error(error.response.data.message);
     }
   };
-
-  // modal config
-  // modal content
   const singleOrderInfo = async orderId => {
     if (!orderId) {
       return;
