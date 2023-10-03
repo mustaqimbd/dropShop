@@ -76,20 +76,9 @@ function ColorlibStepIcon(props) {
 }
 
 ColorlibStepIcon.propTypes = {
-  /**
-   * Whether this step is active.
-   * @default false
-   */
   active: PropTypes.bool,
   className: PropTypes.string,
-  /**
-   * Mark the step as completed. Is passed to child components.
-   * @default false
-   */
   completed: PropTypes.bool,
-  /**
-   * The label displayed in the step icon.
-   */
   icon: PropTypes.node,
 };
 

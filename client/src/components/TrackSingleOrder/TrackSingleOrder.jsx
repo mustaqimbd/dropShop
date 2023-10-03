@@ -1,12 +1,10 @@
 import { Chip } from "@mui/material";
 import { format, parseISO } from "date-fns";
-import CustomizedSteppers from "../../../../../components/Stepper/CustomizedSteppers";
+import CustomizedSteppers from "../Stepper/CustomizedSteppers";
 
 const TrackSingleOrder = ({ orderDetails }) => {
-  console.log(orderDetails);
-
   return (
-    <div className="mt-20 overflow-hidden ">
+    <div className="mt-10 overflow-hidden ">
       <h2 className="text-center font-bold text-caption text-xl py-5">
         Tracking order NO: {orderDetails?.order_id}
       </h2>

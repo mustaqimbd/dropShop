@@ -1,30 +1,26 @@
 import { useQuery } from "@tanstack/react-query";
-import { useState } from "react";
 import useAxiosSecure from "../../../../../hooks/useAxiosSecure";
 import toast from "react-hot-toast";
 import { useParams } from "react-router-dom";
 import { Divider } from "@mui/material";
 import { format, parseISO } from "date-fns";
 import OrderedProductsTable from "./OrderedProductsTable";
-import TrackSingleOrder from "./TrackSingleOrder";
+import TrackSingleOrder from "../../../../../components/TrackSingleOrder/TrackSingleOrder";
 
 const SingleOrderDetails = () => {
   const { id: orderId } = useParams();
   const [axiosSecure] = useAxiosSecure();
-  const [singleOrderLoading, setSingleOrderLoading] = useState(false);
-  const { data: orderData = {} } = useQuery({
+  const { data: orderData = {}, isLoading: singleOrderLoading } = useQuery({
     queryKey: ["single-order"],
     queryFn: async () => {
       try {
         const result = await axiosSecure.get(
           `/api/order/track-order?orderId=${orderId}`
         );
-        setSingleOrderLoading(false);
 
         return result;
       } catch (error) {
         toast.error(error?.response?.data?.message);
-        setSingleOrderLoading(false);
       }
     },
   });
