@@ -1,65 +1,156 @@
-import React from 'react'
-// import * as React from 'react';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
-
-function createData(name, calories, fat, carbs, protein, cobi) {
-  return { name, calories, fat, carbs, protein, cobi };
-}
-
-const rows = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0, 70),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3, 40),
-  createData('Eclair', 262, 16.0, 24, 6.0, 30),
-  createData('Cupcake', 305, 3.7, 67, 4.3, 22),
-  createData('Gingerbread', 356, 16.0, 49, 3.9, 12),
-  createData('cobi', 356, 16.0, 49, 3.9, 25),
-];
-
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
+import Paper from "@mui/material/Paper";
+import useAxiosSecure from "../../../../hooks/useAxiosSecure";
+import { useQuery } from "@tanstack/react-query";
+import { Avatar, IconButton } from "@mui/material";
+import DeleteIcon from "@mui/icons-material/Delete";
+import EditIcon from "@mui/icons-material/Edit";
+import Swal from "sweetalert2";
+import { useState } from "react";
+import Pagination2 from "../../../../components/Pagination2/Pagination2";
+import useTotalProductsCount from "../../../../hooks/useTotalProductsCount";
 
 const AdminProductPageBody = () => {
+  const [currentPage, setCurrentPage] = useState(0);
+  const { productsCount } = useTotalProductsCount();
+  const totalPage = Math.ceil(productsCount?.payload?.productCount / 20);
+
+  const [axiosSecure] = useAxiosSecure();
+  const { data: totalProducts = [], isLoading } = useQuery({
+    queryKey: ["all-products", currentPage],
+    queryFn: async () => {
+      try {
+        const res = await axiosSecure.get(
+          `/api/admin/dashboard/products?page=${currentPage}`
+        );
+        return res.data;
+      } catch (error) {
+        console.log(error);
+      }
+    },
+  });
+  const swalWithBootstrapButtons = Swal.mixin({
+    customClass: {
+      confirmButton:
+        "py-1 px-4 bg-red-700 text-white font-bold rounded-md  ml-5",
+      cancelButton: "py-1 px-4 bg-green-700 text-white font-bold rounded-md",
+    },
+    buttonsStyling: false,
+  });
+  const handleDelete = id => {
+    swalWithBootstrapButtons
+      .fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonText: "Yes, delete it!",
+        cancelButtonText: "No, cancel!",
+        reverseButtons: true,
+      })
+      .then(async result => {
+        if (result.isConfirmed) {
+          try {
+            await axiosSecure.delete(
+              `/api/admin/dashboard/delete-product?product_id=${id}`
+            );
+            swalWithBootstrapButtons.fire(
+              "Deleted!",
+              "Product has been deleted.",
+              "success"
+            );
+          } catch (error) {
+            console.log(error);
+          }
+        } else if (result.dismiss === Swal.DismissReason.cancel) {
+          swalWithBootstrapButtons.fire(
+            "Cancelled",
+            "Your imaginary product is safe :)",
+            "error"
+          );
+        }
+      });
+  };
+  const rows = totalProducts?.payload?.products;
+
+  if (isLoading) {
+    return <h2>Loading...</h2>;
+  }
   return (
     <div>
-        <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650 }} aria-label="simple table">
-        <TableHead>
-          <TableRow>
-            <TableCell>Products</TableCell>
-            <TableCell align="right">Name</TableCell>
-            <TableCell align="right">Price</TableCell>
-            <TableCell align="right">Offer</TableCell>
-            <TableCell align="right">Purchased</TableCell>
-            <TableCell align="right">Stock</TableCell>
-
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {rows.map((row) => (
-            <TableRow
-              key={row.name}
-              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-            >
-              <TableCell component="th" scope="row">
-                {row.name}
-              </TableCell>
-              <TableCell align="right">{row.calories}</TableCell>
-              <TableCell align="right">{row.fat}</TableCell>
-              <TableCell align="right">{row.carbs}</TableCell>
-              <TableCell align="right">{row.protein}</TableCell>
-              <TableCell align="right">{row.cobi}</TableCell>
-
+      <TableContainer component={Paper}>
+        <Table sx={{ minWidth: 650 }} aria-label="simple table">
+          <TableHead>
+            <TableRow>
+              <TableCell>ID</TableCell>
+              <TableCell align="left">Image</TableCell>
+              <TableCell align="left">Name</TableCell>
+              <TableCell align="left">Total sold</TableCell>
+              <TableCell align="left">Stock</TableCell>
+              <TableCell align="left">Action</TableCell>
             </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+          </TableHead>
+          <TableBody>
+            {rows.map(row => (
+              <TableRow
+                key={row?._id}
+                sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+              >
+                <TableCell component="th" scope="row">
+                  <span className="font-bold text-caption">
+                    {row?.product_id}
+                  </span>
+                </TableCell>
+                <TableCell align="left">
+                  <Avatar src={row?.images[0].link} alt={row?.product_name} />
+                </TableCell>
+                <TableCell align="left">
+                  <span className="font-bold text-caption">
+                    {row?.product_name}
+                  </span>
+                </TableCell>
+                <TableCell align="left">
+                  <span className="font-bold text-caption">
+                    {row?.total_sold}
+                  </span>
+                </TableCell>
+                <TableCell align="left">
+                  <span className="font-bold text-caption">
+                    {row?.available_quantity}
+                  </span>
+                </TableCell>
+                <TableCell align="left">
+                  <div>
+                    <IconButton
+                      color="error2"
+                      onClick={() => handleDelete(row?.product_id)}
+                    >
+                      <DeleteIcon />
+                    </IconButton>
+                    <IconButton>
+                      <EditIcon />
+                    </IconButton>
+                  </div>
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
+      <Pagination2
+        data={totalProducts}
+        setCurrentPage={setCurrentPage}
+        currentPage={currentPage}
+        totalData={productsCount?.payload?.productCount}
+        totalPage={totalPage}
+      />
     </div>
-  )
-}
+  );
+};
 
-export default AdminProductPageBody
+export default AdminProductPageBody;

@@ -35,7 +35,7 @@ const TopProducts = () => {
                   {product.product_name}
                 </h2>
                 <p className="text-footerLinkText text-sm font-bold">
-                  {product?.totalSold} Sales
+                  {product?.total_sold} Sales
                 </p>
               </div>
               <p className="text-sm text-caption">{product?.description}</p>

@@ -14,6 +14,7 @@ const TrackOrder = () => {
     setIsNoOrderFound("");
     const trackId = event.target.searchId.value;
     if (!trackId) {
+      setSearchOrder([]);
       return toast.error("Please enter a valid order id.");
     }
     try {

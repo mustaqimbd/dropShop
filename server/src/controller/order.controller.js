@@ -26,8 +26,9 @@ const trackOrder = async (req, res, next) => {
 
 const getOrderInfo = async (req, res, next) => {
   try {
-    const { skip = 0 } = req.query;
+    const { page = 0 } = req.query;
     const limit = 20;
+    const skip = page * limit;
     const pipeline = [
       {
         $lookup: {
@@ -80,8 +81,8 @@ const getOrderInfo = async (req, res, next) => {
     return successResponse(res, {
       message: "Total orders.",
       payload: {
-        skip: skip * limit,
-        limit: parseInt(limit),
+        skip,
+        limit,
         length: orders.length,
         orders,
       },

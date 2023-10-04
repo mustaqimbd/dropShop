@@ -7,7 +7,7 @@ const useOrders = (url, page) => {
     queryKey: ["orders", page],
     queryFn: async () => {
       try {
-        const res = await axiosSecure.get(`${url}?&skip=${page}`);
+        const res = await axiosSecure.get(`${url}?&page=${page}`);
         return res.data;
       } catch (error) {
         console.log(error);

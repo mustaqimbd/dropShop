@@ -7,7 +7,7 @@ const highlightProducts = async (req, res, next) => {
       .sort({ ratings: -1 })
       .limit(3);
     const topSellingProducts = await Products.find()
-      .sort({ totalSold: -1 })
+      .sort({ total_sold: -1 })
       .limit(3);
 
     return successResponse(res, {
@@ -37,7 +37,13 @@ const productByPagination = async (req, res, next) => {
     const { page = 0, limit = 20 } = req.query;
     const products = await Products.find()
       .skip(parseInt(page * limit))
-      .limit(parseInt(limit));
+      .limit(parseInt(limit))
+      .select({
+        product_name: 1,
+        images: 1,
+        ratings: 1,
+        reseller_price: 1,
+      });
     const productsInfo = {
       skip: parseInt(page * limit),
       limit: parseInt(limit),

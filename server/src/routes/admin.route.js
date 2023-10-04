@@ -12,6 +12,8 @@ const {
   sellersInfo,
   topSellers,
   products,
+  deleteProduct,
+  productsById,
 } = require("../controller/admin.controller");
 const isAdmin = require("../middleware/isAdmin");
 const passport = require("passport");
@@ -19,7 +21,7 @@ const passport = require("passport");
 const adminRoute = require("express").Router();
 
 //TODO: Secure admin routes.
-// adminRoute.use(passport.authenticate("jwt", { session: false }), isAdmin);
+adminRoute.use(passport.authenticate("jwt", { session: false }), isAdmin);
 
 //add product
 // /api/admin/add-product
@@ -76,5 +78,13 @@ adminRoute.get("/dashboard/sellers-info", sellersInfo);
 // All products
 // /api/admin/dashboard/products
 adminRoute.get("/dashboard/products", products);
+
+// Product by id
+// /api/admin/dashboard/products
+adminRoute.get("/dashboard/product-by-id", productsById);
+
+// Delete a product
+// /api/admin/dashboard/products
+adminRoute.delete("/dashboard/delete-product", deleteProduct);
 
 module.exports = adminRoute;

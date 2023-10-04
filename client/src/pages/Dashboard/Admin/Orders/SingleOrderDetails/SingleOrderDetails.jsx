@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../../../../hooks/useAxiosSecure";
 import toast from "react-hot-toast";
 import { useParams } from "react-router-dom";
-import { Divider } from "@mui/material";
+import { Divider, MenuItem, Select } from "@mui/material";
 import { format, parseISO } from "date-fns";
 import OrderedProductsTable from "./OrderedProductsTable";
 import TrackSingleOrder from "../../../../../components/TrackSingleOrder/TrackSingleOrder";
@@ -10,7 +10,11 @@ import TrackSingleOrder from "../../../../../components/TrackSingleOrder/TrackSi
 const SingleOrderDetails = () => {
   const { id: orderId } = useParams();
   const [axiosSecure] = useAxiosSecure();
-  const { data: orderData = {}, isLoading: singleOrderLoading } = useQuery({
+  const {
+    data: orderData = {},
+    isLoading: singleOrderLoading,
+    refetch,
+  } = useQuery({
     queryKey: ["single-order"],
     queryFn: async () => {
       try {
@@ -38,6 +42,17 @@ const SingleOrderDetails = () => {
       </h2>
     );
   }
+  const handleChange = async event => {
+    try {
+      await axiosSecure.post(
+        `api/order/update-order-status?orderId=${singleOrder?.order_id}&status=${event.target.value}`
+      );
+      refetch();
+      toast.success("Status updates successfully.");
+    } catch (error) {
+      toast.error(error?.response?.data?.message);
+    }
+  };
   return (
     <>
       <div className="mx-2 bg-white shadow-md p-2 md:p-5 mt-10 rounded-md mb-5">
@@ -106,6 +121,28 @@ const SingleOrderDetails = () => {
             </div>
           </div>
           <OrderedProductsTable orderDetails={singleOrder} />
+          <div className="mt-10">
+            <h2 className="dashboard-title">Update status</h2>
+            <Divider />
+            <div className="mt-5">
+              <Select
+                value={singleOrder?.order_status}
+                label="Status"
+                onChange={handleChange}
+                style={{ width: "300px" }}
+              >
+                <MenuItem value="">
+                  <em>None</em>
+                </MenuItem>
+                <MenuItem value="pending">Pending</MenuItem>
+                <MenuItem value="processing">Processing</MenuItem>
+                <MenuItem value="picked by currier">Picked by currier</MenuItem>
+                <MenuItem value="shifted">Shifted</MenuItem>
+                <MenuItem value="completed">Completed</MenuItem>
+                <MenuItem value="canceled">Canceled</MenuItem>
+              </Select>
+            </div>
+          </div>
           <TrackSingleOrder orderDetails={singleOrder} />
         </div>
       </div>

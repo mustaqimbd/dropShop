@@ -94,9 +94,10 @@ const RecentOrders = () => {
           </Table>
           <Divider />
           <Pagination2
-            orders={recentOrders}
+            data={recentOrders}
             setCurrentPage={setCurrentPage}
             currentPage={currentPage}
+            totalData={totalOrders?.data?.payload?.totalOrderCount}
             totalPage={totalPage}
           />
         </TableContainer>
