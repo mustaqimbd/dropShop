@@ -27,7 +27,7 @@ const productsSchema = new Schema(
     category: String,
     product_slug: String,
     category_slug: String,
-    totalSold: { type: Number, default: 0 },
+    total_sold: { type: Number, default: 0 },
     is_active: {
       type: Boolean,
       default: true,

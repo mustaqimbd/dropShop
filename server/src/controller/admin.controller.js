@@ -4,6 +4,7 @@ const { successResponse } = require("./responseHandler");
 const Orders = require("../model/order.model");
 const User = require("../model/user.model");
 const Category = require("../model/category.model");
+const createError = require("http-errors");
 
 const addProduct = async (req, res, next) => {
   try {
@@ -249,16 +250,18 @@ const totalOrders = async (req, res, next) => {
 
 const recentOrders = async (req, res, next) => {
   try {
-    const { skip = 0, limit = 5 } = req.query;
+    const { page = 0 } = req.query;
+    const limit = 5;
+    const skip = page * limit;
     const orders = await Orders.find({})
       .sort({ createdAt: -1 })
       .limit(limit)
-      .skip(skip * limit);
+      .skip(skip);
     return successResponse(res, {
       message: "10 recent orders",
       payload: {
-        skip: skip * limit,
-        limit: parseInt(limit),
+        skip,
+        limit,
         length: orders.length,
         orders,
       },
@@ -446,17 +449,63 @@ const sellersInfo = async (req, res, next) => {
 
 const products = async (req, res, next) => {
   try {
-    const products = await Products.find()
-      .select({
-        product_name: 1,
-        reseller_price: 1,
-        available_quantity: 1,
-        total_sold: 1,
-      })
-      .sort({ total_sold: -1 });
+    const { page = 0 } = req.query;
+    const limit = 20;
+    const skip = page * limit;
+    const products = await Products.find().skip(skip).limit(limit).select({
+      product_name: 1,
+      product_id: 1,
+      "images.link": 1,
+      available_quantity: 1,
+      total_sold: 1,
+      product_slug: 1,
+      available_quantity: 1,
+    });
     return successResponse(res, {
       message: "Products info.",
-      payload: { products },
+      payload: {
+        length: products.length,
+        skip,
+        limit,
+        products,
+      },
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+const productsById = async (req, res, next) => {
+  try {
+    const { productId } = req.query;
+    const singleProduct = await Products.findOne({
+      product_id: productId,
+    }).select({
+      product_name: 1,
+      product_id: 1,
+      "images.link": 1,
+      available_quantity: 1,
+      total_sold: 1,
+      product_slug: 1,
+      available_quantity: 1,
+    });
+    if (!singleProduct) {
+      throw createError(400, "No item found with this id.");
+    }
+    return successResponse(res, {
+      message: "Single product details.",
+      payload: { singleProduct },
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+const deleteProduct = async (req, res, next) => {
+  try {
+    const { product_id } = req.query;
+    await Products.findOneAndDelete({ product_id });
+    return successResponse(res, {
+      message: "Deleted successfully.",
+      payload: undefined,
     });
   } catch (error) {
     next(error);
@@ -477,4 +526,6 @@ module.exports = {
   topCategories,
   sellersInfo,
   products,
+  deleteProduct,
+  productsById,
 };

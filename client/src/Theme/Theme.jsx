@@ -12,6 +12,9 @@ const theme = createTheme({
     error: {
       main: red.A400,
     },
+    error2: {
+      main: "#EE5858",
+    },
     customColors: {
       ratingIcon: "#FA8232", // Rating icon color
       ratingCount: "#77878F", // Rating counter color

@@ -1,7 +1,13 @@
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 
-const Pagination2 = ({ orders, currentPage, setCurrentPage, totalPage }) => {
+const Pagination2 = ({
+  data,
+  currentPage,
+  setCurrentPage,
+  totalPage,
+  totalData,
+}) => {
   const handleCurrentPage = increase => {
     if (increase) {
       if (currentPage == totalPage - 1) {
@@ -17,14 +23,15 @@ const Pagination2 = ({ orders, currentPage, setCurrentPage, totalPage }) => {
   };
   return (
     <div className="py-3 flex justify-end mr-10 gap-3 items-center">
-      <div>
-        {orders?.payload?.skip ? <span>{orders?.payload?.skip + 1}</span> : "0"}
+      <div className="font-bold">
+        {data?.payload?.skip ? <span>{data?.payload?.skip + 1}</span> : "0"}
         {" - "}
-        {orders?.payload?.skip + orders?.payload?.limit ? (
-          <span>{orders?.payload?.skip + orders?.payload?.limit}</span>
+        {data?.payload?.skip + data?.payload?.limit ? (
+          <span>{data?.payload?.skip + data?.payload?.limit}</span>
         ) : (
           ""
-        )}
+        )}{" "}
+        of {totalData}
       </div>
       <div className="flex gap-4">
         <button
