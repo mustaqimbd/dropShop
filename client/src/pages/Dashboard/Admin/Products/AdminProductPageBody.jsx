@@ -10,12 +10,12 @@ import { useQuery } from "@tanstack/react-query";
 import { Avatar, IconButton } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
-import Swal from "sweetalert2";
+
 import { useState } from "react";
 import Pagination2 from "../../../../components/Pagination2/Pagination2";
 import useTotalProductsCount from "../../../../hooks/useTotalProductsCount";
 
-const AdminProductPageBody = () => {
+const AdminProductPageBody = ({ handleDelete }) => {
   const [currentPage, setCurrentPage] = useState(0);
   const { productsCount } = useTotalProductsCount();
   const totalPage = Math.ceil(productsCount?.payload?.productCount / 20);
@@ -34,48 +34,7 @@ const AdminProductPageBody = () => {
       }
     },
   });
-  const swalWithBootstrapButtons = Swal.mixin({
-    customClass: {
-      confirmButton:
-        "py-1 px-4 bg-red-700 text-white font-bold rounded-md  ml-5",
-      cancelButton: "py-1 px-4 bg-green-700 text-white font-bold rounded-md",
-    },
-    buttonsStyling: false,
-  });
-  const handleDelete = id => {
-    swalWithBootstrapButtons
-      .fire({
-        title: "Are you sure?",
-        text: "You won't be able to revert this!",
-        icon: "warning",
-        showCancelButton: true,
-        confirmButtonText: "Yes, delete it!",
-        cancelButtonText: "No, cancel!",
-        reverseButtons: true,
-      })
-      .then(async result => {
-        if (result.isConfirmed) {
-          try {
-            await axiosSecure.delete(
-              `/api/admin/dashboard/delete-product?product_id=${id}`
-            );
-            swalWithBootstrapButtons.fire(
-              "Deleted!",
-              "Product has been deleted.",
-              "success"
-            );
-          } catch (error) {
-            console.log(error);
-          }
-        } else if (result.dismiss === Swal.DismissReason.cancel) {
-          swalWithBootstrapButtons.fire(
-            "Cancelled",
-            "Your imaginary product is safe :)",
-            "error"
-          );
-        }
-      });
-  };
+
   const rows = totalProducts?.payload?.products;
 
   if (isLoading) {
