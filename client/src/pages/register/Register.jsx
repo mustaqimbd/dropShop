@@ -24,7 +24,7 @@ const Register = () => {
 
   const password = watch("password", "");
 
-  const onSubmit = async data => {
+  const onSubmit = async (data) => {
     setRegisterError("");
     setServerValidationErr("");
     setLoading(true);
@@ -109,94 +109,93 @@ const Register = () => {
                   />
                 </div>
 
-                  <div>
-                    <label
-                      className="block text-gray-700 text-sm font-bold mb-2"
-                      htmlFor="email"
-                    >
-                      Phone No.
-                    </label>
-                    <input
-                      autoComplete="phone"
-                      required
-                      name="phone"
-                      {...register("phone", { required: true })}
-                      id="email"
-                      className="shadow appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                      placeholder="Your Email"
-                      type="number"
-                    />
-                  </div>
+                <div>
+                  <label
+                    className="block text-gray-700 text-sm font-bold mb-2"
+                    htmlFor="email"
+                  >
+                    Phone No.
+                  </label>
+                  <input
+                    autoComplete="phone"
+                    required
+                    name="phone"
+                    {...register("phone", { required: true })}
+                    id="phone"
+                    className="shadow appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    placeholder="Your Phone"
+                    type="tel" // TODO need validation
+                  />
+                </div>
 
-                  <div>
-                    <label
-                      className="block text-gray-700 text-sm font-bold mb-2"
-                      htmlFor="password"
-                    >
-                      Password
-                    </label>
-                    <input
-                      autoComplete="new-password"
-                      placeholder="Enter Password"
-                      name="password"
-                      onBlur={handleConfirmPasswordBlur}
-                      {...register("password", {
-                        required: "Password is required",
-                        minLength: {
-                          value: 8,
-                          message:
-                            "Password must be at least 8 characters long",
-                        },
-                      })}
-                      id="password"
-                      className="shadow appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                      type="password"
-                    />
-                    {errors.password && (
-                      <p className="text-gray-500">{errors.password.message}</p>
-                    )}
-                  </div>
-
-                  <div className="mb-10">
-                    <label
-                      className="block text-gray-700 text-sm font-bold mb-2"
-                      htmlFor="confirmPassword"
-                    >
-                      Confirm Password
-                    </label>
-                    <input
-                      ref={confirmPasswordFieldRef}
-                      autoComplete="new-password"
-                      name="confirmPassword"
-                      onBlur={handleConfirmPasswordBlur}
-                      id="confirmPassword"
-                      className="shadow appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                      type="password"
-                      placeholder=" Enter Confirm Password"
-                    />
-                  </div>
-                  {serverValidationErr.length
-                    ? serverValidationErr.map((item, index) => (
-                        <p key={index} className="text-hotBadge font-bold">
-                          <span>{index + 1}. </span>
-                          {item}
-                        </p>
-                      ))
-                    : ""}
-                  {registerError ? (
-                    <h2 className="text-hotBadge font-bold">{registerError}</h2>
-                  ) : (
-                    ""
+                <div>
+                  <label
+                    className="block text-gray-700 text-sm font-bold mb-2"
+                    htmlFor="password"
+                  >
+                    Password
+                  </label>
+                  <input
+                    autoComplete="new-password"
+                    placeholder="Enter Password"
+                    name="password"
+                    onBlur={handleConfirmPasswordBlur}
+                    {...register("password", {
+                      required: "Password is required",
+                      minLength: {
+                        value: 8,
+                        message: "Password must be at least 8 characters long",
+                      },
+                    })}
+                    id="password"
+                    className="shadow appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    type="password"
+                  />
+                  {errors.password && (
+                    <p className="text-red-600">{errors.password.message}</p>
                   )}
-                  <div className=" py-4">
-                    <button
-                      className="bg-primary px-6 text-white w-full rounded-md py-3 text-xl"
-                      type="submit"
-                      disabled={loading}
-                    >
-                      {loading ? "Registering..." : "Register Now"}
-                    </button>
-                  </div>
+                </div>
+
+                <div className="mb-10">
+                  <label
+                    className="block text-gray-700 text-sm font-bold mb-2"
+                    htmlFor="confirmPassword"
+                  >
+                    Confirm Password
+                  </label>
+                  <input
+                    ref={confirmPasswordFieldRef}
+                    autoComplete="new-password"
+                    name="confirmPassword"
+                    onBlur={handleConfirmPasswordBlur}
+                    id="confirmPassword"
+                    className="shadow appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    type="password"
+                    placeholder=" Enter Confirm Password"
+                  />
+                </div>
+                {serverValidationErr.length
+                  ? serverValidationErr.map((item, index) => (
+                      <p key={index} className="text-hotBadge font-bold">
+                        <span>{index + 1}. </span>
+                        {item}
+                      </p>
+                    ))
+                  : ""}
+                {registerError ? (
+                  <h2 className="text-hotBadge font-bold">{registerError}</h2>
+                ) : (
+                  ""
+                )}
+                <div className=" py-4">
+                  <button
+                    className="bg-primary px-6 text-white w-full rounded-md py-3 text-xl"
+                    type="submit"
+                    disabled={loading}
+                  >
+                    {loading ? "Registering..." : "Register Now"}
+                  </button>
+                </div>
 
                 <div className="flex gap-3 justify-center">
                   <p>Already have an account ? </p>{" "}

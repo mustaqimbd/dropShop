@@ -1,20 +1,34 @@
-import * as React from "react";
 import Typography from "@mui/material/Typography";
 import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
 
-export default function TablePagination() {
-  const [page, setPage] = React.useState(1);
+export default function TablePagination({
+  perPage,
+  totalQuantity,
+  currentPage,
+  setCurrentPage,
+  refetch,
+}) {
+  const totalPages = Math.ceil(totalQuantity / perPage);
   const handleChange = (event, value) => {
-    setPage(value);
+    setCurrentPage(value);
+    refetch();
   };
-const count = 10
+
   return (
     <Stack spacing={2}>
       <Typography>
-        Showing {page * 10 - 10} to {page * 10} of {count*10} entire
+        Showing {currentPage * perPage - perPage} to{" "}
+        {currentPage * perPage < totalQuantity
+          ? currentPage * perPage
+          : totalQuantity}{" "}
+        of {totalQuantity} entire
       </Typography>
-      <Pagination count={count} page={page} onChange={handleChange} />
+      <Pagination
+        count={totalPages ? totalPages : 0}
+        page={currentPage}
+        onChange={handleChange}
+      />
     </Stack>
   );
 }

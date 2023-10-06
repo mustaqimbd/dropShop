@@ -1,10 +1,10 @@
 import { Divider } from "@mui/material";
 import { NavLink, Navigate, Outlet, useLocation } from "react-router-dom";
-const name = "Mustaqim Khan";
 import { Person, Settings, NavigateNext } from "@mui/icons-material";
 
 const Profile = () => {
   const path = useLocation().pathname;
+  const name = "Mustaqim Khan"
   return (
     <div className="flex">
       <div className="w-[500px] min-h-[calc(100vh-110px)] rounded-l border-r border-gray-300 bg-white">
