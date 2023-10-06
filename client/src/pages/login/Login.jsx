@@ -38,7 +38,7 @@ const Login = () => {
 
   return (
     <ContainerFull>
-      <div className="bg-iconBg py-16">
+      <div className="bg-iconBg py-10">
         <ContainerMax>
           <div className="flex flex-row-reverse items-center gap-20  mt-10 mb-20  mx-auto">
             <div className="flex-1 h-full ">

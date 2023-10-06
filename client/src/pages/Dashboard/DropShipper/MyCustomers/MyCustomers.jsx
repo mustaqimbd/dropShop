@@ -1,9 +1,19 @@
 import { FileDownload } from "@mui/icons-material";
 import CustomerTable from "./CustomerTable";
-import TablePagination from "./TablePagination";
 import AddModal from "./AddModal";
+import TablePagination from "./TablePagination";
+import useGetRequest from "../../../../hooks/useGetRequest";
+import { useState } from "react";
 
 const MyCustomers = () => {
+  const [currentPage, setCurrentPage] = useState(1);
+  const perPage = 5;
+  const user = { resellerId: "H8R4K9Q4T" }; //TODO
+ 
+  const { data, refetch } = useGetRequest(
+    "my-customers",
+    `reseller/dashboard/my-customers?resellerId=${user.resellerId}&page=${currentPage}&limit=${perPage}`
+  );
   return (
     <div>
       <div className="flex justify-between">
@@ -18,7 +28,8 @@ const MyCustomers = () => {
           <div className="flex items-center relative w-[70%]">
             <input
               className="w-full p-2 rounded-md outline-[#83B735] border border-gray-300"
-              type="text" placeholder="Search Customer..."
+              type="text"
+              placeholder="Search Customer..."
             />
             <span className="absolute right-4">
               <svg
@@ -46,7 +57,7 @@ const MyCustomers = () => {
             </span>
           </div>
           <div>
-            <AddModal />
+            <AddModal refetch={refetch}></AddModal>
           </div>
         </div>
       </div>
@@ -64,9 +75,15 @@ const MyCustomers = () => {
           Edit Customer
         </button>
       </div>
-      <CustomerTable />
+      <CustomerTable data={data} refetch={refetch}/>
       <div className="mt-5">
-        <TablePagination />
+        <TablePagination
+          perPage={perPage}
+          totalQuantity={data.payload?.totalQuantity}
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+          refetch={refetch}
+        ></TablePagination>
       </div>
     </div>
   );

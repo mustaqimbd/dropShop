@@ -1,4 +1,4 @@
-const { check } = require("express-validator");
+const { check, validationResult } = require("express-validator");
 
 const validateEmail = [
   check("email")
@@ -8,4 +8,5 @@ const validateEmail = [
     .isEmail()
     .withMessage("Please provide a valid email."),
 ];
+
 module.exports = validateEmail;

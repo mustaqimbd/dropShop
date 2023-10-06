@@ -1,47 +1,124 @@
 import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+import useAxiosSecure from "../../../../hooks/useAxiosSecure";
+import { useState } from "react";
+import Swal from "sweetalert2";
 
 const schema = yup.object().shape({
   customerName: yup.string().required("Customer Name is required"),
   mobile: yup
-    .number()
-    .transform((value, originalValue) => {
-      if (originalValue === "") return undefined;
-      return value;
-    })
-    .typeError("Mobile must be a number")
-    .required("Mobile is required"),
+    .string()
+    .required("Mobile is required")
+    .matches(/^[0-9+]+$/, "Invalid mobile number")
+    .max(15, "Invalid mobile number"),
+  // .matches(/^(?:\+8801|01)[13-9]\d{8}$/, "Invalid mobile number"),
   email: yup.string().email("Invalid email").required("Email is required"),
-  address: yup.string().required("Address is required"),
+  deliveryAddress: yup.string().required("Address is required"),
   city: yup.string().required("City is required"),
   // country: yup.string().required("Country is required"),
 });
 
-export default function AddCustomerForm() {
+export default function AddCustomerForm({ data, refetch, handleClose }) {
+  const [success, setSuccess] = useState(null);
+  const [error, setError] = useState("");
+  const [axiosSecure] = useAxiosSecure();
+
   const {
     control,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm({
     resolver: yupResolver(schema),
   });
 
-  const onSubmit = (data) => {
-    console.log(data);
+  const onSubmit = async (data) => {
+    setError("");
+    setSuccess("");
+    data.resellerId = "H8R4K9Q4T"; // TODO
+    try {
+      const res = await axiosSecure.post(
+        "/api/reseller/dashboard/add-customer",
+        data
+      );
+      if (res.data.success) {
+        setSuccess(res.data.message);
+        reset();
+        refetch();
+      } else {
+        setError(res.data.message);
+      }
+    } catch (error) {
+      if (error.response?.data.errors) {
+        setError(error.response.data.errors[0]);
+      } else {
+        setError(error.message);
+      }
+    }
   };
+
+  const customerId = data?.customerId;
+
+  const update = async (data) => {
+    setError("");
+    setSuccess("");
+    data.resellerId = "H8R4K9Q4T";
+    data.customerId = customerId; // TODO
+    try {
+      const res = await axiosSecure.patch(
+        "/api/reseller/dashboard/my-customers",
+        data
+      );
+      if (res.data.success) {
+        setSuccess(res.data.message);
+        reset();
+        refetch();
+        handleClose();
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Successfully edited",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      } else {
+        handleClose();
+        Swal.fire({
+          position: "top-end",
+          icon: "error",
+          title: res.data.message,
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      }
+    } catch (error) {
+      handleClose();
+      Swal.fire({
+        position: "top-end",
+        icon: "error",
+        title: error.message,
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    }
+  };
+
+  const handler = data ? update : onSubmit;
 
   return (
     <form
-      onSubmit={handleSubmit(onSubmit)}
+      onSubmit={handleSubmit(handler)}
       className="space-y-2 md:w-[500px] px-5"
     >
+      {error && <p className="text-center text-red-600">{error}</p>}
+      {success && <p className="text-center text-green-700">{success}</p>}
       <div className="flex flex-col gap-1">
         <label className="font-bold">Customer Name</label>
         <Controller
           name="customerName"
           control={control}
-          defaultValue=""
+          defaultValue={data ? data.customerName : ""}
           render={({ field }) => (
             <input
               className="border border-gray-200 rounded p-1 outline-[#83B735]"
@@ -56,7 +133,7 @@ export default function AddCustomerForm() {
         <Controller
           name="mobile"
           control={control}
-          defaultValue=""
+          defaultValue={data ? data.mobile : ""}
           render={({ field }) => (
             <input
               type="tel"
@@ -72,7 +149,7 @@ export default function AddCustomerForm() {
         <Controller
           name="email"
           control={control}
-          defaultValue=""
+          defaultValue={data ? data.email : ""}
           render={({ field }) => (
             <input
               type="email"
@@ -86,9 +163,9 @@ export default function AddCustomerForm() {
       <div className="flex flex-col gap-1">
         <label className="font-bold">Delivery Address</label>
         <Controller
-          name="address"
+          name="deliveryAddress"
           control={control}
-          defaultValue=""
+          defaultValue={data ? data.deliveryAddress : ""}
           render={({ field }) => (
             <input
               className="border border-gray-200 rounded p-1 outline-[#83B735]"
@@ -96,14 +173,14 @@ export default function AddCustomerForm() {
             />
           )}
         />
-        <p className="text-red-600">{errors.address?.message}</p>
+        <p className="text-red-600">{errors.deliveryAddress?.message}</p>
       </div>
       <div className="flex flex-col gap-1">
         <label className="font-bold">City</label>
         <Controller
           name="city"
           control={control}
-          defaultValue=""
+          defaultValue={data ? data.city : ""}
           render={({ field }) => (
             <input
               className="border border-gray-200 rounded p-1 outline-[#83B735]"
@@ -118,7 +195,7 @@ export default function AddCustomerForm() {
         <Controller
           name="country"
           control={control}
-          defaultValue=""
+          defaultValue={data ? data.country : ""}
           render={({ field }) => (
             <input
               className="border border-gray-200 rounded p-1 outline-[#83B735]"
@@ -133,7 +210,7 @@ export default function AddCustomerForm() {
           type="submit"
           className="text-white bg-[#83B735] px-2 py-1 rounded text-lg font-medium space-x-2"
         >
-          Add Customer
+          {data ? "Save" : "Add Customer"}
         </button>
       </div>
     </form>

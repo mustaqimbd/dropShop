@@ -6,6 +6,7 @@ import DialogContent from "@mui/material/DialogContent";
 import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
 import AddCustomForm from "./AddCustomerForm";
+import { ModeEditOutline } from "@mui/icons-material";
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   "& .MuiDialogContent-root": {
@@ -16,7 +17,7 @@ const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   },
 }));
 
-export default function AddModal({refetch}) {
+export default function EditModal({ data, refetch }) {
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -30,10 +31,12 @@ export default function AddModal({refetch}) {
     <div>
       <button
         onClick={handleClickOpen}
-        className="text-white bg-[#83B735] px-3 py-2 rounded text-lg font-medium space-x-2"
+        className="text-[#2DA5F3] px-2 py-1 rounded text-sm flex items-center gap-1 font-bold"
       >
-        <span>+</span>
-        <span>Add</span>
+        <span>
+          <ModeEditOutline fontSize="small" />
+        </span>
+        <span>Edit</span>
       </button>
 
       <BootstrapDialog
@@ -60,7 +63,11 @@ export default function AddModal({refetch}) {
           <CloseIcon />
         </IconButton>
         <DialogContent dividers>
-          <AddCustomForm refetch={refetch}/>
+          <AddCustomForm
+            data={data}
+            refetch={refetch}
+            handleClose={handleClose}
+          />
         </DialogContent>
       </BootstrapDialog>
     </div>

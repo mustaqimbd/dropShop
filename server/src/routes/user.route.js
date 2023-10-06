@@ -26,7 +26,7 @@ userRoute.post(
   validateEmail,
   validatePassword,
   userValidate,
-  runValidation,
+  runValidation, 
   requestRegister
 );
 
