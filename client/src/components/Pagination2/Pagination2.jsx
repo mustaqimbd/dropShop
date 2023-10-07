@@ -27,7 +27,7 @@ const Pagination2 = ({
         {data?.payload?.skip ? <span>{data?.payload?.skip + 1}</span> : "0"}
         {" - "}
         {data?.payload?.skip + data?.payload?.limit ? (
-          <span>{data?.payload?.skip + data?.payload?.limit}</span>
+          <span>{data?.payload?.skip + data?.payload?.length}</span>
         ) : (
           ""
         )}{" "}
