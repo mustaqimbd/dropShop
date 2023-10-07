@@ -6,6 +6,10 @@ import EditIcon from "@mui/icons-material/Edit";
 const ProductsModal = ({ open, setOpen, searchProduct, handleDelete }) => {
   const { product_name, images, total_sold, available_quantity, product_id } =
     searchProduct.payload.singleProduct;
+  const handleDeleteFromModal = id => {
+    setOpen(false);
+    handleDelete(id);
+  };
   return (
     <CustomModal open={open} setOpen={setOpen}>
       <div className="space-y-3">
@@ -21,7 +25,10 @@ const ProductsModal = ({ open, setOpen, searchProduct, handleDelete }) => {
         </div>
         <div className="flex justify-end">
           <div>
-            <IconButton color="error2" onClick={() => handleDelete(product_id)}>
+            <IconButton
+              color="error2"
+              onClick={() => handleDeleteFromModal(product_id)}
+            >
               <DeleteIcon />
             </IconButton>
             <IconButton>

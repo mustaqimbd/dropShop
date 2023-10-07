@@ -27,4 +27,7 @@
 /* ===================================================================================== */
 
 
-/* scrollbar  */
+/* ======== account ======== */
+.cs-input {
+  @apply ring-2 rounded-md p-3 max-w-xl w-full mt-5 outline-none ring-zinc-300 font-bold focus:ring-primary
+}

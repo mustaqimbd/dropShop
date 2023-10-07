@@ -3,6 +3,7 @@ import ContainerFull from "../../container/ContainerFull";
 import ContainerMax from "../../container/ContainerMax";
 import { Link } from "react-router-dom";
 import useAuthProvider from "../../../hooks/useAuthProvider";
+import QuickLinks from "../../QuickLinks/QuickLinks";
 
 const Navbar = () => {
   const { user } = useAuthProvider();
@@ -149,7 +150,8 @@ const Navbar = () => {
             </div>
             <div>
               {user ? (
-                <Link to="/dashboard">Dashboard</Link>
+                // <Link to="/dashboard">Dashboard</Link>
+                <QuickLinks />
               ) : (
                 <Link to="/register">Join As A Dropshipper</Link>
               )}
