@@ -2,6 +2,9 @@ const {
   addCustomer,
   getCustomers,
   updateCustomer,
+  searchCustomer,
+  getMyOrders,
+  searchOrder,
 } = require("../controller/reseller.controller");
 const {
   validateEmail,
@@ -31,6 +34,9 @@ resellerRoute.post(
 // get customers
 // /api/reseller/dashboard/my-customers
 resellerRoute.get("/dashboard/my-customers", getCustomers);
+
+// update customers
+// /api/reseller/dashboard/my-customers
 resellerRoute.patch(
   "/dashboard/my-customers",
   validateEmail,
@@ -38,5 +44,17 @@ resellerRoute.patch(
   runValidation,
   updateCustomer
 );
+
+//search customer
+// /api/reseller/dashboard/my-customers/:reseller_id/search
+resellerRoute.get("/dashboard/my-customers/:reseller_id/search", searchCustomer);
+
+// get orders
+// /api/reseller/dashboard/my-orders
+resellerRoute.get("/dashboard/my-orders", getMyOrders);
+
+// search orders
+// /api/reseller/dashboard/my-orders/:reseller_id/search
+resellerRoute.get("/dashboard/my-orders/:reseller_id/search", searchOrder);
 
 module.exports = resellerRoute;

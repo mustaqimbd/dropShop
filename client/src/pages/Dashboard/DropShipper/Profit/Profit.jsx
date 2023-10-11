@@ -1,8 +1,8 @@
-import TablePagination from "../MyCustomers/TablePagination";
 import ProfitTable from "./ProfitTable";
 import { FileDownload } from "@mui/icons-material";
 import SearchTable from "./SearchTable";
 import AreaCharts from "../../../../components/AreaCharts/AreaCharts";
+import TablePagination from "../../../../components/pagination/TablePagination";
 const data = [
   {
     name: "Page A",
@@ -75,7 +75,7 @@ const Profit = () => {
           </div>
           <h1 className="text-center text-2xl font-bold">0 ৳</h1>
           <div className="text-right">
-          <input type="month" id="myMonth" name="myMonth" />
+            <input type="month" id="myMonth" name="myMonth" />
           </div>
         </div>
         <AreaCharts data={data} area="uv" xAxis="name" />

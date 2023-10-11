@@ -24,7 +24,7 @@
     "status": "completed",
     "delivery_charge": 100,
     "completed_date": null,
-    "seller_id": "demoseller1",
+    "reseller_id": "demoseller1",
     "customer_id": "customer1"
   },
   {
@@ -46,7 +46,7 @@
     "status": "picked by currier",
     "delivery_charge": 100,
     "completed_date": null,
-    "seller_id": "demoseller3",
+    "reseller_id": "demoseller3",
     "customer_id": "customer1"
   },
   {
@@ -68,7 +68,7 @@
     "status": "processing",
     "delivery_charge": 100,
     "completed_date": null,
-    "seller_id": "demoseller2",
+    "reseller_id": "demoseller2",
     "customer_id": "customer1"
   },
   {
@@ -90,7 +90,7 @@
     "status": "shifted",
     "delivery_charge": 100,
     "completed_date": null,
-    "seller_id": "demoseller2",
+    "reseller_id": "demoseller2",
     "customer_id": "customer1"
   },
   {
@@ -112,7 +112,7 @@
     "status": "canceled",
     "delivery_charge": 100,
     "completed_date": null,
-    "seller_id": "demoseller2",
+    "reseller_id": "demoseller2",
     "customer_id": "customer1"
   }
 ]
