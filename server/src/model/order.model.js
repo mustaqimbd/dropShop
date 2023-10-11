@@ -52,7 +52,7 @@ const orderSchema = new mongoose.Schema(
         message: "Only Date or null values are allowed for completed_date",
       },
     },
-    seller_id: {
+    reseller_id: {
       type: String,
       required: true,
     },

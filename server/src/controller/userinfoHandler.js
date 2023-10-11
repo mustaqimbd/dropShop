@@ -1,6 +1,7 @@
 const userInfoHandler = (user) => {
   const {
     _id,
+    reseller_id,
     name,
     email,
     logo,
@@ -11,8 +12,10 @@ const userInfoHandler = (user) => {
     webOrPageLink,
     profile_pic,
   } = user;
+
   const userInfo = {
     _id,
+    reseller_id,
     name,
     email,
     logo,
@@ -23,6 +26,7 @@ const userInfoHandler = (user) => {
     webOrPageLink,
     profile_pic,
   };
+
   return userInfo;
 };
 

@@ -26,7 +26,7 @@ const orderCalculationAggregation = () => [
   {
     $lookup: {
       from: "users",
-      localField: "seller_id",
+      localField: "reseller_id",
       foreignField: "user_id",
       as: "seller_info",
     },

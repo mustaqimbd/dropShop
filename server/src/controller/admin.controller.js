@@ -273,7 +273,7 @@ const topSellers = async (req, res, next) => {
     const pipeline = [
       {
         $group: {
-          _id: "$seller_id",
+          _id: "$reseller_id",
           total_orders: { $sum: 1 },
           total_amount: { $sum: "$total_price" },
         },

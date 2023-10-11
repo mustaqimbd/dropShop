@@ -17,6 +17,7 @@ const rows = [
 ];
 
 const EarningTable = () => {
+  
   return (
     <TableContainer elevation={0} component={Paper}>
       <h3 className="text-center font-bold text-xl py-2 border-b border-gray-200">

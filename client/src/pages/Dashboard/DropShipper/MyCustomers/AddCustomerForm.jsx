@@ -4,9 +4,10 @@ import * as yup from "yup";
 import useAxiosSecure from "../../../../hooks/useAxiosSecure";
 import { useState } from "react";
 import Swal from "sweetalert2";
+import useAuthProvider from "../../../../hooks/useAuthProvider";
 
 const schema = yup.object().shape({
-  customerName: yup.string().required("Customer Name is required"),
+  customer_name: yup.string().required("Customer Name is required"),
   mobile: yup
     .string()
     .required("Mobile is required")
@@ -14,7 +15,7 @@ const schema = yup.object().shape({
     .max(15, "Invalid mobile number"),
   // .matches(/^(?:\+8801|01)[13-9]\d{8}$/, "Invalid mobile number"),
   email: yup.string().email("Invalid email").required("Email is required"),
-  deliveryAddress: yup.string().required("Address is required"),
+  address: yup.string().required("Address is required"),
   city: yup.string().required("City is required"),
   // country: yup.string().required("Country is required"),
 });
@@ -23,7 +24,7 @@ export default function AddCustomerForm({ data, refetch, handleClose }) {
   const [success, setSuccess] = useState(null);
   const [error, setError] = useState("");
   const [axiosSecure] = useAxiosSecure();
-
+  const { user } = useAuthProvider();
   const {
     control,
     handleSubmit,
@@ -36,7 +37,7 @@ export default function AddCustomerForm({ data, refetch, handleClose }) {
   const onSubmit = async (data) => {
     setError("");
     setSuccess("");
-    data.resellerId = "H8R4K9Q4T"; // TODO
+    data.reseller_id = user.reseller_id;
     try {
       const res = await axiosSecure.post(
         "/api/reseller/dashboard/add-customer",
@@ -44,7 +45,7 @@ export default function AddCustomerForm({ data, refetch, handleClose }) {
       );
       if (res.data.success) {
         setSuccess(res.data.message);
-        reset();
+        // reset();
         refetch();
       } else {
         setError(res.data.message);
@@ -58,13 +59,13 @@ export default function AddCustomerForm({ data, refetch, handleClose }) {
     }
   };
 
-  const customerId = data?.customerId;
+  const customerId = data?.customer_id;
 
   const update = async (data) => {
     setError("");
     setSuccess("");
-    data.resellerId = "H8R4K9Q4T";
-    data.customerId = customerId; // TODO
+    data.reseller_id = "H8R4K9Q4T";
+    data.customer_id = customerId; // TODO
     try {
       const res = await axiosSecure.patch(
         "/api/reseller/dashboard/my-customers",
@@ -116,9 +117,9 @@ export default function AddCustomerForm({ data, refetch, handleClose }) {
       <div className="flex flex-col gap-1">
         <label className="font-bold">Customer Name</label>
         <Controller
-          name="customerName"
+          name="customer_name"
           control={control}
-          defaultValue={data ? data.customerName : ""}
+          defaultValue={data ? data.customer_name : ""}
           render={({ field }) => (
             <input
               className="border border-gray-200 rounded p-1 outline-[#83B735]"
@@ -126,7 +127,7 @@ export default function AddCustomerForm({ data, refetch, handleClose }) {
             />
           )}
         />
-        <p className="text-red-600">{errors.customerName?.message}</p>
+        <p className="text-red-600">{errors.customer_name?.message}</p>
       </div>
       <div className="flex flex-col gap-1">
         <label className="font-bold">Mobile</label>
@@ -163,9 +164,9 @@ export default function AddCustomerForm({ data, refetch, handleClose }) {
       <div className="flex flex-col gap-1">
         <label className="font-bold">Delivery Address</label>
         <Controller
-          name="deliveryAddress"
+          name="address"
           control={control}
-          defaultValue={data ? data.deliveryAddress : ""}
+          defaultValue={data ? data.address : ""}
           render={({ field }) => (
             <input
               className="border border-gray-200 rounded p-1 outline-[#83B735]"
@@ -173,7 +174,7 @@ export default function AddCustomerForm({ data, refetch, handleClose }) {
             />
           )}
         />
-        <p className="text-red-600">{errors.deliveryAddress?.message}</p>
+        <p className="text-red-600">{errors.address?.message}</p>
       </div>
       <div className="flex flex-col gap-1">
         <label className="font-bold">City</label>

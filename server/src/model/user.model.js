@@ -9,6 +9,9 @@ const userSchema = new mongoose.Schema(
       type: String,
       unique: true,
     },
+    reseller_id: {
+      type: String,
+    },
     email: {
       type: String,
     },

@@ -10,8 +10,8 @@ import { ShoppingCartCheckoutOutlined } from "@mui/icons-material";
 import { Divider } from "@mui/material";
 import EditModal from "./EditModal";
 
-const CustomerTable = ({ data ,refetch}) => {
-  const rows = data.payload?.customers;
+const CustomerTable = ({ data, refetch }) => {
+  const rows = data;
 
   return (
     <TableContainer elevation={0} component={Paper}>
@@ -30,10 +30,7 @@ const CustomerTable = ({ data ,refetch}) => {
             <TableCell align="center" style={{ fontWeight: "bold" }}>
               Number of orders
             </TableCell>
-            <TableCell
-              align="center"
-              style={{ fontWeight: "bold"}}
-            >
+            <TableCell align="center" style={{ fontWeight: "bold" }}>
               Email
             </TableCell>
             <TableCell align="center" style={{ fontWeight: "bold" }}>
@@ -45,6 +42,15 @@ const CustomerTable = ({ data ,refetch}) => {
           </TableRow>
         </TableHead>
         <TableBody>
+          {rows?.length < 1 ? (
+            <TableRow>
+              <TableCell>
+                <h1 className="text-center">No customer</h1>
+              </TableCell>
+            </TableRow>
+          ) : (
+            ""
+          )}
           {rows?.map((row) => (
             <TableRow
               key={row._id}
@@ -53,27 +59,25 @@ const CustomerTable = ({ data ,refetch}) => {
               <TableCell>
                 <div className="flex items-center gap-2">
                   <span className="text-[#2DA5F3] bg-[#deebf3] p-3 rounded-full">
-                    {row.customerName.split(" ")[0].charAt(0) &&
-                    row.customerName.split(" ")[1]?.charAt(0) &&
-                    row.customerName.split(" ")[2]?.charAt(0)
-                      ? row.customerName.split(" ")[0].charAt(0) +
-                        row.customerName.split(" ")[1].charAt(0) +
-                        row.customerName.split(" ")[2].charAt(0)
-                      : row.customerName.split(" ")[0].charAt(0) &&
-                        row.customerName.split(" ")[1]?.charAt(0)
-                      ? row.customerName.split(" ")[0].charAt(0) +
-                        row.customerName.split(" ")[1].charAt(0)
-                      : row.customerName.split(" ")[0].charAt(0)}
+                    {row.customer_name.split(" ")[0].charAt(0) &&
+                    row.customer_name.split(" ")[1]?.charAt(0) &&
+                    row.customer_name.split(" ")[2]?.charAt(0)
+                      ? row.customer_name.split(" ")[0].charAt(0) +
+                        row.customer_name.split(" ")[1].charAt(0) +
+                        row.customer_name.split(" ")[2].charAt(0)
+                      : row.customer_name.split(" ")[0].charAt(0) &&
+                        row.customer_name.split(" ")[1]?.charAt(0)
+                      ? row.customer_name.split(" ")[0].charAt(0) +
+                        row.customer_name.split(" ")[1].charAt(0)
+                      : row.customer_name.split(" ")[0].charAt(0)}
                   </span>
-                  <span>{row.customerName}</span>
+                  <span>{row.customer_name}</span>
                 </div>
               </TableCell>
               <TableCell>{row.company}</TableCell>
               <TableCell align="center">{row.spend} ৳</TableCell>
               <TableCell align="center">{row.orders}</TableCell>
-              <TableCell>
-                {row.email}
-              </TableCell>
+              <TableCell>{row.email}</TableCell>
               <TableCell>{row.mobile}</TableCell>
               <TableCell>
                 <div className="flex justify-center gap-3 items-center text-white ">

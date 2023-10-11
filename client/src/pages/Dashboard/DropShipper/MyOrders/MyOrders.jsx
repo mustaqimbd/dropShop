@@ -1,10 +1,25 @@
 import { FileDownload } from "@mui/icons-material";
-import TablePagination from "../MyCustomers/TablePagination";
+import TablePagination from "../../../../components/pagination/TablePagination";
 import { Link } from "react-router-dom";
 import OrderTable from "./OrderTable";
-import SearchTable from "../Profit/SearchTable";
+// import SearchTable from "../Profit/SearchTable";
+import useGetRequest from "../../../../hooks/useGetRequest";
+import useAuthProvider from "../../../../hooks/useAuthProvider";
+import Search from "../../../../components/search/Search";
+import { useState } from "react";
 
 const MyOrders = () => {
+  const { user } = useAuthProvider();
+  const [currentPage, setCurrentPage] = useState(1);
+  const [searchResults, setSearchResults] = useState(null);
+  const perPage = 5;
+
+  const { data, refetch } = useGetRequest(
+    "my-orders",
+    `reseller/dashboard/my-orders?reseller_id=${user.reseller_id}&page=${currentPage}&limit=${perPage}`
+  );
+  console.log(data);
+  const searchApi = `/api/reseller/dashboard/my-orders/${user.reseller_id}`;
   return (
     <div>
       <div className="flex justify-between">
@@ -22,11 +37,7 @@ const MyOrders = () => {
         </div>
 
         <div className="flex items-center relative w-[30%]">
-          <input
-            className="w-full p-2 rounded-md outline-[#83B735] border border-gray-300"
-            type="text"
-            placeholder="Search Order..."
-          />
+          <Search api={searchApi} setSearchResults={setSearchResults} />
           <span className="absolute right-4">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -67,11 +78,26 @@ const MyOrders = () => {
           Edit Customer
         </button>
       </div>
-      <OrderTable />
-      <SearchTable />
-      <div className="mt-5">
-        <TablePagination />
-      </div>
+
+      {searchResults ? (
+        <OrderTable data={searchResults} />
+      ) : (
+        <>
+          <OrderTable
+            data={searchResults ? searchResults : data.payload?.myOrders}
+          />
+          <div className="mt-5">
+            <TablePagination
+              perPage={perPage}
+              totalQuantity={data.payload?.totalQuantity}
+              currentPage={currentPage}
+              setCurrentPage={setCurrentPage}
+              refetch={refetch}
+            ></TablePagination>
+          </div>
+        </>
+      )}
+      {/* <SearchTable /> */}
     </div>
   );
 };
