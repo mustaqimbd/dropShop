@@ -10,6 +10,7 @@ export default function TablePagination({
   refetch,
 }) {
   const totalPages = Math.ceil(totalQuantity / perPage);
+ 
   const handleChange = (event, value) => {
     setCurrentPage(value);
     refetch();

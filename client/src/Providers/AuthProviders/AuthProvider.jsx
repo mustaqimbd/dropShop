@@ -7,7 +7,7 @@ const AuthProvider = ({ children }) => {
   const [axiosSecure] = useAxiosSecure();
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
-// console.log(user)
+  
   //logout user
   const logOut = () => {
     localStorage.removeItem("token");

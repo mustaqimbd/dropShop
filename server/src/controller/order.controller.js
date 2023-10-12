@@ -33,7 +33,7 @@ const getOrderInfo = async (req, res, next) => {
       {
         $lookup: {
           from: "users",
-          localField: "seller_id",
+          localField: "reseller_id",
           foreignField: "user_id",
           as: "user_info",
         },

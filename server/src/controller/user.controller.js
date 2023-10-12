@@ -144,8 +144,8 @@ const loginUser = async (req, res, next) => {
           secure: true,
           expiresIn: new Date(Date.now() + 2 * 60 * 24),
         });
-        const userInfo = userInfoHandler(user);
 
+        const userInfo = userInfoHandler(user);
         return successResponse(res, {
           statusCode: 200,
           message: "Logged in successfully.",

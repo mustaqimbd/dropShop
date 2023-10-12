@@ -1,19 +1,25 @@
 import { FileDownload } from "@mui/icons-material";
 import CustomerTable from "./CustomerTable";
 import AddModal from "./AddModal";
-import TablePagination from "./TablePagination";
 import useGetRequest from "../../../../hooks/useGetRequest";
 import { useState } from "react";
+import Search from "../../../../components/search/Search";
+import useAuthProvider from "../../../../hooks/useAuthProvider";
+import TablePagination from "../../../../components/pagination/TablePagination";
 
 const MyCustomers = () => {
+  const { user } = useAuthProvider();
   const [currentPage, setCurrentPage] = useState(1);
+  const [searchResults, setSearchResults] = useState(null);
   const perPage = 5;
-  const user = { resellerId: "H8R4K9Q4T" }; //TODO
- 
+  
   const { data, refetch } = useGetRequest(
     "my-customers",
-    `reseller/dashboard/my-customers?resellerId=${user.resellerId}&page=${currentPage}&limit=${perPage}`
+    `reseller/dashboard/my-customers?reseller_id=${user.reseller_id}&page=${currentPage}&limit=${perPage}`
   );
+
+const searchApi = `/api/reseller/dashboard/my-customers/${user.reseller_id}`
+
   return (
     <div>
       <div className="flex justify-between">
@@ -26,11 +32,7 @@ const MyCustomers = () => {
         </div>
         <div className="flex items-center gap-4">
           <div className="flex items-center relative w-[70%]">
-            <input
-              className="w-full p-2 rounded-md outline-[#83B735] border border-gray-300"
-              type="text"
-              placeholder="Search Customer..."
-            />
+            <Search api={searchApi} setSearchResults={setSearchResults} />
             <span className="absolute right-4">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -75,16 +77,26 @@ const MyCustomers = () => {
           Edit Customer
         </button>
       </div>
-      <CustomerTable data={data} refetch={refetch}/>
-      <div className="mt-5">
-        <TablePagination
-          perPage={perPage}
-          totalQuantity={data.payload?.totalQuantity}
-          currentPage={currentPage}
-          setCurrentPage={setCurrentPage}
-          refetch={refetch}
-        ></TablePagination>
-      </div>
+      {searchResults ? (
+        <CustomerTable data={searchResults} />
+      ) : (
+        <>
+          <CustomerTable
+            data={searchResults ? searchResults : data.payload?.customers}
+            refetch={refetch}
+          />
+
+          <div className="mt-5">
+            <TablePagination
+              perPage={perPage}
+              totalQuantity={data.payload?.totalQuantity}
+              currentPage={currentPage}
+              setCurrentPage={setCurrentPage}
+              refetch={refetch}
+            ></TablePagination>
+          </div>
+        </>
+      )}
     </div>
   );
 };
