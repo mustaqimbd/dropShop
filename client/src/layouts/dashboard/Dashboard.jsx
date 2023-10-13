@@ -13,10 +13,7 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
-import Person from "@mui/icons-material/Person";
-import SettingsIcon from "@mui/icons-material/Settings";
 import DashboardIcon from "@mui/icons-material/Dashboard";
-import LogoutIcon from "@mui/icons-material/Logout";
 import PeopleIcon from "@mui/icons-material/People";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import UpdateIcon from "@mui/icons-material/Update";
@@ -30,21 +27,15 @@ import {
   PeopleAltOutlined,
 } from "@mui/icons-material";
 import { Link, Navigate, Outlet, useLocation } from "react-router-dom";
-import {
-  Avatar,
-  Button,
-  Menu,
-  MenuItem,
-  MenuList,
-  Typography,
-} from "@mui/material";
+import { Typography } from "@mui/material";
 import useAuthProvider from "../../hooks/useAuthProvider";
 import ActiveLink from "../../components/ActiveLink/ActiveLink";
+import QuickLinks from "../../components/QuickLinks/QuickLinks";
 
 const drawerWidth = 240;
 
 const Dashboard = props => {
-  const { user, logOut } = useAuthProvider();
+  const { user } = useAuthProvider();
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
@@ -53,19 +44,7 @@ const Dashboard = props => {
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const open = Boolean(anchorEl);
-  const handleClick = event => {
-    setAnchorEl(event.currentTarget);
-  };
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
 
-  //handle logout
-  const handleLogOut = () => {
-    logOut();
-  };
   const drawer = (
     <div>
       <Toolbar>
@@ -261,68 +240,7 @@ const Dashboard = props => {
             <div className="">
               <ul>
                 <li>
-                  <Button
-                    id="basic-button"
-                    aria-controls={open ? "basic-menu" : undefined}
-                    aria-haspopup="true"
-                    aria-expanded={open ? "true" : undefined}
-                    onClick={handleClick}
-                  >
-                    <Avatar alt={user?.name} srcSet={user?.profile_pic} />
-                  </Button>
-                  <Menu
-                    id="basic-menu"
-                    anchorEl={anchorEl}
-                    open={open}
-                    onClose={handleClose}
-                    MenuListProps={{
-                      "aria-labelledby": "basic-button",
-                    }}
-                  >
-                    <MenuList>
-                      <div className="flex gap-5 px-5 items-center pb-2">
-                        <div>
-                          <Avatar alt={user?.name} srcSet={user?.profile_pic} />
-                        </div>
-                        <div>
-                          <Typography variant="h6" component="h6">
-                            {user?.name}
-                          </Typography>
-                          <Box
-                            component="p"
-                            color="customColors.linkText"
-                            fontSize={14}
-                          >
-                            {user?.email}
-                          </Box>
-                        </div>
-                      </div>
-                      <Divider style={{ marginBottom: "10px" }} />
-                      <Link to="/">
-                        <MenuItem>
-                          <ListItemIcon>
-                            <Person fontSize="small" />
-                          </ListItemIcon>
-                          <ListItemText>Profile</ListItemText>
-                        </MenuItem>
-                      </Link>
-                      <Link to="/accounts/settings">
-                        <MenuItem>
-                          <ListItemIcon>
-                            <SettingsIcon fontSize="small" />
-                          </ListItemIcon>
-                          <ListItemText>Settings</ListItemText>
-                        </MenuItem>
-                      </Link>
-                      <Divider style={{ marginTop: "10px" }} />
-                      <MenuItem onClick={handleLogOut}>
-                        <ListItemIcon>
-                          <LogoutIcon fontSize="small" />
-                        </ListItemIcon>
-                        <ListItemText>Log Out</ListItemText>
-                      </MenuItem>
-                    </MenuList>
-                  </Menu>
+                  <QuickLinks />
                 </li>
               </ul>
             </div>

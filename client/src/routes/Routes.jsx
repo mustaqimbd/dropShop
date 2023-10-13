@@ -37,6 +37,9 @@ import ResetPassword from "../pages/ResetPassword/ResetPassword";
 import SingleOrderDetails from "../pages/Dashboard/Admin/Orders/SingleOrderDetails/SingleOrderDetails";
 import Info from "../pages/Dashboard/DropShipper/Profile/Info";
 import Settings from "../pages/Dashboard/DropShipper/Profile/settings";
+import Account from "../pages/Account/Account";
+import UserProfile from "../pages/Account/UserProfile/UserProfile";
+import ChangePassword from "../pages/Account/ChangePassword/ChangePassword";
 
 export const router = createBrowserRouter([
   {
@@ -111,6 +114,24 @@ export const router = createBrowserRouter([
       {
         path: "/need-help",
         element: <NeedHelp />,
+      },
+    ],
+  },
+  {
+    path: "/account",
+    element: (
+      <PrivateRoute>
+        <Account />
+      </PrivateRoute>
+    ),
+    children: [
+      {
+        path: "profile",
+        element: <UserProfile />,
+      },
+      {
+        path: "change-password",
+        element: <ChangePassword />,
       },
     ],
   },
@@ -209,5 +230,9 @@ export const router = createBrowserRouter([
         ],
       },
     ],
+  },
+  {
+    path: "*",
+    element: <h2>Page not found</h2>,
   },
 ]);

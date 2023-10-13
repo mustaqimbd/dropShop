@@ -39,7 +39,7 @@ const userSchema = new mongoose.Schema(
         district: String,
       },
       description: String,
-      pageOrWebLink: String,
+      pageOr_webLink: String,
     },
     payments: {
       withdraw: {

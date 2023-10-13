@@ -174,6 +174,21 @@ const userProfile = (req, res, next) => {
   }
 };
 
+//update user profile
+const changeUserProfile = async (req, res, next) => {
+  try {
+    const { name, profile_pic } = req.body;
+    const updateDoc = {
+      name,
+      profile_pic,
+    };
+    await User.findOneAndUpdate({ _id: req.user._id }, { $set: updateDoc });
+    return successResponse(res, { message: "updated successfully." });
+  } catch (error) {
+    next(error);
+  }
+};
+
 //forgot password
 const forgotPassword = async (req, res, next) => {
   try {
@@ -244,6 +259,7 @@ const logOutUser = (req, res, next) => {
 const changePassword = async (req, res, next) => {
   try {
     const user = req.user;
+    console.log(req.body);
     const { previousPassword, newPassword } = req.body;
     bcrypt.compare(previousPassword, user.password, async (err, result) => {
       if (err) return errorResponse(res, 500, err.message);
@@ -255,7 +271,7 @@ const changePassword = async (req, res, next) => {
           message: "Password changed successfully.",
         });
       } else {
-        return errorResponse(res, 400, "Password did not match.");
+        return errorResponse(res, 400, "Old password did not match.");
       }
     });
   } catch (error) {
@@ -269,6 +285,7 @@ module.exports = {
   loginUser,
   userProfile,
   updateUserProfile,
+  changeUserProfile,
   logOutUser,
   changePassword,
   forgotPassword,
