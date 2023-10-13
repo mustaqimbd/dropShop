@@ -12,6 +12,7 @@ const UserProfile = () => {
   const { user } = useAuthProvider();
   const [updatedName, setUpdatedName] = useState(user?.name);
   const [updatedImage, setUpdatedImage] = useState(null);
+  const [isUploading, setIsUploading] = useState(false);
   const btnController = () => {
     let returnVal = false;
     if (user?.name === updatedName) {
@@ -19,6 +20,9 @@ const UserProfile = () => {
     }
     if (updatedImage) {
       returnVal = false;
+    }
+    if (isUploading) {
+      returnVal = true;
     }
     return returnVal;
   };
@@ -46,9 +50,9 @@ const UserProfile = () => {
     setUpdatedName(user.name);
   };
   const handleUpload = async () => {
+    setIsUploading(true);
     try {
       if (updatedImage) {
-        console.log(updatedImage);
         const formData = new FormData();
         formData.append("image", updatedImage);
         fetch(
@@ -62,14 +66,19 @@ const UserProfile = () => {
           .then(async data => {
             console.log(data);
             changeProfile(data);
+            setIsUploading(false);
           })
-          .catch(err => console.log(err));
-        // setUploadedImgUrl(res?.data?.data?.display_url);
+          .catch(err => {
+            console.log(err);
+            setIsUploading(false);
+          });
       } else {
         changeProfile();
+        setIsUploading(false);
       }
     } catch (error) {
       console.log(error);
+      setIsUploading(false);
     }
   };
   const changeProfile = async data => {

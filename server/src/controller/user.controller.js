@@ -178,7 +178,6 @@ const userProfile = (req, res, next) => {
 const changeUserProfile = async (req, res, next) => {
   try {
     const { name, profile_pic } = req.body;
-    console.log(req.body);
     const updateDoc = {
       name,
       profile_pic,
@@ -260,6 +259,7 @@ const logOutUser = (req, res, next) => {
 const changePassword = async (req, res, next) => {
   try {
     const user = req.user;
+    console.log(req.body);
     const { previousPassword, newPassword } = req.body;
     bcrypt.compare(previousPassword, user.password, async (err, result) => {
       if (err) return errorResponse(res, 500, err.message);
@@ -271,7 +271,7 @@ const changePassword = async (req, res, next) => {
           message: "Password changed successfully.",
         });
       } else {
-        return errorResponse(res, 400, "Password did not match.");
+        return errorResponse(res, 400, "Old password did not match.");
       }
     });
   } catch (error) {

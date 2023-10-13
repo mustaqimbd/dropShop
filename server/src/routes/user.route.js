@@ -15,6 +15,7 @@ const isTokenAvailable = require("../middleware/isTokenAvailable");
 const limitReqResettingPass = require("../middleware/limitReqResettingPass");
 const limitRequest = require("../middleware/limitRequest");
 const validateEmail = require("../validation/email.validate");
+const newPassword = require("../validation/newPassword.validate");
 const validatePassword = require("../validation/password.validate");
 const { runValidation } = require("../validation/runValidation");
 const { userValidate } = require("../validation/user.validate");
@@ -77,8 +78,18 @@ userRoute.get(
 // /api/user/change-password
 userRoute.post(
   "/change-password",
+  newPassword,
+  runValidation,
   passport.authenticate("jwt", { session: false }),
   changePassword
+);
+
+//Change user profile
+// /api/user/change-user-profile
+userRoute.put(
+  "/change-user-profile",
+  passport.authenticate("jwt", { session: false }),
+  changeUserProfile
 );
 
 //put Data (Update shop info )
@@ -95,12 +106,6 @@ userRoute.put(
   newPassword:""*
  }
  * */
-
-userRoute.put(
-  "/change-user-profile",
-  passport.authenticate("jwt", { session: false }),
-  changeUserProfile
-);
 
 //forgot password
 userRoute.post(

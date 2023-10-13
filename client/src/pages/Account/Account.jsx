@@ -18,8 +18,8 @@ import ActiveLink from "../../components/ActiveLink/ActiveLink";
 import { Link, Outlet } from "react-router-dom";
 import QuickLinks from "../../components/QuickLinks/QuickLinks";
 import MenuIcon from "@mui/icons-material/Menu";
-import PeopleIcon from "@mui/icons-material/People";
 import { Person } from "@mui/icons-material";
+import SecurityIcon from "@mui/icons-material/Security";
 
 const Account = props => {
   const { window } = props;
@@ -56,9 +56,9 @@ const Account = props => {
           <ActiveLink to="/account/change-password">
             <ListItemButton>
               <ListItemIcon>
-                <PeopleIcon />
+                <SecurityIcon />
               </ListItemIcon>
-              <ListItemText primary="Sellers" />
+              <ListItemText primary="Change password" />
             </ListItemButton>
           </ActiveLink>
         </ListItem>
