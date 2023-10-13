@@ -45,7 +45,7 @@ export default function AddCustomerForm({ data, refetch, handleClose }) {
       );
       if (res.data.success) {
         setSuccess(res.data.message);
-        // reset();
+        reset();
         refetch();
       } else {
         setError(res.data.message);

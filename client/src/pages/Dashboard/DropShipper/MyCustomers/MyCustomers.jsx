@@ -12,13 +12,12 @@ const MyCustomers = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [searchResults, setSearchResults] = useState(null);
   const perPage = 5;
-  
-  const { data, refetch } = useGetRequest(
-    "my-customers",
-    `reseller/dashboard/my-customers?reseller_id=${user.reseller_id}&page=${currentPage}&limit=${perPage}`
-  );
 
-const searchApi = `/api/reseller/dashboard/my-customers/${user.reseller_id}`
+  const myCustomersApi = `reseller/dashboard/my-customers?reseller_id=${user.reseller_id}&page=${currentPage}&limit=${perPage}`;
+
+  const searchApi = `/api/reseller/dashboard/my-customers/${user.reseller_id}/search`;
+
+  const { data, refetch } = useGetRequest("my-customers", myCustomersApi);
 
   return (
     <div>
@@ -31,33 +30,7 @@ const searchApi = `/api/reseller/dashboard/my-customers/${user.reseller_id}`
           </p>
         </div>
         <div className="flex items-center gap-4">
-          <div className="flex items-center relative w-[70%]">
-            <Search api={searchApi} setSearchResults={setSearchResults} />
-            <span className="absolute right-4">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                fill="none"
-              >
-                <path
-                  d="M9.0625 15.625C12.6869 15.625 15.625 12.6869 15.625 9.0625C15.625 5.43813 12.6869 2.5 9.0625 2.5C5.43813 2.5 2.5 5.43813 2.5 9.0625C2.5 12.6869 5.43813 15.625 9.0625 15.625Z"
-                  stroke="#191C1F"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M13.7031 13.7031L17.5 17.5"
-                  stroke="#191C1F"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </span>
-          </div>
+          <Search api={searchApi} setSearchResults={setSearchResults} />
           <div>
             <AddModal refetch={refetch}></AddModal>
           </div>
@@ -78,21 +51,20 @@ const searchApi = `/api/reseller/dashboard/my-customers/${user.reseller_id}`
         </button>
       </div>
       {searchResults ? (
-        <CustomerTable data={searchResults} />
+        <CustomerTable data={searchResults.payload?.customers} />
       ) : (
         <>
           <CustomerTable
-            data={searchResults ? searchResults : data.payload?.customers}
+            data={data.payload?.customers}
             refetch={refetch}
           />
 
           <div className="mt-5">
             <TablePagination
               perPage={perPage}
-              totalQuantity={data.payload?.totalQuantity}
+              count={data.payload?.count}
               currentPage={currentPage}
               setCurrentPage={setCurrentPage}
-              refetch={refetch}
             ></TablePagination>
           </div>
         </>
