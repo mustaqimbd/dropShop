@@ -8,8 +8,9 @@ import Paper from "@mui/material/Paper";
 
 const OrderTable = ({ data }) => {
   const rows = data;
+  console.log(data)
   return (
-    <TableContainer component={Paper} style={{ marginBottom: "25px" }}>
+    <TableContainer elevation={0} component={Paper} style={{ marginBottom: "25px" }}>
       <Table sx={{ minWidth: 1000 }} aria-label="caption table">
         <TableHead>
           <TableRow>
@@ -24,6 +25,15 @@ const OrderTable = ({ data }) => {
           </TableRow>
         </TableHead>
         <TableBody>
+        {rows?.length < 1 ? (
+            <TableRow>
+              <TableCell>
+                <h1 className="text-center">No order</h1>
+              </TableCell>
+            </TableRow>
+          ) : (
+            ""
+          )}
           {rows?.map((row) => {
             const { name, email, mobile } = row.customer_info;
             return (

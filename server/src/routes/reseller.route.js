@@ -47,14 +47,14 @@ resellerRoute.patch(
 
 //search customer
 // /api/reseller/dashboard/my-customers/:reseller_id/search
-resellerRoute.get("/dashboard/my-customers/:reseller_id/search", searchCustomer);
+resellerRoute.get("/dashboard/my-customers/:reseller_id/search", getCustomers);
 
 // get orders
-// /api/reseller/dashboard/my-orders
-resellerRoute.get("/dashboard/my-orders", getMyOrders);
+// /api/reseller/dashboard/my-orders/:reseller_id
+resellerRoute.get("/dashboard/my-orders/:reseller_id", getMyOrders);
 
 // search orders
 // /api/reseller/dashboard/my-orders/:reseller_id/search
-resellerRoute.get("/dashboard/my-orders/:reseller_id/search", searchOrder);
+resellerRoute.get("/dashboard/my-orders/:reseller_id/search", getMyOrders);
 
 module.exports = resellerRoute;
