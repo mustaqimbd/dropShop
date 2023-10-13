@@ -9,6 +9,7 @@ const {
   forgotPassword,
   resetPassword,
   updateUserProfile,
+  changeUserProfile,
 } = require("../controller/user.controller");
 const isTokenAvailable = require("../middleware/isTokenAvailable");
 const limitReqResettingPass = require("../middleware/limitReqResettingPass");
@@ -26,7 +27,7 @@ userRoute.post(
   validateEmail,
   validatePassword,
   userValidate,
-  runValidation, 
+  runValidation,
   requestRegister
 );
 
@@ -94,6 +95,12 @@ userRoute.put(
   newPassword:""*
  }
  * */
+
+userRoute.put(
+  "/change-user-profile",
+  passport.authenticate("jwt", { session: false }),
+  changeUserProfile
+);
 
 //forgot password
 userRoute.post(

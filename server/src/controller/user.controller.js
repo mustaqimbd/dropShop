@@ -174,6 +174,22 @@ const userProfile = (req, res, next) => {
   }
 };
 
+//update user profile
+const changeUserProfile = async (req, res, next) => {
+  try {
+    const { name, profile_pic } = req.body;
+    console.log(req.body);
+    const updateDoc = {
+      name,
+      profile_pic,
+    };
+    await User.findOneAndUpdate({ _id: req.user._id }, { $set: updateDoc });
+    return successResponse(res, { message: "updated successfully." });
+  } catch (error) {
+    next(error);
+  }
+};
+
 //forgot password
 const forgotPassword = async (req, res, next) => {
   try {
@@ -269,6 +285,7 @@ module.exports = {
   loginUser,
   userProfile,
   updateUserProfile,
+  changeUserProfile,
   logOutUser,
   changePassword,
   forgotPassword,
