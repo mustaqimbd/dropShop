@@ -155,9 +155,65 @@ const getMyOrders = async (req, res, next) => {
   }
 };
 
+const getResentEarning = async (req, res, next) => {
+  try {
+    const page = parseInt(req.query.page) || 1;
+    const limit = parseInt(req.query.limit) || 10;
+
+    const pipeline = [
+      {
+        $match: { reseller_id: req.params.reseller_id, status: "completed" },
+      },
+      {
+        $lookup: {
+          from: "customers",
+          localField: "customer_id",
+          foreignField: "customer_id",
+          as: "customer_info",
+        },
+      },
+      {
+        $unwind: "$customer_info",
+      },
+      {
+        $project: {
+          _id: 0,
+          order_id: 1,
+          name: "$customer_info.customer_name",
+          completed_date: 1,
+          total: {
+            $sum: {
+              $map: {
+                input: "$ordered_products",
+                as: "product",
+                in: {
+                  $multiply: ["$$product.quantity", "$$product.unit_price"],
+                },
+              },
+            },
+          },
+          total_ordered_product: { $size: "$ordered_products" },
+        },
+      },
+    ];
+
+    const count = (await Order.aggregate(pipeline)).length;
+
+    const resentEarning = await Order.aggregate(pipeline)
+      .sort({ completed_date: -1 })
+      .skip((page - 1) * limit)
+      .limit(limit);
+
+    successResponse(res, { payload: { resentEarning, count } });
+  } catch (error) {
+    next(error);
+  }
+};
+
 module.exports = {
   addCustomer,
   getCustomers,
   updateCustomer,
   getMyOrders,
+  getResentEarning,
 };
