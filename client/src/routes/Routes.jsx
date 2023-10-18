@@ -35,11 +35,11 @@ import NeedHelp from "../pages/NeedHelp/NeedHelp";
 import ForgotPassword from "../pages/ForgotPassword/ForgotPassword";
 import ResetPassword from "../pages/ResetPassword/ResetPassword";
 import SingleOrderDetails from "../pages/Dashboard/Admin/Orders/SingleOrderDetails/SingleOrderDetails";
-import Info from "../pages/Dashboard/DropShipper/Profile/Info";
-import Settings from "../pages/Dashboard/DropShipper/Profile/settings";
 import Account from "../pages/Account/Account";
 import UserProfile from "../pages/Account/UserProfile/UserProfile";
 import ChangePassword from "../pages/Account/ChangePassword/ChangePassword";
+import MyInfo from "../pages/Dashboard/DropShipper/Profile/MyInfo";
+import Settings from "../pages/Dashboard/DropShipper/Profile/Settings";
 
 export const router = createBrowserRouter([
   {
@@ -219,7 +219,7 @@ export const router = createBrowserRouter([
             children: [
               {
                 path: "info",
-                element: <Info />,
+                element: <MyInfo />,
               },
               {
                 path: "settings",

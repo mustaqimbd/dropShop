@@ -8,9 +8,13 @@ import Paper from "@mui/material/Paper";
 
 const OrderTable = ({ data }) => {
   const rows = data;
-  console.log(data)
+  console.log(data);
   return (
-    <TableContainer elevation={0} component={Paper} style={{ marginBottom: "25px" }}>
+    <TableContainer
+      elevation={0}
+      component={Paper}
+      style={{ marginBottom: "25px" }}
+    >
       <Table sx={{ minWidth: 1000 }} aria-label="caption table">
         <TableHead>
           <TableRow>
@@ -25,7 +29,7 @@ const OrderTable = ({ data }) => {
           </TableRow>
         </TableHead>
         <TableBody>
-        {rows?.length < 1 ? (
+          {rows?.length < 1 ? (
             <TableRow>
               <TableCell>
                 <h1 className="text-center">No order</h1>
@@ -46,18 +50,12 @@ const OrderTable = ({ data }) => {
                 <TableCell>{row.status}</TableCell>
                 <TableCell>
                   <div className="flex items-center gap-2">
-                    <span className="text-[#2DA5F3] bg-[#deebf3] p-3 rounded-full">
-                      {name.split(" ")[0].charAt(0) &&
-                      name.split(" ")[1]?.charAt(0) &&
-                      name.split(" ")[2]?.charAt(0)
-                        ? name.split(" ")[0].charAt(0) +
-                          name.split(" ")[1].charAt(0) +
-                          name.split(" ")[2].charAt(0)
-                        : name.split(" ")[0].charAt(0) &&
-                          name.split(" ")[1]?.charAt(0)
-                        ? name.split(" ")[0].charAt(0) +
-                          name.split(" ")[1].charAt(0)
-                        : name.split(" ")[0].charAt(0)}
+                    <span className="text-[#2DA5F3] bg-[#deebf3] w-10 h-10 p-3 flex justify-center items-center rounded-full">
+                      {name
+                        ?.split(" ")
+                        .map((w) => w.charAt(0))
+                        .slice(0, 2)
+                        .join("")}
                     </span>
                     <span>{name}</span>
                   </div>

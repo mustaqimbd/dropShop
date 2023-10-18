@@ -1,28 +1,24 @@
 import { Divider } from "@mui/material";
 import { NavLink, Navigate, Outlet, useLocation } from "react-router-dom";
 import { Person, Settings, NavigateNext } from "@mui/icons-material";
+import useAuthProvider from "../../../../hooks/useAuthProvider";
 
 const Profile = () => {
+  const { user } = useAuthProvider();
+  const { name, reseller_id,profile_pic } = user;
+
   const path = useLocation().pathname;
-  const name = "Mustaqim Khan"
+
   return (
     <div className="flex">
       <div className="w-[500px] min-h-[calc(100vh-110px)] rounded-l border-r border-gray-300 bg-white">
         <div className="flex items-center gap-4 p-5">
-          <span className="text-[#2DA5F3] bg-[#deebf3] p-3 rounded-full">
-            {name.split(" ")[0].charAt(0) &&
-            name.split(" ")[1]?.charAt(0) &&
-            name.split(" ")[2]?.charAt(0)
-              ? name.split(" ")[0].charAt(0) +
-                name.split(" ")[1].charAt(0) +
-                name.split(" ")[2].charAt(0)
-              : name.split(" ")[0].charAt(0) && name.split(" ")[1]?.charAt(0)
-              ? name.split(" ")[0].charAt(0) + name.split(" ")[1].charAt(0)
-              : name.split(" ")[0].charAt(0)}
+          <span className="flex justify-center items-center">
+            <img className="w-12 h-12 object-cover rounded-full" src={profile_pic} alt="" />
           </span>
           <div>
             <h1 className="font-bold text-lg">{name}</h1>
-            <p>Reseller Id #98uyjeu</p>
+            <p>Reseller Id {reseller_id}</p>
           </div>
         </div>
         <Divider style={{ margin: "10px 0" }} />

@@ -54,19 +54,13 @@ const MyCustomers = () => {
         <CustomerTable data={searchResults.payload?.customers} />
       ) : (
         <>
-          <CustomerTable
-            data={data.payload?.customers}
-            refetch={refetch}
-          />
-
-          <div className="mt-5">
-            <TablePagination
-              perPage={perPage}
-              count={data.payload?.count}
-              currentPage={currentPage}
-              setCurrentPage={setCurrentPage}
-            ></TablePagination>
-          </div>
+          <CustomerTable data={data.payload?.customers} refetch={refetch} />
+          <TablePagination
+            perPage={perPage}
+            count={data.payload?.count}
+            currentPage={currentPage}
+            setCurrentPage={setCurrentPage}
+          ></TablePagination>
         </>
       )}
     </div>

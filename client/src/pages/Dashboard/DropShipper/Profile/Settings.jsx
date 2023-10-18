@@ -1,12 +1,33 @@
 import Switch from "@mui/material/Switch";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import useAxiosSecure from "../../../../hooks/useAxiosSecure";
+import useAuthProvider from "../../../../hooks/useAuthProvider";
 
 const Settings = () => {
+  const { user, fetchUser, setFetchUser } = useAuthProvider();
+  const [axiosSecure] = useAxiosSecure();
   const [checked, setChecked] = useState(false);
 
   const handleChange = (event) => {
     setChecked(event.target.checked);
   };
+
+  useEffect(() => {
+    setChecked(user.settings?.receiveEmail);
+  }, [user.settings?.receiveEmail]);
+
+  const saveSetting = () => {
+    axiosSecure
+      .put("/api/user/update-dropshipper-info", {
+        receiveEmail: checked,
+      })
+      .then(() => {
+        setFetchUser(!fetchUser);
+      })
+      .catch((err) => console.log(err));
+  };
+
+  const disable = user.settings?.receiveEmail === checked ? true : false;
 
   return (
     <div className="space-y-6">
@@ -25,7 +46,13 @@ const Settings = () => {
           </div>
         </div>
         <div>
-          <button className="bg-[#83B735] px-3 py-2 font-bold text-white rounded-md flex gap-1 items-center justify-center">
+          <button
+            disabled={disable}
+            onClick={saveSetting}
+            className={`bg-[#83B735] px-3 py-2 font-bold text-white rounded-md flex gap-1 items-center justify-center ${
+              disable ? "opacity-70" : "opacity-100"
+            }`}
+          >
             <span>Save settings</span>
           </button>
         </div>
