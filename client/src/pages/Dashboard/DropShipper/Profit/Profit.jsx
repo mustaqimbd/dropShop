@@ -1,9 +1,12 @@
 import ProfitTable from "./ProfitTable";
 import { FileDownload } from "@mui/icons-material";
-import SearchTable from "./SearchTable";
 import AreaCharts from "../../../../components/AreaCharts/AreaCharts";
 import TablePagination from "../../../../components/pagination/TablePagination";
-const data = [
+import useAuthProvider from "../../../../hooks/useAuthProvider";
+import { useState } from "react";
+import useGetRequest from "../../../../hooks/useGetRequest";
+import Search from "../../../../components/search/Search";
+const chartData = [
   {
     name: "Page A",
     uv: 4000,
@@ -48,6 +51,17 @@ const data = [
   },
 ];
 const Profit = () => {
+  const { user } = useAuthProvider();
+  const [currentPage, setCurrentPage] = useState(1);
+  const [searchResults, setSearchResults] = useState(null);
+  const perPage = 3;
+
+  const profit = `reseller/dashboard/profit/${user.reseller_id}?page=${currentPage}&limit=${perPage}`;
+
+  const searchApi = `/api/reseller/dashboard/profit/${user.reseller_id}/search`;
+
+  const { data } = useGetRequest("profit", profit);
+  console.log(searchResults);
   return (
     <div>
       <div className="grid grid-cols-3 gap-5">
@@ -78,32 +92,41 @@ const Profit = () => {
             <input type="month" id="myMonth" name="myMonth" />
           </div>
         </div>
-        <AreaCharts data={data} area="uv" xAxis="name" />
+        <AreaCharts data={chartData} area="uv" xAxis="name" />
       </div>
-      <div>
-        <h1 className="text-2xl font-bold mt-5">Your Direct Profit</h1>
-        <div className="text-white text-sm font-bold space-x-4 mt-4 mb-4">
-          <button className="bg-[#2DA5F3] px-3 py-2 rounded ">
-            <FileDownload fontSize="small" />
-            PDF
-          </button>
-          <button className="bg-[#2DA5F3] px-3 py-2 rounded ">
-            <FileDownload fontSize="small" />
-            CSV
-          </button>
-          <button className="bg-[#2DA5F3] px-3 py-2 rounded ">Print</button>
-          <button className="bg-[#2DA5F3] px-3 py-2 rounded ">
-            Edit Customer
-          </button>
+      <div className="flex justify-between items-center">
+        <div>
+          <h1 className="text-2xl font-bold mt-5">Your Direct Profit</h1>
+          <div className="text-white text-sm font-bold space-x-4 mt-4 mb-4">
+            <button className="bg-[#2DA5F3] px-3 py-2 rounded ">
+              <FileDownload fontSize="small" />
+              PDF
+            </button>
+            <button className="bg-[#2DA5F3] px-3 py-2 rounded ">
+              <FileDownload fontSize="small" />
+              CSV
+            </button>
+            <button className="bg-[#2DA5F3] px-3 py-2 rounded ">Print</button>
+            <button className="bg-[#2DA5F3] px-3 py-2 rounded ">
+              Edit Customer
+            </button>
+          </div>
         </div>
+        <Search api={searchApi} setSearchResults={setSearchResults} />
       </div>
-      <ProfitTable />
-      <div className="mt-5">
-        <SearchTable />
-      </div>
-      <div className="mt-5">
-        <TablePagination />
-      </div>
+      {searchResults ? (
+        <ProfitTable data={searchResults.payload?.profit} />
+      ) : (
+        <>
+          <ProfitTable data={data.payload?.profit} />
+          <TablePagination
+            perPage={perPage}
+            count={data.payload?.count}
+            currentPage={currentPage}
+            setCurrentPage={setCurrentPage}
+          ></TablePagination>
+        </>
+      )}
     </div>
   );
 };

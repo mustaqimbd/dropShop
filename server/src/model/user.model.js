@@ -24,7 +24,7 @@ const userSchema = new mongoose.Schema(
       enum: ["user", "seller", "admin"],
     },
     phone: {
-      type: Number,
+      type: String,
     },
     profile_pic: {
       type: String,
@@ -54,6 +54,9 @@ const userSchema = new mongoose.Schema(
         discount: Number,
         fee: Number,
       },
+    },
+    settings: {
+      receiveEmail: { type: Boolean, default: false },
     },
   },
   { timestamps: true }

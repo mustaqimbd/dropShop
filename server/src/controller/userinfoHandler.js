@@ -4,13 +4,15 @@ const userInfoHandler = (user) => {
     reseller_id,
     name,
     email,
-    logo,
-    mobile,
+    shop_info,
+    payments,
+    phone,
     address,
     district,
     role,
     webOrPageLink,
     profile_pic,
+    settings,
   } = user;
 
   const userInfo = {
@@ -18,13 +20,15 @@ const userInfoHandler = (user) => {
     reseller_id,
     name,
     email,
-    logo,
-    mobile,
+    shop_info,
+    payments,
+    phone,
     address,
     district,
     role,
     webOrPageLink,
     profile_pic,
+    settings,
   };
 
   return userInfo;

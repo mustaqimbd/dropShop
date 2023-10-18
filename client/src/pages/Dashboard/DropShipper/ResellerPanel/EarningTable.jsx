@@ -31,7 +31,7 @@ const EarningTable = () => {
         <TableHead>
           <TableRow>
             <TableCell style={{ fontWeight: "bold" }}>Order Id</TableCell>
-            <TableCell style={{ fontWeight: "bold" }}>name</TableCell>
+            <TableCell style={{ fontWeight: "bold" }}>Customer</TableCell>
             <TableCell style={{ fontWeight: "bold" }}>Date</TableCell>
             <TableCell style={{ fontWeight: "bold" }}>Amount</TableCell>
             <TableCell style={{ fontWeight: "bold" }}>Total Order</TableCell>
@@ -55,18 +55,12 @@ const EarningTable = () => {
               <TableCell>{row.order_id}</TableCell>
               <TableCell>
                 <div className="flex items-center gap-2">
-                  <span className="text-[#2DA5F3] bg-[#deebf3] p-3 rounded-full">
-                    {row.name.split(" ")[0].charAt(0) &&
-                    row.name.split(" ")[1]?.charAt(0) &&
-                    row.name.split(" ")[2]?.charAt(0)
-                      ? row.name.split(" ")[0].charAt(0) +
-                        row.name.split(" ")[1].charAt(0) +
-                        row.name.split(" ")[2].charAt(0)
-                      : row.name.split(" ")[0].charAt(0) &&
-                        row.name.split(" ")[1]?.charAt(0)
-                      ? row.name.split(" ")[0].charAt(0) +
-                        row.name.split(" ")[1].charAt(0)
-                      : row.name.split(" ")[0].charAt(0)}
+                  <span className="text-[#2DA5F3] bg-[#deebf3] w-10 h-10 p-3 flex justify-center items-center rounded-full">
+                    {row.name
+                      ?.split(" ")
+                      .map((w) => w.charAt(0))
+                      .slice(0, 2)
+                      .join("")}
                   </span>
                   <span>{row.name}</span>
                 </div>
@@ -79,14 +73,12 @@ const EarningTable = () => {
         </TableBody>
       </Table>
       <Divider />
-      <div className="mt-5">
-        <TablePagination
-          perPage={perPage}
-          count={data.payload?.count}
-          currentPage={currentPage}
-          setCurrentPage={setCurrentPage}
-        ></TablePagination>
-      </div>
+      <TablePagination
+        perPage={perPage}
+        count={data.payload?.count}
+        currentPage={currentPage}
+        setCurrentPage={setCurrentPage}
+      ></TablePagination>
     </TableContainer>
   );
 };

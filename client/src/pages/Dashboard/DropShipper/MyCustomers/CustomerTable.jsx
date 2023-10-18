@@ -58,18 +58,12 @@ const CustomerTable = ({ data, refetch }) => {
             >
               <TableCell>
                 <div className="flex items-center gap-2">
-                  <span className="text-[#2DA5F3] bg-[#deebf3] p-3 rounded-full">
-                    {row.customer_name.split(" ")[0].charAt(0) &&
-                    row.customer_name.split(" ")[1]?.charAt(0) &&
-                    row.customer_name.split(" ")[2]?.charAt(0)
-                      ? row.customer_name.split(" ")[0].charAt(0) +
-                        row.customer_name.split(" ")[1].charAt(0) +
-                        row.customer_name.split(" ")[2].charAt(0)
-                      : row.customer_name.split(" ")[0].charAt(0) &&
-                        row.customer_name.split(" ")[1]?.charAt(0)
-                      ? row.customer_name.split(" ")[0].charAt(0) +
-                        row.customer_name.split(" ")[1].charAt(0)
-                      : row.customer_name.split(" ")[0].charAt(0)}
+                  <span className="text-[#2DA5F3] bg-[#deebf3] w-10 h-10 p-3 flex justify-center items-center rounded-full">
+                    {row.customer_name
+                      ?.split(" ")
+                      .map((w) => w.charAt(0))
+                      .slice(0, 2)
+                      .join("")}
                   </span>
                   <span>{row.customer_name}</span>
                 </div>

@@ -83,9 +83,10 @@ const updateUserProfile = async (req, res, next) => {
   try {
     const userId = req.user._id; // Get user ID from request parameters
     const updatedUserData = req.body; // Get updated user data from request body
-
+    console.log(userId, "86", updatedUserData.receiveEmail);
     // Find the user by ID
     const user = req.user;
+    console.log(user.receiveEmail);
     // If the user doesn't exist, return an error
     if (!user) {
       throw createErrors(404, "User not found.");
@@ -103,12 +104,18 @@ const updateUserProfile = async (req, res, next) => {
           district: updatedUserData.district || user.district,
           shopName: updatedUserData.shopName || user.shopName,
           webOrPageLink: updatedUserData.webOrPageLink || user.webOrPageLink,
+          "settings.receiveEmail": updatedUserData.hasOwnProperty(
+            "receiveEmail"
+          )
+            ? updatedUserData.receiveEmail
+            : user.receiveEmail,
           // Update other fields as needed
         },
       },
-      { upsert: true } // Create a new user if it doesn't exist
+      { upsert: true },
+      { new: true } // Create a new user if it doesn't exist
     );
-
+    console.log(result, "114");
     return successResponse(res, {
       statusCode: 200,
       message: "User information updated successfully.",

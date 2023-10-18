@@ -4,6 +4,7 @@ const {
   updateCustomer,
   getMyOrders,
   getResentEarning,
+  getProfit,
 } = require("../controller/reseller.controller");
 const {
   validateEmail,
@@ -59,5 +60,13 @@ resellerRoute.get("/dashboard/my-orders/:reseller_id/search", getMyOrders);
 // get resent earning
 // /api/reseller/dashboard/resent-earning/:reseller_id
 resellerRoute.get("/dashboard/resent-earning/:reseller_id", getResentEarning);
+
+// get profit profit
+// /api/reseller/dashboard/profit/:reseller_id
+resellerRoute.get("/dashboard/profit/:reseller_id", getProfit);
+
+// search orders
+// /api/reseller/dashboard/my-orders/:reseller_id/search
+resellerRoute.get("/dashboard/profit/:reseller_id/search", getProfit);
 
 module.exports = resellerRoute;
