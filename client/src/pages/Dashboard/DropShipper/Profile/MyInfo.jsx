@@ -12,7 +12,6 @@ const MyInfo = () => {
   const { user } = useAuthProvider();
   const { name, email, phone } = user;
 
-  console.log(user);
   return (
     <div>
       <div>

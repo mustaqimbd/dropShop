@@ -83,10 +83,9 @@ const updateUserProfile = async (req, res, next) => {
   try {
     const userId = req.user._id; // Get user ID from request parameters
     const updatedUserData = req.body; // Get updated user data from request body
-    console.log(userId, "86", updatedUserData.receiveEmail);
     // Find the user by ID
     const user = req.user;
-    console.log(user.receiveEmail);
+    console.log(user, "88", updatedUserData);
     // If the user doesn't exist, return an error
     if (!user) {
       throw createErrors(404, "User not found.");
@@ -102,13 +101,16 @@ const updateUserProfile = async (req, res, next) => {
           mobile: updatedUserData.mobile || user.mobile,
           address: updatedUserData.address || user.address,
           district: updatedUserData.district || user.district,
+          "shop_info.shop_name": updatedUserData.shop_name,
           shopName: updatedUserData.shopName || user.shopName,
           webOrPageLink: updatedUserData.webOrPageLink || user.webOrPageLink,
-          "settings.receiveEmail": updatedUserData.hasOwnProperty(
-            "receiveEmail"
-          )
-            ? updatedUserData.receiveEmail
-            : user.receiveEmail,
+          "settings.receiveEmail":
+            updatedUserData.hasOwnProperty("receiveEmail") &&
+            updatedUserData.receiveEmail,
+          "payments.account_no": updatedUserData.payment_number,
+          "payments.payment_method": updatedUserData.payment_method,
+          "payments.withdraw.account_no": updatedUserData.withdraw_account_no,
+          "payments.withdraw.method": updatedUserData.withdraw_method,
           // Update other fields as needed
         },
       },

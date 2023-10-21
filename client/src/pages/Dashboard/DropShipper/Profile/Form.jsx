@@ -7,7 +7,7 @@ import Swal from "sweetalert2";
 import useAuthProvider from "../../../../hooks/useAuthProvider";
 
 const schema = yup.object().shape({
-  store_name: yup.string().required("Store name is required"),
+  shop_name: yup.string().required("Store name is required"),
   payment_number: yup
     .string()
     .required("Payment number is required")
@@ -17,11 +17,10 @@ const schema = yup.object().shape({
 });
 
 export default function Form({ handleClose }) {
-  const [success, setSuccess] = useState(null);
   const [error, setError] = useState("");
   const [axiosSecure] = useAxiosSecure();
-  const { user } = useAuthProvider();
-  console.log(user)
+  const { user,fetchUser, setFetchUser } = useAuthProvider();
+  // console.log(user)
   const {
     control,
     handleSubmit,
@@ -32,48 +31,33 @@ export default function Form({ handleClose }) {
   });
 
 // TODO
-  const onSubmit = async (data) => {
-    console.log(data)
-    // setError("");
-    // setSuccess("");
-    // data.reseller_id = user.reseller_id;
-    // try {
-    //   const res = await axiosSecure.put(
-    //     "/api/reseller/dashboard/update-customers",
-    //     data
-    //   );
-    //   if (res.data.success) {
-    //     setSuccess(res.data.message);
-    //     reset();
-    //     handleClose();
-    //     Swal.fire({
-    //       position: "top-end",
-    //       icon: "success",
-    //       title: "Successfully edited",
-    //       showConfirmButton: false,
-    //       timer: 1500,
-    //     });
-    //   } else {
-    //     handleClose();
-    //     Swal.fire({
-    //       position: "top-end",
-    //       icon: "error",
-    //       title: res.data.message,
-    //       showConfirmButton: false,
-    //       timer: 1500,
-    //     });
-    //   }
-    // } catch (error) {
-    //   handleClose();
-    //   Swal.fire({
-    //     position: "top-end",
-    //     icon: "error",
-    //     title: error.message,
-    //     showConfirmButton: false,
-    //     timer: 1500,
-    //   });
-    // }
-  };
+const onSubmit = async (data) => {
+  
+  console.log(data,);
+  setError("");
+  try {
+    const res = await axiosSecure.put(
+      "/api/user/update-dropshipper-info",
+      data
+    );
+    if (res.data.success) {
+      setFetchUser(!fetchUser)
+      reset();
+      handleClose();
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "Successfully updated",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    } else {
+      setError(res.data.message);
+    }
+  } catch (error) {
+    setError(error.message);
+  }
+};
 
   return (
     <form
@@ -81,11 +65,10 @@ export default function Form({ handleClose }) {
       className="space-y-2 md:w-[500px] px-5"
     >
       {error && <p className="text-center text-red-600">{error}</p>}
-      {success && <p className="text-center text-green-700">{success}</p>}
       <div className="flex flex-col gap-1">
         <label className="font-bold">Current store name</label>
         <Controller
-          name="store_name"
+          name="shop_name"
           control={control}
           defaultValue={user?.shop_info?.shop_name}
           render={({ field }) => (
@@ -95,14 +78,14 @@ export default function Form({ handleClose }) {
             />
           )}
         />
-        <p className="text-red-600">{errors.store_name?.message}</p>
+        <p className="text-red-600">{errors.shop_name?.message}</p>
       </div>
       <div className="flex flex-col gap-1">
         <label className="font-bold">Current payment number</label>
         <Controller
           name="payment_number"
           control={control}
-          defaultValue={""}
+          defaultValue={user?.payments?.account_no}
           render={({ field }) => (
             <input
               type="tel"
