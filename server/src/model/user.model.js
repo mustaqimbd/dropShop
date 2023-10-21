@@ -43,13 +43,16 @@ const userSchema = new mongoose.Schema(
     },
     payments: {
       withdraw: {
+        account_no: Number,
         method: String,
         payouts: Number,
       },
+      account_no: { type: Number },
+      payment_method: { type: String },
       subscription: {
         method: {
           type: String,
-          enum: ["bkash", "stripe"],
+          enum: ["BKash", "stripe"],
         },
         discount: Number,
         fee: Number,
