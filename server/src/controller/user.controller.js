@@ -142,7 +142,7 @@ const loginUser = async (req, res, next) => {
           httpOnly: true,
           sameSite: "None",
           secure: true,
-          expiresIn: new Date(Date.now() + 2 * 60 * 24),
+          expires: new Date(Date.now() + 2 * 60 * 24),
         });
 
         const userInfo = userInfoHandler(user);
