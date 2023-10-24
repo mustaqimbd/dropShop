@@ -64,11 +64,11 @@ export default function AddCustomerForm({ data, refetch, handleClose }) {
   const update = async (data) => {
     setError("");
     setSuccess("");
-    data.reseller_id = "H8R4K9Q4T";
-    data.customer_id = customerId; // TODO
+    data.reseller_id = user.reseller_id;
+    data.customer_id = customerId; 
     try {
       const res = await axiosSecure.patch(
-        "/api/reseller/dashboard/my-customers",
+        "/api/reseller/dashboard/update-customers",
         data
       );
       if (res.data.success) {

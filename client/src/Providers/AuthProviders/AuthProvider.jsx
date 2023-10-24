@@ -7,6 +7,7 @@ const AuthProvider = ({ children }) => {
   const [axiosSecure] = useAxiosSecure();
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [fetchUser, setFetchUser] = useState(false);
 
   //logout user
   const logOut = () => {
@@ -32,13 +33,15 @@ const AuthProvider = ({ children }) => {
     } else {
       setLoading(false);
     }
-  }, [axiosSecure]);
+  }, [axiosSecure,fetchUser]);
   const data = {
     user,
     setUser,
     loading,
     baseUrl,
     logOut,
+    fetchUser,
+    setFetchUser
   };
   return <AuthContext.Provider value={data}>{children}</AuthContext.Provider>;
 };

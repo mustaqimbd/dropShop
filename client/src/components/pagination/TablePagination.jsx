@@ -4,7 +4,7 @@ import Stack from "@mui/material/Stack";
 
 export default function TablePagination({
   perPage,
-  count,
+  count = 0,
   currentPage,
   setCurrentPage,
 }) {
@@ -15,19 +15,19 @@ export default function TablePagination({
   };
 
   return (
-    <Stack spacing={2}>
-      <Typography>
-        Showing {currentPage * perPage - perPage} to{" "}
-        {currentPage * perPage < count
-          ? currentPage * perPage
-          : count}{" "}
-        of {count} entire
-      </Typography>
-      <Pagination
-        count={totalPages ? totalPages : 0}
-        page={currentPage}
-        onChange={handleChange}
-      />
-    </Stack>
+    <div className="mt-5">
+      <Stack spacing={2}>
+        <Typography>
+          Showing {currentPage * perPage - perPage} to{" "}
+          {currentPage * perPage < count ? currentPage * perPage : count} of{" "}
+          {count} entire
+        </Typography>
+        <Pagination
+          count={totalPages}
+          page={currentPage}
+          onChange={handleChange}
+        />
+      </Stack>
+    </div>
   );
 }

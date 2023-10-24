@@ -24,7 +24,7 @@ const userSchema = new mongoose.Schema(
       enum: ["user", "seller", "admin"],
     },
     phone: {
-      type: Number,
+      type: String,
     },
     profile_pic: {
       type: String,
@@ -43,17 +43,23 @@ const userSchema = new mongoose.Schema(
     },
     payments: {
       withdraw: {
+        account_no: Number,
         method: String,
         payouts: Number,
       },
+      account_no: { type: Number },
+      payment_method: { type: String },
       subscription: {
         method: {
           type: String,
-          enum: ["bkash", "stripe"],
+          enum: ["BKash", "stripe"],
         },
         discount: Number,
         fee: Number,
       },
+    },
+    settings: {
+      receiveEmail: { type: Boolean, default: false },
     },
   },
   { timestamps: true }

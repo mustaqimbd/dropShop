@@ -18,7 +18,7 @@ const MyOrders = () => {
   const searchApi = `/api/reseller/dashboard/my-orders/${user.reseller_id}/search`;
 
   const { data } = useGetRequest("my-orders", myOrderApi);
-  
+
   return (
     <div>
       <div className="flex justify-between">
@@ -56,14 +56,12 @@ const MyOrders = () => {
       ) : (
         <>
           <OrderTable data={data.payload?.orders} />
-          <div className="mt-5">
-            <TablePagination
-              perPage={perPage}
-              count={data.payload?.count}
-              currentPage={currentPage}
-              setCurrentPage={setCurrentPage}
-            ></TablePagination>
-          </div>
+          <TablePagination
+            perPage={perPage}
+            count={data.payload?.count}
+            currentPage={currentPage}
+            setCurrentPage={setCurrentPage}
+          ></TablePagination>
         </>
       )}
     </div>

@@ -40,6 +40,8 @@ const Search = ({ api, setSearchResults }) => {
         id="outlined-search"
         label="Search field"
         type="search"
+        size="small"
+        
         className="w-full p-1 rounded-md outline-[#83B735] border border-gray-300"
         placeholder="Search..."
       />
