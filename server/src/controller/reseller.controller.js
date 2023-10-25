@@ -1,6 +1,7 @@
 const { successResponse, errorResponse } = require("./responseHandler");
 const Customer = require("../model/customers.model");
 const Order = require("../model/order.model");
+const Withdraw = require("../model/withdraw.model");
 const generateUniqueId = require("generate-unique-id");
 
 const addCustomer = async (req, res, next) => {
@@ -155,6 +156,107 @@ const getMyOrders = async (req, res, next) => {
   }
 };
 
+const getResellerStatics = async (req, res, next) => {
+  try {
+ 
+    // Calculate start and end dates for the last 30 days
+    const endDate = new Date(); // Current date
+    const startDate = new Date();
+    startDate.setDate(endDate.getDate() - 30); // Subtract 30 days
+
+    const pipeline = [
+      {
+        $match: {
+          reseller_id: req.user.reseller_id,
+          createdAt: { $gte: startDate, $lte: endDate },
+        },
+      },
+      
+      {
+        $facet: {
+          orders: [
+            {
+              $group: {
+                _id: "$_id",
+                // Add other fields as needed
+              },
+            },
+          ],
+          order_count: [
+            {
+              $count: "orders",
+            },
+          ],
+          completedOrders: [
+            {
+              $match: {
+                status: "completed",
+              },
+            },
+            {
+              $group: {
+                _id: "$_id",
+                // Add other fields as needed
+              },
+            },
+          ],
+          pendingOrders: [
+            {
+              $match: {
+                status: "pending",
+              },
+            },
+            {
+              $group: {
+                _id: "$_id",
+                // Add other fields as needed
+              },
+            },
+          ],
+          canceledOrders: [
+            {
+              $match: {
+                status: "canceled",
+              },
+            },
+            {
+              $group: {
+                _id: "$_id",
+                // Add other fields as needed
+              },
+            },
+          ],
+          
+        },
+      },
+    ];
+    
+     const customerPipeline = [
+      {
+        $match: {
+          reseller_id: req.user.reseller_id,
+          createdAt: { $gte: startDate, $lte: endDate }, // Filter by date range
+        },
+      },
+      {
+        $group: {
+          _id: "$_id",
+          // customer_id: { $first: "$customer_id" },
+        },
+      },
+    ];
+    
+    const orderStatistics = await Order.aggregate(pipeline);
+    const customers = await Customer.aggregate(customerPipeline);
+
+    successResponse(res, {
+      payload: { orderStatistics,customers },
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
 const getResentEarning = async (req, res, next) => {
   try {
     const page = parseInt(req.query.page) || 1;
@@ -229,7 +331,7 @@ const getProfit = async (req, res, next) => {
         ],
       };
     }
-    
+
     const pipeline = [
       { $match: { reseller_id: req.params.reseller_id } },
       {
@@ -286,11 +388,24 @@ const getProfit = async (req, res, next) => {
   }
 };
 
+const getWithdrawData = async (req, res, next) => {
+  try {
+    const withdraw = await Withdraw.find({
+      reseller_id: req.user?.reseller_id,
+    }).sort({ date: -1 });
+    successResponse(res, { payload: { withdraw } });
+  } catch (error) {
+    next(error);
+  }
+};
+
 module.exports = {
   addCustomer,
   getCustomers,
   updateCustomer,
   getMyOrders,
+  getResellerStatics,
   getResentEarning,
   getProfit,
+  getWithdrawData,
 };

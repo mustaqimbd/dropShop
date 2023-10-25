@@ -58,6 +58,7 @@ const userSchema = new mongoose.Schema(
         fee: Number,
       },
     },
+    balance: Number,
     settings: {
       receiveEmail: { type: Boolean, default: false },
     },

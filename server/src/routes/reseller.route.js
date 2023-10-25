@@ -1,3 +1,4 @@
+const passport = require("passport");
 const {
   addCustomer,
   getCustomers,
@@ -5,6 +6,8 @@ const {
   getMyOrders,
   getResentEarning,
   getProfit,
+  getWithdrawData,
+  getResellerStatics,
 } = require("../controller/reseller.controller");
 const {
   validateEmail,
@@ -13,9 +16,10 @@ const {
 } = require("../validation/validate");
 
 const resellerRoute = require("express").Router();
+const { isReseller } = require("../middleware/checkRole");
 
 //TODO: Secure reseller routes.
-// resellerRoute.use(passport.authenticate("jwt", { session: false }), isReseller);
+resellerRoute.use(passport.authenticate("jwt", { session: false }), isReseller);
 
 /*=======================
      reseller dashboard
@@ -57,6 +61,10 @@ resellerRoute.get("/dashboard/my-orders/:reseller_id", getMyOrders);
 // /api/reseller/dashboard/my-orders/:reseller_id/search
 resellerRoute.get("/dashboard/my-orders/:reseller_id/search", getMyOrders);
 
+// get reseller statistics data
+// /api/reseller/dashboard/reseller-statistics
+resellerRoute.get("/dashboard/reseller-statistics", getResellerStatics)
+
 // get resent earning
 // /api/reseller/dashboard/resent-earning/:reseller_id
 resellerRoute.get("/dashboard/resent-earning/:reseller_id", getResentEarning);
@@ -65,8 +73,14 @@ resellerRoute.get("/dashboard/resent-earning/:reseller_id", getResentEarning);
 // /api/reseller/dashboard/profit/:reseller_id
 resellerRoute.get("/dashboard/profit/:reseller_id", getProfit);
 
-// search orders
-// /api/reseller/dashboard/my-orders/:reseller_id/search
+// search profit
+// /api/reseller/dashboard/profit/:reseller_id/search
 resellerRoute.get("/dashboard/profit/:reseller_id/search", getProfit);
+
+// get withdraw data
+// /api/reseller/dashboard/withdraw/:reseller_id
+resellerRoute.get("/dashboard/withdraw", getWithdrawData);
+
+;
 
 module.exports = resellerRoute;

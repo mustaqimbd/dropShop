@@ -11,6 +11,17 @@ const isAdmin = (req, res, next) => {
   next();
 };
 
-module.exports = isAdmin;
+const isReseller = (req, res, next) => {
+  if (req.user.role !== "reseller") {
+    return errorResponse(
+      res,
+      403,
+      "Access denied. This data can only access the resellers."
+    );
+  }
+  next();
+};
+
+module.exports = { isAdmin, isReseller };
 //Hello Middleware
 //Hello Middleware Abdullah
