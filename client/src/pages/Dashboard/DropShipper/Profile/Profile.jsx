@@ -5,7 +5,7 @@ import useAuthProvider from "../../../../hooks/useAuthProvider";
 
 const Profile = () => {
   const { user } = useAuthProvider();
-  const { name, reseller_id,profile_pic } = user;
+  const { name, reseller_id, profile_pic, balance } = user;
 
   const path = useLocation().pathname;
 
@@ -14,7 +14,11 @@ const Profile = () => {
       <div className="w-[500px] min-h-[calc(100vh-110px)] rounded-l border-r border-gray-300 bg-white">
         <div className="flex items-center gap-4 p-5">
           <span className="flex justify-center items-center">
-            <img className="w-12 h-12 object-cover rounded-full" src={profile_pic} alt="" />
+            <img
+              className="w-12 h-12 object-cover rounded-full"
+              src={profile_pic}
+              alt=""
+            />
           </span>
           <div>
             <h1 className="font-bold text-lg">{name}</h1>
@@ -24,7 +28,7 @@ const Profile = () => {
         <Divider style={{ margin: "10px 0" }} />
         <div className="p-5">
           <p>Account Balance</p>
-          <h1 className="text-2xl font-bold">0 ৳</h1>
+          <h1 className="text-2xl font-bold">{balance || 0} ৳</h1>
         </div>
         <Divider style={{ margin: "10px 0" }} />
         <div className="space-y-2">

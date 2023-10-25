@@ -7,16 +7,8 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import { Divider } from "@mui/material";
 
-function createData(_id, amount, paymentMethod, date, notes) {
-  return { _id, amount, paymentMethod, date, notes };
-}
-
-const rows = [
-  createData("#fu773u", 500, "Bkash", "29/09/2023", "notes"),
-  createData("#fu773f", 500, "Bkash", "29/09/2023", "notes"),
-];
-
-const WithdrawTable = () => {
+const WithdrawTable = ({ data }) => {
+  const rows = data;
   return (
     <TableContainer elevation={0} component={Paper}>
       <h3 className="text-center font-bold text-xl py-2 border-b border-gray-200">
@@ -32,13 +24,22 @@ const WithdrawTable = () => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
+          {rows?.length < 1 ? (
+            <TableRow>
+              <TableCell>
+                <h1 className="text-center">No customer</h1>
+              </TableCell>
+            </TableRow>
+          ) : (
+            ""
+          )}
+          {rows?.map((row) => (
             <TableRow
               key={row._id}
               sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
             >
               <TableCell>{row.amount} ৳</TableCell>
-              <TableCell>{row.paymentMethod}</TableCell>
+              <TableCell>{row.payment_method}</TableCell>
               <TableCell>{row.date}</TableCell>
               <TableCell>{row.notes}</TableCell>
             </TableRow>

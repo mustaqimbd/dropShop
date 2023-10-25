@@ -1,7 +1,12 @@
+import useAuthProvider from "../../../../hooks/useAuthProvider";
+import useGetRequest from "../../../../hooks/useGetRequest";
 import ConfigureModal from "./ConfigureModal";
 import WithdrawTable from "./WithdrawTable";
 
 const PaymentWithdraw = () => {
+  const { user } = useAuthProvider();
+  const { data } = useGetRequest("withdraw", "reseller/dashboard/withdraw");
+
   return (
     <div>
       <div>
@@ -14,7 +19,7 @@ const PaymentWithdraw = () => {
             Available for withdraw
           </h1>
           <div className="bg-[#2DA5F3] p-5 rounded-b h-full">
-            <h1 className="text-2xl font-bold mb-4">0 ৳</h1>
+            <h1 className="text-2xl font-bold mb-4">{user?.balance || 0} ৳</h1>
             <p className="text-sm">
               This is the amount you have currently in earnings available for
               your next withdraw
@@ -33,7 +38,7 @@ const PaymentWithdraw = () => {
           </div>
         </div>
       </div>
-      <WithdrawTable />
+      <WithdrawTable data={data.payload?.withdraw} />
     </div>
   );
 };

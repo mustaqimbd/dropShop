@@ -11,8 +11,11 @@ const orderSchema = new mongoose.Schema(
     ordered_products: [
       {
         product_slug: String,
+        product_id: String,
         quantity: Number,
         advanced: Number,
+        reseller_unit_price: Number,
+        profit: Number,
         unit_price: Number,
       },
     ],

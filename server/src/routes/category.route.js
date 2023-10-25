@@ -8,7 +8,7 @@ const {
   updateCategory,
   deleteCategory,
 } = require("../controller/category.controller");
-const isAdmin = require("../middleware/isAdmin");
+const { isAdmin } = require("../middleware/checkRole");
 
 //get all category
 // /api/category/
