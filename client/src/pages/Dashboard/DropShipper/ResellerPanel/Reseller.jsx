@@ -3,14 +3,16 @@ import CustomPieChart from "./CustomPieChart";
 import { PeopleAlt, Redeem } from "@mui/icons-material";
 import EarningTable from "./EarningTable";
 import useGetRequest from "../../../../hooks/useGetRequest";
-
+import useAuthProvider from "../../../../hooks/useAuthProvider";
 
 const Reseller = () => {
+  const { user } = useAuthProvider();
+
   const { data } = useGetRequest(
-    "order-statistics",
+    "reseller-statistics",
     "reseller/dashboard/reseller-statistics"
   );
- 
+
   return (
     <div>
       <div>
@@ -24,18 +26,23 @@ const Reseller = () => {
               <h1 className="text-lg font-bold">Available Balance</h1>
               <Link className="text-sm">View earning</Link>
             </div>
-            <h1 className="text-2xl font-bold">350 ৳</h1>
-            <p className="text-sm">350 ৳ earnings in the last 30 days</p>
+            <h1 className="text-2xl font-bold">{user?.balance} ৳</h1>
+            <p className="text-sm">
+              {data?.payload?.statistics?.totalProfit} ৳ earnings in the last 30
+              days
+            </p>
           </div>
           <div className="space-y-3">
             <p className="text-lg font-bold">Amount of profit in this month</p>
-            <h1 className="text-2xl font-bold">350 ৳</h1>
+            <h1 className="text-2xl font-bold">
+              {data?.payload?.statistics?.totalProfit} ৳
+            </h1>
           </div>
         </div>
         <div className="px-5 py-3 rounded">
           <h1 className="font-bold">Order statistics (last 30 days)</h1>
           <div className=" w-full h-[200px] ">
-            <CustomPieChart orderStatistics={data.payload?.orderStatistics[0]} />
+            <CustomPieChart statistics={data?.payload?.statistics} />
           </div>
         </div>
 
@@ -45,7 +52,7 @@ const Reseller = () => {
             <div>
               <h1>Orders</h1>
               <h1 className="font-bold">
-                {data.payload?.orderStatistics[0]?.orders?.length}
+                {data?.payload?.statistics?.totalOrder}
               </h1>
             </div>
             <div className="hover:bg-[#deebf3] p-3">
@@ -57,7 +64,9 @@ const Reseller = () => {
           <div className="flex justify-between items-center">
             <div>
               <h1>Customer</h1>
-              <h1 className="font-bold">{data.payload?.customers?.length}</h1>
+              <h1 className="font-bold">
+                {data?.payload?.statistics?.totalCustomer}
+              </h1>
             </div>
             <div className="hover:bg-[#deebf3] p-3">
               <Link to="/dashboard/dropshipper/my-customers">
@@ -67,7 +76,7 @@ const Reseller = () => {
           </div>
         </div>
       </div>
-      
+
       <div>
         <EarningTable />
       </div>

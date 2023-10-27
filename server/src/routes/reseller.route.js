@@ -8,6 +8,8 @@ const {
   getProfit,
   getWithdrawData,
   getResellerStatics,
+  getProfitStatics,
+  getProfitOverview,
 } = require("../controller/reseller.controller");
 const {
   validateEmail,
@@ -69,7 +71,15 @@ resellerRoute.get("/dashboard/reseller-statistics", getResellerStatics)
 // /api/reseller/dashboard/resent-earning/:reseller_id
 resellerRoute.get("/dashboard/resent-earning/:reseller_id", getResentEarning);
 
-// get profit profit
+// get profit statistics
+// /api/reseller/dashboard/profit-statistics
+resellerRoute.get("/dashboard/profit-statistics", getProfitStatics);
+
+// get profit overview statistics
+// /api/reseller/dashboard/profit-overview
+resellerRoute.get("/dashboard/profit-overview", getProfitOverview);
+
+// get profit table data
 // /api/reseller/dashboard/profit/:reseller_id
 resellerRoute.get("/dashboard/profit/:reseller_id", getProfit);
 
@@ -81,6 +91,5 @@ resellerRoute.get("/dashboard/profit/:reseller_id/search", getProfit);
 // /api/reseller/dashboard/withdraw/:reseller_id
 resellerRoute.get("/dashboard/withdraw", getWithdrawData);
 
-;
 
 module.exports = resellerRoute;
