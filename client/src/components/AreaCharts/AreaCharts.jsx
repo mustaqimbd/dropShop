@@ -8,7 +8,7 @@ import {
   YAxis,
 } from "recharts";
 
-const AreaCharts = ({ data, xAxis, area }) => {
+const AreaCharts = ({ data, xAxis, area, CustomTooltip }) => {
   return (
     <ResponsiveContainer width="100%" height={200}>
       <AreaChart
@@ -25,7 +25,7 @@ const AreaCharts = ({ data, xAxis, area }) => {
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey={xAxis} />
         <YAxis />
-        <Tooltip />
+        {CustomTooltip ? <Tooltip content={<CustomTooltip />} /> : <Tooltip />}
         <Area type="monotone" dataKey={area} stroke="#8884d8" fill="#8884d8" />
       </AreaChart>
     </ResponsiveContainer>

@@ -158,7 +158,6 @@ const getMyOrders = async (req, res, next) => {
 
 const getResellerStatics = async (req, res, next) => {
   try {
- 
     // Calculate start and end dates for the last 30 days
     const endDate = new Date(); // Current date
     const startDate = new Date();
@@ -171,86 +170,82 @@ const getResellerStatics = async (req, res, next) => {
           createdAt: { $gte: startDate, $lte: endDate },
         },
       },
-      
       {
         $facet: {
-          orders: [
+          order: [
             {
-              $group: {
-                _id: "$_id",
-                // Add other fields as needed
+              $count: "count",
+            },
+          ],
+          completedOrder: [
+            {
+              $match: {
+                status: "completed",
               },
             },
+            { $count: "count" },
           ],
-          order_count: [
+          pendingOrder: [
             {
-              $count: "orders",
+              $match: {
+                status: "pending",
+              },
             },
+            { $count: "count" },
           ],
-          completedOrders: [
+          canceledOrder: [
+            {
+              $match: {
+                status: "canceled",
+              },
+            },
+            { $count: "count" },
+          ],
+          profit: [
             {
               $match: {
                 status: "completed",
               },
             },
             {
-              $group: {
-                _id: "$_id",
-                // Add other fields as needed
-              },
-            },
-          ],
-          pendingOrders: [
-            {
-              $match: {
-                status: "pending",
-              },
+              $unwind: "$ordered_products",
             },
             {
               $group: {
-                _id: "$_id",
-                // Add other fields as needed
+                _id: null,
+                totalProfit: { $sum: "$ordered_products.profit" },
               },
             },
           ],
-          canceledOrders: [
-            {
-              $match: {
-                status: "canceled",
-              },
-            },
-            {
-              $group: {
-                _id: "$_id",
-                // Add other fields as needed
-              },
-            },
-          ],
-          
         },
       },
     ];
-    
-     const customerPipeline = [
+
+    const customerPipeline = [
       {
         $match: {
           reseller_id: req.user.reseller_id,
           createdAt: { $gte: startDate, $lte: endDate }, // Filter by date range
         },
       },
-      {
-        $group: {
-          _id: "$_id",
-          // customer_id: { $first: "$customer_id" },
-        },
-      },
+      { $count: "count" },
     ];
-    
-    const orderStatistics = await Order.aggregate(pipeline);
-    const customers = await Customer.aggregate(customerPipeline);
+
+    const orderStatisticsArray = await Order.aggregate(pipeline);
+    const customerArray = await Customer.aggregate(customerPipeline);
+
+    // last 30 days statistics
+    const statistics = {
+      totalOrder: orderStatisticsArray[0].order[0].count,
+      completedOrder: orderStatisticsArray[0].completedOrder[0].count,
+      pendingOrder: orderStatisticsArray[0].pendingOrder[0].count,
+      canceledOrder: orderStatisticsArray[0].canceledOrder[0].count,
+      totalProfit: orderStatisticsArray[0].profit[0].totalProfit,
+      totalCustomer: customerArray[0].count,
+    };
 
     successResponse(res, {
-      payload: { orderStatistics,customers },
+      payload: { statistics },
     });
   } catch (error) {
     next(error);
@@ -307,6 +302,130 @@ const getResentEarning = async (req, res, next) => {
       .limit(limit);
 
     successResponse(res, { payload: { resentEarning, count } });
+  } catch (error) {
+    next(error);
+  }
+};
+
+const getProfitStatics = async (req, res, next) => {
+  try {
+    // Calculate start and end dates for the last 30 days
+    const endDate = new Date(); // Current date
+    const startDate = new Date();
+    startDate.setDate(endDate.getDate() - 30); // Subtract 30 days
+
+    const pipeline = [
+      {
+        $match: {
+          reseller_id: req.user.reseller_id,
+          status: "completed",
+          updatedAt: { $gte: startDate, $lte: endDate },
+        },
+      },
+      {
+        $unwind: "$ordered_products",
+      },
+      {
+        $group: {
+          _id: null,
+          totalProfit: { $sum: "$ordered_products.profit" },
+        },
+      },
+    ];
+
+    const orderStatisticsArray = await Order.aggregate(pipeline);
+    const lastThirtyDaysProfit = orderStatisticsArray[0];
+
+    const date = new Date();
+    const currentMonth = date.getMonth() + 1;
+    const currentYear = date.getFullYear();
+
+    const thisMonthPipeline = [
+      {
+        $match: {
+          $expr: {
+            $and: [
+              { $eq: ["$reseller_id", req.user.reseller_id] },
+              { $eq: ["$status", "completed"] },
+              { $eq: [{ $month: "$updatedAt" }, currentMonth] },
+              { $eq: [{ $year: "$updatedAt" }, currentYear] },
+            ],
+          },
+        },
+      },
+      {
+        $unwind: "$ordered_products",
+      },
+      {
+        $group: {
+          _id: null,
+          totalProfit: { $sum: "$ordered_products.profit" },
+        },
+      },
+    ];
+
+    const thisMonthProfitArray = await Order.aggregate(thisMonthPipeline);
+    const thisMonthProfit = thisMonthProfitArray[0];
+
+    successResponse(res, {
+      payload: { lastThirtyDaysProfit, thisMonthProfit },
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+const getProfitOverview = async (req, res, next) => {
+  try {
+    const dateParts = req.query.date.split("-");
+    const month = parseInt(dateParts[1]);
+    const year = parseInt(dateParts[0]);
+
+    const pipeline = [
+      {
+        $match: {
+          $expr: {
+            $and: [
+              { $eq: ["$reseller_id", req.user.reseller_id] },
+              { $eq: ["$status", "completed"] },
+              { $eq: [{ $month: "$updatedAt" }, month] },
+              { $eq: [{ $year: "$updatedAt" }, year] },
+            ],
+          },
+        },
+      },
+      {
+        $facet: {
+          profitEverySingleDay: [
+            {
+              $group: {
+                _id: "$_id",
+                date: { $first: { $dayOfMonth: "$updatedAt" } },
+                totalProfit: { $first: { $sum: "$ordered_products.profit" } },
+              },
+            },
+          ],
+          totalProfitThisMonth: [
+            {
+              $unwind: "$ordered_products",
+            },
+            {
+              $group: {
+                _id: null,
+                totalProfit: { $sum: "$ordered_products.profit" },
+              },
+            },
+          ],
+        },
+      },
+    ];
+
+    const thisMonthProfitArray = await Order.aggregate(pipeline);
+    const selectedMonthProfit = thisMonthProfitArray[0];
+
+    successResponse(res, {
+      payload: { selectedMonthProfit },
+    });
   } catch (error) {
     next(error);
   }
@@ -406,6 +525,8 @@ module.exports = {
   getMyOrders,
   getResellerStatics,
   getResentEarning,
+  getProfitStatics,
+  getProfitOverview,
   getProfit,
   getWithdrawData,
 };

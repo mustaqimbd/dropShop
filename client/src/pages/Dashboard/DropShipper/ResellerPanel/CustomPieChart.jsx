@@ -7,26 +7,25 @@ import {
   Legend,
 } from "recharts";
 
-const CustomPieChart = ({ orderStatistics }) => {
- 
+const CustomPieChart = ({ statistics }) => {
   const data = [
     {
       name: "Completed",
-      value: orderStatistics?.completedOrders?.length || 0,
+      value: statistics?.completedOrder || 0,
     },
     {
       name: "Pending",
-      value: orderStatistics?.pendingOrders?.length || 0,
+      value: statistics?.pendingOrder || 0,
     },
     {
       name: "Canceled",
-      value: orderStatistics?.canceledOrders?.length || 0,
+      value: statistics?.canceledOrder || 0,
     },
   ];
 
   const COLORS = ["green", "yellow", "red"];
   return (
-    <ResponsiveContainer width="100%" height="100%" >
+    <ResponsiveContainer width="100%" height="100%">
       <PieChart width={200} height={180}>
         <Pie
           data={data}
