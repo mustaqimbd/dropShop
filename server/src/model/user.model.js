@@ -11,9 +11,11 @@ const userSchema = new mongoose.Schema(
     },
     reseller_id: {
       type: String,
+      unique: true,
     },
     email: {
       type: String,
+      unique: true,
     },
     password: {
       type: String,
@@ -21,9 +23,9 @@ const userSchema = new mongoose.Schema(
     role: {
       type: String,
       default: "user",
-      enum: ["user", "seller", "admin"],
+      enum: ["user", "reseller", "admin"],
     },
-    phone: {
+    mobile: {
       type: String,
     },
     profile_pic: {
@@ -33,8 +35,11 @@ const userSchema = new mongoose.Schema(
       shop_name: {
         type: String,
       },
-      logo: String,
+      logo: {
+        type: String,
+      },
       address: {
+        address:String,
         division: String,
         district: String,
       },
@@ -42,11 +47,6 @@ const userSchema = new mongoose.Schema(
       pageOr_webLink: String,
     },
     payments: {
-      withdraw: {
-        account_no: Number,
-        method: String,
-        payouts: Number,
-      },
       account_no: { type: Number },
       payment_method: { type: String },
       subscription: {
@@ -58,9 +58,13 @@ const userSchema = new mongoose.Schema(
         fee: Number,
       },
     },
-    balance: Number,
+    withdraw: {
+      account_no: { type: Number },
+      method: { type: String },
+    },
+    balance: { type: Number },
     settings: {
-      receiveEmail: { type: Boolean, default: false },
+      receive_email: { type: Boolean, default: false },
     },
   },
   { timestamps: true }

@@ -55,7 +55,7 @@ const JoiningPayDropshipper = () => {
                       className="font-bold"
                       variant="h5"
                     >
-                      Payment for Dropshipper SignUp
+                      Payment for Dropshipper Sign Up
                     </Typography>
                   </div>
 
@@ -134,9 +134,9 @@ const JoiningPayDropshipper = () => {
 
                   <div className="mb-4">
                     <Controller
-                      name="districtCity"
+                      name="district"
                       control={control}
-                      defaultValue={user?.district}
+                      defaultValue={user?.shop_info?.address?.district}
                       render={({ field }) => (
                         <TextField
                           {...field}

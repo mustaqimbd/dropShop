@@ -135,6 +135,7 @@ export const router = createBrowserRouter([
       },
     ],
   },
+
   {
     path: "/dashboard",
     element: (
@@ -143,8 +144,9 @@ export const router = createBrowserRouter([
       </PrivateRoute>
     ),
     children: [
+      //admin dashboard routes
       {
-        path: "admin",
+        path: "admin", 
         element: (
           <AdminRoute>
             <AdminDashboard />
@@ -185,8 +187,9 @@ export const router = createBrowserRouter([
           },
         ],
       },
+      //reseller dashboard routes
       {
-        path: "dropshipper",
+        path: "/dashboard", 
         element: (
           <ResellerRoute>
             <DropShipper />
@@ -194,7 +197,7 @@ export const router = createBrowserRouter([
         ),
         children: [
           {
-            path: "reseller",
+            path: "reseller-panel",
             element: <Reseller />,
           },
           {

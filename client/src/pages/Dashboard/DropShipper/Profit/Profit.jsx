@@ -15,11 +15,11 @@ const Profit = () => {
 
   const { data: thisMonthProfitStatistics } = useGetRequest(
     "profit-statistics",
-    "reseller/dashboard/profit-statistics"
+    "reseller/profit-statistics"
   );
 
-  const tableProfitApi = `reseller/dashboard/profit/${user.reseller_id}?page=${currentPage}&limit=${perPage}`;
-  const searchApi = `/api/reseller/dashboard/profit/${user.reseller_id}/search`;
+  const tableProfitApi = `reseller/profit?page=${currentPage}&limit=${perPage}`;
+  const searchApi = `/api/reseller/profit/search`;
   const { data: tableProfitData } = useGetRequest("profit", tableProfitApi);
 
   // Get the current date
@@ -37,7 +37,7 @@ const Profit = () => {
 
   const { data: selectedMonthProfit } = useGetRequest(
     "profit-overview",
-    `reseller/dashboard/profit-overview?date=${selectedMonth}`
+    `reseller/profit-overview?date=${selectedMonth}`
   );
   const profitData =
     selectedMonthProfit.payload?.selectedMonthProfit?.profitEverySingleDay;
@@ -70,10 +70,8 @@ const Profit = () => {
     }
   );
 
-  console.log(chartData);
-  // console.log(selectedMonthProfit.payload?.selectedMonthProfit);
 
-  const CustomTooltip = ({ active, payload}) => {
+  const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
       const dateWithMonth = payload[0].payload.dateWithMonth;
       return (
@@ -101,10 +99,8 @@ const Profit = () => {
         <div className="text-center p-5 bg-white rounded">
           <h2 className="text-lg font-bold">Profits Across Last 30 Days</h2>
           <h1 className="text-2xl font-bold my-1">
-            {
-              thisMonthProfitStatistics?.payload?.lastThirtyDaysProfit
-                ?.totalProfit
-            }
+            {thisMonthProfitStatistics?.payload?.lastThirtyDaysProfit
+              ?.totalProfit || 0}
             ৳
           </h1>
           <p className="text-sm">Over the last 30 calender days</p>

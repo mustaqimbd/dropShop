@@ -4,10 +4,9 @@ import * as yup from "yup";
 import useAxiosSecure from "../../../../hooks/useAxiosSecure";
 import { useState } from "react";
 import Swal from "sweetalert2";
-import useAuthProvider from "../../../../hooks/useAuthProvider";
 
 const schema = yup.object().shape({
-  customer_name: yup.string().required("Customer Name is required"),
+  customerName: yup.string().required("Customer Name is required"),
   mobile: yup
     .string()
     .required("Mobile is required")
@@ -24,7 +23,7 @@ export default function AddCustomerForm({ data, refetch, handleClose }) {
   const [success, setSuccess] = useState(null);
   const [error, setError] = useState("");
   const [axiosSecure] = useAxiosSecure();
-  const { user } = useAuthProvider();
+ 
   const {
     control,
     handleSubmit,
@@ -37,10 +36,10 @@ export default function AddCustomerForm({ data, refetch, handleClose }) {
   const onSubmit = async (data) => {
     setError("");
     setSuccess("");
-    data.reseller_id = user.reseller_id;
+   
     try {
       const res = await axiosSecure.post(
-        "/api/reseller/dashboard/add-customer",
+        "/api/reseller/add-customer",
         data
       );
       if (res.data.success) {
@@ -64,11 +63,11 @@ export default function AddCustomerForm({ data, refetch, handleClose }) {
   const update = async (data) => {
     setError("");
     setSuccess("");
-    data.reseller_id = user.reseller_id;
     data.customer_id = customerId; 
+
     try {
       const res = await axiosSecure.patch(
-        "/api/reseller/dashboard/update-customers",
+        "/api/reseller/update-customer",
         data
       );
       if (res.data.success) {
@@ -117,7 +116,7 @@ export default function AddCustomerForm({ data, refetch, handleClose }) {
       <div className="flex flex-col gap-1">
         <label className="font-bold">Customer Name</label>
         <Controller
-          name="customer_name"
+          name="customerName"
           control={control}
           defaultValue={data ? data.customer_name : ""}
           render={({ field }) => (
@@ -127,7 +126,7 @@ export default function AddCustomerForm({ data, refetch, handleClose }) {
             />
           )}
         />
-        <p className="text-red-600">{errors.customer_name?.message}</p>
+        <p className="text-red-600">{errors.customerName?.message}</p>
       </div>
       <div className="flex flex-col gap-1">
         <label className="font-bold">Mobile</label>
@@ -166,7 +165,7 @@ export default function AddCustomerForm({ data, refetch, handleClose }) {
         <Controller
           name="address"
           control={control}
-          defaultValue={data ? data.address : ""}
+          defaultValue={data ? data.delivery_address?.address : ""}
           render={({ field }) => (
             <input
               className="border border-gray-200 rounded p-1 outline-[#83B735]"
@@ -181,7 +180,7 @@ export default function AddCustomerForm({ data, refetch, handleClose }) {
         <Controller
           name="city"
           control={control}
-          defaultValue={data ? data.city : ""}
+          defaultValue={data ? data.delivery_address?.city : ""}
           render={({ field }) => (
             <input
               className="border border-gray-200 rounded p-1 outline-[#83B735]"
@@ -196,7 +195,7 @@ export default function AddCustomerForm({ data, refetch, handleClose }) {
         <Controller
           name="country"
           control={control}
-          defaultValue={data ? data.country : ""}
+          defaultValue={data ? data.delivery_address?.country : ""}
           render={({ field }) => (
             <input
               className="border border-gray-200 rounded p-1 outline-[#83B735]"

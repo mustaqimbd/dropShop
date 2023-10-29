@@ -7,18 +7,16 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import { Divider } from "@mui/material";
 import useGetRequest from "../../../../hooks/useGetRequest";
-import useAuthProvider from "../../../../hooks/useAuthProvider";
 import { useState } from "react";
 import TablePagination from "../../../../components/pagination/TablePagination";
 
 const EarningTable = () => {
-  const { user } = useAuthProvider();
   const [currentPage, setCurrentPage] = useState(1);
-  const perPage = 5;
+  const perPage = 20;
 
   const { data } = useGetRequest(
     "resent-earning",
-    `reseller/dashboard/resent-earning/${user.reseller_id}?page=${currentPage}&limit=${perPage}`
+    `reseller/resent-earning?page=${currentPage}&limit=${perPage}`
   );
 
   const rows = data.payload?.resentEarning;
@@ -41,7 +39,7 @@ const EarningTable = () => {
           {rows?.length < 1 ? (
             <TableRow>
               <TableCell>
-                <h1 className="text-center">No earning yet</h1>
+                <h1 className="text-center">No earning</h1>
               </TableCell>
             </TableRow>
           ) : (

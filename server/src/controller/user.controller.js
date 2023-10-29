@@ -57,7 +57,7 @@ const registerNewUser = async (req, res, next) => {
     await User.create({
       name: decoded.name,
       email: decoded.email,
-      phone: decoded.phone,
+      mobile: decoded.mobile,
       password: hash,
       user_id,
     });
@@ -81,49 +81,73 @@ const registerNewUser = async (req, res, next) => {
 //update user
 const updateUserProfile = async (req, res, next) => {
   try {
-    const userId = req.user._id; // Get user ID from request parameters
-    const updatedUserData = req.body; // Get updated user data from request body
-    // Find the user by ID
-    const user = req.user;
-    console.log(user, "88", updatedUserData);
-    // If the user doesn't exist, return an error
-    if (!user) {
+    const updatedData = req.body; // Get updated user data from request body
+    const {
+      _id,
+      name,
+      email,
+      mobile,
+      shop_info,
+      payments,
+      withdraw,
+      settings,
+    } = req.user;
+    const { shop_name, logo, address, pageOr_webLink, description } = shop_info;
+    const { account_no, payment_method, subscription } = payments;
+
+    if (!req.user) {
       throw createErrors(404, "User not found.");
     }
+
     const result = await User.updateOne(
-      { _id: userId },
+      { _id: _id },
       {
         $set: {
-          name: updatedUserData.name || user.name,
-          email: updatedUserData.email || user.email,
-          logo: updatedUserData.logo || user.logo || "",
-          signUpFee: updatedUserData.signUpFee || user.signUpFee || "unpaid",
-          mobile: updatedUserData.mobile || user.mobile,
-          address: updatedUserData.address || user.address,
-          district: updatedUserData.district || user.district,
-          "shop_info.shop_name": updatedUserData.shop_name,
-          shopName: updatedUserData.shopName || user.shopName,
-          webOrPageLink: updatedUserData.webOrPageLink || user.webOrPageLink,
-          "settings.receiveEmail":
-            updatedUserData.hasOwnProperty("receiveEmail") &&
-            updatedUserData.receiveEmail,
-          "payments.account_no": updatedUserData.payment_number,
-          "payments.payment_method": updatedUserData.payment_method,
-          "payments.withdraw.account_no": updatedUserData.withdraw_account_no,
-          "payments.withdraw.method": updatedUserData.withdraw_method,
-          // Update other fields as needed
+          name: updatedData.name || name,
+          email: updatedData.email || email,
+          mobile: updatedData.mobile || mobile,
+          shop_info: {
+            shop_name: updatedData.shopName || shop_name,
+            logo: updatedData.logo || logo,
+            address: {
+              address: updatedData.address || address?.address,
+              district: updatedData.district || address?.district,
+              division: updatedData.division || address?.division,
+            },
+            pageOr_webLink: updatedData.webOrPageLink || pageOr_webLink,
+            description: updatedData.description || description,
+          },
+          payments: {
+            account_no: updatedData.paymentNumber || account_no,
+            payment_method: updatedData.payment_method || payment_method,
+            subscription: {
+              method: updatedData.method || subscription?.method,
+              discount: updatedData.discount || subscription?.discount,
+              fee: updatedData.signUpFee || subscription?.fee,
+            },
+          },
+          withdraw: {
+            account_no: updatedData.withdrawAccountNo || withdraw?.account_no,
+            method: updatedData.withdrawMethod || withdraw?.method,
+          },
+          settings: {
+            receive_email: updatedData.hasOwnProperty("receiveEmail")
+              ? updatedData.receiveEmail
+              : settings?.receive_email,
+          },
         },
       },
       { upsert: true },
       { new: true } // Create a new user if it doesn't exist
     );
-    console.log(result, "114");
+
     return successResponse(res, {
       statusCode: 200,
       message: "User information updated successfully.",
       payload: { updatedUserInfo: result }, // Optionally, you can send back the result of the update operation
     });
   } catch (error) {
+    console.log(error);
     next(error);
   }
 };

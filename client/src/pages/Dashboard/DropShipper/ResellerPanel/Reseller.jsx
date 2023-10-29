@@ -9,8 +9,8 @@ const Reseller = () => {
   const { user } = useAuthProvider();
 
   const { data } = useGetRequest(
-    "reseller-statistics",
-    "reseller/dashboard/reseller-statistics"
+    "reseller-panel-statistics",
+    "reseller/reseller-panel-statistics"
   );
 
   return (
@@ -26,16 +26,16 @@ const Reseller = () => {
               <h1 className="text-lg font-bold">Available Balance</h1>
               <Link className="text-sm">View earning</Link>
             </div>
-            <h1 className="text-2xl font-bold">{user?.balance} ৳</h1>
+            <h1 className="text-2xl font-bold">{user?.balance||0} ৳</h1>
             <p className="text-sm">
-              {data?.payload?.statistics?.totalProfit} ৳ earnings in the last 30
+              {data?.payload?.statistics?.totalProfit||0} ৳ earnings in the last 30
               days
             </p>
           </div>
           <div className="space-y-3">
             <p className="text-lg font-bold">Amount of profit in this month</p>
             <h1 className="text-2xl font-bold">
-              {data?.payload?.statistics?.totalProfit} ৳
+              {data?.payload?.statistics?.totalProfit||0} ৳
             </h1>
           </div>
         </div>
@@ -52,11 +52,11 @@ const Reseller = () => {
             <div>
               <h1>Orders</h1>
               <h1 className="font-bold">
-                {data?.payload?.statistics?.totalOrder}
+                {data?.payload?.statistics?.totalOrder||0}
               </h1>
             </div>
             <div className="hover:bg-[#deebf3] p-3">
-              <Link to="/dashboard/dropshipper/my-orders">
+              <Link to="/dashboard/my-orders">
                 <Redeem className="text-[#2DA5F3]" />
               </Link>
             </div>
@@ -65,11 +65,11 @@ const Reseller = () => {
             <div>
               <h1>Customer</h1>
               <h1 className="font-bold">
-                {data?.payload?.statistics?.totalCustomer}
+                {data?.payload?.statistics?.totalCustomer||0}
               </h1>
             </div>
             <div className="hover:bg-[#deebf3] p-3">
-              <Link to="/dashboard/dropshipper/my-customers">
+              <Link to="/dashboard/my-customers">
                 <PeopleAlt className="text-[#2DA5F3]" />
               </Link>
             </div>

@@ -5,21 +5,32 @@ const Withdraw = require("../model/withdraw.model");
 const generateUniqueId = require("generate-unique-id");
 
 const addCustomer = async (req, res, next) => {
-  console.log(req.body);
+  
   try {
+    const { customerName, mobile, email, address, city, country } = req.body;
     const customerId = generateUniqueId({
       length: 8,
     }).toUpperCase();
+
     const customer = await Customer.findOne({
-      $and: [{ reseller_id: req.body.reseller_id }],
+      $and: [{ reseller_id: req.user.reseller_id }],
       $or: [{ email: req.body.email }, { mobile: req.body.mobile }],
     });
+
     if (customer) {
       return errorResponse(res, 200, "This customer already exists.");
     } else {
       const customerInfo = new Customer({
         customer_id: customerId,
-        ...req.body,
+        reseller_id: req.user.reseller_id,
+        customer_name: customerName,
+        mobile: mobile,
+        email: email,
+        delivery_address: {
+          address: address,
+          city: city,
+          country: country,
+        },
       });
       await customerInfo.save();
       successResponse(res, {
@@ -35,19 +46,20 @@ const getCustomers = async (req, res, next) => {
   try {
     const page = parseInt(req.query.page) || 1;
     const limit = parseInt(req.query.limit) || 10;
+
     let query = {};
     if (req.query.q) {
       const searchRegex = new RegExp(`\\b${req.query.q}\\b`, "i");
       query = {
-        $and: [{ reseller_id: req.params.reseller_id }],
+        $and: [{ reseller_id: req.user.reseller_id }],
         $or: [
           { customer_name: searchRegex },
           { email: searchRegex },
-          { mobile: searchRegex },
+          { mobile: searchRegex },//TODO mobile search problem
         ],
       };
     } else {
-      query = { reseller_id: req.query.reseller_id };
+      query = { reseller_id: req.user.reseller_id };
     }
 
     const count = await Customer.countDocuments(query);
@@ -73,13 +85,25 @@ const getCustomers = async (req, res, next) => {
 
 const updateCustomer = async (req, res, next) => {
   try {
+    const { customerName, mobile, email, address, city, country } = req.body;
     await Customer.findOneAndUpdate(
       {
-        reseller_id: req.body.reseller_id,
+        reseller_id: req.user.reseller_id,
         customer_id: req.body.customer_id,
       },
       {
-        $set: { ...req.body },
+        $set: {
+          customer_id: req.body.customer_id,
+          reseller_id: req.user.reseller_id,
+          customer_name: customerName,
+          mobile: mobile,
+          email: email,
+          delivery_address: {
+            address: address,
+            city: city,
+            country: country,
+          },
+        },
       },
       { new: true }
     );
@@ -111,7 +135,7 @@ const getMyOrders = async (req, res, next) => {
     }
 
     const pipeline = [
-      { $match: { reseller_id: req.params.reseller_id } },
+      { $match: { reseller_id: req.user.reseller_id } },
       {
         $lookup: {
           from: "customers",
@@ -259,7 +283,7 @@ const getResentEarning = async (req, res, next) => {
 
     const pipeline = [
       {
-        $match: { reseller_id: req.params.reseller_id, status: "completed" },
+        $match: { reseller_id: req.user.reseller_id, status: "completed" },
       },
       {
         $lookup: {
@@ -452,7 +476,7 @@ const getProfit = async (req, res, next) => {
     }
 
     const pipeline = [
-      { $match: { reseller_id: req.params.reseller_id } },
+      { $match: { reseller_id: req.user.reseller_id,status:'completed' } },
       {
         $lookup: {
           from: "customers",

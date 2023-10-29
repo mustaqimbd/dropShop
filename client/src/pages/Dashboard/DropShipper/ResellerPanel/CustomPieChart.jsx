@@ -25,7 +25,7 @@ const CustomPieChart = ({ statistics }) => {
 
   const COLORS = ["green", "yellow", "red"];
   return (
-    <ResponsiveContainer width="100%" height="100%">
+    <ResponsiveContainer width="100%" height="100%" >
       <PieChart width={200} height={180}>
         <Pie
           data={data}

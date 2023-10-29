@@ -114,16 +114,16 @@ const Register = () => {
                     className="block text-gray-700 text-sm font-bold mb-2"
                     htmlFor="email"
                   >
-                    Phone No.
+                    Mobile No.
                   </label>
                   <input
-                    autoComplete="phone"
+                    autoComplete="mobile"
                     required
-                    name="phone"
-                    {...register("phone", { required: true })}
-                    id="phone"
+                    name="mobile"
+                    {...register("mobile", { required: true })}
+                    id="mobile"
                     className="shadow appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                    placeholder="Your Phone"
+                    placeholder="Your mobile"
                     type="tel" // TODO need validation
                   />
                 </div>
