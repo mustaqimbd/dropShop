@@ -16,8 +16,8 @@ function Payments() {
   };
 
   return (
-    <div className="bg-white p-8 rounded shadow-md mx-auto max-w-md">
-      <h1 className="text-2xl font-semibold mb-4">Checkout Page</h1>
+    <div className="bg-white p-8 rounded shadow-md mx-auto min-w-[300px] max-w-md">
+      <h1 className="text-2xl text-center font-semibold mb-4">Checkout Page</h1>
       <div className="mb-4">
         <label className="block text-gray-700 text-sm font-bold mb-2">
           Payment Option

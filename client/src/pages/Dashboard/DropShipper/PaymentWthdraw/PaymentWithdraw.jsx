@@ -5,7 +5,7 @@ import WithdrawTable from "./WithdrawTable";
 
 const PaymentWithdraw = () => {
   const { user } = useAuthProvider();
-  const { data } = useGetRequest("withdraw", "reseller/dashboard/withdraw");
+  const { data } = useGetRequest("withdraw", "reseller/withdraw");
 
   return (
     <div>

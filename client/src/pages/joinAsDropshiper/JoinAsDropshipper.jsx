@@ -19,7 +19,7 @@ import { useNavigate } from "react-router-dom";
 
 const JoinAsDropshipper = () => {
   const { handleSubmit, control } = useForm();
-  const nevigate = useNavigate();
+  const navigate = useNavigate();
   const [axiosSecure] = useAxiosSecure();
   const { user } = useAuthProvider();
   console.log(user);
@@ -39,7 +39,7 @@ const JoinAsDropshipper = () => {
             },
             position: "top-center",
           });
-          nevigate("/join-pay-dropshipper");
+          navigate("/join-pay-dropshipper");
         }
       })
       .catch(function (error) {
@@ -53,7 +53,7 @@ const JoinAsDropshipper = () => {
         <div className="bg-borderColor py-16">
           <ContainerMax>
             <div className="flex justify-between ">
-              <div className="w-1/2 mx-auto">
+              <div className="w-1/2 min-w-[620px] mx-auto">
                 <form
                   onSubmit={handleSubmit(onSubmit)}
                   className="bg-white shadow-md rounded  p-8 mb-4"
@@ -64,7 +64,7 @@ const JoinAsDropshipper = () => {
                       className="font-bold"
                       variant="h5"
                     >
-                      Dropshipper SignUp Form
+                      Dropshipper Sign Up Form
                     </Typography>
                   </div>
 
@@ -265,7 +265,7 @@ const JoinAsDropshipper = () => {
                     </div>
                     <div className="mt-4  items-center">
                       <p className="mr-2">
-                        Dropshipper Signup Fee :{" "}
+                        Dropshipper Sign Up Fee :{" "}
                         <span className="text-normal font-semibold">
                           {" "}
                           3000 tk BD
@@ -277,7 +277,7 @@ const JoinAsDropshipper = () => {
                         rel="noopener noreferrer"
                         className="text-blue-500"
                       >
-                        Why this signup fee?
+                        Why this sign up fee?
                       </a>
                     </div>
                   </div>

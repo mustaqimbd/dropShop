@@ -28,23 +28,23 @@ resellerRoute.use(passport.authenticate("jwt", { session: false }), isReseller);
 =========================*/
 
 //add customer
-// /api/reseller/dashboard/add-customer
+// /api/reseller/add-customer
 resellerRoute.post(
-  "/dashboard/add-customer",
+  "/add-customer",
   validateEmail,
   validateMobile,
   runValidation,
   addCustomer
 );
 
-// get customers
-// /api/reseller/dashboard/my-customers
-resellerRoute.get("/dashboard/my-customers", getCustomers);
+// get customers table data
+// /api/reseller/my-customers
+resellerRoute.get("/my-customers", getCustomers);
 
 // update customers
-// /api/reseller/dashboard/my-customers
+// /api/reseller/update-customer
 resellerRoute.patch(
-  "/dashboard/update-customers",
+  "/update-customer",
   validateEmail,
   validateMobile,
   runValidation,
@@ -52,44 +52,44 @@ resellerRoute.patch(
 );
 
 //search customer
-// /api/reseller/dashboard/my-customers/:reseller_id/search
-resellerRoute.get("/dashboard/my-customers/:reseller_id/search", getCustomers);
+// /api/reseller/my-customers/search
+resellerRoute.get("/my-customers/search", getCustomers);
 
 // get orders
-// /api/reseller/dashboard/my-orders/:reseller_id
-resellerRoute.get("/dashboard/my-orders/:reseller_id", getMyOrders);
+// /api/reseller/my-orders
+resellerRoute.get("/my-orders", getMyOrders);
 
 // search orders
-// /api/reseller/dashboard/my-orders/:reseller_id/search
-resellerRoute.get("/dashboard/my-orders/:reseller_id/search", getMyOrders);
+// /api/reseller/my-orders/search
+resellerRoute.get("/my-orders/search", getMyOrders);
 
-// get reseller statistics data
-// /api/reseller/dashboard/reseller-statistics
-resellerRoute.get("/dashboard/reseller-statistics", getResellerStatics)
+// get reseller panel statistics data
+// /api/reseller/reseller-panel-statistics
+resellerRoute.get("/reseller-panel-statistics", getResellerStatics)
 
-// get resent earning
-// /api/reseller/dashboard/resent-earning/:reseller_id
-resellerRoute.get("/dashboard/resent-earning/:reseller_id", getResentEarning);
+// get resent earning table data
+// /api/reseller/resent-earning
+resellerRoute.get("/resent-earning", getResentEarning);
 
 // get profit statistics
-// /api/reseller/dashboard/profit-statistics
-resellerRoute.get("/dashboard/profit-statistics", getProfitStatics);
+// /api/reseller/profit-statistics
+resellerRoute.get("/profit-statistics", getProfitStatics);
 
 // get profit overview statistics
-// /api/reseller/dashboard/profit-overview
-resellerRoute.get("/dashboard/profit-overview", getProfitOverview);
+// /api/reseller/profit-overview
+resellerRoute.get("/profit-overview", getProfitOverview);
 
 // get profit table data
-// /api/reseller/dashboard/profit/:reseller_id
-resellerRoute.get("/dashboard/profit/:reseller_id", getProfit);
+// /api/reseller/profit
+resellerRoute.get("/profit", getProfit);
 
 // search profit
-// /api/reseller/dashboard/profit/:reseller_id/search
-resellerRoute.get("/dashboard/profit/:reseller_id/search", getProfit);
+// /api/reseller/profit/search
+resellerRoute.get("/profit/search", getProfit);
 
 // get withdraw data
-// /api/reseller/dashboard/withdraw/:reseller_id
-resellerRoute.get("/dashboard/withdraw", getWithdrawData);
+// /api/reseller/withdraw
+resellerRoute.get("/withdraw", getWithdrawData);
 
 
 module.exports = resellerRoute;

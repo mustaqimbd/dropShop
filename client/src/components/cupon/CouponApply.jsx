@@ -29,10 +29,10 @@ function CouponApply() {
   };
 
   return (
-    <div className="bg-white shadow-md rounded p-4 mb-4">
-      <div className="mb-4">
+    <div className="bg-white shadow-md rounded p-4 mb-4 flex justify-center">
+      <div className="mb-4 w-[400px">
         <p className="font-normal text-normal mb-2">Apply Coupon (If have )</p>
-        <div className="flex">
+        <div className="flex gap-5 justify-center">
           <TextField
             type="text"
             label="Coupon Code"
@@ -41,7 +41,9 @@ function CouponApply() {
             size="small"
             value={couponCode}
             onChange={handleCouponChange}
+            className="w-[300px]"
           />
+
           <Button
             variant="contained"
             color="primary"

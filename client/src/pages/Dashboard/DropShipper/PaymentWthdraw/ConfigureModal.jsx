@@ -45,7 +45,7 @@ export default function ConfigureModal() {
   };
 
   const onSubmit = async (data) => {
-    data.withdraw_method = isSelected;
+    data.withdrawMethod = isSelected;
     console.log(data, isSelected, "llll");
     setError("");
     try {
@@ -109,7 +109,7 @@ export default function ConfigureModal() {
               <label className="flex items-center space-x-2">
                 <input
                   type="radio"
-                  name="withdraw_method"
+                  name="withdrawMethod"
                   checked={isSelected === "bkash"}
                   value="bkash"
                   onChange={handleRadioChange}
@@ -125,7 +125,7 @@ export default function ConfigureModal() {
                     type="tel"
                     placeholder="Enter your personal bkash Number"
                     className="border border-gray-300 outline-[#83B735] p-2 rounded w-full"
-                    {...register("withdraw_account_no", {
+                    {...register("withdrawAccountNo", {
                       required: "Payment number is required",
                       pattern: {
                         value: /^[0-9+]+$/,
@@ -136,11 +136,11 @@ export default function ConfigureModal() {
                         message: "Invalid number",
                       },
                     })}
-                    aria-invalid={errors.withdraw_account_no ? "true" : "false"}
+                    aria-invalid={errors.withdrawAccountNo ? "true" : "false"}
                   />
-                  {errors.withdraw_account_no && (
+                  {errors.withdrawAccountNo && (
                     <p className="text-red-600">
-                      {errors.withdraw_account_no.message}
+                      {errors.withdrawAccountNo.message}
                     </p>
                   )}
                 </div>
@@ -149,7 +149,7 @@ export default function ConfigureModal() {
               <label className="flex items-center space-x-2">
                 <input
                   type="radio"
-                  name="withdraw_method"
+                  name="withdrawMethod"
                   checked={isSelected === "nagad"}
                   value="nagad"
                   onChange={handleRadioChange}
@@ -165,7 +165,7 @@ export default function ConfigureModal() {
                     type="tel"
                     placeholder="Enter your personal nagad Number"
                     className="border border-gray-300 outline-[#83B735] p-2 rounded w-full"
-                    {...register("withdraw_account_no", {
+                    {...register("withdrawAccountNo", {
                       required: "Payment number is required",
                       pattern: {
                         value: /^[0-9+]+$/,
@@ -176,11 +176,11 @@ export default function ConfigureModal() {
                         message: "Invalid number",
                       },
                     })}
-                    aria-invalid={errors.withdraw_account_no ? "true" : "false"}
+                    aria-invalid={errors.withdrawAccountNo ? "true" : "false"}
                   />
-                  {errors.withdraw_account_no && (
+                  {errors.withdrawAccountNo && (
                     <p className="text-red-600">
-                      {errors.withdraw_account_no.message}
+                      {errors.withdrawAccountNo.message}
                     </p>
                   )}
                 </div>

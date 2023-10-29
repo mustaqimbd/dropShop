@@ -7,8 +7,8 @@ import Swal from "sweetalert2";
 import useAuthProvider from "../../../../hooks/useAuthProvider";
 
 const schema = yup.object().shape({
-  shop_name: yup.string().required("Store name is required"),
-  payment_number: yup
+  shopName: yup.string().required("Store name is required"),
+  paymentNumber: yup
     .string()
     .required("Payment number is required")
     .matches(/^[0-9+]+$/, "Invalid number")
@@ -19,7 +19,7 @@ const schema = yup.object().shape({
 export default function Form({ handleClose }) {
   const [error, setError] = useState("");
   const [axiosSecure] = useAxiosSecure();
-  const { user,fetchUser, setFetchUser } = useAuthProvider();
+  const { user, fetchUser, setFetchUser } = useAuthProvider();
   // console.log(user)
   const {
     control,
@@ -30,34 +30,33 @@ export default function Form({ handleClose }) {
     resolver: yupResolver(schema),
   });
 
-// TODO
-const onSubmit = async (data) => {
-  
-  console.log(data,);
-  setError("");
-  try {
-    const res = await axiosSecure.put(
-      "/api/user/update-dropshipper-info",
-      data
-    );
-    if (res.data.success) {
-      setFetchUser(!fetchUser)
-      reset();
-      handleClose();
-      Swal.fire({
-        position: "top-end",
-        icon: "success",
-        title: "Successfully updated",
-        showConfirmButton: false,
-        timer: 1500,
-      });
-    } else {
-      setError(res.data.message);
+  // TODO
+  const onSubmit = async (data) => {
+    console.log(data);
+    setError("");
+    try {
+      const res = await axiosSecure.put(
+        "/api/user/update-dropshipper-info",
+        data
+      );
+      if (res.data.success) {
+        setFetchUser(!fetchUser);
+        reset();
+        handleClose();
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Successfully updated",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      } else {
+        setError(res.data.message);
+      }
+    } catch (error) {
+      setError(error.message);
     }
-  } catch (error) {
-    setError(error.message);
-  }
-};
+  };
 
   return (
     <form
@@ -68,9 +67,9 @@ const onSubmit = async (data) => {
       <div className="flex flex-col gap-1">
         <label className="font-bold">Current store name</label>
         <Controller
-          name="shop_name"
+          name="shopName"
           control={control}
-          defaultValue={user?.shop_info?.shop_name}
+          defaultValue={user?.shop_info?.shop_name || ""}
           render={({ field }) => (
             <input
               className="border border-gray-200 rounded p-1 outline-[#83B735]"
@@ -83,9 +82,9 @@ const onSubmit = async (data) => {
       <div className="flex flex-col gap-1">
         <label className="font-bold">Current payment number</label>
         <Controller
-          name="payment_number"
+          name="paymentNumber"
           control={control}
-          defaultValue={user?.payments?.account_no}
+          defaultValue={user?.payments?.account_no ||''}
           render={({ field }) => (
             <input
               type="tel"

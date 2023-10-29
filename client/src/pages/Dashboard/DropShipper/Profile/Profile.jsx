@@ -1,13 +1,11 @@
 import { Divider } from "@mui/material";
-import { NavLink, Navigate, Outlet, useLocation } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 import { Person, Settings, NavigateNext } from "@mui/icons-material";
 import useAuthProvider from "../../../../hooks/useAuthProvider";
 
 const Profile = () => {
   const { user } = useAuthProvider();
   const { name, reseller_id, profile_pic, balance } = user;
-
-  const path = useLocation().pathname;
 
   return (
     <div className="flex">
@@ -33,13 +31,8 @@ const Profile = () => {
         <Divider style={{ margin: "10px 0" }} />
         <div className="space-y-2">
           <div>
-            {path === "/dashboard/dropshipper/profile" ? (
-              <Navigate to="/dashboard/dropshipper/profile/info" />
-            ) : (
-              ""
-            )}
             <NavLink
-              to="/dashboard/dropshipper/profile/info"
+              to="/dashboard/profile/info"
               className={({ isActive }) =>
                 (isActive ? "text-[#83B735] " : "") +
                 " flex gap-1 items-center py-2 px-5 hover:text-[#83B735]  ease-in-out duration-300"
@@ -56,7 +49,7 @@ const Profile = () => {
           </div>
           <div>
             <NavLink
-              to="/dashboard/dropshipper/profile/settings"
+              to="/dashboard/profile/settings"
               className={({ isActive }) =>
                 (isActive ? "text-[#83B735] " : "") +
                 " flex gap-1 items-center py-2 px-5 hover:text-[#83B735]  ease-in-out duration-300"
