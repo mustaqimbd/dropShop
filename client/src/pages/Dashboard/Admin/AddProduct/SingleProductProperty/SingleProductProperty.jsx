@@ -16,7 +16,7 @@ const SingleProductProperty = () => {
 
   const { data } = useGetRequest("", "category");
   const categories = data?.payload?.category || [];
-
+  console.log(categories);
   return (
     <div className="flex-1 ">
       <div className="mt-4">

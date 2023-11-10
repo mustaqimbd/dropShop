@@ -75,7 +75,6 @@ const adminStats = async (req, res, next) => {
       0
     );
     // dailyRevenue = parseFloat(dailyRevenue.toFixed(2));
-    console.log(dailyRevenue);
     return successResponse(res, {
       message: "Admin dashboard stats",
       payload: { dailyUsers, dailyOrders, dailyRevenue },
