@@ -33,7 +33,7 @@ const AuthProvider = ({ children }) => {
     } else {
       setLoading(false);
     }
-  }, [axiosSecure,fetchUser]);
+  }, [axiosSecure, fetchUser]);
   const data = {
     user,
     setUser,
@@ -41,7 +41,7 @@ const AuthProvider = ({ children }) => {
     baseUrl,
     logOut,
     fetchUser,
-    setFetchUser
+    setFetchUser,
   };
   return <AuthContext.Provider value={data}>{children}</AuthContext.Provider>;
 };

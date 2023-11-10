@@ -48,7 +48,6 @@ const Orders = () => {
     }
     navigate(`/dashboard/admin/order/${orderId}`);
   };
-
   return (
     <>
       <div className="bg-white shadow-md rounded-md p-2 md:p-5">
