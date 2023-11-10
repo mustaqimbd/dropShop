@@ -1,4 +1,4 @@
- const {
+const {
   addProduct,
   adminStats,
   dailySales,
@@ -15,7 +15,7 @@
   deleteProduct,
   productsById,
 } = require("../controller/admin.controller");
-const isAdmin = require("../middleware/isAdmin");
+const { isAdmin } = require("../middleware/checkRole");
 const passport = require("passport");
 
 const adminRoute = require("express").Router();

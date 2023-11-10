@@ -6,7 +6,7 @@ const {
   updateOrderStatus,
   orderCount,
 } = require("../controller/order.controller");
-const isAdmin = require("../middleware/isAdmin");
+const { isAdmin } = require("../middleware/checkRole");
 
 const orderRoute = require("express").Router();
 

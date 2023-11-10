@@ -22,16 +22,18 @@ const customersSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    address: {
-      type: String,
-      require: true,
-    },
-    city: {
-      type: String,
-      require: true,
-    },
-    country: {
-      type: String,
+    delivery_address: {
+      address: {
+        type: String,
+        required: true,
+      },
+      city: {
+        type: String,
+        required: true,
+      },
+      country: {
+        type: String,
+      },
     },
   },
   { timestamps: true }

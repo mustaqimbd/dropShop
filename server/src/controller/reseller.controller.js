@@ -1,24 +1,36 @@
 const { successResponse, errorResponse } = require("./responseHandler");
 const Customer = require("../model/customers.model");
 const Order = require("../model/order.model");
+const Withdraw = require("../model/withdraw.model");
 const generateUniqueId = require("generate-unique-id");
 
 const addCustomer = async (req, res, next) => {
-  console.log(req.body);
+  
   try {
+    const { customerName, mobile, email, address, city, country } = req.body;
     const customerId = generateUniqueId({
       length: 8,
     }).toUpperCase();
+
     const customer = await Customer.findOne({
-      $and: [{ reseller_id: req.body.reseller_id }],
+      $and: [{ reseller_id: req.user.reseller_id }],
       $or: [{ email: req.body.email }, { mobile: req.body.mobile }],
     });
+
     if (customer) {
       return errorResponse(res, 200, "This customer already exists.");
     } else {
       const customerInfo = new Customer({
         customer_id: customerId,
-        ...req.body,
+        reseller_id: req.user.reseller_id,
+        customer_name: customerName,
+        mobile: mobile,
+        email: email,
+        delivery_address: {
+          address: address,
+          city: city,
+          country: country,
+        },
       });
       await customerInfo.save();
       successResponse(res, {
@@ -34,19 +46,20 @@ const getCustomers = async (req, res, next) => {
   try {
     const page = parseInt(req.query.page) || 1;
     const limit = parseInt(req.query.limit) || 10;
+
     let query = {};
     if (req.query.q) {
       const searchRegex = new RegExp(`\\b${req.query.q}\\b`, "i");
       query = {
-        $and: [{ reseller_id: req.params.reseller_id }],
+        $and: [{ reseller_id: req.user.reseller_id }],
         $or: [
           { customer_name: searchRegex },
           { email: searchRegex },
-          { mobile: searchRegex },
+          { mobile: searchRegex },//TODO mobile search problem
         ],
       };
     } else {
-      query = { reseller_id: req.query.reseller_id };
+      query = { reseller_id: req.user.reseller_id };
     }
 
     const count = await Customer.countDocuments(query);
@@ -72,13 +85,25 @@ const getCustomers = async (req, res, next) => {
 
 const updateCustomer = async (req, res, next) => {
   try {
+    const { customerName, mobile, email, address, city, country } = req.body;
     await Customer.findOneAndUpdate(
       {
-        reseller_id: req.body.reseller_id,
+        reseller_id: req.user.reseller_id,
         customer_id: req.body.customer_id,
       },
       {
-        $set: { ...req.body },
+        $set: {
+          customer_id: req.body.customer_id,
+          reseller_id: req.user.reseller_id,
+          customer_name: customerName,
+          mobile: mobile,
+          email: email,
+          delivery_address: {
+            address: address,
+            city: city,
+            country: country,
+          },
+        },
       },
       { new: true }
     );
@@ -110,7 +135,7 @@ const getMyOrders = async (req, res, next) => {
     }
 
     const pipeline = [
-      { $match: { reseller_id: req.params.reseller_id } },
+      { $match: { reseller_id: req.user.reseller_id } },
       {
         $lookup: {
           from: "customers",
@@ -155,6 +180,102 @@ const getMyOrders = async (req, res, next) => {
   }
 };
 
+const getResellerStatics = async (req, res, next) => {
+  try {
+    // Calculate start and end dates for the last 30 days
+    const endDate = new Date(); // Current date
+    const startDate = new Date();
+    startDate.setDate(endDate.getDate() - 30); // Subtract 30 days
+
+    const pipeline = [
+      {
+        $match: {
+          reseller_id: req.user.reseller_id,
+          createdAt: { $gte: startDate, $lte: endDate },
+        },
+      },
+      {
+        $facet: {
+          order: [
+            {
+              $count: "count",
+            },
+          ],
+          completedOrder: [
+            {
+              $match: {
+                status: "completed",
+              },
+            },
+            { $count: "count" },
+          ],
+          pendingOrder: [
+            {
+              $match: {
+                status: "pending",
+              },
+            },
+            { $count: "count" },
+          ],
+          canceledOrder: [
+            {
+              $match: {
+                status: "canceled",
+              },
+            },
+            { $count: "count" },
+          ],
+          profit: [
+            {
+              $match: {
+                status: "completed",
+              },
+            },
+            {
+              $unwind: "$ordered_products",
+            },
+            {
+              $group: {
+                _id: null,
+                totalProfit: { $sum: "$ordered_products.profit" },
+              },
+            },
+          ],
+        },
+      },
+    ];
+
+    const customerPipeline = [
+      {
+        $match: {
+          reseller_id: req.user.reseller_id,
+          createdAt: { $gte: startDate, $lte: endDate }, // Filter by date range
+        },
+      },
+      { $count: "count" },
+    ];
+
+    const orderStatisticsArray = await Order.aggregate(pipeline);
+    const customerArray = await Customer.aggregate(customerPipeline);
+
+    // last 30 days statistics
+    const statistics = {
+      totalOrder: orderStatisticsArray[0].order[0].count,
+      completedOrder: orderStatisticsArray[0].completedOrder[0].count,
+      pendingOrder: orderStatisticsArray[0].pendingOrder[0].count,
+      canceledOrder: orderStatisticsArray[0].canceledOrder[0].count,
+      totalProfit: orderStatisticsArray[0].profit[0].totalProfit,
+      totalCustomer: customerArray[0].count,
+    };
+
+    successResponse(res, {
+      payload: { statistics },
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
 const getResentEarning = async (req, res, next) => {
   try {
     const page = parseInt(req.query.page) || 1;
@@ -162,7 +283,7 @@ const getResentEarning = async (req, res, next) => {
 
     const pipeline = [
       {
-        $match: { reseller_id: req.params.reseller_id, status: "completed" },
+        $match: { reseller_id: req.user.reseller_id, status: "completed" },
       },
       {
         $lookup: {
@@ -210,6 +331,130 @@ const getResentEarning = async (req, res, next) => {
   }
 };
 
+const getProfitStatics = async (req, res, next) => {
+  try {
+    // Calculate start and end dates for the last 30 days
+    const endDate = new Date(); // Current date
+    const startDate = new Date();
+    startDate.setDate(endDate.getDate() - 30); // Subtract 30 days
+
+    const pipeline = [
+      {
+        $match: {
+          reseller_id: req.user.reseller_id,
+          status: "completed",
+          updatedAt: { $gte: startDate, $lte: endDate },
+        },
+      },
+      {
+        $unwind: "$ordered_products",
+      },
+      {
+        $group: {
+          _id: null,
+          totalProfit: { $sum: "$ordered_products.profit" },
+        },
+      },
+    ];
+
+    const orderStatisticsArray = await Order.aggregate(pipeline);
+    const lastThirtyDaysProfit = orderStatisticsArray[0];
+
+    const date = new Date();
+    const currentMonth = date.getMonth() + 1;
+    const currentYear = date.getFullYear();
+
+    const thisMonthPipeline = [
+      {
+        $match: {
+          $expr: {
+            $and: [
+              { $eq: ["$reseller_id", req.user.reseller_id] },
+              { $eq: ["$status", "completed"] },
+              { $eq: [{ $month: "$updatedAt" }, currentMonth] },
+              { $eq: [{ $year: "$updatedAt" }, currentYear] },
+            ],
+          },
+        },
+      },
+      {
+        $unwind: "$ordered_products",
+      },
+      {
+        $group: {
+          _id: null,
+          totalProfit: { $sum: "$ordered_products.profit" },
+        },
+      },
+    ];
+
+    const thisMonthProfitArray = await Order.aggregate(thisMonthPipeline);
+    const thisMonthProfit = thisMonthProfitArray[0];
+
+    successResponse(res, {
+      payload: { lastThirtyDaysProfit, thisMonthProfit },
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+const getProfitOverview = async (req, res, next) => {
+  try {
+    const dateParts = req.query.date.split("-");
+    const month = parseInt(dateParts[1]);
+    const year = parseInt(dateParts[0]);
+
+    const pipeline = [
+      {
+        $match: {
+          $expr: {
+            $and: [
+              { $eq: ["$reseller_id", req.user.reseller_id] },
+              { $eq: ["$status", "completed"] },
+              { $eq: [{ $month: "$updatedAt" }, month] },
+              { $eq: [{ $year: "$updatedAt" }, year] },
+            ],
+          },
+        },
+      },
+      {
+        $facet: {
+          profitEverySingleDay: [
+            {
+              $group: {
+                _id: "$_id",
+                date: { $first: { $dayOfMonth: "$updatedAt" } },
+                totalProfit: { $first: { $sum: "$ordered_products.profit" } },
+              },
+            },
+          ],
+          totalProfitThisMonth: [
+            {
+              $unwind: "$ordered_products",
+            },
+            {
+              $group: {
+                _id: null,
+                totalProfit: { $sum: "$ordered_products.profit" },
+              },
+            },
+          ],
+        },
+      },
+    ];
+
+    const thisMonthProfitArray = await Order.aggregate(pipeline);
+    const selectedMonthProfit = thisMonthProfitArray[0];
+
+    successResponse(res, {
+      payload: { selectedMonthProfit },
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
 const getProfit = async (req, res, next) => {
   try {
     const page = parseInt(req.query.page) || 1;
@@ -229,9 +474,9 @@ const getProfit = async (req, res, next) => {
         ],
       };
     }
-    
+
     const pipeline = [
-      { $match: { reseller_id: req.params.reseller_id } },
+      { $match: { reseller_id: req.user.reseller_id,status:'completed' } },
       {
         $lookup: {
           from: "customers",
@@ -286,11 +531,26 @@ const getProfit = async (req, res, next) => {
   }
 };
 
+const getWithdrawData = async (req, res, next) => {
+  try {
+    const withdraw = await Withdraw.find({
+      reseller_id: req.user?.reseller_id,
+    }).sort({ date: -1 });
+    successResponse(res, { payload: { withdraw } });
+  } catch (error) {
+    next(error);
+  }
+};
+
 module.exports = {
   addCustomer,
   getCustomers,
   updateCustomer,
   getMyOrders,
+  getResellerStatics,
   getResentEarning,
+  getProfitStatics,
+  getProfitOverview,
   getProfit,
+  getWithdrawData,
 };

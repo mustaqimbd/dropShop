@@ -4,18 +4,16 @@ import AddModal from "./AddModal";
 import useGetRequest from "../../../../hooks/useGetRequest";
 import { useState } from "react";
 import Search from "../../../../components/search/Search";
-import useAuthProvider from "../../../../hooks/useAuthProvider";
 import TablePagination from "../../../../components/pagination/TablePagination";
 
 const MyCustomers = () => {
-  const { user } = useAuthProvider();
   const [currentPage, setCurrentPage] = useState(1);
   const [searchResults, setSearchResults] = useState(null);
   const perPage = 5;
 
-  const myCustomersApi = `reseller/dashboard/my-customers?reseller_id=${user.reseller_id}&page=${currentPage}&limit=${perPage}`;
+  const myCustomersApi = `reseller/my-customers?page=${currentPage}&limit=${perPage}`;
 
-  const searchApi = `/api/reseller/dashboard/my-customers/${user.reseller_id}/search`;
+  const searchApi = `/api/reseller/my-customers/search`;
 
   const { data, refetch } = useGetRequest("my-customers", myCustomersApi);
 
@@ -51,7 +49,7 @@ const MyCustomers = () => {
         </button>
       </div>
       {searchResults ? (
-        <CustomerTable data={searchResults.payload?.customers} />
+        <CustomerTable data={searchResults.payload?.customers} refetch={refetch}/>
       ) : (
         <>
           <CustomerTable data={data.payload?.customers} refetch={refetch} />

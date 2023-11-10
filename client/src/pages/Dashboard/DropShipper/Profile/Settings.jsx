@@ -13,8 +13,8 @@ const Settings = () => {
   };
 
   useEffect(() => {
-    setChecked(user.settings?.receiveEmail);
-  }, [user.settings?.receiveEmail]);
+    setChecked(user.settings?.receive_email);
+  }, [user.settings?.receive_email]);
 
   const saveSetting = () => {
     axiosSecure
@@ -27,7 +27,7 @@ const Settings = () => {
       .catch((err) => console.log(err));
   };
 
-  const disable = user.settings?.receiveEmail === checked ? true : false;
+  const disable = user.settings?.receive_email === checked ? true : false;
 
   return (
     <div className="space-y-6">

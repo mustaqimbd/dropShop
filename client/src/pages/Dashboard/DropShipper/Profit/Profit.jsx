@@ -6,78 +6,108 @@ import useAuthProvider from "../../../../hooks/useAuthProvider";
 import { useState } from "react";
 import useGetRequest from "../../../../hooks/useGetRequest";
 import Search from "../../../../components/search/Search";
-const chartData = [
-  {
-    name: "Page A",
-    uv: 4000,
-    pv: 2400,
-    amt: 2400,
-  },
-  {
-    name: "Page B",
-    uv: 3000,
-    pv: 1398,
-    amt: 2210,
-  },
-  {
-    name: "Page C",
-    uv: 2000,
-    pv: 9800,
-    amt: 2290,
-  },
-  {
-    name: "Page D",
-    uv: 2780,
-    pv: 3908,
-    amt: 2000,
-  },
-  {
-    name: "Page E",
-    uv: 1890,
-    pv: 4800,
-    amt: 2181,
-  },
-  {
-    name: "Page F",
-    uv: 2390,
-    pv: 3800,
-    amt: 2500,
-  },
-  {
-    name: "Page G",
-    uv: 3490,
-    pv: 4300,
-    amt: 2100,
-  },
-];
+
 const Profit = () => {
   const { user } = useAuthProvider();
   const [currentPage, setCurrentPage] = useState(1);
   const [searchResults, setSearchResults] = useState(null);
   const perPage = 3;
 
-  const profit = `reseller/dashboard/profit/${user.reseller_id}?page=${currentPage}&limit=${perPage}`;
+  const { data: thisMonthProfitStatistics } = useGetRequest(
+    "profit-statistics",
+    "reseller/profit-statistics"
+  );
 
-  const searchApi = `/api/reseller/dashboard/profit/${user.reseller_id}/search`;
+  const tableProfitApi = `reseller/profit?page=${currentPage}&limit=${perPage}`;
+  const searchApi = `/api/reseller/profit/search`;
+  const { data: tableProfitData } = useGetRequest("profit", tableProfitApi);
 
-  const { data } = useGetRequest("profit", profit);
-  console.log(searchResults);
+  // Get the current date
+  const currentDate = new Date();
+  const currentYear = currentDate.getFullYear();
+  // Format the date to "yyyy-MM" (required format for input type "month")
+  const currentMonth = `${currentDate.getFullYear()}-${String(
+    currentDate.getMonth() + 1
+  ).padStart(2, "0")}`;
+
+  const [selectedMonth, setSelectedMonth] = useState(currentMonth);
+  const handleInputChange = (event) => {
+    setSelectedMonth(event.target.value);
+  };
+
+  const { data: selectedMonthProfit } = useGetRequest(
+    "profit-overview",
+    `reseller/profit-overview?date=${selectedMonth}`
+  );
+  const profitData =
+    selectedMonthProfit.payload?.selectedMonthProfit?.profitEverySingleDay;
+
+  const dateParts = selectedMonth.split("-");
+  const monthNumber = parseInt(dateParts[1]);
+  const date = new Date(0, monthNumber - 1);
+  const year = date.getFullYear();
+  const monthName = date.toLocaleString("default", { month: "long" });
+  // Calculate the first day of the next month and subtract one day
+  const lastDayOfCurrentMonth = new Date(year, monthNumber, 0).getDate();
+
+  const chartData = Array.from(
+    { length: lastDayOfCurrentMonth },
+    (_, index) => {
+      const matchingItem = profitData?.find((item) => index + 1 === item.date);
+      if (matchingItem) {
+        return {
+          date: matchingItem.date,
+          dateWithMonth: `${matchingItem.date} ${monthName}`,
+          profit: matchingItem.totalProfit,
+        };
+      } else {
+        return {
+          date: index + 1,
+          dateWithMonth: `${index + 1} ${monthName}`,
+          profit: 0,
+        };
+      }
+    }
+  );
+
+
+  const CustomTooltip = ({ active, payload }) => {
+    if (active && payload && payload.length) {
+      const dateWithMonth = payload[0].payload.dateWithMonth;
+      return (
+        <div className="custom-tooltip bg-white p-2 border-2">
+          <p>{dateWithMonth}</p>
+          <p className="text-blue-500">{`Profit: ${payload[0].value}`}</p>
+        </div>
+      );
+    }
+    return null;
+  };
+
   return (
     <div>
       <div className="grid grid-cols-3 gap-5">
         <div className="text-center p-5 bg-white rounded">
           <h2 className="text-lg font-bold">This Month&apos;s Profits</h2>
-          <h1 className="text-2xl font-bold my-1">0 ৳</h1>
+          <h1 className="text-2xl font-bold my-1">
+            {thisMonthProfitStatistics?.payload?.thisMonthProfit?.totalProfit ||
+              0}{" "}
+            ৳
+          </h1>
           <p className="text-sm">Total profit from month start</p>
         </div>
         <div className="text-center p-5 bg-white rounded">
           <h2 className="text-lg font-bold">Profits Across Last 30 Days</h2>
-          <h1 className="text-2xl font-bold my-1">0 ৳</h1>
+          <h1 className="text-2xl font-bold my-1">
+            {thisMonthProfitStatistics?.payload?.lastThirtyDaysProfit
+              ?.totalProfit || 0}
+            ৳
+          </h1>
           <p className="text-sm">Over the last 30 calender days</p>
         </div>
         <div className="text-center p-5 bg-white rounded">
           <h2 className="text-lg font-bold">Balance</h2>
-          <h1 className="text-2xl font-bold my-1">0 ৳</h1>
+          <h1 className="text-2xl font-bold my-1">{user.balance || 0} ৳</h1>
           <p className="text-sm">Available Withdrawals</p>
         </div>
       </div>
@@ -85,14 +115,38 @@ const Profit = () => {
         <div className="grid grid-cols-3 items-center mb-6">
           <div>
             <h2 className="text-lg font-bold">Earning Overview</h2>
-            <p className="text-sm">Earning during August 2023</p>
+            <p className="text-sm">
+              Earning during{" "}
+              <input
+                type="month"
+                readOnly
+                value={selectedMonth}
+                className="outline-none"
+              />
+            </p>
           </div>
-          <h1 className="text-center text-2xl font-bold">0 ৳</h1>
+          <h1 className="text-center text-2xl font-bold">
+            {selectedMonthProfit.payload?.selectedMonthProfit
+              ?.totalProfitThisMonth[0]?.totalProfit || 0}{" "}
+            ৳
+          </h1>
           <div className="text-right">
-            <input type="month" id="myMonth" name="myMonth" />
+            <input
+              type="month"
+              value={selectedMonth} // Bind the value to the state variable
+              onChange={handleInputChange} // Attach the event handler
+              max={`${currentYear}-12`} // Set max attribute to limit selection to the current year
+              min={`${currentYear}-01`}
+              className="outline-none"
+            />
           </div>
         </div>
-        <AreaCharts data={chartData} area="uv" xAxis="name" />
+        <AreaCharts
+          data={chartData}
+          area="profit"
+          xAxis="date"
+          CustomTooltip={CustomTooltip}
+        />
       </div>
       <div className="flex justify-between items-center">
         <div>
@@ -118,10 +172,10 @@ const Profit = () => {
         <ProfitTable data={searchResults.payload?.profit} />
       ) : (
         <>
-          <ProfitTable data={data.payload?.profit} />
+          <ProfitTable data={tableProfitData.payload?.profit} />
           <TablePagination
             perPage={perPage}
-            count={data.payload?.count}
+            count={tableProfitData.payload?.count}
             currentPage={currentPage}
             setCurrentPage={setCurrentPage}
           ></TablePagination>

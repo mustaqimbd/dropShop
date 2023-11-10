@@ -22,6 +22,7 @@ const QuickLinks = () => {
   const { user, logOut } = useAuthProvider();
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
+  
   const handleClick = event => {
     setAnchorEl(event.currentTarget);
   };
@@ -31,6 +32,7 @@ const QuickLinks = () => {
   const handleLogOut = () => {
     logOut();
   };
+
   return (
     <>
       <Button
@@ -79,7 +81,7 @@ const QuickLinks = () => {
               user?.role === "admin"
                 ? "/dashboard/admin/status"
                 : user?.role === "reseller"
-                ? "/dashboard/dropshipper/reseller"
+                ? "/dashboard/reseller-panel"
                 : user?.role === "user"
                 ? ""
                 : ""
@@ -93,7 +95,7 @@ const QuickLinks = () => {
             </MenuItem>
           </Link>
           {user?.role === "user" ? (
-            <Link to="/join-as-drop-shipper">
+            <Link to="/join-as-dropshipper">
               <MenuItem>
                 <ListItemIcon>
                   <FaChartLine fontSize="small" />

@@ -26,7 +26,7 @@ import {
   LoginOutlined,
   PeopleAltOutlined,
 } from "@mui/icons-material";
-import { Link, Navigate, Outlet, useLocation } from "react-router-dom";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 import { Typography } from "@mui/material";
 import useAuthProvider from "../../hooks/useAuthProvider";
 import ActiveLink from "../../components/ActiveLink/ActiveLink";
@@ -34,16 +34,16 @@ import QuickLinks from "../../components/QuickLinks/QuickLinks";
 
 const drawerWidth = 240;
 
-const Dashboard = props => {
+const Dashboard = (props) => {
   const { user } = useAuthProvider();
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
-  const path = useLocation().pathname;
-
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
+
+  const navigate = useNavigate();
 
   const drawer = (
     <div>
@@ -58,7 +58,6 @@ const Dashboard = props => {
       <List>
         {user?.role === "admin" ? (
           <>
-            {path === "/dashboard" && <Navigate to="/dashboard/admin/status" />}
             <ListItem style={{ padding: 0 }}>
               <ActiveLink to="/dashboard/admin/status">
                 <ListItemButton>
@@ -136,11 +135,8 @@ const Dashboard = props => {
         )}
         {user?.role === "reseller" ? (
           <>
-            {path === "/dashboard" && (
-              <Navigate to="/dashboard/dropshipper/reseller" />
-            )}
             <ListItem style={{ padding: 0 }}>
-              <ActiveLink to="/dashboard/dropshipper/reseller">
+              <ActiveLink to="/dashboard/reseller-panel">
                 <ListItemButton>
                   <ListItemIcon>
                     <DashboardIcon />
@@ -150,7 +146,7 @@ const Dashboard = props => {
               </ActiveLink>
             </ListItem>
             <ListItem style={{ padding: 0 }}>
-              <ActiveLink to="/dashboard/dropshipper/my-customers">
+              <ActiveLink to="/dashboard/my-customers">
                 <ListItemButton>
                   <ListItemIcon>
                     <PeopleIcon />
@@ -161,7 +157,7 @@ const Dashboard = props => {
             </ListItem>
             <Divider style={{ marginBlock: "5px" }} />
             <ListItem style={{ padding: 0 }}>
-              <ActiveLink to="/dashboard/dropshipper/my-orders">
+              <ActiveLink to="/dashboard/my-orders">
                 <ListItemButton>
                   <ListItemIcon>
                     <Redeem />
@@ -171,7 +167,7 @@ const Dashboard = props => {
               </ActiveLink>
             </ListItem>
             <ListItem style={{ padding: 0 }}>
-              <ActiveLink to="/dashboard/dropshipper/profit">
+              <ActiveLink to="/dashboard/profit">
                 <ListItemButton>
                   <ListItemIcon>
                     <MonetizationOnOutlined />
@@ -181,7 +177,7 @@ const Dashboard = props => {
               </ActiveLink>
             </ListItem>
             <ListItem style={{ padding: 0 }}>
-              <ActiveLink to="/dashboard/dropshipper/payment-withdraw">
+              <ActiveLink to="/dashboard/payment-withdraw">
                 <ListItemButton>
                   <ListItemIcon>
                     <LoginOutlined />
@@ -190,8 +186,13 @@ const Dashboard = props => {
                 </ListItemButton>
               </ActiveLink>
             </ListItem>
-            <ListItem style={{ padding: 0 }}>
-              <ActiveLink to="/dashboard/dropshipper/profile">
+            <ListItem
+              style={{ padding: 0 }}
+              onClick={() =>
+                navigate("/dashboard/profile/info", { replace: true })
+              }
+            >
+              <ActiveLink to="/dashboard/profile">
                 <ListItemButton>
                   <ListItemIcon>
                     <PeopleAltOutlined />

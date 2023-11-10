@@ -2,20 +2,18 @@ import { FileDownload } from "@mui/icons-material";
 import TablePagination from "../../../../components/pagination/TablePagination";
 import { Link } from "react-router-dom";
 import OrderTable from "./OrderTable";
-import useAuthProvider from "../../../../hooks/useAuthProvider";
 import Search from "../../../../components/search/Search";
 import { useState } from "react";
 import useGetRequest from "../../../../hooks/useGetRequest";
 
 const MyOrders = () => {
-  const { user } = useAuthProvider();
   const [currentPage, setCurrentPage] = useState(1);
   const [searchResults, setSearchResults] = useState(null);
   const perPage = 3;
 
-  const myOrderApi = `reseller/dashboard/my-orders/${user.reseller_id}?page=${currentPage}&limit=${perPage}`;
+  const myOrderApi = `reseller/my-orders?page=${currentPage}&limit=${perPage}`;
 
-  const searchApi = `/api/reseller/dashboard/my-orders/${user.reseller_id}/search`;
+  const searchApi = `/api/reseller/my-orders/search`;
 
   const { data } = useGetRequest("my-orders", myOrderApi);
 
@@ -29,7 +27,7 @@ const MyOrders = () => {
             minus.
           </p>
           <div className="mt-3">
-            <Link className="text-white bg-[#83B735] px-2 py-1 rounded">
+            <Link to='/track-order' className="text-white bg-[#83B735] px-2 py-1 rounded">
               Track Your customer orders
             </Link>
           </div>
