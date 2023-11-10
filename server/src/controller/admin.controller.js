@@ -62,18 +62,20 @@ const adminStats = async (req, res, next) => {
         $lt: lesThanValue,
       },
     }).countDocuments();
-    const dailySells = await Orders.find({
+    const dailySales = await Orders.find({
       status: "completed",
       completed_date: {
         $gte: today,
         $lt: lesThanValue,
       },
     });
-    let dailyRevenue = dailySells.reduce(
-      (total, product) => total + product.total_price,
+    // calculate daily total revenue
+    let dailyRevenue = dailySales.reduce(
+      (accumulator, currentValue) => accumulator + currentValue.total_cost,
       0
     );
-    dailyRevenue = parseFloat(dailyRevenue.toFixed(2));
+    // dailyRevenue = parseFloat(dailyRevenue.toFixed(2));
+    console.log(dailyRevenue);
     return successResponse(res, {
       message: "Admin dashboard stats",
       payload: { dailyUsers, dailyOrders, dailyRevenue },
@@ -107,13 +109,13 @@ const dailySales = async (req, res, next) => {
               timezone: "UTC",
             },
           },
-          total_price: 1,
+          total_cost: 1,
         },
       },
       {
         $group: {
           _id: "$hour",
-          total_sales: { $sum: "$total_price" },
+          total_sales: { $sum: "$total_cost" },
         },
       },
       {
@@ -157,7 +159,7 @@ const currentMonthEveryDaySales = async (req, res, next) => {
       {
         $group: {
           _id: "$dayOfMonth",
-          totalSales: { $sum: "$total_price" },
+          totalSales: { $sum: "$total_cost" },
         },
       },
       {
@@ -193,7 +195,7 @@ const yearlySales = async (req, res, next) => {
       {
         $group: {
           _id: "$year",
-          total_sales: { $sum: "$total_price" },
+          total_sales: { $sum: "$total_cost" },
         },
       },
       {
@@ -203,6 +205,7 @@ const yearlySales = async (req, res, next) => {
       },
     ];
     const sales = await Orders.aggregate(pipeline);
+    console.log(sales);
     return successResponse(res, {
       message: "Yearly total sales",
       payload: {

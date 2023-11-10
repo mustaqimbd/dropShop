@@ -78,6 +78,7 @@ const getOrderInfo = async (req, res, next) => {
     ];
 
     const orders = await Order.aggregate(pipeline);
+    console.log(await Order.find());
     return successResponse(res, {
       message: "Total orders.",
       payload: {
@@ -95,11 +96,19 @@ const getOrderInfo = async (req, res, next) => {
 const updateOrderStatus = async (req, res, next) => {
   try {
     const { orderId, status } = req.query;
-    await Order.findOneAndUpdate(
-      { order_id: orderId },
-      { $set: { status } },
-      { runValidators: true }
-    );
+    if (status === "completed") {
+      await Order.findOneAndUpdate(
+        { order_id: orderId },
+        { $set: { status, completed_date: Date.now() } },
+        { runValidators: true }
+      );
+    } else {
+      await Order.findOneAndUpdate(
+        { order_id: orderId },
+        { $set: { status } },
+        { runValidators: true }
+      );
+    }
     return successResponse(res, {
       message: "Updated successfully.",
     });

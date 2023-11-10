@@ -133,6 +133,7 @@ const loginUser = async (req, res, next) => {
   try {
     const { email, password } = req.body;
     const user = await User.findOne({ email });
+    console.log(email);
     if (!user) return errorResponse(res, 400, "User is not registered.");
 
     bcrypt.compare(password, user.password, (err, result) => {
@@ -151,7 +152,7 @@ const loginUser = async (req, res, next) => {
           httpOnly: true,
           sameSite: "None",
           secure: true,
-          expires: new Date(Date.now() + 2 * 60 * 24),
+          expires: new Date(Date.now() + 20000 * 60 * 24),
         });
 
         const userInfo = userInfoHandler(user);

@@ -6,7 +6,7 @@ const orderSchema = new mongoose.Schema(
       type: String,
       unique: true,
       required: true,
-      default: `OID-${Date.now()}`,
+      default: `OID${Date.now()}`,
     },
     ordered_products: [
       {
@@ -16,6 +16,10 @@ const orderSchema = new mongoose.Schema(
         unit_price: Number,
       },
     ],
+    total_cost: {
+      type: Number,
+      required: true,
+    },
     status: {
       type: String,
       default: "pending",
@@ -55,6 +59,6 @@ const orderSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-const OrderModel = mongoose.model("Order", orderSchema);
+const OrderModel = mongoose.model("Orders", orderSchema);
 
 module.exports = OrderModel;

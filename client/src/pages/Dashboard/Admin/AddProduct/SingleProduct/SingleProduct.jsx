@@ -2,6 +2,7 @@ import { Button, TextField, Typography } from "@mui/material";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 import { useState } from "react";
 import SingleProductProperty from "../SingleProductProperty/SingleProductProperty";
+import axios from "axios";
 
 const SingleProduct = () => {
   const [productName, setProductName] = useState("");
@@ -17,35 +18,28 @@ const SingleProduct = () => {
 
   const handleImageChange = e => {
     const selectedFiles = e.target.files;
-    setImages([...images, ...selectedFiles]); // Append newly selected files to the existing images array
+    setImages(selectedFiles);
   };
-
+  console.log(images);
   const uploadImages2 = async () => {
     setIsLoading(true);
+    setIsLoading(true);
+    const promises = [];
 
-    const formData = new FormData();
-
-    // Append all selected images to the FormData object
-    for (let i = 0; i < images.length; i++) {
-      formData.append(`images${[i]}`, images[i]);
-    }
-
-    try {
-      const response = await fetch(
-        "https://api.imgbb.com/1/upload?key=8a8e09745fed1087c15b0a94ab84b2a4",
-        {
-          method: "POST",
-          body: formData,
-        }
+    for (const image of images) {
+      const formData = new FormData();
+      formData.append("image", image);
+      promises.push(
+        axios.post(
+          `https://api.imgbb.com/1/upload?key=${import.meta.env.VITE_IMGBB}`,
+          formData
+        )
       );
-
-      if (response.ok) {
-        const data = await response.json();
-        setUploadImages(data.data);
-        console.log(uploadImages);
-      } else {
-        alert("Image upload failed. Please try again later.");
-      }
+    }
+    try {
+      const responses = await Promise.all(promises);
+      const imgUrls = responses.map(response => response.data.data.display_url);
+      setUploadImages(imgUrls);
     } catch (error) {
       console.error("Error uploading images:", error);
       alert("An error occurred. Please try again later.");
@@ -53,7 +47,7 @@ const SingleProduct = () => {
       setIsLoading(false);
     }
   };
-
+  console.log(uploadImages);
   return (
     <div className="w-full">
       <Typography variant="h4">Add Product</Typography>
@@ -185,7 +179,7 @@ const SingleProduct = () => {
         </div>
       </div>
 
-      <div>
+      <div className="mt-5">
         <Button
           component="span"
           variant="contained"
