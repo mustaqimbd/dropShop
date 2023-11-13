@@ -16,6 +16,7 @@ const corsOptions = {
   credentials: true, // This is important for cookies to work
 };
 
+
 //middleware
 app.use(cors(corsOptions));
 app.use(cookieParser());

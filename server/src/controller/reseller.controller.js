@@ -5,7 +5,6 @@ const Withdraw = require("../model/withdraw.model");
 const generateUniqueId = require("generate-unique-id");
 
 const addCustomer = async (req, res, next) => {
-  
   try {
     const { customerName, mobile, email, address, city, country } = req.body;
     const customerId = generateUniqueId({
@@ -55,7 +54,7 @@ const getCustomers = async (req, res, next) => {
         $or: [
           { customer_name: searchRegex },
           { email: searchRegex },
-          { mobile: searchRegex },//TODO mobile search problem
+          { mobile: searchRegex }, //TODO mobile search problem
         ],
       };
     } else {
@@ -179,6 +178,7 @@ const getMyOrders = async (req, res, next) => {
     next(error);
   }
 };
+
 
 const getResellerStatics = async (req, res, next) => {
   try {
@@ -476,7 +476,7 @@ const getProfit = async (req, res, next) => {
     }
 
     const pipeline = [
-      { $match: { reseller_id: req.user.reseller_id,status:'completed' } },
+      { $match: { reseller_id: req.user.reseller_id, status: "completed" } },
       {
         $lookup: {
           from: "customers",

@@ -21,7 +21,7 @@ import Category from "../pages/Dashboard/Admin/Category/Category";
 import Orders from "../pages/Dashboard/Admin/Orders/Orders";
 import ShopStatus from "../pages/Dashboard/Admin/ShopStatus/ShopStatus";
 import TrackOrder from "../pages/TrackOrder/TrackOrder";
-import ProductsByCategory from "../pages/products/ArchiveProducts/ProductsByCategory";
+import ProductsByCategory from "../pages/products/ProductsByCategory";
 import JoinAsDropshipper from "../pages/joinAsDropshiper/JoinAsDropshipper";
 import JoiningPayDropshipper from "../pages/joinAsDropshiper/JoiningPayDropshipper";
 import Reseller from "../pages/Dashboard/DropShipper/ResellerPanel/Reseller";
@@ -40,6 +40,7 @@ import UserProfile from "../pages/Account/UserProfile/UserProfile";
 import ChangePassword from "../pages/Account/ChangePassword/ChangePassword";
 import MyInfo from "../pages/Dashboard/DropShipper/Profile/MyInfo";
 import Settings from "../pages/Dashboard/DropShipper/Profile/Settings";
+import ProductDetails from "../pages/products/SingleProducts/ProductDetails";
 
 export const router = createBrowserRouter([
   {
@@ -85,6 +86,14 @@ export const router = createBrowserRouter([
       {
         path: "/add-to-cart",
         element: <AddToCardPage />,
+      },
+      {
+        path: "/product-category/:slug",
+        element: <ProductsByCategory />,
+      },
+      {
+        path: "/product-category/:categorySlug/:productSlug",
+        element: <ProductDetails />,
       },
       {
         path: "/archive-products",
@@ -146,7 +155,7 @@ export const router = createBrowserRouter([
     children: [
       //admin dashboard routes
       {
-        path: "admin", 
+        path: "admin",
         element: (
           <AdminRoute>
             <AdminDashboard />
@@ -189,7 +198,7 @@ export const router = createBrowserRouter([
       },
       //reseller dashboard routes
       {
-        path: "/dashboard", 
+        path: "/dashboard",
         element: (
           <ResellerRoute>
             <DropShipper />

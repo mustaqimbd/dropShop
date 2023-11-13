@@ -19,6 +19,7 @@ const {
 
 const resellerRoute = require("express").Router();
 const { isReseller } = require("../middleware/checkRole");
+const { updateOrderStatus } = require("../controller/order.controller");
 
 //TODO: Secure reseller routes.
 resellerRoute.use(passport.authenticate("jwt", { session: false }), isReseller);
@@ -65,7 +66,7 @@ resellerRoute.get("/my-orders/search", getMyOrders);
 
 // get reseller panel statistics data
 // /api/reseller/reseller-panel-statistics
-resellerRoute.get("/reseller-panel-statistics", getResellerStatics)
+resellerRoute.get("/reseller-panel-statistics", getResellerStatics);
 
 // get resent earning table data
 // /api/reseller/resent-earning
@@ -90,6 +91,5 @@ resellerRoute.get("/profit/search", getProfit);
 // get withdraw data
 // /api/reseller/withdraw
 resellerRoute.get("/withdraw", getWithdrawData);
-
 
 module.exports = resellerRoute;

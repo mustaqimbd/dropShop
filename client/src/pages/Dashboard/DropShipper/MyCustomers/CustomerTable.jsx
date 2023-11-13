@@ -5,13 +5,26 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { ShoppingCartCheckoutOutlined } from "@mui/icons-material";
 import { Divider } from "@mui/material";
 import EditModal from "./EditModal";
 
 const CustomerTable = ({ data, refetch }) => {
+  const navigate = useNavigate();
+
   const rows = data;
+
+  const customer = (data) => {
+    sessionStorage.setItem(
+      "Customer",
+      JSON.stringify({
+        customerName: data.customer_name,
+        customerId: data.customer_id,
+      })
+    );
+    navigate("/");
+  };
 
   return (
     <TableContainer elevation={0} component={Paper}>
@@ -75,12 +88,15 @@ const CustomerTable = ({ data, refetch }) => {
               <TableCell>{row.mobile}</TableCell>
               <TableCell>
                 <div className="flex justify-center gap-3 items-center text-white ">
-                  <Link className="bg-[#83B735] px-2 py-1 text-sm rounded flex items-center gap-1">
+                  <button
+                    onClick={() => customer(row)}
+                    className="bg-[#83B735] px-2 py-1  rounded flex items-center gap-1"
+                  >
                     <span>
                       <ShoppingCartCheckoutOutlined fontSize="small" />
                     </span>
                     <span>Shop as Customer</span>
-                  </Link>
+                  </button>
 
                   <EditModal data={row} refetch={refetch}></EditModal>
                 </div>

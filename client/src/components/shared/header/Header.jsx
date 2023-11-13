@@ -2,16 +2,17 @@ import { Typography } from "@mui/material";
 import ContainerFull from "../../container/ContainerFull";
 import ContainerMax from "../../container/ContainerMax";
 import cartIon from "../../../assets/icons/cart.svg";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
     <ContainerFull>
-      <div className="w-full bg-primary p-4">
+      <div className="w-full bg-primary p-3">
         <ContainerMax>
           <div className="flex px-10 item-center justify-between">
             <div className="flex-1">
               <Typography variant="h4" color={"white"}>
-                DropShop
+                <Link to='/'>DropShop</Link>
               </Typography>
             </div>
             <div className="flex flex-1 items-center relative">

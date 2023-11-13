@@ -9,7 +9,7 @@ const Navbar = () => {
   const { user } = useAuthProvider();
   return (
     <ContainerFull>
-      <div className="bg-white py-5 border-b-2 border-borderColor">
+      <div className="bg-white border-b h-[52px] flex items-center">
         <ContainerMax>
           <div className="flex justify-between items-center px-12">
             <div className="flex gap-8">

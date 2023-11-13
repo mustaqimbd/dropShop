@@ -42,7 +42,7 @@ categoryRoute.delete(
 
 // get products by category
 // /api/category/
-categoryRoute.get(
+categoryRoute.get(      // This should implement in the product route and controller, I have made it there.
   "/:slug",
   passport.authenticate("jwt", { session: false }),
   filterByCategory

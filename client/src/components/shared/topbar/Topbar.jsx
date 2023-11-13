@@ -5,7 +5,7 @@ const Topbar = () => {
   return (
     <div className="w-full">
       <ContainerMax>
-        <div className=" py-4 flex justify-between mx-auto">
+        <div className=" py-2 flex justify-between mx-auto">
           <div className="">
             <p className="">Call us: 09648-500500 (10am-7pm)</p>
           </div>

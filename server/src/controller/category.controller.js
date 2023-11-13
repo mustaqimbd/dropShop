@@ -5,6 +5,7 @@ const { successResponse } = require("./responseHandler");
 const getAllCategory = async (req, res, next) => {
   try {
     const category = await Category.find();
+    console.log(category,'sss')
     return successResponse(res, {
       message: "All categories.",
       payload: { category },
