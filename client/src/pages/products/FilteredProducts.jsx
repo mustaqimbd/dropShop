@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { CategoriesProductCard } from "../../../components/cards/allCards/allCards";
-import ContainerFull from "../../../components/container/ContainerFull";
+import { CategoriesProductCard } from "../../components/cards/allCards/allCards";
+import ContainerFull from "../../components/container/ContainerFull";
 
-import { PaginationGenaral } from "../../../components/pagination/Pagination";
+import { PaginationGenaral } from "../../components/pagination/Pagination";
 
-import useAllProducts from "../../../hooks/useAllProducts";
+import useAllProducts from "../../hooks/useAllProducts";
 
 const FilteredProducts = () => {
   const itemsPerPage = 24; // Number of items per page

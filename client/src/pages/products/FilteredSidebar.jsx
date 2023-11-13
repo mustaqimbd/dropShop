@@ -1,7 +1,7 @@
 import FilterByRating, {
   FilterByCheckbox,
   FiltereByPrice,
-} from "../../../components/filtered/FiltereBy";
+} from "../../components/filtered/FiltereBy";
 
 const FilteredSidebar = () => {
   const options = [

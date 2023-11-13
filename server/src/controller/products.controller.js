@@ -1,6 +1,36 @@
 const Products = require("../model/products.model");
 const { successResponse } = require("./responseHandler");
 
+const getProductsByCategory = async (req, res, next) => {
+  try {
+    const page = parseInt(req.query.page) || 1;
+    const limit = parseInt(req.query.limit) || 10;
+    const categorySlug = req.params.slug;
+
+    const products = await Products.find({ category_slug: categorySlug })
+      .skip((page - 1) * limit)
+      .limit(limit);
+    const count = await Products.countDocuments({
+      category_slug: categorySlug,
+    });
+    return successResponse(res, {
+      message: "Get product filtering by category.",
+      payload: { products, count },
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+const getProductDetails = async (req, res, next) => {
+  try {
+    const product = await Products.findOne({ product_slug: req.params.productSlug });
+    return successResponse(res, { payload: product });
+  } catch (error) {
+    next(error);
+  }
+};
+
 const highlightProducts = async (req, res, next) => {
   try {
     const topRatedProducts = await Products.find()
@@ -20,39 +50,25 @@ const highlightProducts = async (req, res, next) => {
   }
 };
 
-const totalProductsCount = async (req, res, next) => {
-  try {
-    const productCount = await Products.countDocuments();
-    return successResponse(res, {
-      message: "All products count",
-      payload: { productCount },
-    });
-  } catch (error) {
-    next(error);
-  }
-};
-
 const productByPagination = async (req, res, next) => {
   try {
-    const { page = 0, limit = 20 } = req.query;
+    const page = parseInt(req.query.page) || 1;
+    const limit = parseInt(req.query.limit) || 20;
+
     const products = await Products.find()
-      .skip(parseInt(page * limit))
-      .limit(parseInt(limit))
+      .skip((page - 1) * limit)
+      .limit(limit)
       .select({
         product_name: 1,
         images: 1,
         ratings: 1,
         reseller_price: 1,
       });
-    const productsInfo = {
-      skip: parseInt(page * limit),
-      limit: parseInt(limit),
-      length: products.length,
-    };
+    const count = await Products.countDocuments();
     return successResponse(res, {
       statusCode: 200,
       message: "Product by pagination.",
-      payload: { productsInfo, products },
+      payload: { products, count },
     });
   } catch (error) {
     next(error);
@@ -73,8 +89,9 @@ const productBySlug = async (req, res, next) => {
 };
 
 module.exports = {
+  getProductsByCategory,
+  getProductDetails,
   highlightProducts,
   productByPagination,
-  totalProductsCount,
   productBySlug,
 };

@@ -34,7 +34,7 @@ const getOrderInfo = async (req, res, next) => {
         $lookup: {
           from: "users",
           localField: "reseller_id",
-          foreignField: "user_id",
+          foreignField: "reseller_id",
           as: "user_info",
         },
       },
@@ -78,6 +78,7 @@ const getOrderInfo = async (req, res, next) => {
     ];
 
     const orders = await Order.aggregate(pipeline);
+  
     return successResponse(res, {
       message: "Total orders.",
       payload: {

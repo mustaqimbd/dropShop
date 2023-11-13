@@ -3,21 +3,18 @@ import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 
 const PaginationGenaral = ({
   itemsPerPage,
-  allProductsLength,
+  allProductsLength = 0,
   currentPage,
   setCurrentPage,
 }) => {
-  // Default state is an empty array
-
-  // Calculate total pages and indices for pagination
   const totalPages = Math.ceil(allProductsLength / itemsPerPage);
   return (
     <div className="mt-8 flex justify-center items-center space-x-4">
       <button
         onClick={() => setCurrentPage(currentPage - 1)}
-        disabled={currentPage === 0}
+        disabled={currentPage === 1}
         className={`px-4 py-2 rounded-md ${
-          currentPage === 0
+          currentPage === 1
             ? "bg-gray-300 text-gray-600 cursor-not-allowed"
             : "bg-primary text-white hover:bg-blue-600"
         }`}
@@ -27,12 +24,12 @@ const PaginationGenaral = ({
 
       {/* Page numbers */}
       <div className="flex space-x-2">
-        {[...Array(totalPages).keys()].map(page => (
+        {[...Array(totalPages).keys()].map((page) => (
           <button
             key={page}
-            onClick={() => setCurrentPage(page)}
+            onClick={() => setCurrentPage(page + 1)}
             className={`px-3 py-2 rounded-full ${
-              currentPage === page
+              currentPage === page + 1
                 ? "bg-primary text-white"
                 : "bg-gray-200 text-gray-800 hover:bg-blue-200"
             }`}
@@ -44,9 +41,9 @@ const PaginationGenaral = ({
 
       <button
         onClick={() => setCurrentPage(currentPage + 1)}
-        disabled={currentPage + 1 === totalPages}
+        disabled={currentPage === totalPages}
         className={`px-4 py-2 rounded-md ${
-          currentPage + 1 === totalPages
+          currentPage === totalPages
             ? "bg-gray-300 text-gray-600 cursor-not-allowed"
             : "bg-primary text-white hover:bg-blue-600"
         }`}
@@ -86,7 +83,7 @@ const PaginationInDashboard = ({
 
       {/* Page numbers */}
       <div className="flex space-x-2">
-        {[...Array(totalPages).keys()].map(page => (
+        {[...Array(totalPages).keys()].map((page) => (
           <button
             key={page}
             onClick={() => setCurrentPage(page + 1)}

@@ -1,8 +1,9 @@
 const {
   highlightProducts,
   productByPagination,
-  totalProductsCount,
   productBySlug,
+  getProductsByCategory,
+  getProductDetails,
 } = require("../controller/products.controller");
 
 const productRoute = require("express").Router();
@@ -11,13 +12,18 @@ const productRoute = require("express").Router();
 //  /api/products/highlight-products
 productRoute.get("/highlight-products", highlightProducts);
 
-//get total products count
-//  /api/products/total-product-count
-productRoute.get("/total-product-count", totalProductsCount);
-
 //get products by pagination
 //  /api/products/products-by-pagination
 productRoute.get("/products-by-pagination", productByPagination);
+
+// get products by category
+// /api/products/
+productRoute.get("/:slug", getProductsByCategory);
+
+//get product details
+// /api/products/details
+productRoute.get("/details/:productSlug", getProductDetails);
+
 /**
   @params 
   /api/products/products-by-pagination?page=${1}&limit=${20} 
