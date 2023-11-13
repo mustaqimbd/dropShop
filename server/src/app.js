@@ -49,6 +49,7 @@ app.use((req, res, next) => {
 
 //handle server errors
 app.use((err, req, res, next) => {
+  console.log(err);
   return errorResponse(res, err.status, err.message);
 });
 

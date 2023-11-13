@@ -69,8 +69,6 @@ const AddProperty = () => {
         },
       })
       .then(response => {
-        console.log("Category updated:", response.data);
-
         setProperties([]);
         setPropertyName("");
         setPropertyValues([]);
@@ -85,8 +83,6 @@ const AddProperty = () => {
       .catch(error => {
         console.error("Error updating category:", error);
       });
-
-    console.log(categoryData);
   };
 
   return (
