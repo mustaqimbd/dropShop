@@ -20,7 +20,7 @@ const ProductsCategories = () => {
       <div className="my-14">
         <div className="flex justify-between">
           <FeaturedProdcutTitle title={"Product Categories"} />
-          <h3 className="font-sans">
+          <h3 className="font-sans flex items-center">
             View All <ChevronRightIcon />{" "}
           </h3>
         </div>

@@ -87,7 +87,7 @@ export const router = createBrowserRouter([
         element: <AddToCardPage />,
       },
       {
-        path: "/archive-products",
+        path: "/archive-products/:category",
         element: <ProductsByCategory />,
       },
 
@@ -146,7 +146,7 @@ export const router = createBrowserRouter([
     children: [
       //admin dashboard routes
       {
-        path: "admin", 
+        path: "admin",
         element: (
           <AdminRoute>
             <AdminDashboard />
@@ -189,7 +189,7 @@ export const router = createBrowserRouter([
       },
       //reseller dashboard routes
       {
-        path: "/dashboard", 
+        path: "/dashboard",
         element: (
           <ResellerRoute>
             <DropShipper />

@@ -1,10 +1,24 @@
+import { useParams } from "react-router-dom";
 import ContainerFull from "../../../components/container/ContainerFull";
 import ContainerMax from "../../../components/container/ContainerMax";
 
 import FilteredSidebar from "./FilteredSidebar";
 import FilteredProducts from "./FilteredProducts";
+import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
 
 const ProductsByCategory = () => {
+  const { category } = useParams();
+  // const { data: products } = useQuery({
+  //   queryKey: ["product-by-category"],
+  //   queryFn:async()=>{
+  //     try {
+  //       const res=await axios.get(`/api/category/`)
+  //     } catch (error) {
+  //       console.log(error)
+  //     }
+  //   }
+  // });
   return (
     <ContainerFull>
       <div className="bg-iconBg ">
