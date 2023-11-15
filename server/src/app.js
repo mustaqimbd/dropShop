@@ -37,6 +37,7 @@ app.use("/api/reseller", require("./routes/reseller.route"));
 app.use("/api/category", require("./routes/category.route"));
 app.use("/api/products", require("./routes/products.route"));
 app.use("/api/order", require("./routes/order.route"));
+app.use('/api/cart',require('./routes/cart.route'))
 
 //seed api's
 app.use("/api/seed", require("./routes/seed.route"));
