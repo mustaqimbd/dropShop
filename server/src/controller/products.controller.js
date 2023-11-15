@@ -88,10 +88,33 @@ const productBySlug = async (req, res, next) => {
   }
 };
 
+const productsByCategorySlug = async (req, res, next) => {
+  try {
+    const { slug } = req.params;
+    const products = await Products.find({
+      category_slug: slug,
+    }).select({
+      _id: 1,
+      ratings: 1,
+      suggested_price: 1,
+      "images.link": 1,
+      product_name: 1,
+    });
+    return successResponse(res, {
+      statusCode: 200,
+      message: "Products by category.",
+      payload: { products },
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
 module.exports = {
   getProductsByCategory,
   getProductDetails,
   highlightProducts,
   productByPagination,
   productBySlug,
+  productsByCategorySlug,
 };

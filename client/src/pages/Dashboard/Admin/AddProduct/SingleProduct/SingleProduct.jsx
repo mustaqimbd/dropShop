@@ -1,24 +1,47 @@
-import { Button, TextField, Typography } from "@mui/material";
+import {
+  Button,
+  FormControl,
+  InputLabel,
+  MenuItem,
+  Select,
+  TextField,
+  Typography,
+} from "@mui/material";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 import { useRef, useState } from "react";
 import SingleProductProperty from "../SingleProductProperty/SingleProductProperty";
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
+import useAxiosSecure from "../../../../../hooks/useAxiosSecure";
 
 const SingleProduct = () => {
   const [images, setImages] = useState([]);
   const [uploadImages, setUploadImages] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [productProperties, setProductProperties] = useState([]);
+  const [category, setCategory] = useState("");
+  const [isHot, setIsHot] = useState("yes");
   const addBtnRef = useRef();
+  const [axiosSecure] = useAxiosSecure();
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
 
-  const onSubmit = data => {
+  const onSubmit = async data => {
     data.images = uploadImages;
+    data.properties = productProperties;
+    data.category = category;
+    data.hot = data?.hot === "yes" ? true : false;
+    console.log(data);
+    try {
+      const res = await axiosSecure.post("/api/admin/add-product", data);
+      console.log(res);
+    } catch (error) {
+      toast.error("Something went wrong try again later.");
+    }
     console.log(data);
   };
   const handleImageChange = e => {
@@ -27,7 +50,9 @@ const SingleProduct = () => {
   };
   const uploadImages2 = async () => {
     setIsLoading(true);
-    setIsLoading(true);
+    if (!images.length) {
+      return toast.error("Please select images.");
+    }
     const promises = [];
 
     for (const image of images) {
@@ -88,7 +113,11 @@ const SingleProduct = () => {
             )}
           </div>
         </div>
-        <SingleProductProperty />
+        <SingleProductProperty
+          setProductProperties={setProductProperties}
+          productProperties={productProperties}
+          setCategory={setCategory}
+        />
         <div className="flex w-full mt-4 space-x-4">
           <div className="flex-1">
             <TextField
@@ -125,7 +154,7 @@ const SingleProduct = () => {
           <div className="flex-1">
             <TextField
               id="outlined-basic"
-              label="Product Regular Price"
+              label="Ratings (1-5)"
               variant="outlined"
               fullWidth
               {...register("ratings", { required: true })}
@@ -151,6 +180,29 @@ const SingleProduct = () => {
                 This field is required
               </p>
             )}
+          </div>
+        </div>
+        <div className="flex w-full mt-4 space-x-4">
+          <div className="flex-1">
+            <FormControl fullWidth>
+              <InputLabel id="is-hot">Is hot</InputLabel>
+              <Select
+                labelId="is-hot"
+                id="is-hot-select"
+                value={isHot}
+                label="Is hot"
+                {...register("hot", { required: true })}
+                onChange={event => setIsHot(event?.target?.value)}
+              >
+                <MenuItem value="yes">Yes</MenuItem>
+                <MenuItem value="no">No</MenuItem>
+              </Select>
+              {errors.hot?.type === "required" && (
+                <p role="alert" className="text-red-600 font-bold">
+                  This field is required
+                </p>
+              )}
+            </FormControl>
           </div>
         </div>
         <div className="mt-4">

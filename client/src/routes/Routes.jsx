@@ -93,7 +93,7 @@ export const router = createBrowserRouter([
         element: <ProductDetails />, // <AddToCardPage />
       },
       {
-        path: "/archive-products",
+        path: "/archive-products/:category",
         element: <ProductsByCategory />,
       },
       {

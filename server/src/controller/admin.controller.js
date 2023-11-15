@@ -10,30 +10,38 @@ const addProduct = async (req, res, next) => {
   try {
     const {
       product_name,
-      image,
+      images,
       ratings,
       reseller_price,
-      suggested_price,
       warranty,
-      available_quantity,
       description,
+      category,
+      discount,
+      properties,
+      quantity,
     } = req.body;
+    console.log(discount);
     const newProduct = new Products({
       product_name,
       product_id: generateUniqueId({
         length: 8,
       }).toUpperCase(),
-      images: [
-        {
+      images: images?.map(image => {
+        return {
           link: image,
-        },
-      ],
+        };
+      }),
       ratings: parseFloat(ratings),
       reseller_price: parseFloat(reseller_price),
-      suggested_price: parseFloat(suggested_price),
-      warranty,
-      available_quantity: parseInt(available_quantity),
+      suggested_price: parseInt(reseller_price) + (reseller_price * 15) / 100, // 10%
+      warranty: parseInt(warranty),
+      category: category[0],
+      available_quantity: parseInt(quantity),
       description,
+      discount: parseInt(discount),
+      properties,
+      product_slug: `${product_name.split(" ").join("-").toLowerCase()}`,
+      category_slug: category[1],
     });
     await newProduct.save();
     return successResponse(res, {
