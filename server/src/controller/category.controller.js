@@ -4,7 +4,36 @@ const { successResponse } = require("./responseHandler");
 
 const getAllCategory = async (req, res, next) => {
   try {
-    const category = await Category.find();
+    const pipeline = [
+      {
+        $group: {
+          _id: "$category_slug",
+          total_products: { $sum: 1 },
+        },
+      },
+      {
+        $lookup: {
+          from: "categories",
+          localField: "_id",
+          foreignField: "slug",
+          as: "category",
+        },
+      },
+      {
+        $unwind: "$category",
+      },
+      {
+        $project: {
+          _id: "$category._id",
+          slug: "$_id",
+          name: "$category.name",
+          total_products: 1,
+          img: "$category.img",
+          properties: "$category.properties",
+        },
+      },
+    ];
+    const category = await Products.aggregate(pipeline);
     return successResponse(res, {
       message: "All categories.",
       payload: { category },

@@ -15,12 +15,8 @@ const productsSchema = new Schema(
     ratings: Number,
     reseller_price: Number,
     suggested_price: Number,
-    warranty: String,
+    warranty: Number,
     available_quantity: Number,
-    total_sold: {
-      type: Number,
-      default: 0,
-    },
     description: String,
     hot: Boolean,
     discount: Number,
@@ -32,6 +28,12 @@ const productsSchema = new Schema(
       type: Boolean,
       default: true,
     },
+    properties: [
+      {
+        name: String,
+        value: String,
+      },
+    ],
   },
   {
     timestamps: true,

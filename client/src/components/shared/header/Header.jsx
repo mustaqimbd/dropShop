@@ -2,9 +2,21 @@ import { Typography } from "@mui/material";
 import ContainerFull from "../../container/ContainerFull";
 import ContainerMax from "../../container/ContainerMax";
 import cartIon from "../../../assets/icons/cart.svg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 const Header = () => {
+  const navigate = useNavigate();
+  const [orderCart, setOrderCart] = useState(() => {
+    const storedData = localStorage.getItem("orderCart");
+    return storedData ? JSON.parse(storedData) : [];
+  });
+
+  // Update localStorage whenever orderCart changes
+  useEffect(() => {
+    localStorage.setItem("orderCart", JSON.stringify(orderCart));
+  }, [orderCart]);
+
   return (
     <ContainerFull>
       <div className="w-full bg-primary p-3">
@@ -12,7 +24,7 @@ const Header = () => {
           <div className="flex px-10 item-center justify-between">
             <div className="flex-1">
               <Typography variant="h4" color={"white"}>
-                <Link to='/'>DropShop</Link>
+                <Link to="/">DropShop</Link>
               </Typography>
             </div>
             <div className="flex flex-1 items-center relative">
@@ -43,12 +55,15 @@ const Header = () => {
               </span>
             </div>
             <div className="flex-1 flex gap-4 justify-end items-center">
-              <div className="relative ">
+              <button
+                onClick={() => navigate("/checkout-cart")}
+                className="relative "
+              >
                 <img src={cartIon} alt="" />
-                <span className="absolute bg-iconBg w-6 h-6 p-1 text-center rounded-full -top-3 -right-2 text-ratingCount">
-                  3
+                <span className="absolute bg-iconBg w-6 h-6 items-center text-center rounded-full -top-3 -right-2 text-ratingCount">
+                  {orderCart.length || 0}
                 </span>
-              </div>
+              </button>
               <div>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

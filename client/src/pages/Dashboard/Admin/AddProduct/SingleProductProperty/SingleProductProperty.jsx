@@ -5,92 +5,82 @@ import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import useGetRequest from "../../../../../hooks/useGetRequest";
 
-const SingleProductProperty = () => {
+const SingleProductProperty = ({
+  setProductProperties,
+  productProperties,
+  setCategory,
+}) => {
   const [productCategory, setProductCategory] = useState("");
-  const [property, setProperty] = useState("");
-  const [propertyValues, setPropertyValues] = useState([""]);
-
-  const handleChange = event => {
-    setProductCategory(event.target.value);
-  };
-
+  const [selectedCategory, setSelectedCategory] = useState([]);
   const { data } = useGetRequest("", "category");
   const categories = data?.payload?.category || [];
-  console.log(categories);
+  const handleChange = event => {
+    setProductCategory(event?.target?.value);
+    const findCategory = categories.find(
+      category => category._id === event?.target?.value
+    );
+    setSelectedCategory(findCategory);
+    setCategory([findCategory?.name, findCategory?.slug]);
+    setProductProperties([]);
+  };
+  // console.log(selectedCategory);
+  const handlePropsChange = (propsName, event) => {
+    const anotherFields = productProperties?.filter(
+      props => props.name !== propsName
+    );
+    const newProps = {
+      name: propsName,
+      value: event.target.value,
+    };
+    setProductProperties([...anotherFields, newProps]);
+  };
   return (
-    <div className="flex-1 ">
-      <div className="mt-4">
-        <FormControl fullWidth>
-          <InputLabel id="demo-simple-select-label">Select Category</InputLabel>
-          <Select
-            labelId="demo-simple-select-label"
-            id="demo-simple-select"
-            value={productCategory}
-            label="Select Category"
-            onChange={handleChange}
-          >
-            {categories.map((item, index) => (
-              <MenuItem key={index} value={item._id}>
-                {item.name}
-              </MenuItem>
-            ))}
-          </Select>
-        </FormControl>
-      </div>
-      <div className="flex gap-4 mt-4 items-center">
-        <div className="flex-1">
-          {categories.map(item => {
-            item?.properties.map((item, index) => {
-              <FormControl fullWidth>
-                <InputLabel id="demo-simple-select-label" key={index}>
-                  {item?.propertyName}{" "}
-                </InputLabel>
-                <Select
-                  key={index}
-                  labelId="demo-simple-select-label"
-                  id="demo-simple-select"
-                  value={productCategory}
-                  label="Property Name"
-                >
-                  {item?.values.map((item, index) => (
-                    <MenuItem key={index}>{item}</MenuItem>
-                  ))}
-                </Select>
-              </FormControl>;
-            });
-          })}
-        </div>
-
-        {/* <div className="flex-1">
-        <FormControl fullWidth>
-        <InputLabel id="demo-simple-select-label">Property Value</InputLabel>
+    <div className="mt-4">
+      <FormControl fullWidth>
+        <InputLabel id="demo-simple-select-label">Select Category</InputLabel>
         <Select
-          fullWidth
-            labelId="demo-simple-select-label"
-            id="demo-simple-select"
-            value={productCategory}
-            label="Property Value"
-            onChange={handleChange}
-          >
-            {categories.map((item, index) => (
-              <MenuItem key={index} value={item._id}>
-                {item.name}
+          labelId="demo-simple-select-label"
+          id="demo-simple-select"
+          value={productCategory}
+          label="Select Category"
+          onChange={handleChange}
+        >
+          {categories.map((item, index) => (
+            <MenuItem key={index} value={item._id}>
+              {item.name}
+            </MenuItem>
+          ))}
+        </Select>
+      </FormControl>
+      <div className="mt-5 grid grid-cols-2 gap-5 w-full">
+        {selectedCategory?.properties?.map(categoryProps => (
+          <FormControl fullWidth key={categoryProps._id}>
+            <InputLabel id={categoryProps._id} className="capitalize">
+              {categoryProps?.propertyName}
+            </InputLabel>
+            <Select
+              labelId={categoryProps._id}
+              value={
+                productProperties.find(
+                  props => props.name === categoryProps?.propertyName
+                )?.value || "Please select"
+              }
+              label={categoryProps?.propertyName}
+              onChange={event =>
+                handlePropsChange(categoryProps?.propertyName, event)
+              }
+            >
+              <MenuItem value="Please select" disabled>
+                Please select
               </MenuItem>
-            ))}
-          </Select>
+              {categoryProps?.values?.map(values => (
+                <MenuItem key={values} value={values}>
+                  {values}
+                </MenuItem>
+              ))}
+            </Select>
           </FormControl>
-        </div> */}
-
-        {/* <div className="flex-1">
-          <Button
-            variant="contained"
-            color="primary"
-            fullWidth
-            className="full-height-button" // Add a custom CSS class for the button
-          >
-            Add Property
-          </Button>
-        </div> */}
+        ))}
       </div>
     </div>
   );

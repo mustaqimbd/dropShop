@@ -35,4 +35,8 @@ productRoute.get("/details/:productSlug", getProductDetails);
 
 //get single product by slug
 productRoute.get("/product-by-slug/:slug", productBySlug);
+
+//filter products by category
+productRoute.get("/product-by-category-slug/:slug", productsByCategorySlug);
+
 module.exports = productRoute;
