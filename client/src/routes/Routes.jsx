@@ -41,6 +41,7 @@ import ChangePassword from "../pages/Account/ChangePassword/ChangePassword";
 import MyInfo from "../pages/Dashboard/DropShipper/Profile/MyInfo";
 import Settings from "../pages/Dashboard/DropShipper/Profile/Settings";
 import ProductDetails from "../pages/products/SingleProducts/ProductDetails";
+import CheckoutCart from "../pages/orderOverview/CheckoutCart";
 
 export const router = createBrowserRouter([
   {
@@ -84,22 +85,21 @@ export const router = createBrowserRouter([
         element: <VerifyAccounts />,
       },
       {
-        path: "/add-to-cart",
-        element: <AddToCardPage />,
-      },
-      {
         path: "/product-category/:slug",
         element: <ProductsByCategory />,
       },
       {
         path: "/product-category/:categorySlug/:productSlug",
-        element: <ProductDetails />,
+        element: <ProductDetails />, // <AddToCardPage />
       },
       {
         path: "/archive-products",
         element: <ProductsByCategory />,
       },
-
+      {
+        path: "/checkout-cart",
+        element: <CheckoutCart />,
+      },
       {
         path: "/track-order",
         element: <TrackOrder />,

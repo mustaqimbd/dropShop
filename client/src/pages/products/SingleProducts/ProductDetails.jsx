@@ -2,6 +2,7 @@ import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
 import { useParams } from "react-router-dom";
 import useGetRequest from "../../../hooks/useGetRequest";
 import { useState } from "react";
+import AddToCart from "../../../components/addToCart/AddToCart";
 
 const ProductDetails = () => {
   const { productSlug } = useParams();
@@ -11,7 +12,7 @@ const ProductDetails = () => {
   );
 
   const product = data?.payload ?? {};
-  console.log(product, data);
+  // console.log(product, data);
   const {
     product_name,
     product_id,
@@ -24,6 +25,7 @@ const ProductDetails = () => {
   const profit = (suggested_price - reseller_price).toFixed();
 
   const [count, setCount] = useState(1);
+  const [wholesaleCount, setWholesaleCount] = useState(1);
   const [extraProfit, setExtraProfit] = useState(0);
 
   const handleIncrement = () => {
@@ -35,9 +37,39 @@ const ProductDetails = () => {
   const handleInput = (v) => {
     setCount(v);
   };
+
+  const handleWholesaleIncrement = () => {
+    setWholesaleCount(parseInt(wholesaleCount) + 1);
+  };
+  const handleWholesaleDecrement = () => {
+    setWholesaleCount(parseInt(wholesaleCount) - 1);
+  };
+  const handleWholesaleInput = (v) => {
+    setWholesaleCount(v);
+  };
   const totalProfit = parseInt(profit) + extraProfit;
+  const totalPrice = suggested_price + totalProfit;
   const isDisable = extraProfit < 1 ? true : false;
-  console.log(typeof profit);
+
+  const addToOrder = (data) => {
+    let cart = JSON.parse(localStorage.getItem("orderCart"));
+    console.log(cart);
+    if (cart) {
+      const exist = cart.find((item) => item.productId === data.productId);
+      if (exist) {
+        console.log(exist);
+        alert(`already added ${data.productId}`);
+      } else {
+        cart.push(data);
+        localStorage.setItem("orderCart", JSON.stringify(cart));
+        alert("Added the Product");
+      }
+    } else {
+      alert("Added the Product");
+      localStorage.setItem("orderCart", JSON.stringify([data]));
+    }
+  };
+
   return (
     <>
       <div className="flex gap-10">
@@ -88,8 +120,7 @@ const ProductDetails = () => {
               <span className="font-bold">{totalProfit}৳</span>
             </h2>
             <h2>
-              You would sell{" "}
-              <span className="font-bold">{suggested_price}৳</span>
+              You would sell <span className="font-bold">{totalPrice}৳</span>
             </h2>
           </div>
           <div className="space-y-8">
@@ -116,15 +147,20 @@ const ProductDetails = () => {
                   +
                 </button>
               </div>
-              <button className="bg-[#85B643] w-[220px] px-3 flex justify-center items-center gap-3 text-white py-2">
-                <ShoppingBasketIcon fontSize="small"/> <span>Add to Order list</span>
-              </button>
+              <AddToCart
+                data={{
+                  productId: product_id,
+                  price: totalPrice,
+                  profit: totalProfit,
+                  quantity: count,
+                }}
+              />
             </div>
             <div className="flex gap-10">
               <div className="flex justify-center items-center gap-5 ">
                 <button
-                  onClick={handleDecrement}
-                  disabled={count == 1 ? true : false}
+                  onClick={handleWholesaleDecrement}
+                  disabled={wholesaleCount == 1 ? true : false}
                   className="text-2xl hover:bg-[#85B643] px-3"
                 >
                   -
@@ -132,21 +168,24 @@ const ProductDetails = () => {
                 <input
                   type="number"
                   min={1}
-                  value={count}
+                  value={wholesaleCount}
                   onChange={(e) =>
-                    handleInput(Math.max(1, parseInt(e.target.value, 10)))
+                    handleWholesaleInput(
+                      Math.max(1, parseInt(e.target.value, 10))
+                    )
                   }
                   className="outline-none w-[50px] h-[30px] text-center [appearance:textfield][&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                 />
                 <button
-                  onClick={handleIncrement}
+                  onClick={handleWholesaleIncrement}
                   className="text-2xl hover:bg-[#85B643] px-3"
                 >
                   +
                 </button>
               </div>
               <button className="bg-[#85B643] w-[220px] px-3 flex justify-center items-center gap-3 text-white py-2">
-                <ShoppingBasketIcon fontSize="small"/> <span>Add to wholesale list</span>
+                <ShoppingBasketIcon fontSize="small" />{" "}
+                <span>Add to wholesale list</span>
               </button>
             </div>
           </div>
