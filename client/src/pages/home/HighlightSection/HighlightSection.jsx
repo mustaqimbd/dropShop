@@ -30,10 +30,9 @@ const HighlightSection = () => {
     <ContainerFull>
       <div className="bg-iconBg py-20">
         <ContainerMax>
-          <div className="flex justify-between gap-6">
-            <div className="flex-1 space-y-4">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 justify-between gap-6">
+            <div className="space-y-4">
               <h1 className="uppercase font-semibold">top Rated</h1>
-
               <div className="flex-1 space-y-4">
                 {topRate.map((item, index) => (
                   <HighLightedProductsCard
@@ -43,9 +42,8 @@ const HighlightSection = () => {
                 ))}
               </div>
             </div>
-            <div className="flex-1 space-y-4">
+            <div className="space-y-4">
               <h1 className="uppercase font-semibold">top Rated</h1>
-
               <div className="grid grid-cols-1 gap-3">
                 {topSelling.map((item, index) => (
                   <HighLightedProductsCard
@@ -55,9 +53,8 @@ const HighlightSection = () => {
                 ))}
               </div>
             </div>
-            <div className="flex-1 space-y-4">
+            <div className="space-y-4">
               <h1 className="uppercase font-semibold">Popular Category</h1>
-
               <div className="flex gap-2 flex-wrap">
                 {categories.map((category, index) => (
                   <span
@@ -69,12 +66,12 @@ const HighlightSection = () => {
                 ))}
               </div>
             </div>
-            <div className="flex-1 space-y-4 bg-[#124261] rounded-md flex justify-center align-middle">
+            <div className="space-y-4 bg-[#124261] rounded-md flex justify-center align-middle">
               <div className="text-white flex justify-center items-center flex-col gap-3 ">
                 <span className="uppercase bg-[#2f5974]  px-3 py-2">
                   Summer Sale
                 </span>
-                <h1 className=" uppercase text-3xl font-semibold">
+                <h1 className="uppercase text-3xl font-semibold">
                   {" "}
                   30 % Discount{" "}
                 </h1>

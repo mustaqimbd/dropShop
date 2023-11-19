@@ -4,9 +4,15 @@ const {
   productBySlug,
   getProductsByCategory,
   getProductDetails,
+  productsByCategorySlug,
+  productsBySmartFilter,
+  bannerProducts,
 } = require("../controller/products.controller");
 
 const productRoute = require("express").Router();
+
+// get hero products
+productRoute.get("/banner-products", bannerProducts);
 
 //get 3 products base on ratings
 //  /api/products/highlight-products
@@ -39,4 +45,6 @@ productRoute.get("/product-by-slug/:slug", productBySlug);
 //filter products by category
 productRoute.get("/product-by-category-slug/:slug", productsByCategorySlug);
 
+// Product smart filter
+productRoute.post("/product-by-smart-search", productsBySmartFilter);
 module.exports = productRoute;

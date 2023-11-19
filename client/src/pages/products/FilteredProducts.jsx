@@ -1,9 +1,7 @@
 import { useState } from "react";
 import { CategoriesProductCard } from "../../components/cards/allCards/allCards";
 import ContainerFull from "../../components/container/ContainerFull";
-
-import { PaginationGenaral } from "../../components/pagination/Pagination";
-
+import { PaginationGeneral } from "../../components/pagination/Pagination";
 import useAllProducts from "../../hooks/useAllProducts";
 
 const FilteredProducts = () => {
@@ -12,9 +10,6 @@ const FilteredProducts = () => {
   const [currentPage, setCurrentPage] = useState(0);
   const { allProducts, isLoading } = useAllProducts(currentPage, itemsPerPage);
   const allProductsData = allProducts.products;
-
-  //
-
   return (
     <ContainerFull>
       <div className="space-y-5">
@@ -30,7 +25,7 @@ const FilteredProducts = () => {
 
         <div className="flex justify-end">
           {allProductsData?.length ? (
-            <PaginationGenaral
+            <PaginationGeneral
               allProductsLength={allProductsLength}
               currentPage={currentPage}
               setCurrentPage={setCurrentPage}

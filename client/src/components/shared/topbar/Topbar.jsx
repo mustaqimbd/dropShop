@@ -3,7 +3,7 @@ import ContainerMax from "../../container/ContainerMax";
 
 const Topbar = () => {
   return (
-    <div className="w-full">
+    <div className="w-full hidden md:block">
       <ContainerMax>
         <div className=" py-2 flex justify-between mx-auto">
           <div className="">

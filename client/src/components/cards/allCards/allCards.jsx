@@ -1,14 +1,9 @@
-// feature product cards
-
 import Rating from "@mui/material/Rating";
-
 import { Link } from "react-router-dom";
 
-// @ api = "./feature product.json"
 const FeatureProductCard = ({ product }) => {
-  // console.log(product);
   return (
-    <div className="  space-y-2">
+    <div className="space-y-2">
       <img
         className=" object-contain h-52 w-60 p-2"
         src={product?.images[0]?.link}
@@ -31,18 +26,16 @@ const FeatureProductCard = ({ product }) => {
 };
 
 const CategoriesProductCard = ({ product }) => {
- 
- 
   return (
     <Link
       to={`/product-category/${product?.category_slug}/${product?.product_slug}`}
-      className="bg-white  flex flex-col justify-between "
+      className="bg-white flex flex-col justify-between w-52"
     >
       <div className="flex justify-center  items-center">
         <img
           className=" object-cover h-52 w-full "
           src={product?.images[0]?.link}
-          alt=""
+          alt={product?.product_name}
         />
       </div>
       <div className="flex  rounded-md  flex-col p-3 ">

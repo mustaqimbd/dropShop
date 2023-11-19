@@ -9,15 +9,15 @@ import BasicAccordion from "../../components/Accordtion/Accordtion";
 import { HelpTitle } from "../../components/titles/FeatureTitle";
 const NeedHelp = () => {
   return (
-    <div className="py-28">
+    <div className="py-16">
       <ContainerMax>
-        <div className="px-12 flex justify-center items-center gap-10">
-          <div className="flex-1">
-            <div className="flex-column space-y-4 px-20">
-              <h1 className="text-5xl font-bold font-sans text-heading ">
+        <div className="px-2 md:px-12 grid grid-cols-1 md:grid-cols-2 justify-center items-center gap-10 ">
+          <div>
+            <div className="flex-column space-y-4 px-2 md:px-20">
+              <h1 className="text-3xl md:text-5xl font-bold font-sans text-heading ">
                 A better way to talk with our customers
               </h1>
-              <p className="text-normal text-heading">
+              <p className="text-sm md:text-normal text-heading">
                 Manage all your customer conversations in one platform that
                 feels just like your inbox
               </p>
@@ -35,7 +35,7 @@ const NeedHelp = () => {
               </div>
             </div>
           </div>
-          <div className="flex-1">
+          <div>
             <Lottie animationData={chatting} loop={true} />
           </div>
         </div>

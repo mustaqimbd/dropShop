@@ -1,26 +1,23 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Slider from "@mui/material/Slider";
 import TextField from "@mui/material/TextField";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 
-const FiltereByPrice = () => {
-  const [priceRange, setPriceRange] = useState([0, 1000]); // Set initial min and max values here
-
+const FilterByPrice = ({ priceRange, setPriceRange }) => {
   const handleSliderChange = (event, newValue) => {
     setPriceRange(newValue);
   };
 
-  const handleMinPriceInputChange = (event) => {
+  const handleMinPriceInputChange = event => {
     const minValue = event.target.value === "" ? 0 : Number(event.target.value);
     setPriceRange([minValue, priceRange[1]]);
   };
 
-  const handleMaxPriceInputChange = (event) => {
+  const handleMaxPriceInputChange = event => {
     const maxValue = event.target.value === "" ? 0 : Number(event.target.value);
     setPriceRange([priceRange[0], maxValue]);
   };
-
   return (
     <div className="bg-white p-4 rounded-md">
       <div>
@@ -65,9 +62,7 @@ const FiltereByPrice = () => {
 import Box from "@mui/material/Box";
 import Rating from "@mui/material/Rating";
 
-export default function FilterByRating() {
-  const [value, setValue] = useState(2);
-
+export default function FilterByRating({ rating, setRating }) {
   return (
     <div className="bg-white p-4 rounded-md">
       <div>
@@ -79,9 +74,9 @@ export default function FilterByRating() {
         >
           <Rating
             name="simple-controlled"
-            value={value}
+            value={rating}
             onChange={(event, newValue) => {
-              setValue(newValue);
+              setRating(newValue);
             }}
           />
         </Box>
@@ -98,15 +93,15 @@ import FormGroup from "@mui/material/FormGroup";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
-const FilterByCheckbox = ({ title, options }) => {
+const FilterByCheckbox = ({ title, options, handleCheckBoxFilterChange }) => {
   const [selectedValues, setSelectedValues] = useState([]); // State to store selected values
-  const [isExpanded, setIsExpanded] = useState(true); // State to track expanded/collapsed state
+  const [isExpanded, setIsExpanded] = useState(false); // State to track expanded/collapsed state
 
-  const handleCheckboxChange = (event) => {
+  const handleCheckboxChange = event => {
     const value = event.target.value;
-    setSelectedValues((prevSelectedValues) => {
+    setSelectedValues(prevSelectedValues => {
       if (prevSelectedValues.includes(value)) {
-        return prevSelectedValues.filter((val) => val !== value);
+        return prevSelectedValues.filter(val => val !== value);
       } else {
         return [...prevSelectedValues, value];
       }
@@ -114,17 +109,25 @@ const FilterByCheckbox = ({ title, options }) => {
   };
 
   const toggleExpand = () => {
-    setIsExpanded((prevIsExpanded) => !prevIsExpanded);
+    setIsExpanded(prevIsExpanded => !prevIsExpanded);
   };
-
+  useEffect(() => {
+    const checkBoxFilters = {
+      propsName: title,
+      values: selectedValues,
+    };
+    handleCheckBoxFilterChange(checkBoxFilters);
+  }, [selectedValues, title]);
   return (
     <div className="bg-white p-4 rounded-md">
-      <div className="">
+      <div>
         <div
           onClick={toggleExpand}
           className="flex cursor-pointer justify-between items-center"
         >
-          <Typography gutterBottom>{title}</Typography>{" "}
+          <Typography gutterBottom className="select-none">
+            Filter by <span className="text-primary font-bold">{title}</span>
+          </Typography>{" "}
           <span className="text-xl">
             {isExpanded ? <ExpandLessIcon /> : <ExpandMoreIcon />}
           </span>
@@ -132,22 +135,22 @@ const FilterByCheckbox = ({ title, options }) => {
         {isExpanded && (
           <div>
             <FormGroup>
-              {options.map((option) => (
+              {options.map(option => (
                 <FormControlLabel
-                  key={option.value}
+                  key={option}
                   control={
                     <Checkbox
-                      checked={selectedValues.includes(option.value)}
+                      checked={selectedValues.includes(option)}
                       onChange={handleCheckboxChange}
-                      value={option.value}
+                      value={option}
                     />
                   }
-                  label={option.label}
+                  label={option}
                 />
               ))}
             </FormGroup>
             <Typography gutterBottom>
-              Selected Values: {selectedValues.join(", ")}
+              Selected {title}: {selectedValues.join(", ")}
             </Typography>
           </div>
         )}
@@ -156,4 +159,4 @@ const FilterByCheckbox = ({ title, options }) => {
   );
 };
 
-export { FiltereByPrice, FilterByRating, FilterByCheckbox };
+export { FilterByPrice, FilterByRating, FilterByCheckbox };

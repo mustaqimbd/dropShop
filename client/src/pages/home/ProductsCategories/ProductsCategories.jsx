@@ -6,7 +6,6 @@ import useGetRequest from "../../../hooks/useGetRequest";
 const ProductsCategories = () => {
   const { data } = useGetRequest("categories", "category");
   const categories = data?.payload?.category;
-  console.log(data);
   return (
     <ContainerMax>
       <div className="py-7 my-7 border-b">
@@ -17,7 +16,7 @@ const ProductsCategories = () => {
           </button>
         </div>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7 mt-12 gap-16">
-          {categories?.map((category) => (
+          {categories?.map(category => (
             <ProductCards key={category._id} category={category} />
           ))}
         </div>
