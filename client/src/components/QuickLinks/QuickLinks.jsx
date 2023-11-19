@@ -22,7 +22,7 @@ const QuickLinks = () => {
   const { user, logOut } = useAuthProvider();
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
-  
+
   const handleClick = event => {
     setAnchorEl(event.currentTarget);
   };
@@ -41,8 +41,13 @@ const QuickLinks = () => {
         aria-haspopup="true"
         aria-expanded={open ? "true" : undefined}
         onClick={handleClick}
+        className="!p-0 !m-0"
       >
-        <Avatar src={user?.profile_pic} alt={user?.name} />
+        <Avatar
+          src={user?.profile_pic}
+          alt={user?.name}
+          className="!w-8 !h-8 md:!w-10 md:!h-10"
+        />
       </Button>
       <Menu
         id="basic-menu"

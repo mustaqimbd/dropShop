@@ -7,7 +7,6 @@ import Register from "../pages/register/Register";
 import Login from "../pages/login/Login";
 import ConfirmAccountMessage from "../pages/register/ConfirmAccountMessage";
 import VerifyAccounts from "../pages/register/VerifyAccounts";
-import AddToCardPage from "../pages/AddToCardPage/AddToCardPage";
 import Dashboard from "../layouts/dashboard/Dashboard";
 import AdminDashboard from "../layouts/dashboard/AdminDashboard/AdminDashboard";
 import DropShipper from "../layouts/dashboard/DropShipper/DropShipper";

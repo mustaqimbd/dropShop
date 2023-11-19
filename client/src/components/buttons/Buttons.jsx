@@ -12,8 +12,8 @@ const ViewAllButton = ({ title }) => {
 };
 const PrimaryButton = ({ title }) => {
   return (
-    <button className="bg-primary w-full px-3 py-2">
-      <span className="font-sans text-white">
+    <button className="bg-primary w-full px-2 md:px-3 py-1 md:py-2 rounded-sm shadow-lg">
+      <span className="font-semibold text-white text-sm md:text-lg">
         {title} <ChevronRightIcon />
       </span>
     </button>

@@ -1,7 +1,7 @@
 import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 
-const PaginationGenaral = ({
+const PaginationGeneral = ({
   itemsPerPage,
   allProductsLength = 0,
   currentPage,
@@ -24,7 +24,7 @@ const PaginationGenaral = ({
 
       {/* Page numbers */}
       <div className="flex space-x-2">
-        {[...Array(totalPages).keys()].map((page) => (
+        {[...Array(totalPages).keys()].map(page => (
           <button
             key={page}
             onClick={() => setCurrentPage(page + 1)}
@@ -83,7 +83,7 @@ const PaginationInDashboard = ({
 
       {/* Page numbers */}
       <div className="flex space-x-2">
-        {[...Array(totalPages).keys()].map((page) => (
+        {[...Array(totalPages).keys()].map(page => (
           <button
             key={page}
             onClick={() => setCurrentPage(page + 1)}
@@ -112,4 +112,4 @@ const PaginationInDashboard = ({
   );
 };
 
-export { PaginationGenaral, PaginationInDashboard };
+export { PaginationGeneral, PaginationInDashboard };
