@@ -41,6 +41,7 @@ import MyInfo from "../pages/Dashboard/DropShipper/Profile/MyInfo";
 import Settings from "../pages/Dashboard/DropShipper/Profile/Settings";
 import ProductDetails from "../pages/products/SingleProducts/ProductDetails";
 import CheckoutCart from "../pages/orderOverview/CheckoutCart";
+import UpdatePage from "../pages/Dashboard/Admin/UpdateProduct/UpdatePage";
 
 export const router = createBrowserRouter([
   {

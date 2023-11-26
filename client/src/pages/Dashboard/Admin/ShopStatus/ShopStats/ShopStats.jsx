@@ -14,7 +14,7 @@ const ShopStats = () => {
     <>
       <div className="flex justify-evenly gap-5 flex-wrap mt-10">
         <Stats
-          title="Daily signUps"
+          title="Daily sign up"
           counts={stats?.payload?.dailyUsers}
           icon={user}
           isLoading={isLoading}

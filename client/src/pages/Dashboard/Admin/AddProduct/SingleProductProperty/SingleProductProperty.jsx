@@ -12,7 +12,7 @@ const SingleProductProperty = ({
 }) => {
   const [productCategory, setProductCategory] = useState("");
   const [selectedCategory, setSelectedCategory] = useState([]);
-  const { data } = useGetRequest("", "category");
+  const { data } = useGetRequest("categories", "category");
   const categories = data?.payload?.category || [];
   const handleChange = event => {
     setProductCategory(event?.target?.value);

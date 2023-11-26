@@ -9,13 +9,13 @@ const {
   errorResponse,
   successResponse,
 } = require("./controller/responseHandler");
+const { clientUrl } = require("./secret");
 
 //cors config
 const corsOptions = {
-  origin: "http://localhost:5173",
+  origin: clientUrl,
   credentials: true, // This is important for cookies to work
 };
-
 
 //middleware
 app.use(cors(corsOptions));
@@ -37,7 +37,7 @@ app.use("/api/reseller", require("./routes/reseller.route"));
 app.use("/api/category", require("./routes/category.route"));
 app.use("/api/products", require("./routes/products.route"));
 app.use("/api/order", require("./routes/order.route"));
-app.use('/api/cart',require('./routes/cart.route'))
+app.use("/api/cart", require("./routes/cart.route"));
 
 //seed api's
 app.use("/api/seed", require("./routes/seed.route"));

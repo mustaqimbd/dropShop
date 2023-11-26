@@ -21,7 +21,7 @@ const Login = () => {
       return navigate("/");
     }
   }, [user, navigate]);
-  const onSubmit = async (data) => {
+  const onSubmit = async data => {
     setLoginError("");
     try {
       const res = await axiosSecure.post(
@@ -40,16 +40,11 @@ const Login = () => {
     <ContainerFull>
       <div className="bg-iconBg py-10">
         <ContainerMax>
-          <div className="flex flex-row-reverse items-center gap-20  mt-10 mb-20  mx-auto">
-            <div className="flex-1 h-full ">
-              <div className="  ">
-                <img className="3/4 h-fit " src={loginBg} alt="" />
-              </div>
-            </div>
-            <div className="flex-1 rounded-md  ">
-              <div className="flex  justify-end">
+          <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-20  mt-10 mb-20  mx-auto">
+            <div className="flex-1 rounded-md">
+              <div className="flex justify-center">
                 <form
-                  className="space-y-2  shadow-md bg-white p-16 rounded-md"
+                  className="space-y-2 shadow-md bg-white p-5 md:p-16 rounded-md"
                   onSubmit={handleSubmit(onSubmit)}
                 >
                   <div>
@@ -122,6 +117,11 @@ const Login = () => {
                     </NavLink>
                   </div>
                 </form>
+              </div>
+            </div>
+            <div className="flex-1 h-full ">
+              <div>
+                <img className="3/4 h-fit " src={loginBg} alt="" />
               </div>
             </div>
           </div>

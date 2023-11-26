@@ -1,6 +1,6 @@
 const Products = require("../model/products.model");
 const generateUniqueId = require("generate-unique-id");
-const { successResponse } = require("./responseHandler");
+const { successResponse, errorResponse } = require("./responseHandler");
 const Orders = require("../model/order.model");
 const User = require("../model/user.model");
 const Category = require("../model/category.model");
@@ -20,7 +20,6 @@ const addProduct = async (req, res, next) => {
       properties,
       quantity,
     } = req.body;
-    console.log(discount);
     const newProduct = new Products({
       product_name,
       product_id: generateUniqueId({
@@ -196,7 +195,7 @@ const yearlySales = async (req, res, next) => {
       {
         $project: {
           year: { $year: "$createdAt" },
-          total_price: 1,
+          total_cost: 1,
         },
       },
       {
@@ -212,7 +211,6 @@ const yearlySales = async (req, res, next) => {
       },
     ];
     const sales = await Orders.aggregate(pipeline);
-    console.log(sales);
     return successResponse(res, {
       message: "Yearly total sales",
       payload: {
@@ -263,17 +261,60 @@ const recentOrders = async (req, res, next) => {
     const { page = 0 } = req.query;
     const limit = 5;
     const skip = page * limit;
-    const orders = await Orders.find({})
-      .sort({ createdAt: -1 })
-      .limit(limit)
-      .skip(skip);
+    const pipeline = [
+      {
+        $facet: {
+          data: [
+            {
+              $lookup: {
+                from: "users",
+                localField: "reseller_id",
+                foreignField: "user_id",
+                as: "seller_info",
+              },
+            },
+            {
+              $unwind: "$seller_info",
+            },
+            {
+              $project: {
+                total_cost: 1,
+                status: 1,
+                order_id: 1,
+                createdAt: 1,
+                seller: {
+                  name: "$seller_info.name",
+                  email: "$seller_info.email",
+                  profile_pic: "$seller_info.profile_pic",
+                },
+              },
+            },
+            {
+              $sort: { createdAt: -1 },
+            },
+            {
+              $skip: skip,
+            },
+            {
+              $limit: limit,
+            },
+          ],
+          totalCount: [
+            {
+              $count: "total_orders",
+            },
+          ],
+        },
+      },
+    ];
+    const orders = await Orders.aggregate(pipeline);
     return successResponse(res, {
-      message: "10 recent orders",
+      message: "5 recent orders",
       payload: {
         skip,
         limit,
-        length: orders.length,
-        orders,
+        length: orders[0]?.totalCount[0]?.total_orders,
+        orders: orders[0]?.data,
       },
     });
   } catch (error) {
@@ -288,7 +329,7 @@ const topSellers = async (req, res, next) => {
         $group: {
           _id: "$reseller_id",
           total_orders: { $sum: 1 },
-          total_amount: { $sum: "$total_price" },
+          total_amount: { $sum: "$total_cost" },
         },
       },
       {
@@ -320,10 +361,10 @@ const topSellers = async (req, res, next) => {
       },
     ];
 
-    const customers = await Orders.aggregate(pipeline);
+    const sellers = await Orders.aggregate(pipeline);
     return successResponse(res, {
-      message: "New customers",
-      payload: { customers },
+      message: "Top sellers",
+      payload: { sellers },
     });
   } catch (error) {
     next(error);
@@ -362,7 +403,7 @@ const topCategories = async (req, res, next) => {
       {
         $group: {
           _id: "$category_slug",
-          totalOrders: { $sum: 1 },
+          total_sales: { $sum: "$total_sold" },
         },
       },
       {
@@ -370,17 +411,36 @@ const topCategories = async (req, res, next) => {
           from: "categories",
           localField: "_id",
           foreignField: "slug",
-          as: "categoryInfo",
+          as: "category_info",
         },
       },
       {
-        $unwind: "$categoryInfo",
+        $unwind: "$category_info",
+      },
+      {
+        $sort: {
+          total_sales: -1,
+        },
+      },
+      {
+        $project: {
+          _id: 0,
+          category_slug: "$_id",
+          total_sales: 1,
+          category_info: 1,
+        },
       },
       {
         $group: {
-          _id: null, // Group all documents into one group
-          totalAllOrders: { $sum: "$totalOrders" }, // Calculate the total sum of orders
-          categories: { $push: "$$ROOT" }, // Preserve the category information
+          _id: null,
+          total_all_categories: { $sum: "$total_sales" },
+          categories: {
+            $push: {
+              category_slug: "$category_slug",
+              total_sales: "$total_sales",
+              category_info: "$category_info",
+            },
+          },
         },
       },
       {
@@ -388,29 +448,29 @@ const topCategories = async (req, res, next) => {
       },
       {
         $project: {
-          _id: "$categories._id",
-          totalOrders: "$categories.totalOrders",
-          categoryName: "$categories.categoryInfo.name",
-          categoryImage: "$categories.categoryInfo.img",
+          category_slug: "$categories.category_slug",
+          total_sales: "$categories.total_sales",
+          category_name: "$categories.category_info.name",
+          category_img: "$categories.category_info.img",
           percentage: {
             $multiply: [
-              { $divide: ["$categories.totalOrders", "$totalAllOrders"] }, // Calculate percentage
-              100, // Multiply by 100 to get the percentage
+              { $divide: ["$categories.total_sales", "$total_all_categories"] },
+              100,
             ],
           },
         },
       },
-
       {
         $sort: {
-          totalOrders: -1,
+          total_sales: -1,
         },
       },
       {
-        $limit: 4,
+        $limit: 5,
       },
     ];
-    const topCategories = await Orders.aggregate(pipeline);
+
+    const topCategories = await Products.aggregate(pipeline);
     return successResponse(res, {
       message: "Top categories",
       payload: { topCategories },
@@ -459,25 +519,48 @@ const sellersInfo = async (req, res, next) => {
 
 const products = async (req, res, next) => {
   try {
-    const { page = 0 } = req.query;
+    const { page = 1 } = req.query;
     const limit = 20;
     const skip = page * limit;
-    const products = await Products.find().skip(skip).limit(limit).select({
-      product_name: 1,
-      product_id: 1,
-      "images.link": 1,
-      available_quantity: 1,
-      total_sold: 1,
-      product_slug: 1,
-      available_quantity: 1,
-    });
+    const pipeline = [
+      {
+        $facet: {
+          totalProducts: [
+            {
+              $count: "total",
+            },
+          ],
+          products: [
+            {
+              $skip: skip,
+            },
+            {
+              $limit: limit,
+            },
+            {
+              $project: {
+                product_name: 1,
+                product_id: 1,
+                "images.link": 1,
+                available_quantity: 1,
+                total_sold: 1,
+                product_slug: 1,
+                available_quantity: 1,
+              },
+            },
+          ],
+        },
+      },
+    ];
+    const result = await Products.aggregate(pipeline);
     return successResponse(res, {
       message: "Products info.",
       payload: {
-        length: products.length,
+        length: result[0]?.products?.length,
         skip,
         limit,
-        products,
+        total: result[0]?.totalProducts[0]?.total,
+        products: result[0]?.products,
       },
     });
   } catch (error) {
@@ -490,13 +573,10 @@ const productsById = async (req, res, next) => {
     const singleProduct = await Products.findOne({
       product_id: productId,
     }).select({
-      product_name: 1,
-      product_id: 1,
-      "images.link": 1,
-      available_quantity: 1,
-      total_sold: 1,
-      product_slug: 1,
-      available_quantity: 1,
+      createdAt: 0,
+      updatedAt: 0,
+      total_sold: 0,
+      product_id: 0,
     });
     if (!singleProduct) {
       throw createError(400, "No item found with this id.");
@@ -521,7 +601,79 @@ const deleteProduct = async (req, res, next) => {
     next(error);
   }
 };
+const updateProductInfo = async (req, res, next) => {
+  try {
+    const {
+      id,
+      product_name,
+      quantity,
+      reseller_price,
+      warranty,
+      ratings,
+      discount,
+      hot,
+      is_active,
+      description,
+    } = req.body;
 
+    const updatedDoc = {
+      product_name,
+      quantity: parseFloat(quantity),
+      reseller_price: parseFloat(reseller_price),
+      warranty: parseFloat(warranty),
+      ratings: parseFloat(ratings),
+      discount: parseFloat(discount),
+      hot,
+      is_active,
+      description,
+    };
+    await Products.updateOne({ _id: id }, updatedDoc);
+    return successResponse(res, {
+      message: "Updated successfully.",
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+const updateImages = async (req, res, next) => {
+  const { id, imgUrls } = req.body;
+  if (!id || !imgUrls) {
+    return errorResponse(res, 401, "Fake request");
+  }
+  const images = imgUrls.map(img => {
+    return {
+      link: img,
+    };
+  });
+  try {
+    const query = {
+      $push: {
+        images: {
+          $each: images,
+        },
+      },
+    };
+    await Products.updateOne({ _id: id }, query);
+    return successResponse(res, { message: "Images updated successfully." });
+  } catch (error) {
+    next(error);
+  }
+};
+const deleteProductImage = async (req, res, next) => {
+  try {
+    const { productId, imageId } = req.body;
+    if (!productId || !imageId) {
+      return errorResponse(res, 401, "Fake request");
+    }
+    await Products.updateOne(
+      { _id: productId },
+      { $pull: { images: { _id: imageId } } }
+    );
+    return successResponse(res, { message: "Image deleted successfully." });
+  } catch (error) {
+    next(error);
+  }
+};
 module.exports = {
   addProduct,
   adminStats,
@@ -538,4 +690,7 @@ module.exports = {
   products,
   deleteProduct,
   productsById,
+  updateProductInfo,
+  updateImages,
+  deleteProductImage,
 };

@@ -16,7 +16,6 @@ import toast from "react-hot-toast";
 import useOrders from "../../../../hooks/useOrders";
 import { useState } from "react";
 import Pagination2 from "../../../../components/Pagination2/Pagination2";
-import useTotalOrders from "../../../../hooks/useTotalOrders";
 import { useNavigate } from "react-router-dom";
 
 const Orders = () => {
@@ -24,9 +23,7 @@ const Orders = () => {
   const [searchId, setSearchId] = useState("");
   const { data: orders, refetch } = useOrders("/api/order/orders", currentPage);
   const navigate = useNavigate();
-  const totalOrders = useTotalOrders();
   const rows = orders?.payload?.orders;
-  const totalPage = Math.ceil(totalOrders?.data?.payload?.totalOrderCount / 20);
   //update status
   const [axiosSecure] = useAxiosSecure();
   const handleStatusChange = async (event, id) => {
@@ -42,6 +39,7 @@ const Orders = () => {
       toast.error(error.response.data.message);
     }
   };
+  const totalPage = Math.ceil(orders?.payload?.total / 20);
   const singleOrderInfo = async orderId => {
     if (!orderId) {
       return;
@@ -98,7 +96,7 @@ const Orders = () => {
           <Pagination2
             data={orders}
             currentPage={currentPage}
-            totalData={totalOrders?.data?.payload?.totalOrderCount}
+            totalData={orders?.payload?.total}
             setCurrentPage={setCurrentPage}
             totalPage={totalPage}
           />

@@ -1,11 +1,11 @@
 import {
   Button,
+  Divider,
   FormControl,
   InputLabel,
   MenuItem,
   Select,
   TextField,
-  Typography,
 } from "@mui/material";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 import { useRef, useState } from "react";
@@ -51,6 +51,7 @@ const SingleProduct = () => {
   const uploadImages2 = async () => {
     setIsLoading(true);
     if (!images.length) {
+      setIsLoading(false);
       return toast.error("Please select images.");
     }
     const promises = [];
@@ -79,7 +80,8 @@ const SingleProduct = () => {
   };
   return (
     <div className="w-full">
-      <Typography variant="h4">Add Product</Typography>
+      <h2 className="dashboard-title">Add product</h2>
+      <Divider />
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="flex w-full mt-4 space-x-4">
           <div className="flex-1">

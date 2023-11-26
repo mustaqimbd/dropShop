@@ -45,7 +45,13 @@ const getAllCategory = async (req, res, next) => {
 
 const addNewCategory = async (req, res, next) => {
   try {
-    const { img, name, slug } = req.body;
+    const { img, name } = req.body;
+    const slug = name
+      .split(" ")
+      .join("-")
+      .split("'")
+      .join("")
+      .toLocaleLowerCase();
     const newCategory = new Category({
       img,
       name,
