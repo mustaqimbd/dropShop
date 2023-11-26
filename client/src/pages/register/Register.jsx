@@ -24,7 +24,7 @@ const Register = () => {
 
   const password = watch("password", "");
 
-  const onSubmit = async (data) => {
+  const onSubmit = async data => {
     setRegisterError("");
     setServerValidationErr("");
     setLoading(true);
@@ -57,18 +57,18 @@ const Register = () => {
     <ContainerFull>
       <div className="bg-iconBg py-10">
         <ContainerMax>
-          <div className="flex gap-10 justify-center items-center mt-10 mb-20 mx-auto">
-            <div className="flex-1 flex justify-end">
+          <h1 className="text-2xl text-center font-semibold font-sans">
+            Register your Account
+          </h1>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 justify-center items-center mt-10 mb-20 mx-auto">
+            <div className="flex-1 flex justify-end order-2 md:order-1 mx-auto">
               <div>
-                <h1 className="text-2xl text-center font-semibold font-sans">
-                  Register to Create Account
-                </h1>
                 <img className="3/4 " src={registerImg} alt="" />
               </div>
             </div>
-            <div className="flex-1">
+            <div className="flex-1 mx-auto bg-white">
               <form
-                className="space-y-2  shadow-md bg-white p-16 rounded-md w-full max-w-[500px]"
+                className="space-y-2 shadow-md p-10 md:p-12 rounded-md w-full max-w-[500px]"
                 onSubmit={handleSubmit(onSubmit)}
               >
                 <div>

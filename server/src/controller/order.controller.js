@@ -31,61 +31,72 @@ const getOrderInfo = async (req, res, next) => {
     const skip = page * limit;
     const pipeline = [
       {
-        $lookup: {
-          from: "users",
-          localField: "reseller_id",
-          foreignField: "reseller_id",
-          as: "user_info",
+        $facet: {
+          totalOrders: [
+            {
+              $count: "total",
+            },
+          ],
+          orders: [
+            {
+              $lookup: {
+                from: "users",
+                localField: "reseller_id",
+                foreignField: "user_id",
+                as: "user_info",
+              },
+            },
+            {
+              $unwind: "$user_info",
+            },
+            {
+              $lookup: {
+                from: "customers",
+                localField: "customer_id",
+                foreignField: "customer_id",
+                as: "customer_info",
+              },
+            },
+            {
+              $unwind: "$customer_info",
+            },
+            {
+              $project: {
+                _id: 0,
+                order_id: 1,
+                seller_info: {
+                  name: "$user_info.name",
+                  email: "$user_info.email",
+                },
+                customer_info: {
+                  name: "$customer_info.customer_name",
+                  mobile: "$customer_info.mobile",
+                },
+                total_ordered_product: { $size: "$ordered_products" },
+                status: 1,
+                createdAt: 1,
+              },
+            },
+            {
+              $skip: parseInt(skip),
+            },
+            {
+              $limit: limit,
+            },
+          ],
         },
-      },
-      {
-        $unwind: "$user_info",
-      },
-      {
-        $lookup: {
-          from: "customers",
-          localField: "customer_id",
-          foreignField: "customer_id",
-          as: "customer_info",
-        },
-      },
-      {
-        $unwind: "$customer_info",
-      },
-      {
-        $project: {
-          _id: 0,
-          order_id: 1,
-          seller_info: {
-            name: "$user_info.name",
-            email: "$user_info.email",
-          },
-          customer_info: {
-            name: "$customer_info.customer_name",
-            mobile: "$customer_info.mobile",
-          },
-          total_ordered_product: { $size: "$ordered_products" },
-          status: 1,
-          createdAt: 1,
-        },
-      },
-      {
-        $skip: parseInt(skip),
-      },
-      {
-        $limit: limit,
       },
     ];
 
     const orders = await Order.aggregate(pipeline);
-  
     return successResponse(res, {
       message: "Total orders.",
       payload: {
         skip,
         limit,
-        length: orders.length,
-        orders,
+        length: orders[0].orders.length,
+        total: orders[0].totalOrders[0].total,
+        orders: orders[0].orders,
       },
     });
   } catch (error) {

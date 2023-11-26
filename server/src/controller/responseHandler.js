@@ -8,7 +8,7 @@ const errorResponse = (
 
 const successResponse = (
   res,
-  { statusCode = 200, message = "Success", payload = {} }
+  { statusCode = 200, message = "Success", payload = undefined }
 ) => {
   return res.status(statusCode).json({ success: true, message, payload });
 };

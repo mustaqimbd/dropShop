@@ -2,11 +2,8 @@ import { Typography } from "@mui/material";
 import ContainerFull from "../../container/ContainerFull";
 import ContainerMax from "../../container/ContainerMax";
 import { Link } from "react-router-dom";
-import useAuthProvider from "../../../hooks/useAuthProvider";
 
 const Navbar = ({ openMobileMenu }) => {
-  const { user } = useAuthProvider();
-
   const links = (
     <>
       <div>
@@ -151,9 +148,6 @@ const Navbar = ({ openMobileMenu }) => {
         <ContainerMax>
           <div className="flex justify-between items-center px-12">
             <div className="flex gap-5">{links}</div>
-            <div>
-              {user ? "" : <Link to="/register">Join As A Dropshipper</Link>}
-            </div>
           </div>
         </ContainerMax>
       </div>

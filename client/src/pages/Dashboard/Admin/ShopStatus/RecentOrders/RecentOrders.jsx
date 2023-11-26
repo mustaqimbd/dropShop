@@ -33,7 +33,7 @@ const RecentOrders = () => {
             <TableHead>
               <TableRow>
                 <TableCell>Order ID</TableCell>
-                <TableCell align="left">Product Name</TableCell>
+                <TableCell align="left">Seller name</TableCell>
                 <TableCell align="left">Quantity</TableCell>
                 <TableCell align="left">Price</TableCell>
                 <TableCell align="left">Status</TableCell>
@@ -47,22 +47,20 @@ const RecentOrders = () => {
                 >
                   <TableCell component="th" scope="row">
                     <span className="font-semibold text-caption">
-                      {row?._id?.slice(row?._id?.length - 10)}
+                      {row?.order_id}
                     </span>
                   </TableCell>
                   <TableCell align="left">
                     <span className="text-caption font-bold">
-                      {row?.product_name?.length > 30
-                        ? row?.product_name?.slice(0, 30) + "..."
-                        : row?.product_name}
+                      {row?.seller?.name}
                     </span>
                   </TableCell>
                   <TableCell align="left">
-                    <span className="font-semibold">{row?.quantity}</span>
+                    <span className="font-semibold">{row?.seller?.email}</span>
                   </TableCell>
                   <TableCell align="left">
                     <span className="font-semibold text-caption">
-                      $ {row?.total_price}
+                      $ {row?.total_cost}
                     </span>
                   </TableCell>
                   <TableCell align="left">

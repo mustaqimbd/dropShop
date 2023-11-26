@@ -8,7 +8,6 @@ import "./slider.css";
 import { PrimaryButton } from "../../../../components/buttons/Buttons";
 
 const Slider = ({ products }) => {
-  console.log(products);
   return (
     <div className="bg-gray-100 p-2 md:p-10 rounded-md">
       <Swiper

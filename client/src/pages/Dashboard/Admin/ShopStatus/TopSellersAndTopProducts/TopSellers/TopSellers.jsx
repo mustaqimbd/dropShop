@@ -8,7 +8,7 @@ const TopSellers = () => {
     "new-customer",
     "admin/dashboard/top-sellers"
   );
-  const sellers = data?.payload?.customers;
+  const sellers = data?.payload?.sellers;
   return (
     <>
       <div className="flex justify-between">
