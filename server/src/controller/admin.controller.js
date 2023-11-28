@@ -51,7 +51,6 @@ const addProduct = async (req, res, next) => {
     next(error);
   }
 };
-
 const adminStats = async (req, res, next) => {
   try {
     const today = new Date();
@@ -90,7 +89,6 @@ const adminStats = async (req, res, next) => {
     next(error);
   }
 };
-
 const dailySales = async (req, res, next) => {
   try {
     const startOfDay = new Date();
@@ -137,7 +135,6 @@ const dailySales = async (req, res, next) => {
     next(error);
   }
 };
-
 const currentMonthEveryDaySales = async (req, res, next) => {
   try {
     const today = new Date();
@@ -183,7 +180,6 @@ const currentMonthEveryDaySales = async (req, res, next) => {
     next(error);
   }
 };
-
 const yearlySales = async (req, res, next) => {
   try {
     const pipeline = [
@@ -221,7 +217,6 @@ const yearlySales = async (req, res, next) => {
     next(error);
   }
 };
-
 const orderOverview = async (req, res, next) => {
   try {
     const pipeline = [
@@ -243,7 +238,6 @@ const orderOverview = async (req, res, next) => {
     next(error);
   }
 };
-
 const totalOrders = async (req, res, next) => {
   try {
     const totalOrderCount = await Orders.find().countDocuments();
@@ -255,7 +249,6 @@ const totalOrders = async (req, res, next) => {
     next(error);
   }
 };
-
 const recentOrders = async (req, res, next) => {
   try {
     const { page = 0 } = req.query;
@@ -321,7 +314,6 @@ const recentOrders = async (req, res, next) => {
     next(error);
   }
 };
-
 const topSellers = async (req, res, next) => {
   try {
     const pipeline = [
@@ -370,7 +362,6 @@ const topSellers = async (req, res, next) => {
     next(error);
   }
 };
-
 const productStatistics = async (req, res, next) => {
   try {
     const totalCategory = await Category.find().countDocuments();
@@ -396,7 +387,6 @@ const productStatistics = async (req, res, next) => {
     next(error);
   }
 };
-
 const topCategories = async (req, res, next) => {
   try {
     const pipeline = [
@@ -479,7 +469,6 @@ const topCategories = async (req, res, next) => {
     next(error);
   }
 };
-
 const sellersInfo = async (req, res, next) => {
   try {
     const projection = {
@@ -516,7 +505,6 @@ const sellersInfo = async (req, res, next) => {
     next(error);
   }
 };
-
 const products = async (req, res, next) => {
   try {
     const { page = 1 } = req.query;
@@ -579,7 +567,7 @@ const productsById = async (req, res, next) => {
       product_id: 0,
     });
     if (!singleProduct) {
-      throw createError(400, "No item found with this id.");
+      throw createError(404, "No item found with this id.");
     }
     return successResponse(res, {
       message: "Single product details.",
@@ -674,6 +662,22 @@ const deleteProductImage = async (req, res, next) => {
     next(error);
   }
 };
+const updateProductCategory = async (req, res, next) => {
+  try {
+    const { productId, category, productProperties } = req.body;
+    if (!productId || category.length !== 2) {
+      return errorResponse(res, 403, "Fake request.");
+    }
+    const product = await Products.findById(productId);
+    product.category = category[0];
+    product.category_slug = category[1];
+    product.properties = productProperties;
+    await product.save();
+    return successResponse(res, { message: "Category updated successfully." });
+  } catch (error) {
+    next(error);
+  }
+};
 module.exports = {
   addProduct,
   adminStats,
@@ -693,4 +697,5 @@ module.exports = {
   updateProductInfo,
   updateImages,
   deleteProductImage,
+  updateProductCategory,
 };

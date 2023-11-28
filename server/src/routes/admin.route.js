@@ -17,6 +17,7 @@ const {
   updateProductInfo,
   updateImages,
   deleteProductImage,
+  updateProductCategory,
 } = require("../controller/admin.controller");
 const { isAdmin } = require("../middleware/checkRole");
 const passport = require("passport");
@@ -101,5 +102,9 @@ adminRoute.put("/dashboard/update-product-images", updateImages);
 // Delete image
 // /api/admin/dashboard/delete-product-images
 adminRoute.put("/dashboard/delete-product-image", deleteProductImage);
+
+// Update category
+// /api/admin/dashboard/update-product-category
+adminRoute.put("/dashboard/update-product-category", updateProductCategory);
 
 module.exports = adminRoute;

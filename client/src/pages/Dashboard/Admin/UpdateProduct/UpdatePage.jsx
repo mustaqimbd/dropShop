@@ -21,7 +21,7 @@ const UpdatePage = ({ searchedProduct, handleSearch }) => {
   const [images, setImages] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [productProperties, setProductProperties] = useState([]);
-  const [, setCategory] = useState("");
+  const [category, setCategory] = useState("");
   const [axiosSecure] = useAxiosSecure();
   const {
     register,
@@ -83,6 +83,27 @@ const UpdatePage = ({ searchedProduct, handleSearch }) => {
       toast.error("An error occurred. Please try again later.");
     } finally {
       setIsLoading(false);
+    }
+  };
+
+  // handle category update
+  const handleCategoryUpdate = async () => {
+    if (!category) {
+      return toast.error("Please select a category.");
+    }
+    try {
+      const data = {
+        category,
+        productProperties,
+        productId: product._id,
+      };
+      await axiosSecure.put(
+        `/api/admin/dashboard/update-product-category`,
+        data
+      );
+      toast.success("Product category updated successfully.");
+    } catch (error) {
+      toast.error("Something went wrong");
     }
   };
   return (
@@ -262,6 +283,15 @@ const UpdatePage = ({ searchedProduct, handleSearch }) => {
           productProperties={productProperties}
           setCategory={setCategory}
         />
+        <Button
+          component="button"
+          variant="contained"
+          color="primary"
+          className="!mt-5"
+          onClick={handleCategoryUpdate}
+        >
+          Update category
+        </Button>
       </div>
       <Divider className="!mt-5" />
       <div>
@@ -276,7 +306,7 @@ const UpdatePage = ({ searchedProduct, handleSearch }) => {
           />
           <div>
             <Button
-              variant="outlined"
+              variant="contained"
               color="primary"
               onClick={uploadImages2}
               startIcon={<CloudUploadIcon />}
