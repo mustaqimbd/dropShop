@@ -26,7 +26,7 @@ const trackOrder = async (req, res, next) => {
 
 const getOrderInfo = async (req, res, next) => {
   try {
-    const { page = 0 } = req.query;
+    const { page = 0, status = "all" } = req.query;
     const limit = 20;
     const skip = page * limit;
     const pipeline = [
@@ -87,7 +87,13 @@ const getOrderInfo = async (req, res, next) => {
         },
       },
     ];
-
+    if (status && status !== "all") {
+      pipeline[0].$facet.orders.push({
+        $match: {
+          status: status,
+        },
+      });
+    }
     const orders = await Order.aggregate(pipeline);
     return successResponse(res, {
       message: "Total orders.",
