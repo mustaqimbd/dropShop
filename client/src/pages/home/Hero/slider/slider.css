@@ -1,0 +1,8 @@
+.swiper-button-prev,
+.swiper-button-next {
+    display: none
+}
+
+.swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
+    text-align: start;
+}

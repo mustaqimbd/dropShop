@@ -1,0 +1,118 @@
+[
+  {
+    "order_id": "OID-2132321324",
+    "ordered_products": [
+      {
+        "product_slug": "ultraboost-22-shoes",
+        "quantity": 3,
+        "advanced": 50,
+        "unit_price": 200
+      },
+      {
+        "product_slug": "lunar-new-year-ultraboost-dna-shoes",
+        "quantity": 2,
+        "advanced": 20,
+        "unit_price": 400
+      },
+      {
+        "product_slug": "tiro-21-track-pants",
+        "quantity": 3,
+        "advanced": 20,
+        "unit_price": 150
+      }
+    ],
+    "status": "completed",
+    "delivery_charge": 100,
+    "completed_date": null,
+    "reseller_id": "demoseller1",
+    "customer_id": "customer1"
+  },
+  {
+    "order_id": "OID-2132321365",
+    "ordered_products": [
+      {
+        "product_slug": "blue-version-backpack",
+        "quantity": 3,
+        "advanced": 20,
+        "unit_price": 300
+      },
+      {
+        "product_slug": "defender-backpack",
+        "quantity": 2,
+        "advanced": 10,
+        "unit_price": 400
+      }
+    ],
+    "status": "picked by currier",
+    "delivery_charge": 100,
+    "completed_date": null,
+    "reseller_id": "demoseller3",
+    "customer_id": "customer1"
+  },
+  {
+    "order_id": "OID-2132321065",
+    "ordered_products": [
+      {
+        "product_slug": "adidas-fwd-02-sport-true-wireless-earbuds",
+        "quantity": 3,
+        "advanced": 50,
+        "unit_price": 120
+      },
+      {
+        "product_slug": "adidas-z.n.e.-01-anc-true-wireless-earbuds",
+        "quantity": 2,
+        "advanced": 30,
+        "unit_price": 40
+      }
+    ],
+    "status": "processing",
+    "delivery_charge": 100,
+    "completed_date": null,
+    "reseller_id": "demoseller2",
+    "customer_id": "customer1"
+  },
+  {
+    "order_id": "OID-2132321061",
+    "ordered_products": [
+      {
+        "product_slug": "adidas-fwd-02-sport-true-wireless-earbuds",
+        "quantity": 3,
+        "advanced": 50,
+        "unit_price": 120
+      },
+      {
+        "product_slug": "adidas-z.n.e.-01-anc-true-wireless-earbuds",
+        "quantity": 2,
+        "advanced": 30,
+        "unit_price": 40
+      }
+    ],
+    "status": "shifted",
+    "delivery_charge": 100,
+    "completed_date": null,
+    "reseller_id": "demoseller2",
+    "customer_id": "customer1"
+  },
+  {
+    "order_id": "OID-2132321062",
+    "ordered_products": [
+      {
+        "product_slug": "adidas-fwd-02-sport-true-wireless-earbuds",
+        "quantity": 3,
+        "advanced": 50,
+        "unit_price": 120
+      },
+      {
+        "product_slug": "adidas-z.n.e.-01-anc-true-wireless-earbuds",
+        "quantity": 2,
+        "advanced": 30,
+        "unit_price": 40
+      }
+    ],
+    "status": "canceled",
+    "delivery_charge": 100,
+    "completed_date": null,
+    "reseller_id": "demoseller2",
+    "customer_id": "customer1"
+  }
+]
