@@ -48,6 +48,7 @@ const orderCalculationAggregation = () => [
           product_slug: "$product_info.product_slug",
           product_name: "$product_info.product_name",
           product_image: "$product_info.images.link",
+          category_slug: "$product_info.category_slug",
           quantity: "$ordered_products.quantity",
           unit_price: "$ordered_products.unit_price",
           subtotal: "$ordered_products.subtotal",

@@ -1,4 +1,5 @@
 import {
+  Button,
   Chip,
   Divider,
   Paper,
@@ -13,6 +14,7 @@ import { useState } from "react";
 import useOrders from "../../../../../hooks/useOrders";
 import Pagination2 from "../../../../../components/Pagination2/Pagination2";
 import useTotalOrders from "../../../../../hooks/useTotalOrders";
+import { useNavigate } from "react-router-dom";
 
 const RecentOrders = () => {
   const [currentPage, setCurrentPage] = useState(0);
@@ -20,6 +22,7 @@ const RecentOrders = () => {
     "api/admin/dashboard/recent-orders",
     currentPage
   );
+  const navigate = useNavigate();
   const totalOrders = useTotalOrders();
   const totalPage = Math.ceil(totalOrders?.data?.payload?.totalOrderCount / 5);
   const rows = recentOrders?.payload?.orders;
@@ -37,6 +40,7 @@ const RecentOrders = () => {
                 <TableCell align="left">Quantity</TableCell>
                 <TableCell align="left">Price</TableCell>
                 <TableCell align="left">Status</TableCell>
+                <TableCell align="left">Details</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -85,6 +89,17 @@ const RecentOrders = () => {
                         color: "#fff",
                       }}
                     />
+                  </TableCell>
+                  <TableCell align="left">
+                    <Button
+                      variant="contained"
+                      onClick={() =>
+                        navigate(`/dashboard/admin/order/${row.order_id}`)
+                      }
+                      className="!text-white"
+                    >
+                      Details
+                    </Button>
                   </TableCell>
                 </TableRow>
               ))}

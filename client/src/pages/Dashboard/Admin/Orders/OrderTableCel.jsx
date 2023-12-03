@@ -44,6 +44,7 @@ const OrderTableCel = ({ row, singleOrderInfo }) => {
         <TableCell align="left">
           <Chip
             label={row?.status}
+            className="!text-white"
             style={{
               fontWeight: 600,
               textTransform: "uppercase",
@@ -69,6 +70,7 @@ const OrderTableCel = ({ row, singleOrderInfo }) => {
           <Button
             variant="contained"
             onClick={() => singleOrderInfo(row?.order_id)}
+            className="!text-white"
           >
             Details
           </Button>

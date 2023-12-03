@@ -2,10 +2,11 @@ import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../../../../hooks/useAxiosSecure";
 import toast from "react-hot-toast";
 import { useParams } from "react-router-dom";
-import { Divider, MenuItem, Select } from "@mui/material";
+import { Divider } from "@mui/material";
 import { format, parseISO } from "date-fns";
 import OrderedProductsTable from "./OrderedProductsTable";
 import TrackSingleOrder from "../../../../../components/TrackSingleOrder/TrackSingleOrder";
+import ChangeProductStatus from "../../../../../components/ChangeProductStatus/ChangeProductStatus";
 
 const SingleOrderDetails = () => {
   const { id: orderId } = useParams();
@@ -125,22 +126,10 @@ const SingleOrderDetails = () => {
             <h2 className="dashboard-title">Update status</h2>
             <Divider />
             <div className="mt-5">
-              <Select
+              <ChangeProductStatus
                 value={singleOrder?.order_status}
-                label="Status"
-                onChange={handleChange}
-                style={{ width: "300px" }}
-              >
-                <MenuItem value="">
-                  <em>None</em>
-                </MenuItem>
-                <MenuItem value="pending">Pending</MenuItem>
-                <MenuItem value="processing">Processing</MenuItem>
-                <MenuItem value="picked by currier">Picked by currier</MenuItem>
-                <MenuItem value="shifted">Shifted</MenuItem>
-                <MenuItem value="completed">Completed</MenuItem>
-                <MenuItem value="canceled">Canceled</MenuItem>
-              </Select>
+                handleChange={handleChange}
+              />
             </div>
           </div>
           <TrackSingleOrder orderDetails={singleOrder} />

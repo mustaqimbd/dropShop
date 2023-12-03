@@ -1,0 +1,37 @@
+[
+  {
+    "id": 0,
+    "name": "All",
+    "value": "all"
+  },
+  {
+    "id": 1,
+    "name": "Pending",
+    "value": "pending"
+  },
+  {
+    "id": 2,
+    "name": "Processing",
+    "value": "processing"
+  },
+  {
+    "id": 3,
+    "name": "Picked by currier",
+    "value": "picked by currier"
+  },
+  {
+    "id": 4,
+    "name": "Shifted",
+    "value": "shifted"
+  },
+  {
+    "id": 5,
+    "name": "Completed",
+    "value": "completed"
+  },
+  {
+    "id": 6,
+    "name": "Canceled",
+    "value": "canceled"
+  }
+]

@@ -14,6 +14,7 @@ import axios from "axios";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import useAxiosSecure from "../../../../../hooks/useAxiosSecure";
+import JoditEdit from "../../../../../components/JoditEdit/JoditEdit";
 
 const SingleProduct = () => {
   const [images, setImages] = useState([]);
@@ -22,6 +23,7 @@ const SingleProduct = () => {
   const [productProperties, setProductProperties] = useState([]);
   const [category, setCategory] = useState("");
   const [isHot, setIsHot] = useState("yes");
+  const [description, setDescription] = useState("");
   const addBtnRef = useRef();
   const [axiosSecure] = useAxiosSecure();
   const {
@@ -34,6 +36,7 @@ const SingleProduct = () => {
     data.images = uploadImages;
     data.properties = productProperties;
     data.category = category;
+    data.description = description;
     data.hot = data?.hot === "yes" ? true : false;
     console.log(data);
     try {
@@ -208,19 +211,8 @@ const SingleProduct = () => {
           </div>
         </div>
         <div className="mt-4">
-          <TextField
-            id="outlined-basic"
-            label="Short Description"
-            variant="outlined"
-            fullWidth
-            multiline
-            {...register("description", { required: true })}
-          />
-          {errors.description?.type === "required" && (
-            <p role="alert" className="text-red-600 font-bold">
-              This field is required
-            </p>
-          )}
+          <h2 className="m-2 font-bold text-md">Product description</h2>
+          <JoditEdit value={description} setValue={setDescription} />
         </div>
         <button type="submit" className="hidden" ref={addBtnRef}></button>
       </form>
