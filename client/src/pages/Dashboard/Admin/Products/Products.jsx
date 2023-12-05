@@ -72,8 +72,7 @@ const Products = () => {
   };
   return (
     <>
-      <button onClick={() => setOpen(true)}>open</button>
-      <div className="bg-white shadow-md p-2 md:p-5">
+      <div className="bg-white shadow-md p-2 md:p-5 rounded-md">
         <h2 className="dashboard-title">All products</h2>
         <Divider />
         <div className="py-5">

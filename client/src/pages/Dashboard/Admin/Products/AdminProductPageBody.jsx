@@ -10,15 +10,11 @@ import { useQuery } from "@tanstack/react-query";
 import { Avatar, IconButton } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
-
 import { useState } from "react";
 import Pagination2 from "../../../../components/Pagination2/Pagination2";
-import useTotalProductsCount from "../../../../hooks/useTotalProductsCount";
 
 const AdminProductPageBody = ({ handleDelete }) => {
   const [currentPage, setCurrentPage] = useState(0);
-  const { productsCount } = useTotalProductsCount();
-  const totalPage = Math.ceil(productsCount?.payload?.productCount / 20);
 
   const [axiosSecure] = useAxiosSecure();
   const { data: totalProducts = [], isLoading } = useQuery({
@@ -34,9 +30,8 @@ const AdminProductPageBody = ({ handleDelete }) => {
       }
     },
   });
-
+  const totalPage = Math.ceil(totalProducts?.payload?.total / 20);
   const rows = totalProducts?.payload?.products;
-
   if (isLoading) {
     return <h2>Loading...</h2>;
   }
@@ -66,7 +61,7 @@ const AdminProductPageBody = ({ handleDelete }) => {
                   </span>
                 </TableCell>
                 <TableCell align="left">
-                  <Avatar src={row?.images[0].link} alt={row?.product_name} />
+                  <Avatar src={row?.images[0]?.link} alt={row?.product_name} />
                 </TableCell>
                 <TableCell align="left">
                   <span className="font-bold text-caption">
@@ -105,7 +100,7 @@ const AdminProductPageBody = ({ handleDelete }) => {
         data={totalProducts}
         setCurrentPage={setCurrentPage}
         currentPage={currentPage}
-        totalData={productsCount?.payload?.productCount}
+        totalData={totalProducts?.payload?.total}
         totalPage={totalPage}
       />
     </div>

@@ -58,7 +58,9 @@ const OrderedProductsTable = ({ orderDetails }) => {
                   <Avatar src={row?.product_image[0]} alt={row?.product_name} />
                 </StyledTableCell>
                 <StyledTableCell align="left">
-                  <Link to={`/product-info/${row.product_slug}`}>
+                  <Link
+                    to={`/product-category/${row.product_slug}/${row.product_slug}`}
+                  >
                     {row?.product_name}
                   </Link>
                 </StyledTableCell>

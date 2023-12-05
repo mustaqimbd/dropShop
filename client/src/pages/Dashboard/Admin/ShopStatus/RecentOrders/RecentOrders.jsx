@@ -1,4 +1,5 @@
 import {
+  Button,
   Chip,
   Divider,
   Paper,
@@ -13,6 +14,7 @@ import { useState } from "react";
 import useOrders from "../../../../../hooks/useOrders";
 import Pagination2 from "../../../../../components/Pagination2/Pagination2";
 import useTotalOrders from "../../../../../hooks/useTotalOrders";
+import { useNavigate } from "react-router-dom";
 
 const RecentOrders = () => {
   const [currentPage, setCurrentPage] = useState(0);
@@ -20,6 +22,7 @@ const RecentOrders = () => {
     "api/admin/dashboard/recent-orders",
     currentPage
   );
+  const navigate = useNavigate();
   const totalOrders = useTotalOrders();
   const totalPage = Math.ceil(totalOrders?.data?.payload?.totalOrderCount / 5);
   const rows = recentOrders?.payload?.orders;
@@ -33,10 +36,11 @@ const RecentOrders = () => {
             <TableHead>
               <TableRow>
                 <TableCell>Order ID</TableCell>
-                <TableCell align="left">Product Name</TableCell>
+                <TableCell align="left">Seller name</TableCell>
                 <TableCell align="left">Quantity</TableCell>
                 <TableCell align="left">Price</TableCell>
                 <TableCell align="left">Status</TableCell>
+                <TableCell align="left">Details</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -47,22 +51,20 @@ const RecentOrders = () => {
                 >
                   <TableCell component="th" scope="row">
                     <span className="font-semibold text-caption">
-                      {row?._id?.slice(row?._id?.length - 10)}
+                      {row?.order_id}
                     </span>
                   </TableCell>
                   <TableCell align="left">
                     <span className="text-caption font-bold">
-                      {row?.product_name?.length > 30
-                        ? row?.product_name?.slice(0, 30) + "..."
-                        : row?.product_name}
+                      {row?.seller?.name}
                     </span>
                   </TableCell>
                   <TableCell align="left">
-                    <span className="font-semibold">{row?.quantity}</span>
+                    <span className="font-semibold">{row?.seller?.email}</span>
                   </TableCell>
                   <TableCell align="left">
                     <span className="font-semibold text-caption">
-                      $ {row?.total_price}
+                      $ {row?.total_cost}
                     </span>
                   </TableCell>
                   <TableCell align="left">
@@ -87,6 +89,17 @@ const RecentOrders = () => {
                         color: "#fff",
                       }}
                     />
+                  </TableCell>
+                  <TableCell align="left">
+                    <Button
+                      variant="contained"
+                      onClick={() =>
+                        navigate(`/dashboard/admin/order/${row.order_id}`)
+                      }
+                      className="!text-white"
+                    >
+                      Details
+                    </Button>
                   </TableCell>
                 </TableRow>
               ))}

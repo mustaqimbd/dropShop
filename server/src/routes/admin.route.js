@@ -14,6 +14,10 @@ const {
   products,
   deleteProduct,
   productsById,
+  updateProductInfo,
+  updateImages,
+  deleteProductImage,
+  updateProductCategory,
 } = require("../controller/admin.controller");
 const { isAdmin } = require("../middleware/checkRole");
 const passport = require("passport");
@@ -80,11 +84,27 @@ adminRoute.get("/dashboard/sellers-info", sellersInfo);
 adminRoute.get("/dashboard/products", products);
 
 // Product by id
-// /api/admin/dashboard/products
+// /api/admin/dashboard/product-by-id
 adminRoute.get("/dashboard/product-by-id", productsById);
 
 // Delete a product
-// /api/admin/dashboard/products
+// /api/admin/dashboard/delete-product
 adminRoute.delete("/dashboard/delete-product", deleteProduct);
+
+// Update product info
+// /api/admin/dashboard/update-product-info
+adminRoute.put("/dashboard/update-product-info", updateProductInfo);
+
+// Update product image
+// /api/admin/dashboard/update-product-images
+adminRoute.put("/dashboard/update-product-images", updateImages);
+
+// Delete image
+// /api/admin/dashboard/delete-product-images
+adminRoute.put("/dashboard/delete-product-image", deleteProductImage);
+
+// Update category
+// /api/admin/dashboard/update-product-category
+adminRoute.put("/dashboard/update-product-category", updateProductCategory);
 
 module.exports = adminRoute;

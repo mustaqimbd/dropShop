@@ -22,7 +22,7 @@ const TopProducts = () => {
             key={product._id}
             className="grid grid-cols-1 md:grid-cols-5 gap-5 items-center justify-start"
           >
-            <div className="col-span-1 md:col-span-1 flex justify-center">
+            <div className="hidden md:flex col-span-1 md:col-span-1 justify-center">
               <img
                 src={product.images[0].link}
                 alt={product.product_name}

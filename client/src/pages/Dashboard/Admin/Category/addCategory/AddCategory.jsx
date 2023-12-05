@@ -21,15 +21,13 @@ const AddCategory = () => {
   const [previewIcon, setPreviewIcon] = useState(null);
   const [iconImage, setIconImage] = useState(null);
 
-  const handleCategoryNameChange = (event) => {
+  const handleCategoryNameChange = event => {
     setCategoryName(event.target.value);
   };
 
-  const handleImageUpload = (event) => {
+  const handleImageUpload = event => {
     const file = event.target.files[0];
     setIconImage(file);
-
-    console.log(file);
     if (file) {
       setPreviewIcon(URL.createObjectURL(file));
     }
@@ -40,9 +38,6 @@ const AddCategory = () => {
     formData.append("image", iconImage);
 
     if (categoryName && previewIcon) {
-      // setCategoryName("");
-      // setIconImage(null);
-      console.log(formData);
       //add the category post to server
       const response = await axios.post(
         "https://api.imgbb.com/1/upload",
@@ -57,18 +52,13 @@ const AddCategory = () => {
         }
       );
       const imageUrl = response.data.data.url;
-      const slug = categoryName.split("").join("-").toLocaleLowerCase();
-
-      console.log(categoryName, imageUrl, slug);
       //post the data to backend
       axiosSecure
         .post("/api/category/", {
           name: categoryName,
           img: imageUrl,
-          slug: slug,
         })
         .then(function (response) {
-          console.log(response);
           if (response.status == 200) {
             toast.success(`${response?.data?.message}`, {
               style: {

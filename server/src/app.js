@@ -9,13 +9,14 @@ const {
   errorResponse,
   successResponse,
 } = require("./controller/responseHandler");
+const { clientUrl } = require("./secret");
 
 const session = require("express-session");
 const { sessionSecretKey } = require("./secret");
 
 //cors config
 const corsOptions = {
-  origin: "http://localhost:5173",
+  origin: clientUrl,
   credentials: true, // This is important for cookies to work
 };
 

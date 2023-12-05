@@ -28,26 +28,26 @@ const TopCategories = () => {
       </div>
       <Divider />
       <div className="mt-5 space-y-5">
-        {topCategories?.map((category) => (
-          <div key={category._id} className="grid grid-cols-6">
+        {topCategories?.map(category => (
+          <div key={category.category_slug} className="grid grid-cols-6">
             <div className="w-14 h-14 bg-borderColor flex justify-center items-center rounded-full cursor-pointer">
               <img
-                src={category.categoryImage}
-                alt={category.categoryName}
+                src={category.category_img}
+                alt={category.category_name}
                 className="w-10 h-10"
               />
             </div>
             <div className="col-span-3">
               <h2 className="font-bold text-caption">
-                {category.categoryName}
+                {category.category_name}
               </h2>
               <h2 className="text-linkText text-sm">{category._id}</h2>
             </div>
             <h2 className="text-caption font-semibold text-sm">
-              {category.totalOrders} Sales
+              {category.total_sales} Sales
             </h2>
             <h2 className="text-caption font-semibold text-sm">
-              {category.percentage.toFixed(3)}%
+              {parseFloat(category.percentage.toFixed(4))}%
             </h2>
           </div>
         ))}
