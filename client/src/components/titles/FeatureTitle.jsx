@@ -23,6 +23,13 @@ const FeatureProduct = ({ title }) => {
   return <h3 className="font-sans text-[24px] font-semibold">{title}</h3>;
 };
 
+const ProductTitleForDetailsPage = ({ title }) => {
+  return (
+    <Typography variant="h5" component="h5">
+      {title}
+    </Typography>
+  );
+};
 const AddToCardDetailsProductTitle = ({ title }) => {
   return (
     <Typography variant="h5" component="h5">
@@ -109,4 +116,5 @@ export {
   ColorTitle,
   TracOrdertitle,
   HelpTitle,
+  ProductTitleForDetailsPage
 };

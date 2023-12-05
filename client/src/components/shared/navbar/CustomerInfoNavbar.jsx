@@ -5,7 +5,6 @@ const CustomerInfoNavbar = () => {
   
   const navigate = useNavigate();
   const customer = JSON.parse(sessionStorage.getItem("Customer"));
-  console.log(sessionStorage.getItem("Customer"));
 
   return (
     <div className="flex justify-between items-center p-2 border-b">

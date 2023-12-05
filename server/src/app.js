@@ -11,6 +11,9 @@ const {
 } = require("./controller/responseHandler");
 const { clientUrl } = require("./secret");
 
+const session = require("express-session");
+const { sessionSecretKey } = require("./secret");
+
 //cors config
 const corsOptions = {
   origin: clientUrl,
@@ -24,6 +27,19 @@ app.use(helmet());
 app.use(express.json());
 app.use(morgan("dev"));
 require("./config/passport");
+
+// app.use(
+//   session({
+//     secret: sessionSecretKey,
+//     resave: false,
+//     saveUninitialized: true,
+//     cookie: {
+//     //   sameSite: "Lax", // or "Strict"
+//     //   httpOnly: true,
+//       maxAge: 24 * 60 * 60 * 1000, // 24 hours
+//     },
+//   })
+// );
 
 //default
 app.get("/", (req, res) => {

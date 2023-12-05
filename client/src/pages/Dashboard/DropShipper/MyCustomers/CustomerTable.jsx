@@ -9,6 +9,7 @@ import { useNavigate } from "react-router-dom";
 import { ShoppingCartCheckoutOutlined } from "@mui/icons-material";
 import { Divider } from "@mui/material";
 import EditModal from "./EditModal";
+import axios from "axios";
 
 const CustomerTable = ({ data, refetch }) => {
   const navigate = useNavigate();
@@ -26,6 +27,15 @@ const CustomerTable = ({ data, refetch }) => {
     navigate("/");
   };
 
+  const resetCart = async (customerId) => {
+    const response = await axios.delete(
+      `http://localhost:5000/api/cart/reset-cart/${customerId}`,
+      {
+        withCredentials: true, // Include cookies in the request
+      }
+    );
+    console.log(response.data);
+  };
   return (
     <TableContainer elevation={0} component={Paper}>
       <Table sx={{ minWidth: 1100 }} aria-label="caption table">
@@ -95,7 +105,9 @@ const CustomerTable = ({ data, refetch }) => {
                     <span>
                       <ShoppingCartCheckoutOutlined fontSize="small" />
                     </span>
-                    <span>Shop as Customer</span>
+                    <span onClick={() => resetCart(row.customer_id)}>
+                      Shop as Customer
+                    </span>
                   </button>
 
                   <EditModal data={row} refetch={refetch}></EditModal>

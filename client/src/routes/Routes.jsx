@@ -39,8 +39,10 @@ import UserProfile from "../pages/Account/UserProfile/UserProfile";
 import ChangePassword from "../pages/Account/ChangePassword/ChangePassword";
 import MyInfo from "../pages/Dashboard/DropShipper/Profile/MyInfo";
 import Settings from "../pages/Dashboard/DropShipper/Profile/Settings";
-import ProductDetails from "../pages/products/SingleProducts/ProductDetails";
-import CheckoutCart from "../pages/orderOverview/CheckoutCart";
+import CheckoutCart from "../pages/cartCheckout/CheckoutCart";
+import AddToCardPage from "../pages/AddToCardPage/AddToCardPage";
+import ProductDetailsPage from "../pages/products/productDetails/ProductDetailsPage";
+
 
 export const router = createBrowserRouter([
   {
@@ -89,7 +91,12 @@ export const router = createBrowserRouter([
       },
       {
         path: "/product-category/:categorySlug/:productSlug",
-        element: <ProductDetails />, // <AddToCardPage />
+        element: <ProductDetailsPage />, 
+      },
+      // for showing only this <AddToCardPage />
+      {
+        path: "/product-category/categorySlug/productSlug",
+        element: <AddToCardPage />,
       },
       {
         path: "/archive-products/:category",

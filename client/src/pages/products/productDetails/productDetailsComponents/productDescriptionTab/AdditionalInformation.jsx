@@ -1,5 +1,4 @@
 
-
 const AdditionalInformation = () => {
   return (
     <div>
