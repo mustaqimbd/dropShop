@@ -179,7 +179,6 @@ const getMyOrders = async (req, res, next) => {
   }
 };
 
-
 const getResellerStatics = async (req, res, next) => {
   try {
     // Calculate start and end dates for the last 30 days
@@ -260,12 +259,12 @@ const getResellerStatics = async (req, res, next) => {
 
     // last 30 days statistics
     const statistics = {
-      totalOrder: orderStatisticsArray[0].order[0].count,
-      completedOrder: orderStatisticsArray[0].completedOrder[0].count,
-      pendingOrder: orderStatisticsArray[0].pendingOrder[0].count,
-      canceledOrder: orderStatisticsArray[0].canceledOrder[0].count,
-      totalProfit: orderStatisticsArray[0].profit[0].totalProfit,
-      totalCustomer: customerArray[0].count,
+      totalOrder: orderStatisticsArray[0]?.order[0]?.count || 0,
+      completedOrder: orderStatisticsArray[0]?.completedOrder[0]?.count || 0,
+      pendingOrder: orderStatisticsArray[0]?.pendingOrder[0]?.count || 0,
+      canceledOrder: orderStatisticsArray[0]?.canceledOrder[0]?.count || 0,
+      totalProfit: orderStatisticsArray[0]?.profit[0]?.totalProfit || 0,
+      totalCustomer: customerArray[0]?.count || 0,
     };
 
     successResponse(res, {

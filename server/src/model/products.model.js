@@ -40,6 +40,6 @@ const productsSchema = new Schema(
   }
 );
 
-const Products = model("Products", productsSchema);
+const Products = model("Product", productsSchema);
 
 module.exports = Products;

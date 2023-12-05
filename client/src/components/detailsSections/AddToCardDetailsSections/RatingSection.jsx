@@ -1,5 +1,4 @@
 import { Rating, Typography } from '@mui/material'
-import React from 'react'
 
 const RatingSection = () => {
     return (
@@ -8,7 +7,7 @@ const RatingSection = () => {
             <Typography variant="p" component="h2">4.8 start rating</Typography>
             <Typography variant='p' color="gray">(6380)</Typography>
         </div>
-    )
+    ) 
 }
 
 export default RatingSection

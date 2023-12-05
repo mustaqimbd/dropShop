@@ -2,22 +2,16 @@ import ContainerFull from "../../container/ContainerFull";
 import ContainerMax from "../../container/ContainerMax";
 import cartIon from "../../../assets/icons/cart.svg";
 import { Link, useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
 import QuickLinks from "../../QuickLinks/QuickLinks";
 import useAuthProvider from "../../../hooks/useAuthProvider";
+import useCart from "../../../hooks/useCart";
 
 const Header = ({ setOpenMobileMenu }) => {
   const { user } = useAuthProvider();
   const navigate = useNavigate();
-  const [orderCart] = useState(() => {
-    const storedData = localStorage.getItem("orderCart");
-    return storedData ? JSON.parse(storedData) : [];
-  });
 
-  // Update localStorage whenever orderCart changes
-  useEffect(() => {
-    localStorage.setItem("orderCart", JSON.stringify(orderCart));
-  }, [orderCart]);
+  const { data } = useCart("cart", "cart/get-cart");
+
   const searchIcon = (color = "#191C1F") => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -49,7 +43,7 @@ const Header = ({ setOpenMobileMenu }) => {
           <div className="flex md:px-10 item-center justify-between">
             <button
               className="flex-1 block md:hidden"
-              onClick={() => setOpenMobileMenu(previous => !previous)}
+              onClick={() => setOpenMobileMenu((previous) => !previous)}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -89,7 +83,7 @@ const Header = ({ setOpenMobileMenu }) => {
               >
                 <img src={cartIon} alt="" />
                 <span className="absolute bg-iconBg w-6 h-6 items-center text-center rounded-full -top-3 -right-2 text-ratingCount">
-                  {orderCart.length || 0}
+                  {data?.payload?.totalQuantity | 0}
                 </span>
               </button>
               <div className="flex items-center">

@@ -1,4 +1,3 @@
-import React from 'react'
 import ContainerMax from '../../components/container/ContainerMax'
 import AddToCardCarosoul from '../../components/carosouls/AddToCardCarosoul'
 import AddToCardDetails from '../../components/detailsSections/AddToCardDetails'

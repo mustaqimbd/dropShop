@@ -34,6 +34,7 @@ const AuthProvider = ({ children }) => {
       setLoading(false);
     }
   }, [axiosSecure, fetchUser]);
+  
   const data = {
     user,
     setUser,
