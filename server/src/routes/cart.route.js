@@ -1,8 +1,8 @@
 const {
   addToCart,
-  getCart,
-  getCartProducts,
   resetCart,
+  updateToCart,
+  getFromCart,
 } = require("../controller/cart.controller");
 const cartRouter = require("express").Router();
 const session = require("express-session");
@@ -27,11 +27,12 @@ cartRouter.use(
 cartRouter.post("/", addToCart);
 
 // /api/cart/get-cart
-cartRouter.get("/get-cart", getCart);
+cartRouter.get("/get-cart", getFromCart);
 
-// /api/cart/get-cart
-cartRouter.get("/get-cart-products", getCartProducts);
+// /api/cart/update-cart
+cartRouter.patch("/update-cart", updateToCart);
 
+// /api/cart/reset-cart/:customerId
 cartRouter.delete("/reset-cart/:customerId", resetCart);
 
 module.exports = cartRouter;

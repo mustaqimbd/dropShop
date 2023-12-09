@@ -9,15 +9,15 @@ import {
 } from "../../../components/titles/FeatureTitle";
 import { Rating, Typography } from "@mui/material";
 
+
 const ProductDetailsPage = () => {
   const { productSlug } = useParams();
   const { data } = useGetRequest(
     "product-details",
     `products/details/${productSlug}`
   );
-
   const product = data?.payload ?? {};
-  // console.log(product);
+  
   const {
     _id,
     product_name,
@@ -26,6 +26,8 @@ const ProductDetailsPage = () => {
     suggested_price,
     is_active,
   } = product;
+
+ 
 
   return (
     <>

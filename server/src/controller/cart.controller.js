@@ -4,12 +4,12 @@ const { successResponse, errorResponse } = require("./responseHandler");
 
 const addToCart = async (req, res, next) => {
   try {
-    const cartData = req.body;
+    const { customerId, productId, sellingPrice, extraProfit, quantity } =
+      req.body;
+    delete req.body?.customerId;
     const sessionId = req.session.id;
-    const customerId = cartData.customerId;
-    delete cartData.customerId;
 
-    const product = await Products.findOne({ _id: cartData.productId });
+    const product = await Products.findOne({ _id: productId });
     if (!product) {
       return errorResponse(res, 404, "Product not found!");
     }
@@ -20,7 +20,7 @@ const addToCart = async (req, res, next) => {
       const result = await Cart.create({
         sessionId,
         customerId,
-        items: [cartData],
+        items: [req.body],
       });
       return successResponse(res, {
         message: "Total added products",
@@ -29,23 +29,26 @@ const addToCart = async (req, res, next) => {
     }
 
     const existingItem = cart.items?.find(
-      (item) => item.productId.toString() === cartData.productId
+      (item) => item.productId.toString() === productId
     );
 
     if (!existingItem) {
-      cart.items.push(cartData);
+      cart.items.push(req.body);
     } else {
       cart.items?.map((item) => {
-        if (item.productId.toString() === cartData.productId) {
+        if (item.productId.toString() === productId) {
           item.quantity =
-            cartData.quantity > 1
-              ? item.quantity + cartData.quantity
-              : item.quantity + 1;
+            quantity > 1 ? item.quantity + quantity : item.quantity + 1;
+
           item.sellingPrice =
-            cartData.sellingPrice != item.sellingPrice
-              ? cartData.sellingPrice
+            sellingPrice != item.sellingPrice
+              ? sellingPrice
               : item.sellingPrice;
+
+          item.extraProfit =
+            extraProfit != item.extraProfit ? extraProfit : item.extraProfit;
         }
+
         return item;
       });
     }
@@ -66,32 +69,74 @@ const addToCart = async (req, res, next) => {
 };
 
 // Get products in the cart
-const getCart = async (req, res) => {
+const getFromCart = async (req, res) => {
   const sessionId = req.session.id;
 
-  const cart = await Cart.findOne({ sessionId });
+  const cart = await Cart.findOne({ sessionId }).populate([
+    "customerId",
+    "items.productId",
+  ]);
   const totalQuantity = cart?.items.reduce(
     (sum, item) => sum + item.quantity,
     0
   );
+  const subTotal = cart?.items.reduce((sum, item) => {
+    const price = item.quantity * item?.productId?.reseller_price;
+    return sum + price;
+  }, 0);
 
   return successResponse(res, {
     message: "Total added products",
-    payload: { totalQuantity },
+    payload: { totalQuantity, cart, subTotal },
   });
 };
 
-const getCartProducts = async (req, res) => {
-  const sessionId = req.session.id;
+const updateToCart = async (req, res, next) => {
+  try {
+    const { productId, extraProfit, quantity, removeProductId } = req.body;
+    const sessionId = req.session.id;
 
-  const products = await Cart.findOne({ sessionId }).populate(
-    "items.productId"
-  );
+    const product = await Products.findOne({
+      _id: productId || removeProductId,
+    });
+    if (!product) {
+      return errorResponse(res, 404, "Product not found!");
+    }
 
-  return successResponse(res, {
-    message: "Cart's products",
-    payload: { products: products?.items },
-  });
+    let cart = await Cart.findOne({ sessionId });
+
+    if (!cart) {
+      return errorResponse(res, 404, "Cart not found!");
+    }
+    if (removeProductId) {
+      cart.items = cart.items?.filter((item) => {
+        return item.productId.toString() !== removeProductId;
+      });
+    } else {
+      cart.items?.map((item) => {
+        if (item.productId.toString() === productId) {
+          item.quantity = quantity || item.quantity;
+          item.sellingPrice = product?.suggested_price + extraProfit;
+          item.extraProfit =
+            extraProfit == 0 ? 0 : extraProfit || item.extraProfit;
+        }
+        return item;
+      });
+    }
+
+    const result = await Cart.findOneAndUpdate(
+      { sessionId: cart.sessionId },
+      { $set: cart },
+      { new: true }
+    );
+
+    return successResponse(res, {
+      message: "Total added products",
+      payload: { result },
+    });
+  } catch (error) {
+    next(error);
+  }
 };
 
 const resetCart = async (req, res, next) => {
@@ -110,4 +155,9 @@ const resetCart = async (req, res, next) => {
     next(error);
   }
 };
-module.exports = { addToCart, getCart, getCartProducts, resetCart };
+module.exports = {
+  addToCart,
+  getFromCart,
+  updateToCart,
+  resetCart,
+};
