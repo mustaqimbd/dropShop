@@ -39,9 +39,9 @@ import UserProfile from "../pages/Account/UserProfile/UserProfile";
 import ChangePassword from "../pages/Account/ChangePassword/ChangePassword";
 import MyInfo from "../pages/Dashboard/DropShipper/Profile/MyInfo";
 import Settings from "../pages/Dashboard/DropShipper/Profile/Settings";
-import CheckoutCart from "../pages/cartCheckout/CheckoutCart";
 import AddToCardPage from "../pages/AddToCardPage/AddToCardPage";
 import ProductDetailsPage from "../pages/products/productDetails/ProductDetailsPage";
+import CheckoutCartPage from "../pages/cartCheckout/CheckoutCartPage";
 
 
 export const router = createBrowserRouter([
@@ -104,7 +104,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/checkout-cart",
-        element: <CheckoutCart />,
+        element: <CheckoutCartPage />,
       },
       {
         path: "/track-order",

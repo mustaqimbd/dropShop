@@ -3,7 +3,11 @@ const mongoose = require("mongoose");
 const cartSchema = new mongoose.Schema(
   {
     sessionId: String,
-    customerId: String,
+    customerId: {
+      type: mongoose.Schema.Types.ObjectId,
+      required: true,
+      ref: "customer", // Update 'customer' to 'customers'
+    },
     items: [
       {
         productId: {
@@ -11,11 +15,11 @@ const cartSchema = new mongoose.Schema(
           required: true,
           ref: "Product",
         },
-        resellerPrice: {
+        sellingPrice: {
           type: Number,
           required: true,
         },
-        sellingPrice: {
+        extraProfit: {
           type: Number,
           required: true,
         },

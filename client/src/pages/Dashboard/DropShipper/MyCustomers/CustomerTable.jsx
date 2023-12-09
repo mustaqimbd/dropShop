@@ -22,20 +22,22 @@ const CustomerTable = ({ data, refetch }) => {
       JSON.stringify({
         customerName: data.customer_name,
         customerId: data.customer_id,
+        id: data._id,
       })
     );
     navigate("/");
   };
 
-  const resetCart = async (customerId) => {
-    const response = await axios.delete(
-      `http://localhost:5000/api/cart/reset-cart/${customerId}`,
-      {
+  const resetCart = async (id) => {
+    try {
+      await axios.delete(`http://localhost:5000/api/cart/reset-cart/${id}`, {
         withCredentials: true, // Include cookies in the request
-      }
-    );
-    console.log(response.data);
+      });
+    } catch (error) {
+      console.log(error);
+    }
   };
+  
   return (
     <TableContainer elevation={0} component={Paper}>
       <Table sx={{ minWidth: 1100 }} aria-label="caption table">
@@ -99,15 +101,13 @@ const CustomerTable = ({ data, refetch }) => {
               <TableCell>
                 <div className="flex justify-center gap-3 items-center text-white ">
                   <button
-                    onClick={() => customer(row)}
+                    onClick={() => resetCart(row._id)}
                     className="bg-[#83B735] px-2 py-1  rounded flex items-center gap-1"
                   >
                     <span>
                       <ShoppingCartCheckoutOutlined fontSize="small" />
                     </span>
-                    <span onClick={() => resetCart(row.customer_id)}>
-                      Shop as Customer
-                    </span>
+                    <span onClick={() => customer(row)}>Shop as Customer</span>
                   </button>
 
                   <EditModal data={row} refetch={refetch}></EditModal>

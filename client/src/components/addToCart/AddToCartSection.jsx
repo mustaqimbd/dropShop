@@ -1,7 +1,12 @@
 import { useState } from "react";
 import AddToCartBtn from "./AddToCartBtn";
 
-const AddToCart = ({ id, quantity, resellerPrice, sellingPrice }) => {
+const AddToCartSection = ({
+  id,
+  quantity,
+  sellingPrice,
+  extraProfit,
+}) => {
   const [count, setCount] = useState(1);
 
   const handleIncrement = () => {
@@ -27,11 +32,18 @@ const AddToCart = ({ id, quantity, resellerPrice, sellingPrice }) => {
         <input
           type="number"
           min={1}
+          max={9999}
           value={quantity || count || ""}
-          onChange={(e) =>
-            handleInput(Math.max(1, parseInt(e.target.value, 10)))
-          }
-          className="outline-none w-[50px] h-[30px] text-center [appearance:textfield][&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+          onChange={(e) => {
+            const value = parseInt(e.target.value, 10);
+            const maxValue = 9999;
+            if (!isNaN(value) && value > maxValue) {
+              handleInput(maxValue);
+            } else {
+              handleInput(Math.max(1, value));
+            }
+          }}
+          className="border outline-none w-[40px] h-[25px] [appearance:textfield][&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
         />
         <button
           onClick={handleIncrement}
@@ -43,8 +55,8 @@ const AddToCart = ({ id, quantity, resellerPrice, sellingPrice }) => {
       <AddToCartBtn
         data={{
           productId: id,
-          resellerPrice: resellerPrice,
           sellingPrice: sellingPrice,
+          extraProfit: extraProfit,
           quantity: count || 1,
         }}
       />
@@ -52,4 +64,4 @@ const AddToCart = ({ id, quantity, resellerPrice, sellingPrice }) => {
   );
 };
 
-export default AddToCart;
+export default AddToCartSection;
