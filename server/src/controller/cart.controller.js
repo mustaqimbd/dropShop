@@ -1,5 +1,6 @@
 const Cart = require("../model/cart.model");
 const Products = require("../model/products.model");
+const formatNumber = require("../utilities/numberFormator");
 const { successResponse, errorResponse } = require("./responseHandler");
 
 const addToCart = async (req, res, next) => {
@@ -70,7 +71,7 @@ const addToCart = async (req, res, next) => {
 
 // Get products in the cart
 const getFromCart = async (req, res) => {
-  const sessionId = req.session.id;
+  const sessionId = req.session?.id;
 
   const cart = await Cart.findOne({ sessionId }).populate([
     "customerId",
@@ -80,10 +81,13 @@ const getFromCart = async (req, res) => {
     (sum, item) => sum + item.quantity,
     0
   );
-  const subTotal = cart?.items.reduce((sum, item) => {
-    const price = item.quantity * item?.productId?.reseller_price;
-    return sum + price;
+
+  let subTotal = cart?.items.reduce((sum, item) => {
+    const perItemTotalPrice =
+      item.quantity * (item?.productId?.suggested_price + item.extraProfit);
+    return sum + perItemTotalPrice;
   }, 0);
+  subTotal = formatNumber(subTotal);
 
   return successResponse(res, {
     message: "Total added products",

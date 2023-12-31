@@ -42,7 +42,7 @@ import Settings from "../pages/Dashboard/DropShipper/Profile/Settings";
 import AddToCardPage from "../pages/AddToCardPage/AddToCardPage";
 import ProductDetailsPage from "../pages/products/productDetails/ProductDetailsPage";
 import CheckoutCartPage from "../pages/cartCheckout/CheckoutCartPage";
-
+import PaymentSuccessPage from "../pages/payment/paymentSuccessPage";
 
 export const router = createBrowserRouter([
   {
@@ -91,7 +91,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/product-category/:categorySlug/:productSlug",
-        element: <ProductDetailsPage />, 
+        element: <ProductDetailsPage />,
       },
       // for showing only this <AddToCardPage />
       {
@@ -129,6 +129,10 @@ export const router = createBrowserRouter([
       {
         path: "/need-help",
         element: <NeedHelp />,
+      },
+      {
+        path: "/payment-success",
+        element: <PaymentSuccessPage />,
       },
     ],
   },

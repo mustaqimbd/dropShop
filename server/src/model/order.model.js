@@ -10,18 +10,18 @@ const orderSchema = new mongoose.Schema(
     },
     ordered_products: [
       {
-        product_slug: String,
-        product_id: String,
-        quantity: Number,
-        advanced: Number,
-        reseller_unit_price: Number,
-        profit: Number,
-        unit_price: Number,
+        productId: {
+          type: mongoose.Schema.Types.ObjectId,
+          required: true,
+          ref: "Product",
+        },
+        sellingPrice: { type: Number, required: true },
+        extraProfit: { type: Number, required: true },
+        quantity: { type: Number, required: true },
       },
     ],
     total_cost: {
       type: Number,
-      required: true,
     },
     status: {
       type: String,
@@ -36,11 +36,10 @@ const orderSchema = new mongoose.Schema(
       ],
       required: true,
     },
-
     delivery_charge: {
       type: Number,
-      required: true,
     },
+    advance: { type: Number },
     completed_date: {
       type: Date,
       validate: {
@@ -50,14 +49,10 @@ const orderSchema = new mongoose.Schema(
         message: "Only Date or null values are allowed for completed_date",
       },
     },
-    reseller_id: {
-      type: String,
-      required: true,
-    },
-    customer_id: {
-      type: String,
-      required: true,
-    },
+    reseller_id: { type: String },
+    reseller: { type: mongoose.Schema.Types.ObjectId, required: true },
+    customer_id: { type: String },
+    customer: { type: String },
   },
   { timestamps: true }
 );

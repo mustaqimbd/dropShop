@@ -19,7 +19,7 @@ const {
 
 const resellerRoute = require("express").Router();
 const { isReseller } = require("../middleware/checkRole");
-const { updateOrderStatus } = require("../controller/order.controller");
+// const { updateOrderStatus } = require("../controller/order.controller");
 
 //TODO: Secure reseller routes.
 resellerRoute.use(passport.authenticate("jwt", { session: false }), isReseller);

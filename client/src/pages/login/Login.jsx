@@ -21,7 +21,8 @@ const Login = () => {
       return navigate("/");
     }
   }, [user, navigate]);
-  const onSubmit = async data => {
+
+  const onSubmit = async (data) => {
     setLoginError("");
     try {
       const res = await axiosSecure.post(

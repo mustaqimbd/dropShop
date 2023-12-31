@@ -11,7 +11,7 @@ function AddToCartBtn({ data }) {
       className="bg-[#85B643] w-[220px] px-3 flex justify-center items-center gap-2 text-white py-2"
     >
       <ShoppingBasketIcon fontSize="small" />{" "}
-      <span>{isLoading ? "Adding to Cart..." : "Add to Cart"}</span>
+      <span>Add to Cart</span>
     </button>
   );
 }

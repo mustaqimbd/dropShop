@@ -1,25 +1,31 @@
 import { useState } from "react";
-import axios from "axios";
 import useCart from "./useCart";
-import useAuthProvider from "./useAuthProvider";
+import Swal from "sweetalert2";
+import useAxiosSecure from "./useAxiosSecure";
 
 const useCartPostRequest = () => {
-  const { user } = useAuthProvider();
   const [isLoading, setIsLoading] = useState(false);
-
   const { refetch } = useCart("cart", "cart/get-cart");
+  const [axiosSecure] = useAxiosSecure();
   const handleAddToCart = async (data) => {
-    setIsLoading(true);
-    data.customerId =
-      JSON.parse(sessionStorage.getItem("Customer"))?.id || user?._id;
-
     try {
-      const response = await axios.post(
-        "http://localhost:5000/api/cart",
-        data,
-        {
-          withCredentials: true, // Include cookies in the request
-        }
+      setIsLoading(true);
+      const customerId = JSON.parse(sessionStorage.getItem("Customer"))?.id;
+
+      if (!customerId) {
+        return Swal.fire({
+          position: "top-end",
+          icon: "error",
+          title: "Please,Select a customer!",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      }
+
+      data.customerId = customerId;
+      const response = await axiosSecure.post(
+        "/api/cart",
+        data
       );
 
       if (response.data) {
