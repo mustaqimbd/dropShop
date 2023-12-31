@@ -10,8 +10,8 @@ const SMTPPassword = process.env.SMTP_PASSWORD;
 const clientUrl = process.env.CLIENT_URL;
 const sessionSecretKey = process.env.SESSION_SECRET;
 //ssl sercret
-// const store_id = process.env.STORE_ID;
-// const store_passwd = process.env.STORE_PASSWD;
+const store_id = process.env.STORE_ID;
+const store_passwd = process.env.STORE_PASSWD;
 
 module.exports = {
   userRegisterSecret,
@@ -23,6 +23,6 @@ module.exports = {
   SMTPPassword,
   clientUrl,
   sessionSecretKey,
-  // store_id,
-  // store_passwd,
+  store_id,
+  store_passwd,
 };

@@ -1,22 +1,17 @@
 import { useState } from "react";
-import axios from "axios";
 import useCart from "./useCart";
+import useAxiosSecure from "./useAxiosSecure";
 
 const useCartPatchRequest = () => {
+  const [axiosSecure] = useAxiosSecure();
   const [isLoading, setIsLoading] = useState(false);
 
   const { refetch } = useCart("cart", "cart/get-cart");
   const handleUpdateToCart = async (data) => {
     setIsLoading(true);
-  
+
     try {
-      const response = await axios.patch(
-        "http://localhost:5000/api/cart/update-cart",
-        data,
-        {
-          withCredentials: true, // Include cookies in the request
-        }
-      );
+      const response = await axiosSecure.patch("/api/cart/update-cart", data);
 
       if (response.data) {
         refetch();

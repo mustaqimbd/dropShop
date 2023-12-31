@@ -1,11 +1,11 @@
 const CustomerInfo = ({ customer }) => {
   const { delivery_address, customer_id, customer_name, email, mobile } =
-    customer;
+    customer || {};
 
   return (
     <>
       <p className="text-lg text-center">Customer Information</p>
-      <div className="bg-white p-6 shadow-md rounded-md max-w-md mx-auto">
+      <div className="bg-white p-6  rounded-md max-w-md mx-auto">
         <h2 className="text-2xl font-semibold mb-4">{customer_name}</h2>
 
         <div className="mb-4">
