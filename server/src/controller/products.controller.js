@@ -169,7 +169,7 @@ const productsBySmartFilter = async (req, res, next) => {
       {
         $facet: {
           data: [
-            { $skip: (currentPage - 1) * 10 }, // Adjust the skip value for pagination
+            { $skip: Number((currentPage - 1) * 10) || 0 }, // Adjust the skip value for pagination
             { $limit: 10 }, // Adjust the limit value for pagination
           ],
           totalCount: [{ $count: "total" }],
