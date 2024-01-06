@@ -9,7 +9,7 @@ const HighlightSection = () => {
   const [topSelling, setTopSelling] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/products/highlight-products")
+    fetch(`${import.meta.env.VITE_SERVER}/api/products/highlight-products`)
       .then(res => res.json())
       .then(data => {
         setTopRate(data.payload.topRatedProducts);
