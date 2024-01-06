@@ -10,7 +10,7 @@ const transporter = nodemailer.createTransport({
     pass: SMTPPassword,
   },
 });
-const emailWithNodeMailer = async emailData => {
+const emailWithNodeMailer = async (emailData) => {
   try {
     const mailsOptions = {
       from: SMTPUserName,
@@ -20,7 +20,7 @@ const emailWithNodeMailer = async emailData => {
     };
     await transporter.sendMail(mailsOptions);
   } catch (error) {
-    throw error;
+    throw new Error(error);
   }
 };
 

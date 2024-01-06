@@ -1,6 +1,6 @@
 const Category = require("../model/category.model");
 const Products = require("../model/products.model");
-const { successResponse, errorResponse } = require("./responseHandler");
+const { successResponse } = require("./responseHandler");
 
 const bannerProducts = async (req, res, next) => {
   try {

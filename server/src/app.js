@@ -10,9 +10,7 @@ const {
   successResponse,
 } = require("./controller/responseHandler");
 const { clientUrl } = require("./secret");
-
-const session = require("express-session");
-const { sessionSecretKey } = require("./secret");
+const userSession = require("./middleware/userSession");
 
 //cors config
 const corsOptions = {
@@ -27,19 +25,7 @@ app.use(helmet());
 app.use(express.json());
 app.use(morgan("dev"));
 require("./config/passport");
-
-// app.use(
-//   session({
-//     secret: sessionSecretKey,
-//     resave: false,
-//     saveUninitialized: true,
-//     cookie: {
-//     //   sameSite: "Lax", // or "Strict"
-//     //   httpOnly: true,
-//       maxAge: 24 * 60 * 60 * 1000, // 24 hours
-//     },
-//   })
-// );
+app.use(userSession());
 
 //default
 app.get("/", (req, res) => {
@@ -57,7 +43,7 @@ app.use("/api/cart", require("./routes/cart.route"));
 
 //seed api's
 app.use("/api/seed", require("./routes/seed.route"));
-app.use("api/payments", require("./routes/payments.route"));
+app.use("/api/payments", require("./routes/payments.route"));
 
 //client error
 app.use((req, res, next) => {
@@ -65,6 +51,7 @@ app.use((req, res, next) => {
 });
 
 //handle server errors
+// eslint-disable-next-line no-unused-vars
 app.use((err, req, res, next) => {
   console.log(err);
   return errorResponse(res, err.status, err.message);

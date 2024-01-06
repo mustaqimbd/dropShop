@@ -1,12 +1,22 @@
 import { useState } from "react";
-import AddToCart from "../../../../components/addToCart/AddToCart";
+import AddToCartSection from "../../../../components/addToCart/AddToCartSection";
 
 const ProfitCalculate = ({ id, suggested_price, reseller_price }) => {
   const [extraProfit, setExtraProfit] = useState(0);
 
-  const profit = (suggested_price - reseller_price).toFixed();
-  const totalProfit = parseInt(profit) + extraProfit;
-  const totalPrice = suggested_price + totalProfit;
+  const profit = suggested_price - reseller_price;
+  const totalProfit = profit + extraProfit;
+  const totalPrice = reseller_price + totalProfit;
+
+  function formatNumber(number) {
+    let roundedNumber = Math.round(number * 100) / 100;
+    let isWholeNumber = roundedNumber % 1 === 0;
+    let formattedNumber = isWholeNumber
+      ? roundedNumber.toString()
+      : roundedNumber.toFixed(2);
+
+    return formattedNumber;
+  }
 
   return (
     <>
@@ -27,16 +37,17 @@ const ProfitCalculate = ({ id, suggested_price, reseller_price }) => {
         <div className="space-y-2">
           <p className="text-lg font-[600] ">
             <span className="text-[#5F6C72]">Profit would be : </span>
-            <span>{totalProfit}৳</span>
+            <span>{formatNumber(totalProfit)}৳</span>
           </p>
           <p className="text-lg font-[600] ">
             <span className="text-[#5F6C72]">You would sell : </span>
-            <span>{totalPrice}৳</span>
+            <span>{formatNumber(totalPrice)}৳</span>
           </p>
         </div>
       </div>
       <div className="space-y-8">
-        <AddToCart
+        <AddToCartSection
+          extraProfit={extraProfit}
           id={id}
           resellerPrice={reseller_price}
           sellingPrice={totalPrice}
