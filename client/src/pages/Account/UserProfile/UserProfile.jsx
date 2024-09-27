@@ -56,7 +56,7 @@ const UserProfile = () => {
         const formData = new FormData();
         formData.append("image", updatedImage);
         fetch(
-          `https://api.imgbb.com/1/upload?key=${import.meta.env.VITE_IMGBB}`,
+          `${import.meta.env.VITE_IMG_BB_API_URL}?key=${import.meta.env.VITE_IMG_BB_API_KEY}`,
           {
             method: "POST",
             body: formData,
@@ -64,7 +64,6 @@ const UserProfile = () => {
         )
           .then(res => res.json())
           .then(async data => {
-            console.log(data);
             changeProfile(data);
             setIsUploading(false);
           })

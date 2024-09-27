@@ -33,7 +33,7 @@ const ResetPassword = () => {
     }
     setLoading(true);
     try {
-      const res = await axiosSecure.post("/api/user/reset-password", {
+      const res = await axiosSecure.post("/user/reset-password", {
         token,
         password,
       });

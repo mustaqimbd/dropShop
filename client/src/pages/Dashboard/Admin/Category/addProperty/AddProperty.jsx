@@ -62,7 +62,7 @@ const AddProperty = () => {
       values: propertyValues,
     };
     axiosSecure
-      .put(`/api/category/${categoryId}`, categoryData, {
+      .put(`/category/${categoryId}`, categoryData, {
         headers: {
           "Content-Type": "application/json", // Specify the content type
           // Add any additional headers if needed

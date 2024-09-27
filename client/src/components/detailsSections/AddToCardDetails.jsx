@@ -1,26 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import RatingSection from './AddToCardDetailsSections/RatingSection'
-import { AddToCardDetailsProductTitle, AvailabilityTitle, BrandTitle, CategoryTitle, CategoryTitles, ColorTitle, MaximamProfitPrice, MaximumProfitMarginText, ResellerPriceTitle, SkuTitle } from '../titles/FeatureTitle'
-import { Button, TextField, Typography } from '@mui/material'
+import { AddToCardDetailsProductTitle, ColorTitle, MaximumProfitMarginText, ResellerPriceTitle, } from '../titles/FeatureTitle'
 import AddToCardProductDetailsConfig, { DividerProduct } from './AddToCardDetailsSections/AddToCardProductDetailsConfig'
 import { LockIcon } from '../icons/Icons'
-import { BsPlusLg } from 'react-icons/bs'
-import { AiOutlineHeart, AiOutlineMinus, AiOutlineShoppingCart, AiFillHeart } from 'react-icons/ai'
+
+import { AiFillHeart } from 'react-icons/ai'
 import { BiRefresh } from 'react-icons/bi'
 import { paymentMethods } from '../../api/addToCard.api'
 import { OutlinedInput } from "@mui/material"
-import InputLabel from "@mui/material/InputLabel"
 import MenuItem from '@mui/material/MenuItem';
-import FormHelperText from '@mui/material/FormHelperText';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import CounterInput from '../buttons/CounterInput'
-
-const color = [
-    { "color": '##858585', "select": true },
-    { "color": '#E0E1E1', "select": false },
-    { "color": '#BA9F88', "select": false }
-]
 
 
 
@@ -30,13 +21,13 @@ const AddToCardDetails = () => {
     const [methods, setMethods] = useState([])
     const [age, setAge] = React.useState('');
     const [favourite, setFaourite] = useState(false)
-    const [quantity,setQuantity] = useState(0)
+    const [quantity, setQuantity] = useState(0)
     const [productAvailable, setProductAvailable] = useState(5)
 
-    const handleIncrement = () =>{
+    const handleIncrement = () => {
         setQuantity(quantity + 1)
     }
-    const handleDecrement = () =>{
+    const handleDecrement = () => {
         setQuantity(quantity - 1)
     }
 
@@ -50,8 +41,7 @@ const AddToCardDetails = () => {
                 setMethods(data)
             })
     }, [])
-    const handleFavourite = () =>{
-        console.log("favourite called")
+    const handleFavourite = () => {
         setFaourite(!favourite)
     }
     return (
@@ -138,13 +128,13 @@ const AddToCardDetails = () => {
                     </div>
                     <div>
                         <MaximumProfitMarginText text={"Size"} />
-                        <FormControl sx={{ minWidth: 150 }} style={{width: '100%'}}>
+                        <FormControl sx={{ minWidth: 150 }} style={{ width: '100%' }}>
                             <Select
                                 value={age}
                                 onChange={handleChange}
                                 displayEmpty
                                 inputProps={{ 'aria-label': 'Without label' }}
-                                
+
                             >
                                 {/* <MenuItem value="">
                                     <em>None</em>
@@ -154,26 +144,26 @@ const AddToCardDetails = () => {
                                 <MenuItem value={30}>Thirty</MenuItem> */}
                                 {/* <MenuItem value={'null'}><em> choose  a Size </em></MenuItem> */}
                                 {
-                                    size.map(s => <MenuItem placeholder='sm' value={s}>{s}</MenuItem>)
+                                    size.map(s => <MenuItem placeholder='sm' value={s} key={s}>{s}</MenuItem>)
                                 }
                             </Select>
                         </FormControl>
                     </div>
                     <div>
-                        <MaximumProfitMarginText text={"Total"}/>
+                        <MaximumProfitMarginText text={"Total"} />
                         <OutlinedInput color='primary' fullWidth disabled value={"890 Taka"} />
                     </div>
                 </div>
                 <div className='mt-9'>
-                    <CounterInput productAvailable={productAvailable} handleIncrement={handleIncrement} handleDecrement={handleDecrement} quantity={quantity}/>
+                    <CounterInput productAvailable={productAvailable} handleIncrement={handleIncrement} handleDecrement={handleDecrement} quantity={quantity} />
                 </div>
                 <div className='buttons grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
-                                    
+
                 </div>
             </div>
             <div className='grid grid-cols-1 md:grid-cols-2 gap-4 mt-2'>
                 <button className='flex justify-center items-center  gap-3 mt-2 hover:outline-1 outline-slate-500' onClick={handleFavourite}>
-                    <AiFillHeart size={30} className={`${favourite && "text-red-700"}`}/>
+                    <AiFillHeart size={30} className={`${favourite && "text-red-700"}`} />
                     Add To Wishlist
                 </button>
                 <button className='flex justify-center items-center  gap-3 border-black  mt-2'>

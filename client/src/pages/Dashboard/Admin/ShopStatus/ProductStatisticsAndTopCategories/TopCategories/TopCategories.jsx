@@ -9,7 +9,7 @@ const TopCategories = () => {
     queryFn: async () => {
       try {
         const res = await axiosSecure.get(
-          "/api/admin/dashboard/top-categories"
+          "/admin/dashboard/top-categories"
         );
         return res.data;
       } catch (error) {

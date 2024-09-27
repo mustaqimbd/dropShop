@@ -19,7 +19,7 @@ const TrackOrder = () => {
     }
     try {
       const res = await axiosSecure.get(
-        `/api/order/track-order?orderId=${trackId}`
+        `/order/track-order?orderId=${trackId}`
       );
       setSearchOrder(res.data.payload.orderDetails);
       if (!res.data.payload.orderDetails.length) {

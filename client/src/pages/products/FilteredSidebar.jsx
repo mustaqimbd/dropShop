@@ -44,7 +44,7 @@ const FilteredSidebar = ({
     };
     try {
       const result = await axiosSecure.post(
-        `/api/products/product-by-smart-search?category_slug=${categoryDetails?.slug}&currentPage=${currentPage}`,
+        `/products/product-by-smart-search?category_slug=${categoryDetails?.slug}&currentPage=${currentPage}`,
         filters
       );
       setFilteredProductsCount(result?.data?.payload?.totalCount);
@@ -54,9 +54,11 @@ const FilteredSidebar = ({
       console.log(error);
     }
   };
+  
   useEffect(() => {
     handleFilters(fpCurrentP);
   }, [fpCurrentP]);
+
   return (
     <>
       <div className="h-screen space-y-3 w-full z-20 overflow-y-auto overflow-x-hidden">

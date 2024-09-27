@@ -9,14 +9,16 @@ const {
   errorResponse,
   successResponse,
 } = require("./controller/responseHandler");
-const { clientUrl } = require("./secret");
+const { clientUrl, env } = require("./secret");
 const userSession = require("./middleware/userSession");
 
-//cors config
 const corsOptions = {
-  origin: clientUrl,
-  credentials: true, // This is important for cookies to work
+  origin: [env === "production" ? clientUrl : 'http://localhost:5173'],
+  credentials: true, // Important for cookies or session
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  allowedHeaders: "Content-Type, Authorization",
 };
+
 
 //middleware
 app.use(cors(corsOptions));
@@ -33,17 +35,17 @@ app.get("/", (req, res) => {
 });
 
 //API's
-app.use("/api/user", require("./routes/user.route"));
-app.use("/api/admin", require("./routes/admin.route"));
-app.use("/api/reseller", require("./routes/reseller.route"));
-app.use("/api/category", require("./routes/category.route"));
-app.use("/api/products", require("./routes/products.route"));
-app.use("/api/order", require("./routes/order.route"));
-app.use("/api/cart", require("./routes/cart.route"));
+app.use("/api/v1/user", require("./routes/user.route"));
+app.use("/api/v1/admin", require("./routes/admin.route"));
+app.use("/api/v1/reseller", require("./routes/reseller.route"));
+app.use("/api/v1/category", require("./routes/category.route"));
+app.use("/api/v1/products", require("./routes/products.route"));
+app.use("/api/v1/order", require("./routes/order.route"));
+app.use("/api/v1/cart", require("./routes/cart.route"));
 
 //seed api's
-app.use("/api/seed", require("./routes/seed.route"));
-app.use("/api/payments", require("./routes/payments.route"));
+app.use("/api/v1/seed", require("./routes/seed.route"));
+app.use("/api/v1/payments", require("./routes/payments.route"));
 
 //client error
 app.use((req, res, next) => {

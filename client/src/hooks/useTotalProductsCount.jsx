@@ -11,7 +11,7 @@ const useTotalProductsCount = () => {
     queryKey: ["total-order-count"],
     queryFn: async () => {
       try {
-        const res = await axiosSecure.get(`/api/products/total-product-count`);
+        const res = await axiosSecure.get(`/products/total-product-count`);
         return res.data;
       } catch (error) {
         console.log(error);

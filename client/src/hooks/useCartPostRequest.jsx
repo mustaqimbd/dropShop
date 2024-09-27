@@ -16,7 +16,7 @@ const useCartPostRequest = () => {
         return Swal.fire({
           position: "top-end",
           icon: "error",
-          title: "Please,Select a customer!",
+          title: "Please, Select a customer from reseller panel!",
           showConfirmButton: false,
           timer: 1500,
         });
@@ -24,7 +24,7 @@ const useCartPostRequest = () => {
 
       data.customerId = customerId;
       const response = await axiosSecure.post(
-        "/api/cart",
+        "/cart",
         data
       );
 

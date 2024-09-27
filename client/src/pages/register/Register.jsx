@@ -28,8 +28,9 @@ const Register = () => {
     setRegisterError("");
     setServerValidationErr("");
     setLoading(true);
+    console.log("data", data)
     try {
-      await axiosSecure.post("/api/user/request-register", data);
+      await axiosSecure.post("/user/request-register", data);
       navigate("/confirm-account-message");
       setLoading(false);
     } catch (error) {
@@ -176,11 +177,11 @@ const Register = () => {
                 </div>
                 {serverValidationErr.length
                   ? serverValidationErr.map((item, index) => (
-                      <p key={index} className="text-hotBadge font-bold">
-                        <span>{index + 1}. </span>
-                        {item}
-                      </p>
-                    ))
+                    <p key={index} className="text-hotBadge font-bold">
+                      <span>{index + 1}. </span>
+                      {item}
+                    </p>
+                  ))
                   : ""}
                 {registerError ? (
                   <h2 className="text-hotBadge font-bold">{registerError}</h2>

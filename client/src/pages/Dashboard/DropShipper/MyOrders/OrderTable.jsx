@@ -8,7 +8,6 @@ import Paper from "@mui/material/Paper";
 
 const OrderTable = ({ data }) => {
   const rows = data;
-  console.log(data);
   return (
     <TableContainer
       elevation={0}

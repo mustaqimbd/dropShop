@@ -24,7 +24,7 @@ const AllCategoryList = () => {
   const categories = data?.payload?.category || [];
   const handleDeleteClick = async categoryId => {
     try {
-      const response = await axiosSecure.delete(`/api/category/${categoryId}`);
+      const response = await axiosSecure.delete(`/category/${categoryId}`);
 
       if (response.status === 200) {
         toast.success(`${response?.data?.message}`, {

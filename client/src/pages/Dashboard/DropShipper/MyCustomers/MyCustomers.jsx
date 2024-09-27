@@ -13,7 +13,7 @@ const MyCustomers = () => {
 
   const myCustomersApi = `reseller/my-customers?page=${currentPage}&limit=${perPage}`;
 
-  const searchApi = `/api/reseller/my-customers/search`;
+  const searchApi = `/reseller/my-customers/search`;
 
   const { data, refetch } = useGetRequest("my-customers", myCustomersApi);
 

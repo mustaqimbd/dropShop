@@ -11,9 +11,7 @@ const useAllSellers = (skip, searchEmail) => {
           `api/admin/dashboard/sellers-Info?skip=${skip}&email=${searchEmail}`
         );
         return res.data;
-      } catch (error) {
-        console.log(error);
-      }
+      } catch (error) { /* empty */ }
     },
   });
   return { data, refetch };

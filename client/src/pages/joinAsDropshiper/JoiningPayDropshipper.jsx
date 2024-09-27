@@ -25,7 +25,7 @@ const JoiningPayDropshipper = () => {
   const [axiosSecure] = useAxiosSecure();
 
   axiosSecure
-    .post("/api/category/", {})
+    .post("/category/", {})
     .then(function (response) {
       console.log(response);
       if (response.status == 200) {

@@ -4,12 +4,13 @@ import ContainerFull from "../../../components/container/ContainerFull";
 import ContainerMax from "../../../components/container/ContainerMax";
 import HighLightedProductsCard from "../../../components/cards/highLightSectionCard/HighLightedProductsCard";
 import { PrimaryButton } from "../../../components/buttons/Buttons";
+import { NavLink } from "react-router-dom";
 const HighlightSection = () => {
   const [topRate, setTopRate] = useState([]);
   const [topSelling, setTopSelling] = useState([]);
 
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_SERVER}/api/products/highlight-products`)
+    fetch(`${import.meta.env.VITE_API_BASE_URL}/products/highlight-products`)
       .then(res => res.json())
       .then(data => {
         setTopRate(data.payload.topRatedProducts);
@@ -57,12 +58,12 @@ const HighlightSection = () => {
               <h1 className="uppercase font-semibold">Popular Category</h1>
               <div className="flex gap-2 flex-wrap">
                 {categories.map((category, index) => (
-                  <span
-                    className=" px-2 py-1 border-[1px] border-borderColor"
-                    key={index}
-                  >
-                    {category.name}{" "}
-                  </span>
+                  <NavLink to={`/product-category/${category?.slug}`} key={index} className=" px-2 py-1 border-[1px] border-borderColor">
+                    <span
+                    >
+                      {category.name}{" "}
+                    </span>
+                  </NavLink>
                 ))}
               </div>
             </div>

@@ -25,7 +25,7 @@ const Orders = () => {
   const [searchId, setSearchId] = useState("");
   const [status, setStatus] = useState("all");
   const { data: orders, refetch } = useOrders(
-    `/api/order/orders`,
+    `/order/orders`,
     currentPage,
     status
   );

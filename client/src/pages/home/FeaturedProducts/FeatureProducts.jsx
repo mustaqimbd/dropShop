@@ -7,7 +7,7 @@ import useGetRequest from "../../../hooks/useGetRequest";
 
 const FeatureProducts = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 20;
+  const itemsPerPage = 18;
   const { data, isLoading } = useGetRequest(
     "featured-products",
     `products/products-by-pagination?page=${currentPage}&limit=${itemsPerPage}`

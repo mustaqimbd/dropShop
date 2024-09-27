@@ -19,7 +19,7 @@ const Profit = () => {
   );
 
   const tableProfitApi = `reseller/profit?page=${currentPage}&limit=${perPage}`;
-  const searchApi = `/api/reseller/profit/search`;
+  const searchApi = `/reseller/profit/search`;
   const { data: tableProfitData } = useGetRequest("profit", tableProfitApi);
 
   // Get the current date

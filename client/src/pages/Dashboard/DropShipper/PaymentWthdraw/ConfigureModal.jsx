@@ -50,7 +50,7 @@ export default function ConfigureModal() {
     setError("");
     try {
       const res = await axiosSecure.put(
-        "/api/user/update-dropshipper-info",
+        "/user/update-dropshipper-info",
         data
       );
       if (res.data.success) {

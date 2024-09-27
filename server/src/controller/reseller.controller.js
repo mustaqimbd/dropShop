@@ -173,6 +173,7 @@ const getMyOrders = async (req, res, next) => {
         .skip((page - 1) * limit)
         .limit(limit);
     }
+    console.log("orders", orders)
     successResponse(res, { payload: { orders, count } });
   } catch (error) {
     next(error);

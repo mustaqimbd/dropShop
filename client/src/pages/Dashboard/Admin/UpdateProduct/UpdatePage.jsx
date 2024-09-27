@@ -35,7 +35,7 @@ const UpdatePage = ({ searchedProduct, handleSearch }) => {
     data.hot = data.hot === "yes" ? true : false;
     data.is_active = data.is_active === "yes" ? true : false;
     try {
-      await axiosSecure.put("/api/admin/dashboard/update-product-info", data);
+      await axiosSecure.put("/admin/dashboard/update-product-info", data);
       toast.success("Updated successfully.");
     } catch (error) {
       toast.error(error.response.data.message);
@@ -62,7 +62,7 @@ const UpdatePage = ({ searchedProduct, handleSearch }) => {
       formData.append("image", image);
       promises.push(
         axios.post(
-          `https://api.imgbb.com/1/upload?key=${import.meta.env.VITE_IMGBB}`,
+          `${import.meta.env.VITE_IMG_BB_API_URL}?key=${import.meta.env.VITE_IMG_BB_API_KEY}`,
           formData
         )
       );
@@ -73,7 +73,7 @@ const UpdatePage = ({ searchedProduct, handleSearch }) => {
       const imgUrls = responses.map(
         response => response?.data?.data?.display_url
       );
-      await axiosSecure.put("/api/admin/dashboard/update-product-images", {
+      await axiosSecure.put("/admin/dashboard/update-product-images", {
         imgUrls,
         id: product._id,
       });
@@ -98,7 +98,7 @@ const UpdatePage = ({ searchedProduct, handleSearch }) => {
         productId: product._id,
       };
       await axiosSecure.put(
-        `/api/admin/dashboard/update-product-category`,
+        `/admin/dashboard/update-product-category`,
         data
       );
       toast.success("Product category updated successfully.");

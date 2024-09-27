@@ -5,7 +5,6 @@ const {
   accessTokenSecret,
   userRegisterSecret,
   forgotPasswordTokenSecret,
-  clientUrl,
 } = require("../secret");
 const { successResponse, errorResponse } = require("./responseHandler");
 const userInfoHandler = require("./userinfoHandler");
@@ -18,14 +17,14 @@ const uniqueID = require("../helper/uniqueID");
 //process register
 const requestRegister = async (req, res, next) => {
   try {
-    const { name, email, password, phone } = req.body;
+    const { name, email, password, mobile } = req.body;
     const user = await User.findOne({ email });
     if (user) return errorResponse(res, 409, "Email is already registered.");
     const payload = {
       name,
       email,
       password,
-      phone,
+      mobile,
     };
     const token = jwt.sign(payload, userRegisterSecret, { expiresIn: "10m" });
     const emailInfo = registerRequestEmailData(email, name, token);
@@ -66,7 +65,7 @@ const registerNewUser = async (req, res, next) => {
       message: "User was created successfully.",
     });
   } catch (error) {
-    if ((error.message = "jwt expired")) {
+    if ((error.message == "jwt expired")) {
       return next(
         createErrors(
           400,
@@ -131,7 +130,7 @@ const updateUserProfile = async (req, res, next) => {
             method: updatedData.withdrawMethod || withdraw?.method,
           },
           settings: {
-            receive_email: updatedData.hasOwnProperty("receiveEmail")
+            receive_email: Object.prototype.hasOwnProperty.call(updatedData, "receiveEmail")
               ? updatedData.receiveEmail
               : settings?.receive_email,
           },

@@ -39,7 +39,7 @@ export default function AddCustomerForm({ data, refetch, handleClose }) {
    
     try {
       const res = await axiosSecure.post(
-        "/api/reseller/add-customer",
+        "/reseller/add-customer",
         data
       );
       if (res.data.success) {
@@ -67,7 +67,7 @@ export default function AddCustomerForm({ data, refetch, handleClose }) {
 
     try {
       const res = await axiosSecure.patch(
-        "/api/reseller/update-customer",
+        "/reseller/update-customer",
         data
       );
       if (res.data.success) {

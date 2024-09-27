@@ -2,7 +2,7 @@ import { createContext, useEffect, useState } from "react";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 
 export const AuthContext = createContext();
-export const baseUrl = "http://localhost:5000";
+
 const AuthProvider = ({ children }) => {
   const [axiosSecure] = useAxiosSecure();
   const [user, setUser] = useState(null);
@@ -19,7 +19,7 @@ const AuthProvider = ({ children }) => {
   useEffect(() => {
     const getUser = async () => {
       try {
-        const user = await axiosSecure.get("/api/user/profile");
+        const user = await axiosSecure.get("/user/profile");
         setUser(user?.data?.payload?.userInfo);
         setLoading(false);
       } catch (error) {
@@ -39,7 +39,6 @@ const AuthProvider = ({ children }) => {
     user,
     setUser,
     loading,
-    baseUrl,
     logOut,
     fetchUser,
     setFetchUser,

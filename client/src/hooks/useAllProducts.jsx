@@ -1,21 +1,24 @@
 import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
+import useAxiosSecure from "./useAxiosSecure";
 
 const useAllProducts = (pageNumber, limit) => {
+  const [axiosSecure] = useAxiosSecure()
+
   const {
-    data: allProducts = [],
+    data,
     refetch,
     isLoading,
   } = useQuery({
     queryKey: [pageNumber, limit],
     queryFn: async () => {
-      const res = await axios(
-        `http://localhost:5000/api/products/products-by-pagination?page=${pageNumber}&limit=${limit}`
+      const res = await axiosSecure.get(
+        `/products/products-by-pagination?page=${pageNumber}&limit=${limit}`
       );
-      return res.data.payload;
+      return res.data?.payload;
     },
   });
-  return { allProducts, refetch, isLoading };
+  
+  return { data, refetch, isLoading };
 };
 
 export default useAllProducts;

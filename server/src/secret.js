@@ -8,6 +8,7 @@ const dBURL = process.env.MONGODB_URL;
 const SMTPUserName = process.env.SMTP_USERNAME;
 const SMTPPassword = process.env.SMTP_PASSWORD;
 const clientUrl = process.env.CLIENT_URL;
+const env = process.env.NODE_ENV;
 const sessionSecretKey = process.env.SESSION_SECRET;
 //ssl sercret
 const store_id = process.env.STORE_ID;
@@ -17,6 +18,7 @@ module.exports = {
   userRegisterSecret,
   accessTokenSecret,
   forgotPasswordTokenSecret,
+  env,
   PORT,
   dBURL,
   SMTPUserName,

@@ -21,7 +21,7 @@ const ChangePassword = () => {
     }
 
     try {
-      await axiosSecure.post("/api/user/change-password", {
+      await axiosSecure.post("/user/change-password", {
         previousPassword: data.old_password,
         newPassword: data.new_password,
       });

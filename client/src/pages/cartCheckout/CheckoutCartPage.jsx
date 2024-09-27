@@ -2,11 +2,14 @@ import useCart from "../../hooks/useCart";
 import CustomerInfo from "./CustomerInfo";
 import CartOfCheckout from "./checkoutCartComponents/CartOfCheckout";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
+import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
+
 
 const CheckoutCartPage = () => {
   const [axiosSecure] = useAxiosSecure();
   const { data } = useCart("cart", "cart/get-cart");
-
+  const navigate = useNavigate();
   const products = data?.payload?.cart?.items;
   const deliveryCharge = 100;
   const advancePayment = 200;
@@ -15,11 +18,26 @@ const CheckoutCartPage = () => {
   // console.log(data.payload);
 
   const payment = async () => {
-    const response = await axiosSecure.post("/api/payments/order");
-    console.log(response.data);
-    const paymentUrl = response.data.url;
-    // Redirect the user to the payment URL
-    window.location.href = paymentUrl;
+    try {
+      // const response = await axiosSecure.post("/payments/order");
+      const data={
+        
+      }
+      await axiosSecure.post("/payments/order/success",data);
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "Successfully ordered",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+      navigate("/")
+      // const paymentUrl = response.data.url;
+      // // Redirect the user to the payment URL
+      // window.location.href = paymentUrl;
+    } catch (error) {
+      console.log(error)
+    }
   };
   // console.log(products);
 
@@ -94,7 +112,7 @@ const CheckoutCartPage = () => {
                     </span>
                     <span className="text-xl font-semibold">
                       {" "}
-                      {remainingPayment}৳
+                      {remainingPayment.toFixed(2)}৳
                     </span>
                   </div>
                 </div>
@@ -102,7 +120,8 @@ const CheckoutCartPage = () => {
                   onClick={payment}
                   className="bg-blue-500 w-full hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
                 >
-                  Proceed to Payment
+                  {/* Proceed to Payment */}
+                  Order
                 </button>
               </div>
             </div>

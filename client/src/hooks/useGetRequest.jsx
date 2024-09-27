@@ -4,7 +4,7 @@ import { useEffect } from "react";
 
 const useGetRequest = (queryKey, endPoint) => {
   const [axiosSecure] = useAxiosSecure();
-  const api = `/api/${endPoint}`;
+  const api = `/${endPoint}`;
 
   const {
     data = [],
@@ -13,11 +13,11 @@ const useGetRequest = (queryKey, endPoint) => {
   } = useQuery({
     queryKey: [queryKey],
     queryFn: async () => {
+      // eslint-disable-next-line no-useless-catch
       try {
         const res = await axiosSecure.get(api);
         return res.data;
       } catch (error) {
-        console.log(error);
         throw error; // Re-throw the error so React Query can handle it
       }
     },

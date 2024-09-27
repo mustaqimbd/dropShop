@@ -26,7 +26,7 @@ const Login = () => {
     setLoginError("");
     try {
       const res = await axiosSecure.post(
-        "http://localhost:5000/api/user/login",
+        "/user/login",
         data
       );
       setUser(res.data.payload.userInfo);
@@ -59,6 +59,7 @@ const Login = () => {
                       autoComplete="email"
                       required
                       name="email"
+                      defaultValue={"demoseller1@gmail.com"}
                       {...register("email", { required: true })}
                       id="email"
                       className="shadow appeara6ce-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -78,6 +79,7 @@ const Login = () => {
                       autoComplete="new-password"
                       placeholder="Enter Password"
                       name="password"
+                      defaultValue={"Pass#123"}
                       {...register("password", {
                         required: "Password is required",
                       })}

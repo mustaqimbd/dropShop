@@ -2,47 +2,6 @@ const Category = require("../model/category.model");
 const Products = require("../model/products.model");
 const { successResponse } = require("./responseHandler");
 
-const getAllCategory = async (req, res, next) => {
-  try {
-    const pipeline = [
-      {
-        $group: {
-          _id: "$category_slug",
-          total_products: { $sum: 1 },
-        },
-      },
-      {
-        $lookup: {
-          from: "categories",
-          localField: "_id",
-          foreignField: "slug",
-          as: "category",
-        },
-      },
-      {
-        $unwind: "$category",
-      },
-      {
-        $project: {
-          _id: "$category._id",
-          slug: "$_id",
-          name: "$category.name",
-          total_products: 1,
-          img: "$category.img",
-          properties: "$category.properties",
-        },
-      },
-    ];
-    const category = await Products.aggregate(pipeline);
-    return successResponse(res, {
-      message: "All categories.",
-      payload: { category },
-    });
-  } catch (error) {
-    next(error);
-  }
-};
-
 const addNewCategory = async (req, res, next) => {
   try {
     const { img, name } = req.body;
@@ -66,14 +25,15 @@ const addNewCategory = async (req, res, next) => {
   }
 };
 
-//Delete a category by ID
-const deleteCategory = async (req, res, next) => {
+const getAllCategory = async (req, res, next) => {
+  const page = parseInt(req.query.page) || 1;
+  const limit = parseInt(req.query.limit) || 14;
   try {
-    const categoryID = req.params.id;
-    const result = await Category.findByIdAndDelete(categoryID);
+    const category = await Category.find().skip((page - 1) * limit)
+      .limit(limit);
     return successResponse(res, {
-      statusCode: 200,
-      message: "Category Deleted successfully.",
+      message: "All categories.",
+      payload: { category },
     });
   } catch (error) {
     next(error);
@@ -124,10 +84,26 @@ const filterByCategory = async (req, res, next) => {
   }
 };
 
+//Delete a category by ID
+const deleteCategory = async (req, res, next) => {
+  try {
+    const categoryID = req.params.id;
+    await Category.findByIdAndDelete(categoryID);
+    return successResponse(res, {
+      statusCode: 200,
+      message: "Category Deleted successfully.",
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+
+
 module.exports = {
-  getAllCategory,
   addNewCategory,
-  filterByCategory,
+  getAllCategory,
   updateCategory,
+  filterByCategory,
   deleteCategory,
 };

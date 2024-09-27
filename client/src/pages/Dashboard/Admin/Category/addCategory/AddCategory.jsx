@@ -40,21 +40,21 @@ const AddCategory = () => {
     if (categoryName && previewIcon) {
       //add the category post to server
       const response = await axios.post(
-        "https://api.imgbb.com/1/upload",
+        `${import.meta.env.VITE_IMG_BB_API_URL}`,
         formData,
         {
           headers: {
             "content-type": "multipart/form-data",
           },
           params: {
-            key: `${import.meta.env.VITE_IMGBB}`, // Replace with your ImgBB API key
+            key: `${import.meta.env.VITE_IMG_BB_API_KEY}`, // Replace with your ImgBB API key
           },
         }
       );
       const imageUrl = response.data.data.url;
       //post the data to backend
       axiosSecure
-        .post("/api/category/", {
+        .post("/category", {
           name: categoryName,
           img: imageUrl,
         })

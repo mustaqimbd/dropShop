@@ -16,7 +16,7 @@ const UpdateProduct = () => {
     }
     try {
       const result = await axiosSecure(
-        `/api/admin/dashboard/product-by-id?productId=${searchValue}`
+        `/admin/dashboard/product-by-id?productId=${searchValue}`
       );
       setSearchedProduct(result?.data?.payload?.singleProduct);
     } catch (error) {

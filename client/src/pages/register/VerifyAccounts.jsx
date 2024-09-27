@@ -14,7 +14,7 @@ const VerifyAccounts = () => {
     const queryParams = new URLSearchParams(window.location.search);
     const token = queryParams.get("token");
     try {
-      await axiosSecure.post(`/api/user/register`, { token });
+      await axiosSecure.post(`/user/register`, { token });
       Swal.fire({
         icon: "success",
         title: "Verification success.",

@@ -43,6 +43,8 @@ import AddToCardPage from "../pages/AddToCardPage/AddToCardPage";
 import ProductDetailsPage from "../pages/products/productDetails/ProductDetailsPage";
 import CheckoutCartPage from "../pages/cartCheckout/CheckoutCartPage";
 import PaymentSuccessPage from "../pages/payment/paymentSuccessPage";
+import Categories from "../pages/Categories/Categories";
+import ShopPage from "../pages/products/ArchiveProducts/ShopPage";
 
 export const router = createBrowserRouter([
   {
@@ -86,6 +88,14 @@ export const router = createBrowserRouter([
         element: <VerifyAccounts />,
       },
       {
+        path: "/shop",
+        element: <ShopPage />,
+      },
+      {
+        path: "/categories",
+        element: <Categories />,
+      },
+      {
         path: "/product-category/:slug",
         element: <ProductsByCategory />,
       },
@@ -97,10 +107,6 @@ export const router = createBrowserRouter([
       {
         path: "/product-category/categorySlug/productSlug",
         element: <AddToCardPage />,
-      },
-      {
-        path: "/archive-products/:category",
-        element: <ProductsByCategory />,
       },
       {
         path: "/checkout-cart",
@@ -255,6 +261,6 @@ export const router = createBrowserRouter([
   },
   {
     path: "*",
-    element: <h2>Page not found</h2>,
+    element: <h2 className="text-6xl text-center mt-60">Page not found</h2>,
   },
 ]);

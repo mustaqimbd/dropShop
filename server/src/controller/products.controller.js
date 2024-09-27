@@ -89,6 +89,8 @@ const productByPagination = async (req, res, next) => {
       .limit(limit)
       .select({
         product_name: 1,
+        product_slug: 1,
+        category_slug: 1,
         images: 1,
         ratings: 1,
         reseller_price: 1,

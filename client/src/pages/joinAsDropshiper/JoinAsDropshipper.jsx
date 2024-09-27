@@ -29,7 +29,7 @@ const JoinAsDropshipper = () => {
     console.log(data);
 
     axiosSecure
-      .put("/api/user/update-dropshipper-info", data)
+      .put("/user/update-dropshipper-info", data)
       .then(function (response) {
         console.log(response);
         if (response.status == 200) {

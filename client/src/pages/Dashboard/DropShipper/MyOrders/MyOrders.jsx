@@ -13,7 +13,7 @@ const MyOrders = () => {
 
   const myOrderApi = `reseller/my-orders?page=${currentPage}&limit=${perPage}`;
 
-  const searchApi = `/api/reseller/my-orders/search`;
+  const searchApi = `/reseller/my-orders/search`;
 
   const { data } = useGetRequest("my-orders", myOrderApi);
 

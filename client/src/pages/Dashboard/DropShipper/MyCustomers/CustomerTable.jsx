@@ -10,10 +10,11 @@ import { ShoppingCartCheckoutOutlined } from "@mui/icons-material";
 import { Divider } from "@mui/material";
 import EditModal from "./EditModal";
 import axios from "axios";
+import useAxiosSecure from "../../../../hooks/useAxiosSecure";
 
 const CustomerTable = ({ data, refetch }) => {
   const navigate = useNavigate();
-
+  const [axiosSecure] = useAxiosSecure()
   const rows = data;
 
   const customer = (data) => {
@@ -30,14 +31,14 @@ const CustomerTable = ({ data, refetch }) => {
 
   const resetCart = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/cart/reset-cart/${id}`, {
+      await axiosSecure.delete(`/cart/reset-cart/${id}`, {
         withCredentials: true, // Include cookies in the request
       });
     } catch (error) {
       console.log(error);
     }
   };
-  
+
   return (
     <TableContainer elevation={0} component={Paper}>
       <Table sx={{ minWidth: 1100 }} aria-label="caption table">

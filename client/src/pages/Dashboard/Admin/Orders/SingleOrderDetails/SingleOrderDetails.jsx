@@ -20,7 +20,7 @@ const SingleOrderDetails = () => {
     queryFn: async () => {
       try {
         const result = await axiosSecure.get(
-          `/api/order/track-order?orderId=${orderId}`
+          `/order/track-order?orderId=${orderId}`
         );
 
         return result;

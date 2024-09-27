@@ -17,7 +17,7 @@ const ForgotPassword = () => {
     serLoading(true);
     const email = event.target.email.value;
     try {
-      const res = await axiosSecure.post("/api/user/forgot-password", {
+      const res = await axiosSecure.post("/user/forgot-password", {
         email,
       });
       serLoading(false);

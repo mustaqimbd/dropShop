@@ -51,7 +51,7 @@ const Products = () => {
         if (result.isConfirmed) {
           try {
             await axiosSecure.delete(
-              `/api/admin/dashboard/delete-product?product_id=${id}`
+              `/admin/dashboard/delete-product?product_id=${id}`
             );
             swalWithCustomButtons.fire(
               "Deleted!",

@@ -11,7 +11,7 @@ const useCartPatchRequest = () => {
     setIsLoading(true);
 
     try {
-      const response = await axiosSecure.patch("/api/cart/update-cart", data);
+      const response = await axiosSecure.patch("/cart/update-cart", data);
 
       if (response.data) {
         refetch();

@@ -18,7 +18,7 @@ const Settings = () => {
 
   const saveSetting = () => {
     axiosSecure
-      .put("/api/user/update-dropshipper-info", {
+      .put("/user/update-dropshipper-info", {
         receiveEmail: checked,
       })
       .then(() => {

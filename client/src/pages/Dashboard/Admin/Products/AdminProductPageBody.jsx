@@ -22,7 +22,7 @@ const AdminProductPageBody = ({ handleDelete }) => {
     queryFn: async () => {
       try {
         const res = await axiosSecure.get(
-          `/api/admin/dashboard/products?page=${currentPage}`
+          `/admin/dashboard/products?page=${currentPage}`
         );
         return res.data;
       } catch (error) {

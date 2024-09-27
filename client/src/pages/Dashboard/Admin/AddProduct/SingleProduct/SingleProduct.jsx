@@ -38,14 +38,11 @@ const SingleProduct = () => {
     data.category = category;
     data.description = description;
     data.hot = data?.hot === "yes" ? true : false;
-    console.log(data);
     try {
-      const res = await axiosSecure.post("/api/admin/add-product", data);
-      console.log(res);
+    await axiosSecure.post("/admin/add-product", data);
     } catch (error) {
       toast.error("Something went wrong try again later.");
     }
-    console.log(data);
   };
   const handleImageChange = e => {
     const selectedFiles = e.target.files;
@@ -64,7 +61,7 @@ const SingleProduct = () => {
       formData.append("image", image);
       promises.push(
         axios.post(
-          `https://api.imgbb.com/1/upload?key=${import.meta.env.VITE_IMGBB}`,
+          `${import.meta.env.VITE_IMG_BB_API_URL}?key=${import.meta.env.VITE_IMG_BB_API_KEY}`,
           formData
         )
       );

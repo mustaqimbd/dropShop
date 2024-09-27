@@ -3,8 +3,9 @@ import { useEffect } from "react";
 import { Navigate } from "react-router-dom";
 
 const axiosSecure = axios.create({
-  baseURL: import.meta.env.VITE_SERVER,
-  withCredentials: true, // this is important to work with cookie, this Includes cookies in the request
+  baseURL: import.meta.env.VITE_API_BASE_URL,
+  // withCredentials: true, // this is important to work with cookie, this Includes cookies in the request
+  credentials: true, // this is important to work with cookie, this Includes cookies in the request
 });
 
 const useAxiosSecure = () => {

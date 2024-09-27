@@ -5,7 +5,7 @@ const DeleteImages = ({ product, handleSearch }) => {
   const [axiosSecure] = useAxiosSecure();
   const handleDelete = async id => {
     try {
-      await axiosSecure.put(`/api/admin/dashboard/delete-product-image`, {
+      await axiosSecure.put(`/admin/dashboard/delete-product-image`, {
         productId: product._id,
         imageId: id,
       });

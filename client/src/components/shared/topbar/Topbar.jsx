@@ -11,7 +11,7 @@ const Topbar = () => {
           </div>
           <div className="flex gap-4 justify-between">
             <div className="flex gap-6 justify-between items-center">
-              <Link>
+              <Link to={"/"}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
@@ -25,7 +25,7 @@ const Topbar = () => {
                   />
                 </svg>
               </Link>
-              <Link>
+              <Link to={"/"}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
@@ -52,7 +52,7 @@ const Topbar = () => {
                   </defs>
                 </svg>
               </Link>
-              <Link>
+              <Link to={"/"}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
@@ -66,7 +66,7 @@ const Topbar = () => {
                   />
                 </svg>
               </Link>
-              <Link>
+              <Link to={"/"}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
@@ -88,7 +88,7 @@ const Topbar = () => {
                 </svg>
               </Link>
             </div>
-            <div className="flex ">
+            <div className="flex">
               <div>
                 <p> | ENG</p>
               </div>

@@ -4,9 +4,11 @@ const userSchema = new mongoose.Schema(
   {
     name: {
       type: String,
+      require: true
     },
     user_id: {
       type: String,
+      require: true,
       unique: true,
     },
     reseller_id: {
@@ -15,10 +17,12 @@ const userSchema = new mongoose.Schema(
     },
     email: {
       type: String,
+      require: true,
       unique: true,
     },
     password: {
       type: String,
+      require: true
     },
     role: {
       type: String,
@@ -27,6 +31,8 @@ const userSchema = new mongoose.Schema(
     },
     mobile: {
       type: String,
+      require: true,
+      unique: true
     },
     profile_pic: {
       type: String,
@@ -39,7 +45,7 @@ const userSchema = new mongoose.Schema(
         type: String,
       },
       address: {
-        address:String,
+        address: String,
         division: String,
         district: String,
       },

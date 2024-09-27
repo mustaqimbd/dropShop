@@ -14,7 +14,7 @@ const ProductsStatistics = () => {
     queryFn: async () => {
       try {
         const res = await axiosSecure.get(
-          "/api/admin/dashboard/product-statistics"
+          "/admin/dashboard/product-statistics"
         );
         return res.data;
       } catch (error) {
