@@ -5,22 +5,6 @@ const {
   getFromCart,
 } = require("../controller/cart.controller");
 const cartRouter = require("express").Router();
-const session = require("express-session");
-const { sessionSecretKey } = require("../secret");
-
-cartRouter.use(
-  session({
-    secret: sessionSecretKey,
-    resave: false,
-    saveUninitialized: true,
-    cookie: {
-      sameSite: "Lax", // or "Strict"
-      httpOnly: true,
-      maxAge: 24 * 60 * 60 * 1000, // 24 hours in milliseconds
-      // maxAge: 60 * 1000, // 1 minute in milliseconds
-    },
-  })
-);
 
 // API endpoint to handle adding items to the guest cart
 // /api/cart

@@ -6,7 +6,7 @@ const orderSchema = new mongoose.Schema(
       type: String,
       unique: true,
       required: true,
-      default: `OID${Date.now()}`,
+      default: `OID-${Date.now()}`,
     },
     ordered_products: [
       {
@@ -21,7 +21,7 @@ const orderSchema = new mongoose.Schema(
       },
     ],
     total_cost: {
-      type: Number,
+      type: Number, required: true,
     },
     status: {
       type: String,
@@ -37,7 +37,7 @@ const orderSchema = new mongoose.Schema(
       required: true,
     },
     delivery_charge: {
-      type: Number,
+      type: Number, required: true,
     },
     advance: { type: Number },
     completed_date: {
@@ -52,7 +52,7 @@ const orderSchema = new mongoose.Schema(
     reseller_id: { type: String },
     reseller: { type: mongoose.Schema.Types.ObjectId, required: true },
     customer_id: { type: String },
-    customer: { type: String },
+    customer: { type: mongoose.Schema.Types.ObjectId, required: true },
   },
   { timestamps: true }
 );

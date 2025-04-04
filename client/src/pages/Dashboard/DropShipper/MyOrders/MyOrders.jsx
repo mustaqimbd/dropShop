@@ -9,7 +9,7 @@ import useGetRequest from "../../../../hooks/useGetRequest";
 const MyOrders = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [searchResults, setSearchResults] = useState(null);
-  const perPage = 3;
+  const perPage = 5;
 
   const myOrderApi = `reseller/my-orders?page=${currentPage}&limit=${perPage}`;
 

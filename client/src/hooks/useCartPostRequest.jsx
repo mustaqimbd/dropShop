@@ -11,7 +11,7 @@ const useCartPostRequest = () => {
     try {
       setIsLoading(true);
       const customerId = JSON.parse(sessionStorage.getItem("Customer"))?.id;
-
+      
       if (!customerId) {
         return Swal.fire({
           position: "top-end",
@@ -30,6 +30,14 @@ const useCartPostRequest = () => {
 
       if (response.data) {
         refetch();
+        // Show success message using SweetAlert2
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Added to cart successfully!",
+          showConfirmButton: false,
+          timer: 1500,
+        });
       }
     } catch (error) {
       console.error("Error adding to cart:", error);

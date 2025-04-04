@@ -60,7 +60,7 @@ export default function AddModal({refetch}) {
           <CloseIcon />
         </IconButton>
         <DialogContent dividers>
-          <AddCustomForm refetch={refetch}/>
+          <AddCustomForm refetch={refetch} handleClose={handleClose}/>
         </DialogContent>
       </BootstrapDialog>
     </div>

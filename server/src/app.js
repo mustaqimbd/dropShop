@@ -11,9 +11,9 @@ const {
 } = require("./controller/responseHandler");
 const { clientUrl, env } = require("./secret");
 const userSession = require("./middleware/userSession");
-
+console.log("env", env, clientUrl);
 const corsOptions = {
-  origin: [env === "production" ? clientUrl : 'http://localhost:5173'],
+  origin: clientUrl,
   credentials: true, // Important for cookies or session
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   allowedHeaders: "Content-Type, Authorization",

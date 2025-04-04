@@ -4,11 +4,19 @@ const {
   trackOrder,
   getOrderInfo,
   updateOrderStatus,
-  orderCount,
+  createOrder,
 } = require("../controller/order.controller");
 const { isAdmin } = require("../middleware/checkRole");
 
 const orderRoute = require("express").Router();
+
+//create order
+// /api/order/create-order
+orderRoute.post(
+  "/create-order",
+  passport.authenticate("jwt", { session: false }),
+  createOrder
+);
 
 //track order
 // /api/order/track-order

@@ -132,14 +132,20 @@ const getMyOrders = async (req, res, next) => {
         ],
       };
     }
-
     const pipeline = [
-      { $match: { reseller_id: req.user.reseller_id } },
+      {
+        $match: {
+          $or: [
+            { reseller_id: req.user.reseller_id },
+            { reseller: req.user?._id }
+          ]
+        }
+      },
       {
         $lookup: {
           from: "customers",
-          localField: "customer_id",
-          foreignField: "customer_id",
+          localField: "customer",
+          foreignField: "_id",
           as: "customer_info",
         },
       },
@@ -173,7 +179,7 @@ const getMyOrders = async (req, res, next) => {
         .skip((page - 1) * limit)
         .limit(limit);
     }
-    console.log("orders", orders)
+    
     successResponse(res, { payload: { orders, count } });
   } catch (error) {
     next(error);

@@ -46,6 +46,14 @@ export default function AddCustomerForm({ data, refetch, handleClose }) {
         setSuccess(res.data.message);
         reset();
         refetch();
+        handleClose();
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Successfully added",
+          showConfirmButton: false,
+          timer: 1500,
+        });
       } else {
         setError(res.data.message);
       }

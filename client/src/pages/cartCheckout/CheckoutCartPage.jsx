@@ -20,10 +20,13 @@ const CheckoutCartPage = () => {
   const payment = async () => {
     try {
       // const response = await axiosSecure.post("/payments/order");
-      const data={
-        
+      const data = {
+        total_cost: remainingPayment,
+        delivery_charge: deliveryCharge,
+        advance: advancePayment,
       }
-      await axiosSecure.post("/payments/order/success",data);
+      await axiosSecure.post("/order/create-order", data);
+      // await axiosSecure.post("/payments/order/success",data);
       Swal.fire({
         position: "top-end",
         icon: "success",
@@ -31,6 +34,7 @@ const CheckoutCartPage = () => {
         showConfirmButton: false,
         timer: 1500,
       });
+      sessionStorage.removeItem("Customer");
       navigate("/")
       // const paymentUrl = response.data.url;
       // // Redirect the user to the payment URL

@@ -9,11 +9,11 @@ const CustomerInfoNavbar = () => {
   return (
     <div className="flex justify-between items-center p-2 border-b">
       <p>
-        Customer id <span className="font-bold">{customer.customerId}</span>
+        Customer id <span className="font-bold">{customer?.customerId}</span>
       </p>
       <p>
         You are shopping as{" "}
-        <span className="font-bold">{customer.customerName}</span>
+        <span className="font-bold">{customer?.customerName}</span>
       </p>
       <div>
         <button
