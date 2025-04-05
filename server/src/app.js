@@ -12,8 +12,13 @@ const {
 const { clientUrl, env } = require("./secret");
 const userSession = require("./middleware/userSession");
 console.log("env", env, clientUrl);
+
 const corsOptions = {
-  origin: clientUrl,
+  origin: env === "production"
+    ? clientUrl?.split(",")
+    : [
+      " http://localhost:5173",
+    ],
   credentials: true, // Important for cookies or session
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   allowedHeaders: "Content-Type, Authorization",
@@ -28,6 +33,11 @@ app.use(express.json());
 app.use(morgan("dev"));
 require("./config/passport");
 app.use(userSession());
+
+if (env === "production") {
+  app.set("trust proxy", 1);
+} // VERY IMPORTANT when using reverse proxies like Nginx or Heroku
+
 
 //default
 app.get("/", (req, res) => {
