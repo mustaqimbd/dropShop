@@ -41,6 +41,14 @@ const useCartPostRequest = () => {
       }
     } catch (error) {
       console.error("Error adding to cart:", error);
+      Swal.fire({
+        position: "top-end",
+        icon: "error",
+        title: "Failed to add to cart!",
+        text: error?.response?.data?.message || "Something went wrong.",
+        showConfirmButton: false,
+        timer: 1500,
+      });
     } finally {
       setIsLoading(false);
     }

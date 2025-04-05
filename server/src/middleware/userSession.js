@@ -1,5 +1,5 @@
 const session = require("express-session");
-const { sessionSecretKey } = require("../secret");
+const { sessionSecretKey, env } = require("../secret");
 
 const userSession = () => {
   return session({
@@ -7,9 +7,9 @@ const userSession = () => {
     saveUninitialized: false,
     resave: false,
     cookie: {
-      sameSite: "Lax",
+      sameSite: env === "production" ? "None" : "Lax",
       httpOnly: true,
-      secure: process.env.NODE_ENV === "production", // true only in production,
+      secure: env === "production", // true only in production,
       maxAge: 24 * 60 * 60 * 1000, // 24 hours
     },
   });

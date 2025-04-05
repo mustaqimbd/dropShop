@@ -26,6 +26,10 @@ const corsOptions = {
 
 
 //middleware
+if (env === "production") {
+  app.set("trust proxy", 1);
+} // VERY IMPORTANT when using reverse proxies like Nginx or Heroku
+
 app.use(cors(corsOptions));
 app.use(cookieParser());
 app.use(helmet());
@@ -33,11 +37,6 @@ app.use(express.json());
 app.use(morgan("dev"));
 require("./config/passport");
 app.use(userSession());
-
-if (env === "production") {
-  app.set("trust proxy", 1);
-} // VERY IMPORTANT when using reverse proxies like Nginx or Heroku
-
 
 //default
 app.get("/", (req, res) => {
